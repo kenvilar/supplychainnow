@@ -7,5 +7,10 @@ Author URI: http://www.qodethemes.com/
 Version: 1.0.0
 Template: bridge
 */
-@import url("../bridge/style.css");
-
+/*@import url("../bridge/style.css");*/
+body.admin-bar #wpadminbar {
+	position: relative;
+}
+a#back_to_top {
+	display: none
+}
