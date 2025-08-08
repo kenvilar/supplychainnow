@@ -11,6 +11,7 @@ Template: bridge
 body.admin-bar #wpadminbar {
 	position: relative;
 }
-a#back_to_top {
-	display: none
+/*hide some divs built by bridge theme*/
+a#back_to_top, footer .footer_inner {
+	display: none;
 }
