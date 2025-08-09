@@ -1,7 +1,7 @@
 <?php
 
 ?>
-<section class="section">
+<section class="section sm:text-center py-60">
 	<div class="site-padding">
 		<div class="max-w-1252 pt-92 md:pt-0 md:mb-20 w-container">
 			<div class="mb-36">

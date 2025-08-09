@@ -7,9 +7,45 @@
 @custom-variant sm (@media screen and (max-width: 767px));
 @custom-variant xs (@media screen and (max-width: 479px));
 @config "../../tailwind.config.js";
+/* Custom base */
+@layer base {
+	body {
+		@apply text-reg;
+	}
+	h1 {
+		@apply text-4xl sm:text-3xl;
+	}
+	h2 {
+		@apply text-3xl xs:text-2xl;
+	}
+	h3 {
+		@apply text-2xl;
+	}
+	h4 {
+		@apply text-lg;
+	}
+	h5 {
+		@apply text-md;
+	}
+	h6 {
+		@apply text-sm;
+	}
+	h1, h2, h3 {
+		@apply xs:wrap-break-word;
+	}
+	h1, h2, h3, h4, h5, h6 {
+		@apply font-semibold;
+	}
+}
 /* Custom utilities */
 @layer utilities {
 	.site-padding {
 		@apply px-[40px] md:px-[32px] sm:px-[20px] xs:px-[12px];
+	}
+	.text-4xl {
+		@apply sm:text-3xl;
+	}
+	.text-4xl, .text-3xl. .text-2xl {
+		@apply xs:wrap-break-word;
 	}
 }

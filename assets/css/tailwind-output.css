@@ -7,9 +7,8 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
-    --text-xl: 1.25rem;
-    --text-xl--line-height: calc(1.75 / 1.25);
     --font-weight-medium: 500;
+    --font-weight-semibold: 600;
     --default-transition-duration: 150ms;
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
@@ -258,6 +257,9 @@
   .gap-28 {
     gap: 28px;
   }
+  .gap-40 {
+    gap: 40px;
+  }
   .overflow-hidden {
     overflow: hidden;
   }
@@ -268,6 +270,9 @@
   .px-12 {
     padding-inline: 12px;
   }
+  .py-60 {
+    padding-block: 60px;
+  }
   .pt-48 {
     padding-top: 48px;
   }
@@ -277,9 +282,61 @@
   .pb-36 {
     padding-bottom: 36px;
   }
+  .text-2xl {
+    font-size: 30px;
+    line-height: var(--tw-leading, 36px);
+  }
+  .text-2xs {
+    font-size: 10px;
+    line-height: var(--tw-leading, 12px);
+  }
+  .text-3xl {
+    font-size: 40px;
+    line-height: var(--tw-leading, 49px);
+  }
+  .text-4xl {
+    font-size: 82px;
+    line-height: var(--tw-leading, 100px);
+  }
+  .text-22 {
+    font-size: 22px;
+    line-height: var(--tw-leading, 27px);
+  }
+  .text-36 {
+    font-size: 36px;
+    line-height: var(--tw-leading, 42px);
+  }
+  .text-37 {
+    font-size: 37px;
+    line-height: var(--tw-leading, 45px);
+  }
+  .text-45 {
+    font-size: 45px;
+    line-height: var(--tw-leading, 55px);
+  }
+  .text-lg {
+    font-size: 20px;
+    line-height: var(--tw-leading, 24px);
+  }
+  .text-md {
+    font-size: 18px;
+    line-height: var(--tw-leading, 22px);
+  }
+  .text-reg {
+    font-size: 16px;
+    line-height: var(--tw-leading, 20px);
+  }
+  .text-sm {
+    font-size: 14px;
+    line-height: var(--tw-leading, 17px);
+  }
   .text-xl {
-    font-size: var(--text-xl);
-    line-height: var(--tw-leading, var(--text-xl--line-height));
+    font-size: 24px;
+    line-height: var(--tw-leading, 28px);
+  }
+  .text-xs {
+    font-size: 12px;
+    line-height: var(--tw-leading, 14px);
   }
   .font-medium {
     --tw-font-weight: var(--font-weight-medium);
@@ -320,15 +377,78 @@
       padding-top: 0px;
     }
   }
+  .sm\:grid-cols-1 {
+    @media screen and (max-width: 767px) {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+  }
   .sm\:flex-col {
     @media screen and (max-width: 767px) {
       flex-direction: column;
+    }
+  }
+  .sm\:text-center {
+    @media screen and (max-width: 767px) {
+      text-align: center;
     }
   }
   .xs\:flex-col {
     @media screen and (max-width: 479px) {
       flex-direction: column;
     }
+  }
+  .xs\:text-md {
+    @media screen and (max-width: 479px) {
+      font-size: 18px;
+      line-height: var(--tw-leading, 22px);
+    }
+  }
+}
+@layer base {
+  body {
+    font-size: 16px;
+    line-height: var(--tw-leading, 20px);
+  }
+  h1 {
+    font-size: 82px;
+    line-height: var(--tw-leading, 100px);
+    @media screen and (max-width: 767px) {
+      font-size: 40px;
+      line-height: var(--tw-leading, 49px);
+    }
+  }
+  h2 {
+    font-size: 40px;
+    line-height: var(--tw-leading, 49px);
+    @media screen and (max-width: 479px) {
+      font-size: 30px;
+      line-height: var(--tw-leading, 36px);
+    }
+  }
+  h3 {
+    font-size: 30px;
+    line-height: var(--tw-leading, 36px);
+  }
+  h4 {
+    font-size: 20px;
+    line-height: var(--tw-leading, 24px);
+  }
+  h5 {
+    font-size: 18px;
+    line-height: var(--tw-leading, 22px);
+  }
+  h6 {
+    font-size: 14px;
+    line-height: var(--tw-leading, 17px);
+  }
+  h1, h2, h3 {
+    @media screen and (max-width: 479px) {
+      overflow-wrap: break-word;
+    }
+  }
+  h1, h2, h3, h4, h5, h6 {
+    --tw-font-weight: var(--font-weight-semibold);
+    font-weight: var(--font-weight-semibold);
   }
 }
 @layer utilities {
@@ -342,6 +462,17 @@
     }
     @media screen and (max-width: 479px) {
       padding-inline: 12px;
+    }
+  }
+  .text-4xl {
+    @media screen and (max-width: 767px) {
+      font-size: 40px;
+      line-height: var(--tw-leading, 49px);
+    }
+  }
+  .text-4xl, .text-3xl. .text-2xl {
+    @media screen and (max-width: 479px) {
+      overflow-wrap: break-word;
     }
   }
 }
