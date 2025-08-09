@@ -1,4 +1,5 @@
 const gen = (max, step = 4) =>
+	//change the function to gen(4000, 1) if you want divisible by 1
 	Object.fromEntries(
 		Array.from({length: Math.floor(max / step) + 1}, (_, i) => {
 			const n = i * step
@@ -8,14 +9,14 @@ const gen = (max, step = 4) =>
 module.exports = {
 	theme: {
 		extend: {
-			spacing: gen(4000),
-			width: gen(4000),
-			height: gen(4000),
-			minWidth: gen(4000),
-			minHeight: gen(4000),
-			maxWidth: gen(4000),
-			maxHeight: gen(4000),
-			borderRadius: gen(500),
+			spacing: gen(4000, 1),
+			width: gen(4000, 1),
+			height: gen(4000, 1),
+			minWidth: gen(4000, 1),
+			minHeight: gen(4000, 1),
+			maxWidth: gen(4000, 1),
+			maxHeight: gen(4000, 1),
+			borderRadius: gen(500, 1),
 			colors: {
 				black: 'black',
 				white: 'white',
