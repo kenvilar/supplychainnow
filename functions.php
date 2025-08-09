@@ -13,10 +13,6 @@ if (!function_exists('bridge_qode_child_theme_enqueue_scripts')) {
 		wp_dequeue_style('bridge-style-dynamic');
 		wp_deregister_style('bridge-style-dynamic');
 
-		// register new styles
-		wp_register_style('normalize-style', get_stylesheet_directory_uri() . '/assets/css/normalize.min.css');
-		wp_enqueue_style('normalize-style');
-
 		if (is_front_page()) {
 			//splide
 			wp_register_style('splide-style', get_stylesheet_directory_uri() . '/assets/css/splide.min.css');
