@@ -6,7 +6,9 @@
 		<div class="max-w-1252 pt-92 md:pt-0 md:mb-20 w-container">
 			<div class="mb-36">
 				<div class="flex gap-20 justify-between sm:flex-col">
-					<div class="max-w-664 w-full"><h1>The #1 Voice of Supply Chain</h1></div>
+					<div class="max-w-664 w-full">
+						<h1>The #1 Voice of Supply Chain</h1>
+					</div>
 				</div>
 			</div>
 			<div class="flex gap-28 sm:flex-col">
@@ -19,15 +21,21 @@
 								</div>
 							</div>
 							<div class="mb-40">
-								<div class="max-w-348 w-full md:max-w-full"><p class="tracking-1-6">Get expert takes on
-										the industry’s latest topics, via podcast, livestream, or webinar.</p></div>
+								<div class="max-w-348 w-full md:max-w-full">
+									<p class="tracking-1-6">Get expert takes on
+										the industry’s latest topics, via podcast, livestream, or webinar.
+									</p>
+								</div>
 							</div>
-							<div class="flex gap-12 xs:flex-col sm:flex-col flex-wrap"><a href="/on-demand-programming"
-							                                                              class="btn secondary w-inline-block">
+							<div class="flex gap-12 xs:flex-col sm:flex-col flex-wrap">
+								<a href="/on-demand-programming"
+								   class="btn secondary w-inline-block">
 									<div>Listen Now</div>
-								</a><a href="/programs" class="btn secondary-outline w-inline-block">
+								</a>
+								<a href="/programs" class="btn secondary-outline w-inline-block">
 									<div>Subscribe for Updates</div>
-								</a></div>
+								</a>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -40,14 +48,19 @@
 								</div>
 							</div>
 							<div class="mb-40">
-								<div class="max-w-432 w-full md:max-w-full"><p class="tracking-1-6">Reach the right
+								<div class="max-w-432 w-full md:max-w-full">
+									<p class="tracking-1-6">Reach the right
 										audience as a sponsor or campaign partner and generate high-value leads for your
-										brand.</p></div>
+										brand.
+									</p>
+								</div>
 							</div>
-							<div class="flex gap-12 sm:flex-col"><a href="/work-with-us"
-							                                        class="btn primary w-inline-block">
+							<div class="flex gap-12 sm:flex-col">
+								<a href="/work-with-us"
+								   class="btn primary w-inline-block">
 									<div>Learn More About Working with Us</div>
-								</a></div>
+								</a>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -61,49 +74,53 @@
 							<div class="splide__list">
 								<div class="splide__slide">
 									<img
-										src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/68920c07fcd75d4e39c691a6_homepage-slider-1.avif"
+										src="<?php
+										echo get_stylesheet_directory_uri() . '/assets/img/home/homepage-slider-1.avif'; ?>"
 										loading="lazy" alt="homepage-slider-1"
 										class="overflow-hidden image rounded-l-24 md:rounded-24">
 								</div>
 								<div class="splide__slide">
 									<img
-										src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/68920c07e3a635b3519dad2f_homepage-slider-2.avif"
+										src="<?php
+										echo get_stylesheet_directory_uri() . '/assets/img/home/homepage-slider-2.avif'; ?>"
 										loading="lazy" alt="homepage-slider-2"
 										class="overflow-hidden image rounded-l-24 md:rounded-24">
 								</div>
 								<div class="splide__slide">
 									<img
-										src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/68920c07d4d5aa0507704dcd_homepage-slider-3.avif"
+										src="<?php
+										echo get_stylesheet_directory_uri() . '/assets/img/home/homepage-slider-3.avif'; ?>"
 										loading="lazy" alt="homepage-slider-3"
 										class="overflow-hidden image rounded-l-24 md:rounded-24">
 								</div>
 								<div class="splide__slide">
 									<img
-										src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/68920c079265a71b20626f01_homepage-slider-4.avif"
+										src="<?php
+										echo get_stylesheet_directory_uri() . '/assets/img/home/homepage-slider-4.avif'; ?>"
 										loading="lazy" alt="homepage-slider-4"
 										class="overflow-hidden image rounded-l-24 md:rounded-24">
 								</div>
-								<div class="splide__slide is-active is-visible" id="splide01-slide05" role="group"
-								     aria-roledescription="slide" aria-label="5 of 7"
-								     style="width: auto; height: 540px; transform: translateX(-400%); transition: opacity 400ms cubic-bezier(0.25, 1, 0.5, 1);">
+								<div class="splide__slide">
 									<img
-										src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/68920c070f50444dbc05a97a_homepage-slider-5.avif"
+										src="<?php
+										echo get_stylesheet_directory_uri() . '/assets/img/home/homepage-slider-5.avif'; ?>"
 										loading="lazy" alt="homepage-slider-5"
-										class="overflow-hidden image rounded-l-24 md:rounded-24"></div>
-								<div class="splide__slide is-next" id="splide01-slide06" role="group"
-								     aria-roledescription="slide" aria-label="6 of 7"
-								     style="width: auto; height: 540px; transform: translateX(-500%); transition: opacity 400ms cubic-bezier(0.25, 1, 0.5, 1);"
-								     aria-hidden="true"><img
-										src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/68920c077c17ef0a583f99b6_homepage-slider-6.avif"
+										class="overflow-hidden image rounded-l-24 md:rounded-24">
+								</div>
+								<div class="splide__slide">
+									<img
+										src="<?php
+										echo get_stylesheet_directory_uri() . '/assets/img/home/homepage-slider-6.avif'; ?>"
 										loading="lazy" alt="homepage-slider-6"
-										class="overflow-hidden image rounded-l-24 md:rounded-24"></div>
-								<div class="splide__slide" id="splide01-slide07" role="group"
-								     aria-roledescription="slide" aria-label="7 of 7"
-								     style="width: auto; height: 540px; transform: translateX(-600%); transition: opacity 400ms cubic-bezier(0.25, 1, 0.5, 1);"
-								     aria-hidden="true"><img
-										src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/68920c0714cb7e2d676ce5e4_homepage-slider-7.avif"
+										class="overflow-hidden image rounded-l-24 md:rounded-24">
+								</div>
+								<div class="splide__slide">
+									<img
+										src="<?php
+										echo get_stylesheet_directory_uri() . '/assets/img/home/homepage-slider-7.avif'; ?>"
 										loading="lazy" alt="homepage-slider-7"
-										class="overflow-hidden image rounded-l-24 md:rounded-24"></div>
+										class="overflow-hidden image rounded-l-24 md:rounded-24">
+								</div>
 							</div>
 						</div>
 					</div>
@@ -129,8 +146,8 @@
 									autoplay: true,
 									pauseOnHover: false,
 									/*autoScroll: {
-																									speed: 1,
-																							},*/
+										speed: 1,
+									},*/
 									intersection: {
 										inView: {
 											autoplay: true,
@@ -156,6 +173,10 @@
 					</script>
 				</div>
 			</div>
+		</div>
+		<div class="absolute absolute--l z--2">
+			<img src="<?php
+			echo get_stylesheet_directory_uri() . '/assets/img/grid/hero-home-grid.avif'; ?>" alt="hero home grid"/>
 		</div>
 	</div>
 </section>

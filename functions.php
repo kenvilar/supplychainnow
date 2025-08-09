@@ -13,8 +13,8 @@ if (!function_exists('bridge_qode_child_theme_enqueue_scripts')) {
 		wp_dequeue_style('bridge-style-dynamic');
 		wp_deregister_style('bridge-style-dynamic');
 
+		//splide style
 		if (is_front_page()) {
-			//splide
 			wp_register_style('splide-style', get_stylesheet_directory_uri() . '/assets/css/splide.min.css');
 			wp_enqueue_style('splide-style');
 		}
@@ -29,10 +29,19 @@ if (!function_exists('bridge_qode_child_theme_enqueue_scripts')) {
 	function supplyChainNow()
 	{
 		if (is_front_page()) {
-			//splide
+			//splide script
 			wp_enqueue_script(
 				'splide-script',
-				'https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js',
+				get_stylesheet_directory_uri() . '/assets/js/splide.min.js',
+				[],
+				false,
+				true // load in footer
+			);
+
+			//splide auto scroll extension
+			wp_enqueue_script(
+				'splide-extension-auto-scroll',
+				get_stylesheet_directory_uri() . '/assets/js/splide-extension-auto-scroll.min.js',
 				[],
 				false,
 				true // load in footer

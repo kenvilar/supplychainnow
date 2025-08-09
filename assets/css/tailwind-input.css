@@ -1,6 +1,9 @@
 @import "tailwindcss";
 @theme {
 	--breakpoint-*: initial;
+	--font-family---primary: Montserrat, Arial, sans-serif;
+	--font-family---secondary: Roboto, Arial, sans-serif;
+	--font-family---alternate: Robotoserif, Arial, sans-serif;
 }
 @custom-variant lg (@media screen and (max-width: 1279px));
 @custom-variant md (@media screen and (max-width: 991px));
@@ -10,8 +13,8 @@
 /* Custom base */
 @layer base {
 	body {
-		@apply text-reg font-normal;
-		font-family: Montserrat, Arial, sans-serif;
+		@apply text-reg font-normal text-textcolor;
+		font-family: var(--font-family---primary);
 	}
 	h1 {
 		@apply text-4xl sm:text-3xl;
@@ -40,6 +43,80 @@
 }
 /* Custom utilities */
 @layer utilities {
+	/*text color*/
+	.text--black, .hover-text--black:hover {
+		@apply text-black;
+	}
+	.text--white, .hover-text--white:hover {
+		@apply text-white;
+	}
+	.text--dev, .hover-text--dev:hover {
+		@apply text-dev;
+	}
+	.text--primary, .hover-text--primary:hover {
+		@apply text-primary;
+	}
+	.text--secondary, .hover-text--secondary:hover {
+		@apply text-secondary;
+	}
+	.text--tertiary, .hover-text--tertiary:hover {
+		@apply text-tertiary;
+	}
+	.text--expressorange, .hover-text--expressorange:hover {
+		@apply text-expressorange;
+	}
+	.text--freightblue, .hover-text--freightblue:hover {
+		@apply text-freightblue;
+	}
+	.text--textcolor, .hover-text--textcolor:hover {
+		@apply text-textcolor;
+	}
+	.text--cargogrey, .hover-text--cargogrey:hover {
+		@apply text-cargogrey;
+	}
+	.text--brightgray, .hover-text--brightgray:hover {
+		@apply text-brightgray;
+	}
+	.text--lightgrey, .hover-text--lightgrey:hover {
+		@apply text-lightgrey;
+	}
+	/*bg color*/
+	.bg--black, .hover-bg--black:hover {
+		@apply bg-black;
+	}
+	.bg--white, .hover-bg--white:hover {
+		@apply bg-white;
+	}
+	.bg--dev, .hover-bg--dev:hover {
+		@apply bg-dev;
+	}
+	.bg--primary, .hover-bg--primary:hover {
+		@apply bg-primary;
+	}
+	.bg--secondary, .hover-bg--secondary:hover {
+		@apply bg-secondary;
+	}
+	.bg--tertiary, .hover-bg--tertiary:hover {
+		@apply bg-tertiary;
+	}
+	.bg--expressorange, .hover-bg--expressorange:hover {
+		@apply bg-expressorange;
+	}
+	.bg--freightblue, .hover-bg--freightblue:hover {
+		@apply bg-freightblue;
+	}
+	.bg--textcolor, .hover-bg--textcolor:hover {
+		@apply bg-textcolor;
+	}
+	.bg--cargogrey, .hover-bg--cargogrey:hover {
+		@apply bg-cargogrey;
+	}
+	.bg--brightgray, .hover-bg--brightgray:hover {
+		@apply bg-brightgray;
+	}
+	.bg--lightgrey, .hover-bg--lightgrey:hover {
+		@apply bg-lightgrey;
+	}
 	.site-padding {
 		@apply px-[40px] md:px-[32px] sm:px-[20px] xs:px-[12px];
 	}

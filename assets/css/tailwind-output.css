@@ -7,13 +7,20 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --font-weight-thin: 100;
+    --font-weight-extralight: 200;
+    --font-weight-light: 300;
     --font-weight-normal: 400;
     --font-weight-medium: 500;
     --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --font-weight-extrabold: 800;
+    --font-weight-black: 900;
     --default-transition-duration: 150ms;
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
+    --font-family---primary: Montserrat, Arial, sans-serif;
   }
 }
 @layer base {
@@ -195,11 +202,17 @@
   .hidden {
     display: none;
   }
+  .h-40 {
+    height: 40px;
+  }
   .h-540 {
     height: 540px;
   }
   .h-full {
     height: 100%;
+  }
+  .w-40 {
+    width: 40px;
   }
   .w-\[50\%\] {
     width: 50%;
@@ -237,6 +250,9 @@
   .grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+  .flex-col {
+    flex-direction: column;
+  }
   .flex-wrap {
     flex-wrap: wrap;
   }
@@ -248,6 +264,12 @@
   }
   .justify-end {
     justify-content: flex-end;
+  }
+  .gap-4 {
+    gap: 4px;
+  }
+  .gap-8 {
+    gap: 8px;
   }
   .gap-12 {
     gap: 12px;
@@ -264,12 +286,28 @@
   .overflow-hidden {
     overflow: hidden;
   }
+  .rounded-4 {
+    border-radius: 4px;
+  }
   .rounded-l-24 {
     border-top-left-radius: 24px;
     border-bottom-left-radius: 24px;
   }
+  .border {
+    border-style: var(--tw-border-style);
+    border-width: 1px;
+  }
+  .bg-clip-text {
+    background-clip: text;
+  }
+  .p-12 {
+    padding: 12px;
+  }
   .px-12 {
     padding-inline: 12px;
+  }
+  .py-48 {
+    padding-block: 48px;
   }
   .py-60 {
     padding-block: 60px;
@@ -339,9 +377,41 @@
     font-size: 12px;
     line-height: var(--tw-leading, 14px);
   }
+  .font-black {
+    --tw-font-weight: var(--font-weight-black);
+    font-weight: var(--font-weight-black);
+  }
+  .font-bold {
+    --tw-font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-bold);
+  }
+  .font-extrabold {
+    --tw-font-weight: var(--font-weight-extrabold);
+    font-weight: var(--font-weight-extrabold);
+  }
+  .font-extralight {
+    --tw-font-weight: var(--font-weight-extralight);
+    font-weight: var(--font-weight-extralight);
+  }
+  .font-light {
+    --tw-font-weight: var(--font-weight-light);
+    font-weight: var(--font-weight-light);
+  }
   .font-medium {
     --tw-font-weight: var(--font-weight-medium);
     font-weight: var(--font-weight-medium);
+  }
+  .font-normal {
+    --tw-font-weight: var(--font-weight-normal);
+    font-weight: var(--font-weight-normal);
+  }
+  .font-semibold {
+    --tw-font-weight: var(--font-weight-semibold);
+    font-weight: var(--font-weight-semibold);
+  }
+  .font-thin {
+    --tw-font-weight: var(--font-weight-thin);
+    font-weight: var(--font-weight-thin);
   }
   .transition {
     transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, visibility, content-visibility, overlay, pointer-events;
@@ -411,7 +481,8 @@
     line-height: var(--tw-leading, 20px);
     --tw-font-weight: var(--font-weight-normal);
     font-weight: var(--font-weight-normal);
-    font-family: Montserrat, Arial, sans-serif;
+    color: #313f4a;
+    font-family: var(--font-family---primary);
   }
   h1 {
     font-size: 82px;
@@ -456,6 +527,78 @@
   }
 }
 @layer utilities {
+  .text--black, .hover-text--black:hover {
+    color: black;
+  }
+  .text--white, .hover-text--white:hover {
+    color: white;
+  }
+  .text--dev, .hover-text--dev:hover {
+    color: red;
+  }
+  .text--primary, .hover-text--primary:hover {
+    color: #ffab56;
+  }
+  .text--secondary, .hover-text--secondary:hover {
+    color: #4e88b6;
+  }
+  .text--tertiary, .hover-text--tertiary:hover {
+    color: #849fad;
+  }
+  .text--expressorange, .hover-text--expressorange:hover {
+    color: #ffab56;
+  }
+  .text--freightblue, .hover-text--freightblue:hover {
+    color: #4e88b6;
+  }
+  .text--textcolor, .hover-text--textcolor:hover {
+    color: #313f4a;
+  }
+  .text--cargogrey, .hover-text--cargogrey:hover {
+    color: #313f4a;
+  }
+  .text--brightgray, .hover-text--brightgray:hover {
+    color: #efefef;
+  }
+  .text--lightgrey, .hover-text--lightgrey:hover {
+    color: lightgrey;
+  }
+  .bg--black, .hover-bg--black:hover {
+    background-color: black;
+  }
+  .bg--white, .hover-bg--white:hover {
+    background-color: white;
+  }
+  .bg--dev, .hover-bg--dev:hover {
+    background-color: red;
+  }
+  .bg--primary, .hover-bg--primary:hover {
+    background-color: #ffab56;
+  }
+  .bg--secondary, .hover-bg--secondary:hover {
+    background-color: #4e88b6;
+  }
+  .bg--tertiary, .hover-bg--tertiary:hover {
+    background-color: #849fad;
+  }
+  .bg--expressorange, .hover-bg--expressorange:hover {
+    background-color: #ffab56;
+  }
+  .bg--freightblue, .hover-bg--freightblue:hover {
+    background-color: #4e88b6;
+  }
+  .bg--textcolor, .hover-bg--textcolor:hover {
+    background-color: #313f4a;
+  }
+  .bg--cargogrey, .hover-bg--cargogrey:hover {
+    background-color: #313f4a;
+  }
+  .bg--brightgray, .hover-bg--brightgray:hover {
+    background-color: #efefef;
+  }
+  .bg--lightgrey, .hover-bg--lightgrey:hover {
+    background-color: lightgrey;
+  }
   .site-padding {
     padding-inline: 40px;
     @media screen and (max-width: 991px) {
@@ -500,6 +643,11 @@
   syntax: "*";
   inherits: false;
 }
+@property --tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
 @property --tw-font-weight {
   syntax: "*";
   inherits: false;
@@ -512,6 +660,7 @@
       --tw-rotate-z: initial;
       --tw-skew-x: initial;
       --tw-skew-y: initial;
+      --tw-border-style: solid;
       --tw-font-weight: initial;
     }
   }
