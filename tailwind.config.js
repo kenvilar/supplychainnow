@@ -1,3 +1,5 @@
+const plugin = require('tailwindcss/plugin')
+
 const gen = (max, step = 4) =>
 	//change the function to gen(4000, 1) if you want divisible by 1
 	Object.fromEntries(
@@ -17,6 +19,7 @@ module.exports = {
 			maxWidth: gen(4000, 1),
 			maxHeight: gen(4000, 1),
 			borderRadius: gen(500, 1),
+			lineHeight: gen(100, 1),
 			colors: {
 				black: 'black',
 				white: 'white',
@@ -51,4 +54,16 @@ module.exports = {
 			'45': ['45px', {lineHeight: '55px'}],
 		},
 	},
+	plugins: [
+		plugin(function ({matchUtilities, theme}) {
+			matchUtilities(
+				{
+					lh: (value) => ({
+						lineHeight: value,
+					}),
+				},
+				{values: theme('lineHeight')}
+			)
+		}),
+	],
 }

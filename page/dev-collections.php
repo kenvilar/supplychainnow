@@ -7,10 +7,11 @@ get_header();
 $pageId = get_the_ID();
 ?>
 	<section class="section">
+		<h1 class="lh-22">Collections Collections Collections Collections Collections Collections Collections Collections Collections</h1>
 		<div class="site-padding sm:py-60">
 			<div class="w-layout-blockcontainer max-w-1252 w-container">
-				<div role="list" class="flex justify-center gap-28 sm:flex-col">
-					<a role="listitem" class="relative w-full group w-dyn-item">
+				<div class="flex justify-center gap-28 sm:flex-col">
+					<a href="" class="relative w-full group w-dyn-item">
 						<div class="relative flex flex-col gap-20 h-full">
 							<div class="w-full h-full">
 								<div class="mb-28">
@@ -86,7 +87,7 @@ $pageId = get_the_ID();
 							</div>
 						</div>
 					</a>
-					<div role="listitem" class="relative w-full group w-dyn-item">
+					<a href="" class="relative w-full group w-dyn-item">
 						<div class="relative flex flex-col gap-20 h-full">
 							<div class="w-full h-full">
 								<div class="mb-28">
@@ -162,8 +163,8 @@ $pageId = get_the_ID();
 							</div>
 						</div>
 						<a href="#" class="absolute absolute--full w-inline-block"></a>
-					</div>
-					<div role="listitem" class="relative w-full group w-dyn-item">
+					</a>
+					<a href="" class="relative w-full group w-dyn-item">
 						<div class="relative flex flex-col gap-20 h-full">
 							<div class="w-full h-full">
 								<div class="mb-28">
@@ -239,11 +240,11 @@ $pageId = get_the_ID();
 							</div>
 						</div>
 						<a href="#" class="absolute absolute--full w-inline-block"></a>
-					</div>
+					</a>
 				</div>
 				<div class="w-full w-dyn-list">
-					<div role="list" class="flex justify-center gap-28 sm:flex-col w-dyn-items">
-						<div role="listitem" class="relative w-full group w-dyn-item">
+					<div class="flex justify-center gap-28 sm:flex-col w-dyn-items">
+						<div class="relative w-full group w-dyn-item">
 							<div class="relative flex flex-col gap-20 h-full">
 								<div class="w-full h-full">
 									<div class="mb-28">
@@ -252,8 +253,8 @@ $pageId = get_the_ID();
 												src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/68920c07fcd75d4e39c691a6_homepage-slider-1.avif"
 												loading="lazy" alt="" class="image relative opacity-40">
 											<div class="w-dyn-list">
-												<div role="list" class="w-dyn-items">
-													<div role="listitem" class="w-dyn-item">
+												<div class="w-dyn-items">
+													<div class="w-dyn-item">
 														<div class="absolute absolute--tl p-24">
 															<div class="rounded-full py-4 px-8 bg-white">
 																<div class="font-semibold text-2xs uppercase lh-full">LOREM</div>
@@ -286,7 +287,7 @@ $pageId = get_the_ID();
 							</div>
 							<a href="#" class="absolute absolute--full w-inline-block"></a>
 						</div>
-						<div role="listitem" class="relative w-full group w-dyn-item">
+						<div class="relative w-full group w-dyn-item">
 							<div class="relative flex flex-col gap-20 h-full">
 								<div class="w-full h-full">
 									<div class="mb-28">
@@ -295,8 +296,8 @@ $pageId = get_the_ID();
 												src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/68920c07fcd75d4e39c691a6_homepage-slider-1.avif"
 												loading="lazy" alt="" class="image relative opacity-40">
 											<div class="w-dyn-list">
-												<div role="list" class="w-dyn-items">
-													<div role="listitem" class="w-dyn-item">
+												<div class="w-dyn-items">
+													<div class="w-dyn-item">
 														<div class="absolute absolute--tl p-24">
 															<div class="rounded-full py-4 px-8 bg-white">
 																<div class="font-semibold text-2xs uppercase lh-full">LOREM</div>
@@ -329,7 +330,7 @@ $pageId = get_the_ID();
 							</div>
 							<a href="#" class="absolute absolute--full w-inline-block"></a>
 						</div>
-						<div role="listitem" class="relative w-full group w-dyn-item">
+						<div class="relative w-full group w-dyn-item">
 							<div class="relative flex flex-col gap-20 h-full">
 								<div class="w-full h-full">
 									<div class="mb-28">
@@ -338,8 +339,8 @@ $pageId = get_the_ID();
 												src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/68920c07fcd75d4e39c691a6_homepage-slider-1.avif"
 												loading="lazy" alt="" class="image relative opacity-40">
 											<div class="w-dyn-list">
-												<div role="list" class="w-dyn-items">
-													<div role="listitem" class="w-dyn-item">
+												<div class="w-dyn-items">
+													<div class="w-dyn-item">
 														<div class="absolute absolute--tl p-24">
 															<div class="rounded-full py-4 px-8 bg-white">
 																<div class="font-semibold text-2xs uppercase lh-full">LOREM</div>

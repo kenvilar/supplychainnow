@@ -52,6 +52,12 @@
 	.text-4xl, .text-3xl. .text-2xl {
 		@apply xs:wrap-break-word;
 	}
+	.lh-full {
+		line-height: 100%;
+	}
+	.lh-normal {
+		line-height: normal;
+	}
 }
 /* Custom Styles */
 /*text color*/
