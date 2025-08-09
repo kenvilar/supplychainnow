@@ -36,7 +36,6 @@ $pageId = get_the_ID();
 					<div class="text-2xl">2xl lorem ipsum</div>
 					<div class="text-3xl">3xl lorem ipsum</div>
 					<div class="text-4xl">4xl lorem ipsum</div>
-
 					<div class="text-22">22px lorem ipsum</div>
 					<div class="text-36">36px lorem ipsum</div>
 					<div class="text-37">37px lorem ipsum</div>
@@ -285,39 +284,66 @@ $pageId = get_the_ID();
 				<div class="p-12 flex flex-col gap-8">
 					<h4 styles-label="">Links &amp; Buttons</h4>
 					<a href="#">Text Link</a>
-					<div><a href="#" class="w-inline-block">
+					<div>
+						<a href="#" class="w-inline-block">
 							<div>Text Element Inside Link Block</div>
-						</a></div>
-					<div><a href="#" class="w-button">Don't Use Native Button</a></div>
-					<div><a href="#" class="p-12 rounded-4 bg--black text--white w-inline-block">
+						</a>
+					</div>
+					<div>
+						<a href="#" class="w-button">Don't Use Native Button</a>
+					</div>
+					<div>
+						<a href="#" class="p-12 rounded-4 bg--black text--white w-inline-block">
 							<div>Sample Custom Button</div>
-						</a></div>
-					<div class="flex flex-wrap items-center gap-4"><a href="#" class="btn w-inline-block">
+						</a>
+					</div>
+					<div class="flex flex-wrap items-center gap-4">
+						<a href="#" class="btn w-inline-block">
 							<div>Sample Custom Button</div>
-						</a><a href="#" class="btn dev w-inline-block">
+						</a>
+						<a href="#" class="btn dev w-inline-block">
 							<div>Sample Custom Button</div>
-						</a><a href="#" class="btn black w-inline-block">
+						</a>
+						<a href="#" class="btn black w-inline-block">
 							<div>Sample Custom Button</div>
-						</a><a href="#" class="btn white w-inline-block">
+						</a>
+						<a href="#" class="btn white w-inline-block">
 							<div>Sample Custom Button</div>
-						</a><a href="#" class="btn link w-inline-block">
+						</a>
+						<a href="#" class="btn link w-inline-block">
 							<div>Sample Custom Button</div>
-						</a><a href="#" class="btn primary w-inline-block">
+						</a>
+						<a href="#" class="btn primary w-inline-block">
 							<div>Learn More About Sponsorship</div>
-						</a><a href="#" class="btn secondary w-inline-block">
+						</a>
+						<a href="#" class="btn secondary w-inline-block">
 							<div>Sample Custom Button</div>
-						</a><a href="#" class="btn tertiary w-inline-block">
+						</a>
+						<a href="#" class="btn tertiary w-inline-block">
 							<div>Sample Custom Button</div>
-						</a><a href="#" class="btn primary-outline w-inline-block">
+						</a>
+						<a href="#" class="btn primary-outline w-inline-block">
 							<div>Sample Custom Button</div>
-						</a><a href="#" class="btn secondary-outline w-inline-block">
+						</a>
+						<a href="#" class="btn secondary-outline w-inline-block">
 							<div>Sample Custom Button</div>
-						</a></div>
+						</a>
+					</div>
+				</div>
+				<div class="p-12 flex flex-col gap-8">
+					<h4 styles-label="">Cards</h4>
+					<div class="flex flex-wrap items-center gap-4">
+						<div class="card">
+							<div class="py-28 px-24"></div>
+						</div>
+						<div class="card v2">
+							<div class="py-28 px-24"></div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
 	</section>
-
 	<!-- Custom code End -->
 <?php
 get_footer(); ?>

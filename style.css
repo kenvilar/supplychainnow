@@ -383,6 +383,10 @@ html.wf-design-mode .accordion .accordion-item-body {
 @media (min-width: 3440px) {
 }
 /*end from webflow*/
+.w-inline-block {
+	max-width: 100%;
+	display: inline-block;
+}
 .page-wrapper {
 	max-width: 100%;
 	margin-left: auto;
@@ -478,6 +482,10 @@ html.wf-design-mode .accordion .accordion-item-body {
 	border: 1px solid #313f4a40;
 	border-radius: 10px;
 	width: 100%;
+}
+.card.v2 {
+	border-color: #313f4a36;
+	border-radius: 8px;
 }
 .font-family-primary {
 	font-family: Montserrat, Arial, sans-serif;

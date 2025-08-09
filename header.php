@@ -70,7 +70,7 @@ echo bridge_qode_get_module_template_part('templates/panel-area', 'panel-area', 
 		//			echo bridge_qode_get_module_template_part('templates/header-appearance/header', 'header', $header_appearance_slug,
 		//				$params);
 		//		}
-		get_template_part('templatesv2/layout/header/header-default');
+		get_template_part('components/layout/header/header-default');
 
 		echo bridge_qode_get_module_template_part('templates/parts/back-to-top', 'header', '', $params);
 		echo bridge_qode_get_module_template_part('templates/popup-menu/popup-menu', 'header', '', $params);
