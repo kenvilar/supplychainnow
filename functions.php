@@ -37,7 +37,9 @@ if (!function_exists('bridge_qode_child_theme_enqueue_scripts')) {
 				false,
 				true // load in footer
 			);
+		}
 
+		if (is_front_page()) {
 			//splide auto scroll extension
 			wp_enqueue_script(
 				'splide-extension-auto-scroll',
