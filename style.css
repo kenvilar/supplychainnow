@@ -105,3 +105,18 @@ a#back_to_top, footer .footer_inner {
 	max-width: none;
 	height: 100%;
 }
+.card {
+	background-color: white;
+	border: 1px solid #313f4a40;
+	border-radius: 10px;
+	width: 100%;
+}
+.font-family-primary {
+	font-family: Montserrat, Arial, sans-serif;
+}
+.font-family-secondary {
+	font-family: Roboto,Arial,sans-serif;
+}
+.font-family-alternate {
+	font-family: Robotoserif,Arial,sans-serif;
+}

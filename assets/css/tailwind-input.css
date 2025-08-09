@@ -10,7 +10,8 @@
 /* Custom base */
 @layer base {
 	body {
-		@apply text-reg;
+		@apply text-reg font-normal;
+		font-family: Montserrat, Arial, sans-serif;
 	}
 	h1 {
 		@apply text-4xl sm:text-3xl;
