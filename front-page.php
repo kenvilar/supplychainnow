@@ -7,4 +7,5 @@ get_header();
 			<?php get_template_part('templatesv2/hero/home'); ?>
 		</div>
 	</div>
-<?php get_footer(); ?>
+<?php
+get_footer(); ?>

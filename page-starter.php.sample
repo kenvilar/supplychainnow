@@ -1,0 +1,17 @@
+<?php
+/*
+ * Template Name: xxxxxxxxxxxxx
+ */
+get_header();
+$pageId= get_the_ID();
+?>
+<section class="section">
+    <div class="site-padding">
+        <div class="max-w-1252">
+        </div>
+    </div>
+</section>
+
+<!-- Custom code End -->
+<?php
+get_footer(); ?>

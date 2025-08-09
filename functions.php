@@ -14,17 +14,38 @@ if (!function_exists('bridge_qode_child_theme_enqueue_scripts')) {
 		wp_deregister_style('bridge-style-dynamic');
 
 		// register new styles
-		wp_enqueue_style('normalize-style', get_stylesheet_directory_uri() . '/assets/css/normalize.min.css');
+		wp_register_style('normalize-style', get_stylesheet_directory_uri() . '/assets/css/normalize.min.css');
 		wp_enqueue_style('normalize-style');
 
-		wp_enqueue_style('tailwind-style', get_stylesheet_directory_uri() . '/assets/css/tailwind-output.css');
+		if (is_front_page()) {
+			//splide
+			wp_register_style('splide-style', get_stylesheet_directory_uri() . '/assets/css/splide.min.css');
+			wp_enqueue_style('splide-style');
+		}
+
+		wp_register_style('tailwind-style', get_stylesheet_directory_uri() . '/assets/css/tailwind-output.css');
 		wp_enqueue_style('tailwind-style');
 
 		wp_register_style('bridge-childstyle', get_stylesheet_directory_uri() . '/style.css');
 		wp_enqueue_style('bridge-childstyle');
 	}
 
+	function supplyChainNow()
+	{
+		if (is_front_page()) {
+			//splide
+			wp_enqueue_script(
+				'splide-script',
+				'https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js',
+				[],
+				false,
+				true // load in footer
+			);
+		}
+	}
+
 	add_action('wp_enqueue_scripts', 'bridge_qode_child_theme_enqueue_scripts', 11);
+	add_action('wp_enqueue_scripts', 'supplyChainNow');
 }
 
 // script to show handle name of styles (we can remove this script) this is only for testing

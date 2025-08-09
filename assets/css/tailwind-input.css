@@ -1,1 +1,15 @@
 @import "tailwindcss";
+@theme {
+	--breakpoint-*: initial;
+}
+@custom-variant lg (@media screen and (max-width: 1279px));
+@custom-variant md (@media screen and (max-width: 991px));
+@custom-variant sm (@media screen and (max-width: 767px));
+@custom-variant xs (@media screen and (max-width: 479px));
+@config "../../tailwind.config.js";
+/* Custom utilities */
+@layer utilities {
+	.site-padding {
+		@apply px-[40px] md:px-[32px] sm:px-[20px] xs:px-[12px];
+	}
+}
