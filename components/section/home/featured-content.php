@@ -72,7 +72,7 @@
 													?>
 													<div class="absolute absolute--tl p-24 flex items-center justify-center">
 														<div class="relative rounded-full overflow-hidden py-4 px-8">
-															<div class="relative font-semibold uppercase text-2xs text--white lh-full z-10">
+															<div class="relative font-semibold uppercase text-2xs text-white lh-full z-10">
 																<?php
 																echo $first->name; ?>
 															</div>

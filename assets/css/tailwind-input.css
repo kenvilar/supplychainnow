@@ -134,3 +134,40 @@
 .bg--lightgrey, .hover-bg--lightgrey:hover {
 	@apply bg-lightgrey;
 }
+/*border color*/
+.border--black, .hover-border--black:hover {
+	@apply border-black;
+}
+.border--white, .hover-border--white:hover {
+	@apply border-white;
+}
+.border--dev, .hover-border--dev:hover {
+	@apply border-dev;
+}
+.border--primary, .hover-border--primary:hover {
+	@apply border-primary;
+}
+.border--secondary, .hover-border--secondary:hover {
+	@apply border-secondary;
+}
+.border--tertiary, .hover-border--tertiary:hover {
+	@apply border-tertiary;
+}
+.border--expressorange, .hover-border--expressorange:hover {
+	@apply border-expressorange;
+}
+.border--freightblue, .hover-border--freightblue:hover {
+	@apply border-freightblue;
+}
+.border--textcolor, .hover-border--textcolor:hover {
+	@apply border-textcolor;
+}
+.border--cargogrey, .hover-border--cargogrey:hover {
+	@apply border-cargogrey;
+}
+.border--brightgray, .hover-border--brightgray:hover {
+	@apply border-brightgray;
+}
+.border--lightgrey, .hover-border--lightgrey:hover {
+	@apply border-lightgrey;
+}
