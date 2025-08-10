@@ -3,7 +3,7 @@
 ?>
 <section class="section">
 	<div class="site-padding sm:py-60 py-88">
-		<div class="w-layout-blockcontainer max-w-1252 w-container">
+		<div class="max-w-1252 w-container">
 			<div class="mb-44">
 				<div class="mb-20">
 					<h2 class="text-center">Featured Content</h2>
@@ -38,11 +38,6 @@
 									'value' => 'livestream-detail.php',
 									'compare' => '=',
 								],
-							],
-							[
-								'key' => 'select_media_type',
-								'value' => '',
-								'compare' => '!=',
 							],
 							[
 								'key' => 'select_media_type',

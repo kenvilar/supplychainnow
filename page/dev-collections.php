@@ -128,11 +128,6 @@ $pageId = get_the_ID();
 						],
 						[
 							'key' => 'select_media_type',
-							'value' => '',
-							'compare' => '!=',
-						],
-						[
-							'key' => 'select_media_type',
 							'value' => ['podcast', 'livestream', 'webinar'],
 							'compare' => 'IN',
 							'type' => 'CHAR',
@@ -440,11 +435,6 @@ $pageId = get_the_ID();
 								'value' => 'livestream-detail.php',
 								'compare' => '=',
 							],
-						],
-						[
-							'key' => 'select_media_type',
-							'value' => '',
-							'compare' => '!=',
 						],
 						[
 							'key' => 'select_media_type',
