@@ -1,5 +1,4 @@
 const plugin = require('tailwindcss/plugin')
-
 const gen = (max, step = 4) =>
 	//change the function to gen(4000, 1) if you want divisible by 1
 	Object.fromEntries(
@@ -8,6 +7,13 @@ const gen = (max, step = 4) =>
 			return [String(n), `${n}px`]
 		})
 	)
+const genDecimal = (max, step = 0.1) =>
+	Object.fromEntries(
+		Array.from({length: Math.floor(max / step) + 1}, (_, i) => {
+			const n = (i * step).toFixed(1).replace('.', '_'); // replace dot with underscore
+			return [n, `${(i * step).toFixed(1)}px`];
+		})
+	);
 module.exports = {
 	theme: {
 		extend: {
@@ -20,6 +26,7 @@ module.exports = {
 			maxHeight: gen(4000, 1),
 			borderRadius: gen(500, 1),
 			lineHeight: gen(100, 1),
+			letterSpacing: genDecimal(100, 0.1),
 			colors: {
 				black: 'black',
 				white: 'white',

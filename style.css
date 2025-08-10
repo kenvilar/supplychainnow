@@ -387,6 +387,9 @@ html.wf-design-mode .accordion .accordion-item-body {
 	max-width: 100%;
 	display: inline-block;
 }
+.w-inline-block.flex {
+	display: flex;
+}
 .page-wrapper {
 	max-width: 100%;
 	margin-left: auto;
@@ -414,7 +417,7 @@ html.wf-design-mode .accordion .accordion-item-body {
 .absolute--r {
 	inset: 0 0 0 auto;
 }
-.absolute.absolute--l {
+.absolute--l {
 	inset: 0 auto 0 0;
 }
 .absolute--b {
@@ -434,6 +437,9 @@ html.wf-design-mode .accordion .accordion-item-body {
 }
 .absolute--br {
 	inset: auto 0 0 auto;
+}
+.absolute--full {
+	inset: 0;
 }
 .z--1 {
 	z-index: -1;
