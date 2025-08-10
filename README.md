@@ -19,3 +19,7 @@ border--
 hover-
 
 -alpha
+
+svg
+
+avif

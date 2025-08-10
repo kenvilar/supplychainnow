@@ -17,6 +17,8 @@ get_header();
 			get_template_part('components/section/home/content-that-converts-to-sales-leads'); ?>
 			<?php
 			get_template_part('components/section/home/upcoming-livestreams-and-webinars'); ?>
+			<?php
+			get_template_part('components/section/home/network-partners'); ?>
 		</div>
 	</div>
 <?php
