@@ -106,6 +106,7 @@ $pageId = get_the_ID();
 					'post_type' => 'page',
 					'post_status' => 'publish',
 					'posts_per_page' => 1,
+					'offset' => 0,
 					'meta_query' => [
 						'relation' => 'AND',
 						[
@@ -416,6 +417,7 @@ $pageId = get_the_ID();
 					'post_type' => 'page',
 					'post_status' => 'publish',
 					'posts_per_page' => 1,
+					'offset' => 0,
 					'meta_query' => [
 						'relation' => 'AND',
 						[
