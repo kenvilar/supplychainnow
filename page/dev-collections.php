@@ -76,9 +76,14 @@ $pageId = get_the_ID();
 									</div>
 								</div>
 							</div>
-							<h3 class="font-semibold">Heading</h3>
+							<h3 class="font-semibold" scn-text-limit="3">
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum
+								tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero
+								vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus
+								tristique posuere.
+							</h3>
 						</div>
-						<div class="w-full tracking-1.6" nw-text-limit="2">
+						<div class="w-full tracking-1.6" scn-text-limit="2">
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum
 								tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero
 								vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus
@@ -254,10 +259,10 @@ $pageId = get_the_ID();
 											</div>
 										</div>
 									</div>
-									<h3 class="font-semibold"><?php
+									<h3 class="font-semibold" scn-text-limit="3"><?php
 										the_title(); ?></h3>
 								</div>
-								<div class="w-full tracking-1.6" nw-text-limit="2">
+								<div class="w-full tracking-1.6" scn-text-limit="2">
 									<?php
 									if (get_the_excerpt()) {
 										the_excerpt();
@@ -361,9 +366,14 @@ $pageId = get_the_ID();
 									</div>
 								</div>
 							</div>
-							<h3 class="font-semibold text-lg">Heading</h3>
+							<h3 class="font-semibold text-lg" scn-text-limit="2">
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum
+								tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero
+								vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus
+								tristique posuere.
+							</h3>
 						</div>
-						<div class="w-full tracking-1.4 text-sm" nw-text-limit="3">
+						<div class="w-full tracking-1.4 text-sm" scn-text-limit="3">
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum
 								tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero
 								vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus
@@ -539,10 +549,10 @@ $pageId = get_the_ID();
 											</div>
 										</div>
 									</div>
-									<h3 class="font-semibold text-lg"><?php
+									<h3 class="font-semibold text-lg" scn-text-limit="2"><?php
 										the_title(); ?></h3>
 								</div>
-								<div class="w-full tracking-1.4 text-sm" nw-text-limit="3">
+								<div class="w-full tracking-1.4 text-sm" scn-text-limit="3">
 									<?php
 									if (get_the_excerpt()) {
 										the_excerpt();

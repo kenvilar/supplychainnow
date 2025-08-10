@@ -175,7 +175,7 @@
 										<h3 class="font-semibold"><?php
 											the_title(); ?></h3>
 									</div>
-									<div class="w-full tracking-1.6" nw-text-limit="2">
+									<div class="w-full tracking-1.6" scn-text-limit="2">
 										<?php
 										if (get_the_excerpt()) {
 											the_excerpt();
