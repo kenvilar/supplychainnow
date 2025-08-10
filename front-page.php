@@ -13,6 +13,8 @@ get_header();
 			get_template_part('components/section/home/connect-your-brand-with-an-active-global-audience'); ?>
 			<?php
 			get_template_part('components/section/home/latest-podcast-episodes'); ?>
+			<?php
+			get_template_part('components/section/home/content-that-converts-to-sales-leads'); ?>
 		</div>
 	</div>
 <?php
