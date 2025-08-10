@@ -414,6 +414,27 @@ html.wf-design-mode .accordion .accordion-item-body {
 	margin-right: auto;
 	display: block;
 }
+.display-block {
+	display: block
+}
+.display-inline {
+	display: inline
+}
+.display-inlineblock {
+	display: inline-block
+}
+.display-none {
+	display: none
+}
+.flex-child-expand {
+	flex: 1
+}
+.flex-child-shrink {
+	flex: 0 auto
+}
+.flex-child-static {
+	flex: none
+}
 .absolute--r {
 	inset: 0 0 0 auto;
 }
