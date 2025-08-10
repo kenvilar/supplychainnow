@@ -26,7 +26,7 @@ if (!function_exists('bridge_qode_child_theme_enqueue_scripts')) {
 		wp_enqueue_style('bridge-childstyle');
 	}
 
-	function supplyChainNow()
+	function supplyChainNowScripts()
 	{
 		if (is_front_page()) {
 			//splide script
@@ -49,10 +49,19 @@ if (!function_exists('bridge_qode_child_theme_enqueue_scripts')) {
 				true // load in footer
 			);
 		}
+
+		//custom script
+		wp_enqueue_script(
+			'supply-chain-now-custom-script',
+			get_stylesheet_directory_uri() . '/assets/js/custom.js',
+			[],
+			false,
+			true // load in footer
+		);
 	}
 
 	add_action('wp_enqueue_scripts', 'bridge_qode_child_theme_enqueue_scripts', 11);
-	add_action('wp_enqueue_scripts', 'supplyChainNow');
+	add_action('wp_enqueue_scripts', 'supplyChainNowScripts');
 }
 
 // script to show handle name of styles (we can remove this script) this is only for testing
