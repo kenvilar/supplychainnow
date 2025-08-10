@@ -8,7 +8,7 @@ $pageId = get_the_ID();
 ?>
 	<section class="section">
 		<div class="site-padding sm:py-60">
-			<div class="w-layout-blockcontainer max-w-1252 w-container">
+			<div class="max-w-1252 w-container">
 				<h1 class="">
 					Collection 1
 				</h1>
@@ -92,7 +92,7 @@ $pageId = get_the_ID();
 	</section>
 	<section class="section">
 		<div class="site-padding sm:py-60">
-			<div class="w-layout-blockcontainer max-w-1252 w-container">
+			<div class="max-w-1252 w-container">
 				<h1 class="">
 					Collection 2
 				</h1>
