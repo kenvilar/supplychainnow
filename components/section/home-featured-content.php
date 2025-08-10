@@ -8,11 +8,9 @@
 				<div class="mb-20">
 					<h2 class="text-center">Featured Content</h2>
 				</div>
-				<div class="w-layout-blockcontainer max-w-136 w-full h-1 relative bg-cargogrey/25 w-container">
-					<div class="absolute absolute--r flex items-center pr-32">
-						<div blinking-dot class="size-8 rounded-8 bg--primary"></div>
-					</div>
-				</div>
+				<?php
+				get_template_part('components/line-with-blinking-dot');
+				?>
 			</div>
 			<div class="mb-48">
 				<div class="flex justify-center gap-28 sm:flex-col">
@@ -42,7 +40,10 @@
 											<div class="overflow-hidden rounded-12 relative h-344 bg-cargogrey">
 												<img
 													src="<?php
-													the_post_thumbnail_url() ?>" loading="lazy" alt="" class="image relative opacity-40">
+													echo get_the_post_thumbnail()
+														? the_post_thumbnail_url()
+														: get_stylesheet_directory_uri() . '/assets/img/misc/default-card-img-thumbnail.avif' ?>"
+													loading="lazy" alt="" class="image relative opacity-40">
 												<?php
 												$terms = get_the_terms(get_the_ID(), 'tags');
 												if (!is_wp_error($terms) && !empty($terms)) {
@@ -57,17 +58,23 @@
 															<?php
 															echo get_field(
 																'select_media_type'
-															) == 'livestream' ? '<div class="absolute absolute--full bg-primary"></div>' : '';
+															) == 'livestream'
+																? '<div class="absolute absolute--full bg-primary"></div>'
+																: '';
 															?>
 															<?php
 															echo get_field(
 																'select_media_type'
-															) == 'podcast' ? '<div class="absolute absolute--full bg-secondary"></div>' : '';
+															) == 'podcast'
+																? '<div class="absolute absolute--full bg-secondary"></div>'
+																: '';
 															?>
 															<?php
 															echo get_field(
 																'select_media_type'
-															) == 'webinar' ? '<div class="absolute absolute--full bg-tertiary"></div>' : '';
+															) == 'webinar'
+																? '<div class="absolute absolute--full bg-tertiary"></div>'
+																: '';
 															?>
 														</div>
 													</div>
