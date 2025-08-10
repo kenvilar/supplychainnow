@@ -17,14 +17,39 @@
 					<?php
 					$q = new WP_Query([
 						'post_type' => 'page',
+						'post_status' => 'publish',
 						'posts_per_page' => 2,
 						'meta_query' => [
+							'relation' => 'AND',
 							[
-								'key' => 'select_media_type',          // your ACF field name
-								'value' => ['podcast', 'livestream', 'webinar'],   // option values, not labels
+								'relation' => 'OR',
+								[
+									'key' => '_wp_page_template',
+									'value' => 'episode-detail.php',
+									'compare' => '=',
+								],
+								[
+									'key' => '_wp_page_template',
+									'value' => 'webinar-detail.php',
+									'compare' => '=',
+								],
+								[
+									'key' => '_wp_page_template',
+									'value' => 'livestream-detail.php',
+									'compare' => '=',
+								],
+							],
+							[
+								'key' => 'select_media_type',
+								'value' => '',
+								'compare' => '!=',
+							],
+							[
+								'key' => 'select_media_type',
+								'value' => ['podcast', 'livestream', 'webinar'],
 								'compare' => 'IN',
 								'type' => 'CHAR',
-							]
+							],
 						],
 						'orderby' => ['menu_order' => 'ASC', 'date' => 'DESC'],
 					]);

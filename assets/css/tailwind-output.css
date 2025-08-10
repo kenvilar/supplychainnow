@@ -21,8 +21,6 @@
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
     --font-family---primary: Montserrat, Arial, sans-serif;
-    --font-family---secondary: Roboto, Arial, sans-serif;
-    --font-family---alternate: Robotoserif, Arial, sans-serif;
   }
 }
 @layer base {
