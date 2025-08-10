@@ -193,6 +193,9 @@
   .container {
     width: 100%;
   }
+  .mx-auto {
+    margin-inline: auto;
+  }
   .mb-12 {
     margin-bottom: 12px;
   }
@@ -252,6 +255,9 @@
   .h-40 {
     height: 40px;
   }
+  .h-220 {
+    height: 220px;
+  }
   .h-222 {
     height: 222px;
   }
@@ -306,8 +312,14 @@
   .max-w-1176 {
     max-width: 1176px;
   }
+  .max-w-1248 {
+    max-width: 1248px;
+  }
   .max-w-1252 {
     max-width: 1252px;
+  }
+  .max-w-1372 {
+    max-width: 1372px;
   }
   .max-w-none {
     max-width: none;
