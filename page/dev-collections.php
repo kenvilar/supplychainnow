@@ -141,9 +141,9 @@ $pageId = get_the_ID();
 					<?php
 					while ($q->have_posts()): $q->the_post(); ?>
 						<a href="<?php
-						the_permalink(); ?>" class="relative w-full group ">
-							<div class="relative flex flex-col gap-20 h-full">
-								<div class="w-full h-full">
+						the_permalink(); ?>" class="relative w-full group">
+							<div class="relative flex flex-col justify-between gap-20 h-full">
+								<div class="w-full">
 									<div class="mb-28">
 										<div class="overflow-hidden rounded-12 relative h-344 bg-cargogrey">
 											<img
@@ -452,9 +452,9 @@ $pageId = get_the_ID();
 					<?php
 					while ($q->have_posts()): $q->the_post(); ?>
 						<a href="<?php
-						the_permalink(); ?>" class="relative w-full group ">
-							<div class="relative flex flex-col gap-20 h-full">
-								<div class="w-full h-full">
+						the_permalink(); ?>" class="relative w-full group">
+							<div class="relative flex flex-col justify-between gap-20 h-full">
+								<div class="w-full">
 									<div class="mb-28">
 										<div class="overflow-hidden rounded-12 relative h-222 bg-cargogrey">
 											<img

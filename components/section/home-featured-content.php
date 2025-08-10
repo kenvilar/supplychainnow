@@ -54,9 +54,9 @@
 						<?php
 						while ($q->have_posts()): $q->the_post(); ?>
 							<a href="<?php
-							the_permalink(); ?>" class="relative w-full group ">
-								<div class="relative flex flex-col gap-20 h-full">
-									<div class="w-full h-full">
+							the_permalink(); ?>" class="relative w-full group">
+								<div class="relative flex flex-col justify-between gap-20 h-full">
+									<div class="w-full">
 										<div class="mb-28">
 											<div class="overflow-hidden rounded-12 relative h-344 bg-cargogrey">
 												<img
@@ -268,11 +268,11 @@
 						<?php
 						while ($q->have_posts()): $q->the_post(); ?>
 							<a href="<?php
-							the_permalink(); ?>" class="relative w-full group ">
-								<div class="relative flex flex-col gap-20 h-full">
-									<div class="w-full h-full">
+							the_permalink(); ?>" class="relative w-full group">
+								<div class="relative flex flex-col justify-between gap-20 h-full">
+									<div class="w-full">
 										<div class="mb-28">
-											<div class="overflow-hidden rounded-12 relative h-344 bg-cargogrey">
+											<div class="overflow-hidden rounded-12 relative h-222 bg-cargogrey">
 												<img
 													src="<?php
 													echo get_the_post_thumbnail()
@@ -407,10 +407,10 @@
 												</div>
 											</div>
 										</div>
-										<h3 class="font-semibold"><?php
+										<h3 class="font-semibold text-lg" scn-text-limit="2"><?php
 											the_title(); ?></h3>
 									</div>
-									<div class="w-full tracking-1.6" scn-text-limit="2">
+									<div class="w-full tracking-1.4 text-sm" scn-text-limit="3">
 										<?php
 										if (get_the_excerpt()) {
 											the_excerpt();
@@ -424,7 +424,10 @@
 													if (get_field('webinar_description')) {
 														the_field('webinar_description');
 													} else {
-														echo '';
+														echo 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum
+								tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero
+								vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus
+								tristique posuere.';
 													}
 												}
 											}
