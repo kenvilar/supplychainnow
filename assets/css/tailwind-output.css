@@ -210,6 +210,9 @@
   .container {
     width: 100%;
   }
+  .m-0 {
+    margin: 0px;
+  }
   .mx-auto {
     margin-inline: auto;
   }
@@ -369,6 +372,9 @@
   .max-w-736 {
     max-width: 736px;
   }
+  .max-w-976 {
+    max-width: 976px;
+  }
   .max-w-1036 {
     max-width: 1036px;
   }
@@ -424,6 +430,9 @@
   .items-end {
     align-items: flex-end;
   }
+  .items-start {
+    align-items: flex-start;
+  }
   .justify-between {
     justify-content: space-between;
   }
@@ -459,6 +468,9 @@
   }
   .gap-40 {
     gap: 40px;
+  }
+  .gap-44 {
+    gap: 44px;
   }
   .gap-52 {
     gap: 52px;
@@ -856,6 +868,20 @@
       }
     }
   }
+  .hover\:text-primary {
+    &:hover {
+      @media (hover: hover) {
+        color: #ffab56;
+      }
+    }
+  }
+  .hover\:text-primary\! {
+    &:hover {
+      @media (hover: hover) {
+        color: #ffab56 !important;
+      }
+    }
+  }
   .md\:relative {
     @media screen and (max-width: 991px) {
       position: relative;
@@ -924,6 +950,11 @@
   .sm\:gap-12 {
     @media screen and (max-width: 767px) {
       gap: 12px;
+    }
+  }
+  .sm\:gap-20 {
+    @media screen and (max-width: 767px) {
+      gap: 20px;
     }
   }
   .sm\:gap-40 {

@@ -142,6 +142,8 @@ if (is_array($bridge_qode_footer_classes_array) && count($bridge_qode_footer_cla
 if ($bridge_qode_display_footer_top || $bridge_qode_display_footer_text) { ?>
     <footer <?php
 	echo bridge_qode_get_inline_attr($bridge_qode_footer_classes, 'class'); ?>>
+	    <?php
+	    get_template_part('components/section/footer/footer'); ?>
         <div class="footer_inner clearfix">
 			<?php
 			$bridge_qode_footer_in_grid = true;
