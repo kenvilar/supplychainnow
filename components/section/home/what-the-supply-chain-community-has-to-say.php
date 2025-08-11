@@ -155,9 +155,9 @@
 											//autoHeight: true,
 											gap: '5%',
 											start: 1,
-											autoScroll: {
+											/*autoScroll: {
 												speed: 1,
-											},
+											},*/
 											intersection: {
 												inView: {
 													autoplay: false,

@@ -328,6 +328,9 @@
   .max-w-512 {
     max-width: 512px;
   }
+  .max-w-564 {
+    max-width: 564px;
+  }
   .max-w-608 {
     max-width: 608px;
   }
@@ -456,6 +459,10 @@
     border-top-left-radius: 24px;
     border-top-right-radius: 24px;
   }
+  .rounded-t-100 {
+    border-top-left-radius: 100px;
+    border-top-right-radius: 100px;
+  }
   .rounded-l-24 {
     border-top-left-radius: 24px;
     border-bottom-left-radius: 24px;
@@ -542,6 +549,9 @@
   }
   .py-88 {
     padding-block: 88px;
+  }
+  .py-144 {
+    padding-block: 144px;
   }
   .pt-48 {
     padding-top: 48px;
@@ -734,6 +744,9 @@
   }
   .opacity-0 {
     opacity: 0%;
+  }
+  .opacity-15 {
+    opacity: 15%;
   }
   .opacity-20 {
     opacity: 20%;

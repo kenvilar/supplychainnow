@@ -21,6 +21,8 @@ get_header();
 			get_template_part('components/section/home/network-partners'); ?>
 			<?php
 			get_template_part('components/section/home/what-the-supply-chain-community-has-to-say'); ?>
+			<?php
+			get_template_part('components/section/home/work-with-us'); ?>
 		</div>
 	</div>
 <?php
