@@ -9,8 +9,8 @@
 					<div class="mb-20">
 						<h2 class="text-center">Network Partners</h2>
 					</div>
-			<?php
-			get_template_part('components/line-with-blinking-dot'); ?>
+					<?php
+					get_template_part('components/line-with-blinking-dot'); ?>
 				</div>
 				<div class="mb-48 sm:mb-20">
 					<div class="flex gap-24 justify-between sm:flex-col">
@@ -19,7 +19,7 @@
 								class="rounded-12 border border-cargogrey/25 bg-white flex justify-center items-center py-28 px-12 h-full group-hover-shadow1">
 								<img
 									src="<?php
-				  echo get_stylesheet_directory_uri() . '/assets/img/home/easypost.svg'; ?>"
+									echo get_stylesheet_directory_uri() . '/assets/img/home/easypost.svg'; ?>"
 									loading="lazy" alt="easypost logo"
 									class="grayscale opacity-20 group-hover:grayscale-0 group-hover:opacity-100 transition-all">
 							</div>
@@ -29,7 +29,7 @@
 								class="rounded-12 border border-cargogrey/25 bg-white flex justify-center items-center py-28 px-12 h-full group-hover-shadow1">
 								<img
 									src="<?php
-				  echo get_stylesheet_directory_uri() . '/assets/img/home/us-bank.svg'; ?>"
+									echo get_stylesheet_directory_uri() . '/assets/img/home/us-bank.svg'; ?>"
 									loading="lazy" alt="us-bank logo"
 									class="grayscale opacity-20 group-hover:grayscale-0 group-hover:opacity-100 transition-all">
 							</div>
@@ -39,7 +39,7 @@
 								class="rounded-12 border border-cargogrey/25 bg-white flex justify-center items-center py-28 px-12 h-full group-hover-shadow1">
 								<img
 									src="<?php
-				  echo get_stylesheet_directory_uri() . '/assets/img/home/enable.svg'; ?>"
+									echo get_stylesheet_directory_uri() . '/assets/img/home/enable.svg'; ?>"
 									loading="lazy" alt="enable logo"
 									class="grayscale opacity-20 group-hover:grayscale-0 group-hover:opacity-100 transition-all">
 							</div>

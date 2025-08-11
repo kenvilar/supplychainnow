@@ -14,318 +14,62 @@
 					<div slider-4="" class="splide">
 						<div class="splide__track">
 							<div class="splide__list">
-								<div class="splide__slide">
-									<div class="card v2">
-										<div class="w-full flex flex-col justify-between gap-52 p-32">
-											<div>
-												<div class="mb-20">
-													<div class="size-40 overflow-hidden rounded-full">
-														<img
-															src="https://cdn.prod.website-files.com/686225582293e0967d2b9375/68623c215774fdb0b7cc6626_image14.jpeg"
-															loading="lazy" alt="" class="image">
+								<?php
+								$q = new WP_Query([
+									'post_type' => 'testimonials',
+									'post_status' => 'publish',
+									'posts_per_page' => -1,
+									'offset' => 0,
+									'orderby' => ['menu_order' => 'ASC', 'date' => 'DESC'],
+								]);
+
+								if ($q->have_posts()): ?>
+									<?php
+									while ($q->have_posts()): $q->the_post(); ?>
+										<div class="splide__slide">
+											<div class="card v2">
+												<div class="w-full flex flex-col justify-between gap-52 p-32">
+													<div>
+														<div class="mb-20">
+															<div class="size-40 overflow-hidden rounded-full">
+																<img
+																	src="<?php
+																	the_post_thumbnail_url(); ?>"
+																	loading="lazy" alt="" class="image">
+															</div>
+														</div>
+														<div class="text-xs tracking-[1.35px] w-richtext">
+															<?php
+															echo esc_html(get_post_meta(get_the_ID(), 'qode_testimonial-text', true));
+															?>
+														</div>
 													</div>
-												</div>
-												<div class="text-xs tracking-[1.35px] w-richtext">
-													<p>"As leaders in supply chain, I would recommend each and every one of you consider using
-														this resource if you’re looking to amplify your message. It’s also a great way to influence
-														your thought leadership to the industry, as well as your personal and company brand. Also,
-														if you’re “microphone-shy”, don’t worry! Scott’s team makes it easy! Can’t say enough good
-														things about Scott Luton and Supply Chain Now! An exceptional initiative with exceptional
-														people to work."
-													</p>
-												</div>
-											</div>
-											<div>
-												<div class="mb-8">
-													<div class="font-family-secondary text-sm tracking-[1.52px]">Jack Allen</div>
-												</div>
-												<div class="uppercase font-family-secondary text-2xs tracking-[1.01px]">
-													<div class="display-inline">Senior Director, Logistics &amp; Manufacturing Solutions</div>
-													<div class="display-inline">&nbsp;•</div>
-													<div class="display-inline">Cisco</div>
+													<div>
+														<div class="mb-8">
+															<div class="font-family-secondary text-sm tracking-[1.52px]">
+																<?php
+																echo get_post_meta(get_the_ID(), 'qode_testimonial-author', true); ?>
+															</div>
+														</div>
+														<!--<div class="uppercase font-family-secondary text-2xs tracking-[1.01px]">
+															<div class="display-inline">Senior Director, Logistics &amp; Manufacturing Solutions
+															</div>
+															<div class="display-inline">&nbsp;•</div>
+															<div class="display-inline">Cisco</div>
+														</div>-->
+													</div>
 												</div>
 											</div>
 										</div>
-									</div>
-								</div>
-								<div role="group" class="splide__slide w-dyn-item splide__slide--clone is-active" id="splide04-clone02"
-								     aria-roledescription="slide" aria-label="2 of 3" style="margin-right: 5%;" aria-hidden="true">
-									<div class="card v2">
-										<div class="w-full flex flex-col justify-between gap-52 p-32">
-											<div>
-												<div class="mb-20">
-													<div class="size-40 overflow-hidden rounded-full">
-														<img
-															src="https://cdn.prod.website-files.com/686225582293e0967d2b9375/68622574bc26fca84c4eb53e_image17.jpeg"
-															loading="lazy" alt="" class="image">
-													</div>
-												</div>
-												<div class="text-xs tracking-[1.35px] w-richtext">
-													<p>"Working with the Supply Chain Now and Buyers Meeting Point teams on the 'Dial P for
-														Procurement' livestream was a great experience all around. Their professional preparation
-														and production make it easy for executives to participate with very little time required.
-														They treated our brand with the same respect as their own and positioned every guest as an
-														influential thought leader in their own right."
-													</p>
-												</div>
-											</div>
-											<div>
-												<div class="mb-8">
-													<div class="font-family-secondary text-sm tracking-[1.52px]">Anthony Payne</div>
-												</div>
-												<div class="uppercase font-family-secondary text-2xs tracking-[1.01px]">
-													<div class="display-inline">CMO</div>
-													<div class="display-inline">&nbsp;•</div>
-													<div class="display-inline">HICX</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div role="group" class="splide__slide w-dyn-item splide__slide--clone" id="splide04-clone03"
-								     aria-roledescription="slide" aria-label="3 of 3" style="margin-right: 5%;" aria-hidden="true">
-									<div class="card v2">
-										<div class="w-full flex flex-col justify-between gap-52 p-32">
-											<div>
-												<div class="mb-20">
-													<div class="size-40 overflow-hidden rounded-full">
-														<img
-															src="https://cdn.prod.website-files.com/686225582293e0967d2b9375/68623c215774fdb0b7cc6603_image11.jpeg"
-															loading="lazy" alt="" class="image">
-													</div>
-												</div>
-												<div class="text-xs tracking-[1.35px] w-richtext">
-													<p>"Working with Supply Chain Now has been a pleasure. Scott is not only very thoughtful,
-														experienced and passionate about logistics, but he is also a very professional and caring
-														person. We have been working with Supply Chain Now for over a year to produce, launch and
-														distribute multiple episodes of our series: Logistics With Purpose and I can confidently say
-														that Vector has won a very creative, committed and resourceful partner."
-													</p>
-												</div>
-											</div>
-											<div>
-												<div class="mb-8">
-													<div class="font-family-secondary text-sm tracking-[1.52px]">Enrique Alvarez</div>
-												</div>
-												<div class="uppercase font-family-secondary text-2xs tracking-[1.01px]">
-													<div class="display-inline">Managing Director</div>
-													<div class="display-inline">&nbsp;•</div>
-													<div class="display-inline">Vector Global Logistics</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div role="group" class="splide__slide w-dyn-item is-prev" id="splide04-slide01"
-								     aria-roledescription="slide" aria-label="1 of 3" style="margin-right: 5%;" aria-hidden="true">
-									<div class="card v2">
-										<div class="w-full flex flex-col justify-between gap-52 p-32">
-											<div>
-												<div class="mb-20">
-													<div class="size-40 overflow-hidden rounded-full">
-														<img
-															src="https://cdn.prod.website-files.com/686225582293e0967d2b9375/68623c215774fdb0b7cc6626_image14.jpeg"
-															loading="lazy" alt="" class="image">
-													</div>
-												</div>
-												<div class="text-xs tracking-[1.35px] w-richtext">
-													<p>"As leaders in supply chain, I would recommend each and every one of you consider using
-														this resource if you’re looking to amplify your message. It’s also a great way to influence
-														your thought leadership to the industry, as well as your personal and company brand. Also,
-														if you’re “microphone-shy”, don’t worry! Scott’s team makes it easy! Can’t say enough good
-														things about Scott Luton and Supply Chain Now! An exceptional initiative with exceptional
-														people to work."
-													</p>
-												</div>
-											</div>
-											<div>
-												<div class="mb-8">
-													<div class="font-family-secondary text-sm tracking-[1.52px]">Jack Allen</div>
-												</div>
-												<div class="uppercase font-family-secondary text-2xs tracking-[1.01px]">
-													<div class="display-inline">Senior Director, Logistics &amp; Manufacturing Solutions</div>
-													<div class="display-inline">&nbsp;•</div>
-													<div class="display-inline">Cisco</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div role="group" class="splide__slide w-dyn-item is-active is-visible" id="splide04-slide02"
-								     aria-roledescription="slide" aria-label="2 of 3" style="margin-right: 5%;">
-									<div class="card v2">
-										<div class="w-full flex flex-col justify-between gap-52 p-32">
-											<div>
-												<div class="mb-20">
-													<div class="size-40 overflow-hidden rounded-full">
-														<img
-															src="https://cdn.prod.website-files.com/686225582293e0967d2b9375/68622574bc26fca84c4eb53e_image17.jpeg"
-															loading="lazy" alt="" class="image">
-													</div>
-												</div>
-												<div class="text-xs tracking-[1.35px] w-richtext">
-													<p>"Working with the Supply Chain Now and Buyers Meeting Point teams on the 'Dial P for
-														Procurement' livestream was a great experience all around. Their professional preparation
-														and production make it easy for executives to participate with very little time required.
-														They treated our brand with the same respect as their own and positioned every guest as an
-														influential thought leader in their own right."
-													</p>
-												</div>
-											</div>
-											<div>
-												<div class="mb-8">
-													<div class="font-family-secondary text-sm tracking-[1.52px]">Anthony Payne</div>
-												</div>
-												<div class="uppercase font-family-secondary text-2xs tracking-[1.01px]">
-													<div class="display-inline">CMO</div>
-													<div class="display-inline">&nbsp;•</div>
-													<div class="display-inline">HICX</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div role="group" class="splide__slide w-dyn-item is-visible is-next" id="splide04-slide03"
-								     aria-roledescription="slide" aria-label="3 of 3" style="margin-right: 5%;">
-									<div class="card v2">
-										<div class="w-full flex flex-col justify-between gap-52 p-32">
-											<div>
-												<div class="mb-20">
-													<div class="size-40 overflow-hidden rounded-full">
-														<img
-															src="https://cdn.prod.website-files.com/686225582293e0967d2b9375/68623c215774fdb0b7cc6603_image11.jpeg"
-															loading="lazy" alt="" class="image">
-													</div>
-												</div>
-												<div class="text-xs tracking-[1.35px] w-richtext">
-													<p>"Working with Supply Chain Now has been a pleasure. Scott is not only very thoughtful,
-														experienced and passionate about logistics, but he is also a very professional and caring
-														person. We have been working with Supply Chain Now for over a year to produce, launch and
-														distribute multiple episodes of our series: Logistics With Purpose and I can confidently say
-														that Vector has won a very creative, committed and resourceful partner."
-													</p>
-												</div>
-											</div>
-											<div>
-												<div class="mb-8">
-													<div class="font-family-secondary text-sm tracking-[1.52px]">Enrique Alvarez</div>
-												</div>
-												<div class="uppercase font-family-secondary text-2xs tracking-[1.01px]">
-													<div class="display-inline">Managing Director</div>
-													<div class="display-inline">&nbsp;•</div>
-													<div class="display-inline">Vector Global Logistics</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div role="group" class="splide__slide w-dyn-item splide__slide--clone" id="splide04-clone04"
-								     aria-roledescription="slide" aria-label="1 of 3" style="margin-right: 5%;" aria-hidden="true">
-									<div class="card v2">
-										<div class="w-full flex flex-col justify-between gap-52 p-32">
-											<div>
-												<div class="mb-20">
-													<div class="size-40 overflow-hidden rounded-full">
-														<img
-															src="https://cdn.prod.website-files.com/686225582293e0967d2b9375/68623c215774fdb0b7cc6626_image14.jpeg"
-															loading="lazy" alt="" class="image">
-													</div>
-												</div>
-												<div class="text-xs tracking-[1.35px] w-richtext">
-													<p>"As leaders in supply chain, I would recommend each and every one of you consider using
-														this resource if you’re looking to amplify your message. It’s also a great way to influence
-														your thought leadership to the industry, as well as your personal and company brand. Also,
-														if you’re “microphone-shy”, don’t worry! Scott’s team makes it easy! Can’t say enough good
-														things about Scott Luton and Supply Chain Now! An exceptional initiative with exceptional
-														people to work."
-													</p>
-												</div>
-											</div>
-											<div>
-												<div class="mb-8">
-													<div class="font-family-secondary text-sm tracking-[1.52px]">Jack Allen</div>
-												</div>
-												<div class="uppercase font-family-secondary text-2xs tracking-[1.01px]">
-													<div class="display-inline">Senior Director, Logistics &amp; Manufacturing Solutions</div>
-													<div class="display-inline">&nbsp;•</div>
-													<div class="display-inline">Cisco</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div role="group" class="splide__slide w-dyn-item splide__slide--clone is-active" id="splide04-clone05"
-								     aria-roledescription="slide" aria-label="2 of 3" style="margin-right: 5%;" aria-hidden="true">
-									<div class="card v2">
-										<div class="w-full flex flex-col justify-between gap-52 p-32">
-											<div>
-												<div class="mb-20">
-													<div class="size-40 overflow-hidden rounded-full">
-														<img
-															src="https://cdn.prod.website-files.com/686225582293e0967d2b9375/68622574bc26fca84c4eb53e_image17.jpeg"
-															loading="lazy" alt="" class="image">
-													</div>
-												</div>
-												<div class="text-xs tracking-[1.35px] w-richtext">
-													<p>"Working with the Supply Chain Now and Buyers Meeting Point teams on the 'Dial P for
-														Procurement' livestream was a great experience all around. Their professional preparation
-														and production make it easy for executives to participate with very little time required.
-														They treated our brand with the same respect as their own and positioned every guest as an
-														influential thought leader in their own right."
-													</p>
-												</div>
-											</div>
-											<div>
-												<div class="mb-8">
-													<div class="font-family-secondary text-sm tracking-[1.52px]">Anthony Payne</div>
-												</div>
-												<div class="uppercase font-family-secondary text-2xs tracking-[1.01px]">
-													<div class="display-inline">CMO</div>
-													<div class="display-inline">&nbsp;•</div>
-													<div class="display-inline">HICX</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div role="group" class="splide__slide w-dyn-item splide__slide--clone" id="splide04-clone06"
-								     aria-roledescription="slide" aria-label="3 of 3" style="margin-right: 5%;" aria-hidden="true">
-									<div class="card v2">
-										<div class="w-full flex flex-col justify-between gap-52 p-32">
-											<div>
-												<div class="mb-20">
-													<div class="size-40 overflow-hidden rounded-full">
-														<img
-															src="https://cdn.prod.website-files.com/686225582293e0967d2b9375/68623c215774fdb0b7cc6603_image11.jpeg"
-															loading="lazy" alt="" class="image">
-													</div>
-												</div>
-												<div class="text-xs tracking-[1.35px] w-richtext">
-													<p>"Working with Supply Chain Now has been a pleasure. Scott is not only very thoughtful,
-														experienced and passionate about logistics, but he is also a very professional and caring
-														person. We have been working with Supply Chain Now for over a year to produce, launch and
-														distribute multiple episodes of our series: Logistics With Purpose and I can confidently say
-														that Vector has won a very creative, committed and resourceful partner."
-													</p>
-												</div>
-											</div>
-											<div>
-												<div class="mb-8">
-													<div class="font-family-secondary text-sm tracking-[1.52px]">Enrique Alvarez</div>
-												</div>
-												<div class="uppercase font-family-secondary text-2xs tracking-[1.01px]">
-													<div class="display-inline">Managing Director</div>
-													<div class="display-inline">&nbsp;•</div>
-													<div class="display-inline">Vector Global Logistics</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
+									<?php
+									endwhile;
+									wp_reset_postdata(); ?>
+								<?php
+								endif; ?>
 							</div>
 						</div>
-						<div class="splide__arrows splide__arrows--ltr">
-							<div class="splide__arrow splide__arrow--prev" aria-label="Previous slide" aria-controls="splide04-track">
+						<div class="splide__arrows">
+							<div class="splide__arrow splide__arrow--prev">
 								<div class="flex w-embed">
 									<svg style="background: white;border-radius: 50%;" xmlns="http://www.w3.org/2000/svg" width="42"
 									     height="42" viewBox="0 0 42 42" fill="none">
@@ -338,7 +82,7 @@
 									</svg>
 								</div>
 							</div>
-							<div class="splide__arrow splide__arrow--next" aria-label="Next slide" aria-controls="splide04-track">
+							<div class="splide__arrow splide__arrow--next">
 								<div class="flex w-embed">
 									<svg style="background: white;border-radius: 50%;" xmlns="http://www.w3.org/2000/svg" width="42"
 									     height="42" viewBox="0 0 42 42" fill="none">
@@ -451,12 +195,12 @@
 	</div>
 	<div class="absolute absolute--tr z--1 pt-164 pr-64">
 		<img src="<?php
-	echo get_stylesheet_directory_uri() . '/assets/img/misc/double-ring.avif'; ?>"
+		echo get_stylesheet_directory_uri() . '/assets/img/misc/double-ring.avif'; ?>"
 		     loading="lazy" alt="double ring">
 	</div>
 	<div class="absolute absolute--bl z--1 pb-88 pl-56">
 		<img src="<?php
-	echo get_stylesheet_directory_uri() . '/assets/img/misc/double-ring.avif'; ?>"
+		echo get_stylesheet_directory_uri() . '/assets/img/misc/double-ring.avif'; ?>"
 		     loading="lazy" alt="double ring">
 	</div>
 </section>
