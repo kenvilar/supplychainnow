@@ -137,7 +137,8 @@
 		</div>
 		<div class="absolute absolute--b flex justify-center">
 			<img loading="lazy"
-			     src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/6859f8e32aee4f015c06d420_abstract-wave-pattern.avif"
+			     src="<?php
+			     echo get_stylesheet_directory_uri() . '/assets/img/misc/abstract-wave-pattern.avif'; ?>"
 			     alt="Abstract wave pattern with curved lines in white on a black background" class="max-w-none">
 		</div>
 	</section>

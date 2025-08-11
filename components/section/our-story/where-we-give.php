@@ -31,77 +31,88 @@
 					<div class="card max-w-400 h-180">
 						<div class="flex justify-center items-center h-full p-12">
 							<img
-								src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/6891e7d72b3b7bcff61a7aa8_esf.svg"
+								src="<?php
+								echo get_stylesheet_directory_uri() . '/assets/img/our-story/esf.svg'; ?>"
 								loading="lazy" alt="esf">
 						</div>
 					</div>
 					<div class="card max-w-400 h-180">
 						<div class="flex justify-center items-center h-full p-12">
 							<img
-								src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/6891e7d7d4c221413794831f_tat.svg"
+								src="<?php
+								echo get_stylesheet_directory_uri() . '/assets/img/our-story/tat.svg'; ?>"
 								loading="lazy" alt="tat">
 						</div>
 					</div>
 					<div class="card max-w-400 h-180">
 						<div class="flex justify-center items-center h-full p-12">
 							<img
-								src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/6891e7d79afed457b35dbf74_vets2industry.svg"
+								src="<?php
+								echo get_stylesheet_directory_uri() . '/assets/img/our-story/vets2industry.svg'; ?>"
 								loading="lazy" alt="vets2industry">
 						</div>
 					</div>
 					<div class="card max-w-400 h-180">
 						<div class="flex justify-center items-center h-full p-12">
 							<img
-								src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/6891e7d70182942c971e1c41_MAP%20international.svg"
+								src="<?php
+								echo get_stylesheet_directory_uri() . '/assets/img/our-story/MAP-international.svg'; ?>"
 								loading="lazy" alt="MAP international">
 						</div>
 					</div>
 					<div class="card max-w-400 h-180">
 						<div class="flex justify-center items-center h-full p-12">
 							<img
-								src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/6891e7d75c0b212f72090828_Guam%20Human%20Rights%20Initiative.svg"
+								src="<?php
+								echo get_stylesheet_directory_uri() . '/assets/img/our-story/Guam-Human-Rights-Initiative.svg'; ?>"
 								loading="lazy" alt="Guam Human Rights Initiative">
 						</div>
 					</div>
 					<div class="card max-w-400 h-180">
 						<div class="flex justify-center items-center h-full p-12">
 							<img
-								src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/6891e7d7d63df0d12634b7d1_hope-for-justice.svg"
+								src="<?php
+								echo get_stylesheet_directory_uri() . '/assets/img/our-story/hope-for-justice.svg'; ?>"
 								loading="lazy" alt="hope-for-justice">
 						</div>
 					</div>
 					<div class="card max-w-400 h-180">
 						<div class="flex justify-center items-center h-full p-12">
 							<img
-								src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/6891e7d7739f112512f8d47c_SFA-logo.svg"
+								src="<?php
+								echo get_stylesheet_directory_uri() . '/assets/img/our-story/SFA-logo.svg'; ?>"
 								loading="lazy" alt="SFA-logo">
 						</div>
 					</div>
 					<div class="card max-w-400 h-180">
 						<div class="flex justify-center items-center h-full p-12">
 							<img
-								src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/6891e7d760489b788be829e4_Dave%20Krache%20Foundation.svg"
+								src="<?php
+								echo get_stylesheet_directory_uri() . '/assets/img/our-story/Dave-Krache-Foundation.svg'; ?>"
 								loading="lazy" alt="Dave Krache Foundation">
 						</div>
 					</div>
 					<div class="card max-w-400 h-180">
 						<div class="flex justify-center items-center h-full p-12">
 							<img
-								src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/6891e7d7d4c2214137948337_Books%20for%20Africa.svg"
+								src="<?php
+								echo get_stylesheet_directory_uri() . '/assets/img/our-story/Books-for-Africa.svg'; ?>"
 								loading="lazy" alt="Books for Africa">
 						</div>
 					</div>
 					<div class="card max-w-400 h-180">
 						<div class="flex justify-center items-center h-full p-12">
 							<img
-								src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/6891e7d7492e6cf12034b0cf_VETLANTA.svg"
+								src="<?php
+								echo get_stylesheet_directory_uri() . '/assets/img/our-story/VETLANTA.svg'; ?>"
 								loading="lazy" alt="VETLANTA">
 						</div>
 					</div>
 					<div class="card max-w-400 h-180">
 						<div class="flex justify-center items-center h-full p-12">
 							<img
-								src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/6891e7d76e965d2e8a509f50_Local%20churches%2C%20charities%2C%20and%20more!.svg"
+								src="<?php
+								echo get_stylesheet_directory_uri() . '/assets/img/our-story/Local-churches-charities-and-more.svg'; ?>"
 								loading="lazy" alt="Local churches, charities, and more!">
 						</div>
 					</div>

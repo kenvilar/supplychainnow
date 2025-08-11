@@ -17,14 +17,16 @@
 				</div>
 				<div class="max-w-492 w-full md:max-w-full">
 					<img
-						src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/6869f1ebb53ea4e1a5dd2fc2_behind-the-microphone.avif"
+						src="<?php
+						echo get_stylesheet_directory_uri() . '/assets/img/our-story/behind-the-microphone.avif'; ?>"
 						loading="lazy" alt="behind-the-microphone" class="image">
 				</div>
 			</div>
 		</div>
 	</div>
 	<div class="absolute absolute--full w-full h-full flex items-center justify-center z--1">
-		<img src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/6869f147405fd774ebf946b2_bg-grid.avif"
+		<img src="<?php
+		echo get_stylesheet_directory_uri() . '/assets/img/grid/bg-grid.avif'; ?>"
 		     loading="lazy" alt="bg-grid">
 	</div>
 </section>
