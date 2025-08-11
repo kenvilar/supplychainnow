@@ -337,13 +337,6 @@ p a {
 	background: var(--cargo-grey);
 	opacity: 0.9;
 }
-@media (min-width: 1280px) {
-}
-/*use for desktop navmenu*/
-@media (min-width: 1920px) {
-}
-@media (min-width: 3440px) {
-}
 /*
 end from webflow
 */
@@ -504,4 +497,62 @@ a#back_to_top, footer .footer_inner {
 	font-size: var(--_font-size---10-2xs);
 	font-weight: 400;
 	line-height: normal;
+}
+.awards-pentagon-block {
+	overflow: hidden;
+}
+.awards-pentagon-block:hover {
+	filter: drop-shadow(0px 4.982px 24.908px rgba(49, 63, 74, 0.25));
+}
+/* Tablet */
+@media screen and (max-width: 991px) {
+	.md\:display-block {
+		display: block
+	}
+	.md\:display-inline {
+		display: inline
+	}
+	.md\:display-inlineblock {
+		display: inline-block
+	}
+	.md\:display-none {
+		display: none
+	}
+}
+/* Mobile L */
+@media screen and (max-width: 767px) {
+	.sm\:display-block {
+		display: block
+	}
+	.sm\:display-inline {
+		display: inline
+	}
+	.sm\:display-inlineblock {
+		display: inline-block
+	}
+	.sm\:display-none {
+		display: none
+	}
+}
+/* Mobile */
+@media screen and (max-width: 479px) {
+	.xs\:display-block {
+		display: block
+	}
+	.xs\:display-inline {
+		display: inline
+	}
+	.xs\:display-inlineblock {
+		display: inline-block
+	}
+	.xs\:display-none {
+		display: none
+	}
+}
+@media (min-width: 1280px) {
+}
+/*use for desktop navmenu*/
+@media (min-width: 1920px) {
+}
+@media (min-width: 3440px) {
 }
