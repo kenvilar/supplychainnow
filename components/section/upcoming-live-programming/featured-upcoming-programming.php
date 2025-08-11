@@ -237,7 +237,7 @@
 								wp_reset_postdata(); ?>
 							<?php
 							else:
-								echo 'No upcoming events found.';
+								echo '<p class="w-full text-center">No featured upcoming events found.</p>';
 							endif; ?>
 						</div>
 					</div>

@@ -14,205 +14,242 @@
 			</div>
 			<div class="mb-92 relative">
 				<div class="w-layout-blockcontainer max-w-1252 w-container">
-					<div slider-1="" class="splide splide--slide splide--ltr splide--draggable is-active is-initialized"
-					     id="splide01" role="region" aria-roledescription="carousel">
-						<div class="splide__track w-dyn-list splide__track--slide splide__track--ltr splide__track--draggable"
-						     id="splide01-track" style="padding-left: 0px; padding-right: 0px;" aria-live="polite"
-						     aria-atomic="true">
-							<div role="presentation" class="splide__list w-dyn-items" id="splide01-list"
-							     style="transform: translateX(0px);">
-								<div role="group" class="splide__slide group w-dyn-item is-active is-visible" id="splide01-slide01"
-								     aria-roledescription="slide" aria-label="1 of 2"
-								     style="margin-right: 32px; width: calc(33.3333% - 21.3333px);">
-									<a href="#" class="_w-full flex flex-col gap-20 h-full w-inline-block">
-										<div class="_w-full h-full">
-											<div class="mb-28">
-												<div class="overflow-hidden rounded-12 relative h-220 bg--cargogrey">
-													<img
-														src="https://cdn.prod.website-files.com/686225582293e0967d2b9375/68937ce3e7ccfa3fb32d1ac4_image8.jpeg"
-														loading="lazy" alt="Remote work best practices webinar"
-														class="image relative opacity-40">
-													<div class="absolute absolute--tl p-24">
-														<div class="rounded-full text--white py-4 px-8 text-center relative overflow-hidden">
-															<div class="font-semibold text-2xs uppercase relative z-1">User Experience</div>
-															<div
-																class="font-semibold text-2xs uppercase relative z-1 text--textcolor w-condition-invisible">
-																User Experience
+					<div slider-1="" class="splide">
+						<div class="splide__track">
+							<div class="splide__list">
+								<?php
+								$q = new WP_Query([
+									'post_type' => 'page',
+									'post_status' => 'publish',
+									'posts_per_page' => 20,
+									'offset' => 0,
+									'meta_query' => [
+										'relation' => 'AND',
+										[
+											'relation' => 'OR',
+											/*[
+												'key' => '_wp_page_template',
+												'value' => 'episode-detail.php',
+												'compare' => '=',
+											],
+											[
+												'key' => '_wp_page_template',
+												'value' => 'webinar-detail.php',
+												'compare' => '=',
+											],*/ [
+											'key' => '_wp_page_template',
+											'value' => 'livestream-detail.php',
+											'compare' => '=',
+										],
+										],
+										[
+											'key' => 'select_media_type',
+											'value' => [
+												//'podcast',
+												'livestream',
+												//'webinar'
+											],
+											'compare' => 'IN',
+											'type' => 'CHAR',
+										],
+									],
+									'date_query' => [
+										[
+											'after' => current_time('Y-m-d'),
+											'inclusive' => true, // include today
+										]
+									],
+									'orderby' => ['menu_order' => 'ASC', 'date' => 'DESC'],
+								]);
+
+								if ($q->have_posts()): ?>
+									<?php
+									while ($q->have_posts()): $q->the_post(); ?>
+										<div class="splide__slide">
+											<a href="<?php
+											the_permalink(); ?>" class="relative w-full group">
+												<div class="relative flex flex-col justify-between gap-20 h-full">
+													<div class="w-full">
+														<div class="mb-28">
+															<div class="overflow-hidden rounded-12 relative h-222 bg-cargogrey">
+																<img
+																	src="<?php
+																	echo get_the_post_thumbnail()
+																		? the_post_thumbnail_url()
+																		: get_stylesheet_directory_uri(
+																		) . '/assets/img/misc/default-card-img-thumbnail.avif' ?>"
+																	loading="lazy" alt="" class="image relative opacity-40">
+																<?php
+																$terms = get_the_terms(get_the_ID(), 'tags');
+																if (!is_wp_error($terms) && !empty($terms)) {
+																	$first = array_values($terms)[0];
+																	?>
+																	<div class="absolute absolute--tl p-24 flex items-center justify-center">
+																		<div class="relative rounded-full overflow-hidden py-4 px-8">
+																			<div class="relative font-semibold uppercase text-2xs text--white lh-full z-10">
+																				<?php
+																				echo $first->name; ?>
+																			</div>
+																			<?php
+																			echo get_field(
+																				'select_media_type'
+																			) == 'livestream'
+																				? '<div class="absolute absolute--full bg-primary"></div>'
+																				: '';
+																			?>
+																			<?php
+																			echo get_field(
+																				'select_media_type'
+																			) == 'podcast'
+																				? '<div class="absolute absolute--full bg-secondary"></div>'
+																				: '';
+																			?>
+																			<?php
+																			echo get_field(
+																				'select_media_type'
+																			) == 'webinar'
+																				? '<div class="absolute absolute--full bg-tertiary"></div>'
+																				: '';
+																			?>
+																		</div>
+																	</div>
+																	<?php
+																}
+																?>
+																<div
+																	class="absolute absolute--full flex items-center justify-center translate-y-220 group-hover:translate-y-0 transition-all duration-500">
+																	<?php
+																	if (get_field('select_media_type') == 'livestream') {
+																		?>
+																		<img
+																			src="<?php
+																			echo get_stylesheet_directory_uri(
+																				) . '/assets/img/icons/play-button-livestream.avif'; ?>"
+																			loading="lazy" alt="play-button-livestream">
+																		<?php
+																	}
+																	?>
+																	<?php
+																	if (get_field('select_media_type') == 'podcast') {
+																		?>
+																		<img
+																			src="<?php
+																			echo get_stylesheet_directory_uri(
+																				) . '/assets/img/icons/play-button-podcast.avif'; ?>"
+																			loading="lazy" alt="play-button-podcast">
+																		<?php
+																	}
+																	?>
+																	<?php
+																	if (get_field('select_media_type') == 'webinar') {
+																		?>
+																		<img
+																			src="<?php
+																			echo get_stylesheet_directory_uri(
+																				) . '/assets/img/icons/play-button-webinar.avif'; ?>"
+																			loading="lazy" alt="play-button-webinar">
+																		<?php
+																	}
+																	?>
+																</div>
 															</div>
-															<div class="absolute absolute--full _w-full h-full bg--primary"></div>
-															<div
-																class="absolute absolute--full _w-full h-full bg--white w-condition-invisible"></div>
 														</div>
-													</div>
-													<div
-														class="absolute absolute--full flex items-center justify-center translate-y-220 group-hover-translate-y-0 transition-all duration-500">
-														<img
-															src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688a36f89ae4a406c3dbc9a5_play-bg--primary.avif"
-															loading="lazy" alt="play-bg--primary">
-													</div>
-												</div>
-											</div>
-											<div class="mb-12">
-												<div class="flex items-center gap-32 sm-flex-wrap sm-gap-8">
-													<div class="flex items-center gap-8">
-														<div class="flex w-condition-invisible w-embed">
-															<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-															     fill="none">
-																<circle cx="12" cy="12" r="12" fill="#4E88B6"></circle>
-																<path
-																	d="M8.9 12.025H9.14V16.32H8.9C8.61766 16.32 8.33808 16.2644 8.07723 16.1563C7.81638 16.0483 7.57937 15.8899 7.37972 15.6903C7.18007 15.4906 7.02171 15.2536 6.91366 14.9928C6.80561 14.7319 6.75 14.4523 6.75 14.17C6.75132 13.6006 6.97843 13.0551 7.38149 12.6529C7.78455 12.2508 8.33065 12.025 8.9 12.025Z"
-																	fill="#4E88B6" stroke="white" stroke-width="1.5" stroke-miterlimit="10"></path>
-																<path
-																	d="M14.8651 12.025H15.1051C15.6753 12.025 16.2222 12.2515 16.6254 12.6547C17.0286 13.0579 17.2551 13.6048 17.2551 14.175C17.2551 14.7452 17.0286 15.2921 16.6254 15.6953C16.2222 16.0985 15.6753 16.325 15.1051 16.325H14.8651V12.025Z"
-																	fill="#4E88B6" stroke="white" stroke-width="1.5" stroke-miterlimit="10"></path>
-																<path
-																	d="M7.70508 12.48V11.05C7.70508 9.91044 8.15743 8.81747 8.96275 8.01121C9.76808 7.20494 10.8605 6.75133 12.0001 6.75C13.1396 6.75133 14.2321 7.20494 15.0374 8.01121C15.8427 8.81747 16.2951 9.91044 16.2951 11.05V12.48"
-																	fill="#4E88B6"></path>
-																<path
-																	d="M7.70508 12.48V11.05C7.70508 9.91044 8.15743 8.81747 8.96275 8.01121C9.76808 7.20494 10.8605 6.75133 12.0001 6.75C13.1396 6.75133 14.2321 7.20494 15.0374 8.01121C15.8427 8.81747 16.2951 9.91044 16.2951 11.05V12.48"
-																	stroke="white" stroke-width="1.5" stroke-miterlimit="10"></path>
-															</svg>
-														</div>
-														<div class="flex w-embed">
-															<svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19"
-															     fill="none">
-																<g clip-path="url(#clip0_2036_37)">
-																	<circle cx="9.5" cy="9.5" r="9.5" fill="#FFAB56"></circle>
-																	<circle cx="9.5" cy="9.5" r="4.5" fill="white"></circle>
-																</g>
-																<defs>
-																	<clipPath id="clip0_2036_37">
-																		<rect width="19" height="19" fill="white"></rect>
-																	</clipPath>
-																</defs>
-															</svg>
-														</div>
-														<div class="flex w-condition-invisible w-embed">
-															<svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19"
-															     fill="none">
-																<circle cx="9.5" cy="9.5" r="9.5" fill="white"></circle>
-																<path
-																	d="M9.65984 5.34375H9.65552C8.51556 5.34375 7.59143 6.26787 7.59143 7.40784V9.88648C7.59143 11.0264 8.51556 11.9506 9.65552 11.9506H9.65984C10.7998 11.9506 11.7239 11.0264 11.7239 9.88648V7.40784C11.7239 6.26787 10.7998 5.34375 9.65984 5.34375Z"
-																	stroke="#313F4A" stroke-width="1.1875" stroke-miterlimit="10"></path>
-																<path
-																	d="M13.3734 9.87793C13.3746 10.3669 13.2792 10.8513 13.0929 11.3034C12.9066 11.7555 12.6329 12.1663 12.2875 12.5125C11.9422 12.8587 11.5319 13.1333 11.0803 13.3207C10.6286 13.5081 10.1444 13.6045 9.65546 13.6045C9.16649 13.6045 8.68231 13.5081 8.23067 13.3207C7.77902 13.1333 7.36877 12.8587 7.02342 12.5125C6.67806 12.1663 6.40438 11.7555 6.21804 11.3034C6.0317 10.8513 5.93637 10.3669 5.93751 9.87793"
-																	stroke="#313F4A" stroke-width="1.1875" stroke-miterlimit="10"></path>
-																<path d="M9.65564 14.8438V13.6045" stroke="#313F4A" stroke-width="1.1875"
-																      stroke-miterlimit="10"></path>
-															</svg>
-														</div>
-														<div class="font-family-secondary text-xs">Livestream</div>
-													</div>
-													<div class="flex items-center gap-8">
-														<div class="font-family-secondary font-light text-xs">October 20, 2023</div>
-														<div>•</div>
-														<div class="font-family-secondary font-light text-xs">1.5 hours</div>
-													</div>
-												</div>
-											</div>
-											<h3 class="font-semibold">Webinar on Remote Work Best Practices</h3>
-										</div>
-										<div class="_w-full">
-											<p>Join our webinar to discover best practices for remote work.</p>
-										</div>
-									</a>
-								</div>
-								<div role="group" class="splide__slide group w-dyn-item is-visible is-next" id="splide01-slide02"
-								     aria-roledescription="slide" aria-label="2 of 2"
-								     style="margin-right: 32px; width: calc(33.3333% - 21.3333px);">
-									<a href="#" class="_w-full flex flex-col gap-20 h-full w-inline-block">
-										<div class="_w-full h-full">
-											<div class="mb-28">
-												<div class="overflow-hidden rounded-12 relative h-220 bg--cargogrey">
-													<img
-														src="https://cdn.prod.website-files.com/686225582293e0967d2b9375/68937a163918d6a1775ef73b_image6.jpeg"
-														loading="lazy" alt="Sustainable living podcast episode"
-														class="image relative opacity-40">
-													<div class="absolute absolute--tl p-24">
-														<div class="rounded-full text--white py-4 px-8 text-center relative overflow-hidden">
-															<div class="font-semibold text-2xs uppercase relative z-1">Content Management</div>
-															<div
-																class="font-semibold text-2xs uppercase relative z-1 text--textcolor w-condition-invisible">
-																Content Management
+														<div class="mb-12">
+															<div class="flex items-center gap-32 sm:flex-wrap sm:gap-8">
+																<div class="flex items-center gap-8">
+																	<div class="flex items-center">
+																		<?php
+																		if (get_field('select_media_type') == 'livestream') {
+																			?>
+																			<img
+																				src="<?php
+																				echo get_stylesheet_directory_uri(
+																					) . '/assets/img/icons/livestream-card-icon.svg'; ?>"
+																				loading="lazy" alt="livestream-music">
+																			<?php
+																		}
+																		?>
+																		<?php
+																		if (get_field('select_media_type') == 'podcast') {
+																			?>
+																			<img
+																				class="size-24"
+																				src="<?php
+																				echo get_stylesheet_directory_uri(
+																					) . '/assets/img/icons/podcast-card-icon.png'; ?>"
+																				loading="lazy" alt="podcast-blue-microphone">
+																			<?php
+																		}
+																		?>
+																		<?php
+																		if (get_field('select_media_type') == 'webinar') {
+																			?>
+																			<img
+																				class="size-24"
+																				src="<?php
+																				echo get_stylesheet_directory_uri(
+																					) . '/assets/img/icons/webinar-card-icon.png'; ?>"
+																				loading="lazy" alt="webinar-person">
+																			<?php
+																		}
+																		?>
+																	</div>
+																	<?php
+																	if (get_field('select_media_type')) {
+																		?>
+																		<div class="font-family-secondary text-sm capitalize">
+																			<?php
+																			echo the_field('select_media_type'); ?>
+																		</div>
+																		<?php
+																	}
+																	?>
+																</div>
+																<div class="flex items-center gap-8 text-sm font-light font-family-secondary">
+																	<div><?php
+																		the_date(); ?></div>
+																	<!--<div>•</div>
+																	<div>6 min 25 sec</div>-->
+																</div>
 															</div>
-															<div class="absolute absolute--full _w-full h-full bg--primary"></div>
-															<div
-																class="absolute absolute--full _w-full h-full bg--white w-condition-invisible"></div>
 														</div>
+														<h3 class="font-semibold text-lg" scn-text-limit="2"><?php
+															the_title(); ?></h3>
 													</div>
-													<div
-														class="absolute absolute--full flex items-center justify-center translate-y-220 group-hover-translate-y-0 transition-all duration-500">
-														<img
-															src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688a36f89ae4a406c3dbc9a5_play-bg--primary.avif"
-															loading="lazy" alt="play-bg--primary">
-													</div>
-												</div>
-											</div>
-											<div class="mb-12">
-												<div class="flex items-center gap-32 sm-flex-wrap sm-gap-8">
-													<div class="flex items-center gap-8">
-														<div class="flex w-condition-invisible w-embed">
-															<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-															     fill="none">
-																<circle cx="12" cy="12" r="12" fill="#4E88B6"></circle>
-																<path
-																	d="M8.9 12.025H9.14V16.32H8.9C8.61766 16.32 8.33808 16.2644 8.07723 16.1563C7.81638 16.0483 7.57937 15.8899 7.37972 15.6903C7.18007 15.4906 7.02171 15.2536 6.91366 14.9928C6.80561 14.7319 6.75 14.4523 6.75 14.17C6.75132 13.6006 6.97843 13.0551 7.38149 12.6529C7.78455 12.2508 8.33065 12.025 8.9 12.025Z"
-																	fill="#4E88B6" stroke="white" stroke-width="1.5" stroke-miterlimit="10"></path>
-																<path
-																	d="M14.8651 12.025H15.1051C15.6753 12.025 16.2222 12.2515 16.6254 12.6547C17.0286 13.0579 17.2551 13.6048 17.2551 14.175C17.2551 14.7452 17.0286 15.2921 16.6254 15.6953C16.2222 16.0985 15.6753 16.325 15.1051 16.325H14.8651V12.025Z"
-																	fill="#4E88B6" stroke="white" stroke-width="1.5" stroke-miterlimit="10"></path>
-																<path
-																	d="M7.70508 12.48V11.05C7.70508 9.91044 8.15743 8.81747 8.96275 8.01121C9.76808 7.20494 10.8605 6.75133 12.0001 6.75C13.1396 6.75133 14.2321 7.20494 15.0374 8.01121C15.8427 8.81747 16.2951 9.91044 16.2951 11.05V12.48"
-																	fill="#4E88B6"></path>
-																<path
-																	d="M7.70508 12.48V11.05C7.70508 9.91044 8.15743 8.81747 8.96275 8.01121C9.76808 7.20494 10.8605 6.75133 12.0001 6.75C13.1396 6.75133 14.2321 7.20494 15.0374 8.01121C15.8427 8.81747 16.2951 9.91044 16.2951 11.05V12.48"
-																	stroke="white" stroke-width="1.5" stroke-miterlimit="10"></path>
-															</svg>
-														</div>
-														<div class="flex w-embed">
-															<svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19"
-															     fill="none">
-																<g clip-path="url(#clip0_2036_37)">
-																	<circle cx="9.5" cy="9.5" r="9.5" fill="#FFAB56"></circle>
-																	<circle cx="9.5" cy="9.5" r="4.5" fill="white"></circle>
-																</g>
-																<defs>
-																	<clipPath id="clip0_2036_37">
-																		<rect width="19" height="19" fill="white"></rect>
-																	</clipPath>
-																</defs>
-															</svg>
-														</div>
-														<div class="flex w-condition-invisible w-embed">
-															<svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19"
-															     fill="none">
-																<circle cx="9.5" cy="9.5" r="9.5" fill="white"></circle>
-																<path
-																	d="M9.65984 5.34375H9.65552C8.51556 5.34375 7.59143 6.26787 7.59143 7.40784V9.88648C7.59143 11.0264 8.51556 11.9506 9.65552 11.9506H9.65984C10.7998 11.9506 11.7239 11.0264 11.7239 9.88648V7.40784C11.7239 6.26787 10.7998 5.34375 9.65984 5.34375Z"
-																	stroke="#313F4A" stroke-width="1.1875" stroke-miterlimit="10"></path>
-																<path
-																	d="M13.3734 9.87793C13.3746 10.3669 13.2792 10.8513 13.0929 11.3034C12.9066 11.7555 12.6329 12.1663 12.2875 12.5125C11.9422 12.8587 11.5319 13.1333 11.0803 13.3207C10.6286 13.5081 10.1444 13.6045 9.65546 13.6045C9.16649 13.6045 8.68231 13.5081 8.23067 13.3207C7.77902 13.1333 7.36877 12.8587 7.02342 12.5125C6.67806 12.1663 6.40438 11.7555 6.21804 11.3034C6.0317 10.8513 5.93637 10.3669 5.93751 9.87793"
-																	stroke="#313F4A" stroke-width="1.1875" stroke-miterlimit="10"></path>
-																<path d="M9.65564 14.8438V13.6045" stroke="#313F4A" stroke-width="1.1875"
-																      stroke-miterlimit="10"></path>
-															</svg>
-														</div>
-														<div class="font-family-secondary text-xs">Livestream</div>
-													</div>
-													<div class="flex items-center gap-8">
-														<div class="font-family-secondary font-light text-xs">October 4, 2023</div>
-														<div>•</div>
-														<div class="font-family-secondary font-light text-xs">40 minutes</div>
+													<div class="w-full tracking-[1.4px] text-sm" scn-text-limit="3">
+														<?php
+														if (get_the_excerpt()) {
+															the_excerpt();
+														} else {
+															if (get_field('livestream_description')) {
+																the_field('livestream_description');
+															} else {
+																if (get_field('episode_summary')) {
+																	the_field('episode_summary');
+																} else {
+																	if (get_field('webinar_description')) {
+																		the_field('webinar_description');
+																	} else {
+																		echo 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum
+								tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero
+								vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus
+								tristique posuere.';
+																	}
+																}
+															}
+														}
+														?>
 													</div>
 												</div>
-											</div>
-											<h3 class="font-semibold">Sustainable Living Practices</h3>
+											</a>
 										</div>
-										<div class="_w-full">
-											<p>This episode covers practical tips for sustainable living.</p>
-										</div>
-									</a>
-								</div>
+									<?php
+									endwhile;
+									wp_reset_postdata(); ?>
+								<?php
+								else:
+									echo '<p class="w-full text-center">No upcoming livestreams found.</p>';
+								endif; ?>
 							</div>
 						</div>
 						<?php
