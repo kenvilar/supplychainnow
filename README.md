@@ -20,6 +20,6 @@ hover-
 
 -alpha
 
-svg
+.svg
 
-avif
+.avif
