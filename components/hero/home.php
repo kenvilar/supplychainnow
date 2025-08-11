@@ -16,13 +16,13 @@
 					<div class="pt-48 pb-36 px-12">
 						<div class="w-layout-blockcontainer max-w-388 w-full md:max-w-full w-container">
 							<div class="mb-16">
-								<div class="font-family-alternate font-medium text-xl tracking-2-4 xs:text-md">JOIN THE
+								<div class="font-family-alternate font-medium text-xl tracking-[2.4px] xs:text-md">JOIN THE
 									CONVERSATION
 								</div>
 							</div>
 							<div class="mb-40">
 								<div class="max-w-348 w-full md:max-w-full">
-									<p class="tracking-1-6">Get expert takes on
+									<p class="tracking-[1.6px]">Get expert takes on
 										the industry’s latest topics, via podcast, livestream, or webinar.
 									</p>
 								</div>
@@ -43,13 +43,13 @@
 					<div class="pt-48 pb-36 px-12">
 						<div class="w-layout-blockcontainer max-w-432 w-full md:max-w-full w-container">
 							<div class="mb-16">
-								<div class="font-family-alternate font-medium text-xl tracking-2-4 xs:text-md">WORK WITH
+								<div class="font-family-alternate font-medium text-xl tracking-[2.4px] xs:text-md">WORK WITH
 									US
 								</div>
 							</div>
 							<div class="mb-40">
 								<div class="max-w-432 w-full md:max-w-full">
-									<p class="tracking-1-6">Reach the right
+									<p class="tracking-[1.6px]">Reach the right
 										audience as a sponsor or campaign partner and generate high-value leads for your
 										brand.
 									</p>

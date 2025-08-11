@@ -19,6 +19,8 @@ get_header();
 			get_template_part('components/section/home/upcoming-livestreams-and-webinars'); ?>
 			<?php
 			get_template_part('components/section/home/network-partners'); ?>
+			<?php
+			get_template_part('components/section/home/what-the-supply-chain-community-has-to-say'); ?>
 		</div>
 	</div>
 <?php
