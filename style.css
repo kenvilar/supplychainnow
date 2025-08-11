@@ -504,6 +504,21 @@ a#back_to_top, footer .footer_inner {
 .awards-pentagon-block:hover {
 	filter: drop-shadow(0px 4.982px 24.908px rgba(49, 63, 74, 0.25));
 }
+.my-modal {
+	border: 0 none var(--transparent);
+	background-color: var(--white);
+	border-radius: 25px;
+	width: 100%;
+	max-width: 949px;
+	margin: auto;
+	padding: 0;
+	overflow: auto;
+}
+.our-team-paragraph-modal {
+	letter-spacing: 1.6px;
+	position: relative;
+	overflow: hidden;
+}
 /* Tablet */
 @media screen and (max-width: 991px) {
 	.md\:display-block {
