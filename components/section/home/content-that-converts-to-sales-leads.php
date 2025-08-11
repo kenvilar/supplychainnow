@@ -83,12 +83,12 @@
 							<div class="text-center rounded-t-24 overflow-hidden relative px-20 pt-48 pb-112 cursor-pointer">
 								<div class="w-layout-blockcontainer max-w-200 w-full md:max-w-full w-container">
 									<div class="mb-4">
-										<div class="text-36 tracking-3.6 text-secondary">207</div>
+										<div class="text-36 tracking-[3.6px] text-secondary">207</div>
 									</div>
 									<div class="mb-28">
 										<div class="text-md font-semibold">People attended</div>
 									</div>
-									<div class="text-sm tracking-1.4">for a 52% registration-to-attendee conversion rate.</div>
+									<div class="text-sm tracking-[1.4px]">for a 52% registration-to-attendee conversion rate.</div>
 								</div>
 								<div class="absolute absolute--full w-full h-full z--1">
 									<div class="_w-full h-full gradient2 opacity-25 group-hover-gradient5"></div>
@@ -155,12 +155,12 @@
 							<div class="text-center rounded-t-24 overflow-hidden relative px-20 pt-48 pb-148 cursor-pointer">
 								<div class="w-layout-blockcontainer max-w-200 w-full md:max-w-full w-container">
 									<div class="mb-4">
-										<div class="text-36 tracking-3.6 text-secondary">191</div>
+										<div class="text-36 tracking-[3.6px] text-secondary">191</div>
 									</div>
 									<div class="mb-28">
 										<div class="text-md font-semibold">Attendees were net new qualified leads</div>
 									</div>
-									<div class="text-sm tracking-1.4">and passed on to the sales team.</div>
+									<div class="text-sm tracking-[1.4px]">and passed on to the sales team.</div>
 								</div>
 								<div class="absolute absolute--full w-full h-full z--1">
 									<div class="_w-full h-full gradient2 opacity-25 group-hover-gradient5"></div>

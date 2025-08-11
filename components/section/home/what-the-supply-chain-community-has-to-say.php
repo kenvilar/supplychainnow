@@ -71,9 +71,9 @@
 											</div>
 											<div>
 												<div class="mb-8">
-													<div class="font-family-secondary text-sm tracking-1.52">Anthony Payne</div>
+													<div class="font-family-secondary text-sm tracking-[1.52px]">Anthony Payne</div>
 												</div>
-												<div class="uppercase font-family-secondary text-2xs tracking-1.01">
+												<div class="uppercase font-family-secondary text-2xs tracking-[1.01px]">
 													<div class="display-inline">CMO</div>
 													<div class="display-inline">&nbsp;•</div>
 													<div class="display-inline">HICX</div>
@@ -94,7 +94,7 @@
 															loading="lazy" alt="" class="image">
 													</div>
 												</div>
-												<div class="text-xs tracking-1.35 w-richtext">
+												<div class="text-xs tracking-[1.35px] w-richtext">
 													<p>"Working with Supply Chain Now has been a pleasure. Scott is not only very thoughtful,
 														experienced and passionate about logistics, but he is also a very professional and caring
 														person. We have been working with Supply Chain Now for over a year to produce, launch and
@@ -105,9 +105,9 @@
 											</div>
 											<div>
 												<div class="mb-8">
-													<div class="font-family-secondary text-sm tracking-1.52">Enrique Alvarez</div>
+													<div class="font-family-secondary text-sm tracking-[1.52px]">Enrique Alvarez</div>
 												</div>
-												<div class="uppercase font-family-secondary text-2xs tracking-1.01">
+												<div class="uppercase font-family-secondary text-2xs tracking-[1.01px]">
 													<div class="display-inline">Managing Director</div>
 													<div class="display-inline">&nbsp;•</div>
 													<div class="display-inline">Vector Global Logistics</div>
@@ -128,7 +128,7 @@
 															loading="lazy" alt="" class="image">
 													</div>
 												</div>
-												<div class="text-xs tracking-1.35 w-richtext">
+												<div class="text-xs tracking-[1.35px] w-richtext">
 													<p>"As leaders in supply chain, I would recommend each and every one of you consider using
 														this resource if you’re looking to amplify your message. It’s also a great way to influence
 														your thought leadership to the industry, as well as your personal and company brand. Also,
@@ -140,9 +140,9 @@
 											</div>
 											<div>
 												<div class="mb-8">
-													<div class="font-family-secondary text-sm tracking-1.52">Jack Allen</div>
+													<div class="font-family-secondary text-sm tracking-[1.52px]">Jack Allen</div>
 												</div>
-												<div class="uppercase font-family-secondary text-2xs tracking-1.01">
+												<div class="uppercase font-family-secondary text-2xs tracking-[1.01px]">
 													<div class="display-inline">Senior Director, Logistics &amp; Manufacturing Solutions</div>
 													<div class="display-inline">&nbsp;•</div>
 													<div class="display-inline">Cisco</div>
@@ -163,7 +163,7 @@
 															loading="lazy" alt="" class="image">
 													</div>
 												</div>
-												<div class="text-xs tracking-1.35 w-richtext">
+												<div class="text-xs tracking-[1.35px] w-richtext">
 													<p>"Working with the Supply Chain Now and Buyers Meeting Point teams on the 'Dial P for
 														Procurement' livestream was a great experience all around. Their professional preparation
 														and production make it easy for executives to participate with very little time required.
@@ -174,9 +174,9 @@
 											</div>
 											<div>
 												<div class="mb-8">
-													<div class="font-family-secondary text-sm tracking-1.52">Anthony Payne</div>
+													<div class="font-family-secondary text-sm tracking-[1.52px]">Anthony Payne</div>
 												</div>
-												<div class="uppercase font-family-secondary text-2xs tracking-1.01">
+												<div class="uppercase font-family-secondary text-2xs tracking-[1.01px]">
 													<div class="display-inline">CMO</div>
 													<div class="display-inline">&nbsp;•</div>
 													<div class="display-inline">HICX</div>
@@ -197,7 +197,7 @@
 															loading="lazy" alt="" class="image">
 													</div>
 												</div>
-												<div class="text-xs tracking-1.35 w-richtext">
+												<div class="text-xs tracking-[1.35px] w-richtext">
 													<p>"Working with Supply Chain Now has been a pleasure. Scott is not only very thoughtful,
 														experienced and passionate about logistics, but he is also a very professional and caring
 														person. We have been working with Supply Chain Now for over a year to produce, launch and
@@ -208,9 +208,9 @@
 											</div>
 											<div>
 												<div class="mb-8">
-													<div class="font-family-secondary text-sm tracking-1.52">Enrique Alvarez</div>
+													<div class="font-family-secondary text-sm tracking-[1.52px]">Enrique Alvarez</div>
 												</div>
-												<div class="uppercase font-family-secondary text-2xs tracking-1.01">
+												<div class="uppercase font-family-secondary text-2xs tracking-[1.01px]">
 													<div class="display-inline">Managing Director</div>
 													<div class="display-inline">&nbsp;•</div>
 													<div class="display-inline">Vector Global Logistics</div>
@@ -231,7 +231,7 @@
 															loading="lazy" alt="" class="image">
 													</div>
 												</div>
-												<div class="text-xs tracking-1.35 w-richtext">
+												<div class="text-xs tracking-[1.35px] w-richtext">
 													<p>"As leaders in supply chain, I would recommend each and every one of you consider using
 														this resource if you’re looking to amplify your message. It’s also a great way to influence
 														your thought leadership to the industry, as well as your personal and company brand. Also,
@@ -243,9 +243,9 @@
 											</div>
 											<div>
 												<div class="mb-8">
-													<div class="font-family-secondary text-sm tracking-1.52">Jack Allen</div>
+													<div class="font-family-secondary text-sm tracking-[1.52px]">Jack Allen</div>
 												</div>
-												<div class="uppercase font-family-secondary text-2xs tracking-1.01">
+												<div class="uppercase font-family-secondary text-2xs tracking-[1.01px]">
 													<div class="display-inline">Senior Director, Logistics &amp; Manufacturing Solutions</div>
 													<div class="display-inline">&nbsp;•</div>
 													<div class="display-inline">Cisco</div>
@@ -266,7 +266,7 @@
 															loading="lazy" alt="" class="image">
 													</div>
 												</div>
-												<div class="text-xs tracking-1.35 w-richtext">
+												<div class="text-xs tracking-[1.35px] w-richtext">
 													<p>"Working with the Supply Chain Now and Buyers Meeting Point teams on the 'Dial P for
 														Procurement' livestream was a great experience all around. Their professional preparation
 														and production make it easy for executives to participate with very little time required.
@@ -277,9 +277,9 @@
 											</div>
 											<div>
 												<div class="mb-8">
-													<div class="font-family-secondary text-sm tracking-1.52">Anthony Payne</div>
+													<div class="font-family-secondary text-sm tracking-[1.52px]">Anthony Payne</div>
 												</div>
-												<div class="uppercase font-family-secondary text-2xs tracking-1.01">
+												<div class="uppercase font-family-secondary text-2xs tracking-[1.01px]">
 													<div class="display-inline">CMO</div>
 													<div class="display-inline">&nbsp;•</div>
 													<div class="display-inline">HICX</div>
@@ -300,7 +300,7 @@
 															loading="lazy" alt="" class="image">
 													</div>
 												</div>
-												<div class="text-xs tracking-1.35 w-richtext">
+												<div class="text-xs tracking-[1.35px] w-richtext">
 													<p>"Working with Supply Chain Now has been a pleasure. Scott is not only very thoughtful,
 														experienced and passionate about logistics, but he is also a very professional and caring
 														person. We have been working with Supply Chain Now for over a year to produce, launch and
@@ -311,9 +311,9 @@
 											</div>
 											<div>
 												<div class="mb-8">
-													<div class="font-family-secondary text-sm tracking-1.52">Enrique Alvarez</div>
+													<div class="font-family-secondary text-sm tracking-[1.52px]">Enrique Alvarez</div>
 												</div>
-												<div class="uppercase font-family-secondary text-2xs tracking-1.01">
+												<div class="uppercase font-family-secondary text-2xs tracking-[1.01px]">
 													<div class="display-inline">Managing Director</div>
 													<div class="display-inline">&nbsp;•</div>
 													<div class="display-inline">Vector Global Logistics</div>

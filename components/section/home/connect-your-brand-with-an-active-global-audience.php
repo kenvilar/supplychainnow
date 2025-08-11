@@ -31,7 +31,7 @@
 											stroke="#FFAB56" stroke-width="2" stroke-miterlimit="10"></path>
 									</svg>
 								</div>
-								<div class="tracking-1.6">Engage with supply chain decision-makers.</div>
+								<div class="tracking-[1.6px]">Engage with supply chain decision-makers.</div>
 							</div>
 							<div class="absolute -top-4 right-0 pr-32 flex items-center">
 								<div blinking-dot="" class="size-8 rounded-8 bg-primary"></div>
@@ -65,7 +65,7 @@
 											stroke="#FFAB56" stroke-width="2" stroke-miterlimit="10"></path>
 									</svg>
 								</div>
-								<div class="tracking-1.6">Share your thought-leadership.</div>
+								<div class="tracking-[1.6px]">Share your thought-leadership.</div>
 							</div>
 							<div class="absolute -top-4 right-0 pr-32 flex items-center">
 								<div blinking-dot="" class="size-8 rounded-8 bg-primary"></div>
@@ -91,7 +91,7 @@
 											stroke="#FFAB56" stroke-width="2" stroke-miterlimit="10"></path>
 									</svg>
 								</div>
-								<div class="tracking-1.6">Generate new leads.</div>
+								<div class="tracking-[1.6px]">Generate new leads.</div>
 							</div>
 							<div class="absolute -top-4 right-0 pr-32 flex items-center">
 								<div blinking-dot="" class="size-8 rounded-8 bg-primary"></div>
@@ -104,7 +104,7 @@
 		<div class="absolute absolute--b flex justify-center">
 			<img
 				src="<?php
-		echo get_stylesheet_directory_uri() . '/assets/img/misc/abstract-wave-pattern.avif'; ?>"
+				echo get_stylesheet_directory_uri() . '/assets/img/misc/abstract-wave-pattern.avif'; ?>"
 				loading="lazy" alt="Abstract wave pattern with curved lines in white on a black background" class="max-w-none">
 		</div>
 	</section>

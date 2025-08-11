@@ -196,7 +196,7 @@
 										<h3 class="font-semibold"><?php
 											the_title(); ?></h3>
 									</div>
-									<div class="w-full tracking-1.6" scn-text-limit="2">
+									<div class="w-full tracking-[1.6px]" scn-text-limit="2">
 										<?php
 										if (get_the_excerpt()) {
 											the_excerpt();
@@ -410,7 +410,7 @@
 										<h3 class="font-semibold text-lg" scn-text-limit="2"><?php
 											the_title(); ?></h3>
 									</div>
-									<div class="w-full tracking-1.4 text-sm" scn-text-limit="3">
+									<div class="w-full tracking-[1.4px] text-sm" scn-text-limit="3">
 										<?php
 										if (get_the_excerpt()) {
 											the_excerpt();

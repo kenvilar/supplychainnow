@@ -689,6 +689,10 @@
     --tw-tracking: 1.01px;
     letter-spacing: 1.01px;
   }
+  .tracking-\[1\.4px\] {
+    --tw-tracking: 1.4px;
+    letter-spacing: 1.4px;
+  }
   .tracking-\[1\.6px\] {
     --tw-tracking: 1.6px;
     letter-spacing: 1.6px;
@@ -708,6 +712,10 @@
   .tracking-\[2\.4px\] {
     --tw-tracking: 2.4px;
     letter-spacing: 2.4px;
+  }
+  .tracking-\[3\.6px\] {
+    --tw-tracking: 3.6px;
+    letter-spacing: 3.6px;
   }
   .text-secondary {
     color: #4e88b6;
