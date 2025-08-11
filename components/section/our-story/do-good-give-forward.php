@@ -43,7 +43,7 @@
 								</div>
 								<div class="tracking-[1.6px]">Empower, respect, and uplift those from all walks of life.</div>
 							</div>
-							<div class="absolute top--4 right-0 pr-32 flex items-center">
+							<div class="absolute -top-4 right-0 pr-32 flex items-center">
 								<div blinking-dot="" class="size-8 rounded-8 bg-primary"></div>
 							</div>
 						</div>
@@ -78,7 +78,7 @@
 									</div>
 									<div class="tracking-[1.6px]">Embody uncompromising integrity.</div>
 								</div>
-								<div class="absolute top--4 right-0 pr-32 flex items-center">
+								<div class="absolute -top-4 right-0 pr-32 flex items-center">
 									<div blinking-dot="" class="size-8 rounded-8 bg-primary"></div>
 								</div>
 							</div>
@@ -105,7 +105,7 @@
 									</div>
 									<div class="tracking-[1.6px]">Take action and lead in deeds, not words.</div>
 								</div>
-								<div class="absolute top--4 right-0 pr-32 flex items-center">
+								<div class="absolute -top-4 right-0 pr-32 flex items-center">
 									<div blinking-dot="" class="size-8 rounded-8 bg-primary"></div>
 								</div>
 							</div>
@@ -127,7 +127,7 @@
 								</div>
 								<div class="tracking-[1.6px]">Relentlessly pursue excellence.</div>
 							</div>
-							<div class="absolute top--4 right-0 pr-32 flex items-center">
+							<div class="absolute -top-4 right-0 pr-32 flex items-center">
 								<div blinking-dot="" class="size-8 rounded-8 bg-primary"></div>
 							</div>
 						</div>

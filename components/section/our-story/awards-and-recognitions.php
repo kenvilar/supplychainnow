@@ -16,11 +16,9 @@
 			</div>
 		</div>
 	</div>
-	<div slider-1="" class="splide is-overflow is-initialized splide--loop splide--ltr splide--draggable is-active"
-	     id="splide01" role="region" aria-roledescription="carousel">
-		<div class="splide__track overflow-visible splide__track--loop splide__track--ltr splide__track--draggable"
-		     id="splide01-track" aria-live="off" aria-atomic="true" style="padding-left: 0px; padding-right: 0px;">
-			<div class="splide__list" id="splide01-list" role="presentation" style="transform: translateX(-2353.81px);">
+	<div slider-1="" class="splide">
+		<div class="splide__track">
+			<div class="splide__list">
 				<div class="splide__slide splide__slide--clone" id="splide01-clone01" role="group"
 				     aria-roledescription="slide" aria-label="2 of 8" style="margin-right: 37.91px; width: 200px;"
 				     aria-hidden="true">
