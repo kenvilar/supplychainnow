@@ -23,7 +23,7 @@
 	<div class="absolute absolute--full w-full h-full z--1">
 		<img
 			src="<?php
-	  echo get_stylesheet_directory_uri() . '/assets/img/home/professional-video-shoot-camera.avif'; ?>"
+			echo get_stylesheet_directory_uri() . '/assets/img/home/professional-video-shoot-camera.avif'; ?>"
 			loading="lazy" alt="Camera capturing a professional video shoot setup" class="image opacity-15">
 	</div>
 </section>

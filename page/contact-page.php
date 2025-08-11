@@ -8,9 +8,9 @@ $pageId = get_the_ID();
 ?>
 <div class="page-wrapper">
 	<div class="main-wrapper">
-	  <?php
-	  get_template_part('components/hero/contact');
-	  ?>
+		<?php
+		get_template_part('components/hero/contact');
+		?>
 		<section class="section">
 			<div class="site-padding sm:py-60 py-84">
 				<div class="w-layout-blockcontainer max-w-1252 w-container">
@@ -22,9 +22,9 @@ $pageId = get_the_ID();
 				</div>
 			</div>
 		</section>
-	  <?php
-	  get_template_part('components/section/home/work-with-us');
-	  ?>
+		<?php
+		get_template_part('components/layout/footer/cta-footer');
+		?>
 	</div>
 </div>
 <?php

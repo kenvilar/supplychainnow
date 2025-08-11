@@ -14,7 +14,7 @@ get_header();
 			get_template_part('components/section/home/upcoming-livestreams-and-webinars');
 			get_template_part('components/section/home/network-partners');
 			get_template_part('components/section/home/what-the-supply-chain-community-has-to-say');
-			get_template_part('components/section/home/work-with-us');
+			get_template_part('components/layout/footer/cta-footer');
 			?>
 		</div>
 	</div>
