@@ -779,6 +779,10 @@
     --tw-duration: 500ms;
     transition-duration: 500ms;
   }
+  .select-none {
+    -webkit-user-select: none;
+    user-select: none;
+  }
   .group-hover\:translate-y-0 {
     &:is(:where(.group):hover *) {
       @media (hover: hover) {

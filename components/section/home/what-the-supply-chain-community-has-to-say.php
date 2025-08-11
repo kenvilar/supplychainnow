@@ -193,12 +193,12 @@
 			</div>
 		</div>
 	</div>
-	<div class="absolute absolute--tr z--1 pt-164 pr-64">
+	<div class="absolute absolute--tr z--1 pt-164 pr-64 select-none">
 		<img src="<?php
 		echo get_stylesheet_directory_uri() . '/assets/img/misc/double-ring.avif'; ?>"
 		     loading="lazy" alt="double ring">
 	</div>
-	<div class="absolute absolute--bl z--1 pb-88 pl-56">
+	<div class="absolute absolute--bl z--1 pb-88 pl-56 select-none">
 		<img src="<?php
 		echo get_stylesheet_directory_uri() . '/assets/img/misc/double-ring.avif'; ?>"
 		     loading="lazy" alt="double ring">
