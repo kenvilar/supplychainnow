@@ -22,7 +22,8 @@
 	<div class="absolute absolute--full w-full h-full gradient1 rotate-180 z--2"></div>
 	<div class="absolute absolute--full w-full h-full z--1">
 		<img
-			src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/685a0cb23b5e3a0d2e89e825_professional-video-shoot-camera.avif"
+			src="<?php
+	  echo get_stylesheet_directory_uri() . '/assets/img/home/professional-video-shoot-camera.avif'; ?>"
 			loading="lazy" alt="Camera capturing a professional video shoot setup" class="image opacity-15">
 	</div>
 </section>
