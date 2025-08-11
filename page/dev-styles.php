@@ -1,6 +1,6 @@
 <?php
 /*
- * Template Name: Dev Styles
+ * Template Name: Dev Styles v2
  */
 
 get_header();

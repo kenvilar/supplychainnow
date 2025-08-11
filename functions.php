@@ -19,6 +19,9 @@ if (!function_exists('bridge_qode_child_theme_enqueue_scripts')) {
 			wp_enqueue_style('splide-style');
 		}
 
+		wp_register_style('custom-normalize-style', get_stylesheet_directory_uri() . '/assets/css/custom-normalize.css');
+		wp_enqueue_style('custom-normalize-style');
+
 		wp_register_style('tailwind-style', get_stylesheet_directory_uri() . '/assets/css/tailwind-output.css');
 		wp_enqueue_style('tailwind-style');
 

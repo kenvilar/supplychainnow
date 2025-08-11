@@ -77,30 +77,6 @@ from webflow, start
 	--shadow3: 0px 4.982px 24.908px 0 rgba(49, 63, 74, 0.25);
 }
 /* MAIN ELEMENTS */
-h1 {
-	margin: 0px;
-}
-h2 {
-	margin: 0px;
-}
-h3 {
-	margin: 0px;
-}
-h4 {
-	margin: 0px;
-}
-h5 {
-	margin: 0px;
-}
-h6 {
-	margin: 0px;
-}
-p {
-	margin: 0px;
-}
-a {
-	color: inherit;
-}
 p a {
 	color: var(--paragraph-link-color, red);
 }
@@ -361,15 +337,6 @@ p a {
 	background: var(--cargo-grey);
 	opacity: 0.9;
 }
-/* Design Mode */
-html.wf-design-mode .splide__list {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-}
-html.wf-design-mode .accordion .accordion-item-body {
-	max-height: 100%;
-}
 @media (min-width: 1280px) {
 }
 /*use for desktop navmenu*/
@@ -387,13 +354,6 @@ body.admin-bar #wpadminbar {
 a#back_to_top, footer .footer_inner {
 	display: none;
 }
-.w-inline-block {
-	max-width: 100%;
-	display: inline-block;
-}
-.w-inline-block.flex {
-	display: flex;
-}
 .page-wrapper {
 	max-width: 100%;
 	margin-left: auto;
@@ -408,24 +368,6 @@ a#back_to_top, footer .footer_inner {
 	position: relative;
 	overflow: hidden;
 	width: 100%;
-}
-.w-container {
-	margin-left: auto;
-	margin-right: auto
-}
-.w-layout-blockcontainer {
-	margin-left: auto;
-	margin-right: auto;
-	display: block;
-}
-.w-list-unstyled {
-	padding-left: 0;
-	list-style: none;
-}
-.w-layout-vflex {
-	flex-direction: column;
-	align-items: flex-start;
-	display: flex;
 }
 .display-block {
 	display: block
