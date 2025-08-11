@@ -8,14 +8,9 @@ Version: 1.0.0
 Template: bridge
 */
 /*@import url("../bridge/style.css");*/
-body.admin-bar #wpadminbar {
-	position: relative;
-}
-/*hide some divs built by bridge theme*/
-a#back_to_top, footer .footer_inner {
-	display: none;
-}
-/*from webflow*/
+/*
+from webflow, start
+*/
 :root {
 	--_font-family---primary: Montserrat, Arial, sans-serif;
 	--_font-family---secondary: Roboto, Arial, sans-serif;
@@ -382,7 +377,16 @@ html.wf-design-mode .accordion .accordion-item-body {
 }
 @media (min-width: 3440px) {
 }
-/*end from webflow*/
+/*
+end from webflow
+*/
+body.admin-bar #wpadminbar {
+	position: relative;
+}
+/*hide some divs built by bridge theme*/
+a#back_to_top, footer .footer_inner {
+	display: none;
+}
 .w-inline-block {
 	max-width: 100%;
 	display: inline-block;
