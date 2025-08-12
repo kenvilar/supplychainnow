@@ -241,7 +241,7 @@ $pageId = get_the_ID();
 																</div>
 																<div class="flex items-center gap-8 text-sm font-light font-family-secondary">
 																	<div><?php
-																		the_date(); ?></div>
+																		echo get_the_date('F j, Y'); ?></div>
 																	<!--<div>•</div>
 																<div>6 min 25 sec</div>-->
 																</div>
@@ -475,7 +475,7 @@ $pageId = get_the_ID();
 																</div>
 																<div class="flex items-center gap-8 text-sm font-light font-family-secondary">
 																	<div><?php
-																		the_date(); ?></div>
+																		echo get_the_date('F j, Y'); ?></div>
 																	<!--<div>•</div>
 																<div>6 min 25 sec</div>-->
 																</div>
@@ -704,7 +704,7 @@ $pageId = get_the_ID();
 																			</div>
 																			<div class="flex items-center gap-8 text-sm font-light font-family-secondary">
 																				<div><?php
-																					the_date(); ?></div>
+																					echo get_the_date('F j, Y'); ?></div>
 																				<!--<div>•</div>
 																			<div>6 min 25 sec</div>-->
 																			</div>
@@ -1009,7 +1009,7 @@ $pageId = get_the_ID();
 																		</div>
 																		<div class="flex items-center gap-8 text-sm font-light font-family-secondary">
 																			<div><?php
-																				the_date(); ?></div>
+																				echo get_the_date('F j, Y'); ?></div>
 																			<!--<div>•</div>
 																		<div>6 min 25 sec</div>-->
 																		</div>
