@@ -17,17 +17,20 @@ if (!function_exists('bridge_qode_child_theme_enqueue_scripts')) {
 		wp_register_style('splide-style', get_stylesheet_directory_uri() . '/assets/css/splide.min.css');
 		wp_enqueue_style('splide-style');
 
-		wp_register_style(
-			'custom-normalize-style',
-			get_stylesheet_directory_uri() . '/assets/css/custom-normalize.css'
-		);
-		wp_enqueue_style('custom-normalize-style');
-
-		wp_register_style('tailwind-style', get_stylesheet_directory_uri() . '/assets/css/tailwind-output.css');
-		wp_enqueue_style('tailwind-style');
-
 		wp_register_style('bridge-childstyle', get_stylesheet_directory_uri() . '/style.css');
 		wp_enqueue_style('bridge-childstyle');
+
+		wp_enqueue_style(
+			'bridge-childstyle',
+			get_stylesheet_uri(),
+			[],
+		);
+
+		wp_enqueue_style(
+			'tailwind-style',
+			get_stylesheet_directory_uri() . '/assets/css/tailwind-output.css',
+			['bridge-childstyle'],
+		);
 	}
 
 	function supplyChainNowScripts()
