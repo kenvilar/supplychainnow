@@ -13,9 +13,14 @@ $pageId = get_the_ID();
 							<div class="overflow-hidden rounded-24 h-368 w-full sm:h-200">
 								<img
 									src="<?php
-									if (get_field('recent_episode_thumbnail_upload', $pageId)) {
-										echo get_field('recent_episode_thumbnail_upload', $pageId);
-									} ?>"
+									if (get_field('program_thumbnail_image_upload', $pageId)) {
+										echo get_field('program_thumbnail_image_upload', $pageId);
+									} else {
+										if (get_field('recent_episode_thumbnail_upload', $pageId)) {
+											echo get_field('recent_episode_thumbnail_upload', $pageId);
+										}
+									}
+									?>"
 									loading="lazy" alt="" class="image">
 							</div>
 						</div>
@@ -278,133 +283,96 @@ $pageId = get_the_ID();
 		<section class="section">
 			<div class="site-padding sm:py-60 py-56">
 				<div class="w-layout-blockcontainer max-w-1252 w-container">
-					<div class="mb-44">
-						<div class="mb-20">
-							<h2 class="text-center">Featured Episodes</h2>
-						</div>
-						<?php
-						get_template_part('components/line-with-blinking-dot');
+					<?php
+					if (get_field('program_featured_episodes', $pageId)):
 						?>
-					</div>
-					<div class="mb-100">
-						<div class="w-dyn-list">
-							<div role="list" class="grid grid-cols-2 gap-28 sm:grid-cols-1 w-dyn-items">
-								<?php
-								$featured_episodes = get_field('program_featured_episodes', $pageId);
-								//echo '<pre>';
-								//print_r($featured_episodes);
+						<div class="mb-44">
+							<div class="mb-20">
+								<h2 class="text-center">Featured Episodes</h2>
+							</div>
+							<?php
+							get_template_part('components/line-with-blinking-dot');
+							?>
+						</div>
+						<div class="mb-100">
+							<div class="w-dyn-list">
+								<div role="list" class="grid grid-cols-2 gap-28 sm:grid-cols-1 w-dyn-items">
+									<?php
+									$featured_episodes = get_field('program_featured_episodes', $pageId);
+									//echo '<pre>';
+									//print_r($featured_episodes);
 
-								$keys = array_keys($featured_episodes);
-								for ($i = 0; $i < count($featured_episodes); $i++) {
-									//echo $keys[$i] . "{<br>";
-									foreach ($featured_episodes[$keys[$i]] as $key => $value) {
-										//echo $key . " : " . $value . "<br>";
-										$episode_img = get_field('thumbnail_upload', $value);
-										$episode_url = get_permalink($value);
-										?>
-										<a href="<?php
-										echo esc_url($episode_url); ?>" class="relative w-full group">
-											<div class="relative flex flex-col justify-between gap-20 h-full">
-												<div class="w-full">
-													<div class="mb-28">
-														<div class="overflow-hidden rounded-12 relative h-344 bg-cargogrey">
-															<img
-																src="<?php
-																echo get_the_post_thumbnail($value)
-																	? get_the_post_thumbnail($value)
-																	: get_stylesheet_directory_uri(
-																	) . '/assets/img/misc/default-card-img-thumbnail.avif' ?>"
-																loading="lazy" alt="" class="image relative opacity-40">
-															<?php
-															$terms = get_the_terms($value, 'tags');
-															if (!is_wp_error($terms) && !empty($terms)) {
-																$first = array_values($terms)[0];
-																?>
-																<div class="absolute absolute--tl p-24 flex items-center justify-center">
-																	<div class="relative rounded-full overflow-hidden py-4 px-8">
-																		<div class="relative font-semibold uppercase text-2xs text--white lh-normal z-10">
+									$keys = array_keys($featured_episodes);
+									for ($i = 0; $i < count($featured_episodes); $i++) {
+										//echo $keys[$i] . "{<br>";
+										foreach ($featured_episodes[$keys[$i]] as $key => $value) {
+											//echo $key . " : " . $value . "<br>";
+											$episode_img = get_field('thumbnail_upload', $value);
+											$episode_url = get_permalink($value);
+											?>
+											<a href="<?php
+											echo esc_url($episode_url); ?>" class="relative w-full group">
+												<div class="relative flex flex-col justify-between gap-20 h-full">
+													<div class="w-full">
+														<div class="mb-28">
+															<div class="overflow-hidden rounded-12 relative h-344 bg-cargogrey">
+																<img
+																	src="<?php
+																	echo get_the_post_thumbnail($value)
+																		? get_the_post_thumbnail($value)
+																		: get_stylesheet_directory_uri(
+																		) . '/assets/img/misc/default-card-img-thumbnail.avif' ?>"
+																	loading="lazy" alt="" class="image relative opacity-40">
+																<?php
+																$terms = get_the_terms($value, 'tags');
+																if (!is_wp_error($terms) && !empty($terms)) {
+																	$first = array_values($terms)[0];
+																	?>
+																	<div class="absolute absolute--tl p-24 flex items-center justify-center">
+																		<div class="relative rounded-full overflow-hidden py-4 px-8">
+																			<div class="relative font-semibold uppercase text-2xs text--white lh-normal z-10">
+																				<?php
+																				echo $first->name; ?>
+																			</div>
 																			<?php
-																			echo $first->name; ?>
+																			echo get_field(
+																				'select_media_type',
+																				$value
+																			) == 'livestream'
+																				? '<div class="absolute absolute--full bg-primary"></div>'
+																				: '';
+																			?>
+																			<?php
+																			echo get_field(
+																				'select_media_type',
+																				$value
+																			) == 'podcast'
+																				? '<div class="absolute absolute--full bg-secondary"></div>'
+																				: '';
+																			?>
+																			<?php
+																			echo get_field(
+																				'select_media_type',
+																				$value
+																			) == 'webinar'
+																				? '<div class="absolute absolute--full bg-tertiary"></div>'
+																				: '';
+																			?>
 																		</div>
-																		<?php
-																		echo get_field(
-																			'select_media_type',
-																			$value
-																		) == 'livestream'
-																			? '<div class="absolute absolute--full bg-primary"></div>'
-																			: '';
-																		?>
-																		<?php
-																		echo get_field(
-																			'select_media_type',
-																			$value
-																		) == 'podcast'
-																			? '<div class="absolute absolute--full bg-secondary"></div>'
-																			: '';
-																		?>
-																		<?php
-																		echo get_field(
-																			'select_media_type',
-																			$value
-																		) == 'webinar'
-																			? '<div class="absolute absolute--full bg-tertiary"></div>'
-																			: '';
-																		?>
 																	</div>
-																</div>
-																<?php
-															}
-															?>
-															<div
-																class="absolute absolute--full flex items-center justify-center translate-y-220 group-hover:translate-y-0 transition-all duration-500">
-																<?php
-																if (get_field('select_media_type', $value) == 'livestream') {
-																	?>
-																	<img
-																		src="<?php
-																		echo get_stylesheet_directory_uri(
-																			) . '/assets/img/icons/play-button-livestream.avif'; ?>"
-																		loading="lazy" alt="play-button-livestream">
 																	<?php
 																}
 																?>
-																<?php
-																if (get_field('select_media_type', $value) == 'podcast') {
-																	?>
-																	<img
-																		src="<?php
-																		echo get_stylesheet_directory_uri(
-																			) . '/assets/img/icons/play-button-podcast.avif'; ?>"
-																		loading="lazy" alt="play-button-podcast">
-																	<?php
-																}
-																?>
-																<?php
-																if (get_field('select_media_type', $value) == 'webinar') {
-																	?>
-																	<img
-																		src="<?php
-																		echo get_stylesheet_directory_uri(
-																			) . '/assets/img/icons/play-button-webinar.avif'; ?>"
-																		loading="lazy" alt="play-button-webinar">
-																	<?php
-																}
-																?>
-															</div>
-														</div>
-													</div>
-													<div class="mb-12">
-														<div class="flex items-center gap-32 sm:flex-wrap sm:gap-8">
-															<div class="flex items-center gap-8">
-																<div class="flex items-center">
+																<div
+																	class="absolute absolute--full flex items-center justify-center translate-y-220 group-hover:translate-y-0 transition-all duration-500">
 																	<?php
 																	if (get_field('select_media_type', $value) == 'livestream') {
 																		?>
 																		<img
 																			src="<?php
 																			echo get_stylesheet_directory_uri(
-																				) . '/assets/img/icons/livestream-card-icon.svg'; ?>"
-																			loading="lazy" alt="livestream-music">
+																				) . '/assets/img/icons/play-button-livestream.avif'; ?>"
+																			loading="lazy" alt="play-button-livestream">
 																		<?php
 																	}
 																	?>
@@ -412,11 +380,10 @@ $pageId = get_the_ID();
 																	if (get_field('select_media_type', $value) == 'podcast') {
 																		?>
 																		<img
-																			class="size-24"
 																			src="<?php
 																			echo get_stylesheet_directory_uri(
-																				) . '/assets/img/icons/podcast-card-icon.png'; ?>"
-																			loading="lazy" alt="podcast-blue-microphone">
+																				) . '/assets/img/icons/play-button-podcast.avif'; ?>"
+																			loading="lazy" alt="play-button-podcast">
 																		<?php
 																	}
 																	?>
@@ -424,70 +391,113 @@ $pageId = get_the_ID();
 																	if (get_field('select_media_type', $value) == 'webinar') {
 																		?>
 																		<img
-																			class="size-24"
 																			src="<?php
 																			echo get_stylesheet_directory_uri(
-																				) . '/assets/img/icons/webinar-card-icon.png'; ?>"
-																			loading="lazy" alt="webinar-person">
+																				) . '/assets/img/icons/play-button-webinar.avif'; ?>"
+																			loading="lazy" alt="play-button-webinar">
 																		<?php
 																	}
 																	?>
 																</div>
-																<?php
-																if (get_field('select_media_type', $value)) {
-																	?>
-																	<div class="font-family-secondary text-sm capitalize">
-																		<?php
-																		the_field('select_media_type', $value); ?>
-																	</div>
-																	<?php
-																}
-																?>
-															</div>
-															<div class="flex items-center gap-8 text-sm font-light font-family-secondary">
-																<div><?php
-																	echo get_the_date('F j, Y', $value); ?></div>
-																<!--<div>•</div>
-																<div>6 min 25 sec</div>-->
 															</div>
 														</div>
+														<div class="mb-12">
+															<div class="flex items-center gap-32 sm:flex-wrap sm:gap-8">
+																<div class="flex items-center gap-8">
+																	<div class="flex items-center">
+																		<?php
+																		if (get_field('select_media_type', $value) == 'livestream') {
+																			?>
+																			<img
+																				src="<?php
+																				echo get_stylesheet_directory_uri(
+																					) . '/assets/img/icons/livestream-card-icon.svg'; ?>"
+																				loading="lazy" alt="livestream-music">
+																			<?php
+																		}
+																		?>
+																		<?php
+																		if (get_field('select_media_type', $value) == 'podcast') {
+																			?>
+																			<img
+																				class="size-24"
+																				src="<?php
+																				echo get_stylesheet_directory_uri(
+																					) . '/assets/img/icons/podcast-card-icon.png'; ?>"
+																				loading="lazy" alt="podcast-blue-microphone">
+																			<?php
+																		}
+																		?>
+																		<?php
+																		if (get_field('select_media_type', $value) == 'webinar') {
+																			?>
+																			<img
+																				class="size-24"
+																				src="<?php
+																				echo get_stylesheet_directory_uri(
+																					) . '/assets/img/icons/webinar-card-icon.png'; ?>"
+																				loading="lazy" alt="webinar-person">
+																			<?php
+																		}
+																		?>
+																	</div>
+																	<?php
+																	if (get_field('select_media_type', $value)) {
+																		?>
+																		<div class="font-family-secondary text-sm capitalize">
+																			<?php
+																			the_field('select_media_type', $value); ?>
+																		</div>
+																		<?php
+																	}
+																	?>
+																</div>
+																<div class="flex items-center gap-8 text-sm font-light font-family-secondary">
+																	<div><?php
+																		echo get_the_date('F j, Y', $value); ?></div>
+																	<!--<div>•</div>
+																	<div>6 min 25 sec</div>-->
+																</div>
+															</div>
+														</div>
+														<h3 class="font-semibold" scn-text-limit="3"><?php
+															echo get_the_title($value); ?></h3>
 													</div>
-													<h3 class="font-semibold" scn-text-limit="3"><?php
-														echo get_the_title($value); ?></h3>
-												</div>
-												<div class="w-full tracking-[1.6px]" scn-text-limit="2">
-													<?php
-													if (get_the_excerpt($value)) {
-														echo get_the_excerpt($value);
-													} else {
-														if (get_field('livestream_description', $value)) {
-															the_field('livestream_description', $value);
+													<div class="w-full tracking-[1.6px]" scn-text-limit="2">
+														<?php
+														if (get_the_excerpt($value)) {
+															echo get_the_excerpt($value);
 														} else {
-															if (get_field('episode_summary', $value)) {
-																the_field('episode_summary', $value);
+															if (get_field('livestream_description', $value)) {
+																the_field('livestream_description', $value);
 															} else {
-																if (get_field('webinar_description', $value)) {
-																	the_field('webinar_description', $value);
+																if (get_field('episode_summary', $value)) {
+																	the_field('episode_summary', $value);
 																} else {
-																	echo 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum
+																	if (get_field('webinar_description', $value)) {
+																		the_field('webinar_description', $value);
+																	} else {
+																		echo 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum
 								tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero
 								vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus
 								tristique posuere.';
+																	}
 																}
 															}
 														}
-													}
-													?>
+														?>
+													</div>
 												</div>
-											</div>
-										</a>
-										<?php
+											</a>
+											<?php
+										}
 									}
-								}
-								?>
+									?>
+								</div>
 							</div>
 						</div>
-					</div>
+					<?php
+					endif; ?>
 					<div class="h-600">
 						<div data-lenis-prevent="" class="w-richtext">
 							<?php
@@ -514,364 +524,51 @@ $pageId = get_the_ID();
 					</div>
 					<div class="mb-44 relative">
 						<div class="max-w-1248 mx-auto">
-							<div slider-1=""
-							     class="splide splide--loop splide--ltr splide--draggable is-active is-overflow is-initialized"
-							     id="splide01" role="region" aria-roledescription="carousel">
-								<div class="splide__track w-dyn-list splide__track--loop splide__track--ltr splide__track--draggable"
-								     id="splide01-track" style="padding-left: 0px; padding-right: 0px;" aria-live="off"
-								     aria-atomic="true" aria-busy="false">
-									<div role="presentation" class="splide__list w-dyn-items" id="splide01-list"
-									     style="transform: translateX(-5397.5px);">
-										<div role="group" class="splide__slide w-dyn-item splide__slide--clone" id="splide01-clone01"
-										     aria-roledescription="slide" aria-label="3 of 10"
-										     style="margin-right: 22px; width: calc(25% - 16.5px);" aria-hidden="true">
-											<a href="/program/veteran-voices" class="w-full overflow-hidden rounded-24 w-inline-block"
-											   tabindex="-1">
-												<div>
-													<img
-														src="https://cdn.prod.website-files.com/686225582293e0967d2b9375/6889b65154ff2052b5cb113a_program-veteran%20voices.avif"
-														loading="lazy" alt="" class="image">
+							<div slider-1="" class="splide">
+								<div class="splide__track">
+									<div class="splide__list">
+										<?php
+										$q = new WP_Query([
+											'post_type' => 'program',
+											'post_status' => 'publish',
+											'posts_per_page' => -1,
+											'offset' => 0,
+											'orderby' => 'rand', // random order
+										]);
+
+										if ($q->have_posts()): ?>
+											<?php
+											while ($q->have_posts()): $q->the_post(); ?>
+												<div class="splide__slide">
+													<a href="<?php
+													the_permalink(); ?>" class="w-full h-full overflow-hidden rounded-24 w-inline-block"
+													   tabindex="-1">
+														<img
+															src="<?php
+															if (get_field('program_thumbnail_image_upload')) {
+																echo get_field('program_thumbnail_image_upload');
+															} else {
+																if (has_post_thumbnail()) {
+																	echo the_post_thumbnail_url();
+																} else {
+																	echo get_stylesheet_directory_uri(
+																		) . '/assets/img/misc/default-card-img-thumbnail.avif';
+																}
+															}
+															?>"
+															loading="lazy" alt="" class="image">
+													</a>
 												</div>
-											</a>
-										</div>
-										<div role="group" class="splide__slide w-dyn-item splide__slide--clone" id="splide01-clone02"
-										     aria-roledescription="slide" aria-label="4 of 10"
-										     style="margin-right: 22px; width: calc(25% - 16.5px);" aria-hidden="true">
-											<a href="/program/digital-transformers" class="w-full overflow-hidden rounded-24 w-inline-block"
-											   tabindex="-1">
-												<div>
-													<img
-														src="https://cdn.prod.website-files.com/686225582293e0967d2b9375/6889b6421670245c8994f27c_program-digital%20transformers.avif"
-														loading="lazy" alt="" class="image">
-												</div>
-											</a>
-										</div>
-										<div role="group" class="splide__slide w-dyn-item splide__slide--clone" id="splide01-clone03"
-										     aria-roledescription="slide" aria-label="5 of 10"
-										     style="margin-right: 22px; width: calc(25% - 16.5px);" aria-hidden="true">
-											<a href="/program/techquila-sunrise" class="w-full overflow-hidden rounded-24 w-inline-block"
-											   tabindex="-1">
-												<div>
-													<img
-														src="https://cdn.prod.website-files.com/686225582293e0967d2b9375/6889b68b281dc4e7d48bf076_program-techquila%20sunrise.avif"
-														loading="lazy" alt="" class="image">
-												</div>
-											</a>
-										</div>
-										<div role="group" class="splide__slide w-dyn-item splide__slide--clone" id="splide01-clone04"
-										     aria-roledescription="slide" aria-label="6 of 10"
-										     style="margin-right: 22px; width: calc(25% - 16.5px);" aria-hidden="true">
-											<a href="/program/supply-chain-now-en-espanol"
-											   class="w-full overflow-hidden rounded-24 w-inline-block" tabindex="-1">
-												<div>
-													<img
-														src="https://cdn.prod.website-files.com/686225582293e0967d2b9375/6889b632c09887a63c454c84_program-supply%20chain%20now%20en%20espanol.avif"
-														loading="lazy" alt="Supply Chain Now en Espanol" class="image">
-												</div>
-											</a>
-										</div>
-										<div role="group" class="splide__slide w-dyn-item splide__slide--clone" id="splide01-clone05"
-										     aria-roledescription="slide" aria-label="7 of 10"
-										     style="margin-right: 22px; width: calc(25% - 16.5px);" aria-hidden="true">
-											<a href="/program/business-history" class="w-full overflow-hidden rounded-24 w-inline-block"
-											   tabindex="-1">
-												<div>
-													<img
-														src="https://cdn.prod.website-files.com/686225582293e0967d2b9375/6889b69bf1c472ef92bf40d6_program-this%20week%20in%20business%20history.avif"
-														loading="lazy" alt="This Week In Business History" class="image">
-												</div>
-											</a>
-										</div>
-										<div role="group" class="splide__slide w-dyn-item splide__slide--clone" id="splide01-clone06"
-										     aria-roledescription="slide" aria-label="8 of 10"
-										     style="margin-right: 22px; width: calc(25% - 16.5px);" aria-hidden="true">
-											<a href="/program/supply-chain-is-boring"
-											   class="w-full overflow-hidden rounded-24 w-inline-block" tabindex="-1">
-												<div>
-													<img
-														src="https://cdn.prod.website-files.com/686225582293e0967d2b9375/6889b6644ec390e320f7b9c5_program-supply%20chain%20is%20boring.avif"
-														loading="lazy" alt="Supply Chain is Boring" class="image">
-												</div>
-											</a>
-										</div>
-										<div role="group" class="splide__slide w-dyn-item splide__slide--clone" id="splide01-clone07"
-										     aria-roledescription="slide" aria-label="9 of 10"
-										     style="margin-right: 22px; width: calc(25% - 16.5px);" aria-hidden="true">
-											<a href="/program/tektok" class="w-full overflow-hidden rounded-24 w-inline-block" tabindex="-1">
-												<div>
-													<img
-														src="https://cdn.prod.website-files.com/686225582293e0967d2b9375/6889b66ff8c941a51e2ad48d_program-tektok.avif"
-														loading="lazy" alt="TEKTOK" class="image">
-												</div>
-											</a>
-										</div>
-										<div role="group" class="splide__slide w-dyn-item splide__slide--clone is-active"
-										     id="splide01-clone08" aria-roledescription="slide" aria-label="10 of 10"
-										     style="margin-right: 22px; width: calc(25% - 16.5px);" aria-hidden="true">
-											<a href="/program/logistics-with-purpose"
-											   class="w-full overflow-hidden rounded-24 w-inline-block" tabindex="-1">
-												<div>
-													<img
-														src="https://cdn.prod.website-files.com/686225582293e0967d2b9375/6889b626c39d50d03b7206af_program-logistics%20with%20purpose.avif"
-														loading="lazy" alt="Logistics with Purpose®" class="image">
-												</div>
-											</a>
-										</div>
-										<div role="group" class="splide__slide w-dyn-item" id="splide01-slide01"
-										     aria-roledescription="slide" aria-label="1 of 10"
-										     style="margin-right: 22px; width: calc(25% - 16.5px);" aria-hidden="true">
-											<a href="/program/tango-tango" class="w-full overflow-hidden rounded-24 w-inline-block"
-											   tabindex="-1">
-												<div>
-													<img
-														src="https://cdn.prod.website-files.com/686225582293e0967d2b9375/6889b5fc7c2a9c8f523bfa6e_program-tango%20tango.avif"
-														loading="lazy" alt="" class="image">
-												</div>
-											</a>
-										</div>
-										<div role="group" class="splide__slide w-dyn-item" id="splide01-slide02"
-										     aria-roledescription="slide" aria-label="2 of 10"
-										     style="margin-right: 22px; width: calc(25% - 16.5px);" aria-hidden="true">
-											<a href="/program/supply-chain-now" aria-current="page"
-											   class="w-full overflow-hidden rounded-24 w-inline-block w--current" tabindex="-1">
-												<div>
-													<img
-														src="https://cdn.prod.website-files.com/686225582293e0967d2b9375/6889b5ec1e9b6ef3093ff5f8_program-supply%20chain%20now.avif"
-														loading="lazy" alt="" class="image">
-												</div>
-											</a>
-										</div>
-										<div role="group" class="splide__slide w-dyn-item" id="splide01-slide03"
-										     aria-roledescription="slide" aria-label="3 of 10"
-										     style="margin-right: 22px; width: calc(25% - 16.5px);" aria-hidden="true">
-											<a href="/program/veteran-voices" class="w-full overflow-hidden rounded-24 w-inline-block"
-											   tabindex="-1">
-												<div>
-													<img
-														src="https://cdn.prod.website-files.com/686225582293e0967d2b9375/6889b65154ff2052b5cb113a_program-veteran%20voices.avif"
-														loading="lazy" alt="" class="image">
-												</div>
-											</a>
-										</div>
-										<div role="group" class="splide__slide w-dyn-item" id="splide01-slide04"
-										     aria-roledescription="slide" aria-label="4 of 10"
-										     style="margin-right: 22px; width: calc(25% - 16.5px);" aria-hidden="true">
-											<a href="/program/digital-transformers" class="w-full overflow-hidden rounded-24 w-inline-block"
-											   tabindex="-1">
-												<div>
-													<img
-														src="https://cdn.prod.website-files.com/686225582293e0967d2b9375/6889b6421670245c8994f27c_program-digital%20transformers.avif"
-														loading="lazy" alt="" class="image">
-												</div>
-											</a>
-										</div>
-										<div role="group" class="splide__slide w-dyn-item" id="splide01-slide05"
-										     aria-roledescription="slide" aria-label="5 of 10"
-										     style="margin-right: 22px; width: calc(25% - 16.5px);" aria-hidden="true">
-											<a href="/program/techquila-sunrise" class="w-full overflow-hidden rounded-24 w-inline-block"
-											   tabindex="-1">
-												<div>
-													<img
-														src="https://cdn.prod.website-files.com/686225582293e0967d2b9375/6889b68b281dc4e7d48bf076_program-techquila%20sunrise.avif"
-														loading="lazy" alt="" class="image">
-												</div>
-											</a>
-										</div>
-										<div role="group" class="splide__slide w-dyn-item" id="splide01-slide06"
-										     aria-roledescription="slide" aria-label="6 of 10"
-										     style="margin-right: 22px; width: calc(25% - 16.5px);" aria-hidden="true">
-											<a href="/program/supply-chain-now-en-espanol"
-											   class="w-full overflow-hidden rounded-24 w-inline-block" tabindex="-1">
-												<div>
-													<img
-														src="https://cdn.prod.website-files.com/686225582293e0967d2b9375/6889b632c09887a63c454c84_program-supply%20chain%20now%20en%20espanol.avif"
-														loading="lazy" alt="Supply Chain Now en Espanol" class="image">
-												</div>
-											</a>
-										</div>
-										<div role="group" class="splide__slide w-dyn-item" id="splide01-slide07"
-										     aria-roledescription="slide" aria-label="7 of 10"
-										     style="margin-right: 22px; width: calc(25% - 16.5px);" aria-hidden="true">
-											<a href="/program/business-history" class="w-full overflow-hidden rounded-24 w-inline-block"
-											   tabindex="-1">
-												<div>
-													<img
-														src="https://cdn.prod.website-files.com/686225582293e0967d2b9375/6889b69bf1c472ef92bf40d6_program-this%20week%20in%20business%20history.avif"
-														loading="lazy" alt="This Week In Business History" class="image">
-												</div>
-											</a>
-										</div>
-										<div role="group" class="splide__slide w-dyn-item" id="splide01-slide08"
-										     aria-roledescription="slide" aria-label="8 of 10"
-										     style="margin-right: 22px; width: calc(25% - 16.5px);" aria-hidden="true">
-											<a href="/program/supply-chain-is-boring"
-											   class="w-full overflow-hidden rounded-24 w-inline-block" tabindex="-1">
-												<div>
-													<img
-														src="https://cdn.prod.website-files.com/686225582293e0967d2b9375/6889b6644ec390e320f7b9c5_program-supply%20chain%20is%20boring.avif"
-														loading="lazy" alt="Supply Chain is Boring" class="image">
-												</div>
-											</a>
-										</div>
-										<div role="group" class="splide__slide w-dyn-item is-prev" id="splide01-slide09"
-										     aria-roledescription="slide" aria-label="9 of 10"
-										     style="margin-right: 22px; width: calc(25% - 16.5px);" aria-hidden="true">
-											<a href="/program/tektok" class="w-full overflow-hidden rounded-24 w-inline-block" tabindex="-1">
-												<div>
-													<img
-														src="https://cdn.prod.website-files.com/686225582293e0967d2b9375/6889b66ff8c941a51e2ad48d_program-tektok.avif"
-														loading="lazy" alt="TEKTOK" class="image">
-												</div>
-											</a>
-										</div>
-										<div role="group" class="splide__slide w-dyn-item is-visible is-active" id="splide01-slide10"
-										     aria-roledescription="slide" aria-label="10 of 10"
-										     style="margin-right: 22px; width: calc(25% - 16.5px);">
-											<a href="/program/logistics-with-purpose"
-											   class="w-full overflow-hidden rounded-24 w-inline-block">
-												<div>
-													<img
-														src="https://cdn.prod.website-files.com/686225582293e0967d2b9375/6889b626c39d50d03b7206af_program-logistics%20with%20purpose.avif"
-														loading="lazy" alt="Logistics with Purpose®" class="image">
-												</div>
-											</a>
-										</div>
-										<div role="group" class="splide__slide w-dyn-item splide__slide--clone is-visible is-next"
-										     id="splide01-clone09" aria-roledescription="slide" aria-label="1 of 10"
-										     style="margin-right: 22px; width: calc(25% - 16.5px);">
-											<a href="/program/tango-tango" class="w-full overflow-hidden rounded-24 w-inline-block">
-												<div>
-													<img
-														src="https://cdn.prod.website-files.com/686225582293e0967d2b9375/6889b5fc7c2a9c8f523bfa6e_program-tango%20tango.avif"
-														loading="lazy" alt="" class="image">
-												</div>
-											</a>
-										</div>
-										<div role="group" class="splide__slide w-dyn-item splide__slide--clone is-visible"
-										     id="splide01-clone10" aria-roledescription="slide" aria-label="2 of 10"
-										     style="margin-right: 22px; width: calc(25% - 16.5px);">
-											<a href="/program/supply-chain-now" aria-current="page"
-											   class="w-full overflow-hidden rounded-24 w-inline-block w--current">
-												<div>
-													<img
-														src="https://cdn.prod.website-files.com/686225582293e0967d2b9375/6889b5ec1e9b6ef3093ff5f8_program-supply%20chain%20now.avif"
-														loading="lazy" alt="" class="image">
-												</div>
-											</a>
-										</div>
-										<div role="group" class="splide__slide w-dyn-item splide__slide--clone is-visible"
-										     id="splide01-clone11" aria-roledescription="slide" aria-label="3 of 10"
-										     style="margin-right: 22px; width: calc(25% - 16.5px);">
-											<a href="/program/veteran-voices" class="w-full overflow-hidden rounded-24 w-inline-block">
-												<div>
-													<img
-														src="https://cdn.prod.website-files.com/686225582293e0967d2b9375/6889b65154ff2052b5cb113a_program-veteran%20voices.avif"
-														loading="lazy" alt="" class="image">
-												</div>
-											</a>
-										</div>
-										<div role="group" class="splide__slide w-dyn-item splide__slide--clone" id="splide01-clone12"
-										     aria-roledescription="slide" aria-label="4 of 10"
-										     style="margin-right: 22px; width: calc(25% - 16.5px);" aria-hidden="true">
-											<a href="/program/digital-transformers" class="w-full overflow-hidden rounded-24 w-inline-block"
-											   tabindex="-1">
-												<div>
-													<img
-														src="https://cdn.prod.website-files.com/686225582293e0967d2b9375/6889b6421670245c8994f27c_program-digital%20transformers.avif"
-														loading="lazy" alt="" class="image">
-												</div>
-											</a>
-										</div>
-										<div role="group" class="splide__slide w-dyn-item splide__slide--clone" id="splide01-clone13"
-										     aria-roledescription="slide" aria-label="5 of 10"
-										     style="margin-right: 22px; width: calc(25% - 16.5px);" aria-hidden="true">
-											<a href="/program/techquila-sunrise" class="w-full overflow-hidden rounded-24 w-inline-block"
-											   tabindex="-1">
-												<div>
-													<img
-														src="https://cdn.prod.website-files.com/686225582293e0967d2b9375/6889b68b281dc4e7d48bf076_program-techquila%20sunrise.avif"
-														loading="lazy" alt="" class="image">
-												</div>
-											</a>
-										</div>
-										<div role="group" class="splide__slide w-dyn-item splide__slide--clone" id="splide01-clone14"
-										     aria-roledescription="slide" aria-label="6 of 10"
-										     style="margin-right: 22px; width: calc(25% - 16.5px);" aria-hidden="true">
-											<a href="/program/supply-chain-now-en-espanol"
-											   class="w-full overflow-hidden rounded-24 w-inline-block" tabindex="-1">
-												<div>
-													<img
-														src="https://cdn.prod.website-files.com/686225582293e0967d2b9375/6889b632c09887a63c454c84_program-supply%20chain%20now%20en%20espanol.avif"
-														loading="lazy" alt="Supply Chain Now en Espanol" class="image">
-												</div>
-											</a>
-										</div>
-										<div role="group" class="splide__slide w-dyn-item splide__slide--clone" id="splide01-clone15"
-										     aria-roledescription="slide" aria-label="7 of 10"
-										     style="margin-right: 22px; width: calc(25% - 16.5px);" aria-hidden="true">
-											<a href="/program/business-history" class="w-full overflow-hidden rounded-24 w-inline-block"
-											   tabindex="-1">
-												<div>
-													<img
-														src="https://cdn.prod.website-files.com/686225582293e0967d2b9375/6889b69bf1c472ef92bf40d6_program-this%20week%20in%20business%20history.avif"
-														loading="lazy" alt="This Week In Business History" class="image">
-												</div>
-											</a>
-										</div>
-										<div role="group" class="splide__slide w-dyn-item splide__slide--clone" id="splide01-clone16"
-										     aria-roledescription="slide" aria-label="8 of 10"
-										     style="margin-right: 22px; width: calc(25% - 16.5px);" aria-hidden="true">
-											<a href="/program/supply-chain-is-boring"
-											   class="w-full overflow-hidden rounded-24 w-inline-block" tabindex="-1">
-												<div>
-													<img
-														src="https://cdn.prod.website-files.com/686225582293e0967d2b9375/6889b6644ec390e320f7b9c5_program-supply%20chain%20is%20boring.avif"
-														loading="lazy" alt="Supply Chain is Boring" class="image">
-												</div>
-											</a>
-										</div>
+											<?php
+											endwhile;
+											wp_reset_postdata(); ?>
+										<?php
+										endif; ?>
 									</div>
 								</div>
-								<div class="splide__arrows splide__arrows--ltr">
-									<div class="splide__arrow splide__arrow--prev" aria-label="Previous slide"
-									     aria-controls="splide01-track">
-										<div class="flex w-embed">
-											<svg style="background: white;border-radius: 50%;" xmlns="http://www.w3.org/2000/svg" width="42"
-											     height="42" viewBox="0 0 42 42" fill="none">
-												<path
-													d="M21 41C9.95431 41 1 32.0457 1 21C1 9.95431 9.95431 1 21 1C32.0457 1 41 9.95431 41 21C41 32.0457 32.0457 41 21 41Z"
-													stroke="#FFAB56" stroke-width="2" stroke-miterlimit="10"></path>
-												<path d="M28.5912 21.4893H13.0004" stroke="#FFAB56" stroke-width="2"
-												      stroke-miterlimit="10"></path>
-												<path d="M19.4894 15L13 21.4894L19.4894 27.9787" stroke="#FFAB56" stroke-width="2"
-												      stroke-miterlimit="10"></path>
-											</svg>
-										</div>
-									</div>
-									<div class="splide__arrow splide__arrow--next" aria-label="Go to first slide"
-									     aria-controls="splide01-track">
-										<div class="flex w-embed">
-											<svg style="background: white;border-radius: 50%;" xmlns="http://www.w3.org/2000/svg" width="42"
-											     height="42" viewBox="0 0 42 42" fill="none">
-												<path
-													d="M21 41C32.0457 41 41 32.0457 41 21C41 9.95431 32.0457 1 21 1C9.95431 1 1 9.95431 1 21C1 32.0457 9.95431 41 21 41Z"
-													stroke="#FFAB56" stroke-width="2" stroke-miterlimit="10"></path>
-												<path d="M13 21.4893H28.5908" stroke="#FFAB56" stroke-width="2" stroke-miterlimit="10"></path>
-												<path d="M22.1017 15L28.5911 21.4894L22.1017 27.9787" stroke="#FFAB56" stroke-width="2"
-												      stroke-miterlimit="10"></path>
-											</svg>
-										</div>
-									</div>
-								</div>
-								<div class="display-none w-embed">
-									<style>
-										html.wf-design-mode [slider-1] .splide__list {
-											display: flex;
-											flex-wrap: nowrap;
-											justify-content: center;
-										}
-									</style>
-								</div>
+								<?php
+								get_template_part('components/splide-arrows');
+								?>
 								<div class="display-none w-embed w-script">
 									<script>
 										document.addEventListener('DOMContentLoaded', function () {
