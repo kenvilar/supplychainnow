@@ -274,7 +274,7 @@ $pageId = get_the_ID();
 											</div>
 											<div class="flex items-center gap-8 text-sm font-light font-family-secondary">
 												<div><?php
-													echo get_the_date('F j, Y'); ?></div>
+													echo get_the_date('F j, Y', $pageId); ?></div>
 												<!--<div>•</div>
 												<div>6 min 25 sec</div>-->
 											</div>
@@ -585,7 +585,7 @@ $pageId = get_the_ID();
 											</div>
 											<div class="flex items-center gap-8 text-sm font-light font-family-secondary">
 												<div><?php
-													echo get_the_date('F j, Y'); ?></div>
+													echo get_the_date('F j, Y', $pageId); ?></div>
 												<!--<div>•</div>
 												<div>6 min 25 sec</div>-->
 											</div>
