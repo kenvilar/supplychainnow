@@ -469,13 +469,13 @@ $pageId = get_the_ID();
 						</div>
 					</div>
 					<div class="h-600">
-						<div data-lenis-prevent="" class="iframe-h-600 w-richtext">
-							<figure class="w-richtext-align-center w-richtext-figure-type-video">
-								<div>
-									<iframe frameborder="no" scrolling="no"
-									        src="https://player.captivate.fm/show/b024578c-b62d-4a34-a70a-5dd7c020a623/"></iframe>
-								</div>
-							</figure>
+						<div data-lenis-prevent="" class="w-richtext">
+							<?php
+							$captivate_code = get_field('captivate_code', $pageId);
+							if ($captivate_code) {
+								echo $captivate_code;
+							}
+							?>
 						</div>
 					</div>
 				</div>
