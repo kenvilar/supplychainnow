@@ -313,21 +313,45 @@ $pageId = get_the_ID();
 						<a href="#" class="btn link w-inline-block">
 							<div>Sample Custom Button</div>
 						</a>
-						<a href="#" class="btn primary w-inline-block">
-							<div>Learn More About Sponsorship</div>
-						</a>
-						<a href="#" class="btn secondary w-inline-block">
-							<div>Sample Custom Button</div>
-						</a>
-						<a href="#" class="btn tertiary w-inline-block">
-							<div>Sample Custom Button</div>
-						</a>
-						<a href="#" class="btn primary-outline w-inline-block">
-							<div>Sample Custom Button</div>
-						</a>
-						<a href="#" class="btn secondary-outline w-inline-block">
-							<div>Sample Custom Button</div>
-						</a>
+						<?php
+						echo get_template_part('components/ui/btn-solid', null, [
+							'text' => 'Default Text',
+							'link' => '#',
+							'style' => 'primary',
+						])
+						?>
+						<?php
+						echo get_template_part('components/ui/btn-solid', null, [
+							'text' => 'Default Text',
+							'link' => '#',
+							'style' => 'secondary',
+							'class' => '',
+						])
+						?>
+						<?php
+						echo get_template_part('components/ui/btn-solid', null, [
+							'text' => 'Default Text',
+							'link' => '#',
+							'style' => 'tertiary',
+							'class' => '',
+						])
+						?>
+						<?php
+						echo get_template_part('components/ui/btn-solid', null, [
+							'text' => 'Default Text',
+							'link' => '#',
+							'style' => 'primary-outline',
+							'class' => '',
+						])
+						?>
+						<?php
+						echo get_template_part('components/ui/btn-solid', null, [
+							'text' => 'Default Text',
+							'link' => '#',
+							'style' => 'secondary-outline',
+							'class' => '',
+						])
+						?>
 					</div>
 				</div>
 				<div class="p-12 flex flex-col gap-8">
