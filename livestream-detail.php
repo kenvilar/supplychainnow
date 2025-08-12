@@ -472,7 +472,10 @@ $pageId = get_the_ID();
 			<div class="min-h-990 h-full flex justify-center pt-70 pb-57 px-32">
 				<div class="w-layout-blockcontainer max-w-841 w-full md:max-w-full w-container">
 					<div class="mb-16 flex items-center gap-22">
-						<div class="lh-normal">April 07, 2025</div>
+						<div class="lh-normal">
+							<?php
+							echo get_the_date('F j, Y', $pageId) ?>
+						</div>
 						<?php
 						$terms = get_the_terms(get_the_ID(), 'tags');
 						if (!is_wp_error($terms) && !empty($terms)) {
