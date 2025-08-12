@@ -552,6 +552,25 @@ a#back_to_top, footer .footer_inner {
 	position: relative;
 	overflow: hidden;
 }
+.on-demand-programming-link {
+	opacity: .5;
+	text-align: center;
+	padding: 20px 36px;
+	font-size: 20px;
+	line-height: 24px;
+	position: relative;
+	overflow: hidden;
+}
+.on-demand-programming-link.w--current {
+	border-bottom: 2px solid var(--primary);
+	opacity: 1;
+	color: var(--primary);
+	font-weight: 600;
+}
+.on-demand-programming-link:hover {
+	opacity: 1;
+	color: var(--primary);
+}
 /* Tablet */
 @media screen and (max-width: 991px) {
 	.md\:display-block {
