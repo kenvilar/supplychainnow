@@ -314,42 +314,63 @@ $pageId = get_the_ID();
 							<div>Sample Custom Button</div>
 						</a>
 						<?php
-						echo get_template_part('components/ui/btn-solid', null, [
+						echo get_template_part('components/ui/btn', null, [
 							'text' => 'Default Text',
 							'link' => '#',
 							'style' => 'primary',
+							'class' => '',
+							/*'attributes' => [
+								'target' => '_blank',
+								'rel'    => 'noopener',
+							],*/
 						])
 						?>
 						<?php
-						echo get_template_part('components/ui/btn-solid', null, [
+						echo get_template_part('components/ui/btn', null, [
 							'text' => 'Default Text',
 							'link' => '#',
 							'style' => 'secondary',
 							'class' => '',
+							/*'attributes' => [
+								'target' => '_blank',
+								'rel'    => 'noopener',
+							],*/
 						])
 						?>
 						<?php
-						echo get_template_part('components/ui/btn-solid', null, [
+						echo get_template_part('components/ui/btn', null, [
 							'text' => 'Default Text',
 							'link' => '#',
 							'style' => 'tertiary',
 							'class' => '',
+							/*'attributes' => [
+								'target' => '_blank',
+								'rel'    => 'noopener',
+							],*/
 						])
 						?>
 						<?php
-						echo get_template_part('components/ui/btn-solid', null, [
+						echo get_template_part('components/ui/btn', null, [
 							'text' => 'Default Text',
 							'link' => '#',
 							'style' => 'primary-outline',
 							'class' => '',
+							/*'attributes' => [
+								'target' => '_blank',
+								'rel'    => 'noopener',
+							],*/
 						])
 						?>
 						<?php
-						echo get_template_part('components/ui/btn-solid', null, [
+						echo get_template_part('components/ui/btn', null, [
 							'text' => 'Default Text',
 							'link' => '#',
 							'style' => 'secondary-outline',
 							'class' => '',
+							/*'attributes' => [
+								'target' => '_blank',
+								'rel'    => 'noopener',
+							],*/
 						])
 						?>
 					</div>
