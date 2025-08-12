@@ -495,7 +495,7 @@ $pageId = get_the_ID();
 			</section>
 		</div>
 	</div>
-	<dialog data-lenis-prevent="" class="my-modal">
+	<dialog data-lenis-prevent="" class="my-modal scrollbar">
 		<div class="relative">
 			<div class="min-h-990 h-full flex justify-center pt-70 pb-57 px-32">
 				<div class="w-layout-blockcontainer max-w-841 w-full md:max-w-full w-container">
@@ -602,7 +602,7 @@ $pageId = get_the_ID();
 					</div>
 					<div class="tracking-[1.6px]">
 						<?php
-						if (get_field('episode_summary', $pageId)) {
+						/*if (get_field('episode_summary', $pageId)) {
 							echo wp_kses_post(get_field('episode_summary', $pageId));
 						} else {
 							if (get_field('episode_quote', $pageId)) {
@@ -614,8 +614,55 @@ $pageId = get_the_ID();
 									echo '';
 								}
 							}
-						}
+						}*/
+
 						?>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc lacus metus, congue eget purus consectetur,
+						luctus lobortis sem. Pellentesque eu justo orci. Praesent varius sapien et lectus ultrices lacinia.
+						Pellentesque eu feugiat ante. Maecenas ultricies elit at egestas blandit. Integer id nisi eros. Aenean nisi
+						ex, auctor nec porta nec, pulvinar sed augue. Donec viverra odio libero, vitae ornare tortor dignissim a.
+						Praesent risus eros, luctus ut ornare in, accumsan quis eros. Vivamus semper ex in massa finibus, sed
+						aliquam elit tempus. Mauris pellentesque, odio at laoreet elementum, nulla lacus gravida arcu, vel tempus
+						nunc ante vel justo. Curabitur ut cursus est, ac laoreet diam. Morbi egestas sit amet nulla eu pharetra.
+						Phasellus at pellentesque felis, ut elementum orci. Maecenas et nisl ultrices, mollis elit nec, accumsan
+						arcu. Sed tincidunt gravida urna in bibendum. Cras in rhoncus ligula, consequat volutpat ante. Integer ut
+						purus vitae orci commodo fermentum sed non ipsum. Integer volutpat lacinia sem sit amet tempus. Maecenas a
+						orci non orci porta congue hendrerit quis libero. Vestibulum in turpis viverra eros pharetra imperdiet.
+						Nulla iaculis faucibus suscipit. In varius lacus lacinia erat tincidunt gravida egestas nec turpis. Orci
+						varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In porta mi risus, sit
+						amet congue ex tempus a. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ante nunc, tempor
+						luctus felis id, sodales suscipit mauris. Mauris ut placerat arcu. Phasellus dictum ex et sapien suscipit,
+						sit amet euismod orci euismod.
+						Fusce a tincidunt odio. Aliquam erat volutpat. Integer sollicitudin justo dapibus sem maximus, sed hendrerit
+						velit consequat. Nullam et quam lorem. Ut ut turpis viverra, condimentum velit sed, rhoncus est. Nulla
+						auctor neque tellus, sit amet luctus enim eleifend eu. Integer posuere orci non purus tempus, eget vehicula
+						elit ullamcorper. Quisque quis lorem gravida, placerat magna eget, mollis leo. Etiam vitae gravida ipsum.
+						Quisque viverra mi non lorem convallis, eu efficitur mauris elementum. Aenean at nisl nec neque semper
+						consectetur eget at nulla. Sed in volutpat ex. Morbi elit nulla, sodales sed lobortis ac, rutrum bibendum
+						velit. Sed vel nisl quis odio ultricies rhoncus id eu massa.
+						Phasellus ornare, neque sagittis placerat venenatis, velit diam lobortis dui, in faucibus lorem nisi vel
+						eros. Sed consequat ante nulla, ac dignissim lorem ullamcorper quis. Quisque mollis leo ac dolor venenatis
+						ultricies. Aenean sodales enim nec eros dapibus, ac tincidunt purus malesuada. Sed id orci cursus nulla
+						finibus dictum vel sed urna. Fusce eu enim bibendum, ornare augue eu, maximus nibh. Aenean rhoncus ipsum vel
+						lacinia fringilla.
+						Fusce scelerisque ex et lectus consequat porttitor. Pellentesque magna nisi, viverra a scelerisque eu,
+						rutrum ut metus. Vivamus bibendum sollicitudin vehicula. In hac habitasse platea dictumst. Orci varius
+						natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean quis odio sed sem rutrum
+						iaculis non quis lectus. Morbi sit amet nisi ac dui tristique ultrices. Donec imperdiet finibus tincidunt.
+						Nam nunc urna, mattis eget leo ac, tincidunt cursus sapien. Proin et est dapibus velit laoreet faucibus et
+						vitae arcu. Nam euismod erat nec mattis efficitur. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+						Aliquam eget luctus eros. In in egestas enim, sagittis placerat libero. Suspendisse potenti. Nulla dapibus
+						consectetur felis quis varius. Pellentesque ornare, nulla non ornare rhoncus, lorem orci tincidunt elit, sit
+						amet varius leo mauris id augue. Integer non iaculis velit, ut dapibus diam. Sed tincidunt ac dui dictum
+						lobortis. Sed ornare lorem facilisis, pellentesque ex et, aliquam magna. Etiam quis massa dolor. Donec
+						tincidunt ipsum non hendrerit efficitur. Sed id lorem posuere, semper est eget, imperdiet turpis. Nam vel
+						arcu dolor. In mattis nulla in libero bibendum placerat. Integer ac semper ex. Proin eget sapien
+						scelerisque, rhoncus elit ut, blandit felis. Phasellus eu tincidunt elit.
+						Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Praesent rhoncus
+						nisl id sem euismod sodales. Vestibulum fermentum nisi eu purus vestibulum imperdiet. Etiam ac ante sed
+						augue pharetra vulputate at in quam. Suspendisse vulputate tincidunt leo. Sed ultrices, turpis vel vulputate
+						molestie, metus nunc semper massa, sodales vehicula quam ipsum et sapien. Cras vitae tellus sed sapien
+						ullamcorper posuere vitae vitae ex.
 					</div>
 				</div>
 			</div>
@@ -628,6 +675,23 @@ $pageId = get_the_ID();
 		</div>
 	</dialog>
 	<div class="display-none w-embed w-script">
+		<style>
+			.scrollbar::-webkit-scrollbar {
+				width: 5px;
+				height: 10px;
+			}
+			.scrollbar::-webkit-scrollbar-track {
+				border-radius: 20px;
+				background: rgba(78, 136, 182, 0.25);
+			}
+			.scrollbar::-webkit-scrollbar-thumb {
+				background: #4E88B6;
+				border-radius: 20px;
+			}
+			.scrollbar::-webkit-scrollbar-thumb:hover {
+				/*background: #c0a0b9;*/
+			}
+		</style>
 		<script>
 			document.addEventListener("DOMContentLoaded", (event) => {
 				function myModalFunc() {
