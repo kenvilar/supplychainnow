@@ -321,7 +321,7 @@ $pageId = get_the_ID();
 							'class' => '',
 							/*'attributes' => [
 								'target' => '_blank',
-								'rel'    => 'noopener',
+								'rel'    => 'noopener noreferrer',
 							],*/
 						])
 						?>
@@ -333,7 +333,7 @@ $pageId = get_the_ID();
 							'class' => '',
 							/*'attributes' => [
 								'target' => '_blank',
-								'rel'    => 'noopener',
+								'rel'    => 'noopener noreferrer',
 							],*/
 						])
 						?>
@@ -345,7 +345,7 @@ $pageId = get_the_ID();
 							'class' => '',
 							/*'attributes' => [
 								'target' => '_blank',
-								'rel'    => 'noopener',
+								'rel'    => 'noopener noreferrer',
 							],*/
 						])
 						?>
@@ -357,7 +357,7 @@ $pageId = get_the_ID();
 							'class' => '',
 							/*'attributes' => [
 								'target' => '_blank',
-								'rel'    => 'noopener',
+								'rel'    => 'noopener noreferrer',
 							],*/
 						])
 						?>
@@ -369,7 +369,7 @@ $pageId = get_the_ID();
 							'class' => '',
 							/*'attributes' => [
 								'target' => '_blank',
-								'rel'    => 'noopener',
+								'rel'    => 'noopener noreferrer',
 							],*/
 						])
 						?>
