@@ -75,6 +75,7 @@ from webflow, start
 	--shadow1: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
 	--shadow2: 0px 5px 25px 0px rgba(49, 63, 74, 0.25);
 	--shadow3: 0px 4.982px 24.908px 0 rgba(49, 63, 74, 0.25);
+	--shadow4: 0 4.368px 21.839px 0 rgba(49, 63, 74, 0.10);
 }
 /* MAIN ELEMENTS */
 p a {
@@ -225,6 +226,7 @@ p a {
 	box-shadow: var(--shadow3);
 }
 .shadow4, .hover-shadow4:hover {
+	box-shadow: var(--shadow4);
 }
 .shadow5, .hover-shadow5:hover {
 }
