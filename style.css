@@ -545,6 +545,7 @@ a#back_to_top, footer .footer_inner {
 	margin: auto;
 	padding: 0;
 	overflow: auto;
+	outline: none;
 }
 .our-team-paragraph-modal {
 	letter-spacing: 1.6px;

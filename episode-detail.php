@@ -21,7 +21,7 @@ $pageId = get_the_ID();
 						<div class="overflow-hidden rounded-25 relative">
 							<div class="relative z-1 h-568 sm:h-200">
 								<img class="image" src="
-																<?php
+															<?php
 								if (get_field('upload_cover_image', $pageId)) {
 									echo get_field('upload_cover_image', $pageId);
 								} else {
@@ -164,13 +164,12 @@ $pageId = get_the_ID();
 											<?php
 											echo get_template_part('components/ui/btn', null, [
 												'text' => 'Transcript',
-												'link' => '#',
+												'link' => '',
 												'style' => 'secondary',
 												'class' => '',
-												/*'attributes' => [
-													'target' => '_blank',
-													'rel'    => 'noopener noreferrer',
-												],*/
+												'attributes' => [
+													'open-modal' => '',
+												],
 											])
 											?>
 											<?php
@@ -229,25 +228,25 @@ $pageId = get_the_ID();
 								</div>
 								<div class="mb-52">
 									<!--<form class="relative overflow-hidden rounded-100 border border-secondary/50 bg-[#EBF6FF]"
-									      method="get" action="<?php
+								      method="get" action="<?php
 									/*									echo esc_url(home_url(add_query_arg([]))); */ ?>">
-										<input
-											type="search"
-											name="s"
-											value="<?php
+									<input
+										type="search"
+										name="s"
+										value="<?php
 									/*											echo esc_attr(get_search_query()); */ ?>"
-											placeholder="Search by episode, topic, name, etc..."
-											class="overflow-hidden rounded-100 w-full h-43 py-14 pl-48 pr-12 text-sm font-light placeholder:text-secondary"
-										/>
-										<div class="absolute absolute--l flex items-center justify-center pl-22">
-											<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none">
-												<path
-													d="M6.31756 11.6351C9.25436 11.6351 11.6351 9.25436 11.6351 6.31756C11.6351 3.38075 9.25436 1 6.31756 1C3.38075 1 1 3.38075 1 6.31756C1 9.25436 3.38075 11.6351 6.31756 11.6351Z"
-													stroke="#4E88B6" stroke-miterlimit="10"/>
-												<path d="M14 13.9997L10.4529 10.4526" stroke="#4E88B6" stroke-miterlimit="10"/>
-											</svg>
-										</div>
-									</form>-->
+										placeholder="Search by episode, topic, name, etc..."
+										class="overflow-hidden rounded-100 w-full h-43 py-14 pl-48 pr-12 text-sm font-light placeholder:text-secondary"
+									/>
+									<div class="absolute absolute--l flex items-center justify-center pl-22">
+										<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none">
+											<path
+												d="M6.31756 11.6351C9.25436 11.6351 11.6351 9.25436 11.6351 6.31756C11.6351 3.38075 9.25436 1 6.31756 1C3.38075 1 1 3.38075 1 6.31756C1 9.25436 3.38075 11.6351 6.31756 11.6351Z"
+												stroke="#4E88B6" stroke-miterlimit="10"/>
+											<path d="M14 13.9997L10.4529 10.4526" stroke="#4E88B6" stroke-miterlimit="10"/>
+										</svg>
+									</div>
+								</form>-->
 								</div>
 								<div class="mb-52 flex flex-col gap-58 sm:gap-20">
 									<?php
@@ -458,9 +457,9 @@ $pageId = get_the_ID();
 																		the_field('webinar_description');
 																	} else {
 																		echo 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum
-								tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero
-								vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus
-								tristique posuere.';
+							tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero
+							vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus
+							tristique posuere.';
 																	}
 																}
 															}
@@ -495,6 +494,60 @@ $pageId = get_the_ID();
 				</div>
 			</section>
 		</div>
+	</div>
+	<dialog data-lenis-prevent="" class="my-modal">
+		<div class="relative">
+			<div class="min-h-990 h-full flex justify-center pt-70 pb-57 px-32">
+				<div class="w-layout-blockcontainer max-w-642 w-full md:max-w-full w-container">
+					asdasdsadasdas
+				</div>
+			</div>
+			<div close-modal="" class="flex absolute absolute--tr p-12 mt-36 mr-36 cursor-pointer w-embed">
+				<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+					<path d="M1 1L12.73 12.73" stroke="#313F4A" stroke-width="2" stroke-miterlimit="10"></path>
+					<path d="M12.73 1L1 12.73" stroke="#313F4A" stroke-width="2" stroke-miterlimit="10"></path>
+				</svg>
+			</div>
+		</div>
+	</dialog>
+	<div class="display-none w-embed w-script">
+		<script>
+			document.addEventListener("DOMContentLoaded", (event) => {
+				function myModalFunc() {
+					const myModal = document.querySelector(".my-modal");
+					const closeModal = document.querySelector("[close-modal]");
+					let openModal = document.querySelector("[open-modal]");
+					if (openModal) {
+						openModal.addEventListener("click", function (e) {
+							e.preventDefault();
+							// open the modal
+							setTimeout(function () {
+								myModal.showModal();
+							}, 200);
+						});
+					}
+					if (closeModal) {
+						//close the modal by clicking the 'x' button
+						closeModal.addEventListener("click", function () {
+							// close the modal
+							myModal.close();
+						});
+						//close the modal by clicking the 'esc' button
+						myModal.addEventListener("close", () => {
+							//
+						});
+						//close the modal by clicking the background or backdrop
+						myModal.addEventListener("click", (e) => {
+							if (e.target === myModal) {
+								myModal.close();
+							}
+						});
+					}
+				}
+
+				myModalFunc();
+			});
+		</script>
 	</div>
 <?php
 get_footer(); ?>
