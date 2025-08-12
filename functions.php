@@ -6,6 +6,9 @@ add_post_type_support('page', 'excerpt');
 if (!function_exists('bridge_qode_child_theme_enqueue_scripts')) {
 	function bridge_qode_child_theme_enqueue_scripts()
 	{
+		$isSplide = is_front_page() || is_page('about') || is_page('our-team-and-hosts') || is_page(
+				'upcoming-live-programming'
+			);
 		// Remove parent style
 		wp_dequeue_style('bridge-stylesheet');
 		wp_deregister_style('bridge-stylesheet');
@@ -14,8 +17,10 @@ if (!function_exists('bridge_qode_child_theme_enqueue_scripts')) {
 		wp_deregister_style('bridge-style-dynamic');
 
 		//splide style
-		wp_register_style('splide-style', get_stylesheet_directory_uri() . '/assets/css/splide.min.css');
-		wp_enqueue_style('splide-style');
+		if ($isSplide) {
+			wp_register_style('splide-style', get_stylesheet_directory_uri() . '/assets/css/splide.min.css');
+			wp_enqueue_style('splide-style');
+		}
 
 		wp_register_style('bridge-childstyle', get_stylesheet_directory_uri() . '/style.css');
 		wp_enqueue_style('bridge-childstyle');
@@ -35,23 +40,28 @@ if (!function_exists('bridge_qode_child_theme_enqueue_scripts')) {
 
 	function supplyChainNowScripts()
 	{
-		//splide script
-		wp_enqueue_script(
-			'splide-script',
-			get_stylesheet_directory_uri() . '/assets/js/splide.min.js',
-			[],
-			false,
-			true // load in footer
-		);
+		$isSplide = is_front_page() || is_page('about') || is_page('our-team-and-hosts') || is_page(
+				'upcoming-live-programming'
+			);
+		if ($isSplide) {
+			//splide script
+			wp_enqueue_script(
+				'splide-script',
+				get_stylesheet_directory_uri() . '/assets/js/splide.min.js',
+				[],
+				false,
+				true // load in footer
+			);
 
-		//splide auto scroll extension
-		wp_enqueue_script(
-			'splide-extension-auto-scroll',
-			get_stylesheet_directory_uri() . '/assets/js/splide-extension-auto-scroll.min.js',
-			[],
-			false,
-			true // load in footer
-		);
+			//splide auto scroll extension
+			wp_enqueue_script(
+				'splide-extension-auto-scroll',
+				get_stylesheet_directory_uri() . '/assets/js/splide-extension-auto-scroll.min.js',
+				[],
+				false,
+				true // load in footer
+			);
+		}
 
 		//custom script
 		wp_enqueue_script(
