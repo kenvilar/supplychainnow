@@ -8,7 +8,7 @@ if (!function_exists('bridge_qode_child_theme_enqueue_scripts')) {
 	{
 		$isSplide = is_front_page() || is_page('about') || is_page('our-team-and-hosts') || is_page(
 				'upcoming-live-programming'
-			) || is_page('on-demand-programming');
+			) || is_page('on-demand-programming') || is_singular('program');
 		// Remove parent style
 		wp_dequeue_style('bridge-stylesheet');
 		wp_deregister_style('bridge-stylesheet');
@@ -42,7 +42,7 @@ if (!function_exists('bridge_qode_child_theme_enqueue_scripts')) {
 	{
 		$isSplide = is_front_page() || is_page('about') || is_page('our-team-and-hosts') || is_page(
 				'upcoming-live-programming'
-			) || is_page('on-demand-programming');
+			) || is_page('on-demand-programming') || is_singular('program');
 		if ($isSplide) {
 			//splide script
 			wp_enqueue_script(
