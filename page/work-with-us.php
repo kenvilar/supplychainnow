@@ -9,7 +9,7 @@ $pageId = get_the_ID();
 <div class="page-wrapper">
 	<div class="main-wrapper">
 		<section class="section bg-cargogrey text-white rounded-b-100">
-			<div class="site-padding sm-py-60 pt-200 pb-116 relative z-10">
+			<div class="site-padding sm:py-60 pt-200 pb-116 relative z-10">
 				<div class="w-layout-blockcontainer pt-20 w-container text-center max-w-960">
 					<div class="mb-28">
 						<h1>Work With Us</h1>
@@ -19,7 +19,7 @@ $pageId = get_the_ID();
 							<div class="splide__track">
 								<ul class="splide__list">
 									<li class="splide__slide">
-										<div class="flex items-center gap-20 justify-center xs-flex-col">
+										<div class="flex items-center gap-20 justify-center xs:flex-col">
 											<div class="flex w-embed">
 												<svg xmlns="http://www.w3.org/2000/svg" width="27" height="28" viewBox="0 0 27 28" fill="none">
 													<path
@@ -36,11 +36,11 @@ $pageId = get_the_ID();
 														stroke="#FFAB56" stroke-width="2" stroke-miterlimit="10"></path>
 												</svg>
 											</div>
-											<div class="font-family-alternate text-xl tracking-[2.4px] xs-text-md">Brand Awareness</div>
+											<div class="font-family-alternate text-xl tracking-[2.4px] xs:text-md">Brand Awareness</div>
 										</div>
 									</li>
 									<li class="splide__slide">
-										<div class="flex items-center gap-20 justify-center xs-flex-col">
+										<div class="flex items-center gap-20 justify-center xs:flex-col">
 											<div class="flex w-embed">
 												<svg xmlns="http://www.w3.org/2000/svg" width="23" height="30" viewBox="0 0 23 30" fill="none">
 													<path
@@ -53,11 +53,11 @@ $pageId = get_the_ID();
 													      stroke-miterlimit="10"></path>
 												</svg>
 											</div>
-											<div class="font-family-alternate text-xl tracking-[2.4px] xs-text-md">Thought Leadership</div>
+											<div class="font-family-alternate text-xl tracking-[2.4px] xs:text-md">Thought Leadership</div>
 										</div>
 									</li>
 									<li class="splide__slide">
-										<div class="flex items-center gap-20 justify-center xs-flex-col">
+										<div class="flex items-center gap-20 justify-center xs:flex-col">
 											<div class="flex w-embed">
 												<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
 													<path
@@ -72,22 +72,22 @@ $pageId = get_the_ID();
 													      stroke-miterlimit="10"></path>
 												</svg>
 											</div>
-											<div class="font-family-alternate text-xl tracking-[2.4px] xs-text-md">Content Creation</div>
+											<div class="font-family-alternate text-xl tracking-[2.4px] xs:text-md">Content Creation</div>
 										</div>
 									</li>
 									<li class="splide__slide">
-										<div class="flex items-center gap-20 justify-center xs-flex-col">
+										<div class="flex items-center gap-20 justify-center xs:flex-col">
 											<div class="flex w-embed">
 												<svg xmlns="http://www.w3.org/2000/svg" width="31" height="21" viewBox="0 0 31 21" fill="none">
 													<path d="M30 1L16.8232 14.1906L11.5442 8.9116L1 19.4558" stroke="#FFAB56" stroke-width="2"
 													      stroke-miterlimit="10"></path>
 												</svg>
 											</div>
-											<div class="font-family-alternate text-xl tracking-[2.4px] xs-text-md">Social Traffic</div>
+											<div class="font-family-alternate text-xl tracking-[2.4px] xs:text-md">Social Traffic</div>
 										</div>
 									</li>
 									<li class="splide__slide">
-										<div class="flex items-center gap-20 justify-center xs-flex-col">
+										<div class="flex items-center gap-20 justify-center xs:flex-col">
 											<div class="flex w-embed">
 												<svg xmlns="http://www.w3.org/2000/svg" width="28" height="27" viewBox="0 0 28 27" fill="none">
 													<path
@@ -98,11 +98,11 @@ $pageId = get_the_ID();
 														stroke="#FFAB56" stroke-width="2" stroke-miterlimit="10"></path>
 												</svg>
 											</div>
-											<div class="font-family-alternate text-xl tracking-[2.4px] xs-text-md">Genuine Engagement</div>
+											<div class="font-family-alternate text-xl tracking-[2.4px] xs:text-md">Genuine Engagement</div>
 										</div>
 									</li>
 									<li class="splide__slide">
-										<div class="flex items-center gap-20 justify-center xs-flex-col">
+										<div class="flex items-center gap-20 justify-center xs:flex-col">
 											<div class="flex w-embed">
 												<svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 27 27" fill="none">
 													<path
@@ -112,11 +112,11 @@ $pageId = get_the_ID();
 													      stroke-miterlimit="10"></path>
 												</svg>
 											</div>
-											<div class="font-family-alternate text-xl tracking-[2.4px] xs-text-md">3rd Party Validation</div>
+											<div class="font-family-alternate text-xl tracking-[2.4px] xs:text-md">3rd Party Validation</div>
 										</div>
 									</li>
 									<li class="splide__slide">
-										<div class="flex items-center gap-20 justify-center xs-flex-col">
+										<div class="flex items-center gap-20 justify-center xs:flex-col">
 											<div class="flex w-embed">
 												<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
 													<path
@@ -132,7 +132,7 @@ $pageId = get_the_ID();
 														stroke="#FFAB56" stroke-width="2" stroke-miterlimit="10"></path>
 												</svg>
 											</div>
-											<div class="font-family-alternate text-xl tracking-[2.4px] xs-text-md">Lead Generation</div>
+											<div class="font-family-alternate text-xl tracking-[2.4px] xs:text-md">Lead Generation</div>
 										</div>
 									</li>
 								</ul>
@@ -213,11 +213,11 @@ $pageId = get_the_ID();
 					loading="lazy" alt="hero-work with us" class="image opacity-10">
 			</div>
 		</section>
-		<section class="section sm-text-center">
-			<div class="site-padding sm-py-60 py-76">
+		<section class="section sm:text-center">
+			<div class="site-padding sm:py-60 py-76">
 				<div class="w-layout-blockcontainer max-w-1252 w-container">
-					<div class="flex gap-20 justify-between sm-flex-col items-center sm-gap-40">
-						<div class="max-w-568 w-full md-max-w-full">
+					<div class="flex gap-20 justify-between sm:flex-col items-center sm:gap-40">
+						<div class="max-w-568 w-full md:max-w-full">
 							<div class="mb-20">
 								<h2>81% of Decision-Makers Prefer Interactive Video Content</h2>
 							</div>
@@ -226,13 +226,13 @@ $pageId = get_the_ID();
 								tuning into, week after week.
 							</p>
 						</div>
-						<div class="max-w-608 w-full md-max-w-full">
-							<div class="flex items-end gap-28 sm-flex-col sm-gap-12">
-								<div class="max-w-288 w-full md-max-w-full group transition-all hover:-translate-y-25">
+						<div class="max-w-608 w-full md:max-w-full">
+							<div class="flex items-end gap-28 sm:flex-col sm:gap-12">
+								<div class="max-w-288 w-full md:max-w-full group transition-all hover:-translate-y-25">
 									<div class="text-center rounded-t-24 overflow-hidden relative px-20 pt-48 pb-148 cursor-pointer">
-										<div class="w-layout-blockcontainer max-w-200 w-full md-max-w-full w-container">
+										<div class="w-layout-blockcontainer max-w-200 w-full md:max-w-full w-container">
 											<div class="mb-48">
-												<div class="w-layout-blockcontainer max-w-124 w-full md-max-w-full w-container">
+												<div class="w-layout-blockcontainer max-w-124 w-full md:max-w-full w-container">
 													<img
 														src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/68689411745c184d8b7f1835_header-logo.svg"
 														loading="lazy" alt="header logo">
@@ -250,9 +250,9 @@ $pageId = get_the_ID();
 										</div>
 									</div>
 								</div>
-								<div class="max-w-288 w-full md-max-w-full group transition-all hover:-translate-y-25">
+								<div class="max-w-288 w-full md:max-w-full group transition-all hover:-translate-y-25">
 									<div class="text-center rounded-t-24 overflow-hidden relative px-20 pt-48 pb-112 cursor-pointer">
-										<div class="w-layout-blockcontainer max-w-200 w-full md-max-w-full w-container">
+										<div class="w-layout-blockcontainer max-w-200 w-full md:max-w-full w-container">
 											<div class="mb-56">
 												<div class="font-family-alternate font-medium tracking-[2.4px] text-black text-xl">OTHER</div>
 											</div>
@@ -276,7 +276,7 @@ $pageId = get_the_ID();
 			</div>
 		</section>
 		<div class="gradient1 rounded-100">
-			<section class="section text-white py-96 sm-py-60">
+			<section class="section text-white py-96 sm:py-60">
 				<div class="relative z-10">
 					<div class="mb-72">
 						<div class="site-padding">
@@ -286,233 +286,71 @@ $pageId = get_the_ID();
 						</div>
 					</div>
 					<div class="mb-72">
-						<div slider-2="" class="splide mb-36 splide--loop splide--ltr splide--draggable is-active is-initialized"
-						     id="splide02" role="region" aria-roledescription="carousel">
-							<div class="splide__track splide__track--loop splide__track--ltr splide__track--draggable"
-							     id="splide02-track" style="padding-left: 0px; padding-right: 0px;" aria-live="polite"
-							     aria-atomic="true">
-								<ul role="presentation" class="splide__list items-center w-list-unstyled" id="splide02-list"
-								    style="transform: translateX(-1890px);">
-									<li class="splide__slide splide__slide--clone" id="splide02-clone01" role="group"
-									    aria-roledescription="slide" aria-label="3 of 12" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c84df4770292a94842b10_sap-logo.svg"
-											loading="lazy" alt="sap-logo">
-									</li>
-									<li class="splide__slide splide__slide--clone" id="splide02-clone02" role="group"
-									    aria-roledescription="slide" aria-label="4 of 12" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c84df72861a7bae110ab9_walmart-logo.svg"
-											loading="lazy" alt="walmart-logo">
-									</li>
-									<li class="splide__slide splide__slide--clone" id="splide02-clone03" role="group"
-									    aria-roledescription="slide" aria-label="5 of 12" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c84dfaf8d86b387269973_dhl-logo.svg"
-											loading="lazy" alt="dhl-logo">
-									</li>
-									<li class="splide__slide splide__slide--clone" id="splide02-clone04" role="group"
-									    aria-roledescription="slide" aria-label="6 of 12" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c84df9f4ee3f5e347e044_best-buy-logo.svg"
-											loading="lazy" alt="best-buy-logo">
-									</li>
-									<li class="splide__slide splide__slide--clone" id="splide02-clone05" role="group"
-									    aria-roledescription="slide" aria-label="7 of 12" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c84df2b1206da97a923f4_microsoft-logo.svg"
-											loading="lazy" alt="microsoft logo">
-									</li>
-									<li class="splide__slide splide__slide--clone" id="splide02-clone06" role="group"
-									    aria-roledescription="slide" aria-label="8 of 12" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c84dfa16cc459b6063de3_ups-logo.svg"
-											loading="lazy" alt="ups-logo">
-									</li>
-									<li class="splide__slide splide__slide--clone" id="splide02-clone07" role="group"
-									    aria-roledescription="slide" aria-label="9 of 12" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c84df05b526050a9ff40e_ibm-logo.svg"
-											loading="lazy" alt="ibm logo">
-									</li>
-									<li class="splide__slide splide__slide--clone" id="splide02-clone08" role="group"
-									    aria-roledescription="slide" aria-label="10 of 12" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c84df896dd4c51da9ea86_dp-world-logo.svg"
-											loading="lazy" alt="dp-world-logo">
-									</li>
-									<li class="splide__slide splide__slide--clone" id="splide02-clone09" role="group"
-									    aria-roledescription="slide" aria-label="11 of 12" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c84df35fd8bbc19d0897b_kimberly-clark-logo.svg"
-											loading="lazy" alt="kimberly-clark-logo">
-									</li>
-									<li class="splide__slide splide__slide--clone is-prev" id="splide02-clone10" role="group"
-									    aria-roledescription="slide" aria-label="12 of 12" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c84df5e069cbe37e7903f_mckinsey-and-company-logo.svg"
-											loading="lazy" alt="mckinsey-and-company-logo">
-									</li>
-									<li class="splide__slide is-active is-visible" id="splide02-slide01" role="group"
-									    aria-roledescription="slide" aria-label="1 of 12" style="margin-right: 36px; width: auto;">
+						<div slider-2="" class="splide mb-36">
+							<div class="splide__track">
+								<ul class="splide__list items-center">
+									<li class="splide__slide">
 										<img
 											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c84dffc1f7992a6755967_narvan-logo.svg"
 											loading="lazy" alt="narvan-logo">
 									</li>
-									<li class="splide__slide is-visible is-next" id="splide02-slide02" role="group"
-									    aria-roledescription="slide" aria-label="2 of 12" style="margin-right: 36px; width: auto;">
+									<li class="splide__slide">
 										<img
 											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c84dfc04b37d1914241b3_2025-pros-to-know-logo.svg"
 											loading="lazy" alt="2025-pros-to-know-logo">
 									</li>
-									<li class="splide__slide is-visible" id="splide02-slide03" role="group" aria-roledescription="slide"
-									    aria-label="3 of 12" style="margin-right: 36px; width: auto;">
+									<li class="splide__slide">
 										<img
 											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c84df4770292a94842b10_sap-logo.svg"
 											loading="lazy" alt="sap-logo">
 									</li>
-									<li class="splide__slide is-visible" id="splide02-slide04" role="group" aria-roledescription="slide"
-									    aria-label="4 of 12" style="margin-right: 36px; width: auto;">
+									<li class="splide__slide">
 										<img
 											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c84df72861a7bae110ab9_walmart-logo.svg"
 											loading="lazy" alt="walmart-logo">
 									</li>
-									<li class="splide__slide is-visible" id="splide02-slide05" role="group" aria-roledescription="slide"
-									    aria-label="5 of 12" style="margin-right: 36px; width: auto;">
+									<li class="splide__slide">
 										<img
 											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c84dfaf8d86b387269973_dhl-logo.svg"
 											loading="lazy" alt="dhl-logo">
 									</li>
-									<li class="splide__slide is-visible" id="splide02-slide06" role="group" aria-roledescription="slide"
-									    aria-label="6 of 12" style="margin-right: 36px; width: auto;">
+									<li class="splide__slide">
 										<img
 											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c84df9f4ee3f5e347e044_best-buy-logo.svg"
 											loading="lazy" alt="best-buy-logo">
 									</li>
-									<li class="splide__slide is-visible" id="splide02-slide07" role="group" aria-roledescription="slide"
-									    aria-label="7 of 12" style="margin-right: 36px; width: auto;">
+									<li class="splide__slide">
 										<img
 											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c84df2b1206da97a923f4_microsoft-logo.svg"
 											loading="lazy" alt="microsoft logo">
 									</li>
-									<li class="splide__slide is-visible" id="splide02-slide08" role="group" aria-roledescription="slide"
-									    aria-label="8 of 12" style="margin-right: 36px; width: auto;">
+									<li class="splide__slide">
 										<img
 											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c84dfa16cc459b6063de3_ups-logo.svg"
 											loading="lazy" alt="ups-logo">
 									</li>
-									<li class="splide__slide is-visible" id="splide02-slide09" role="group" aria-roledescription="slide"
-									    aria-label="9 of 12" style="margin-right: 36px; width: auto;">
+									<li class="splide__slide">
 										<img
 											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c84df05b526050a9ff40e_ibm-logo.svg"
 											loading="lazy" alt="ibm logo">
 									</li>
-									<li class="splide__slide is-visible" id="splide02-slide10" role="group" aria-roledescription="slide"
-									    aria-label="10 of 12" style="margin-right: 36px; width: auto;">
+									<li class="splide__slide">
 										<img
 											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c84df896dd4c51da9ea86_dp-world-logo.svg"
 											loading="lazy" alt="dp-world-logo">
 									</li>
-									<li class="splide__slide is-visible" id="splide02-slide11" role="group" aria-roledescription="slide"
-									    aria-label="11 of 12" style="margin-right: 36px; width: auto;">
+									<li class="splide__slide">
 										<img
 											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c84df35fd8bbc19d0897b_kimberly-clark-logo.svg"
 											loading="lazy" alt="kimberly-clark-logo">
 									</li>
-									<li class="splide__slide is-visible" id="splide02-slide12" role="group" aria-roledescription="slide"
-									    aria-label="12 of 12" style="margin-right: 36px; width: auto;">
+									<li class="splide__slide">
 										<img
 											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c84df5e069cbe37e7903f_mckinsey-and-company-logo.svg"
 											loading="lazy" alt="mckinsey-and-company-logo">
-									</li>
-									<li class="splide__slide splide__slide--clone is-active is-visible" id="splide02-clone11" role="group"
-									    aria-roledescription="slide" aria-label="1 of 12" style="margin-right: 36px; width: auto;">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c84dffc1f7992a6755967_narvan-logo.svg"
-											loading="lazy" alt="narvan-logo">
-									</li>
-									<li class="splide__slide splide__slide--clone is-visible" id="splide02-clone12" role="group"
-									    aria-roledescription="slide" aria-label="2 of 12" style="margin-right: 36px; width: auto;">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c84dfc04b37d1914241b3_2025-pros-to-know-logo.svg"
-											loading="lazy" alt="2025-pros-to-know-logo">
-									</li>
-									<li class="splide__slide splide__slide--clone is-visible" id="splide02-clone13" role="group"
-									    aria-roledescription="slide" aria-label="3 of 12" style="margin-right: 36px; width: auto;">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c84df4770292a94842b10_sap-logo.svg"
-											loading="lazy" alt="sap-logo">
-									</li>
-									<li class="splide__slide splide__slide--clone" id="splide02-clone14" role="group"
-									    aria-roledescription="slide" aria-label="4 of 12" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c84df72861a7bae110ab9_walmart-logo.svg"
-											loading="lazy" alt="walmart-logo">
-									</li>
-									<li class="splide__slide splide__slide--clone" id="splide02-clone15" role="group"
-									    aria-roledescription="slide" aria-label="5 of 12" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c84dfaf8d86b387269973_dhl-logo.svg"
-											loading="lazy" alt="dhl-logo">
-									</li>
-									<li class="splide__slide splide__slide--clone" id="splide02-clone16" role="group"
-									    aria-roledescription="slide" aria-label="6 of 12" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c84df9f4ee3f5e347e044_best-buy-logo.svg"
-											loading="lazy" alt="best-buy-logo">
-									</li>
-									<li class="splide__slide splide__slide--clone" id="splide02-clone17" role="group"
-									    aria-roledescription="slide" aria-label="7 of 12" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c84df2b1206da97a923f4_microsoft-logo.svg"
-											loading="lazy" alt="microsoft logo">
-									</li>
-									<li class="splide__slide splide__slide--clone" id="splide02-clone18" role="group"
-									    aria-roledescription="slide" aria-label="8 of 12" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c84dfa16cc459b6063de3_ups-logo.svg"
-											loading="lazy" alt="ups-logo">
-									</li>
-									<li class="splide__slide splide__slide--clone" id="splide02-clone19" role="group"
-									    aria-roledescription="slide" aria-label="9 of 12" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c84df05b526050a9ff40e_ibm-logo.svg"
-											loading="lazy" alt="ibm logo">
-									</li>
-									<li class="splide__slide splide__slide--clone" id="splide02-clone20" role="group"
-									    aria-roledescription="slide" aria-label="10 of 12" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c84df896dd4c51da9ea86_dp-world-logo.svg"
-											loading="lazy" alt="dp-world-logo">
 									</li>
 								</ul>
 							</div>
-						</div>
-						<div class="display-none w-embed">
-							<style>
-								html.wf-design-mode [slider-2] .splide__list {
-									display: flex;
-									flex-wrap: nowrap;
-									justify-content: center;
-								}
-							</style>
 						</div>
 						<div class="display-none w-embed w-script">
 							<script>
@@ -565,632 +403,63 @@ $pageId = get_the_ID();
 								});
 							</script>
 						</div>
-						<div slider-3="" class="splide splide--loop splide--ltr splide--draggable is-active is-initialized"
-						     id="splide03" role="region" aria-roledescription="carousel">
-							<div class="splide__track splide__track--loop splide__track--ltr splide__track--draggable"
-							     id="splide03-track" style="padding-left: 0px; padding-right: 0px;" aria-live="polite"
-							     aria-atomic="true">
-								<ul role="presentation" class="splide__list items-center w-list-unstyled" id="splide03-list"
-								    style="transform: translateX(-6240px);">
-									<li class="splide__slide splide__slide--clone" id="splide03-clone01" role="group"
-									    aria-roledescription="slide" aria-label="5 of 11" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880c9667b3a9ce6a1f34_clorox-logo.svg"
-											loading="lazy" alt="clorox-logo">
-									</li>
-									<li class="splide__slide splide__slide--clone" id="splide03-clone02" role="group"
-									    aria-roledescription="slide" aria-label="6 of 11" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880c1bd0bd362260d09d_gartner-logo.svg"
-											loading="lazy" alt="gartner-logo">
-									</li>
-									<li class="splide__slide splide__slide--clone" id="splide03-clone03" role="group"
-									    aria-roledescription="slide" aria-label="7 of 11" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880c6cac07a59a5140a9_johnson-and-johnson-logo.svg"
-											loading="lazy" alt="johnson-and-johnson-logo">
-									</li>
-									<li class="splide__slide splide__slide--clone" id="splide03-clone04" role="group"
-									    aria-roledescription="slide" aria-label="8 of 11" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880cf0c4c0c5257ec62b_georgia-pacific-logo.svg"
-											loading="lazy" alt="georgia-pacific-logo">
-									</li>
-									<li class="splide__slide splide__slide--clone" id="splide03-clone05" role="group"
-									    aria-roledescription="slide" aria-label="9 of 11" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880c631104c6bc6c3116_astrazeneca-logo.svg"
-											loading="lazy" alt="astrazeneca-logo">
-									</li>
-									<li class="splide__slide splide__slide--clone" id="splide03-clone06" role="group"
-									    aria-roledescription="slide" aria-label="10 of 11" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880dabfe3eb2b60847f8_manhattan-logo.svg"
-											loading="lazy" alt="manhattan-logo">
-									</li>
-									<li class="splide__slide splide__slide--clone" id="splide03-clone07" role="group"
-									    aria-roledescription="slide" aria-label="11 of 11" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880cc814f568550bb1ca_scheneider-electric-logo.svg"
-											loading="lazy" alt="scheneider-electric-logo">
-									</li>
-									<li class="splide__slide splide__slide--clone is-active" id="splide03-clone08" role="group"
-									    aria-roledescription="slide" aria-label="1 of 11" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
+						<div slider-3="" class="splide">
+							<div class="splide__track">
+								<ul class="splide__list items-center">
+									<li class="splide__slide">
 										<img
 											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880c4770292a948560dc_ratelinx-logo.svg"
 											loading="lazy" alt="ratelinx-logo">
 									</li>
-									<li class="splide__slide splide__slide--clone" id="splide03-clone09" role="group"
-									    aria-roledescription="slide" aria-label="2 of 11" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
+									<li class="splide__slide">
 										<img
 											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880d83f8490edb0402c4_omp-logo.svg"
 											loading="lazy" alt="omp-logo">
 									</li>
-									<li class="splide__slide splide__slide--clone" id="splide03-clone10" role="group"
-									    aria-roledescription="slide" aria-label="3 of 11" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
+									<li class="splide__slide">
 										<img
 											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880c15668191452d2493_lockheed-marting-logo.svg"
 											loading="lazy" alt="lockheed-marting-logo">
 									</li>
-									<li class="splide__slide splide__slide--clone" id="splide03-clone11" role="group"
-									    aria-roledescription="slide" aria-label="4 of 11" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
+									<li class="splide__slide">
 										<img
 											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880df7f2a214364cff23_uber-freight-logo.svg"
 											loading="lazy" alt="uber-freight-logo">
 									</li>
-									<li class="splide__slide splide__slide--clone" id="splide03-clone12" role="group"
-									    aria-roledescription="slide" aria-label="5 of 11" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
+									<li class="splide__slide">
 										<img
 											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880c9667b3a9ce6a1f34_clorox-logo.svg"
 											loading="lazy" alt="clorox-logo">
 									</li>
-									<li class="splide__slide splide__slide--clone" id="splide03-clone13" role="group"
-									    aria-roledescription="slide" aria-label="6 of 11" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
+									<li class="splide__slide">
 										<img
 											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880c1bd0bd362260d09d_gartner-logo.svg"
 											loading="lazy" alt="gartner-logo">
 									</li>
-									<li class="splide__slide splide__slide--clone" id="splide03-clone14" role="group"
-									    aria-roledescription="slide" aria-label="7 of 11" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
+									<li class="splide__slide">
 										<img
 											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880c6cac07a59a5140a9_johnson-and-johnson-logo.svg"
 											loading="lazy" alt="johnson-and-johnson-logo">
 									</li>
-									<li class="splide__slide splide__slide--clone" id="splide03-clone15" role="group"
-									    aria-roledescription="slide" aria-label="8 of 11" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
+									<li class="splide__slide">
 										<img
 											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880cf0c4c0c5257ec62b_georgia-pacific-logo.svg"
 											loading="lazy" alt="georgia-pacific-logo">
 									</li>
-									<li class="splide__slide splide__slide--clone" id="splide03-clone16" role="group"
-									    aria-roledescription="slide" aria-label="9 of 11" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
+									<li class="splide__slide">
 										<img
 											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880c631104c6bc6c3116_astrazeneca-logo.svg"
 											loading="lazy" alt="astrazeneca-logo">
 									</li>
-									<li class="splide__slide splide__slide--clone" id="splide03-clone17" role="group"
-									    aria-roledescription="slide" aria-label="10 of 11" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
+									<li class="splide__slide">
 										<img
 											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880dabfe3eb2b60847f8_manhattan-logo.svg"
 											loading="lazy" alt="manhattan-logo">
 									</li>
-									<li class="splide__slide splide__slide--clone" id="splide03-clone18" role="group"
-									    aria-roledescription="slide" aria-label="11 of 11" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
+									<li class="splide__slide">
 										<img
 											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880cc814f568550bb1ca_scheneider-electric-logo.svg"
 											loading="lazy" alt="scheneider-electric-logo">
-									</li>
-									<li class="splide__slide splide__slide--clone is-active" id="splide03-clone19" role="group"
-									    aria-roledescription="slide" aria-label="1 of 11" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880c4770292a948560dc_ratelinx-logo.svg"
-											loading="lazy" alt="ratelinx-logo">
-									</li>
-									<li class="splide__slide splide__slide--clone" id="splide03-clone20" role="group"
-									    aria-roledescription="slide" aria-label="2 of 11" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880d83f8490edb0402c4_omp-logo.svg"
-											loading="lazy" alt="omp-logo">
-									</li>
-									<li class="splide__slide splide__slide--clone" id="splide03-clone21" role="group"
-									    aria-roledescription="slide" aria-label="3 of 11" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880c15668191452d2493_lockheed-marting-logo.svg"
-											loading="lazy" alt="lockheed-marting-logo">
-									</li>
-									<li class="splide__slide splide__slide--clone" id="splide03-clone22" role="group"
-									    aria-roledescription="slide" aria-label="4 of 11" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880df7f2a214364cff23_uber-freight-logo.svg"
-											loading="lazy" alt="uber-freight-logo">
-									</li>
-									<li class="splide__slide splide__slide--clone" id="splide03-clone23" role="group"
-									    aria-roledescription="slide" aria-label="5 of 11" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880c9667b3a9ce6a1f34_clorox-logo.svg"
-											loading="lazy" alt="clorox-logo">
-									</li>
-									<li class="splide__slide splide__slide--clone" id="splide03-clone24" role="group"
-									    aria-roledescription="slide" aria-label="6 of 11" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880c1bd0bd362260d09d_gartner-logo.svg"
-											loading="lazy" alt="gartner-logo">
-									</li>
-									<li class="splide__slide splide__slide--clone" id="splide03-clone25" role="group"
-									    aria-roledescription="slide" aria-label="7 of 11" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880c6cac07a59a5140a9_johnson-and-johnson-logo.svg"
-											loading="lazy" alt="johnson-and-johnson-logo">
-									</li>
-									<li class="splide__slide splide__slide--clone" id="splide03-clone26" role="group"
-									    aria-roledescription="slide" aria-label="8 of 11" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880cf0c4c0c5257ec62b_georgia-pacific-logo.svg"
-											loading="lazy" alt="georgia-pacific-logo">
-									</li>
-									<li class="splide__slide splide__slide--clone" id="splide03-clone27" role="group"
-									    aria-roledescription="slide" aria-label="9 of 11" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880c631104c6bc6c3116_astrazeneca-logo.svg"
-											loading="lazy" alt="astrazeneca-logo">
-									</li>
-									<li class="splide__slide splide__slide--clone" id="splide03-clone28" role="group"
-									    aria-roledescription="slide" aria-label="10 of 11" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880dabfe3eb2b60847f8_manhattan-logo.svg"
-											loading="lazy" alt="manhattan-logo">
-									</li>
-									<li class="splide__slide splide__slide--clone" id="splide03-clone29" role="group"
-									    aria-roledescription="slide" aria-label="11 of 11" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880cc814f568550bb1ca_scheneider-electric-logo.svg"
-											loading="lazy" alt="scheneider-electric-logo">
-									</li>
-									<li class="splide__slide splide__slide--clone is-active" id="splide03-clone30" role="group"
-									    aria-roledescription="slide" aria-label="1 of 11" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880c4770292a948560dc_ratelinx-logo.svg"
-											loading="lazy" alt="ratelinx-logo">
-									</li>
-									<li class="splide__slide splide__slide--clone" id="splide03-clone31" role="group"
-									    aria-roledescription="slide" aria-label="2 of 11" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880d83f8490edb0402c4_omp-logo.svg"
-											loading="lazy" alt="omp-logo">
-									</li>
-									<li class="splide__slide splide__slide--clone" id="splide03-clone32" role="group"
-									    aria-roledescription="slide" aria-label="3 of 11" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880c15668191452d2493_lockheed-marting-logo.svg"
-											loading="lazy" alt="lockheed-marting-logo">
-									</li>
-									<li class="splide__slide splide__slide--clone" id="splide03-clone33" role="group"
-									    aria-roledescription="slide" aria-label="4 of 11" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880df7f2a214364cff23_uber-freight-logo.svg"
-											loading="lazy" alt="uber-freight-logo">
-									</li>
-									<li class="splide__slide splide__slide--clone" id="splide03-clone34" role="group"
-									    aria-roledescription="slide" aria-label="5 of 11" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880c9667b3a9ce6a1f34_clorox-logo.svg"
-											loading="lazy" alt="clorox-logo">
-									</li>
-									<li class="splide__slide splide__slide--clone" id="splide03-clone35" role="group"
-									    aria-roledescription="slide" aria-label="6 of 11" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880c1bd0bd362260d09d_gartner-logo.svg"
-											loading="lazy" alt="gartner-logo">
-									</li>
-									<li class="splide__slide splide__slide--clone" id="splide03-clone36" role="group"
-									    aria-roledescription="slide" aria-label="7 of 11" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880c6cac07a59a5140a9_johnson-and-johnson-logo.svg"
-											loading="lazy" alt="johnson-and-johnson-logo">
-									</li>
-									<li class="splide__slide splide__slide--clone" id="splide03-clone37" role="group"
-									    aria-roledescription="slide" aria-label="8 of 11" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880cf0c4c0c5257ec62b_georgia-pacific-logo.svg"
-											loading="lazy" alt="georgia-pacific-logo">
-									</li>
-									<li class="splide__slide splide__slide--clone" id="splide03-clone38" role="group"
-									    aria-roledescription="slide" aria-label="9 of 11" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880c631104c6bc6c3116_astrazeneca-logo.svg"
-											loading="lazy" alt="astrazeneca-logo">
-									</li>
-									<li class="splide__slide splide__slide--clone" id="splide03-clone39" role="group"
-									    aria-roledescription="slide" aria-label="10 of 11" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880dabfe3eb2b60847f8_manhattan-logo.svg"
-											loading="lazy" alt="manhattan-logo">
-									</li>
-									<li class="splide__slide splide__slide--clone is-prev" id="splide03-clone40" role="group"
-									    aria-roledescription="slide" aria-label="11 of 11" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880cc814f568550bb1ca_scheneider-electric-logo.svg"
-											loading="lazy" alt="scheneider-electric-logo">
-									</li>
-									<li class="splide__slide is-active is-visible" id="splide03-slide01" role="group"
-									    aria-roledescription="slide" aria-label="1 of 11" style="margin-right: 36px; width: auto;">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880c4770292a948560dc_ratelinx-logo.svg"
-											loading="lazy" alt="ratelinx-logo">
-									</li>
-									<li class="splide__slide is-visible is-next" id="splide03-slide02" role="group"
-									    aria-roledescription="slide" aria-label="2 of 11" style="margin-right: 36px; width: auto;">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880d83f8490edb0402c4_omp-logo.svg"
-											loading="lazy" alt="omp-logo">
-									</li>
-									<li class="splide__slide is-visible" id="splide03-slide03" role="group" aria-roledescription="slide"
-									    aria-label="3 of 11" style="margin-right: 36px; width: auto;">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880c15668191452d2493_lockheed-marting-logo.svg"
-											loading="lazy" alt="lockheed-marting-logo">
-									</li>
-									<li class="splide__slide is-visible" id="splide03-slide04" role="group" aria-roledescription="slide"
-									    aria-label="4 of 11" style="margin-right: 36px; width: auto;">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880df7f2a214364cff23_uber-freight-logo.svg"
-											loading="lazy" alt="uber-freight-logo">
-									</li>
-									<li class="splide__slide is-visible" id="splide03-slide05" role="group" aria-roledescription="slide"
-									    aria-label="5 of 11" style="margin-right: 36px; width: auto;">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880c9667b3a9ce6a1f34_clorox-logo.svg"
-											loading="lazy" alt="clorox-logo">
-									</li>
-									<li class="splide__slide is-visible" id="splide03-slide06" role="group" aria-roledescription="slide"
-									    aria-label="6 of 11" style="margin-right: 36px; width: auto;">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880c1bd0bd362260d09d_gartner-logo.svg"
-											loading="lazy" alt="gartner-logo">
-									</li>
-									<li class="splide__slide is-visible" id="splide03-slide07" role="group" aria-roledescription="slide"
-									    aria-label="7 of 11" style="margin-right: 36px; width: auto;">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880c6cac07a59a5140a9_johnson-and-johnson-logo.svg"
-											loading="lazy" alt="johnson-and-johnson-logo">
-									</li>
-									<li class="splide__slide is-visible" id="splide03-slide08" role="group" aria-roledescription="slide"
-									    aria-label="8 of 11" style="margin-right: 36px; width: auto;">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880cf0c4c0c5257ec62b_georgia-pacific-logo.svg"
-											loading="lazy" alt="georgia-pacific-logo">
-									</li>
-									<li class="splide__slide is-visible" id="splide03-slide09" role="group" aria-roledescription="slide"
-									    aria-label="9 of 11" style="margin-right: 36px; width: auto;">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880c631104c6bc6c3116_astrazeneca-logo.svg"
-											loading="lazy" alt="astrazeneca-logo">
-									</li>
-									<li class="splide__slide is-visible" id="splide03-slide10" role="group" aria-roledescription="slide"
-									    aria-label="10 of 11" style="margin-right: 36px; width: auto;">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880dabfe3eb2b60847f8_manhattan-logo.svg"
-											loading="lazy" alt="manhattan-logo">
-									</li>
-									<li class="splide__slide is-visible" id="splide03-slide11" role="group" aria-roledescription="slide"
-									    aria-label="11 of 11" style="margin-right: 36px; width: auto;">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880cc814f568550bb1ca_scheneider-electric-logo.svg"
-											loading="lazy" alt="scheneider-electric-logo">
-									</li>
-									<li class="splide__slide splide__slide--clone is-active is-visible" id="splide03-clone41" role="group"
-									    aria-roledescription="slide" aria-label="1 of 11" style="margin-right: 36px; width: auto;">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880c4770292a948560dc_ratelinx-logo.svg"
-											loading="lazy" alt="ratelinx-logo">
-									</li>
-									<li class="splide__slide splide__slide--clone is-visible" id="splide03-clone42" role="group"
-									    aria-roledescription="slide" aria-label="2 of 11" style="margin-right: 36px; width: auto;">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880d83f8490edb0402c4_omp-logo.svg"
-											loading="lazy" alt="omp-logo">
-									</li>
-									<li class="splide__slide splide__slide--clone is-visible" id="splide03-clone43" role="group"
-									    aria-roledescription="slide" aria-label="3 of 11" style="margin-right: 36px; width: auto;">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880c15668191452d2493_lockheed-marting-logo.svg"
-											loading="lazy" alt="lockheed-marting-logo">
-									</li>
-									<li class="splide__slide splide__slide--clone is-visible" id="splide03-clone44" role="group"
-									    aria-roledescription="slide" aria-label="4 of 11" style="margin-right: 36px; width: auto;">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880df7f2a214364cff23_uber-freight-logo.svg"
-											loading="lazy" alt="uber-freight-logo">
-									</li>
-									<li class="splide__slide splide__slide--clone is-visible" id="splide03-clone45" role="group"
-									    aria-roledescription="slide" aria-label="5 of 11" style="margin-right: 36px; width: auto;">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880c9667b3a9ce6a1f34_clorox-logo.svg"
-											loading="lazy" alt="clorox-logo">
-									</li>
-									<li class="splide__slide splide__slide--clone is-visible" id="splide03-clone46" role="group"
-									    aria-roledescription="slide" aria-label="6 of 11" style="margin-right: 36px; width: auto;">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880c1bd0bd362260d09d_gartner-logo.svg"
-											loading="lazy" alt="gartner-logo">
-									</li>
-									<li class="splide__slide splide__slide--clone" id="splide03-clone47" role="group"
-									    aria-roledescription="slide" aria-label="7 of 11" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880c6cac07a59a5140a9_johnson-and-johnson-logo.svg"
-											loading="lazy" alt="johnson-and-johnson-logo">
-									</li>
-									<li class="splide__slide splide__slide--clone" id="splide03-clone48" role="group"
-									    aria-roledescription="slide" aria-label="8 of 11" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880cf0c4c0c5257ec62b_georgia-pacific-logo.svg"
-											loading="lazy" alt="georgia-pacific-logo">
-									</li>
-									<li class="splide__slide splide__slide--clone" id="splide03-clone49" role="group"
-									    aria-roledescription="slide" aria-label="9 of 11" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880c631104c6bc6c3116_astrazeneca-logo.svg"
-											loading="lazy" alt="astrazeneca-logo">
-									</li>
-									<li class="splide__slide splide__slide--clone" id="splide03-clone50" role="group"
-									    aria-roledescription="slide" aria-label="10 of 11" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880dabfe3eb2b60847f8_manhattan-logo.svg"
-											loading="lazy" alt="manhattan-logo">
-									</li>
-									<li class="splide__slide splide__slide--clone" id="splide03-clone51" role="group"
-									    aria-roledescription="slide" aria-label="11 of 11" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880cc814f568550bb1ca_scheneider-electric-logo.svg"
-											loading="lazy" alt="scheneider-electric-logo">
-									</li>
-									<li class="splide__slide splide__slide--clone is-active" id="splide03-clone52" role="group"
-									    aria-roledescription="slide" aria-label="1 of 11" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880c4770292a948560dc_ratelinx-logo.svg"
-											loading="lazy" alt="ratelinx-logo">
-									</li>
-									<li class="splide__slide splide__slide--clone" id="splide03-clone53" role="group"
-									    aria-roledescription="slide" aria-label="2 of 11" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880d83f8490edb0402c4_omp-logo.svg"
-											loading="lazy" alt="omp-logo">
-									</li>
-									<li class="splide__slide splide__slide--clone" id="splide03-clone54" role="group"
-									    aria-roledescription="slide" aria-label="3 of 11" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880c15668191452d2493_lockheed-marting-logo.svg"
-											loading="lazy" alt="lockheed-marting-logo">
-									</li>
-									<li class="splide__slide splide__slide--clone" id="splide03-clone55" role="group"
-									    aria-roledescription="slide" aria-label="4 of 11" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880df7f2a214364cff23_uber-freight-logo.svg"
-											loading="lazy" alt="uber-freight-logo">
-									</li>
-									<li class="splide__slide splide__slide--clone" id="splide03-clone56" role="group"
-									    aria-roledescription="slide" aria-label="5 of 11" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880c9667b3a9ce6a1f34_clorox-logo.svg"
-											loading="lazy" alt="clorox-logo">
-									</li>
-									<li class="splide__slide splide__slide--clone" id="splide03-clone57" role="group"
-									    aria-roledescription="slide" aria-label="6 of 11" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880c1bd0bd362260d09d_gartner-logo.svg"
-											loading="lazy" alt="gartner-logo">
-									</li>
-									<li class="splide__slide splide__slide--clone" id="splide03-clone58" role="group"
-									    aria-roledescription="slide" aria-label="7 of 11" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880c6cac07a59a5140a9_johnson-and-johnson-logo.svg"
-											loading="lazy" alt="johnson-and-johnson-logo">
-									</li>
-									<li class="splide__slide splide__slide--clone" id="splide03-clone59" role="group"
-									    aria-roledescription="slide" aria-label="8 of 11" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880cf0c4c0c5257ec62b_georgia-pacific-logo.svg"
-											loading="lazy" alt="georgia-pacific-logo">
-									</li>
-									<li class="splide__slide splide__slide--clone" id="splide03-clone60" role="group"
-									    aria-roledescription="slide" aria-label="9 of 11" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880c631104c6bc6c3116_astrazeneca-logo.svg"
-											loading="lazy" alt="astrazeneca-logo">
-									</li>
-									<li class="splide__slide splide__slide--clone" id="splide03-clone61" role="group"
-									    aria-roledescription="slide" aria-label="10 of 11" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880dabfe3eb2b60847f8_manhattan-logo.svg"
-											loading="lazy" alt="manhattan-logo">
-									</li>
-									<li class="splide__slide splide__slide--clone" id="splide03-clone62" role="group"
-									    aria-roledescription="slide" aria-label="11 of 11" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880cc814f568550bb1ca_scheneider-electric-logo.svg"
-											loading="lazy" alt="scheneider-electric-logo">
-									</li>
-									<li class="splide__slide splide__slide--clone is-active" id="splide03-clone63" role="group"
-									    aria-roledescription="slide" aria-label="1 of 11" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880c4770292a948560dc_ratelinx-logo.svg"
-											loading="lazy" alt="ratelinx-logo">
-									</li>
-									<li class="splide__slide splide__slide--clone" id="splide03-clone64" role="group"
-									    aria-roledescription="slide" aria-label="2 of 11" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880d83f8490edb0402c4_omp-logo.svg"
-											loading="lazy" alt="omp-logo">
-									</li>
-									<li class="splide__slide splide__slide--clone" id="splide03-clone65" role="group"
-									    aria-roledescription="slide" aria-label="3 of 11" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880c15668191452d2493_lockheed-marting-logo.svg"
-											loading="lazy" alt="lockheed-marting-logo">
-									</li>
-									<li class="splide__slide splide__slide--clone" id="splide03-clone66" role="group"
-									    aria-roledescription="slide" aria-label="4 of 11" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880df7f2a214364cff23_uber-freight-logo.svg"
-											loading="lazy" alt="uber-freight-logo">
-									</li>
-									<li class="splide__slide splide__slide--clone" id="splide03-clone67" role="group"
-									    aria-roledescription="slide" aria-label="5 of 11" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880c9667b3a9ce6a1f34_clorox-logo.svg"
-											loading="lazy" alt="clorox-logo">
-									</li>
-									<li class="splide__slide splide__slide--clone" id="splide03-clone68" role="group"
-									    aria-roledescription="slide" aria-label="6 of 11" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880c1bd0bd362260d09d_gartner-logo.svg"
-											loading="lazy" alt="gartner-logo">
-									</li>
-									<li class="splide__slide splide__slide--clone" id="splide03-clone69" role="group"
-									    aria-roledescription="slide" aria-label="7 of 11" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880c6cac07a59a5140a9_johnson-and-johnson-logo.svg"
-											loading="lazy" alt="johnson-and-johnson-logo">
-									</li>
-									<li class="splide__slide splide__slide--clone" id="splide03-clone70" role="group"
-									    aria-roledescription="slide" aria-label="8 of 11" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880cf0c4c0c5257ec62b_georgia-pacific-logo.svg"
-											loading="lazy" alt="georgia-pacific-logo">
-									</li>
-									<li class="splide__slide splide__slide--clone" id="splide03-clone71" role="group"
-									    aria-roledescription="slide" aria-label="9 of 11" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880c631104c6bc6c3116_astrazeneca-logo.svg"
-											loading="lazy" alt="astrazeneca-logo">
-									</li>
-									<li class="splide__slide splide__slide--clone" id="splide03-clone72" role="group"
-									    aria-roledescription="slide" aria-label="10 of 11" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880dabfe3eb2b60847f8_manhattan-logo.svg"
-											loading="lazy" alt="manhattan-logo">
-									</li>
-									<li class="splide__slide splide__slide--clone" id="splide03-clone73" role="group"
-									    aria-roledescription="slide" aria-label="11 of 11" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880cc814f568550bb1ca_scheneider-electric-logo.svg"
-											loading="lazy" alt="scheneider-electric-logo">
-									</li>
-									<li class="splide__slide splide__slide--clone is-active" id="splide03-clone74" role="group"
-									    aria-roledescription="slide" aria-label="1 of 11" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880c4770292a948560dc_ratelinx-logo.svg"
-											loading="lazy" alt="ratelinx-logo">
-									</li>
-									<li class="splide__slide splide__slide--clone" id="splide03-clone75" role="group"
-									    aria-roledescription="slide" aria-label="2 of 11" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880d83f8490edb0402c4_omp-logo.svg"
-											loading="lazy" alt="omp-logo">
-									</li>
-									<li class="splide__slide splide__slide--clone" id="splide03-clone76" role="group"
-									    aria-roledescription="slide" aria-label="3 of 11" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880c15668191452d2493_lockheed-marting-logo.svg"
-											loading="lazy" alt="lockheed-marting-logo">
-									</li>
-									<li class="splide__slide splide__slide--clone" id="splide03-clone77" role="group"
-									    aria-roledescription="slide" aria-label="4 of 11" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880df7f2a214364cff23_uber-freight-logo.svg"
-											loading="lazy" alt="uber-freight-logo">
-									</li>
-									<li class="splide__slide splide__slide--clone" id="splide03-clone78" role="group"
-									    aria-roledescription="slide" aria-label="5 of 11" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880c9667b3a9ce6a1f34_clorox-logo.svg"
-											loading="lazy" alt="clorox-logo">
-									</li>
-									<li class="splide__slide splide__slide--clone" id="splide03-clone79" role="group"
-									    aria-roledescription="slide" aria-label="6 of 11" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880c1bd0bd362260d09d_gartner-logo.svg"
-											loading="lazy" alt="gartner-logo">
-									</li>
-									<li class="splide__slide splide__slide--clone" id="splide03-clone80" role="group"
-									    aria-roledescription="slide" aria-label="7 of 11" style="margin-right: 36px; width: auto;"
-									    aria-hidden="true">
-										<img
-											src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880c6cac07a59a5140a9_johnson-and-johnson-logo.svg"
-											loading="lazy" alt="johnson-and-johnson-logo">
 									</li>
 								</ul>
 							</div>
@@ -1259,7 +528,7 @@ $pageId = get_the_ID();
 					<div>
 						<div class="site-padding">
 							<div class="w-layout-blockcontainer max-w-664 text-center w-container">
-								<div class="flex justify-between gap-20">
+								<div class="flex justify-between gap-20 sm:flex-col">
 									<div>
 										<div class="font-family-secondary text-36 tracking-[3.6px]">1000+</div>
 										<div class="font-semibold text-md">Podcast Episodes</div>
@@ -1282,7 +551,7 @@ $pageId = get_the_ID();
 			</section>
 		</div>
 		<section class="section">
-			<div class="site-padding sm-py-60 py-72">
+			<div class="site-padding sm:py-60 py-72">
 				<div class="w-layout-blockcontainer max-w-692 w-container">
 					<div class="mb-36">
 						<div class="mb-20">
@@ -1301,9 +570,9 @@ $pageId = get_the_ID();
 					</p>
 				</div>
 				<div class="mb-72"></div>
-				<div class="w-layout-blockcontainer max-w-1248 relative sm-text-center w-container">
+				<div class="w-layout-blockcontainer max-w-1248 relative sm:text-center w-container">
 					<div class="flex justify-center">
-						<div class="flex items-center gap-20 justify-center bg-white px-12 sm-flex-col xs-px-0">
+						<div class="flex items-center gap-20 justify-center bg-white px-12 sm:flex-col xs:px-0">
 							<div class="flex w-embed">
 								<svg xmlns="http://www.w3.org/2000/svg" width="28" height="27" viewBox="0 0 28 27" fill="none">
 									<path d="M26.5243 3.34534H2V8.91693H26.5243V3.34534Z" stroke="#313F4A" stroke-width="2.33121"
@@ -1339,7 +608,7 @@ $pageId = get_the_ID();
 		</section>
 		<div class="rounded-100 bg-whispergray">
 			<section class="section">
-				<div class="site-padding sm-py-60 py-84">
+				<div class="site-padding sm:py-60 py-84">
 					<div class="w-layout-blockcontainer max-w-1200 w-container">
 						<div class="mb-32">
 							<div class="site-padding">
@@ -1358,15 +627,15 @@ $pageId = get_the_ID();
 			</section>
 		</div>
 		<section class="section">
-			<div class="site-padding sm-py-60 py-100 relative z-10">
+			<div class="site-padding sm:py-60 py-100 relative z-10">
 				<div class="w-layout-blockcontainer max-w-1208 w-container">
-					<div class="flex gap-20 justify-between items-center sm-flex-col">
-						<div class="max-w-588 w-full md-max-w-full sm-order-2">
+					<div class="flex gap-20 justify-between items-center sm:flex-col">
+						<div class="max-w-588 w-full md:max-w-full sm:order-2">
 							<div class="mb-36">
 								<h2>Let Our Experts Build a Custom Campaign for You</h2>
 							</div>
 							<div class="mb-48">
-								<div class="max-w-424 w-full md-max-w-full">
+								<div class="max-w-424 w-full md:max-w-full">
 									<p class="tracking-[1.6px]">Podcasts, livestreams, and webinars to drive the best results for your
 										organization.
 									</p>
@@ -1451,7 +720,7 @@ $pageId = get_the_ID();
 								</li>
 							</ul>
 						</div>
-						<div class="max-w-496 w-full md-max-w-full">
+						<div class="max-w-496 w-full md:max-w-full">
 							<img
 								src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c5eedc0da982f173db946_Let%20Our%20Experts%20Build%20a%20Custom%20Campaign%20for%20You.avif"
 								loading="lazy" alt="Let Our Experts Build a Custom Campaign for You" class="image">
@@ -1459,29 +728,29 @@ $pageId = get_the_ID();
 					</div>
 				</div>
 			</div>
-			<div class="absolute absolute--r flex items-center w-[50%] sm-display-none">
+			<div class="absolute absolute--r flex items-center w-[50%] sm:display-none">
 				<img src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/6869f147405fd774ebf946b2_bg-grid.avif"
 				     loading="lazy" alt="bg-grid">
 			</div>
 		</section>
 		<div class="overflow-hidden relative rounded-t-100">
-			<section class="section sm-text-center">
-				<div class="site-padding sm-py-60 pt-100">
+			<section class="section sm:text-center">
+				<div class="site-padding sm:py-60 pt-100">
 					<div class="w-layout-blockcontainer max-w-1172 w-container">
-						<div class="flex items-center justify-between gap-20 sm-flex-col">
-							<div class="max-w-528 w-full md-max-w-full">
+						<div class="flex items-center justify-between gap-20 sm:flex-col">
+							<div class="max-w-528 w-full md:max-w-full">
 								<img
 									src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c9ad97de19e17000d9354_Book%20a%20Free%20Strategy%20Session.avif"
 									loading="lazy" alt="Book a Free Strategy Session" class="image">
 							</div>
-							<div class="max-w-548 w-full md-max-w-full">
+							<div class="max-w-548 w-full md:max-w-full">
 								<div class="mb-20">
-									<div class="max-w-348 w-full md-max-w-full">
+									<div class="max-w-348 w-full md:max-w-full">
 										<h2>Book a Free Strategy Session</h2>
 									</div>
 								</div>
 								<div class="mb-28">
-									<div class="max-w-416 w-full md-max-w-full">
+									<div class="max-w-416 w-full md:max-w-full">
 										<div class="font-family-alternate font-semibold text-lg text-secondary">Get started driving leads
 											with interactive, reusable content.
 										</div>
@@ -1493,7 +762,7 @@ $pageId = get_the_ID();
 										learn about our packages that include podcasts, livestreams, webinars, and much more.
 									</p>
 								</div>
-								<div class="flex sm-justify-center">
+								<div class="flex sm:justify-center">
 									<a href="/contact" class="btn primary w-inline-block">
 										<div>Get Started</div>
 									</a>
@@ -1506,12 +775,12 @@ $pageId = get_the_ID();
 			<div class="absolute absolute--full gradient2 opacity-25 z--1 h-half"></div>
 		</div>
 		<section class="section">
-			<div class="site-padding sm-py-60 py-100">
+			<div class="site-padding sm:py-60 py-100">
 				<div class="w-layout-blockcontainer max-w-1252 text-center w-container">
 					<div class="mb-40">
 						<h2>The #1 Voice of Supply Chain</h2>
 					</div>
-					<div class="flex gap-20 justify-between md-flex-col">
+					<div class="flex gap-20 justify-between md:flex-col">
 						<div>
 							<div class="mb-12">
 								<div class="font-family-secondary text-36 tracking-[3.6px] text-secondary">Top 5%</div>
@@ -1522,7 +791,7 @@ $pageId = get_the_ID();
 							<div class="text-15 font-light">(Downloads)</div>
 						</div>
 						<div class="w-1 bg-secondary/25"></div>
-						<div class="max-w-124 w-full md-max-w-full">
+						<div class="max-w-124 w-full md:max-w-full">
 							<div class="mb-12">
 								<div class="font-family-secondary text-36 tracking-[3.6px] text-secondary">300+</div>
 							</div>
@@ -1531,7 +800,7 @@ $pageId = get_the_ID();
 							</div>
 						</div>
 						<div class="w-1 bg-secondary/25"></div>
-						<div class="max-w-120 w-full md-max-w-full">
+						<div class="max-w-120 w-full md:max-w-full">
 							<div class="mb-12">
 								<div class="font-family-secondary text-36 tracking-[3.6px] text-secondary">100s</div>
 							</div>
@@ -1540,7 +809,7 @@ $pageId = get_the_ID();
 							</div>
 						</div>
 						<div class="w-1 bg-secondary/25"></div>
-						<div class="max-w-188 w-full md-max-w-full">
+						<div class="max-w-188 w-full md:max-w-full">
 							<div class="mb-12">
 								<div class="font-family-secondary tracking-[3.6px] text-secondary text-26">Industry Practitioners</div>
 							</div>
@@ -1549,7 +818,7 @@ $pageId = get_the_ID();
 							</div>
 						</div>
 						<div class="w-1 bg-secondary/25"></div>
-						<div class="max-w-140 w-full md-max-w-full">
+						<div class="max-w-140 w-full md:max-w-full">
 							<div class="mb-12">
 								<div class="font-family-secondary text-36 tracking-[3.6px] text-secondary">1M+</div>
 							</div>
@@ -1563,7 +832,7 @@ $pageId = get_the_ID();
 		</section>
 		<div class="overflow-hidden relative rounded-t-100">
 			<section class="section relative z-10">
-				<div class="site-padding sm-py-60 pt-64 pb-100">
+				<div class="site-padding sm:py-60 pt-64 pb-100">
 					<div class="w-layout-blockcontainer max-w-1252 w-container">
 						<div class="mb-12 text-center">
 							<div class="font-family-alternate text-lg font-semibold">Turn One Webinar into a Year’s Worth of Leads
@@ -1573,10 +842,10 @@ $pageId = get_the_ID();
 							<h2>Our Clients’ Recent Successes</h2>
 						</div>
 						<div class="mb-36">
-							<div class="grid grid-cols-2 gap-44 sm-grid-cols-1">
+							<div class="grid grid-cols-2 gap-44 sm:grid-cols-1">
 								<div class="card v3">
 									<div class="relative z-10 py-52 px-20 text-white">
-										<div class="w-layout-blockcontainer max-w-492 w-full md-max-w-full w-container">
+										<div class="w-layout-blockcontainer max-w-492 w-full md:max-w-full w-container">
 											<div class="mb-24">
 												<div class="font-semibold text-xl">191 Qualified Leads from One Webinar</div>
 											</div>
@@ -1585,11 +854,11 @@ $pageId = get_the_ID();
 												total registrations. 207 individuals attended (52% attendee conversion rate), of which 191 were
 												net new qualified leads given to the sales team.
 											</p>
-											<div class="mb-64 sm-mb-20"></div>
+											<div class="mb-64 sm:mb-20"></div>
 											<div class="h-1 w-full bg-white/25"></div>
-											<div class="mb-52 sm-mb-20"></div>
+											<div class="mb-52 sm:mb-20"></div>
 											<div class="relative px-28">
-												<p class="font-family-alternate font-medium text-lg max-w-368 w-full md-max-w-full mx-auto">We
+												<p class="font-family-alternate font-medium text-lg max-w-368 w-full md:max-w-full mx-auto">We
 													don’t just work with the Supply Chain Now team once and are done. We view the partnership as
 													an extension to our marketing and sales teams, and continue to repurpose content and follow-up
 													with the warm leads from each show. The content we create with Supply Chain Now is a lead
@@ -1618,7 +887,7 @@ $pageId = get_the_ID();
 								</div>
 								<div class="card v3">
 									<div class="relative z-10 px-12 py-52 text-white">
-										<div class="w-layout-blockcontainer max-w-492 w-full md-max-w-full w-container">
+										<div class="w-layout-blockcontainer max-w-492 w-full md:max-w-full w-container">
 											<div class="mb-24">
 												<div class="font-semibold text-xl">Attendee Conversion Rate Doubled</div>
 											</div>
@@ -1627,11 +896,11 @@ $pageId = get_the_ID();
 												rate, from 20% when hosting webinars internally or with other parties, to 49% with Supply Chain
 												Now.
 											</p>
-											<div class="mb-64 sm-mb-20"></div>
+											<div class="mb-64 sm:mb-20"></div>
 											<div class="h-1 w-full bg-white/25"></div>
-											<div class="mb-52 sm-mb-20"></div>
+											<div class="mb-52 sm:mb-20"></div>
 											<div class="relative px-28">
-												<p class="font-family-alternate font-medium text-lg max-w-368 w-full md-max-w-full mx-auto">In
+												<p class="font-family-alternate font-medium text-lg max-w-368 w-full md:max-w-full mx-auto">In
 													addition to outperforming any other webinar we have done internally or externally (by 180%),
 													we had people reaching out directly on LinkedIn after to connect with our presenter and learn
 													more about what we do. We continue to use the lead list from our Supply Chain Now shows for
@@ -1674,16 +943,16 @@ $pageId = get_the_ID();
 				     loading="lazy" alt="double ring" class="max-w-396 w-full">
 			</div>
 		</div>
-		<section class="section sm-text-center">
-			<div class="site-padding sm-py-60 py-76">
+		<section class="section sm:text-center">
+			<div class="site-padding sm:py-60 py-76">
 				<div class="w-layout-blockcontainer max-w-1252 w-container">
-					<div class="flex gap-20 justify-between sm-flex-col items-center sm-gap-40">
-						<div class="max-w-568 w-full md-max-w-full sm-order-2">
+					<div class="flex gap-20 justify-between sm:flex-col items-center sm:gap-40">
+						<div class="max-w-568 w-full md:max-w-full sm:order-2">
 							<div class="mb-20">
 								<div class="font-family-alternate font-semibold text-lg text-secondary">Breaking Through:</div>
 							</div>
 							<div class="mb-28">
-								<div class="max-w-476 w-full md-max-w-full">
+								<div class="max-w-476 w-full md:max-w-full">
 									<h2>The Power of Supply Chain Podcasts</h2>
 								</div>
 							</div>
@@ -1693,13 +962,13 @@ $pageId = get_the_ID();
 									your marketing efforts.
 								</p>
 							</div>
-							<div class="flex sm-justify-center">
+							<div class="flex sm:justify-center">
 								<a href="#" class="btn primary w-inline-block">
 									<div>Download Now</div>
 								</a>
 							</div>
 						</div>
-						<div class="max-w-580 w-full md-max-w-full">
+						<div class="max-w-580 w-full md:max-w-full">
 							<div class="card v4">
 								<div class="relative z-10 py-60 px-20">
 									<div class="w-layout-blockcontainer max-w-352 rounded-12 overflow-hidden w-container">
@@ -1716,7 +985,7 @@ $pageId = get_the_ID();
 			</div>
 		</section>
 		<section class="section rounded-t-100 overflow-hidden text-white">
-			<div class="site-padding sm-py-60 py-144">
+			<div class="site-padding sm:py-60 py-144">
 				<div class="w-layout-blockcontainer max-w-788 text-center w-container">
 					<div class="mb-20">
 						<h2 class="text-45">Book a Free Strategy Session</h2>
