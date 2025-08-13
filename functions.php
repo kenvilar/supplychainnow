@@ -8,38 +8,38 @@ if (!function_exists('bridge_qode_child_theme_enqueue_scripts')) {
 	{
 		$isSplide = is_front_page() || is_page('about') || is_page('our-team-and-hosts') || is_page(
 				'upcoming-live-programming'
-			) || is_page('on-demand-programming') || is_singular('program') || is_page('work-with-us');
+			) || is_page('on-demand-programming') || is_singular('program') || is_page('work-with-us') || is_page('on-demand-programming/podcasts-and-livestreams');
 		// Remove parent style
 		wp_dequeue_style('bridge-stylesheet');
 		wp_deregister_style('bridge-stylesheet');
 		// Remove parent style
 		wp_dequeue_style('bridge-style-dynamic');
 		wp_deregister_style('bridge-style-dynamic');
-		
+
 		//splide style
 		if ($isSplide) {
 			wp_register_style('splide-style', get_stylesheet_directory_uri() . '/assets/css/splide.min.css');
 			wp_enqueue_style('splide-style');
 		}
-		
+
 		wp_enqueue_style(
 			'bridge-childstyle',
 			get_stylesheet_uri(),
 			[],
 		);
-		
+
 		wp_enqueue_style(
 			'tailwind-style',
 			get_stylesheet_directory_uri() . '/assets/css/tailwind-output.css',
 			['bridge-childstyle'],
 		);
 	}
-	
+
 	function supplyChainNowScripts()
 	{
 		$isSplide = is_front_page() || is_page('about') || is_page('our-team-and-hosts') || is_page(
 				'upcoming-live-programming'
-			) || is_page('on-demand-programming') || is_singular('program') || is_page('work-with-us');
+			) || is_page('on-demand-programming') || is_singular('program') || is_page('work-with-us') || is_page('on-demand-programming/podcasts-and-livestreams');
 		if ($isSplide) {
 			//splide script
 			wp_enqueue_script(
@@ -49,7 +49,7 @@ if (!function_exists('bridge_qode_child_theme_enqueue_scripts')) {
 				false,
 				true // load in footer
 			);
-			
+
 			//splide auto scroll extension
 			wp_enqueue_script(
 				'splide-extension-auto-scroll',
@@ -59,7 +59,7 @@ if (!function_exists('bridge_qode_child_theme_enqueue_scripts')) {
 				true // load in footer
 			);
 		}
-		
+
 		//custom script
 		wp_enqueue_script(
 			'supply-chain-now-custom-script',
@@ -69,7 +69,7 @@ if (!function_exists('bridge_qode_child_theme_enqueue_scripts')) {
 			true // load in footer
 		);
 	}
-	
+
 	add_action('wp_enqueue_scripts', 'bridge_qode_child_theme_enqueue_scripts', 11);
 	add_action('wp_enqueue_scripts', 'supplyChainNowScripts');
 }
@@ -92,9 +92,9 @@ function hide_editor()
 	if (!isset($post_id)) {
 		return;
 	}
-	
+
 	$template_file = get_post_meta($post_id, '_wp_page_template', true);
-	
+
 	if ($template_file == 'episode-detail.php') { // edit the template name
 		remove_post_type_support('page', 'editor');
 	}
@@ -106,12 +106,12 @@ function cptui_register_my_cpts_program()
 	/**
 	 * Post Type: Programs.
 	 */
-	
+
 	$labels = [
 		"name" => __("Programs", "custom-post-type-ui"),
 		"singular_name" => __("program", "custom-post-type-ui"),
 	];
-	
+
 	$args = [
 		"label" => __("Programs", "custom-post-type-ui"),
 		"labels" => $labels,
@@ -134,7 +134,7 @@ function cptui_register_my_cpts_program()
 		"query_var" => true,
 		"supports" => ["title", "editor", "thumbnail"],
 	];
-	
+
 	register_post_type("program", $args);
 }
 
@@ -169,13 +169,13 @@ function custom_program_shortcode()
 		'orderby' => 'menu_order',
 		'order' => 'ASC'
 	));
-	
+
 	while ($query->have_posts()) {
 		$query->the_post();
 		$post_id = get_the_ID();
 		$post_url = get_permalink($post_id);
 		$post_thumbnail_id = get_field('program_thumbnail_image_upload', $post_id);
-		
+
 		echo "<div class='pic-curved wpb_column vc_column_container vc_col-sm-4'><div class='vc_column-inner'><div class='wpb_wrapper'><div class='q_image_with_text_over q_iwto_hover'><div class='shader' style='background-color: rgba(0, 0, 0, 0.01);'></div><div class='shader_hover' style='background-color: rgba(39, 47, 55, 0.8);'></div><img alt='' src='" . $post_thumbnail_id . "' class='lazyload' /><div class='text'> <table><tr> <td><h3 class='caption no_icon' style=''></h3></td> </tr> </table> <table><tr> <td><div class='desc'><a itemprop='url' href='" . $post_url . "' target='_self' class='qbutton default' style=''>Learn More</a></div> </td></tr></table></div></div> <div class='vc_empty_space' style='height: 25px;'> <span class='vc_empty_space_inner'> <span class='empty_space_image'></span> </span></div></div></div></div>";
 	}
 	wp_reset_query();
@@ -190,7 +190,7 @@ function custom_related_post_shortcode()
 	global $post;
 	//console.log("shortcode");
 	$post_type = get_post_type($post);
-	
+
 	if ($post_type == 'page') {
 		$related_episodes = get_field('related_episodes', $post->ID);
 		$program_episode = get_field('select_programs', $post->ID);
@@ -280,7 +280,7 @@ add_filter('facetwp_template_html', function ($output, $class) {
 		$output = 'No results found.';
 		// add below if you want to output any facets from the filters
 		// change my_facet_name to the name of your facet
-		
+
 	}
 	return $output;
 }, 10, 2);
@@ -317,7 +317,7 @@ function acf_add_allowed_iframe_tag($tags, $context)
 			'allowfullscreen' => true,
 		);
 	}
-	
+
 	return $tags;
 }
 
