@@ -223,7 +223,7 @@ $pageId = get_the_ID();
 				<div class="w-full p-12">
 					<div class="flex flex-col gap-8">
 						<h4 styles-label="">Box-shadow</h4>
-						<div class="grid grid-cols-2">
+						<div class="grid grid-cols-2 gap-16">
 							<div class="shadow1">
 								<div class="py-48"></div>
 							</div>

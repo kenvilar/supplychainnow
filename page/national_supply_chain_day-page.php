@@ -202,7 +202,7 @@ $pageId = get_the_ID();
 								</div>
 							</div>
 							<div class="max-w-476 w-full md:max-w-full">
-								<div class="grid sm:grid-cols-1">
+								<div class="grid grid-cols-2 gap-16 sm:grid-cols-1">
 									<div class="card">
 										<div class="flex items-center justify-center h-92">
 											<img

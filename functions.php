@@ -22,9 +22,6 @@ if (!function_exists('bridge_qode_child_theme_enqueue_scripts')) {
 			wp_enqueue_style('splide-style');
 		}
 		
-		wp_register_style('bridge-childstyle', get_stylesheet_directory_uri() . '/style.css');
-		wp_enqueue_style('bridge-childstyle');
-		
 		wp_enqueue_style(
 			'bridge-childstyle',
 			get_stylesheet_uri(),
