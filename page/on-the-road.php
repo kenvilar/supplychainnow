@@ -46,14 +46,9 @@ $pageId = get_the_ID();
 						</div>
 					</div>
 					<div class="overflow-hidden rounded-12">
-						<div class="w-embed w-script">
-							<script src="https://gateway.on24.com/view/orion/engagement-hub/dist/embed/embed.js" data-width="100%"
-							        data-height="auto"
-							        data-url="https://gateway.on24.com/wcc/eh/4818584/category/143076/on-site-events"></script>
-							<iframe
-								src="https://gateway.on24.com/wcc/eh/4818584/category/143076/on-site-events?source=embedded&amp;autoheight=true&amp;embedInstanceId=9c933c70-2347-4e79-b5d3-1e267fccc085&amp;embedUrl=https%3A%2F%2Fsupply-chain-now-dev.webflow.io%2Fon-the-road"
-								width="100%" height="1360" frameborder="0" allowfullscreen=""></iframe>
-						</div>
+						<script src="https://gateway.on24.com/view/orion/engagement-hub/dist/embed/embed.js" data-width="100%"
+						        data-height="auto"
+						        data-url="https://gateway.on24.com/wcc/eh/4818584/category/143076/on-site-events"></script>
 					</div>
 				</div>
 			</div>
