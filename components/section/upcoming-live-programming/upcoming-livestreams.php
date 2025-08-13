@@ -2,7 +2,7 @@
 
 ?>
 <section class="section">
-	<div class="site-padding sm-py-60 py-0">
+	<div class="site-padding sm:py-60 py-0">
 		<div class="w-layout-blockcontainer max-w-1372 relative w-container">
 			<div class="mb-44">
 				<div class="mb-20">
@@ -76,8 +76,7 @@
 																	src="<?php
 																	echo get_the_post_thumbnail_url()
 																		? get_the_post_thumbnail_url()
-																		: get_stylesheet_directory_uri(
-																		) . '/assets/img/misc/default-card-img-thumbnail.avif' ?>"
+																		: get_stylesheet_directory_uri() . '/assets/img/misc/default-card-img-thumbnail.avif' ?>"
 																	loading="lazy" alt="" class="image relative opacity-40">
 																<?php
 																$terms = get_the_terms(get_the_ID(), 'tags');
@@ -86,7 +85,7 @@
 																	?>
 																	<div class="absolute absolute--tl p-24 flex items-center justify-center">
 																		<div class="relative rounded-full overflow-hidden py-4 px-8">
-																			<div class="relative font-semibold uppercase text-2xs text--white lh-full z-10">
+																			<div class="relative font-semibold uppercase text-2xs text-white lh-full z-10">
 																				<?php
 																				echo $first->name; ?>
 																			</div>
@@ -123,8 +122,7 @@
 																		?>
 																		<img
 																			src="<?php
-																			echo get_stylesheet_directory_uri(
-																				) . '/assets/img/icons/play-button-livestream.avif'; ?>"
+																			echo get_stylesheet_directory_uri() . '/assets/img/icons/play-button-livestream.avif'; ?>"
 																			loading="lazy" alt="play-button-livestream">
 																		<?php
 																	}
@@ -134,8 +132,7 @@
 																		?>
 																		<img
 																			src="<?php
-																			echo get_stylesheet_directory_uri(
-																				) . '/assets/img/icons/play-button-podcast.avif'; ?>"
+																			echo get_stylesheet_directory_uri() . '/assets/img/icons/play-button-podcast.avif'; ?>"
 																			loading="lazy" alt="play-button-podcast">
 																		<?php
 																	}
@@ -145,8 +142,7 @@
 																		?>
 																		<img
 																			src="<?php
-																			echo get_stylesheet_directory_uri(
-																				) . '/assets/img/icons/play-button-webinar.avif'; ?>"
+																			echo get_stylesheet_directory_uri() . '/assets/img/icons/play-button-webinar.avif'; ?>"
 																			loading="lazy" alt="play-button-webinar">
 																		<?php
 																	}
@@ -163,8 +159,7 @@
 																			?>
 																			<img
 																				src="<?php
-																				echo get_stylesheet_directory_uri(
-																					) . '/assets/img/icons/livestream-card-icon.svg'; ?>"
+																				echo get_stylesheet_directory_uri() . '/assets/img/icons/livestream-card-icon.svg'; ?>"
 																				loading="lazy" alt="livestream-music">
 																			<?php
 																		}
@@ -175,8 +170,7 @@
 																			<img
 																				class="size-24"
 																				src="<?php
-																				echo get_stylesheet_directory_uri(
-																					) . '/assets/img/icons/podcast-card-icon.png'; ?>"
+																				echo get_stylesheet_directory_uri() . '/assets/img/icons/podcast-card-icon.png'; ?>"
 																				loading="lazy" alt="podcast-blue-microphone">
 																			<?php
 																		}
@@ -187,8 +181,7 @@
 																			<img
 																				class="size-24"
 																				src="<?php
-																				echo get_stylesheet_directory_uri(
-																					) . '/assets/img/icons/webinar-card-icon.png'; ?>"
+																				echo get_stylesheet_directory_uri() . '/assets/img/icons/webinar-card-icon.png'; ?>"
 																				loading="lazy" alt="webinar-person">
 																			<?php
 																		}
@@ -257,71 +250,72 @@
 						?>
 						<div class="display-none w-embed">
 							<style>
-								html.wf-design-mode [slider-1] .splide__list {
-									display: flex;
-									flex-wrap: nowrap;
-									justify-content: center;
-								}
-								[slider-1] .splide__arrow {
-									background: transparent;
-								}
+									html.wf-design-mode [slider-1] .splide__list {
+											display: flex;
+											flex-wrap: nowrap;
+											justify-content: center;
+									}
+
+									[slider-1] .splide__arrow {
+											background: transparent;
+									}
 							</style>
 						</div>
 						<div class="display-none w-embed w-script">
 							<script>
-								document.addEventListener('DOMContentLoaded', function () {
-									function slider1() {
-										let splideTarget = '[slider-1]';
-										let splideTargetEl = document.querySelector(`${splideTarget}`);
-										if (!splideTargetEl) return;
-										var options = {
-											/*suggested options*/
-											type: 'slide', //'fade', //"slide", //"loop",
-											arrows: true,
-											pagination: false,
-											/*custom options*/
-											rewind: true,
-											//fixedWidth: 394,
-											perMove: 1,
-											perPage: 3,
-											gap: 32,
-											autoplay: true,
-											pauseOnHover: true,
-											autoScroll: {
-												speed: 1,
-											},
-											intersection: {
-												inView: {
-													autoplay: true,
-												},
-												outView: {
-													autoplay: false,
-												},
-											},
-											breakpoints: {
-												991: {
-													// 		type: 'slide',
-													perPage: 2,
-													padding: {left: 42, right: 42},
-													// 		perMove: 1,
-													// 		fixedWidth: '100%',
-													// 		padding: { left: 0, right: 0 },
-												},
-												767: {
-													perPage: 1,
-													gap: 50,
-													padding: {left: 42, right: 42},
-												},
-											},
-										};
-										var splide = new Splide(`${splideTarget}`, options);
-										splide.mount();
-									}
+                  document.addEventListener('DOMContentLoaded', function () {
+                      function slider1() {
+                          let splideTarget = '[slider-1]';
+                          let splideTargetEl = document.querySelector(`${splideTarget}`);
+                          if (!splideTargetEl) return;
+                          var options = {
+                              /*suggested options*/
+                              type: 'slide', //'fade', //"slide", //"loop",
+                              arrows: true,
+                              pagination: false,
+                              /*custom options*/
+                              rewind: true,
+                              //fixedWidth: 394,
+                              perMove: 1,
+                              perPage: 3,
+                              gap: 32,
+                              autoplay: true,
+                              pauseOnHover: true,
+                              autoScroll: {
+                                  speed: 1,
+                              },
+                              intersection: {
+                                  inView: {
+                                      autoplay: true,
+                                  },
+                                  outView: {
+                                      autoplay: false,
+                                  },
+                              },
+                              breakpoints: {
+                                  991: {
+                                      // 		type: 'slide',
+                                      perPage: 2,
+                                      padding: {left: 42, right: 42},
+                                      // 		perMove: 1,
+                                      // 		fixedWidth: '100%',
+                                      // 		padding: { left: 0, right: 0 },
+                                  },
+                                  767: {
+                                      perPage: 1,
+                                      gap: 50,
+                                      padding: {left: 42, right: 42},
+                                  },
+                              },
+                          };
+                          var splide = new Splide(`${splideTarget}`, options);
+                          splide.mount();
+                      }
 
-									setTimeout(function () {
-										slider1();
-									}, 500);
-								});
+                      setTimeout(function () {
+                          slider1();
+                      }, 500);
+                  });
 							</script>
 						</div>
 					</div>

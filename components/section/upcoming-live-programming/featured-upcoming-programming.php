@@ -2,7 +2,7 @@
 
 ?>
 <section class="section">
-	<div class="site-padding sm-py-60 py-60">
+	<div class="site-padding sm:py-60 py-60">
 		<div class="w-layout-blockcontainer max-w-1372 relative w-container">
 			<div class="mb-44">
 				<div class="mb-20">
@@ -15,7 +15,7 @@
 			<div class="mb-68">
 				<div class="w-layout-blockcontainer max-w-1252 w-container">
 					<div class="w-dyn-list">
-						<div role="list" class="flex justify-center gap-28 sm-flex-col w-dyn-items">
+						<div role="list" class="flex justify-center gap-28 sm:flex-col w-dyn-items">
 							<?php
 							$q = new WP_Query([
 								'post_type' => 'page',
@@ -71,8 +71,7 @@
 															src="<?php
 															echo get_the_post_thumbnail_url()
 																? get_the_post_thumbnail_url()
-																: get_stylesheet_directory_uri(
-																) . '/assets/img/misc/default-card-img-thumbnail.avif' ?>"
+																: get_stylesheet_directory_uri() . '/assets/img/misc/default-card-img-thumbnail.avif' ?>"
 															loading="lazy" alt="" class="image relative opacity-40">
 														<?php
 														$terms = get_the_terms(get_the_ID(), 'tags');
@@ -118,8 +117,7 @@
 																?>
 																<img
 																	src="<?php
-																	echo get_stylesheet_directory_uri(
-																		) . '/assets/img/icons/play-button-livestream.avif'; ?>"
+																	echo get_stylesheet_directory_uri() . '/assets/img/icons/play-button-livestream.avif'; ?>"
 																	loading="lazy" alt="play-button-livestream">
 																<?php
 															}
@@ -129,8 +127,7 @@
 																?>
 																<img
 																	src="<?php
-																	echo get_stylesheet_directory_uri(
-																		) . '/assets/img/icons/play-button-podcast.avif'; ?>"
+																	echo get_stylesheet_directory_uri() . '/assets/img/icons/play-button-podcast.avif'; ?>"
 																	loading="lazy" alt="play-button-podcast">
 																<?php
 															}
@@ -140,8 +137,7 @@
 																?>
 																<img
 																	src="<?php
-																	echo get_stylesheet_directory_uri(
-																		) . '/assets/img/icons/play-button-webinar.avif'; ?>"
+																	echo get_stylesheet_directory_uri() . '/assets/img/icons/play-button-webinar.avif'; ?>"
 																	loading="lazy" alt="play-button-webinar">
 																<?php
 															}
@@ -158,8 +154,7 @@
 																	?>
 																	<img
 																		src="<?php
-																		echo get_stylesheet_directory_uri(
-																			) . '/assets/img/icons/livestream-card-icon.svg'; ?>"
+																		echo get_stylesheet_directory_uri() . '/assets/img/icons/livestream-card-icon.svg'; ?>"
 																		loading="lazy" alt="livestream-music">
 																	<?php
 																}
