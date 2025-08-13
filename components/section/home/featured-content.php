@@ -61,8 +61,8 @@
 											<div class="overflow-hidden rounded-12 relative h-344 bg-cargogrey">
 												<img
 													src="<?php
-													echo get_the_post_thumbnail()
-														? the_post_thumbnail_url()
+													echo get_the_post_thumbnail_url()
+														? get_the_post_thumbnail_url()
 														: get_stylesheet_directory_uri() . '/assets/img/misc/default-card-img-thumbnail.avif' ?>"
 													loading="lazy" alt="" class="image relative opacity-40">
 												<?php
@@ -275,8 +275,8 @@
 											<div class="overflow-hidden rounded-12 relative h-222 bg-cargogrey">
 												<img
 													src="<?php
-													echo get_the_post_thumbnail()
-														? the_post_thumbnail_url()
+													echo get_the_post_thumbnail_url()
+														? get_the_post_thumbnail_url()
 														: get_stylesheet_directory_uri() . '/assets/img/misc/default-card-img-thumbnail.avif' ?>"
 													loading="lazy" alt="" class="image relative opacity-40">
 												<?php
