@@ -8,7 +8,9 @@ if (!function_exists('bridge_qode_child_theme_enqueue_scripts')) {
 	{
 		$isSplide = is_front_page() || is_page('about') || is_page('our-team-and-hosts') || is_page(
 				'upcoming-live-programming'
-			) || is_page('on-demand-programming') || is_singular('program') || is_page('work-with-us') || is_page('on-demand-programming/podcasts-and-livestreams');
+			) || is_page('on-demand-programming') || is_singular('program') || is_page('work-with-us') || is_page(
+			            'on-demand-programming/podcasts-and-livestreams'
+		            ) || is_page('on-demand-programming/webinars');
 		// Remove parent style
 		wp_dequeue_style('bridge-stylesheet');
 		wp_deregister_style('bridge-stylesheet');
@@ -39,7 +41,9 @@ if (!function_exists('bridge_qode_child_theme_enqueue_scripts')) {
 	{
 		$isSplide = is_front_page() || is_page('about') || is_page('our-team-and-hosts') || is_page(
 				'upcoming-live-programming'
-			) || is_page('on-demand-programming') || is_singular('program') || is_page('work-with-us') || is_page('on-demand-programming/podcasts-and-livestreams');
+			) || is_page('on-demand-programming') || is_singular('program') || is_page('work-with-us') || is_page(
+			            'on-demand-programming/podcasts-and-livestreams'
+		            ) || is_page('on-demand-programming/webinars');
 		if ($isSplide) {
 			//splide script
 			wp_enqueue_script(
