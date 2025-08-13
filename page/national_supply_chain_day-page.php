@@ -285,16 +285,9 @@ $pageId = get_the_ID();
 	<div class="relative">
 		<div class="h-full flex justify-center pt-68 pb-80 px-20">
 			<div class="w-layout-blockcontainer max-w-796 w-full md:max-w-full w-container">
-				<div class="w-embed w-script">
-					<script src="https://js.hsforms.net/forms/embed/49227407.js" defer=""></script>
-					<div class="hs-form-frame" data-region="na1" data-form-id="02f86d9b-b867-4a83-ac58-7ff35ed8dba6"
-					     data-portal-id="49227407" style="height: 0px;">
-						<iframe
-							src="https://js.hsforms.net/ui-forms-embed-components-app/frame.html?_hsPortalId=49227407&amp;_hsFormId=02f86d9b-b867-4a83-ac58-7ff35ed8dba6&amp;_hsIsQa=false&amp;_hsHublet=na1&amp;_hsDisableScriptloader=true&amp;_hsDisableRedirect=true&amp;_hsInstanceId=bec8d297-1394-4f5b-aa21-2e56b3482e73"
-							data-test-id="embedded-form-02f86d9b-b867-4a83-ac58-7ff35ed8dba6" title="Form" scrolling="no"
-							style="border: none; height: 100%; width: 100%;"></iframe>
-					</div>
-				</div>
+				<script src="https://js.hsforms.net/forms/embed/49227407.js" defer></script>
+				<div class="hs-form-frame" data-region="na1" data-form-id="02f86d9b-b867-4a83-ac58-7ff35ed8dba6"
+				     data-portal-id="49227407"></div>
 			</div>
 		</div>
 		<div close-modal="" class="flex absolute absolute--tr p-12 mt-36 mr-36 cursor-pointer w-embed">
