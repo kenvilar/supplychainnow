@@ -12,6 +12,11 @@
 @config "../../tailwind.config.js";
 /* Custom base */
 @layer base {
+	* {
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		-o-font-smoothing: antialiased;
+	}
 	body {
 		@apply text-reg font-normal text-textcolor;
 		font-family: var(--font-family---primary);
@@ -174,4 +179,32 @@
 }
 .border--lightgrey, .hover-border--lightgrey:hover {
 	@apply border-lightgrey;
+}
+.accordion {
+	margin: 0;
+	padding: 0;
+}
+.accordion-item {
+	border-top-left-radius: 25px;
+	border-top-right-radius: 25px;
+	padding: 23px 48px 30px 26px;
+	list-style-type: none;
+	position: relative;
+	overflow: hidden;
+}
+.accordion-item-header {
+	cursor: pointer;
+}
+.accordion-item-body {
+	max-height: 0;
+	transition: max-height .2s;
+	overflow: hidden;
+}
+.accordion-item-body-content {
+	max-width: 100%;
+	margin: 0;
+	padding: 16px 0 0;
+}
+.list-circle {
+	list-style-type: disc;
 }

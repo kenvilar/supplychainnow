@@ -15,6 +15,7 @@ const genDecimal = (max, step = 0.1) =>
 		})
 	);
 module.exports = {
+	important: true,
 	theme: {
 		extend: {
 			spacing: gen(4000, 1),

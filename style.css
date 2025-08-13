@@ -469,15 +469,6 @@ a#back_to_top, footer .footer_inner {
 .z-3 {
 	z-index: 3;
 }
-.z-10 {
-	z-index: 10;
-}
-.z-20 {
-	z-index: 20;
-}
-.z-30 {
-	z-index: 30;
-}
 .image {
 	object-fit: cover;
 	width: 100%;
@@ -493,6 +484,17 @@ a#back_to_top, footer .footer_inner {
 .card.v2 {
 	border-color: #313f4a36;
 	border-radius: 8px;
+}
+.card.v3 {
+	border-radius: 25px;
+	position: relative;
+	overflow: hidden
+}
+.card.v4 {
+	border-color: var(--transparent);
+	border-radius: 25px;
+	position: relative;
+	overflow: hidden
 }
 .font-family-primary {
 	font-family: Montserrat, Arial, sans-serif;
