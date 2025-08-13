@@ -80,7 +80,12 @@ $pageId = get_the_ID();
 								</div>
 								<h3 class="mb-50 text-34 lh-43 font-semibold" scn-text-limit="2">
 									<?php
-									the_title(); ?>
+									if (get_field('episode_title', $pageId)) {
+										echo get_field('episode_title', $pageId);
+									} else {
+										the_title();
+									}
+									?>
 								</h3>
 								<div>
 									<?php
