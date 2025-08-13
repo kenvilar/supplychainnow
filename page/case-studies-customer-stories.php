@@ -8,8 +8,8 @@ $pageId = get_the_ID();
 ?>
 <div class="page-wrapper">
 	<div class="main-wrapper">
-		<section class="section bg--cargogrey text--white rounded-b-100">
-			<div class="site-padding sm-py-60 pt-200 pb-116 relative z-10">
+		<section class="section bg-cargogrey text-white rounded-b-100">
+			<div class="site-padding sm:py-60 pt-200 pb-116 relative z-10">
 				<div class="w-layout-blockcontainer pt-20 w-container text-center">
 					<div class="mb-20">
 						<img
@@ -26,30 +26,31 @@ $pageId = get_the_ID();
 					</div>
 				</div>
 			</div>
-			<div class="absolute absolute--full _w-full h-full">
+			<div class="absolute absolute--full w-full h-full">
 				<img
 					src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/6879e87475dc2fc9f6c03fbf_hero-case-studies.avif"
 					loading="lazy" alt="hero-case-studies" class="image opacity-10">
 			</div>
 		</section>
 		<section class="section">
-			<div class="site-padding sm-py-60 py-96">
+			<div class="site-padding sm:py-60 py-96">
 				<div class="w-layout-blockcontainer max-w-1252 w-container">
 					<div class="mb-60">
-						<div class="flex gap-20 justify-between sm-flex-col">
-							<div class="max-w-608 _w-full md-max-w-full">
+						<div class="flex gap-20 justify-between sm:flex-col">
+							<div class="max-w-608 w-full md:max-w-full">
 								<div class="mb-20">
-									<div class="font-family-alternate font-semibold text-lg text--secondary"><em>Case Study #1</em></div>
+									<div class="font-family-alternate font-semibold text-lg text-secondary"><em>Case Study #1</em></div>
 								</div>
 								<div class="mb-36">
 									<h2>Group Purchasing Organization</h2>
 								</div>
-								<p class="tracking-1-6">Largest Group Purchasing Organization, specializing in procurement (“Company A”)
+								<p class="tracking-[1.6px]">Largest Group Purchasing Organization, specializing in procurement (“Company
+									A”)
 									partnered with Supply Chain Now on a Campaign that included a mix of podcasts, livestream, webinars
 									and blogs for the below outcomes:
 								</p>
 							</div>
-							<div class="max-w-588 _w-full md-max-w-full">
+							<div class="max-w-588 w-full md:max-w-full">
 								<ul role="list" class="accordion w-list-unstyled">
 									<li class="accordion-item">
 										<div class="accordion-item-header">
@@ -59,7 +60,7 @@ $pageId = get_the_ID();
 										</div>
 										<div class="accordion-item-body">
 											<div class="accordion-item-body-content">
-												<p class="text-xs tracking-1-2">The marketing team at Company A wanted to create more brand
+												<p class="text-xs tracking-[1.2px]">The marketing team at Company A wanted to create more brand
 													awareness across multiple industries.
 													<br>
 													<br>
@@ -68,7 +69,7 @@ $pageId = get_the_ID();
 												</p>
 											</div>
 										</div>
-										<div class="absolute absolute--full gradient2 z--1 opacity-25"></div>
+										<div class="absolute absolute--full gradient2 -z-1 opacity-25"></div>
 									</li>
 									<li class="accordion-item">
 										<div class="accordion-item-header">
@@ -79,9 +80,9 @@ $pageId = get_the_ID();
 										<div class="accordion-item-body">
 											<div class="accordion-item-body-content">
 												<div class="w-richtext">
-													<p class="text-xs tracking-1-2 mb-16"><strong>In just one webinar with Supply Chain Now,
+													<p class="text-xs tracking-[1.2px] mb-16"><strong>In just one webinar with Supply Chain Now,
 															Company A had 394 total registrants:</strong></p>
-													<ul role="list" class="list-circle text-xs tracking-1-2 pl-28">
+													<ul role="list" class="list-circle text-xs tracking-[1.2px] pl-28">
 														<li>Of which there were 207 attendees (52% attendee conversion rate)</li>
 														<li>Of those attendees, 191 were net new qualified leads and passed off to the sales team
 														</li>
@@ -89,7 +90,7 @@ $pageId = get_the_ID();
 												</div>
 											</div>
 										</div>
-										<div class="absolute absolute--full gradient2 z--1 opacity-25"></div>
+										<div class="absolute absolute--full gradient2 -z-1 opacity-25"></div>
 									</li>
 									<li class="accordion-item">
 										<div class="accordion-item-header">
@@ -99,7 +100,7 @@ $pageId = get_the_ID();
 										</div>
 										<div class="accordion-item-body">
 											<div class="accordion-item-body-content">
-												<p class="text-xs tracking-1-2">The webinar created with the Supply Chain Now team is still
+												<p class="text-xs tracking-[1.2px]">The webinar created with the Supply Chain Now team is still
 													being used one year later.
 													<br>
 													<br>
@@ -108,7 +109,7 @@ $pageId = get_the_ID();
 												</p>
 											</div>
 										</div>
-										<div class="absolute absolute--full gradient2 z--1 opacity-25"></div>
+										<div class="absolute absolute--full gradient2 -z-1 opacity-25"></div>
 									</li>
 									<li class="accordion-item">
 										<div class="accordion-item-header">
@@ -118,7 +119,8 @@ $pageId = get_the_ID();
 										</div>
 										<div class="accordion-item-body">
 											<div class="accordion-item-body-content">
-												<p class="text-xs tracking-1-2">Using Supply Chain Now to create content resulted in 3rd Party
+												<p class="text-xs tracking-[1.2px]">Using Supply Chain Now to create content resulted in 3rd
+													Party
 													Validation for Company A.
 													<br>
 													<br>
@@ -126,7 +128,7 @@ $pageId = get_the_ID();
 												</p>
 											</div>
 										</div>
-										<div class="absolute absolute--full gradient2 z--1 opacity-25"></div>
+										<div class="absolute absolute--full gradient2 -z-1 opacity-25"></div>
 									</li>
 								</ul>
 							</div>
@@ -134,13 +136,13 @@ $pageId = get_the_ID();
 					</div>
 					<div class="mb-104">
 						<div class="card">
-							<div class="py-80 px-20 sm-py-60 sm-px-12">
+							<div class="py-80 px-20 sm:py-60 sm:px-12">
 								<div class="w-layout-blockcontainer max-w-976 relative px-28 w-container">
 									<div class="w-layout-blockcontainer max-w-876 w-container">
 										<p class="font-family-alternate font-medium text-lg">We don’t just work with the Supply Chain Now
-											team once and are done. <em class="text--secondary">We view the partnership as an extension to our
-												marketing and sales teams,</em> and continue to <em class="text--secondary">repurpose
-												content</em> and follow-up with the <em class="text--secondary">warm leads</em> from each show.
+											team once and are done. <em class="text-secondary">We view the partnership as an extension to our
+												marketing and sales teams,</em> and continue to <em class="text-secondary">repurpose
+												content</em> and follow-up with the <em class="text-secondary">warm leads</em> from each show.
 											The content we create with Supply Chain Now is a lead magnet for our ideal customers.
 										</p>
 									</div>
@@ -167,21 +169,21 @@ $pageId = get_the_ID();
 						</div>
 					</div>
 					<div class="mb-52">
-						<div class="flex gap-20 justify-between sm-flex-col">
-							<div class="max-w-608 _w-full md-max-w-full">
+						<div class="flex gap-20 justify-between sm:flex-col">
+							<div class="max-w-608 w-full md:max-w-full">
 								<div class="mb-20">
-									<div class="font-family-alternate font-semibold text-lg text--secondary"><em>Case Study #2</em></div>
+									<div class="font-family-alternate font-semibold text-lg text-secondary"><em>Case Study #2</em></div>
 								</div>
 								<div class="mb-36">
-									<div class="max-w-396 _w-full md-max-w-full">
+									<div class="max-w-396 w-full md:max-w-full">
 										<h2>F500 Supply Chain Solution Provider</h2>
 									</div>
 								</div>
-								<p class="tracking-1-6">F500 supply chain solution provider specializing in shipping and logistics
+								<p class="tracking-[1.6px]">F500 supply chain solution provider specializing in shipping and logistics
 									(“Company B”) partnered with Supply Chain Now on a Campaign
 								</p>
 							</div>
-							<div class="max-w-588 _w-full md-max-w-full">
+							<div class="max-w-588 w-full md:max-w-full">
 								<ul role="list" class="accordion w-list-unstyled">
 									<li class="accordion-item">
 										<div class="accordion-item-header">
@@ -191,7 +193,8 @@ $pageId = get_the_ID();
 										</div>
 										<div class="accordion-item-body">
 											<div class="accordion-item-body-content">
-												<p class="text-xs tracking-1-2">After growing rapidly (via sales and acquisitions) the last few
+												<p class="text-xs tracking-[1.2px]">After growing rapidly (via sales and acquisitions) the last
+													few
 													years, brand clarity and awareness became even more crucial.
 													<br>
 													<br>
@@ -200,7 +203,7 @@ $pageId = get_the_ID();
 												</p>
 											</div>
 										</div>
-										<div class="absolute absolute--full gradient2 z--1 opacity-25"></div>
+										<div class="absolute absolute--full gradient2 -z-1 opacity-25"></div>
 									</li>
 									<li class="accordion-item">
 										<div class="accordion-item-header">
@@ -210,7 +213,7 @@ $pageId = get_the_ID();
 										</div>
 										<div class="accordion-item-body">
 											<div class="accordion-item-body-content">
-												<p class="text-xs tracking-1-2">Supply Chain Now Campaigns see anywhere between 500K - 1M
+												<p class="text-xs tracking-[1.2px]">Supply Chain Now Campaigns see anywhere between 500K - 1M
 													impressions across social media.
 													<br>
 													<br>
@@ -219,7 +222,7 @@ $pageId = get_the_ID();
 												</p>
 											</div>
 										</div>
-										<div class="absolute absolute--full gradient2 z--1 opacity-25"></div>
+										<div class="absolute absolute--full gradient2 -z-1 opacity-25"></div>
 									</li>
 									<li class="accordion-item">
 										<div class="accordion-item-header">
@@ -229,7 +232,8 @@ $pageId = get_the_ID();
 										</div>
 										<div class="accordion-item-body">
 											<div class="accordion-item-body-content">
-												<p class="text-xs tracking-1-2">Compared to every other webinar they have done (both internally
+												<p class="text-xs tracking-[1.2px]">Compared to every other webinar they have done (both
+													internally
 													and with external third parties), the Supply Chain Now webinar beat the others for registrants
 													by 180%!
 													<br>
@@ -239,7 +243,7 @@ $pageId = get_the_ID();
 												</p>
 											</div>
 										</div>
-										<div class="absolute absolute--full gradient2 z--1 opacity-25"></div>
+										<div class="absolute absolute--full gradient2 -z-1 opacity-25"></div>
 									</li>
 								</ul>
 							</div>
@@ -247,13 +251,13 @@ $pageId = get_the_ID();
 					</div>
 					<div class="mb-104">
 						<div class="card">
-							<div class="py-80 px-20 sm-py-60 sm-px-12">
+							<div class="py-80 px-20 sm:py-60 sm:px-12">
 								<div class="w-layout-blockcontainer max-w-976 relative px-28 w-container">
 									<div class="w-layout-blockcontainer max-w-876 w-container">
-										<p class="font-family-alternate font-medium text-lg">In addition to <em class="text--secondary">outperforming
+										<p class="font-family-alternate font-medium text-lg">In addition to <em class="text-secondary">outperforming
 												any other webinar we have done internally or externally (by 180%),</em> we had people reaching
 											out directly on LinkedIn after to connect with our presenter and learn more about what we do. We
-											continue to use the lead list from our Supply Chain Now shows for <em class="text--secondary">ABM
+											continue to use the lead list from our Supply Chain Now shows for <em class="text-secondary">ABM
 												Marketing.</em></p>
 									</div>
 									<div class="absolute absolute--tl">
@@ -281,8 +285,8 @@ $pageId = get_the_ID();
 				</div>
 			</div>
 		</section>
-		<section class="section rounded-t-100 overflow-hidden text--white">
-			<div class="site-padding sm-py-60 py-144">
+		<section class="section rounded-t-100 overflow-hidden text-white">
+			<div class="site-padding sm:py-60 py-144">
 				<div class="w-layout-blockcontainer max-w-564 text-center w-container">
 					<div class="mb-32">
 						<h2 class="text-45">Work With Us</h2>
@@ -299,8 +303,8 @@ $pageId = get_the_ID();
 					</div>
 				</div>
 			</div>
-			<div class="absolute absolute--full _w-full h-full gradient1 rotate-180 z--2"></div>
-			<div class="absolute absolute--full _w-full h-full z--1">
+			<div class="absolute absolute--full w-full h-full gradient1 rotate-180 -z-2"></div>
+			<div class="absolute absolute--full w-full h-full -z-1">
 				<img
 					src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/685a0cb23b5e3a0d2e89e825_professional-video-shoot-camera.avif"
 					loading="lazy" alt="Camera capturing a professional video shoot setup" class="image opacity-15">
