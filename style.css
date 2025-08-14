@@ -81,7 +81,7 @@ from webflow, start
 p a {
 	color: var(--paragraph-link-color, red);
 }
-.bg-clip-text, .hover-bg-clip-text {
+.bg-clip-text, .hover-bg-clip-text, .hover\:bg-clip-text {
 	background-clip: text;
 	color: transparent;
 	-webkit-background-clip: text;
@@ -183,101 +183,115 @@ p a {
 	-webkit-text-fill-color: transparent;
 }
 /*Gradient*/
-.gradient1, .hover-gradient1:hover {
+.gradient1, .hover-gradient1:hover, .hover\:gradient1:hover {
 	/*grey blue gradient*/
 	background: var(--gradient1);
 }
-.gradient2, .hover-gradient2:hover {
+.gradient2, .hover-gradient2:hover, .hover\:gradient2:hover {
 	/*light blue gradient*/
 	background: var(--gradient2);
 }
-.gradient3, .hover-gradient3:hover {
+.gradient3, .hover-gradient3:hover, .hover\:gradient3:hover {
 	/*primary button hover*/
 	background: var(--gradient3);
 }
-.gradient4, .hover-gradient4:hover {
+.gradient4, .hover-gradient4:hover, .hover\:gradient4:hover {
 	/*primary button outline hover*/
 	background: var(--gradient4);
 }
-.gradient5, .hover-gradient5:hover {
+.gradient5, .hover-gradient5:hover, .hover\:gradient5:hover {
 	background: var(--gradient5);
 }
-.gradient6, .hover-gradient6:hover {
+.gradient6, .hover-gradient6:hover, .hover\:gradient6:hover {
 	background: var(--gradient6);
 }
-.gradient7, .hover-gradient7:hover {
+.gradient7, .hover-gradient7:hover, .hover\:gradient7:hover {
 	background: var(--gradient7);
 }
-.gradient8, .hover-gradient8:hover {
+.gradient8, .hover-gradient8:hover, .hover\:gradient8:hover {
 	background: var(--gradient8);
 }
-.gradient9, .hover-gradient9:hover {
+.gradient9, .hover-gradient9:hover, .hover\:gradient9:hover {
 	background: var(--gradient9);
 }
 /*Box-shadow*/
-.shadow1, .hover-shadow1:hover {
+.shadow1, .hover-shadow1:hover, .hover\:shadow1:hover {
 	/*primary and secondary button hover*/
 	box-shadow: var(--shadow1);
 }
-.shadow2, .hover-shadow2:hover {
+.shadow2, .hover-shadow2:hover, .hover\:shadow2:hover {
 	box-shadow: var(--shadow2);
 }
-.shadow3, .hover-shadow3:hover {
+.shadow3, .hover-shadow3:hover, .hover\:shadow3:hover {
 	box-shadow: var(--shadow3);
 }
-.shadow4, .hover-shadow4:hover {
+.shadow4, .hover-shadow4:hover, .hover\:shadow4:hover {
 	box-shadow: var(--shadow4);
 }
-.shadow5, .hover-shadow5:hover {
+.shadow5, .hover-shadow5:hover, .hover\:shadow5:hover {
 }
-.shadow6, .hover-shadow6:hover {
+.shadow6, .hover-shadow6:hover, .hover\:shadow6:hover {
 }
-.shadow7, .hover-shadow7:hover {
+.shadow7, .hover-shadow7:hover, .hover\:shadow7:hover {
 }
 /* Group */
-.group:hover .group-hover-text--primary {
+.group:hover .group-hover-text--primary,
+.group:hover .group-hover\:text--primary {
 	color: var(--primary);
 }
-.group:hover .group-hover-text--secondary {
+.group:hover .group-hover-text--secondary,
+.group:hover .group-hover\:text--secondary {
 	color: var(--secondary);
 }
-.group:hover .group-hover-text--white {
+.group:hover .group-hover-text--white,
+.group:hover .group-hover\:text--white {
 	color: var(--white);
 }
-.group:hover .group-hover-bg--primary {
+.group:hover .group-hover-bg--primary,
+.group:hover .group-hover\:bg--primary {
 	background-color: var(--primary) !important;
 	outline-color: var(--primary) !important;
 }
-.group:hover .group-hover-bg--secondary {
+.group:hover .group-hover-bg--secondary,
+.group:hover .group-hover\:bg--secondary {
 	background-color: var(--secondary) !important;
 	outline-color: var(--secondary) !important;
 }
-.group:hover .group-hover-bg--white {
+.group:hover .group-hover-bg--white,
+.group:hover .group-hover\:bg--white {
 	background-color: var(--white) !important;
 	outline-color: var(--white) !important;
 }
-.group:hover .group-hover-translate-x-4 {
+.group:hover .group-hover-translate-x-4,
+.group:hover .group-hover\:translate-x-4 {
 	transform: translateX(4px);
 }
-.group:hover .group-hover-translate-y-0 {
+.group:hover .group-hover-translate-y-0,
+.group:hover .group-hover\:translate-y-0 {
 	transform: translateY(0);
 }
-.group:hover .group-hover-grayscale-0 {
+.group:hover .group-hover-grayscale-0,
+.group:hover .group-hover\:grayscale-0 {
 	filter: grayscale(0);
 }
-.group:hover .group-hover-opacity-100 {
+.group:hover .group-hover-opacity-100,
+.group:hover .group-hover\:opacity-100 {
 	opacity: 1;
 }
-.group:hover .group-hover-shadow1 {
+.group:hover .group-hover-shadow1,
+.group:hover .group-hover\:shadow1 {
 	box-shadow: var(--shadow1);
 }
-.group:hover .group-hover-shadow2 {
+.group:hover .group-hover-shadow2,
+.group:hover .group-hover\:shadow2 {
 	box-shadow: var(--shadow2);
 }
-.group:hover .group-hover-max-h-full {
+.group:hover .group-hover-max-h-full,
+.group:hover .group-hover\:max-h-full {
 	max-height: 100%;
 }
-.group:hover .group-hover-gradient5 {
+.group:hover .group-hover-gradient5,
+.group:hover .group-hover\:gradient5 {
 	background: var(--gradient5);
 }
 /*Default Splidejs*/
