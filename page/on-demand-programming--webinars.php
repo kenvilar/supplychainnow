@@ -79,10 +79,10 @@ $pageId = get_the_ID();
 															class="absolute absolute--full flex items-center justify-center translate-y-220 group-hover:translate-y-0 transition-all duration-500">
 															<img
 																src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688a36f89ae4a406c3dbc9a5_play-bg--primary.avif"
-																loading="lazy" alt="play-bg--primary" class="w-condition-invisible">
+																loading="lazy" alt="play-bg-primary" class="w-condition-invisible">
 															<img
 																src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688a3474d97d0c9a0c4acafd_play-bg--tertiary.avif"
-																loading="lazy" alt="play-bg--tertiary">
+																loading="lazy" alt="play-bg-tertiary">
 														</div>
 													</div>
 												</div>
@@ -193,7 +193,7 @@ $pageId = get_the_ID();
 																class="absolute absolute--full flex items-center justify-center translate-y-220 group-hover:translate-y-0 transition-all duration-500">
 																<img
 																	src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688a3474d97d0c9a0c4acafd_play-bg--tertiary.avif"
-																	loading="lazy" alt="play-bg--tertiary">
+																	loading="lazy" alt="play-bg-tertiary">
 															</div>
 														</div>
 													</div>
@@ -280,7 +280,7 @@ $pageId = get_the_ID();
 																class="absolute absolute--full flex items-center justify-center translate-y-220 group-hover:translate-y-0 transition-all duration-500">
 																<img
 																	src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688a3474d97d0c9a0c4acafd_play-bg--tertiary.avif"
-																	loading="lazy" alt="play-bg--tertiary">
+																	loading="lazy" alt="play-bg-tertiary">
 															</div>
 														</div>
 													</div>
@@ -368,7 +368,7 @@ $pageId = get_the_ID();
 																class="absolute absolute--full flex items-center justify-center translate-y-220 group-hover:translate-y-0 transition-all duration-500">
 																<img
 																	src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688a3474d97d0c9a0c4acafd_play-bg--tertiary.avif"
-																	loading="lazy" alt="play-bg--tertiary">
+																	loading="lazy" alt="play-bg-tertiary">
 															</div>
 														</div>
 													</div>
@@ -455,7 +455,7 @@ $pageId = get_the_ID();
 																class="absolute absolute--full flex items-center justify-center translate-y-220 group-hover:translate-y-0 transition-all duration-500">
 																<img
 																	src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688a3474d97d0c9a0c4acafd_play-bg--tertiary.avif"
-																	loading="lazy" alt="play-bg--tertiary">
+																	loading="lazy" alt="play-bg-tertiary">
 															</div>
 														</div>
 													</div>
@@ -543,7 +543,7 @@ $pageId = get_the_ID();
 																class="absolute absolute--full flex items-center justify-center translate-y-220 group-hover:translate-y-0 transition-all duration-500">
 																<img
 																	src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688a3474d97d0c9a0c4acafd_play-bg--tertiary.avif"
-																	loading="lazy" alt="play-bg--tertiary">
+																	loading="lazy" alt="play-bg-tertiary">
 															</div>
 														</div>
 													</div>
@@ -630,7 +630,7 @@ $pageId = get_the_ID();
 																class="absolute absolute--full flex items-center justify-center translate-y-220 group-hover:translate-y-0 transition-all duration-500">
 																<img
 																	src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688a3474d97d0c9a0c4acafd_play-bg--tertiary.avif"
-																	loading="lazy" alt="play-bg--tertiary">
+																	loading="lazy" alt="play-bg-tertiary">
 															</div>
 														</div>
 													</div>
@@ -718,7 +718,7 @@ $pageId = get_the_ID();
 																class="absolute absolute--full flex items-center justify-center translate-y-220 group-hover:translate-y-0 transition-all duration-500">
 																<img
 																	src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688a3474d97d0c9a0c4acafd_play-bg--tertiary.avif"
-																	loading="lazy" alt="play-bg--tertiary">
+																	loading="lazy" alt="play-bg-tertiary">
 															</div>
 														</div>
 													</div>
@@ -805,7 +805,7 @@ $pageId = get_the_ID();
 																class="absolute absolute--full flex items-center justify-center translate-y-220 group-hover:translate-y-0 transition-all duration-500">
 																<img
 																	src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688a3474d97d0c9a0c4acafd_play-bg--tertiary.avif"
-																	loading="lazy" alt="play-bg--tertiary">
+																	loading="lazy" alt="play-bg-tertiary">
 															</div>
 														</div>
 													</div>
@@ -893,7 +893,7 @@ $pageId = get_the_ID();
 																class="absolute absolute--full flex items-center justify-center translate-y-220 group-hover:translate-y-0 transition-all duration-500">
 																<img
 																	src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688a3474d97d0c9a0c4acafd_play-bg--tertiary.avif"
-																	loading="lazy" alt="play-bg--tertiary">
+																	loading="lazy" alt="play-bg-tertiary">
 															</div>
 														</div>
 													</div>
@@ -980,7 +980,7 @@ $pageId = get_the_ID();
 																class="absolute absolute--full flex items-center justify-center translate-y-220 group-hover:translate-y-0 transition-all duration-500">
 																<img
 																	src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688a3474d97d0c9a0c4acafd_play-bg--tertiary.avif"
-																	loading="lazy" alt="play-bg--tertiary">
+																	loading="lazy" alt="play-bg-tertiary">
 															</div>
 														</div>
 													</div>
@@ -1068,7 +1068,7 @@ $pageId = get_the_ID();
 																class="absolute absolute--full flex items-center justify-center translate-y-220 group-hover:translate-y-0 transition-all duration-500">
 																<img
 																	src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688a3474d97d0c9a0c4acafd_play-bg--tertiary.avif"
-																	loading="lazy" alt="play-bg--tertiary">
+																	loading="lazy" alt="play-bg-tertiary">
 															</div>
 														</div>
 													</div>
@@ -1155,7 +1155,7 @@ $pageId = get_the_ID();
 																class="absolute absolute--full flex items-center justify-center translate-y-220 group-hover:translate-y-0 transition-all duration-500">
 																<img
 																	src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688a3474d97d0c9a0c4acafd_play-bg--tertiary.avif"
-																	loading="lazy" alt="play-bg--tertiary">
+																	loading="lazy" alt="play-bg-tertiary">
 															</div>
 														</div>
 													</div>
@@ -1243,7 +1243,7 @@ $pageId = get_the_ID();
 																class="absolute absolute--full flex items-center justify-center translate-y-220 group-hover:translate-y-0 transition-all duration-500">
 																<img
 																	src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688a3474d97d0c9a0c4acafd_play-bg--tertiary.avif"
-																	loading="lazy" alt="play-bg--tertiary">
+																	loading="lazy" alt="play-bg-tertiary">
 															</div>
 														</div>
 													</div>
@@ -1330,7 +1330,7 @@ $pageId = get_the_ID();
 																class="absolute absolute--full flex items-center justify-center translate-y-220 group-hover:translate-y-0 transition-all duration-500">
 																<img
 																	src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688a3474d97d0c9a0c4acafd_play-bg--tertiary.avif"
-																	loading="lazy" alt="play-bg--tertiary">
+																	loading="lazy" alt="play-bg-tertiary">
 															</div>
 														</div>
 													</div>

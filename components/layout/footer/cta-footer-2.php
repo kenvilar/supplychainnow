@@ -10,7 +10,7 @@
 			<ul role="list" class="flex items-center justify-center gap-16 m-0 w-list-unstyled">
 				<li class="flex">
 					<a href="https://www.facebook.com/SupplyChainNow" target="_blank"
-					   class="text--white hover-text--primary w-inline-block">
+					   class="text--white hover:text-primary w-inline-block">
 						<div class="flex items-center justify-center w-embed">
 							<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
 								<path fill-rule="evenodd" clip-rule="evenodd"
@@ -22,7 +22,7 @@
 				</li>
 				<li class="flex">
 					<a href="https://www.instagram.com/supplychainnow/" target="_blank"
-					   class="text--white hover-text--primary w-inline-block">
+					   class="text--white hover:text-primary w-inline-block">
 						<div class="flex w-embed">
 							<svg xmlns="http://www.w3.org/2000/svg" width="37" height="36" viewBox="0 0 37 36" fill="none">
 								<path
@@ -40,7 +40,7 @@
 				</li>
 				<li class="flex">
 					<a href="https://www.linkedin.com/company/supply-chain-now/" target="_blank"
-					   class="text--white hover-text--primary w-inline-block">
+					   class="text--white hover:text-primary w-inline-block">
 						<div class="flex items-center justify-center w-embed">
 							<svg xmlns="http://www.w3.org/2000/svg" width="37" height="36" viewBox="0 0 37 36" fill="none">
 								<path fill-rule="evenodd" clip-rule="evenodd"
@@ -52,7 +52,7 @@
 				</li>
 				<li class="flex">
 					<a href="https://x.com/_supplychainnow" target="_blank"
-					   class="text--white hover-text--primary w-inline-block">
+					   class="text--white hover:text-primary w-inline-block">
 						<div class="flex items-center justify-center w-embed">
 							<svg xmlns="http://www.w3.org/2000/svg" width="37" height="36" viewBox="0 0 37 36" fill="none">
 								<path d="M23.0045 25.8835H25.4435L14.2165 10.1697H11.7775L23.0045 25.8835Z"
@@ -66,7 +66,7 @@
 				</li>
 				<li class="flex">
 					<a href="https://www.youtube.com/channel/UCuqKDp8uxinIM8ORIOLr0qw" target="_blank"
-					   class="text--white hover-text--primary w-inline-block">
+					   class="text--white hover:text-primary w-inline-block">
 						<div class="flex w-embed">
 							<svg xmlns="http://www.w3.org/2000/svg" width="37" height="36" viewBox="0 0 37 36" fill="none">
 								<path d="M21.7475 18L17.0225 15.3V20.7L21.7475 18Z" fill="currentColor"></path>

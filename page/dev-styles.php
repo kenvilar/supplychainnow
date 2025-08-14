@@ -47,145 +47,145 @@ $pageId = get_the_ID();
 						<div class="border border--black">
 							<div class="flex gap-4 items-center">
 								<div color-swatch="" class="w-40 h-40 rounded-4 overflow-hidden">
-									<div class="bg--black"></div>
+									<div class="bg-black"></div>
 								</div>
 								<div color-swatch="" class="w-40 h-40 rounded-4 overflow-hidden">
-									<div class="hover-bg--black"></div>
+									<div class="hover:bg-black"></div>
 								</div>
 								<div class="text--black">text--black</div>
-								<div class="hover-text--black">hover-text--black</div>
+								<div class="hover:text-black">hover:text-black</div>
 							</div>
 						</div>
 						<div class="border border--white">
 							<div class="flex gap-4 items-center">
 								<div color-swatch="" class="w-40 h-40 rounded-4 overflow-hidden outline-1--black">
-									<div class="bg--white"></div>
+									<div class="bg-white"></div>
 								</div>
 								<div color-swatch="" class="w-40 h-40 rounded-4 overflow-hidden outline-1--black">
-									<div class="hover-bg--white"></div>
+									<div class="hover:bg-white"></div>
 								</div>
 								<div class="text--white">#FFFFFF</div>
-								<div class="hover-text--white">hover-text--white</div>
+								<div class="hover:text-white">hover:text-white</div>
 							</div>
 						</div>
 						<div class="border border--dev">
 							<div class="flex gap-4 items-center">
 								<div color-swatch="" class="w-40 h-40 rounded-4 overflow-hidden">
-									<div class="bg--dev"></div>
+									<div class="bg-dev"></div>
 								</div>
 								<div color-swatch="" class="w-40 h-40 rounded-4 overflow-hidden">
-									<div class="hover-bg--dev"></div>
+									<div class="hover:bg-dev"></div>
 								</div>
 								<div class="text--dev">text--dev</div>
-								<div class="hover-text--dev">hover-text--dev</div>
+								<div class="hover:text-dev">hover:text-dev</div>
 							</div>
 						</div>
 						<div class="border border--primary">
 							<div class="flex gap-4 items-center">
 								<div color-swatch="" class="w-40 h-40 rounded-4 overflow-hidden">
-									<div class="bg--primary"></div>
+									<div class="bg-primary"></div>
 								</div>
 								<div color-swatch="" class="w-40 h-40 rounded-4 overflow-hidden">
-									<div class="hover-bg--primary"></div>
+									<div class="hover:bg-primary"></div>
 								</div>
 								<div class="text--primary">text--primary</div>
-								<div class="hover-text--primary">hover-text--primary</div>
+								<div class="hover:text-primary">hover:text-primary</div>
 							</div>
 						</div>
 						<div class="border border--secondary">
 							<div class="flex gap-4 items-center">
 								<div color-swatch="" class="w-40 h-40 rounded-4 overflow-hidden">
-									<div class="bg--secondary"></div>
+									<div class="bg-secondary"></div>
 								</div>
 								<div color-swatch="" class="w-40 h-40 rounded-4 overflow-hidden">
-									<div class="hover-bg--secondary"></div>
+									<div class="hover:bg-secondary"></div>
 								</div>
 								<div class="text--secondary">text--secondary</div>
-								<div class="hover-text--secondary">hover-text--secondary</div>
+								<div class="hover:text-secondary">hover:text-secondary</div>
 							</div>
 						</div>
 						<div class="border border--tertiary">
 							<div class="flex gap-4 items-center">
 								<div color-swatch="" class="w-40 h-40 rounded-4 overflow-hidden">
-									<div class="bg--tertiary"></div>
+									<div class="bg-tertiary"></div>
 								</div>
 								<div color-swatch="" class="w-40 h-40 rounded-4 overflow-hidden">
-									<div class="hover-bg--tertiary"></div>
+									<div class="hover:bg-tertiary"></div>
 								</div>
 								<div class="text--tertiary">text--tertiary</div>
-								<div class="hover-text--tertiary">hover-text--tertiary</div>
+								<div class="hover:text-tertiary">hover:text-tertiary</div>
 							</div>
 						</div>
 						<div class="border border--textcolor">
 							<div class="flex gap-4 items-center">
 								<div color-swatch="" class="w-40 h-40 rounded-4 overflow-hidden">
-									<div class="bg--textcolor"></div>
+									<div class="bg-textcolor"></div>
 								</div>
 								<div color-swatch="" class="w-40 h-40 rounded-4 overflow-hidden">
-									<div class="hover-bg--textcolor"></div>
+									<div class="hover:bg-textcolor"></div>
 								</div>
 								<div class="text--textcolor">text--textcolor</div>
-								<div class="hover-text--textcolor">hover-text--textcolor</div>
+								<div class="hover:text-textcolor">hover:text-textcolor</div>
 							</div>
 						</div>
 						<div class="border border--cargogrey">
 							<div class="flex gap-4 items-center">
 								<div color-swatch="" class="w-40 h-40 rounded-4 overflow-hidden">
-									<div class="bg--cargogrey"></div>
+									<div class="bg-cargogrey"></div>
 								</div>
 								<div color-swatch="" class="w-40 h-40 rounded-4 overflow-hidden">
-									<div class="hover-bg--cargogrey"></div>
+									<div class="hover:bg-cargogrey"></div>
 								</div>
 								<div class="text--cargogrey">text--cargo-grey</div>
-								<div class="hover-text--cargogrey">hover-text--cargo-grey</div>
+								<div class="hover:text-cargogrey">hover:text-cargo-grey</div>
 							</div>
 						</div>
 						<div class="border border--expressorange">
 							<div class="flex gap-4 items-center">
 								<div color-swatch="" class="w-40 h-40 rounded-4 overflow-hidden">
-									<div class="bg--expressorange"></div>
+									<div class="bg-expressorange"></div>
 								</div>
 								<div color-swatch="" class="w-40 h-40 rounded-4 overflow-hidden">
-									<div class="hover-bg--expressorange"></div>
+									<div class="hover:bg-expressorange"></div>
 								</div>
 								<div class="text--expressorange">text--expressorange</div>
-								<div class="hover-text--expressorange">hover-text--expressorange</div>
+								<div class="hover:text-expressorange">hover:text-expressorange</div>
 							</div>
 						</div>
 						<div class="border border--freightblue">
 							<div class="flex gap-4 items-center">
 								<div color-swatch="" class="w-40 h-40 rounded-4 overflow-hidden">
-									<div class="bg--freightblue"></div>
+									<div class="bg-freightblue"></div>
 								</div>
 								<div color-swatch="" class="w-40 h-40 rounded-4 overflow-hidden">
-									<div class="hover-bg--freightblue"></div>
+									<div class="hover:bg-freightblue"></div>
 								</div>
 								<div class="text--freightblue">text--freightblue</div>
-								<div class="hover-text--freightblue">hover-text--freightblue</div>
+								<div class="hover:text-freightblue">hover:text-freightblue</div>
 							</div>
 						</div>
 						<div class="border border--brightgray">
 							<div class="flex gap-4 items-center">
 								<div color-swatch="" class="w-40 h-40 rounded-4 overflow-hidden">
-									<div class="bg--brightgray"></div>
+									<div class="bg-brightgray"></div>
 								</div>
 								<div color-swatch="" class="w-40 h-40 rounded-4 overflow-hidden">
-									<div class="hover-bg--brightgray"></div>
+									<div class="hover:bg-brightgray"></div>
 								</div>
 								<div class="text--brightgray">text--brightgray</div>
-								<div class="hover-text--brightgray">hover-text--brightgray</div>
+								<div class="hover:text-brightgray">hover:text-brightgray</div>
 							</div>
 						</div>
 						<div class="border border--lightgrey">
 							<div class="flex gap-4 items-center">
 								<div color-swatch="" class="w-40 h-40 rounded-4 overflow-hidden">
-									<div class="bg--lightgrey"></div>
+									<div class="bg-lightgrey"></div>
 								</div>
 								<div color-swatch="" class="w-40 h-40 rounded-4 overflow-hidden">
-									<div class="hover-bg--lightgrey"></div>
+									<div class="hover:bg-lightgrey"></div>
 								</div>
 								<div class="text--lightgrey">text--lighgrey</div>
-								<div class="hover-text--lightgrey">hover-text--lighgrey</div>
+								<div class="hover:text-lightgrey">hover:text-lighgrey</div>
 							</div>
 						</div>
 					</div>
@@ -293,7 +293,7 @@ $pageId = get_the_ID();
 						<a href="#" class="w-button">Don't Use Native Button</a>
 					</div>
 					<div>
-						<a href="#" class="p-12 rounded-4 bg--black text--white w-inline-block">
+						<a href="#" class="p-12 rounded-4 bg-black text--white w-inline-block">
 							<div>Sample Custom Button</div>
 						</a>
 					</div>
