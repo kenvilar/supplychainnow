@@ -30,7 +30,7 @@ $pageId = get_the_ID();
 			<div class="site-padding py-0">
 				<div class="w-layout-blockcontainer max-w-full w-container">
 					<div class="flex justify-center items-center sm:flex-col">
-						<a href="/resource-hub" class="resource-hub-link w-inline-block">
+						<a href="/blog-news" class="resource-hub-link w-inline-block">
 							<div>All Content</div>
 						</a>
 						<a href="/blog" class="resource-hub-link w-inline-block">
@@ -39,7 +39,7 @@ $pageId = get_the_ID();
 						<a href="/white-paper" aria-current="page" class="resource-hub-link w-inline-block w--current">
 							<div>White Paper</div>
 						</a>
-						<a href="/e-book" class="resource-hub-link w-inline-block">
+						<a href="/ebook" class="resource-hub-link w-inline-block">
 							<div>E-Book</div>
 						</a>
 						<a href="/article" class="resource-hub-link w-inline-block">

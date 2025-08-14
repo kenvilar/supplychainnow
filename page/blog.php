@@ -38,7 +38,7 @@ $pageId = get_the_ID();
 						<a href="/white-paper" class="resource-hub-link w-inline-block">
 							<div>White Paper</div>
 						</a>
-						<a href="/e-book" class="resource-hub-link w-inline-block">
+						<a href="/ebook" class="resource-hub-link w-inline-block">
 							<div>E-Book</div>
 						</a>
 						<a href="/article" class="resource-hub-link w-inline-block">
