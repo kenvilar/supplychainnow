@@ -10,7 +10,7 @@ if (!function_exists('bridge_qode_child_theme_enqueue_scripts')) {
 				'upcoming-live-programming'
 			) || is_page('on-demand-programming') || is_singular('program') || is_page('work-with-us') || is_page(
 			            'on-demand-programming/podcasts-and-livestreams'
-		            ) || is_page('on-demand-programming/webinars');
+		            ) || is_page('on-demand-programming/webinars') || is_page('blog-news');
 		// Remove parent style
 		wp_dequeue_style('bridge-stylesheet');
 		wp_deregister_style('bridge-stylesheet');
@@ -43,7 +43,7 @@ if (!function_exists('bridge_qode_child_theme_enqueue_scripts')) {
 				'upcoming-live-programming'
 			) || is_page('on-demand-programming') || is_singular('program') || is_page('work-with-us') || is_page(
 			            'on-demand-programming/podcasts-and-livestreams'
-		            ) || is_page('on-demand-programming/webinars');
+		            ) || is_page('on-demand-programming/webinars') || is_page('blog-news');
 		if ($isSplide) {
 			//splide script
 			wp_enqueue_script(

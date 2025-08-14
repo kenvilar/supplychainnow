@@ -239,3 +239,22 @@
 .list-circle {
 	list-style-type: disc;
 }
+.resource-hub-link {
+	opacity: .5;
+	text-align: center;
+	padding: 20px 36px;
+	font-size: 20px;
+	line-height: 24px;
+	position: relative;
+	overflow: hidden;
+}
+.resource-hub-link.w--current {
+	border-bottom: 2px solid var(--primary);
+	opacity: 1;
+	color: var(--primary);
+	font-weight: 600;
+}
+.resource-hub-link:hover {
+	opacity: 1;
+	color: var(--primary);
+}
