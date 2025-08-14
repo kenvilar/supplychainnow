@@ -520,7 +520,9 @@
 														to Know of the Year and the Host of the TEKTOK Digital Supply Chain Podcast p...
 													</div>
 													<div from-bio-wrapper="" class="our-team-paragraph-truncate display-none w-richtext">
-														<p><strong>Karin Bursa </strong>is the 2020 Supply Chain Pro to Know of the Year and the
+														<p>
+															<strong>Karin Bursa</strong>
+															is the 2020 Supply Chain Pro to Know of the Year and the
 															Host of the TEKTOK Digital Supply Chain Podcast powered by Supply Chain Now. With more
 															than 25 years of supply chain and technology expertise <em>(and the scars to prove
 																it)</em>, Karin has the heart of a teacher and has helped nearly 1,000 customers
@@ -1018,7 +1020,9 @@
 														Win-Tech, a veteran-owned small business and aerospace precision machine shop, for 15...
 													</div>
 													<div from-bio-wrapper="" class="our-team-paragraph-truncate display-none w-richtext">
-														<p><strong>Allison Krache Giddens</strong> has been with Win-Tech, a veteran-owned small
+														<p>
+															<strong>Allison Krache Giddens</strong>
+															has been with Win-Tech, a veteran-owned small
 															business and aerospace precision machine shop, for 15 years, recently buying the company
 															from her mentor and Win-Tech’s Founder, Dennis Winslow. She and her business partner, John
 															Hudson now serve as Co-Presidents, leading the 33-year old company through the pandemic.
@@ -1173,38 +1177,58 @@
 													<div from-bio-wrapper="" class="our-team-paragraph-truncate display-none w-richtext">
 														<p>Billy Taylor is a Proven Business Excellence Practitioner and Leadership Guru with over
 															25 years leading operations for a Fortune 500 company, Goodyear. He is also the CEO of
-															<strong>LinkedXL</strong> <strong>(Excellence)</strong>, a Business Operating Systems
+															<strong>LinkedXL</strong>
+															<strong>(Excellence)</strong>
+															, a Business Operating Systems
 															Architecting Firm dedicated to implementing sustainable operating systems that drive
-															sustainable results. Taylor’s achievements in the industry have made him a <strong><em>Next
-																	Generational Lean</em></strong> pacesetter with significant contributions.
+															sustainable results. Taylor’s achievements in the industry have made him a
+															<strong><em>Next
+																	Generational Lean</em></strong>
+															pacesetter with significant contributions.
 														</p>
 														<p>An American business executive, Taylor has made a name for himself as an innovative and
 															energetic industry professional with an indispensable passion for his craft of operational
 															excellence. His journey started many years ago and has worked with renowned corporations
-															such as <strong>The Goodyear Tire &amp; Rubber Co. (GT)</strong> leading multi-site
+															such as
+															<strong>The Goodyear Tire &amp; Rubber Co. (GT)</strong>
+															leading multi-site
 															operations. With over 3 decades of service leading North America operations, he is
 															experienced in a deeply rooted process driven approach in customer service, process
 															integrity for sustainability.
 														</p>
 														<p>A disciple of continuous improvement, Taylor’s love for people inspires commitment to
-															helping others achieve their full potential. He is a dynamic speaker and hosts <strong>"The
-																Winning Link,"</strong> a popular podcast centered on business and leadership excellence
-															with the <strong><em>#1 rated Supply Chain Now Network</em></strong>. As a leadership
+															helping others achieve their full potential. He is a dynamic speaker and hosts
+															<strong>"The
+																Winning Link,"
+															</strong>
+															a popular podcast centered on business and leadership excellence
+															with the
+															<strong><em>#1 rated Supply Chain Now Network</em></strong>
+															. As a leadership
 															guru, Taylor has earned several invitations to universities, international conferences,
 															global publications, and the U.S. Army to demonstrate how to achieve and sustain effective
 															results through cultural acceptance and employee ownership. Leveraging the wisdom of his
 															business acumen, strong influence as a speaker and podcaster Taylor is set to release
-															<strong><em>"The Winning Link"</em> </strong>book under McGraw Hill publishing in 2022.
+															<strong><em>"The Winning Link"</em></strong>
+															book under McGraw Hill publishing in 2022.
 															The book is a how-to manual to help readers understand the management of business
 															interactions while teaching them how to Deine, Align, and Execute Winning in Business.
 														</p>
 														<p>A servant leader, Taylor, was named by The National Diversity Council as one of the Top
 															100 Diversity Officers in the country in 2021. He features among Oklahoma's Most Admired
-															CEOs and maintains key leadership roles with the Executive Advisory Board for <strong>The
-																Shingo Institute "The Nobel Prize of Operations"</strong> and <strong>The Association of
-																Manufacturing Excellence (AME)</strong>; two world-leading organizations for operational
+															CEOs and maintains key leadership roles with the Executive Advisory Board for
+															<strong>The
+																Shingo Institute "The Nobel Prize of Operations"
+															</strong>
+															and
+															<strong>The Association of
+																Manufacturing Excellence (AME)
+															</strong>
+															; two world-leading organizations for operational
 															excellence, business development, and cultural learning. &nbsp;He is also an Independent
-															Director for the <strong>M-D Building Products Board</strong>, a proud American
+															Director for the
+															<strong>M-D Building Products Board</strong>
+															, a proud American
 															manufacturer of quality products since 1920.
 														</p>
 													</div>

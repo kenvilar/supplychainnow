@@ -9,12 +9,8 @@ if (have_posts()) : ?>
 	while (have_posts()) : the_post();
 		$pageId = get_the_ID(); ?>
 		<!-- Custom code Start -->
-
-
 		<div class="full_width">
 			<div class="full_width_inner">
-
-
 				<div class="vc_row wpb_row section vc_row-fluid post-headerspace" style="background-image:url(<?php
 				wp_kses_post(the_field('program_hero_image_upload', $pageId)); ?>); padding-bottom:60px; text-align:center;">
 					<div class="full_section_inner clearfix">
@@ -39,8 +35,6 @@ if (have_posts()) : ?>
 						</div>
 					</div>
 				</div>
-
-
 				<div class="vc_row wpb_row section vc_row-fluid" style="text-align: right;">
 					<div class="full_section_inner clearfix">
 						<div class="wpb_column vc_column_container vc_col-sm-12">
@@ -65,8 +59,6 @@ if (have_posts()) : ?>
 						</div>
 					</div>
 				</div>
-
-
 				<div class="vc_row wpb_row section vc_row-fluid grid_section" style="padding-top: 60px; text-align: center;">
 					<div class="section_inner clearfix">
 						<div class="section_inner_margin clearfix">
@@ -91,17 +83,14 @@ if (have_posts()) : ?>
                                                         <span class="empty_space_image"></span>
                                                     </span>
 										</div>
-
 										<div class="vc_row wpb_row section vc_row-fluid vc_inner grid_section" style="text-align: center;">
 											<div class="section_inner clearfix">
 												<div class="section_inner_margin clearfix">
 													<div class="wpb_column vc_column_container vc_col-sm-4">
 														<div class="vc_column-inner">
 															<div class="wpb_wrapper">
-
 																<div class="image_hover" style="" data-transition-delay="">
 																	<div class="images_holder">
-
 																		<a itemprop="url" href="/search-results/?_search_programs=<?php
 																		echo $pageId; ?>" target="_blank">
 																			<img
@@ -111,7 +100,6 @@ if (have_posts()) : ?>
 																				src="/wp-content/uploads/2021/04/search-episode-btn.png"
 																				class="active_image lazyload"
 																			/>
-
 																			<img
 																				itemprop="image"
 																				alt=""
@@ -119,7 +107,6 @@ if (have_posts()) : ?>
 																				src="/wp-content/uploads/2021/04/search-episode-hover-btn.png"
 																				class="hover_image lazyload"
 																			/>
-
 																		</a>
 																	</div>
 																</div>
@@ -230,8 +217,6 @@ if (have_posts()) : ?>
 						</div>
 					</div>
 				</div>
-
-
 				<?php
 				if (!empty(get_field('recent_episode_title', $pageId))
 				    && !empty(
@@ -239,7 +224,8 @@ if (have_posts()) : ?>
 						'recent_episode_thumbnail_upload',
 						$pageId
 					)
-					)) {
+					)
+				) {
 					?>
 					<div class="full_width">
 						<div class="full_width_inner">
@@ -316,7 +302,6 @@ if (have_posts()) : ?>
                                                                         <span class="empty_space_image"></span>
                                                                     </span>
 																	</div>
-
 																	<?php
 																	if (!empty(get_field('recent_episode_apple_podcast_link', $pageId))) { ?>
 																		<a itemprop="url" href="<?php
@@ -325,14 +310,11 @@ if (have_posts()) : ?>
 																		</a>
 																		<?php
 																	} ?>
-
-
 																	<div class="vc_empty_space" style="height: 20px;">
                                                                     <span class="vc_empty_space_inner">
                                                                         <span class="empty_space_image"></span>
                                                                     </span>
 																	</div>
-
 																	<?php
 																	if (!empty(get_field('recent_episode_episode_detail_link', $pageId))) { ?>
 																		<a itemprop="url" href="<?php
@@ -341,7 +323,6 @@ if (have_posts()) : ?>
 																		</a>
 																		<?php
 																	} ?>
-
 																</div>
 															</div>
 														</div>
@@ -354,7 +335,6 @@ if (have_posts()) : ?>
 							</div>
 						</div>
 					</div>
-
 					<?php
 				} ?>
 
@@ -437,7 +417,6 @@ if (have_posts()) : ?>
                                                         <span class="empty_space_image"></span>
                                                     </span>
 											</div>
-
 											<div class="vc_row wpb_row section vc_row-fluid vc_inner grid_section" style="text-align: left;">
 												<div class="section_inner clearfix">
 													<div class="section_inner_margin clearfix">
@@ -455,7 +434,6 @@ if (have_posts()) : ?>
 																$episode_url = get_permalink($value);
 
 																?>
-
 																<div class="pic-curved wpb_column vc_column_container vc_col-sm-4">
 																	<div class="vc_column-inner">
 																		<div class="wpb_wrapper">
@@ -471,7 +449,6 @@ if (have_posts()) : ?>
 																					class="lazyload"
 																					src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
 																				/>
-
 																				<div class="text">
 																					<table>
 																						<tr>
@@ -506,7 +483,6 @@ if (have_posts()) : ?>
 															}
 														}
 														?>
-
 													</div>
 												</div>
 											</div>
@@ -590,7 +566,6 @@ if (have_posts()) : ?>
                                                         <span class="empty_space_image"></span>
                                                     </span>
 											</div>
-
 											<div class="wpb_text_column wpb_content_element">
 												<div class="wpb_wrapper">
 													<p>
@@ -633,7 +608,6 @@ if (have_posts()) : ?>
 															class="vc_single_image-img attachment-full lazyload"
 															src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
 														/>
-
 													</div>
 												</div>
 											</div>
@@ -642,9 +616,7 @@ if (have_posts()) : ?>
                                                         <span class="empty_space_image"></span>
                                                     </span>
 											</div>
-
 											<div class="vc_row wpb_row section vc_row-fluid vc_inner grid_section" style="text-align: left;">
-
 												<div class="section_inner clearfix">
 													<div class="section_inner_margin clearfix">
 														<?php
@@ -671,9 +643,7 @@ if (have_posts()) : ?>
 																					src="<?php
 																					echo $program_img; ?>"
 																					class="lazyload"
-
 																				/>
-
 																				<div class="text">
 																					<table>
 																						<tr>
@@ -708,7 +678,6 @@ if (have_posts()) : ?>
 															}
 														}
 														?>
-
 													</div>
 												</div>
 											</div>
@@ -742,9 +711,7 @@ if (have_posts()) : ?>
 															loading="lazy"
 															src="/wp-content/uploads/2021/01/orange-headingline-1x.png"
 															class="vc_single_image-img attachment-full lazyload"
-
 														/>
-
 													</div>
 												</div>
 											</div>
@@ -753,14 +720,11 @@ if (have_posts()) : ?>
                                                         <span class="empty_space_image"></span>
                                                     </span>
 											</div>
-
 											<div class="vc_row wpb_row section vc_row-fluid vc_inner grid_section" style="text-align: left;">
-
 												<div class="section_inner clearfix">
 													<div class="section_inner_margin clearfix">
 														<?php
 														echo do_shortcode('[custom_related_post]'); ?>
-
 													</div>
 												</div>
 											</div>
@@ -783,7 +747,8 @@ if (have_posts()) : ?>
 						)
 						)
 					    || !empty(get_field('twitter', $pageId))
-					    || !empty(get_field('youtube', $pageId))) { ?>
+					    || !empty(get_field('youtube', $pageId))
+					) { ?>
 						<div class="section_inner clearfix">
 							<div class="section_inner_margin clearfix">
 								<div class="wpb_column vc_column_container vc_col-sm-12">
@@ -855,7 +820,6 @@ if (have_posts()) : ?>
                                                         <span class="empty_space_image"></span>
                                                     </span>
 											</div>
-
 											<div class="vc_row wpb_row section vc_row-fluid vc_inner text-sm-center"
 											     style="text-align: left;">
 												<div class="full_section_inner clearfix">
@@ -985,7 +949,6 @@ if (have_posts()) : ?>
 						<?php
 					} ?>
 				</div>
-
 				<div class="vc_row wpb_row section vc_row-fluid" style="background-color: #4c94c5; text-align: left;">
 					<div class="full_section_inner clearfix">
 						<div class="wpb_column vc_column_container vc_col-sm-12">
@@ -1077,13 +1040,9 @@ if (have_posts()) : ?>
 				</div>
 			</div>
 		</div>
-
-
 	<?php
 	endwhile; ?>
 <?php
 endif; ?>
-
-
 <?php
 get_footer(); ?>

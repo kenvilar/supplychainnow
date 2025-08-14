@@ -80,8 +80,11 @@ $pageId = get_the_ID();
 										<div class="accordion-item-body">
 											<div class="accordion-item-body-content">
 												<div class="w-richtext">
-													<p class="text-xs tracking-[1.2px] mb-16"><strong>In just one webinar with Supply Chain Now,
-															Company A had 394 total registrants:</strong></p>
+													<p class="text-xs tracking-[1.2px] mb-16">
+														<strong>In just one webinar with Supply Chain Now,
+															Company A had 394 total registrants:
+														</strong>
+													</p>
 													<ul role="list" class="list-circle text-xs tracking-[1.2px] pl-28">
 														<li>Of which there were 207 attendees (52% attendee conversion rate)</li>
 														<li>Of those attendees, 191 were net new qualified leads and passed off to the sales team

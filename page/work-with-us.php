@@ -195,7 +195,9 @@ $pageId = get_the_ID();
 					</div>
 					<div class="mb-28">
 						<div class="w-layout-blockcontainer max-w-672 w-container">
-							<p><strong>Reach 1M+ Supply Chain Professionals</strong> actively engaging with Supply Chain Now and
+							<p>
+								<strong>Reach 1M+ Supply Chain Professionals</strong>
+								actively engaging with Supply Chain Now and
 								generate qualified new leads for your business.
 							</p>
 						</div>

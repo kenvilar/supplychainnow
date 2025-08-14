@@ -56,7 +56,9 @@ $pageId = get_the_ID();
 								<br>
 								<br>
 								<strong>Join us every year on April 29th as we delve into the stories, breakthroughs and technologies of
-									the global supply chain.</strong></p>
+									the global supply chain.
+								</strong>
+							</p>
 						</div>
 					</div>
 					<div class="w-layout-blockcontainer max-w-424 sm:max-w-full w-container">

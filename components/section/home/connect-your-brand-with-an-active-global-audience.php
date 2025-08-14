@@ -11,8 +11,11 @@
 							<h2>Connect Your Brand with an Active Global Audience of Millions</h2>
 						</div>
 						<div class="max-w-444 w-full md:max-w-full">
-							<p><strong class="text-lg">When you become a sponsor or campaign partner, you become a trusted voice in
-									the industry.</strong></p>
+							<p>
+								<strong class="text-lg">When you become a sponsor or campaign partner, you become a trusted voice in
+									the industry.
+								</strong>
+							</p>
 						</div>
 					</div>
 				</div>

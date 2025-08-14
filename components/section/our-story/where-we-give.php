@@ -22,7 +22,8 @@
 							Through genuine, purposeful action, we strive to be the change that is needed in the world today.
 							<br>
 							<br>
-							<strong>Here are just a few of the organizations we support:</strong></p>
+							<strong>Here are just a few of the organizations we support:</strong>
+						</p>
 					</div>
 				</div>
 			</div>

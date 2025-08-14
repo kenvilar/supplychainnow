@@ -356,13 +356,19 @@ $pageId = get_the_ID();
 															practices:
 														</p>
 														<ul role="list">
-															<li><strong>Regular Updates</strong>: Keep your CMS and plugins updated to protect against
+															<li>
+																<strong>Regular Updates</strong>
+																: Keep your CMS and plugins updated to protect against
 																vulnerabilities.
 															</li>
-															<li><strong>Strong Passwords</strong>: Use complex passwords and change them regularly to
+															<li>
+																<strong>Strong Passwords</strong>
+																: Use complex passwords and change them regularly to
 																enhance security.
 															</li>
-															<li><strong>Backup Your Data</strong>: Regularly back up your content to prevent data loss
+															<li>
+																<strong>Backup Your Data</strong>
+																: Regularly back up your content to prevent data loss
 																in case of a breach.
 															</li>
 														</ul>
@@ -494,13 +500,19 @@ $pageId = get_the_ID();
 															some key benefits:
 														</p>
 														<ul role="list">
-															<li><strong>User-Friendly Interface</strong>: Most CMS platforms provide an intuitive
+															<li>
+																<strong>User-Friendly Interface</strong>
+																: Most CMS platforms provide an intuitive
 																interface that simplifies content creation and management.
 															</li>
-															<li><strong>SEO Optimization</strong>: Many CMSs come with built-in SEO tools that help
+															<li>
+																<strong>SEO Optimization</strong>
+																: Many CMSs come with built-in SEO tools that help
 																improve your website's visibility on search engines.
 															</li>
-															<li><strong>Collaboration</strong>: A CMS allows multiple users to collaborate on content
+															<li>
+																<strong>Collaboration</strong>
+																: A CMS allows multiple users to collaborate on content
 																creation, making it easier to manage large teams.
 															</li>
 														</ul>
@@ -568,13 +580,19 @@ $pageId = get_the_ID();
 														<h2>Types of CMS</h2>
 														<p>There are several types of CMS, including:</p>
 														<ul role="list">
-															<li><strong>Open Source CMS</strong>: These are free to use and customizable, such as
+															<li>
+																<strong>Open Source CMS</strong>
+																: These are free to use and customizable, such as
 																WordPress and Joomla.
 															</li>
-															<li><strong>Proprietary CMS</strong>: These are paid solutions that offer dedicated
+															<li>
+																<strong>Proprietary CMS</strong>
+																: These are paid solutions that offer dedicated
 																support and advanced features, like Adobe Experience Manager.
 															</li>
-															<li><strong>Cloud-Based CMS</strong>: These systems are hosted in the cloud, providing
+															<li>
+																<strong>Cloud-Based CMS</strong>
+																: These systems are hosted in the cloud, providing
 																flexibility and scalability, such as Wix and Squarespace.
 															</li>
 														</ul>
@@ -1017,13 +1035,19 @@ $pageId = get_the_ID();
 															practices:
 														</p>
 														<ul role="list">
-															<li><strong>Regular Updates</strong>: Keep your CMS and plugins updated to protect against
+															<li>
+																<strong>Regular Updates</strong>
+																: Keep your CMS and plugins updated to protect against
 																vulnerabilities.
 															</li>
-															<li><strong>Strong Passwords</strong>: Use complex passwords and change them regularly to
+															<li>
+																<strong>Strong Passwords</strong>
+																: Use complex passwords and change them regularly to
 																enhance security.
 															</li>
-															<li><strong>Backup Your Data</strong>: Regularly back up your content to prevent data loss
+															<li>
+																<strong>Backup Your Data</strong>
+																: Regularly back up your content to prevent data loss
 																in case of a breach.
 															</li>
 														</ul>
@@ -1155,13 +1179,19 @@ $pageId = get_the_ID();
 															some key benefits:
 														</p>
 														<ul role="list">
-															<li><strong>User-Friendly Interface</strong>: Most CMS platforms provide an intuitive
+															<li>
+																<strong>User-Friendly Interface</strong>
+																: Most CMS platforms provide an intuitive
 																interface that simplifies content creation and management.
 															</li>
-															<li><strong>SEO Optimization</strong>: Many CMSs come with built-in SEO tools that help
+															<li>
+																<strong>SEO Optimization</strong>
+																: Many CMSs come with built-in SEO tools that help
 																improve your website's visibility on search engines.
 															</li>
-															<li><strong>Collaboration</strong>: A CMS allows multiple users to collaborate on content
+															<li>
+																<strong>Collaboration</strong>
+																: A CMS allows multiple users to collaborate on content
 																creation, making it easier to manage large teams.
 															</li>
 														</ul>
@@ -1229,13 +1259,19 @@ $pageId = get_the_ID();
 														<h2>Types of CMS</h2>
 														<p>There are several types of CMS, including:</p>
 														<ul role="list">
-															<li><strong>Open Source CMS</strong>: These are free to use and customizable, such as
+															<li>
+																<strong>Open Source CMS</strong>
+																: These are free to use and customizable, such as
 																WordPress and Joomla.
 															</li>
-															<li><strong>Proprietary CMS</strong>: These are paid solutions that offer dedicated
+															<li>
+																<strong>Proprietary CMS</strong>
+																: These are paid solutions that offer dedicated
 																support and advanced features, like Adobe Experience Manager.
 															</li>
-															<li><strong>Cloud-Based CMS</strong>: These systems are hosted in the cloud, providing
+															<li>
+																<strong>Cloud-Based CMS</strong>
+																: These systems are hosted in the cloud, providing
 																flexibility and scalability, such as Wix and Squarespace.
 															</li>
 														</ul>
