@@ -321,7 +321,7 @@ $pageId = get_the_ID();
 																	echo get_the_post_thumbnail_url($value)
 																		? get_the_post_thumbnail_url($value)
 																		: get_stylesheet_directory_uri(
-																		) . '/assets/img/misc/default-card-img-thumbnail.avif' ?>"
+																		  ) . '/assets/img/misc/default-card-img-thumbnail.avif' ?>"
 																	loading="lazy" alt="" class="image relative opacity-40">
 																<?php
 																$terms = get_the_terms($value, 'tags');
@@ -336,25 +336,25 @@ $pageId = get_the_ID();
 																			</div>
 																			<?php
 																			echo get_field(
-																				'select_media_type',
-																				$value
-																			) == 'livestream'
+																				     'select_media_type',
+																				     $value
+																			     ) == 'livestream'
 																				? '<div class="absolute absolute--full bg-primary"></div>'
 																				: '';
 																			?>
 																			<?php
 																			echo get_field(
-																				'select_media_type',
-																				$value
-																			) == 'podcast'
+																				     'select_media_type',
+																				     $value
+																			     ) == 'podcast'
 																				? '<div class="absolute absolute--full bg-secondary"></div>'
 																				: '';
 																			?>
 																			<?php
 																			echo get_field(
-																				'select_media_type',
-																				$value
-																			) == 'webinar'
+																				     'select_media_type',
+																				     $value
+																			     ) == 'webinar'
 																				? '<div class="absolute absolute--full bg-tertiary"></div>'
 																				: '';
 																			?>
@@ -371,7 +371,7 @@ $pageId = get_the_ID();
 																		<img
 																			src="<?php
 																			echo get_stylesheet_directory_uri(
-																				) . '/assets/img/icons/play-button-livestream.avif'; ?>"
+																			     ) . '/assets/img/icons/play-button-livestream.avif'; ?>"
 																			loading="lazy" alt="play-button-livestream">
 																		<?php
 																	}
@@ -382,7 +382,7 @@ $pageId = get_the_ID();
 																		<img
 																			src="<?php
 																			echo get_stylesheet_directory_uri(
-																				) . '/assets/img/icons/play-button-podcast.avif'; ?>"
+																			     ) . '/assets/img/icons/play-button-podcast.avif'; ?>"
 																			loading="lazy" alt="play-button-podcast">
 																		<?php
 																	}
@@ -393,7 +393,7 @@ $pageId = get_the_ID();
 																		<img
 																			src="<?php
 																			echo get_stylesheet_directory_uri(
-																				) . '/assets/img/icons/play-button-webinar.avif'; ?>"
+																			     ) . '/assets/img/icons/play-button-webinar.avif'; ?>"
 																			loading="lazy" alt="play-button-webinar">
 																		<?php
 																	}
@@ -411,7 +411,7 @@ $pageId = get_the_ID();
 																			<img
 																				src="<?php
 																				echo get_stylesheet_directory_uri(
-																					) . '/assets/img/icons/livestream-card-icon.svg'; ?>"
+																				     ) . '/assets/img/icons/livestream-card-icon.svg'; ?>"
 																				loading="lazy" alt="livestream-music">
 																			<?php
 																		}
@@ -423,7 +423,7 @@ $pageId = get_the_ID();
 																				class="size-24"
 																				src="<?php
 																				echo get_stylesheet_directory_uri(
-																					) . '/assets/img/icons/podcast-card-icon.png'; ?>"
+																				     ) . '/assets/img/icons/podcast-card-icon.png'; ?>"
 																				loading="lazy" alt="podcast-blue-microphone">
 																			<?php
 																		}
@@ -435,7 +435,7 @@ $pageId = get_the_ID();
 																				class="size-24"
 																				src="<?php
 																				echo get_stylesheet_directory_uri(
-																					) . '/assets/img/icons/webinar-card-icon.png'; ?>"
+																				     ) . '/assets/img/icons/webinar-card-icon.png'; ?>"
 																				loading="lazy" alt="webinar-person">
 																			<?php
 																		}
@@ -552,7 +552,7 @@ $pageId = get_the_ID();
 																	echo the_post_thumbnail_url();
 																} else {
 																	echo get_stylesheet_directory_uri(
-																		) . '/assets/img/misc/default-card-img-thumbnail.avif';
+																	     ) . '/assets/img/misc/default-card-img-thumbnail.avif';
 																}
 															}
 															?>"
@@ -571,61 +571,61 @@ $pageId = get_the_ID();
 								?>
 								<div class="display-none w-embed w-script">
 									<script>
-										document.addEventListener('DOMContentLoaded', function () {
-											function slider1() {
-												let splideTarget = '[slider-1]';
-												let splideTargetEl = document.querySelector(`${splideTarget}`);
-												if (!splideTargetEl) return;
-												var options = {
-													/*suggested options*/
-													type: 'loop', //'fade', //"slide", //"loop",
-													arrows: true,
-													pagination: false,
-													/*custom options*/
-													//rewind: true,
-													//fixedWidth: 394,
-													perMove: 1,
-													perPage: 4,
-													gap: 22,
-													autoplay: true,
-													pauseOnHover: true,
-													updateOnMove: true,
-													autoScroll: {
-														speed: 1,
-													},
-													intersection: {
-														inView: {
-															autoplay: true,
-														},
-														outView: {
-															autoplay: false,
-														},
-													},
-													breakpoints: {
-														991: {
-															// 		type: 'slide',
-															perPage: 2,
-															padding: {left: 42, right: 42},
-															// 		perMove: 1,
-															// 		fixedWidth: '100%',
-															// 		padding: { left: 0, right: 0 },
-														},
-														767: {
-															perPage: 1,
-															gap: '4rem',
-															fixedWidth: '100%',
-															padding: {left: 42, right: 42},
-														},
-													},
-												};
-												var splide = new Splide(`${splideTarget}`, options);
-												splide.mount();
-											}
+                      document.addEventListener('DOMContentLoaded', function () {
+                          function slider1() {
+                              let splideTarget = '[slider-1]';
+                              let splideTargetEl = document.querySelector(`${splideTarget}`);
+                              if (!splideTargetEl) return;
+                              var options = {
+                                  /*suggested options*/
+                                  type: 'loop', //'fade', //"slide", //"loop",
+                                  arrows: true,
+                                  pagination: false,
+                                  /*custom options*/
+                                  //rewind: true,
+                                  //fixedWidth: 394,
+                                  perMove: 1,
+                                  perPage: 4,
+                                  gap: 22,
+                                  autoplay: true,
+                                  pauseOnHover: true,
+                                  updateOnMove: true,
+                                  autoScroll: {
+                                      speed: 1,
+                                  },
+                                  intersection: {
+                                      inView: {
+                                          autoplay: true,
+                                      },
+                                      outView: {
+                                          autoplay: false,
+                                      },
+                                  },
+                                  breakpoints: {
+                                      991: {
+                                          // 		type: 'slide',
+                                          perPage: 2,
+                                          padding: {left: 42, right: 42},
+                                          // 		perMove: 1,
+                                          // 		fixedWidth: '100%',
+                                          // 		padding: { left: 0, right: 0 },
+                                      },
+                                      767: {
+                                          perPage: 1,
+                                          gap: '4rem',
+                                          fixedWidth: '100%',
+                                          padding: {left: 42, right: 42},
+                                      },
+                                  },
+                              };
+                              var splide = new Splide(`${splideTarget}`, options);
+                              splide.mount();
+                          }
 
-											setTimeout(function () {
-												slider1();
-											}, 500);
-										});
+                          setTimeout(function () {
+                              slider1();
+                          }, 500);
+                      });
 									</script>
 								</div>
 							</div>

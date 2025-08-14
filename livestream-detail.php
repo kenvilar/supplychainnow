@@ -54,22 +54,22 @@ $pageId = get_the_ID();
 											</div>
 											<?php
 											echo get_field(
-												'select_media_type'
-											) == 'livestream'
+												     'select_media_type'
+											     ) == 'livestream'
 												? '<div class="absolute absolute--full bg-primary"></div>'
 												: '';
 											?>
 											<?php
 											echo get_field(
-												'select_media_type'
-											) == 'podcast'
+												     'select_media_type'
+											     ) == 'podcast'
 												? '<div class="absolute absolute--full bg-secondary"></div>'
 												: '';
 											?>
 											<?php
 											echo get_field(
-												'select_media_type'
-											) == 'webinar'
+												     'select_media_type'
+											     ) == 'webinar'
 												? '<div class="absolute absolute--full bg-tertiary"></div>'
 												: '';
 											?>
@@ -275,7 +275,7 @@ $pageId = get_the_ID();
 																	echo get_the_post_thumbnail_url()
 																		? get_the_post_thumbnail_url()
 																		: get_stylesheet_directory_uri(
-																		) . '/assets/img/misc/default-card-img-thumbnail.avif' ?>"
+																		  ) . '/assets/img/misc/default-card-img-thumbnail.avif' ?>"
 																	loading="lazy" alt="" class="image relative opacity-40">
 																<?php
 																$terms = get_the_terms(get_the_ID(), 'tags');
@@ -290,22 +290,22 @@ $pageId = get_the_ID();
 																			</div>
 																			<?php
 																			echo get_field(
-																				'select_media_type'
-																			) == 'livestream'
+																				     'select_media_type'
+																			     ) == 'livestream'
 																				? '<div class="absolute absolute--full bg-primary"></div>'
 																				: '';
 																			?>
 																			<?php
 																			echo get_field(
-																				'select_media_type'
-																			) == 'podcast'
+																				     'select_media_type'
+																			     ) == 'podcast'
 																				? '<div class="absolute absolute--full bg-secondary"></div>'
 																				: '';
 																			?>
 																			<?php
 																			echo get_field(
-																				'select_media_type'
-																			) == 'webinar'
+																				     'select_media_type'
+																			     ) == 'webinar'
 																				? '<div class="absolute absolute--full bg-tertiary"></div>'
 																				: '';
 																			?>
@@ -322,7 +322,7 @@ $pageId = get_the_ID();
 																		<img
 																			src="<?php
 																			echo get_stylesheet_directory_uri(
-																				) . '/assets/img/icons/play-button-livestream.avif'; ?>"
+																			     ) . '/assets/img/icons/play-button-livestream.avif'; ?>"
 																			loading="lazy" alt="play-button-livestream">
 																		<?php
 																	}
@@ -333,7 +333,7 @@ $pageId = get_the_ID();
 																		<img
 																			src="<?php
 																			echo get_stylesheet_directory_uri(
-																				) . '/assets/img/icons/play-button-podcast.avif'; ?>"
+																			     ) . '/assets/img/icons/play-button-podcast.avif'; ?>"
 																			loading="lazy" alt="play-button-podcast">
 																		<?php
 																	}
@@ -344,7 +344,7 @@ $pageId = get_the_ID();
 																		<img
 																			src="<?php
 																			echo get_stylesheet_directory_uri(
-																				) . '/assets/img/icons/play-button-webinar.avif'; ?>"
+																			     ) . '/assets/img/icons/play-button-webinar.avif'; ?>"
 																			loading="lazy" alt="play-button-webinar">
 																		<?php
 																	}
@@ -362,7 +362,7 @@ $pageId = get_the_ID();
 																			<img
 																				src="<?php
 																				echo get_stylesheet_directory_uri(
-																					) . '/assets/img/icons/livestream-card-icon.svg'; ?>"
+																				     ) . '/assets/img/icons/livestream-card-icon.svg'; ?>"
 																				loading="lazy" alt="livestream-music">
 																			<?php
 																		}
@@ -374,7 +374,7 @@ $pageId = get_the_ID();
 																				class="size-24"
 																				src="<?php
 																				echo get_stylesheet_directory_uri(
-																					) . '/assets/img/icons/podcast-card-icon.png'; ?>"
+																				     ) . '/assets/img/icons/podcast-card-icon.png'; ?>"
 																				loading="lazy" alt="podcast-blue-microphone">
 																			<?php
 																		}
@@ -386,7 +386,7 @@ $pageId = get_the_ID();
 																				class="size-24"
 																				src="<?php
 																				echo get_stylesheet_directory_uri(
-																					) . '/assets/img/icons/webinar-card-icon.png'; ?>"
+																				     ) . '/assets/img/icons/webinar-card-icon.png'; ?>"
 																				loading="lazy" alt="webinar-person">
 																			<?php
 																		}
