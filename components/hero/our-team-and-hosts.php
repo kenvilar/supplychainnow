@@ -7,7 +7,7 @@
 			<div class="mb-20">
 				<img
 					src="<?php
-		  echo get_stylesheet_directory_uri() . '/assets/img/icons/three-persons-network.svg'; ?>"
+					echo get_stylesheet_directory_uri() . '/assets/img/icons/three-persons-network.svg'; ?>"
 					loading="lazy" alt="three persons network ">
 			</div>
 			<div class="mb-16">
@@ -23,7 +23,7 @@
 	<div class="absolute absolute--full w-full h-full">
 		<img
 			src="<?php
-	  echo get_stylesheet_directory_uri() . '/assets/img/our-team-and-hosts/hero-our-team-and-hosts.avif'; ?>"
+			echo get_stylesheet_directory_uri() . '/assets/img/our-team-and-hosts/hero-our-team-and-hosts.avif'; ?>"
 			loading="lazy" alt="hero our team and hosts" class="image opacity-10">
 	</div>
 </section>

@@ -165,22 +165,22 @@ $pageId = get_the_ID();
 														</div>
 														<?php
 														echo get_field(
-															'select_media_type'
-														) == 'livestream'
+															     'select_media_type'
+														     ) == 'livestream'
 															? '<div class="absolute absolute--full bg-primary"></div>'
 															: '';
 														?>
 														<?php
 														echo get_field(
-															'select_media_type'
-														) == 'podcast'
+															     'select_media_type'
+														     ) == 'podcast'
 															? '<div class="absolute absolute--full bg-secondary"></div>'
 															: '';
 														?>
 														<?php
 														echo get_field(
-															'select_media_type'
-														) == 'webinar'
+															     'select_media_type'
+														     ) == 'webinar'
 															? '<div class="absolute absolute--full bg-tertiary"></div>'
 															: '';
 														?>
@@ -476,22 +476,22 @@ $pageId = get_the_ID();
 														</div>
 														<?php
 														echo get_field(
-															'select_media_type'
-														) == 'livestream'
+															     'select_media_type'
+														     ) == 'livestream'
 															? '<div class="absolute absolute--full bg-primary"></div>'
 															: '';
 														?>
 														<?php
 														echo get_field(
-															'select_media_type'
-														) == 'podcast'
+															     'select_media_type'
+														     ) == 'podcast'
 															? '<div class="absolute absolute--full bg-secondary"></div>'
 															: '';
 														?>
 														<?php
 														echo get_field(
-															'select_media_type'
-														) == 'webinar'
+															     'select_media_type'
+														     ) == 'webinar'
 															? '<div class="absolute absolute--full bg-tertiary"></div>'
 															: '';
 														?>

@@ -11,7 +11,7 @@
 							<a href="/" aria-current="page" class="w-inline-block w--current">
 								<img
 									src="<?php
-				  echo get_stylesheet_directory_uri() . '/assets/img/logo/footer-logo.svg' ?>"
+									echo get_stylesheet_directory_uri() . '/assets/img/logo/footer-logo.svg' ?>"
 									loading="lazy" alt="footer logo">
 							</a>
 							<h3 class="text-xl">The #1 Voice of Supply Chain</h3>

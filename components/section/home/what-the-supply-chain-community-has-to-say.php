@@ -104,63 +104,63 @@
 						</div>
 						<div class="display-none w-embed w-script">
 							<script>
-								document.addEventListener('DOMContentLoaded', function () {
-									function slider4() {
-										let splideTarget = '[slider-4]';
-										let splideTargetEl = document.querySelector(`${splideTarget}`);
-										if (!splideTargetEl) return;
-										var options = {
-											/*suggested options*/
-											type: 'loop', //'fade', //"slide", //"loop",
-											arrows: true,
-											pagination: false,
-											/*custom options*/
-											rewind: true,
-											//fixedWidth: 315,
-											//fixedWidth: 373,
-											//perMove: 1,
-											perPage: 3,
-											//gap: 29.94,
-											autoplay: false,
-											pauseOnHover: true,
-											focus: 'center',
-											updateOnMove: true,
-											trimSpace: true,
-											autoWidth: true,
-											//autoHeight: true,
-											gap: '5%',
-											start: 1,
-											/*autoScroll: {
-												speed: 1,
-											},*/
-											intersection: {
-												inView: {
-													autoplay: false,
-												},
-												outView: {
-													autoplay: false,
-												},
-											},
-											breakpoints: {
-												767: {
-													type: 'slide',
-													perPage: 1,
-													perMove: 1,
-													start: 0,
-													gap: 50,
-													padding: {left: 42, right: 42},
-													fixedWidth: '100%',
-												},
-											},
-										};
-										var splide = new Splide(`${splideTarget}`, options);
-										splide.mount();
-									}
+                  document.addEventListener('DOMContentLoaded', function () {
+                      function slider4() {
+                          let splideTarget = '[slider-4]';
+                          let splideTargetEl = document.querySelector(`${splideTarget}`);
+                          if (!splideTargetEl) return;
+                          var options = {
+                              /*suggested options*/
+                              type: 'loop', //'fade', //"slide", //"loop",
+                              arrows: true,
+                              pagination: false,
+                              /*custom options*/
+                              rewind: true,
+                              //fixedWidth: 315,
+                              //fixedWidth: 373,
+                              //perMove: 1,
+                              perPage: 3,
+                              //gap: 29.94,
+                              autoplay: false,
+                              pauseOnHover: true,
+                              focus: 'center',
+                              updateOnMove: true,
+                              trimSpace: true,
+                              autoWidth: true,
+                              //autoHeight: true,
+                              gap: '5%',
+                              start: 1,
+                              /*autoScroll: {
+																speed: 1,
+															},*/
+                              intersection: {
+                                  inView: {
+                                      autoplay: false,
+                                  },
+                                  outView: {
+                                      autoplay: false,
+                                  },
+                              },
+                              breakpoints: {
+                                  767: {
+                                      type: 'slide',
+                                      perPage: 1,
+                                      perMove: 1,
+                                      start: 0,
+                                      gap: 50,
+                                      padding: {left: 42, right: 42},
+                                      fixedWidth: '100%',
+                                  },
+                              },
+                          };
+                          var splide = new Splide(`${splideTarget}`, options);
+                          splide.mount();
+                      }
 
-									setTimeout(function () {
-										slider4();
-									}, 500);
-								});
+                      setTimeout(function () {
+                          slider4();
+                      }, 500);
+                  });
 							</script>
 						</div>
 					</div>

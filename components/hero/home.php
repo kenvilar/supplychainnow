@@ -126,50 +126,50 @@
 					</div>
 
 					<script>
-						document.addEventListener('DOMContentLoaded', function () {
-							function slider1() {
-								let splideTarget = '[slider-1]';
-								let splideTargetEl = document.querySelector(`${splideTarget}`);
-								if (!splideTargetEl) return;
-								var options = {
-									/*suggested options*/
-									type: 'fade', //'fade', //"slide", //"loop",
-									arrows: false,
-									pagination: false,
-									/*custom options*/
-									rewind: true,
-									fixedWidth: 'auto',
-									fixedHeight: 540,
-									perMove: 1,
-									perPage: 1,
-									gap: 0,
-									autoplay: true,
-									pauseOnHover: false,
-									/*autoScroll: {
-										speed: 1,
-									},*/
-									intersection: {
-										inView: {
-											autoplay: true,
-										},
-										outView: {
-											autoplay: false,
-										},
-									},
-									breakpoints: {
-										991: {
-											fixedWidth: '100%',
-										},
-									},
-								};
-								var splide = new Splide(`${splideTarget}`, options);
-								splide.mount();
-							}
+              document.addEventListener('DOMContentLoaded', function () {
+                  function slider1() {
+                      let splideTarget = '[slider-1]';
+                      let splideTargetEl = document.querySelector(`${splideTarget}`);
+                      if (!splideTargetEl) return;
+                      var options = {
+                          /*suggested options*/
+                          type: 'fade', //'fade', //"slide", //"loop",
+                          arrows: false,
+                          pagination: false,
+                          /*custom options*/
+                          rewind: true,
+                          fixedWidth: 'auto',
+                          fixedHeight: 540,
+                          perMove: 1,
+                          perPage: 1,
+                          gap: 0,
+                          autoplay: true,
+                          pauseOnHover: false,
+                          /*autoScroll: {
+														speed: 1,
+													},*/
+                          intersection: {
+                              inView: {
+                                  autoplay: true,
+                              },
+                              outView: {
+                                  autoplay: false,
+                              },
+                          },
+                          breakpoints: {
+                              991: {
+                                  fixedWidth: '100%',
+                              },
+                          },
+                      };
+                      var splide = new Splide(`${splideTarget}`, options);
+                      splide.mount();
+                  }
 
-							setTimeout(function () {
-								slider1();
-							}, 500);
-						});
+                  setTimeout(function () {
+                      slider1();
+                  }, 500);
+              });
 					</script>
 				</div>
 			</div>
