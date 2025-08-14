@@ -76,7 +76,7 @@ $pageId = get_the_ID();
 														echo the_field('webinar_button_link', $pageId); ?>" target="_blank"
 														   class="qbutton small default" style="">Click to View this Webinar
 														</a>
-													<?php
+														<?php
 													} ?>
 												</div>
 											</div>
@@ -136,7 +136,7 @@ $pageId = get_the_ID();
 										</div>
 									</div>
 								</div>
-							<?php
+								<?php
 							} ?>
 							<div class="vc_row wpb_row section vc_row-fluid grid_section"
 							     style="padding-top: 60px; padding-bottom: 60px; text-align: left;">
@@ -363,7 +363,7 @@ $pageId = get_the_ID();
 	                                                                            style="font-size: 16px;"></i>
                                                                         </a>
                                                                     </span>
-																				<?php
+																					<?php
 																				} ?>
 																				<?php
 																				if (!empty($host_twitter)) { ?>
@@ -383,7 +383,7 @@ $pageId = get_the_ID();
 	                                                                            style="font-size: 14px;"></i>
                                                                         </a>
                                                                     </span>
-																				<?php
+																					<?php
 																				} ?>
 																				<div class="vc_empty_space" style="height: 20px;">
                                                                         <span class="vc_empty_space_inner">

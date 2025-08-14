@@ -140,56 +140,56 @@ $pageId = get_the_ID();
 						</div>
 						<div class="display-none w-embed w-script">
 							<script>
-								document.addEventListener('DOMContentLoaded', function () {
-									function slider1() {
-										let splideTarget = '[slider-1]';
-										let splideTargetEl = document.querySelector(`${splideTarget}`);
-										if (!splideTargetEl) return;
-										var options = {
-											/*suggested options*/
-											type: 'loop', //'fade', //"slide", //"loop",
-											direction: 'ttb',
-											height: 30,
-											autoHeight: true,
-											arrows: false,
-											pagination: false,
-											/*custom options*/
-											rewind: true,
-											autoplay: true,
-											//fixedWidth: 'auto',
-											perMove: 1,
-											perPage: 1,
-											gap: 21,
-											// autoplay: true,
-											pauseOnHover: true,
-											updateOnMove: true,
-											interval: 2000,
-											speed: 2000,
-											/*autoScroll: {
-												speed: 1,
-											},*/
-											intersection: {
-												inView: {
-													autoplay: true,
-												},
-												outView: {
-													autoplay: false,
-												},
-											},
-											breakpoints: {
-												479: {
-													height: 80,
-												},
-											},
-										};
-										var splide = new Splide(`${splideTarget}`, options);
-										splide.mount(); //splide.mount(window.splide.Extensions);
-									}
+                  document.addEventListener('DOMContentLoaded', function () {
+                      function slider1() {
+                          let splideTarget = '[slider-1]';
+                          let splideTargetEl = document.querySelector(`${splideTarget}`);
+                          if (!splideTargetEl) return;
+                          var options = {
+                              /*suggested options*/
+                              type: 'loop', //'fade', //"slide", //"loop",
+                              direction: 'ttb',
+                              height: 30,
+                              autoHeight: true,
+                              arrows: false,
+                              pagination: false,
+                              /*custom options*/
+                              rewind: true,
+                              autoplay: true,
+                              //fixedWidth: 'auto',
+                              perMove: 1,
+                              perPage: 1,
+                              gap: 21,
+                              // autoplay: true,
+                              pauseOnHover: true,
+                              updateOnMove: true,
+                              interval: 2000,
+                              speed: 2000,
+                              /*autoScroll: {
+																speed: 1,
+															},*/
+                              intersection: {
+                                  inView: {
+                                      autoplay: true,
+                                  },
+                                  outView: {
+                                      autoplay: false,
+                                  },
+                              },
+                              breakpoints: {
+                                  479: {
+                                      height: 80,
+                                  },
+                              },
+                          };
+                          var splide = new Splide(`${splideTarget}`, options);
+                          splide.mount(); //splide.mount(window.splide.Extensions);
+                      }
 
-									setTimeout(function () {
-										slider1();
-									}, 500);
-								});
+                      setTimeout(function () {
+                          slider1();
+                      }, 500);
+                  });
 							</script>
 						</div>
 					</div>
@@ -354,53 +354,53 @@ $pageId = get_the_ID();
 						</div>
 						<div class="display-none w-embed w-script">
 							<script>
-								document.addEventListener('DOMContentLoaded', function () {
-									function slider2() {
-										let splideTarget = '[slider-2]';
-										let splideTargetEl = document.querySelector(`${splideTarget}`);
-										if (!splideTargetEl) return;
-										var options = {
-											/*suggested options*/
-											type: 'loop', //'fade', //"slide", //"loop",
-											arrows: false,
-											pagination: false,
-											/*custom options*/
-											rewind: true,
-											fixedWidth: 'auto',
-											perMove: 1,
-											gap: 36,
-											// autoplay: true,
-											pauseOnHover: true,
-											updateOnMove: true,
-											autoScroll: {
-												speed: 0.5,
-											},
-											intersection: {
-												inView: {
-													autoplay: true,
-												},
-												outView: {
-													autoplay: false,
-												},
-											},
-											// breakpoints: {
-											// 	479: {
-											// 		type: 'slide',
-											// 		perPage: 1,
-											// 		perMove: 1,
-											// 		fixedWidth: '100%',
-											// 		padding: { left: 0, right: 0 },
-											// 	},
-											// },
-										};
-										var splide = new Splide(`${splideTarget}`, options);
-										splide.mount(window.splide.Extensions);
-									}
+                  document.addEventListener('DOMContentLoaded', function () {
+                      function slider2() {
+                          let splideTarget = '[slider-2]';
+                          let splideTargetEl = document.querySelector(`${splideTarget}`);
+                          if (!splideTargetEl) return;
+                          var options = {
+                              /*suggested options*/
+                              type: 'loop', //'fade', //"slide", //"loop",
+                              arrows: false,
+                              pagination: false,
+                              /*custom options*/
+                              rewind: true,
+                              fixedWidth: 'auto',
+                              perMove: 1,
+                              gap: 36,
+                              // autoplay: true,
+                              pauseOnHover: true,
+                              updateOnMove: true,
+                              autoScroll: {
+                                  speed: 0.5,
+                              },
+                              intersection: {
+                                  inView: {
+                                      autoplay: true,
+                                  },
+                                  outView: {
+                                      autoplay: false,
+                                  },
+                              },
+                              // breakpoints: {
+                              // 	479: {
+                              // 		type: 'slide',
+                              // 		perPage: 1,
+                              // 		perMove: 1,
+                              // 		fixedWidth: '100%',
+                              // 		padding: { left: 0, right: 0 },
+                              // 	},
+                              // },
+                          };
+                          var splide = new Splide(`${splideTarget}`, options);
+                          splide.mount(window.splide.Extensions);
+                      }
 
-									setTimeout(function () {
-										slider2();
-									}, 500);
-								});
+                      setTimeout(function () {
+                          slider2();
+                      }, 500);
+                  });
 							</script>
 						</div>
 						<div slider-3="" class="splide">
@@ -475,53 +475,53 @@ $pageId = get_the_ID();
 						</div>
 						<div class="display-none w-embed w-script">
 							<script>
-								document.addEventListener('DOMContentLoaded', function () {
-									function slider3() {
-										let splideTarget = '[slider-3]';
-										let splideTargetEl = document.querySelector(`${splideTarget}`);
-										if (!splideTargetEl) return;
-										var options = {
-											/*suggested options*/
-											type: 'loop', //'fade', //"slide", //"loop",
-											arrows: false,
-											pagination: false,
-											/*custom options*/
-											rewind: true,
-											fixedWidth: 'auto',
-											perMove: 1,
-											gap: 36,
-											// autoplay: true,
-											pauseOnHover: true,
-											updateOnMove: true,
-											autoScroll: {
-												speed: -0.5,
-											},
-											intersection: {
-												inView: {
-													autoplay: true,
-												},
-												outView: {
-													autoplay: false,
-												},
-											},
-											// breakpoints: {
-											// 	479: {
-											// 		type: 'slide',
-											// 		perPage: 1,
-											// 		perMove: 1,
-											// 		fixedWidth: '100%',
-											// 		padding: { left: 0, right: 0 },
-											// 	},
-											// },
-										};
-										var splide = new Splide(`${splideTarget}`, options);
-										splide.mount(window.splide.Extensions);
-									}
+                  document.addEventListener('DOMContentLoaded', function () {
+                      function slider3() {
+                          let splideTarget = '[slider-3]';
+                          let splideTargetEl = document.querySelector(`${splideTarget}`);
+                          if (!splideTargetEl) return;
+                          var options = {
+                              /*suggested options*/
+                              type: 'loop', //'fade', //"slide", //"loop",
+                              arrows: false,
+                              pagination: false,
+                              /*custom options*/
+                              rewind: true,
+                              fixedWidth: 'auto',
+                              perMove: 1,
+                              gap: 36,
+                              // autoplay: true,
+                              pauseOnHover: true,
+                              updateOnMove: true,
+                              autoScroll: {
+                                  speed: -0.5,
+                              },
+                              intersection: {
+                                  inView: {
+                                      autoplay: true,
+                                  },
+                                  outView: {
+                                      autoplay: false,
+                                  },
+                              },
+                              // breakpoints: {
+                              // 	479: {
+                              // 		type: 'slide',
+                              // 		perPage: 1,
+                              // 		perMove: 1,
+                              // 		fixedWidth: '100%',
+                              // 		padding: { left: 0, right: 0 },
+                              // 	},
+                              // },
+                          };
+                          var splide = new Splide(`${splideTarget}`, options);
+                          splide.mount(window.splide.Extensions);
+                      }
 
-									setTimeout(function () {
-										slider3();
-									}, 500);
-								});
+                      setTimeout(function () {
+                          slider3();
+                      }, 500);
+                  });
 							</script>
 						</div>
 					</div>
@@ -1021,29 +1021,29 @@ $pageId = get_the_ID();
 </div>
 <div class="display-none w-embed w-script">
 	<script>
-		document.addEventListener("DOMContentLoaded", (event) => {
-			const accordionItemHeaders = document.querySelectorAll(
-				".accordion-item-header"
-			);
-			accordionItemHeaders.forEach((accordionItemHeader) => {
-				accordionItemHeader.addEventListener("click", (event) => {
-					// Uncomment in case you only want to allow for the display of only one collapsed item at a time!
-					const currentlyActiveAccordionItemHeader = document.querySelector(".accordion-item-header.active");
-					if (currentlyActiveAccordionItemHeader && currentlyActiveAccordionItemHeader !== accordionItemHeader) {
-						currentlyActiveAccordionItemHeader.classList.toggle("active");
-						currentlyActiveAccordionItemHeader.nextElementSibling.style.maxHeight = 0;
-					}
-					accordionItemHeader.classList.toggle("active");
-					const accordionItemBody = accordionItemHeader.nextElementSibling;
-					if (accordionItemHeader.classList.contains("active")) {
-						accordionItemBody.style.maxHeight =
-							accordionItemBody.scrollHeight + "px";
-					} else {
-						accordionItemBody.style.maxHeight = 0;
-					}
-				});
-			});
-		});
+      document.addEventListener("DOMContentLoaded", (event) => {
+          const accordionItemHeaders = document.querySelectorAll(
+              ".accordion-item-header"
+          );
+          accordionItemHeaders.forEach((accordionItemHeader) => {
+              accordionItemHeader.addEventListener("click", (event) => {
+                  // Uncomment in case you only want to allow for the display of only one collapsed item at a time!
+                  const currentlyActiveAccordionItemHeader = document.querySelector(".accordion-item-header.active");
+                  if (currentlyActiveAccordionItemHeader && currentlyActiveAccordionItemHeader !== accordionItemHeader) {
+                      currentlyActiveAccordionItemHeader.classList.toggle("active");
+                      currentlyActiveAccordionItemHeader.nextElementSibling.style.maxHeight = 0;
+                  }
+                  accordionItemHeader.classList.toggle("active");
+                  const accordionItemBody = accordionItemHeader.nextElementSibling;
+                  if (accordionItemHeader.classList.contains("active")) {
+                      accordionItemBody.style.maxHeight =
+                          accordionItemBody.scrollHeight + "px";
+                  } else {
+                      accordionItemBody.style.maxHeight = 0;
+                  }
+              });
+          });
+      });
 	</script>
 </div>
 <?php

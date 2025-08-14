@@ -2069,15 +2069,14 @@ $pageId = get_the_ID();
 								</div>
 								<div class="display-none w-embed">
 									<style>
-											html.wf-design-mode [slider-1] .splide__list {
-													display: flex;
-													flex-wrap: nowrap;
-													justify-content: center;
-											}
-
-											[slider-1] .splide__arrow {
-													background: transparent;
-											}
+										html.wf-design-mode [slider-1] .splide__list {
+											display: flex;
+											flex-wrap: nowrap;
+											justify-content: center;
+										}
+										[slider-1] .splide__arrow {
+											background: transparent;
+										}
 									</style>
 								</div>
 								<div class="display-none w-embed w-script">
@@ -3984,15 +3983,14 @@ $pageId = get_the_ID();
 								</div>
 								<div class="display-none w-embed">
 									<style>
-											html.wf-design-mode [slider-2] .splide__list {
-													display: flex;
-													flex-wrap: nowrap;
-													justify-content: center;
-											}
-
-											[slider-2] .splide__arrow {
-													background: transparent;
-											}
+										html.wf-design-mode [slider-2] .splide__list {
+											display: flex;
+											flex-wrap: nowrap;
+											justify-content: center;
+										}
+										[slider-2] .splide__arrow {
+											background: transparent;
+										}
 									</style>
 								</div>
 								<div class="display-none w-embed w-script">
@@ -6066,15 +6064,14 @@ $pageId = get_the_ID();
 							</div>
 							<div class="display-none w-embed">
 								<style>
-										html.wf-design-mode [slider-3] .splide__list {
-												display: flex;
-												flex-wrap: nowrap;
-												justify-content: center;
-										}
-
-										[slider-3] .splide__arrow {
-												background: transparent;
-										}
+									html.wf-design-mode [slider-3] .splide__list {
+										display: flex;
+										flex-wrap: nowrap;
+										justify-content: center;
+									}
+									[slider-3] .splide__arrow {
+										background: transparent;
+									}
 								</style>
 							</div>
 							<div class="display-none w-embed w-script">

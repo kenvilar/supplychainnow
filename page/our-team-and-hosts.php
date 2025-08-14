@@ -56,72 +56,72 @@ $pageId = get_the_ID();
 </dialog>
 <div class="display-none w-embed w-script">
 	<script>
-		document.addEventListener('DOMContentLoaded', (event) => {
-			function myModalFunc() {
-				const openModalButton = document.querySelectorAll(
-					'[role="list"] [role="listitem"]'
-				);
-				const myModal = document.querySelector('.my-modal');
-				const closeModal = document.querySelector('[close-modal]');
-				// modal
-				let toImgWrapper = document.querySelector('[to-image-wrapper]');
-				let toFullnameWrapper = document.querySelector('[to-fullname-wrapper]');
-				let toRoleWrapper = document.querySelector('[to-role-wrapper]');
-				let toLinkedinWrapper = document.querySelector('[to-linkedin-wrapper]');
-				let toBioWrapper = document.querySelector('[to-bio-wrapper]');
-				if (openModalButton.length > 0) {
-					openModalButton.forEach((item, index) => {
-						let openModal = item.querySelector('[open-modal]');
-						let fromImgWrapper = item.querySelector('[from-image-wrapper]');
-						let fromFullnameWrapper = item.querySelector('[from-fullname-wrapper]');
-						let fromRoleWrapper = item.querySelector('[from-role-wrapper]');
-						let fromLinkedinWrapper = item.querySelector('[from-linkedin-wrapper]');
-						let fromBioWrapper = item.querySelector('[from-bio-wrapper]');
-						if (openModal) {
-							openModal.addEventListener('click', function () {
-								toImgWrapper.appendChild(
-									fromImgWrapper.querySelector('img').cloneNode(true)
-								);
-								toFullnameWrapper.textContent =
-									fromFullnameWrapper.textContent.trim();
-								toRoleWrapper.textContent = fromRoleWrapper.textContent.trim();
-								toLinkedinWrapper.appendChild(
-									fromLinkedinWrapper.querySelector('a').cloneNode(true)
-								);
-								toBioWrapper.innerHTML = fromBioWrapper.innerHTML;
-								// open the modal
-								setTimeout(function () {
-									myModal.showModal();
-								}, 200);
-							});
-						}
-					});
-				}
-				if (closeModal) {
-					closeModal.addEventListener('click', function () {
-						closeModalExpressions();
-						// close the modal
-						myModal.close();
-					});
-					myModal.addEventListener('close', () => {
-						closeModalExpressions();
-					});
-					myModal.addEventListener('click', (e) => {
-						if (e.target === myModal) {
-							myModal.close();
-						}
-					});
-				}
+      document.addEventListener('DOMContentLoaded', (event) => {
+          function myModalFunc() {
+              const openModalButton = document.querySelectorAll(
+                  '[role="list"] [role="listitem"]'
+              );
+              const myModal = document.querySelector('.my-modal');
+              const closeModal = document.querySelector('[close-modal]');
+              // modal
+              let toImgWrapper = document.querySelector('[to-image-wrapper]');
+              let toFullnameWrapper = document.querySelector('[to-fullname-wrapper]');
+              let toRoleWrapper = document.querySelector('[to-role-wrapper]');
+              let toLinkedinWrapper = document.querySelector('[to-linkedin-wrapper]');
+              let toBioWrapper = document.querySelector('[to-bio-wrapper]');
+              if (openModalButton.length > 0) {
+                  openModalButton.forEach((item, index) => {
+                      let openModal = item.querySelector('[open-modal]');
+                      let fromImgWrapper = item.querySelector('[from-image-wrapper]');
+                      let fromFullnameWrapper = item.querySelector('[from-fullname-wrapper]');
+                      let fromRoleWrapper = item.querySelector('[from-role-wrapper]');
+                      let fromLinkedinWrapper = item.querySelector('[from-linkedin-wrapper]');
+                      let fromBioWrapper = item.querySelector('[from-bio-wrapper]');
+                      if (openModal) {
+                          openModal.addEventListener('click', function () {
+                              toImgWrapper.appendChild(
+                                  fromImgWrapper.querySelector('img').cloneNode(true)
+                              );
+                              toFullnameWrapper.textContent =
+                                  fromFullnameWrapper.textContent.trim();
+                              toRoleWrapper.textContent = fromRoleWrapper.textContent.trim();
+                              toLinkedinWrapper.appendChild(
+                                  fromLinkedinWrapper.querySelector('a').cloneNode(true)
+                              );
+                              toBioWrapper.innerHTML = fromBioWrapper.innerHTML;
+                              // open the modal
+                              setTimeout(function () {
+                                  myModal.showModal();
+                              }, 200);
+                          });
+                      }
+                  });
+              }
+              if (closeModal) {
+                  closeModal.addEventListener('click', function () {
+                      closeModalExpressions();
+                      // close the modal
+                      myModal.close();
+                  });
+                  myModal.addEventListener('close', () => {
+                      closeModalExpressions();
+                  });
+                  myModal.addEventListener('click', (e) => {
+                      if (e.target === myModal) {
+                          myModal.close();
+                      }
+                  });
+              }
 
-				function closeModalExpressions() {
-					toImgWrapper.querySelector('img').remove();
-					toLinkedinWrapper.querySelector('a').remove();
-					toBioWrapper.innerHTML = null;
-				}
-			}
+              function closeModalExpressions() {
+                  toImgWrapper.querySelector('img').remove();
+                  toLinkedinWrapper.querySelector('a').remove();
+                  toBioWrapper.innerHTML = null;
+              }
+          }
 
-			myModalFunc();
-		});
+          myModalFunc();
+      });
 	</script>
 </div>
 <?php

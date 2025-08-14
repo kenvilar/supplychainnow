@@ -300,38 +300,38 @@ $pageId = get_the_ID();
 </dialog>
 <div class="display-none w-embed w-script">
 	<script>
-		document.addEventListener('DOMContentLoaded', (event) => {
-			function myModalFunc() {
-				const myModal = document.querySelector('.my-modal');
-				const closeModal = document.querySelector('[close-modal]');
-				let openModal = document.querySelector('[open-modal]');
-				if (openModal) {
-					openModal.addEventListener('click', function (e) {
-						e.preventDefault();
-						// open the modal
-						setTimeout(function () {
-							myModal.showModal();
-						}, 200);
-					});
-				}
-				if (closeModal) {
-					closeModal.addEventListener('click', function () {
-						// close the modal
-						myModal.close();
-					});
-					myModal.addEventListener('close', () => {
-						myModal.close();
-					});
-					myModal.addEventListener('click', (e) => {
-						if (e.target === myModal) {
-							myModal.close();
-						}
-					});
-				}
-			}
+      document.addEventListener('DOMContentLoaded', (event) => {
+          function myModalFunc() {
+              const myModal = document.querySelector('.my-modal');
+              const closeModal = document.querySelector('[close-modal]');
+              let openModal = document.querySelector('[open-modal]');
+              if (openModal) {
+                  openModal.addEventListener('click', function (e) {
+                      e.preventDefault();
+                      // open the modal
+                      setTimeout(function () {
+                          myModal.showModal();
+                      }, 200);
+                  });
+              }
+              if (closeModal) {
+                  closeModal.addEventListener('click', function () {
+                      // close the modal
+                      myModal.close();
+                  });
+                  myModal.addEventListener('close', () => {
+                      myModal.close();
+                  });
+                  myModal.addEventListener('click', (e) => {
+                      if (e.target === myModal) {
+                          myModal.close();
+                      }
+                  });
+              }
+          }
 
-			myModalFunc();
-		});
+          myModalFunc();
+      });
 	</script>
 </div>
 <?php
