@@ -13,10 +13,8 @@ if (!function_exists('bridge_qode_child_theme_enqueue_scripts')) {
 		            || is_page('on-demand-programming')
 		            || is_singular('program')
 		            || is_page('work-with-us')
-		            || is_page(
-			            'on-demand-programming/podcasts-and-livestreams'
-		            )
-		            || is_page('on-demand-programming/webinars')
+		            || is_page('podcasts-and-livestreams')
+		            || is_page('webinars')
 		            || is_page('blog-news')
 		            || is_page('blog')
 		            || is_page(
@@ -61,10 +59,8 @@ if (!function_exists('bridge_qode_child_theme_enqueue_scripts')) {
 		            || is_page('on-demand-programming')
 		            || is_singular('program')
 		            || is_page('work-with-us')
-		            || is_page(
-			            'on-demand-programming/podcasts-and-livestreams'
-		            )
-		            || is_page('on-demand-programming/webinars')
+		            || is_page('podcasts-and-livestreams')
+		            || is_page('webinars')
 		            || is_page('blog-news')
 		            || is_page('blog')
 		            || is_page(

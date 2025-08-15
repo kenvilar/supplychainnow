@@ -35,11 +35,11 @@ $pageId = get_the_ID();
 						   class="on-demand-programming-link w-inline-block">
 							<div>All Content</div>
 						</a>
-						<a href="/on-demand-programming/podcasts-and-livestreams" aria-current="page"
+						<a href="/podcasts-and-livestreams" aria-current="page"
 						   class="on-demand-programming-link w-inline-block w--current">
 							<div>Podcasts &amp; Livestreams</div>
 						</a>
-						<a href="/on-demand-programming/webinars" class="on-demand-programming-link w-inline-block">
+						<a href="/webinars" class="on-demand-programming-link w-inline-block">
 							<div>Webinars</div>
 						</a>
 					</div>
