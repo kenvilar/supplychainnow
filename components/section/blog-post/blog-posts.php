@@ -1,17 +1,16 @@
 <?php
 
 $postId = get_the_ID();
-$categoryTitle = 'Blogs';
-if (has_category('White Paper', $postId)) {
-	$categoryTitle = 'White Papers';
-} elseif (has_category('eBook', $postId)) {
-	$categoryTitle = 'E-Books';
-} elseif (has_category('News', $postId)) {
-	$categoryTitle = 'News';
-} elseif (has_category('Visibility Guide', $postId)) {
-	$categoryTitle = 'Guides';
+$categoryTitle = "Blogs";
+if (has_category("White Paper", $postId)) {
+	$categoryTitle = "White Papers";
+} elseif (has_category("eBook", $postId)) {
+	$categoryTitle = "E-Books";
+} elseif (has_category("News", $postId)) {
+	$categoryTitle = "News";
+} elseif (has_category("Visibility Guide", $postId)) {
+	$categoryTitle = "Guides";
 }
-echo $categoryTitle;
 ?>
 <div class="page-wrapper">
 	<div class="main-wrapper">
@@ -29,15 +28,20 @@ echo $categoryTitle;
 			<div class="site-padding sm:py-60 pt-29">
 				<div class="mx-auto max-w-1010 w-full md:max-w-full">
 					<div class="overflow-hidden rounded-25 relative">
-						<div class="relative z-1 max-h-568 h-full sm:h-200">
-							<img class="image" src="
-															<?php
+						<div class="relative z-1 h-568 sm:h-200">
+							<img class="image relative z-10" src="
+							<?php
 							if (has_post_thumbnail($postId)) {
-								the_post_thumbnail_url('full');
+								the_post_thumbnail_url("full");
 							} else {
-								echo get_stylesheet_directory_uri() . '/assets/img/misc/default-card-img-thumbnail.avif';
-							}
-							?>" alt="">
+								echo get_stylesheet_directory_uri($postId) .
+								     "/assets/img/misc/default-card-img-thumbnail.avif";
+							} ?>" alt="">
+							<img class="absolute absolute--full image z-1" src="<?php
+							echo get_stylesheet_directory_uri(
+								     $postId,
+							     ) . "/assets/img/misc/default-card-img-thumbnail.avif"; ?>"
+							     alt="">
 						</div>
 						<div class="absolute absolute--full bg-cargogrey z--1"></div>
 					</div>
@@ -113,9 +117,10 @@ echo $categoryTitle;
 								</div>
 							</div>
 							<div class="rt--default tracking-[1.6px]">
+								<h1><?php
+									the_title() ?></h1>
 								<?php
-								the_content();
-								?>
+								the_content(); ?>
 							</div>
 						</div>
 						<div class="max-w-395 w-full md:max-w-full">
@@ -125,20 +130,23 @@ echo $categoryTitle;
 										echo $categoryTitle; ?></h2>
 								</div>
 								<?php
-								get_template_part('components/line-with-blinking-dot', null, [
-									'maxWidthClassnames' => 'ml-0'
-								]);
-								?>
+								get_template_part("components/line-with-blinking-dot", null, [
+									"maxWidthClassnames" => "ml-0",
+								]); ?>
 							</div>
 							<div class="mb-52">
 								<!--<form class="relative overflow-hidden rounded-100 border border-secondary/50 bg-[#EBF6FF]"
 								      method="get" action="<?php
-								/*									echo esc_url(home_url(add_query_arg([]))); */ ?>">
+								/*									echo esc_url(home_url(add_query_arg([]))); */
+
+								?>">
 									<input
 										type="search"
 										name="s"
 										value="<?php
-								/*											echo esc_attr(get_search_query()); */ ?>"
+								/*											echo esc_attr(get_search_query()); */
+
+								?>"
 										placeholder="Search by episode, topic, name, etc..."
 										class="overflow-hidden rounded-100 w-full h-43 py-14 pl-48 pr-12 text-sm font-light placeholder:text-secondary"
 									/>
@@ -155,49 +163,19 @@ echo $categoryTitle;
 							<div class="mb-52 flex flex-col gap-58 sm:gap-20">
 								<?php
 								$q = new WP_Query([
-									'post_type' => 'page',
-									'post_status' => 'publish',
-									'posts_per_page' => 2,
-									'offset' => 0,
-									'meta_query' => [
-										'relation' => 'AND',
-										[
-											'relation' => 'OR',
-											[
-												'key' => '_wp_page_template',
-												'value' => 'episode-detail.php',
-												'compare' => '=',
-											],
-											/*[
-												'key' => '_wp_page_template',
-												'value' => 'webinar-detail.php',
-												'compare' => '=',
-											],
-											[
-												'key' => '_wp_page_template',
-												'value' => 'livestream-detail.php',
-												'compare' => '=',
-											],*/
-										],
-										[
-											'key' => 'select_media_type',
-											'value' => [
-												'podcast',
-												//'livestream',
-												//'webinar'
-											],
-											'compare' => 'IN',
-											'type' => 'CHAR',
-										],
-									],
-									'orderby' => 'rand', // random order
+									"post_type" => "post",
+									"post_status" => "publish",
+									"posts_per_page" => 2,
+									"offset" => 0,
+									"orderby" => "rand", // random order
 								]);
 
 								if ($q->have_posts()): ?>
 									<?php
-									while ($q->have_posts()): $q->the_post(); ?>
+									while ($q->have_posts()):
+										$q->the_post(); ?>
 										<a href="<?php
-										the_permalink(); ?>" class="relative w-full group">
+										the_permalink(get_the_ID()); ?>" class="relative w-full group">
 											<div class="relative flex flex-col justify-between gap-20 h-full">
 												<div class="w-full">
 													<div class="mb-28">
@@ -206,138 +184,39 @@ echo $categoryTitle;
 																src="<?php
 																echo get_the_post_thumbnail_url()
 																	? get_the_post_thumbnail_url()
-																	: get_stylesheet_directory_uri(
-																	  ) . '/assets/img/misc/default-card-img-thumbnail.avif' ?>"
+																	: get_stylesheet_directory_uri() .
+																	  "/assets/img/misc/default-card-img-thumbnail.avif"; ?>"
 																loading="lazy" alt="" class="image relative opacity-40">
 															<?php
-															$terms = get_the_terms(get_the_ID(), 'tags');
+															$terms = get_the_terms(get_the_ID(), "tags");
 															if (!is_wp_error($terms) && !empty($terms)) {
-																$first = array_values($terms)[0];
-																?>
+																$first = array_values($terms)[0]; ?>
 																<div class="absolute absolute--tl p-24 flex items-center justify-center">
 																	<div class="relative rounded-full overflow-hidden py-4 px-8">
-																		<div class="relative font-semibold uppercase text-2xs text--white lh-normal z-10">
+																		<div
+																			class="relative font-semibold uppercase text-2xs text-textcolor lh-normal z-10">
 																			<?php
 																			echo $first->name; ?>
 																		</div>
-																		<?php
-																		echo get_field(
-																			     'select_media_type'
-																		     ) == 'livestream'
-																			? '<div class="absolute absolute--full bg-primary"></div>'
-																			: '';
-																		?>
-																		<?php
-																		echo get_field(
-																			     'select_media_type'
-																		     ) == 'podcast'
-																			? '<div class="absolute absolute--full bg-secondary"></div>'
-																			: '';
-																		?>
-																		<?php
-																		echo get_field(
-																			     'select_media_type'
-																		     ) == 'webinar'
-																			? '<div class="absolute absolute--full bg-tertiary"></div>'
-																			: '';
-																		?>
+																		<div class="absolute absolute--full bg-white"></div>
 																	</div>
 																</div>
 																<?php
 															}
 															?>
-															<div
-																class="absolute absolute--full flex items-center justify-center translate-y-220 group-hover:translate-y-0 transition-all duration-500">
-																<?php
-																if (get_field('select_media_type') == 'livestream') {
-																	?>
-																	<img
-																		src="<?php
-																		echo get_stylesheet_directory_uri(
-																		     ) . '/assets/img/icons/play-button-livestream.avif'; ?>"
-																		loading="lazy" alt="play-button-livestream">
-																	<?php
-																}
-																?>
-																<?php
-																if (get_field('select_media_type') == 'podcast') {
-																	?>
-																	<img
-																		src="<?php
-																		echo get_stylesheet_directory_uri(
-																		     ) . '/assets/img/icons/play-button-podcast.avif'; ?>"
-																		loading="lazy" alt="play-button-podcast">
-																	<?php
-																}
-																?>
-																<?php
-																if (get_field('select_media_type') == 'webinar') {
-																	?>
-																	<img
-																		src="<?php
-																		echo get_stylesheet_directory_uri(
-																		     ) . '/assets/img/icons/play-button-webinar.avif'; ?>"
-																		loading="lazy" alt="play-button-webinar">
-																	<?php
-																}
-																?>
-															</div>
 														</div>
 													</div>
 													<div class="mb-12">
 														<div class="flex items-center gap-32 sm:flex-wrap sm:gap-8">
 															<div class="flex items-center gap-8">
-																<div class="flex items-center">
+																<div class="font-family-secondary text-sm capitalize">
 																	<?php
-																	if (get_field('select_media_type') == 'livestream') {
-																		?>
-																		<img
-																			src="<?php
-																			echo get_stylesheet_directory_uri(
-																			     ) . '/assets/img/icons/livestream-card-icon.svg'; ?>"
-																			loading="lazy" alt="livestream-music">
-																		<?php
-																	}
-																	?>
-																	<?php
-																	if (get_field('select_media_type') == 'podcast') {
-																		?>
-																		<img
-																			class="size-24"
-																			src="<?php
-																			echo get_stylesheet_directory_uri(
-																			     ) . '/assets/img/icons/podcast-card-icon.png'; ?>"
-																			loading="lazy" alt="podcast-blue-microphone">
-																		<?php
-																	}
-																	?>
-																	<?php
-																	if (get_field('select_media_type') == 'webinar') {
-																		?>
-																		<img
-																			class="size-24"
-																			src="<?php
-																			echo get_stylesheet_directory_uri(
-																			     ) . '/assets/img/icons/webinar-card-icon.png'; ?>"
-																			loading="lazy" alt="webinar-person">
-																		<?php
-																	}
-																	?>
+																	echo $categoryTitle; ?>
 																</div>
-																<?php
-																if (get_field('select_media_type')) {
-																	?>
-																	<div class="font-family-secondary text-sm capitalize">
-																		<?php
-																		echo the_field('select_media_type'); ?>
-																	</div>
-																	<?php
-																}
-																?>
 															</div>
 															<div class="flex items-center gap-8 text-sm font-light font-family-secondary">
 																<div><?php
-																	echo get_the_date('F j, Y'); ?></div>
+																	echo get_the_date("F j, Y", $postId); ?></div>
 																<!--<div>•</div>
 																<div>6 min 25 sec</div>-->
 															</div>
@@ -350,47 +229,30 @@ echo $categoryTitle;
 													<?php
 													if (get_the_excerpt()) {
 														the_excerpt();
-													} else {
-														if (get_field('livestream_description')) {
-															the_field('livestream_description');
-														} else {
-															if (get_field('episode_summary')) {
-																the_field('episode_summary');
-															} else {
-																if (get_field('webinar_description')) {
-																	the_field('webinar_description');
-																} else {
-																	echo 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum
-							tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero
-							vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus
-							tristique posuere.';
-																}
-															}
-														}
-													}
-													?>
+													} ?>
 												</div>
 											</div>
 										</a>
 									<?php
 									endwhile;
-									wp_reset_postdata(); ?>
+									wp_reset_postdata();
+									?>
 								<?php
-								endif; ?>
+								endif;
+								?>
 							</div>
 							<div>
 								<?php
-								echo get_template_part('components/ui/btn', null, [
-									'text' => 'More ' . $categoryTitle,
-									'link' => '#',
-									'style' => 'primary',
-									'class' => '',
+								echo get_template_part("components/ui/btn", null, [
+									"text" => "More " . $categoryTitle,
+									"link" => "#",
+									"style" => "primary",
+									"class" => "",
 									/*'attributes' => [
-										'target' => '_blank',
-										'rel'    => 'noopener noreferrer',
-									],*/
-								])
-								?>
+																						'target' => '_blank',
+																						'rel'    => 'noopener noreferrer',
+																					],*/
+								]); ?>
 							</div>
 						</div>
 					</div>

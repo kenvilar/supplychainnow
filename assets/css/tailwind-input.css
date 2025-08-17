@@ -261,8 +261,15 @@
 .rt--default {
 	letter-spacing: 1.6px !important;
 	word-wrap: break-word;
+	h1, h2 {
+		font-size: 34px;
+		line-height: 43px;
+	}
 	h1 {
 		margin-bottom: 50px;
+	}
+	h2, h3, h4, h5, h6 {
+		margin-bottom: 15px;
 	}
 	p {
 		margin-bottom: 22px;

@@ -38,6 +38,12 @@ if (!function_exists('bridge_qode_child_theme_enqueue_scripts')) {
 		}
 
 		wp_enqueue_style(
+			'mej-controls-style',
+			get_stylesheet_directory_uri() . '/assets/css/mej-controls.css',
+			[],
+		);
+
+		wp_enqueue_style(
 			'bridge-childstyle',
 			get_stylesheet_uri(),
 			[],
