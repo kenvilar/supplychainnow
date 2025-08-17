@@ -56,7 +56,7 @@ if (have_posts()) : ?>
 						endif; ?>
 						<?php
 						if ($blog_hide_comments != "yes") {
-							comments_template('', true);
+							//comments_template('', true);
 						} else {
 							echo "<br/><br/>";
 						}
