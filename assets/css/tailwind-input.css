@@ -247,14 +247,24 @@
 	line-height: 24px;
 	position: relative;
 	overflow: hidden;
+	&.w--current {
+		border-bottom: 2px solid var(--primary);
+		opacity: 1;
+		color: var(--primary);
+		font-weight: 600;
+	}
+	&:hover {
+		opacity: 1;
+		color: var(--primary);
+	}
 }
-.resource-hub-link.w--current {
-	border-bottom: 2px solid var(--primary);
-	opacity: 1;
-	color: var(--primary);
-	font-weight: 600;
-}
-.resource-hub-link:hover {
-	opacity: 1;
-	color: var(--primary);
+.rt--default {
+	letter-spacing: 1.6px !important;
+	word-wrap: break-word;
+	h1 {
+		margin-bottom: 50px;
+	}
+	p {
+		margin-bottom: 22px;
+	}
 }

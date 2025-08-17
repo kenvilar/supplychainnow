@@ -35,7 +35,9 @@ $bridge_qode_post_format = get_post_format();
 <article id="post-<?php
 the_ID(); ?>" <?php
 post_class(); ?>>
-	asdadadas
+	<?php
+	get_template_part('components/section/blog-post/blog-posts');
+	?>
 	<?php
 	do_action('bridge_qode_action_after_article_content');
 	?>
