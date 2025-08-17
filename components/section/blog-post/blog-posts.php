@@ -2,14 +2,19 @@
 
 $postId = get_the_ID();
 $categoryTitle = "Blogs";
+$categoryPage = "blog";
 if (has_category("White Paper", $postId)) {
 	$categoryTitle = "White Papers";
+	$categoryPage = "white-paper";
 } elseif (has_category("eBook", $postId)) {
 	$categoryTitle = "E-Books";
+	$categoryPage = "ebook";
 } elseif (has_category("News", $postId)) {
 	$categoryTitle = "News";
+	$categoryPage = "news";
 } elseif (has_category("Visibility Guide", $postId)) {
 	$categoryTitle = "Guides";
+	$categoryPage = "guide";
 }
 ?>
 <div class="page-wrapper">
@@ -34,13 +39,12 @@ if (has_category("White Paper", $postId)) {
 							if (has_post_thumbnail($postId)) {
 								the_post_thumbnail_url("full");
 							} else {
-								echo get_stylesheet_directory_uri($postId) .
+								echo get_stylesheet_directory_uri() .
 								     "/assets/img/misc/default-card-img-thumbnail.avif";
 							} ?>" alt="">
 							<img class="absolute absolute--full image z-1" src="<?php
-							echo get_stylesheet_directory_uri(
-								     $postId,
-							     ) . "/assets/img/misc/default-card-img-thumbnail.avif"; ?>"
+							echo get_stylesheet_directory_uri() .
+							     "/assets/img/misc/default-card-img-thumbnail.avif"; ?>"
 							     alt="">
 						</div>
 						<div class="absolute absolute--full bg-cargogrey z--1"></div>
@@ -118,7 +122,7 @@ if (has_category("White Paper", $postId)) {
 							</div>
 							<div class="rt--default tracking-[1.6px]">
 								<h1><?php
-									the_title() ?></h1>
+									the_title(); ?></h1>
 								<?php
 								the_content(); ?>
 							</div>
@@ -175,20 +179,20 @@ if (has_category("White Paper", $postId)) {
 									while ($q->have_posts()):
 										$q->the_post(); ?>
 										<a href="<?php
-										the_permalink(get_the_ID()); ?>" class="relative w-full group">
+										the_permalink($q->ID); ?>" class="relative w-full group">
 											<div class="relative flex flex-col justify-between gap-20 h-full">
 												<div class="w-full">
 													<div class="mb-28">
 														<div class="overflow-hidden rounded-12 relative h-222 bg-cargogrey">
 															<img
 																src="<?php
-																echo get_the_post_thumbnail_url()
-																	? get_the_post_thumbnail_url()
+																echo get_the_post_thumbnail_url($q->ID)
+																	? get_the_post_thumbnail_url($q->ID)
 																	: get_stylesheet_directory_uri() .
 																	  "/assets/img/misc/default-card-img-thumbnail.avif"; ?>"
 																loading="lazy" alt="" class="image relative opacity-40">
 															<?php
-															$terms = get_the_terms(get_the_ID(), "tags");
+															$terms = get_the_terms($q->ID, "post_tag");
 															if (!is_wp_error($terms) && !empty($terms)) {
 																$first = array_values($terms)[0]; ?>
 																<div class="absolute absolute--tl p-24 flex items-center justify-center">
@@ -216,18 +220,20 @@ if (has_category("White Paper", $postId)) {
 															</div>
 															<div class="flex items-center gap-8 text-sm font-light font-family-secondary">
 																<div><?php
-																	echo get_the_date("F j, Y", $postId); ?></div>
+																	echo get_the_date("F j, Y", $q->ID); ?></div>
 																<!--<div>•</div>
 																<div>6 min 25 sec</div>-->
 															</div>
 														</div>
 													</div>
 													<h3 class="font-semibold text-lg" scn-text-limit="2"><?php
-														the_title(); ?></h3>
+														the_title(
+															$q->ID,
+														); ?></h3>
 												</div>
 												<div class="w-full tracking-[1.4px] text-sm" scn-text-limit="3">
 													<?php
-													if (get_the_excerpt()) {
+													if (get_the_excerpt($q->ID)) {
 														the_excerpt();
 													} ?>
 												</div>
@@ -245,13 +251,13 @@ if (has_category("White Paper", $postId)) {
 								<?php
 								echo get_template_part("components/ui/btn", null, [
 									"text" => "More " . $categoryTitle,
-									"link" => "#",
+									"link" => "/" . $categoryPage,
 									"style" => "primary",
 									"class" => "",
 									/*'attributes' => [
-																						'target' => '_blank',
-																						'rel'    => 'noopener noreferrer',
-																					],*/
+																									'target' => '_blank',
+																									'rel'    => 'noopener noreferrer',
+																								],*/
 								]); ?>
 							</div>
 						</div>
