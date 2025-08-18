@@ -291,3 +291,22 @@
 		color: var(--primary);
 	}
 }
+.rt--plain {
+	* {
+		font-size: inherit;
+		line-height: normal;
+		margin: 0;
+		padding: 0;
+		padding-right: 4px;
+		display: inline;
+		border: 0 solid transparent;
+		overflow: visible !important;
+		font-weight: normal;
+		color: inherit;
+	}
+	blockquote::before,
+	blockquote::after {
+		content: '';
+		display: none;
+	}
+}

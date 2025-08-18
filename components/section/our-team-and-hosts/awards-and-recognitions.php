@@ -8,11 +8,11 @@
 				<div class="mb-20">
 					<h2 class="text-center">Awards &amp; Recognitions</h2>
 				</div>
-				<div class="w-layout-blockcontainer max-w-136 w-full h-1 relative bg-cargogrey/25 w-container">
-					<div class="absolute absolute--r flex items-center pr-32">
-						<div blinking-dot="" class="size-8 rounded-8 bg-primary"></div>
-					</div>
-				</div>
+				<?php
+				get_template_part('components/line-with-blinking-dot', null, [
+					'maxWidthClassnames' => ''
+				]);
+				?>
 			</div>
 		</div>
 	</div>
@@ -93,53 +93,53 @@
 		</div>
 		<div class="display-none w-embed w-script">
 			<script>
-          document.addEventListener('DOMContentLoaded', function () {
-              function slider1() {
-                  let splideTarget = '[slider-1]';
-                  let splideTargetEl = document.querySelector(`${splideTarget}`);
-                  if (!splideTargetEl) return;
-                  var options = {
-                      /*suggested options*/
-                      type: 'loop', //'fade', //"slide", //"loop",
-                      arrows: false,
-                      pagination: false,
-                      /*custom options*/
-                      rewind: true,
-                      fixedWidth: 200,
-                      perMove: 1,
-                      gap: 37.91,
-                      //autoplay: true,
-                      pauseOnHover: true,
-                      //updateOnMove: true,
-                      autoScroll: {
-                          speed: 0.3,
-                      },
-                      intersection: {
-                          inView: {
-                              //autoplay: true,
-                          },
-                          outView: {
-                              //autoplay: true,
-                          },
-                      },
-                      // breakpoints: {
-                      // 	479: {
-                      // 		type: 'slide',
-                      // 		perPage: 1,
-                      // 		perMove: 1,
-                      // 		fixedWidth: '100%',
-                      // 		padding: { left: 0, right: 0 },
-                      // 	},
-                      // },
-                  };
-                  var splide = new Splide(`${splideTarget}`, options);
-                  splide.mount(window.splide.Extensions);
-              }
+				document.addEventListener('DOMContentLoaded', function () {
+					function slider1() {
+						let splideTarget = '[slider-1]';
+						let splideTargetEl = document.querySelector(`${splideTarget}`);
+						if (!splideTargetEl) return;
+						var options = {
+							/*suggested options*/
+							type: 'loop', //'fade', //"slide", //"loop",
+							arrows: false,
+							pagination: false,
+							/*custom options*/
+							rewind: true,
+							fixedWidth: 200,
+							perMove: 1,
+							gap: 37.91,
+							//autoplay: true,
+							pauseOnHover: true,
+							//updateOnMove: true,
+							autoScroll: {
+								speed: 0.3,
+							},
+							intersection: {
+								inView: {
+									//autoplay: true,
+								},
+								outView: {
+									//autoplay: true,
+								},
+							},
+							// breakpoints: {
+							// 	479: {
+							// 		type: 'slide',
+							// 		perPage: 1,
+							// 		perMove: 1,
+							// 		fixedWidth: '100%',
+							// 		padding: { left: 0, right: 0 },
+							// 	},
+							// },
+						};
+						var splide = new Splide(`${splideTarget}`, options);
+						splide.mount(window.splide.Extensions);
+					}
 
-              setTimeout(function () {
-                  slider1();
-              }, 500);
-          });
+					setTimeout(function () {
+						slider1();
+					}, 500);
+				});
 			</script>
 		</div>
 	</div>

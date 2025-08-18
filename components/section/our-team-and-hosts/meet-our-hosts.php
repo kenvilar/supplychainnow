@@ -8,11 +8,11 @@
 				<div class="mb-20">
 					<h2 class="text-center">Meet Our Hosts</h2>
 				</div>
-				<div class="w-layout-blockcontainer max-w-136 w-full h-1 relative bg-cargogrey/25 w-container">
-					<div class="absolute absolute--r flex items-center pr-32">
-						<div blinking-dot="" class="size-8 rounded-8 bg-primary"></div>
-					</div>
-				</div>
+				<?php
+				get_template_part('components/line-with-blinking-dot', null, [
+					'maxWidthClassnames' => ''
+				]);
+				?>
 			</div>
 			<div class="text-white w-dyn-list">
 				<div meet-the-team-list role="list" class="grid grid-cols-3 gap-32 md:grid-cols-2 sm:grid-cols-1">
