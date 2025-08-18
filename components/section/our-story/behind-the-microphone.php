@@ -10,9 +10,18 @@
 						<h2 class="font-semibold text-36">Behind the Microphone</h2>
 					</div>
 					<div class="flex justify-center">
-						<a href="/our-team-and-hosts" class="btn primary w-inline-block">
-							<div>Meet Our Team</div>
-						</a>
+						<?php
+						echo get_template_part('components/ui/btn', null, [
+							'text' => 'Meet Our Team',
+							'link' => '/our-team-and-hosts',
+							'style' => 'primary',
+							'class' => '',
+							/*'attributes' => [
+								'target' => '_blank',
+								'rel'    => 'noopener noreferrer',
+							],*/
+						]);
+						?>
 					</div>
 				</div>
 				<div class="max-w-492 w-full md:max-w-full">
