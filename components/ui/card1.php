@@ -44,7 +44,14 @@ $defaults_args = [
 			'type' => 'CHAR',
 		],
 	],
-	'orderby' => ['menu_order' => 'ASC', 'date' => 'DESC'],
+	/*'date_query' => [ //used for upcoming or future
+		[
+			'after' => current_time('Y-m-d'),
+			'inclusive' => true, // include today
+		]
+	],*/
+	'post__not_in' => [], //[get_the_ID()],
+	'orderby' => ['menu_order' => 'ASC', 'date' => 'DESC'], //'rand',
 ];
 
 $query_args = array_merge($defaults_args, $override_args);
