@@ -1,7 +1,7 @@
 <?php
 
 ?>
-<section class="section rounded-t-100 overflow-hidden text-white">
+<section class="section rounded-t-100 overflow-hidden text-white select-none">
 	<div class="site-padding sm:py-60 py-164">
 		<div class="w-layout-blockcontainer max-w-816 text-center w-container">
 			<div class="mb-44">

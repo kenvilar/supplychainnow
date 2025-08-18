@@ -28,13 +28,28 @@
 								</div>
 							</div>
 							<div class="flex gap-12 xs:flex-col sm:flex-col flex-wrap">
-								<a href="/on-demand-programming"
-								   class="btn secondary w-inline-block">
-									<div>Listen Now</div>
-								</a>
-								<a href="/programs" class="btn secondary-outline w-inline-block">
-									<div>Subscribe for Updates</div>
-								</a>
+								<?php
+								echo get_template_part('components/ui/btn', null, [
+									'text' => 'Listen Now',
+									'link' => '/on-demand-programming',
+									'style' => 'secondary',
+									'class' => '',
+									/*'attributes' => [
+										'target' => '_blank',
+										'rel'    => 'noopener noreferrer',
+									],*/
+								]);
+								echo get_template_part('components/ui/btn', null, [
+									'text' => 'Subscribe for Updates',
+									'link' => '/programs',
+									'style' => 'secondary-outline',
+									'class' => '',
+									/*'attributes' => [
+										'target' => '_blank',
+										'rel'    => 'noopener noreferrer',
+									],*/
+								]);
+								?>
 							</div>
 						</div>
 					</div>
@@ -56,10 +71,18 @@
 								</div>
 							</div>
 							<div class="flex gap-12 sm:flex-col">
-								<a href="/work-with-us"
-								   class="btn primary w-inline-block">
-									<div>Learn More About Working with Us</div>
-								</a>
+								<?php
+								echo get_template_part('components/ui/btn', null, [
+									'text' => 'Learn More About Working with Us',
+									'link' => '/work-with-us',
+									'style' => 'primary',
+									'class' => '',
+									/*'attributes' => [
+										'target' => '_blank',
+										'rel'    => 'noopener noreferrer',
+									],*/
+								]);
+								?>
 							</div>
 						</div>
 					</div>
@@ -125,50 +148,50 @@
 						</div>
 					</div>
 					<script>
-              document.addEventListener('DOMContentLoaded', function () {
-                  function slider1() {
-                      let splideTarget = '[slider-1]';
-                      let splideTargetEl = document.querySelector(`${splideTarget}`);
-                      if (!splideTargetEl) return;
-                      var options = {
-                          /*suggested options*/
-                          type: 'fade', //'fade', //"slide", //"loop",
-                          arrows: false,
-                          pagination: false,
-                          /*custom options*/
-                          rewind: true,
-                          fixedWidth: 'auto',
-                          fixedHeight: 540,
-                          perMove: 1,
-                          perPage: 1,
-                          gap: 0,
-                          autoplay: true,
-                          pauseOnHover: false,
-                          /*autoScroll: {
-														speed: 1,
-													},*/
-                          intersection: {
-                              inView: {
-                                  autoplay: true,
-                              },
-                              outView: {
-                                  autoplay: false,
-                              },
-                          },
-                          breakpoints: {
-                              991: {
-                                  fixedWidth: '100%',
-                              },
-                          },
-                      };
-                      var splide = new Splide(`${splideTarget}`, options);
-                      splide.mount();
-                  }
+						document.addEventListener('DOMContentLoaded', function () {
+							function slider1() {
+								let splideTarget = '[slider-1]';
+								let splideTargetEl = document.querySelector(`${splideTarget}`);
+								if (!splideTargetEl) return;
+								var options = {
+									/*suggested options*/
+									type: 'fade', //'fade', //"slide", //"loop",
+									arrows: false,
+									pagination: false,
+									/*custom options*/
+									rewind: true,
+									fixedWidth: 'auto',
+									fixedHeight: 540,
+									perMove: 1,
+									perPage: 1,
+									gap: 0,
+									autoplay: true,
+									pauseOnHover: false,
+									/*autoScroll: {
+										speed: 1,
+									},*/
+									intersection: {
+										inView: {
+											autoplay: true,
+										},
+										outView: {
+											autoplay: false,
+										},
+									},
+									breakpoints: {
+										991: {
+											fixedWidth: '100%',
+										},
+									},
+								};
+								var splide = new Splide(`${splideTarget}`, options);
+								splide.mount();
+							}
 
-                  setTimeout(function () {
-                      slider1();
-                  }, 500);
-              });
+							setTimeout(function () {
+								slider1();
+							}, 500);
+						});
 					</script>
 				</div>
 			</div>

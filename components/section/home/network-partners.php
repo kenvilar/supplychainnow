@@ -10,7 +10,10 @@
 						<h2 class="text-center">Network Partners</h2>
 					</div>
 					<?php
-					get_template_part('components/line-with-blinking-dot'); ?>
+					get_template_part('components/line-with-blinking-dot', null, [
+						'maxWidthClassnames' => ''
+					]);
+					?>
 				</div>
 				<div class="mb-48 sm:mb-20">
 					<div class="flex gap-24 justify-between sm:flex-col">
@@ -47,9 +50,18 @@
 					</div>
 				</div>
 				<div class="flex justify-center">
-					<a href="/campaign-directory" class="btn primary w-inline-block">
-						<div>Explore More Partners</div>
-					</a>
+					<?php
+					echo get_template_part('components/ui/btn', null, [
+						'text' => 'Explore More Partners',
+						'link' => '/campaign-directory',
+						'style' => 'primary',
+						'class' => '',
+						/*'attributes' => [
+							'target' => '_blank',
+							'rel'    => 'noopener noreferrer',
+						],*/
+					]);
+					?>
 				</div>
 			</div>
 		</div>

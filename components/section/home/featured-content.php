@@ -9,7 +9,9 @@
 					<h2 class="text-center">Featured Content</h2>
 				</div>
 				<?php
-				get_template_part('components/line-with-blinking-dot');
+				get_template_part('components/line-with-blinking-dot', null, [
+					'maxWidthClassnames' => ''
+				]);
 				?>
 			</div>
 			<div class="mb-48">
@@ -20,6 +22,7 @@
 							'posts_per_page' => 2,
 						],
 						'attributes' => [],
+						'classNames' => '',
 					]);
 					?>
 				</div>
@@ -33,17 +36,34 @@
 							'offset' => 2,
 						],
 						'attributes' => [],
+						'classNames' => '',
 					]);
 					?>
 				</div>
 			</div>
 			<div class="flex justify-center gap-12 sm:flex-col">
-				<a href="/on-demand-programming/podcasts-and-livestreams" class="btn secondary w-inline-block">
-					<div>Browse All Podcasts</div>
-				</a>
-				<a href="/on-demand-programming/webinars" class="btn secondary-outline w-inline-block">
-					<div>Browse All Webinars</div>
-				</a>
+				<?php
+				echo get_template_part('components/ui/btn', null, [
+					'text' => 'Browse All Podcasts',
+					'link' => '/podcasts-and-livestreams',
+					'style' => 'secondary',
+					'class' => '',
+					/*'attributes' => [
+						'target' => '_blank',
+						'rel'    => 'noopener noreferrer',
+					],*/
+				]);
+				echo get_template_part('components/ui/btn', null, [
+					'text' => 'Browse All Webinars',
+					'link' => '/webinars',
+					'style' => 'secondary-outline',
+					'class' => '',
+					/*'attributes' => [
+						'target' => '_blank',
+						'rel'    => 'noopener noreferrer',
+					],*/
+				]);
+				?>
 			</div>
 		</div>
 	</div>

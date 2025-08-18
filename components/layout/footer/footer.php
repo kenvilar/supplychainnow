@@ -1,7 +1,7 @@
 <?php
 
 ?>
-<div class="section bg-cargogrey text-white">
+<div class="section bg-cargogrey text-white select-none">
 	<div class="site-padding sm:py-60 py-80">
 		<div class="w-layout-blockcontainer max-w-1252 w-container">
 			<div class="mb-48">

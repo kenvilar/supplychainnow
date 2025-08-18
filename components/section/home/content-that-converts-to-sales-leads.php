@@ -15,14 +15,28 @@
 						</p>
 					</div>
 					<div class="flex items-center gap-12 sm:flex-col sm:items-stretch">
-						<a href="/case-studies-customer-stories" class="btn primary w-inline-block">
-							<div>Read More Case Studies</div>
-						</a>
-						<a
-							href="https://lp.supplychainnow.com/Supply-Chain-Now-Media-Kit/?utm_source=LandingPage&amp;utm_medium=Website&amp;utm_campaign=MediaKit"
-							target="_blank" class="btn primary-outline w-inline-block">
-							<div>Explore Sponsorship</div>
-						</a>
+						<?php
+						echo get_template_part('components/ui/btn', null, [
+							'text' => 'Read More Case Studies',
+							'link' => '/case-studies-customer-stories',
+							'style' => 'primary',
+							'class' => '',
+							/*'attributes' => [
+								'target' => '_blank',
+								'rel'    => 'noopener noreferrer',
+							],*/
+						]);
+						echo get_template_part('components/ui/btn', null, [
+							'text' => 'Explore Sponsorship',
+							'link' => 'https://lp.supplychainnow.com/Supply-Chain-Now-Media-Kit/?utm_source=LandingPage&amp;utm_medium=Website&amp;utm_campaign=MediaKit',
+							'style' => 'primary-outline',
+							'class' => '',
+							'attributes' => [
+								'target' => '_blank',
+								'rel' => 'noopener noreferrer',
+							],
+						]);
+						?>
 					</div>
 				</div>
 				<div class="max-w-608 w-full md:max-w-full">
