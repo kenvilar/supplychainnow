@@ -15,7 +15,7 @@
 				?>
 			</div>
 			<div class="text-white w-dyn-list">
-				<div meet-the-team-list role="list" class="grid grid-cols-3 gap-32 md:grid-cols-2 sm:grid-cols-1">
+				<div meet-the-team-list class="grid grid-cols-3 gap-32 md:grid-cols-2 sm:grid-cols-1">
 					<div role="listitem" class="group">
 						<div class="overflow-hidden rounded-24 relative h-396">
 							<div

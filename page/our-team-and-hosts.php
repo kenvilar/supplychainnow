@@ -59,7 +59,7 @@ $pageId = get_the_ID();
 		document.addEventListener('DOMContentLoaded', (event) => {
 			function myModalFunc() {
 				const openModalButton = document.querySelectorAll(
-					'[role="list"] [role="listitem"]'
+					'[meet-the-team-list] .group'
 				);
 				const myModal = document.querySelector('.my-modal');
 				const closeModal = document.querySelector('[close-modal]');
