@@ -390,8 +390,9 @@ $pageId = get_the_ID();
 					<?php
 					echo get_template_part('components/ui/card1', null, [
 						'q' => [
-							'posts_per_page' => 2,
+							'posts_per_page' => 3,
 						],
+						'attributes' => [],
 					]);
 					?>
 				</div>
@@ -399,8 +400,9 @@ $pageId = get_the_ID();
 					<?php
 					echo get_template_part('components/ui/card2', null, [
 						'q' => [
-							'posts_per_page' => 2,
+							'posts_per_page' => 3,
 						],
+						'attributes' => [],
 					]);
 					?>
 				</div>
