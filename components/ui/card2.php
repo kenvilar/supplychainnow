@@ -50,12 +50,12 @@ $defaults_args = [
 			"type" => "CHAR",
 		],
 	],
-	/*'date_query' => [ //used for upcoming or future
-	[
-		'after' => current_time('Y-m-d'),
-		'inclusive' => true, // include today
-	]
-],*/
+	'date_query' => [ //used for upcoming or future
+		[
+			'after' => current_time('Y-m-d'),
+			'inclusive' => true, // include today
+		]
+	],
 	"post__not_in" => [], //[get_the_ID()],
 	"orderby" => ["menu_order" => "ASC", "date" => "DESC"], //'rand',
 ];
