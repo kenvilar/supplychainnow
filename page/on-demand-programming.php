@@ -10,7 +10,9 @@ $pageId = get_the_ID();
 	<div class="main-wrapper">
 		<?php
 		get_template_part('components/hero/on-demand-programming');
-		get_template_part('components/section/on-demand-programming/tab-links');
+		get_template_part('components/section/on-demand-programming/tab-links', null, [
+			'tabNumber' => 1,
+		]);
 		get_template_part('components/section/on-demand-programming/featured-episodes');
 		get_template_part('components/section/on-demand-programming/featured-webinars');
 		get_template_part('components/section/on-demand-programming/podcast-episodes');

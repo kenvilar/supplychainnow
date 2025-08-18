@@ -26,25 +26,11 @@ $pageId = get_the_ID();
 					loading="lazy" alt="hero--on-deman programming--webinars" class="image opacity-10">
 			</div>
 		</section>
-		<section class="section">
-			<div class="site-padding py-0">
-				<div class="w-layout-blockcontainer max-w-full w-container">
-					<div class="flex justify-center xs:flex-col">
-						<a href="/on-demand-programming" class="on-demand-programming-link w-inline-block">
-							<div>All Content</div>
-						</a>
-						<a href="/podcasts-and-livestreams" class="on-demand-programming-link w-inline-block">
-							<div>Podcasts &amp; Livestreams</div>
-						</a>
-						<a href="/webinars" aria-current="page"
-						   class="on-demand-programming-link w-inline-block w--current">
-							<div>Webinars</div>
-						</a>
-					</div>
-				</div>
-			</div>
-			<div class="w-full h-1 bg-cargogrey/25 opacity-75 xs:display-none"></div>
-		</section>
+		<?php
+		get_template_part('components/section/on-demand-programming/tab-links', null, [
+			'tabNumber' => 3,
+		]);
+		?>
 		<section class="section">
 			<div class="site-padding sm:py-60 py-60 pb-92">
 				<div class="w-layout-blockcontainer max-w-1372 relative w-container">
