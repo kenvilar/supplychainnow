@@ -60,21 +60,26 @@ $q = new WP_Query($query_args);
 
 if ($q->have_posts()): ?>
 	<?php
-	while ($q->have_posts()): $q->the_post(); ?>
+	while ($q->have_posts()): $q->the_post();
+		$selectMediaType = get_field(
+			'select_media_type',
+			$q->ID
+		);
+		?>
 		<a href="<?php
-		the_permalink(); ?>" class="relative w-full group">
+		the_permalink($q->ID); ?>" class="relative w-full group" <?= $attr_string; ?>>
 			<div class="relative flex flex-col justify-between gap-20 h-full">
 				<div class="w-full">
 					<div class="mb-28">
 						<div class="overflow-hidden rounded-12 relative h-344 bg-cargogrey">
 							<img
 								src="<?php
-								echo get_the_post_thumbnail_url()
-									? get_the_post_thumbnail_url()
+								echo get_the_post_thumbnail_url($q->ID)
+									? get_the_post_thumbnail_url($q->ID)
 									: get_stylesheet_directory_uri() . '/assets/img/misc/default-card-img-thumbnail.avif' ?>"
 								loading="lazy" alt="" class="image relative opacity-40">
 							<?php
-							$terms = get_the_terms(get_the_ID(), 'tags');
+							$terms = get_the_terms($q->ID, 'tags');
 							if (!is_wp_error($terms) && !empty($terms)) {
 								$first = array_values($terms)[0];
 								?>
@@ -85,23 +90,17 @@ if ($q->have_posts()): ?>
 											echo $first->name; ?>
 										</div>
 										<?php
-										echo get_field(
-											     'select_media_type'
-										     ) == 'livestream'
+										echo $selectMediaType == 'livestream'
 											? '<div class="absolute absolute--full bg-primary"></div>'
 											: '';
 										?>
 										<?php
-										echo get_field(
-											     'select_media_type'
-										     ) == 'podcast'
+										echo $selectMediaType == 'podcast'
 											? '<div class="absolute absolute--full bg-secondary"></div>'
 											: '';
 										?>
 										<?php
-										echo get_field(
-											     'select_media_type'
-										     ) == 'webinar'
+										echo $selectMediaType == 'webinar'
 											? '<div class="absolute absolute--full bg-tertiary"></div>'
 											: '';
 										?>
@@ -113,7 +112,7 @@ if ($q->have_posts()): ?>
 							<div
 								class="absolute absolute--full flex items-center justify-center translate-y-220 group-hover:translate-y-0 transition-all duration-500">
 								<?php
-								if (get_field('select_media_type') == 'livestream') {
+								if ($selectMediaType == 'livestream') {
 									?>
 									<img
 										src="<?php
@@ -121,9 +120,7 @@ if ($q->have_posts()): ?>
 										loading="lazy" alt="play-button-livestream">
 									<?php
 								}
-								?>
-								<?php
-								if (get_field('select_media_type') == 'podcast') {
+								if ($selectMediaType == 'podcast') {
 									?>
 									<img
 										src="<?php
@@ -131,9 +128,7 @@ if ($q->have_posts()): ?>
 										loading="lazy" alt="play-button-podcast">
 									<?php
 								}
-								?>
-								<?php
-								if (get_field('select_media_type') == 'webinar') {
+								if ($selectMediaType == 'webinar') {
 									?>
 									<img
 										src="<?php
@@ -150,7 +145,7 @@ if ($q->have_posts()): ?>
 							<div class="flex items-center gap-8">
 								<div class="flex items-center">
 									<?php
-									if (get_field('select_media_type') == 'livestream') {
+									if ($selectMediaType == 'livestream') {
 										?>
 										<img
 											src="<?php
@@ -160,7 +155,7 @@ if ($q->have_posts()): ?>
 									}
 									?>
 									<?php
-									if (get_field('select_media_type') == 'podcast') {
+									if ($selectMediaType == 'podcast') {
 										?>
 										<img
 											class="size-24"
@@ -171,7 +166,7 @@ if ($q->have_posts()): ?>
 									}
 									?>
 									<?php
-									if (get_field('select_media_type') == 'webinar') {
+									if ($selectMediaType == 'webinar') {
 										?>
 										<img
 											class="size-24"
@@ -183,11 +178,11 @@ if ($q->have_posts()): ?>
 									?>
 								</div>
 								<?php
-								if (get_field('select_media_type')) {
+								if ($selectMediaType) {
 									?>
 									<div class="font-family-secondary text-sm capitalize">
 										<?php
-										echo the_field('select_media_type'); ?>
+										echo $selectMediaType; ?>
 									</div>
 									<?php
 								}
@@ -195,7 +190,7 @@ if ($q->have_posts()): ?>
 							</div>
 							<div class="flex items-center gap-8 text-sm font-light font-family-secondary">
 								<div><?php
-									echo get_the_date('F j, Y', $pageId); ?></div>
+									echo get_the_date('F j, Y', $q->ID); ?></div>
 								<!--<div>•</div>
 								<div>6 min 25 sec</div>-->
 							</div>
@@ -206,25 +201,14 @@ if ($q->have_posts()): ?>
 				</div>
 				<div class="w-full tracking-[1.6px]" scn-text-limit="2">
 					<?php
-					if (get_the_excerpt()) {
+					if (get_the_excerpt($q->ID)) {
 						the_excerpt();
-					} else {
-						if (get_field('livestream_description')) {
-							the_field('livestream_description');
-						} else {
-							if (get_field('episode_summary')) {
-								the_field('episode_summary');
-							} else {
-								if (get_field('webinar_description')) {
-									the_field('webinar_description');
-								} else {
-									echo 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum
-								tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero
-								vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus
-								tristique posuere.';
-								}
-							}
-						}
+					} elseif (get_field('livestream_description', $q->ID)) {
+						the_field('livestream_description', $q->ID);
+					} elseif (get_field('episode_summary', $q->ID)) {
+						the_field('episode_summary', $q->ID);
+					} elseif (get_field('webinar_description', $q->ID)) {
+						the_field('webinar_description', $q->ID);
 					}
 					?>
 				</div>
