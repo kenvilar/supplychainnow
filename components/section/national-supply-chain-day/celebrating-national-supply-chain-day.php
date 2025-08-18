@@ -1,0 +1,41 @@
+<?php
+
+?>
+<section class="section">
+	<div class="site-padding sm:py-60 py-92">
+		<div class="w-layout-blockcontainer max-w-832 w-container">
+			<div class="mb-52">
+				<h2 class="text-center">Celebrating National Supply Chain Day℠</h2>
+			</div>
+			<div class="mb-52">
+				<div class="w-layout-blockcontainer max-w-828 w-container">
+					<div class="overflow-hidden rounded-24">
+						<img
+							src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/6875170fded5985cf1e11603_celebrating%20national%20supply%20chain%20day.avif"
+							loading="lazy" alt="celebrating national supply chain day"
+							class="w-full h-full max-w-none fit-cover">
+					</div>
+				</div>
+			</div>
+			<div class="mb-52">
+				<div class="w-layout-blockcontainer max-w-676 w-container">
+					<p class="text-center tracking-[1.6px]">Join us as Scott W. Luton and National Supply Chain Day® founder,
+						Mary
+						Kate Love, host the special edition livestream as we commemorate National Supply Chain Day®.
+						<br>
+						<br>
+						Tune in as we welcome special guests, share exciting announcements, celebrate, and shine a spotlight on
+						the industry professionals of Supply Chain: the people who connect the world.
+					</p>
+				</div>
+			</div>
+			<div class="flex justify-center sm:flex-col">
+				<div open-modal="" class="flex">
+					<a href="#" class="btn primary w-inline-block">
+						<div>Register for 2026’s Event</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
