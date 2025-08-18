@@ -416,6 +416,13 @@ $pageId = get_the_ID();
 					get_template_part('components/layout/footer/cta-footer-2');
 					?>
 				</div>
+				<div class="w-full">
+					<?php
+					get_template_part('components/line-with-blinking-dot', null, [
+						'maxWidthClassnames' => ''
+					]);
+					?>
+				</div>
 			</div>
 		</div>
 	</section>
