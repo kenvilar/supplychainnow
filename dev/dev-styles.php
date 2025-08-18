@@ -323,7 +323,7 @@ $pageId = get_the_ID();
 								'target' => '_blank',
 								'rel'    => 'noopener noreferrer',
 							],*/
-						])
+						]);
 						?>
 						<?php
 						echo get_template_part('components/ui/btn', null, [
@@ -335,7 +335,7 @@ $pageId = get_the_ID();
 								'target' => '_blank',
 								'rel'    => 'noopener noreferrer',
 							],*/
-						])
+						]);
 						?>
 						<?php
 						echo get_template_part('components/ui/btn', null, [
@@ -347,7 +347,7 @@ $pageId = get_the_ID();
 								'target' => '_blank',
 								'rel'    => 'noopener noreferrer',
 							],*/
-						])
+						]);
 						?>
 						<?php
 						echo get_template_part('components/ui/btn', null, [
