@@ -386,9 +386,13 @@ $pageId = get_the_ID();
 						</div>
 					</div>
 				</div>
-				<div class="w-full">
+				<div class="w-full flex">
 					<?php
-					echo get_template_part('components/ui/card1', null, []);
+					echo get_template_part('components/ui/card1', null, [
+						'q' => [
+							'posts_per_page' => 2,
+						],
+					]);
 					?>
 				</div>
 			</div>
