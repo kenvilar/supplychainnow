@@ -3,11 +3,13 @@
 echo get_template_part('components/ui/card1', null, [
 	'q' => [],
 	'attributes' => [],
+	'classNames' => '',
 ]);
 */
 
 $override_args = $args["q"] ?? [];
 $attributes = $args["attributes"] ?? [];
+$classNames = $args["classNames"] ?? [];
 if (!is_array($override_args)) {
 	$override_args = [];
 }
@@ -72,9 +74,7 @@ if ($q->have_posts()): ?>
 		$selectMediaType = get_field("select_media_type", $q->ID);
 		?>
 		<a href="<?php
-		the_permalink(
-			$q->ID,
-		); ?>" class="relative w-full group" <?= $attr_string ?>>
+		the_permalink($q->ID); ?>" class="relative w-full group <?= $classNames; ?>" <?= $attr_string ?>>
 			<div class="relative flex flex-col justify-between gap-20 h-full">
 				<div class="w-full">
 					<div class="mb-28">

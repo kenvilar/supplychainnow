@@ -394,6 +394,7 @@ $pageId = get_the_ID();
 							'posts_per_page' => 3,
 						],
 						'attributes' => [],
+						'classNames' => '',
 					]);
 					?>
 				</div>
@@ -405,6 +406,7 @@ $pageId = get_the_ID();
 							'posts_per_page' => 3,
 						],
 						'attributes' => [],
+						'classNames' => '',
 					]);
 					?>
 				</div>
