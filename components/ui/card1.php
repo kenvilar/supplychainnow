@@ -1,10 +1,17 @@
-<?php
+`<?php
+
+/*
+echo get_template_part('components/ui/card1', null, [
+	'q' => [],
+	'attributes' => [],
+]);
+*/
 
 $override_args = $args['q'] ?? [];
+$attributes = $args['attributes'] ?? [];
 if (!is_array($override_args)) {
 	$override_args = [];
 }
-$attributes = $args['attributes'] ?? [];
 
 // Convert attributes array to HTML string
 $attr_string = '';
