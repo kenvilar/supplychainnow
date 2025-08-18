@@ -386,6 +386,11 @@ $pageId = get_the_ID();
 						</div>
 					</div>
 				</div>
+				<div class="w-full">
+					<?php
+					echo get_template_part('components/ui/card1', null, []);
+					?>
+				</div>
 			</div>
 		</div>
 	</section>
