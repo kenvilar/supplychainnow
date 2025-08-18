@@ -1,8 +1,8 @@
 <?php
 
 ?>
-<section class="section rounded-t-100 overflow-hidden text--white">
-	<div class="site-padding sm-py-60 py-164">
+<section class="section rounded-t-100 overflow-hidden text-white">
+	<div class="site-padding sm:py-60 py-164">
 		<div class="w-layout-blockcontainer max-w-816 text-center w-container">
 			<div class="mb-44">
 				<h2 class="text-45">Follow Supply Chain Now for the latest updates, insights, and news.</h2>
@@ -10,7 +10,7 @@
 			<ul role="list" class="flex items-center justify-center gap-16 m-0 w-list-unstyled">
 				<li class="flex">
 					<a href="https://www.facebook.com/SupplyChainNow" target="_blank"
-					   class="text--white hover:text-primary w-inline-block">
+					   class="text-white hover:text-primary w-inline-block">
 						<div class="flex items-center justify-center w-embed">
 							<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
 								<path fill-rule="evenodd" clip-rule="evenodd"
@@ -22,7 +22,7 @@
 				</li>
 				<li class="flex">
 					<a href="https://www.instagram.com/supplychainnow/" target="_blank"
-					   class="text--white hover:text-primary w-inline-block">
+					   class="text-white hover:text-primary w-inline-block">
 						<div class="flex w-embed">
 							<svg xmlns="http://www.w3.org/2000/svg" width="37" height="36" viewBox="0 0 37 36" fill="none">
 								<path
@@ -40,7 +40,7 @@
 				</li>
 				<li class="flex">
 					<a href="https://www.linkedin.com/company/supply-chain-now/" target="_blank"
-					   class="text--white hover:text-primary w-inline-block">
+					   class="text-white hover:text-primary w-inline-block">
 						<div class="flex items-center justify-center w-embed">
 							<svg xmlns="http://www.w3.org/2000/svg" width="37" height="36" viewBox="0 0 37 36" fill="none">
 								<path fill-rule="evenodd" clip-rule="evenodd"
@@ -52,7 +52,7 @@
 				</li>
 				<li class="flex">
 					<a href="https://x.com/_supplychainnow" target="_blank"
-					   class="text--white hover:text-primary w-inline-block">
+					   class="text-white hover:text-primary w-inline-block">
 						<div class="flex items-center justify-center w-embed">
 							<svg xmlns="http://www.w3.org/2000/svg" width="37" height="36" viewBox="0 0 37 36" fill="none">
 								<path d="M23.0045 25.8835H25.4435L14.2165 10.1697H11.7775L23.0045 25.8835Z"
@@ -66,7 +66,7 @@
 				</li>
 				<li class="flex">
 					<a href="https://www.youtube.com/channel/UCuqKDp8uxinIM8ORIOLr0qw" target="_blank"
-					   class="text--white hover:text-primary w-inline-block">
+					   class="text-white hover:text-primary w-inline-block">
 						<div class="flex w-embed">
 							<svg xmlns="http://www.w3.org/2000/svg" width="37" height="36" viewBox="0 0 37 36" fill="none">
 								<path d="M21.7475 18L17.0225 15.3V20.7L21.7475 18Z" fill="currentColor"></path>
@@ -80,8 +80,8 @@
 			</ul>
 		</div>
 	</div>
-	<div class="absolute absolute--full _w-full h-full gradient1 rotate-180 z--2"></div>
-	<div class="absolute absolute--full _w-full h-full z--1">
+	<div class="absolute absolute--full w-full h-full gradient1 rotate-180 -z-2"></div>
+	<div class="absolute absolute--full w-full h-full -z-1">
 		<img loading="lazy"
 		     src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/686a41ac3f0fe49a46757db5_bg-footer-cta-media-kit.avif"
 		     alt="bg-footer-cta-media-kit" class="image opacity-15">
