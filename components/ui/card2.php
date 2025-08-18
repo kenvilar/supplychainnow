@@ -72,7 +72,7 @@ if ($q->have_posts()): ?>
 		$selectMediaType = get_field("select_media_type", $q->ID);
 		?>
 		<a href="<?php
-		the_permalink($q->ID); ?>" class="relative w-full group">
+		the_permalink($q->ID); ?>" class="relative w-full group" <?= $attr_string ?>>
 			<div class="relative flex flex-col justify-between gap-20 h-full">
 				<div class="w-full">
 					<div class="mb-28">
