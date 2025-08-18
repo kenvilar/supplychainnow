@@ -406,6 +406,16 @@ $pageId = get_the_ID();
 					]);
 					?>
 				</div>
+				<div class="w-full">
+					<?php
+					get_template_part('components/layout/footer/cta-footer');
+					?>
+				</div>
+				<div class="w-full">
+					<?php
+					get_template_part('components/layout/footer/cta-footer-2');
+					?>
+				</div>
 			</div>
 		</div>
 	</section>
