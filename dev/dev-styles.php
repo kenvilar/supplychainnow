@@ -1,7 +1,7 @@
 <?php
 /*
- * Template Name: Dev Styles v2
- */
+* Template Name: Dev Styles v2
+*/
 
 get_header();
 $pageId = get_the_ID();
@@ -387,6 +387,7 @@ $pageId = get_the_ID();
 					</div>
 				</div>
 				<div class="w-full flex col-span-2">
+					<h4 styles-label="">Card 1</h4>
 					<?php
 					echo get_template_part('components/ui/card1', null, [
 						'q' => [
@@ -397,6 +398,7 @@ $pageId = get_the_ID();
 					?>
 				</div>
 				<div class="w-full flex col-span-2">
+					<h4 styles-label="">Card 2</h4>
 					<?php
 					echo get_template_part('components/ui/card2', null, [
 						'q' => [
@@ -407,25 +409,62 @@ $pageId = get_the_ID();
 					?>
 				</div>
 				<div class="w-full">
+					<h4 styles-label="">CTA Footer</h4>
 					<?php
 					get_template_part('components/layout/footer/cta-footer');
 					?>
 				</div>
 				<div class="w-full">
+					<h4 styles-label="">CTA Footer 2</h4>
 					<?php
 					get_template_part('components/layout/footer/cta-footer-2');
 					?>
 				</div>
-				<div class="w-full">
+				<div class="w-full p-12">
+					<h4 styles-label="">Blinking Dot</h4>
 					<?php
 					get_template_part('components/line-with-blinking-dot', null, [
 						'maxWidthClassnames' => ''
 					]);
 					?>
 				</div>
+				<div class="w-full relative">
+					<h4 styles-label="">Splide Arrows</h4>
+					<div slider-1 class="splide relative">
+						<div class="splide__track">
+							<div class="splide__list">
+								<div class="splide__slide">heading 1</div>
+								<div class="splide__slide">heading 2</div>
+							</div>
+						</div>
+						<?php
+						get_template_part('components/splide-arrows');
+						?>
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>
 	<!-- Custom code End -->
+	<script>
+		document.addEventListener('DOMContentLoaded', function () {
+			function slider1() {
+				let splideTarget = '[slider-1]';
+				let splideTargetEl = document.querySelector(`${splideTarget}`);
+				if (!splideTargetEl) return;
+				var options = {
+					/*suggested options*/
+					type: 'slide', //'fade', //"slide", //"loop",
+					arrows: true,
+				};
+				var splide = new Splide(`${splideTarget}`, options);
+				splide.mount();
+			}
+
+			setTimeout(function () {
+				slider1();
+			}, 500);
+		});
+	</script>
 <?php
 get_footer(); ?>

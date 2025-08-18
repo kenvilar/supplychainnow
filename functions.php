@@ -23,7 +23,7 @@ if (!function_exists('bridge_qode_child_theme_enqueue_scripts')) {
 		            || is_page('ebook')
 		            || is_page('article')
 		            || is_page('news')
-		            || is_page('guide');
+		            || is_page('guide') || is_page('dev');
 		// Remove parent style
 		wp_dequeue_style('bridge-stylesheet');
 		wp_deregister_style('bridge-stylesheet');
@@ -75,7 +75,7 @@ if (!function_exists('bridge_qode_child_theme_enqueue_scripts')) {
 		            || is_page('ebook')
 		            || is_page('article')
 		            || is_page('news')
-		            || is_page('guide');
+		            || is_page('guide') || is_page('dev');
 		if ($isSplide) {
 			//splide script
 			wp_enqueue_script(
