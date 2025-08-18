@@ -33,7 +33,7 @@
 						<div class="flex justify-between gap-44 sm:flex-col sm:gap-20">
 							<div>
 								<div class="w-layout-vflex flex gap-16">
-									<a href="#" class="footer-link-heading">About Us</a>
+									<a href="#" class="footer-link-heading pointer-events-none">About Us</a>
 									<ul role="list" class="m-0 flex flex-col gap-12 w-list-unstyled">
 										<li>
 											<a href="/about" class="footer-link">Our Story</a>
@@ -46,7 +46,7 @@
 							</div>
 							<div>
 								<div class="w-layout-vflex flex gap-16">
-									<a href="#" class="footer-link-heading">Watch and Listen</a>
+									<a href="#" class="footer-link-heading pointer-events-none">Watch and Listen</a>
 									<ul role="list" class="m-0 flex flex-col gap-12 w-list-unstyled">
 										<li>
 											<a href="/upcoming-live-programming" class="footer-link">Upcoming Live Programming</a>
@@ -102,7 +102,7 @@
 							</div>
 							<div>
 								<div class="w-layout-vflex flex gap-16">
-									<a href="#" class="footer-link-heading">Work With Us</a>
+									<a href="#" class="footer-link-heading pointer-events-none">Work With Us</a>
 									<ul role="list" class="m-0 flex flex-col gap-12 w-list-unstyled">
 										<li>
 											<a href="/work-with-us" class="footer-link">Work With Us</a>
@@ -119,7 +119,7 @@
 							</div>
 							<div>
 								<div class="w-layout-vflex flex gap-16">
-									<a href="#" class="footer-link-heading">NOW Campaign Directory</a>
+									<a href="#" class="footer-link-heading pointer-events-none">NOW Campaign Directory</a>
 									<ul role="list" class="m-0 flex flex-col gap-12 w-list-unstyled">
 										<li>
 											<a href="/campaign-directory" class="footer-link">Campaign Directory</a>
