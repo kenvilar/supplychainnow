@@ -211,13 +211,24 @@ if ($categorySlug) {
 							</div>
 							<div class="mb-52 flex flex-col gap-58 sm:gap-20">
 								<?php
-								$q = new WP_Query([
+								$default_args = [
 									"post_type" => "post",
 									"post_status" => "publish",
 									"posts_per_page" => 2,
 									"offset" => 0,
 									"orderby" => "rand", // random order
-								]);
+								];
+								if (!empty($categorySlug) && $categorySlug != 'blog') {
+									$defaults_args['tax_query'] = [
+										[
+											"taxonomy" => "category",
+											"field" => "slug",
+											"terms" => $categorySlug,
+											'operator' => 'IN'
+										],
+									];
+								}
+								$q = new WP_Query($default_args);
 
 								if ($q->have_posts()): ?>
 									<?php
@@ -272,9 +283,7 @@ if ($categorySlug) {
 														</div>
 													</div>
 													<h3 class="font-semibold text-lg" scn-text-limit="2"><?php
-														the_title(
-															$q->post->ID,
-														); ?></h3>
+														the_title(); ?></h3>
 												</div>
 												<div class="w-full tracking-[1.4px] text-sm" scn-text-limit="3">
 													<?php
@@ -300,9 +309,9 @@ if ($categorySlug) {
 									"style" => "primary",
 									"class" => "",
 									/*'attributes' => [
-																									'target' => '_blank',
-																									'rel'    => 'noopener noreferrer',
-																								],*/
+										'target' => '_blank',
+										'rel' => 'noopener noreferrer',
+									],*/
 								]); ?>
 							</div>
 						</div>
