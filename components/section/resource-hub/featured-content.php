@@ -22,8 +22,8 @@
 					],
 					'attributes' => [],
 					'classNames' => '',
-					'taxQueryTerms' => [],
 					'noItemsFound' => '',
+					'taxQueryTerms' => [],
 				]);
 				?>
 			</div>
