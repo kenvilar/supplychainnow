@@ -14,7 +14,7 @@
 				]);
 				?>
 			</div>
-			<div class="flex justify-center gap-28 sm:flex-col w-full">
+			<div class="grid grid-cols-2 gap-28 sm:grid-cols-1 w-full">
 				<?php
 				echo get_template_part('components/ui/card1-post', null, [
 					'q' => [
