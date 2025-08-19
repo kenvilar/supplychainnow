@@ -29,7 +29,16 @@ $defaults_args = [
 	"post_status" => "publish",
 	"posts_per_page" => 1,
 	"offset" => 0,
-	"meta_query" => [],
+	"meta_query" => [
+		/*"tax_query" => [
+			[
+				"taxonomy" => "category",
+				"field" => "slug",
+				"terms" => ["ebook", "news", "visibility-guide", "white-paper", "article"],   // category slug
+				"operator" => "NOT IN",   // exclude these terms
+			],
+		],*/
+	],
 	/*'date_query' => [ //used for upcoming or future
 		[
 			'after' => current_time('Y-m-d'),
