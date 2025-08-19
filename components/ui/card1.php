@@ -4,12 +4,14 @@ echo get_template_part('components/ui/card1', null, [
 	'q' => [],
 	'attributes' => [],
 	'classNames' => '',
+	'noItemsFound' => '',
 ]);
 */
 
 $override_args = $args["q"] ?? [];
 $attributes = $args["attributes"] ?? [];
-$classNames = $args["classNames"] ?? [];
+$classNames = $args["classNames"] ?? '';
+$noItemsFound = $args["noItemsFound"] ?? '<p class="w-full text-center">No items found.</p>';
 if (!is_array($override_args)) {
 	$override_args = [];
 }
@@ -215,5 +217,7 @@ if ($q->have_posts()): ?>
 	wp_reset_postdata();
 	?>
 <?php
+else:
+	echo $noItemsFound;
 endif;
 ?>

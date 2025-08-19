@@ -395,6 +395,7 @@ $pageId = get_the_ID();
 						],
 						'attributes' => [],
 						'classNames' => '',
+						'noItemsFound' => '',
 					]);
 					?>
 				</div>
@@ -407,6 +408,7 @@ $pageId = get_the_ID();
 						],
 						'attributes' => [],
 						'classNames' => '',
+						'noItemsFound' => '',
 					]);
 					?>
 				</div>
