@@ -13,7 +13,7 @@ $pageId = get_the_ID();
 		get_template_part('components/section/resource-hub/tab-links', null, [
 			'tabNumber' => 1
 		]);
-		get_template_part('components/section/resource-hub/featured-episodes');
+		get_template_part('components/section/resource-hub/featured-content');
 		get_template_part('components/section/resource-hub/recent-blogs');
 		get_template_part('components/section/resource-hub/recent-white-papers');
 		get_template_part('components/section/resource-hub/recent-ebooks');
