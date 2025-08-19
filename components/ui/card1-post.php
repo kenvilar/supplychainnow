@@ -1,10 +1,11 @@
 <?php
 /*
-echo get_template_part('components/ui/card1', null, [
+echo get_template_part('components/ui/card1-post', null, [
 	'q' => [],
 	'attributes' => [],
 	'classNames' => '',
 	'noItemsFound' => '',
+	'taxQueryTerms' => [],
 ]);
 */
 

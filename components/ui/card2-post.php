@@ -1,16 +1,18 @@
 <?php
 /*
-echo get_template_part('components/ui/card2', null, [
+echo get_template_part('components/ui/card2-post', null, [
 	'q' => [],
 	'attributes' => [],
 	'classNames' => '',
 	'noItemsFound' => '',
+	'taxQueryTerms' => [],
 ]);
 */
 
 $override_args = $args["q"] ?? [];
 $attributes = $args["attributes"] ?? [];
 $classNames = $args["classNames"] ?? '';
+$taxQueryTerms = $args["taxQueryTerms"] ?? [];
 $noItemsFound = $args["noItemsFound"] ?? '<p class="w-full text-center">No items found.</p>';
 if (!is_array($override_args)) {
 	$override_args = [];
@@ -23,37 +25,11 @@ foreach ($attributes as $key => $value) {
 }
 
 $defaults_args = [
-	"post_type" => "page",
+	"post_type" => "post",
 	"post_status" => "publish",
 	"posts_per_page" => 1,
 	"offset" => 0,
-	"meta_query" => [
-		"relation" => "AND",
-		[
-			"relation" => "OR",
-			[
-				"key" => "_wp_page_template",
-				"value" => "episode-detail.php",
-				"compare" => "=",
-			],
-			[
-				"key" => "_wp_page_template",
-				"value" => "webinar-detail.php",
-				"compare" => "=",
-			],
-			[
-				"key" => "_wp_page_template",
-				"value" => "livestream-detail.php",
-				"compare" => "=",
-			],
-		],
-		[
-			"key" => "select_media_type",
-			"value" => ["podcast", "livestream", "webinar"],
-			"compare" => "IN",
-			"type" => "CHAR",
-		],
-	],
+	"meta_query" => [],
 	/*'date_query' => [ //used for upcoming or future
 		[
 			'after' => current_time('Y-m-d'),
@@ -63,6 +39,15 @@ $defaults_args = [
 	"post__not_in" => [], //[get_the_ID()],
 	"orderby" => ["menu_order" => "ASC", "date" => "DESC"], //'rand',
 ];
+if (!empty($taxQueryTerms)) {
+	$args['tax_query'] = [
+		[
+			"taxonomy" => "category",
+			"field" => "slug",
+			"terms" => $taxQueryTerms,
+		],
+	];
+}
 
 $query_args = array_merge($defaults_args, $override_args);
 
@@ -71,25 +56,23 @@ $q = new WP_Query($query_args);
 if ($q->have_posts()): ?>
 	<?php
 	while ($q->have_posts()):
-
 		$q->the_post();
-		$selectMediaType = get_field("select_media_type", $q->ID);
 		?>
 		<a href="<?php
-		the_permalink($q->ID); ?>" class="relative w-full group <?= $classNames; ?>" <?= $attr_string ?>>
+		the_permalink($q->post->ID); ?>" class="relative w-full group <?= $classNames; ?>" <?= $attr_string ?>>
 			<div class="relative flex flex-col justify-between gap-20 h-full">
 				<div class="w-full">
 					<div class="mb-28">
 						<div class="overflow-hidden rounded-12 relative h-222 bg-cargogrey">
 							<img
 								src="<?php
-								echo get_the_post_thumbnail_url($q->ID)
-									? get_the_post_thumbnail_url($q->ID)
+								echo get_the_post_thumbnail_url($q->post->ID)
+									? get_the_post_thumbnail_url($q->post->ID)
 									: get_stylesheet_directory_uri() .
 									  "/assets/img/misc/default-card-img-thumbnail.avif"; ?>"
 								loading="lazy" alt="" class="image relative opacity-40">
 							<?php
-							$terms = get_the_terms($q->ID, "tags");
+							$terms = get_the_terms($q->post->ID, "post_tag");
 							if (!is_wp_error($terms) && !empty($terms)) {
 								$first = array_values($terms)[0]; ?>
 								<div class="absolute absolute--tl p-24 flex items-center justify-center">
@@ -98,93 +81,42 @@ if ($q->have_posts()): ?>
 											<?php
 											echo $first->name; ?>
 										</div>
-										<?php
-										echo $selectMediaType == "livestream"
-											? '<div class="absolute absolute--full bg-primary"></div>'
-											: "";
-										echo $selectMediaType == "podcast"
-											? '<div class="absolute absolute--full bg-secondary"></div>'
-											: "";
-										echo $selectMediaType == "webinar"
-											? '<div class="absolute absolute--full bg-tertiary"></div>'
-											: "";
-										?>
+										<div class="absolute absolute--full bg-white"></div>
 									</div>
 								</div>
 								<?php
 							}
 							?>
-							<div
-								class="absolute absolute--full flex items-center justify-center translate-y-220 group-hover:translate-y-0 transition-all duration-500">
-								<?php
-								if ($selectMediaType == "livestream") { ?>
-									<img
-										src="<?php
-										echo get_stylesheet_directory_uri() .
-										     "/assets/img/icons/play-button-livestream.avif"; ?>"
-										loading="lazy" alt="play-button-livestream">
-									<?php
-								} elseif ($selectMediaType == "podcast") { ?>
-									<img
-										src="<?php
-										echo get_stylesheet_directory_uri() .
-										     "/assets/img/icons/play-button-podcast.avif"; ?>"
-										loading="lazy" alt="play-button-podcast">
-									<?php
-								} elseif ($selectMediaType == "webinar") { ?>
-									<img
-										src="<?php
-										echo get_stylesheet_directory_uri() .
-										     "/assets/img/icons/play-button-webinar.avif"; ?>"
-										loading="lazy" alt="play-button-webinar">
-									<?php
-								} ?>
-							</div>
 						</div>
 					</div>
 					<div class="mb-12">
 						<div class="flex items-center gap-32 sm:flex-wrap sm:gap-8">
 							<div class="flex items-center gap-8">
-								<div class="flex items-center">
+								<div class="font-family-secondary text-sm capitalize">
 									<?php
-									if ($selectMediaType == "livestream") { ?>
-										<img
-											src="<?php
-											echo get_stylesheet_directory_uri() .
-											     "/assets/img/icons/livestream-card-icon.svg"; ?>"
-											loading="lazy" alt="livestream-music">
-										<?php
-									} elseif ($selectMediaType == "podcast") { ?>
-										<img
-											class="size-24"
-											src="<?php
-											echo get_stylesheet_directory_uri() .
-											     "/assets/img/icons/podcast-card-icon.png"; ?>"
-											loading="lazy" alt="podcast-blue-microphone">
-										<?php
-									} elseif ($selectMediaType == "webinar") { ?>
-										<img
-											class="size-24"
-											src="<?php
-											echo get_stylesheet_directory_uri() .
-											     "/assets/img/icons/webinar-card-icon.png"; ?>"
-											loading="lazy" alt="webinar-person">
-										<?php
-									} ?>
+									$categories = get_the_category($q->post->ID);
+									if (!empty($categories)) {
+										if ($categories[0]->name == 'eBook') {
+											echo 'E-Book';
+										} elseif ($categories[0]->name == 'News') {
+											echo 'News';
+										} elseif ($categories[0]->name == 'Visibility Guide') {
+											echo 'Guide';
+										} elseif ($categories[0]->name == 'White Paper') {
+											echo 'White Paper';
+										} elseif ($categories[0]->name == 'Article') {
+											echo 'Article';
+										} else {
+											echo 'Blog';
+										}
+									}
+									?>
 								</div>
-								<?php
-								if ($selectMediaType) { ?>
-									<div class="font-family-secondary text-sm capitalize">
-										<?php
-										echo $selectMediaType; ?>
-									</div>
-									<?php
-								} ?>
 							</div>
 							<div class="flex items-center gap-8 text-sm font-light font-family-secondary">
 								<div>
 									<?php
-									echo get_the_date("F j, Y", $q->ID); ?>
+									echo get_the_date("F j, Y", $q->post->ID); ?>
 								</div>
 								<!--<div>•</div>
 								<div>6 min 25 sec</div>-->
@@ -198,15 +130,10 @@ if ($q->have_posts()): ?>
 				</div>
 				<div class="w-full tracking-[1.4px] text-sm" scn-text-limit="3">
 					<?php
-					if (get_the_excerpt($q->ID)) {
+					if (has_excerpt()) {
 						the_excerpt();
-					} elseif (get_field("livestream_description", $q->ID)) {
-						the_field("livestream_description", $q->ID);
-					} elseif (get_field("episode_summary", $q->ID)) {
-						the_field("episode_summary", $q->ID);
-					} elseif (get_field("webinar_description", $q->ID)) {
-						the_field("webinar_description", $q->ID);
-					} ?>
+					}
+					?>
 				</div>
 			</div>
 		</a>
