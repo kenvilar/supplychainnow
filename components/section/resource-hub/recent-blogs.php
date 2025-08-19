@@ -70,7 +70,7 @@ $sitePaddingClassnames = $args['sitePaddingClassnames'] ?? '';
 									if (!splideTargetEl) return;
 									var options = {
 										/*suggested options*/
-										type: 'loop', //'fade', //"slide", //"loop",
+										type: 'slide', //'fade', //"slide", //"loop",
 										arrows: true,
 										pagination: false,
 										/*custom options*/
