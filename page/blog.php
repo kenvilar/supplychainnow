@@ -14,7 +14,10 @@ $pageId = get_the_ID();
 			'tabNumber' => 2
 		]);
 		get_template_part('components/section/blog/featured-blogs');
-		get_template_part('components/section/blog/recent-blogs');
+		get_template_part('components/section/resource-hub/recent-blogs', null, [
+			'posts_per_page' => -1,
+			'sitePaddingClassnames' => 'pb-92',
+		]);
 		get_template_part('components/layout/footer/cta-footer-2');
 		?>
 	</div>
