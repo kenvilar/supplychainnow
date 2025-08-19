@@ -11,6 +11,27 @@ Template: bridge
 /*
 from webflow, start
 */
+@font-face {
+	font-family: Montserrat;
+	src: url(/wp-content/themes/bridge-child/assets/fonts/Montserrat-VariableFont_wght.ttf) format("truetype");
+	font-weight: 100 900;
+	font-style: normal;
+	font-display: swap
+}
+@font-face {
+	font-family: Roboto;
+	src: url(/wp-content/themes/bridge-child/assets/fonts/Roboto-VariableFont_wdth,wght.ttf) format("truetype");
+	font-weight: 100 900;
+	font-style: normal;
+	font-display: swap
+}
+@font-face {
+	font-family: Robotoserif;
+	src: url(/wp-content/themes/bridge-child/assets/fonts/RobotoSerif-VariableFont_GRAD,opsz,wdth,wght.ttf) format("truetype");
+	font-weight: 100 900;
+	font-style: normal;
+	font-display: swap
+}
 :root {
 	--_font-family---primary: Montserrat, Arial, sans-serif;
 	--_font-family---secondary: Roboto, Arial, sans-serif;

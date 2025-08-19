@@ -22,6 +22,7 @@ module.exports = {
 	],
 	theme: {
 		extend: {
+			fontFamily: {sans: ['Arial', 'sans-serif', 'Inter', 'system-ui', '-apple-system']},
 			spacing: gen(4000, 1),
 			width: gen(4000, 1),
 			height: gen(4000, 1),
