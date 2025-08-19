@@ -31,9 +31,18 @@
 							</p>
 						</div>
 						<div class="flex sm:justify-center">
-							<a href="/contact" class="btn primary w-inline-block">
-								<div>Get Started</div>
-							</a>
+							<?php
+							echo get_template_part('components/ui/btn', null, [
+								'text' => 'Get Started',
+								'link' => '/contact',
+								'style' => 'primary',
+								'class' => '',
+								/*'attributes' => [
+									'target' => '_blank',
+									'rel'    => 'noopener noreferrer',
+								],*/
+							]);
+							?>
 						</div>
 					</div>
 				</div>

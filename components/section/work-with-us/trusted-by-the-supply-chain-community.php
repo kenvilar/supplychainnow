@@ -190,15 +190,6 @@
 						</ul>
 					</div>
 				</div>
-				<div class="display-none w-embed">
-					<style>
-						html.wf-design-mode [slider-3] .splide__list {
-							display: flex;
-							flex-wrap: nowrap;
-							justify-content: center;
-						}
-					</style>
-				</div>
 				<div class="display-none w-embed w-script">
 					<script>
 						document.addEventListener('DOMContentLoaded', function () {

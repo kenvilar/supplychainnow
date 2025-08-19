@@ -101,9 +101,18 @@
 					</div>
 				</div>
 				<div class="flex justify-center">
-					<a href="/case-studies-customer-stories" class="btn primary w-inline-block">
-						<div>Read More</div>
-					</a>
+					<?php
+					echo get_template_part('components/ui/btn', null, [
+						'text' => 'Read More',
+						'link' => '/case-studies-customer-stories',
+						'style' => 'primary',
+						'class' => '',
+						/*'attributes' => [
+							'target' => '_blank',
+							'rel'    => 'noopener noreferrer',
+						],*/
+					]);
+					?>
 				</div>
 			</div>
 		</div>

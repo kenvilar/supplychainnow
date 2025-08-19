@@ -21,9 +21,18 @@
 						</p>
 					</div>
 					<div class="flex sm:justify-center">
-						<a href="#" class="btn primary w-inline-block">
-							<div>Download Now</div>
-						</a>
+						<?php
+						echo get_template_part('components/ui/btn', null, [
+							'text' => 'Download Now',
+							'link' => '#',
+							'style' => 'primary',
+							'class' => '',
+							/*'attributes' => [
+								'target' => '_blank',
+								'rel'    => 'noopener noreferrer',
+							],*/
+						]);
+						?>
 					</div>
 				</div>
 				<div class="max-w-580 w-full md:max-w-full">
