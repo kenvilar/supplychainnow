@@ -28,12 +28,6 @@
 											"compare" => "=",
 										],
 									],
-									[
-										"key" => "select_media_type",
-										"value" => ["webinar"],
-										"compare" => "IN",
-										"type" => "CHAR",
-									],
 								],
 							],
 							"attributes" => [],
