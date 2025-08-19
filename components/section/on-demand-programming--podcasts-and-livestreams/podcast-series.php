@@ -23,7 +23,7 @@
 								echo get_template_part('components/ui/card2', null, [
 									'q' => [
 										'posts_per_page' => -1,
-										's' => 'episode',
+										'search_title' => 'episode',
 										"meta_query" => [
 											"relation" => "AND",
 											[
@@ -32,12 +32,9 @@
 												'compare' => 'LIKE',
 											],
 											[
-												"relation" => "OR",
-												[
-													"key" => "_wp_page_template",
-													"value" => "episode-detail.php",
-													"compare" => "=",
-												],
+												"key" => "_wp_page_template",
+												"value" => "episode-detail.php",
+												"compare" => "=",
 											],
 											[
 												"key" => "select_media_type",
