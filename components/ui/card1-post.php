@@ -49,11 +49,12 @@ $defaults_args = [
 	"orderby" => ["menu_order" => "ASC", "date" => "DESC"], //'rand',
 ];
 if (!empty($taxQueryTerms)) {
-	$args['tax_query'] = [
+	$defaults_args['tax_query'] = [
 		[
 			"taxonomy" => "category",
 			"field" => "slug",
 			"terms" => $taxQueryTerms,
+			'operator' => 'IN'
 		],
 	];
 }
