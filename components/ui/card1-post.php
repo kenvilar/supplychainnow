@@ -96,15 +96,15 @@ if ($q->have_posts()): ?>
 									<?php
 									$categories = get_the_category($q->post->ID);
 									if (!empty($categories)) {
-										if ($categories[0]->name == 'eBook') {
+										if ($categories[0]->name == 'eBook') { //slug is ebook
 											echo 'E-Book';
-										} elseif ($categories[0]->name == 'News') {
+										} elseif ($categories[0]->name == 'News') { //news
 											echo 'News';
-										} elseif ($categories[0]->name == 'Visibility Guide') {
+										} elseif ($categories[0]->name == 'Visibility Guide') { //visibility-guide
 											echo 'Guide';
-										} elseif ($categories[0]->name == 'White Paper') {
+										} elseif ($categories[0]->name == 'White Paper') { //white-paper
 											echo 'White Paper';
-										} elseif ($categories[0]->name == 'Article') {
+										} elseif ($categories[0]->name == 'Article') { //article
 											echo 'Article';
 										} else {
 											echo 'Blog';
