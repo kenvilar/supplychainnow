@@ -11,7 +11,7 @@ $pageId = get_the_ID();
 			<section class="section">
 				<div class="site-padding sm:py-60 pt-58">
 					<div class="mx-auto text-center">
-						<a href="#" class="font-semibold text-reg text-secondary">< Back to Episodes</a>
+						<a href="/podcasts-and-livestreams" class="font-semibold text-reg text-secondary">< Back to Episodes</a>
 					</div>
 				</div>
 			</section>
