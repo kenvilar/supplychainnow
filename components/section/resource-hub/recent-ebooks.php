@@ -1,8 +1,10 @@
 <?php
 
+$posts_per_page = $args['posts_per_page'] ?? 20;
+$sitePaddingClassnames = $args['sitePaddingClassnames'] ?? '';
 ?>
 <section class="section">
-	<div class="site-padding sm:py-60 py-40">
+	<div class="site-padding sm:py-60 py-40 <?= esc_attr($sitePaddingClassnames); ?>">
 		<div class="w-layout-blockcontainer max-w-1372 w-container">
 			<div class="mb-44">
 				<div class="mb-20">
@@ -22,7 +24,7 @@
 								<?php
 								echo get_template_part('components/ui/card2-post', null, [
 									'q' => [
-										'posts_per_page' => 20,
+										'posts_per_page' => $posts_per_page,
 									],
 									'attributes' => [],
 									'classNames' => 'splide__slide',

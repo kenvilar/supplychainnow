@@ -1,12 +1,15 @@
 <?php
 
+$sectionName = $args['sectionName'] ?? 'Content';
 ?>
 <section class="section">
 	<div class="site-padding sm:py-60 py-40">
 		<div class="w-layout-blockcontainer max-w-1248 w-container">
 			<div class="mb-44">
 				<div class="mb-20">
-					<h2 class="text-center">Featured Content</h2>
+					<h2 class="text-center">
+						Featured <?= $sectionName; ?>
+					</h2>
 				</div>
 				<?php
 				get_template_part('components/line-with-blinking-dot', null, [
