@@ -387,7 +387,7 @@ $pageId = get_the_ID();
 					</div>
 				</div>
 				<div class="w-full flex col-span-2">
-					<h4 styles-label="">Card 1</h4>
+					<h4 styles-label="">Card Page 1</h4>
 					<?php
 					echo get_template_part('components/ui/card1', null, [
 						'q' => [
@@ -400,7 +400,7 @@ $pageId = get_the_ID();
 					?>
 				</div>
 				<div class="w-full flex col-span-2">
-					<h4 styles-label="">Card 2</h4>
+					<h4 styles-label="">Card Page 2</h4>
 					<?php
 					echo get_template_part('components/ui/card2', null, [
 						'q' => [
@@ -409,6 +409,34 @@ $pageId = get_the_ID();
 						'attributes' => [],
 						'classNames' => '',
 						'noItemsFound' => '',
+					]);
+					?>
+				</div>
+				<div class="w-full flex col-span-2">
+					<h4 styles-label="">Card Post 1</h4>
+					<?php
+					echo get_template_part('components/ui/card1-post', null, [
+						'q' => [
+							'posts_per_page' => 3,
+						],
+						'attributes' => [],
+						'classNames' => '',
+						'noItemsFound' => '',
+						'taxQueryTerms' => [],
+					]);
+					?>
+				</div>
+				<div class="w-full flex col-span-2">
+					<h4 styles-label="">Card Post 2</h4>
+					<?php
+					echo get_template_part('components/ui/card2-post', null, [
+						'q' => [
+							'posts_per_page' => 3,
+						],
+						'attributes' => [],
+						'classNames' => '',
+						'noItemsFound' => '',
+						'taxQueryTerms' => [],
 					]);
 					?>
 				</div>
