@@ -19,7 +19,7 @@
 								<?php
 								echo get_template_part("components/ui/card2", null, [
 									"q" => [
-										"posts_per_page" => 200,
+										"posts_per_page" => -1,
 										"meta_query" => [
 											"relation" => "AND",
 											[
@@ -39,7 +39,7 @@
 										],
 									],
 									"attributes" => [],
-									"classNames" => "",
+									"classNames" => "splide__slide",
 									"noItemsFound" => "",
 								]); ?>
 							</div>
@@ -63,7 +63,7 @@
 									if (!splideTargetEl) return;
 									var options = {
 										/*suggested options*/
-										type: 'loop', //'fade', //"slide", //"loop",
+										type: 'slide', //'fade', //"slide", //"loop",
 										arrows: true,
 										pagination: false,
 										/*custom options*/
