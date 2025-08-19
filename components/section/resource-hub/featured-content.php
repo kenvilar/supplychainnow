@@ -2,6 +2,11 @@
 
 $override_args = $args["q"] ?? [];
 $sectionName = $args['sectionName'] ?? 'Content';
+$taxQueryTerms = $args["taxQueryTerms"] ?? [];
+
+$defaults_args = [
+	'posts_per_page' => 2,
+];
 ?>
 <section class="section">
 	<div class="site-padding sm:py-60 py-40">
@@ -20,16 +25,13 @@ $sectionName = $args['sectionName'] ?? 'Content';
 			</div>
 			<div class="grid grid-cols-2 gap-28 sm:grid-cols-1 w-full">
 				<?php
-				$defaults_args = [
-					'posts_per_page' => 2,
-				];
 				$query_args = array_merge($defaults_args, $override_args);
 				echo get_template_part('components/ui/card1-post', null, [
 					'q' => $query_args,
 					'attributes' => [],
 					'classNames' => '',
 					'noItemsFound' => '',
-					'taxQueryTerms' => [],
+					'taxQueryTerms' => $taxQueryTerms,
 				]);
 				?>
 			</div>
