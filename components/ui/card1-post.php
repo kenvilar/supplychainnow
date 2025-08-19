@@ -92,7 +92,24 @@ if ($q->have_posts()): ?>
 						<div class="flex items-center gap-32 sm:flex-wrap sm:gap-8">
 							<div class="flex items-center gap-8">
 								<div class="font-family-secondary text-sm capitalize">
-									asd
+									<?php
+									$categories = get_the_category($q->post->ID);
+									if (!empty($categories)) {
+										if ($categories[0]->name == 'eBook') {
+											echo 'E-Book';
+										} elseif ($categories[0]->name == 'News') {
+											echo 'News';
+										} elseif ($categories[0]->name == 'Visibility Guide') {
+											echo 'Guide';
+										} elseif ($categories[0]->name == 'White Paper') {
+											echo 'White Paper';
+										} elseif ($categories[0]->name == 'Article') {
+											echo 'Article';
+										} else {
+											echo 'Blog';
+										}
+									}
+									?>
 								</div>
 							</div>
 							<div class="flex items-center gap-8 text-sm font-light font-family-secondary">
