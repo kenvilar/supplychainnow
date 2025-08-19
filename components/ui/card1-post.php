@@ -70,8 +70,7 @@ if ($q->have_posts()): ?>
 	while ($q->have_posts()):
 		$q->the_post();
 		?>
-		<a href="<?php
-		the_permalink($q->post->ID); ?>" class="relative w-full group <?= $classNames; ?>" <?= $attr_string; ?>>
+		<a href="<?= get_permalink($q->post->ID); ?>" class="relative w-full group <?= $classNames; ?>" <?= $attr_string; ?>>
 			<div class="relative flex flex-col justify-between gap-20 h-full">
 				<div class="w-full">
 					<div class="mb-28">
