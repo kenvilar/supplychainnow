@@ -13,8 +13,15 @@ $pageId = get_the_ID();
 		get_template_part('components/section/resource-hub/tab-links', null, [
 			'tabNumber' => 6
 		]);
-		get_template_part('components/section/news/featured-news');
-		get_template_part('components/section/news/recent-news');
+		get_template_part('components/section/resource-hub/featured-content', null, [
+			'q' => [],
+			'sectionName' => 'News',
+			'taxQueryTerms' => ['news'],
+		]);
+		get_template_part('components/section/resource-hub/recent-news', null, [
+			'posts_per_page' => -1,
+			'sitePaddingClassnames' => 'pb-92',
+		]);
 		get_template_part('components/layout/footer/cta-footer-2');
 		?>
 	</div>

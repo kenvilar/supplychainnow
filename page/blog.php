@@ -14,7 +14,24 @@ $pageId = get_the_ID();
 			'tabNumber' => 2
 		]);
 		get_template_part('components/section/resource-hub/featured-content', null, [
-			'q' => [],
+			'q' => [
+				"tax_query" => [
+					[
+						"taxonomy" => "category",
+						"field" => "slug",
+						"terms" => [
+							"ebook",
+							"news",
+							"visibility-guide",
+							"white-paper",
+							"article",
+							"guest-post",
+							"weekly-summary"
+						],
+						"operator" => "NOT IN",
+					],
+				],
+			],
 			'sectionName' => 'Blogs',
 		]);
 		get_template_part('components/section/resource-hub/recent-blogs', null, [

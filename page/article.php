@@ -13,8 +13,15 @@ $pageId = get_the_ID();
 		get_template_part('components/section/resource-hub/tab-links', null, [
 			'tabNumber' => 5
 		]);
-		get_template_part('components/section/article/featured-articles');
-		get_template_part('components/section/article/recent-articles');
+		get_template_part('components/section/resource-hub/featured-content', null, [
+			'q' => [],
+			'sectionName' => 'Articles',
+			'taxQueryTerms' => ["article", "guest-post", "weekly-summary"],
+		]);
+		get_template_part('components/section/resource-hub/recent-articles', null, [
+			'posts_per_page' => -1,
+			'sitePaddingClassnames' => 'pb-92',
+		]);
 		get_template_part('components/layout/footer/cta-footer-2');
 		?>
 	</div>
