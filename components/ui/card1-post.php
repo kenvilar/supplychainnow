@@ -34,7 +34,7 @@ $defaults_args = [
 			[
 				"taxonomy" => "category",
 				"field" => "slug",
-				"terms" => ["ebook", "news", "visibility-guide", "white-paper", "article"],   // category slug
+				"terms" => ["ebook", "news", "visibility-guide", "white-paper", "article", "guest-post", "weekly-summary"],   // category slug
 				"operator" => "NOT IN",   // exclude these terms
 			],
 		],*/
