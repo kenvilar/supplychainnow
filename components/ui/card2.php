@@ -73,23 +73,23 @@ if ($q->have_posts()): ?>
 	while ($q->have_posts()):
 
 		$q->the_post();
-		$selectMediaType = get_field("select_media_type", $q->ID);
+		$selectMediaType = get_field("select_media_type", $q->post->ID);
 		?>
 		<a href="<?php
-		the_permalink($q->ID); ?>" class="relative w-full group <?= $classNames; ?>" <?= $attr_string ?>>
+		the_permalink($q->post->ID); ?>" class="relative w-full group <?= $classNames; ?>" <?= $attr_string ?>>
 			<div class="relative flex flex-col justify-between gap-20 h-full">
 				<div class="w-full">
 					<div class="mb-28">
 						<div class="overflow-hidden rounded-12 relative h-222 bg-cargogrey">
 							<img
 								src="<?php
-								echo get_the_post_thumbnail_url($q->ID)
-									? get_the_post_thumbnail_url($q->ID)
+								echo get_the_post_thumbnail_url($q->post->ID)
+									? get_the_post_thumbnail_url($q->post->ID)
 									: get_stylesheet_directory_uri() .
 									  "/assets/img/misc/default-card-img-thumbnail.avif"; ?>"
 								loading="lazy" alt="" class="image relative opacity-40">
 							<?php
-							$terms = get_the_terms($q->ID, "tags");
+							$terms = get_the_terms($q->post->ID, "tags");
 							if (!is_wp_error($terms) && !empty($terms)) {
 								$first = array_values($terms)[0]; ?>
 								<div class="absolute absolute--tl p-24 flex items-center justify-center">
@@ -184,7 +184,7 @@ if ($q->have_posts()): ?>
 							<div class="flex items-center gap-8 text-sm font-light font-family-secondary">
 								<div>
 									<?php
-									echo get_the_date("F j, Y", $q->ID); ?>
+									echo get_the_date("F j, Y", $q->post->ID); ?>
 								</div>
 								<!--<div>•</div>
 								<div>6 min 25 sec</div>-->
@@ -198,14 +198,14 @@ if ($q->have_posts()): ?>
 				</div>
 				<div class="w-full tracking-[1.4px] text-sm" scn-text-limit="3">
 					<?php
-					if (get_the_excerpt($q->ID)) {
+					if (get_the_excerpt($q->post->ID)) {
 						the_excerpt();
-					} elseif (get_field("livestream_description", $q->ID)) {
-						the_field("livestream_description", $q->ID);
-					} elseif (get_field("episode_summary", $q->ID)) {
-						the_field("episode_summary", $q->ID);
-					} elseif (get_field("webinar_description", $q->ID)) {
-						the_field("webinar_description", $q->ID);
+					} elseif (get_field("livestream_description", $q->post->ID)) {
+						the_field("livestream_description", $q->post->ID);
+					} elseif (get_field("episode_summary", $q->post->ID)) {
+						the_field("episode_summary", $q->post->ID);
+					} elseif (get_field("webinar_description", $q->post->ID)) {
+						the_field("webinar_description", $q->post->ID);
 					} ?>
 				</div>
 			</div>
