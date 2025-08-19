@@ -9,7 +9,7 @@ $pageId = get_the_ID();
 <div class="page-wrapper">
 	<div class="main-wrapper">
 		<?php
-		get_template_part('components/hero/ebook');
+		get_template_part('components/hero/resource-hub');
 		get_template_part('components/section/resource-hub/tab-links', null, [
 			'tabNumber' => 4
 		]);
