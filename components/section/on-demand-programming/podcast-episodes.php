@@ -20,8 +20,14 @@
 								echo get_template_part("components/ui/card2", null, [
 									"q" => [
 										"posts_per_page" => -1,
+										's' => 'episode',
 										"meta_query" => [
 											"relation" => "AND",
+											[
+												'key' => 'episode_title',
+												'value' => 'episode',
+												'compare' => 'LIKE',
+											],
 											[
 												"relation" => "OR",
 												[
