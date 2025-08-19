@@ -116,7 +116,11 @@ if ($q->have_posts()): ?>
 											echo 'Guide';
 										} elseif ($firstCategoryName == 'white-paper') { //white-paper
 											echo 'White Paper';
-										} elseif ($firstCategoryName == 'article') { //article
+										} elseif (
+											$firstCategoryName == 'article'
+											|| $firstCategoryName == 'guest-post'
+											|| $firstCategoryName == 'weekly-summary'
+										) { //article || guest-post || weekly-summary
 											echo 'Article';
 										} else {
 											echo 'Blog';
@@ -131,7 +135,11 @@ if ($q->have_posts()): ?>
 												echo 'Guide';
 											} elseif ($categories[0]->name == 'White Paper') { //white-paper
 												echo 'White Paper';
-											} elseif ($categories[0]->name == 'Article') { //article
+											} elseif (
+												$categories[0]->name == 'Article'
+												|| $categories[0]->name == 'Guest Post'
+												|| $categories[0]->name == 'Weekly Summary'
+											) { //article || guest-post || weekly-summary
 												echo 'Article';
 											} else {
 												echo 'Blog';
