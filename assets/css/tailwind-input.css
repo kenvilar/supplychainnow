@@ -39,7 +39,7 @@
 	h6 {
 		@apply text-sm;
 	}
-	h1, h2, h3 {
+	h1, h2, h3, .text-37, .text-45 {
 		@apply xs:wrap-break-word;
 	}
 	h1, h2, h3, h4, h5, h6 {
@@ -309,4 +309,28 @@
 		content: '';
 		display: none;
 	}
+}
+.text-15 {
+	font-size: 15px;
+	line-height: 18px
+}
+.text-22 {
+	font-size: 22px;
+	line-height: 27px
+}
+.text-26 {
+	font-size: 26px;
+	line-height: 31px
+}
+.text-36 {
+	font-size: 36px;
+	line-height: 42px
+}
+.text-37 {
+	font-size: 37px;
+	line-height: 45px
+}
+.text-45 {
+	font-size: 45px;
+	line-height: 55px
 }
