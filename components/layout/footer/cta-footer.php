@@ -13,9 +13,18 @@
 				</p>
 			</div>
 			<div class="flex justify-center">
-				<a href="/work-with-us" class="btn primary w-inline-block">
-					<div>Learn More About Working with Us</div>
-				</a>
+				<?php
+				echo get_template_part('components/ui/btn', null, [
+					'text' => 'Learn More About Working with Us',
+					'link' => '/work-with-us',
+					'style' => 'primary',
+					'class' => '',
+					/*'attributes' => [
+						'target' => '_blank',
+						'rel'    => 'noopener noreferrer',
+					],*/
+				]);
+				?>
 			</div>
 		</div>
 	</div>
