@@ -22,23 +22,14 @@
 								<?php
 								echo get_template_part('components/ui/card2', null, [
 									'q' => [
-										'posts_per_page' => 200,
-										"meta_query" => [
-											"relation" => "AND",
+										'posts_per_page' => -1,
+										"meta_query" => [],
+										'tax_query' => [
 											[
-												"relation" => "OR",
-												[
-													"key" => "_wp_page_template",
-													"value" => "episode-detail.php",
-													"compare" => "=",
-												],
-											],
-											[
-												"key" => "select_media_type",
-												"value" => ["podcast"],
-												"compare" => "IN",
-												"type" => "CHAR",
-											],
+												'taxonomy' => 'tags',
+												'field' => 'slug',
+												'terms' => ['women-in-supply-chain'],
+											]
 										],
 									],
 									'attributes' => [],
