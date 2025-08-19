@@ -37,6 +37,13 @@
 												"type" => "CHAR",
 											],
 										],
+										'tax_query' => [
+											[
+												'taxonomy' => 'tags',
+												'field' => 'slug',
+												'terms' => ['consumer-demand', 'customer-demands', 'demand', 'on-demand'],
+											]
+										],
 									],
 									"attributes" => [],
 									"classNames" => "splide__slide",
