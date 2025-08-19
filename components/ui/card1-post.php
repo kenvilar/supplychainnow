@@ -152,12 +152,6 @@ if ($q->have_posts()): ?>
 							<div class="flex items-center gap-8 text-sm font-light font-family-secondary">
 								<div>
 									<?php
-									$categories = get_the_category();
-									if (!empty($categories)) {
-										foreach ($categories as $category) {
-											echo esc_html($category->name) . ', ';
-										}
-									}
 									echo get_the_date("F j, Y", $q->post->ID); ?>
 								</div>
 								<!--<div>•</div>
