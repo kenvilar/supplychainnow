@@ -1,6 +1,3 @@
-<?php
-
-?>
 <div class="relative">
 	<section class="section bg-cargogrey text-white rounded-b-100">
 		<div class="site-padding sm:py-60 pt-200 pb-152 relative z-10 pb-200">
@@ -35,9 +32,17 @@
 									conversation.
 								</p>
 							</div>
-							<a href="/contact" class="btn primary w-inline-block">
-								<div>Register Now</div>
-							</a>
+							<?php
+							echo get_template_part("components/ui/btn", null, [
+								"text" => "Register Now",
+								"link" => "/contact",
+								"style" => "primary",
+								"class" => "",
+								/*'attributes' => [
+											 'target' => '_blank',
+											 'rel'    => 'noopener noreferrer',
+										 ],*/
+							]); ?>
 						</div>
 					</div>
 					<div class="card">
@@ -51,9 +56,17 @@
 									Sign up to save your spot.
 								</p>
 							</div>
-							<a href="/contact" class="btn tertiary w-inline-block">
-								<div>Register Now</div>
-							</a>
+							<?php
+							echo get_template_part("components/ui/btn", null, [
+								"text" => "Register Now",
+								"link" => "/contact",
+								"style" => "tertiary",
+								"class" => "",
+								/*'attributes' => [
+											 'target' => '_blank',
+											 'rel'    => 'noopener noreferrer',
+										 ],*/
+							]); ?>
 						</div>
 					</div>
 				</div>
