@@ -1,6 +1,6 @@
 <?php
 
-$posts_per_page = $args['posts_per_page'] ?? 20;
+$posts_per_page = $args['posts_per_page'] ?? -1;
 $sitePaddingClassnames = $args['sitePaddingClassnames'] ?? '';
 ?>
 <section class="section">
