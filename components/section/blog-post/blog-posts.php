@@ -1,20 +1,64 @@
 <?php
 
 $postId = get_the_ID();
-$categoryTitle = "Blogs";
-$categoryPage = "blog";
-if (has_category("White Paper", $postId)) {
-	$categoryTitle = "White Papers";
-	$categoryPage = "white-paper";
-} elseif (has_category("eBook", $postId)) {
-	$categoryTitle = "E-Books";
-	$categoryPage = "ebook";
-} elseif (has_category("News", $postId)) {
-	$categoryTitle = "News";
-	$categoryPage = "news";
-} elseif (has_category("Visibility Guide", $postId)) {
-	$categoryTitle = "Guides";
-	$categoryPage = "guide";
+$categories = get_the_category($postId);
+$categoryResultName = "";
+$categorySlug = '';
+
+if (isset($_GET['category'])) {
+	$categorySlug = sanitize_text_field($_GET['category']);
+}
+
+if ($categorySlug) {
+	if ($categorySlug == 'ebook') { //slug is ebook
+		$categoryResultName = 'E-Books';
+		$categorySlug = 'ebook';
+	} elseif ($categorySlug == 'news') { //news
+		$categoryResultName = 'News';
+		$categorySlug = 'news';
+	} elseif ($categorySlug == 'visibility-guide' || $categorySlug == 'guide') { //visibility-guide
+		$categoryResultName = 'Guides';
+		$categorySlug = 'visibility-guide';
+	} elseif ($categorySlug == 'white-paper') { //white-paper
+		$categoryResultName = 'White Papers';
+		$categorySlug = 'white-paper';
+	} elseif (
+		$categorySlug == 'article'
+		|| $categorySlug == 'guest-post'
+		|| $categorySlug == 'weekly-summary'
+	) { //article || guest-post || weekly-summary
+		$categoryResultName = 'Articles';
+		$categorySlug = 'article';
+	} else {
+		$categoryResultName = 'Blogs';
+		$categorySlug = 'blog';
+	}
+} else {
+	if (!empty($categories)) {
+		if ($categories[0]->name == 'eBook') { //slug is ebook
+			$categoryResultName = 'E-Books';
+			$categorySlug = 'ebook';
+		} elseif ($categories[0]->name == 'News') { //news
+			$categoryResultName = 'News';
+			$categorySlug = 'news';
+		} elseif ($categories[0]->name == 'Visibility Guide') { //visibility-guide
+			$categoryResultName = 'Guides';
+			$categorySlug = 'visibility-guide';
+		} elseif ($categories[0]->name == 'White Paper') { //white-paper
+			$categoryResultName = 'White Papers';
+			$categorySlug = 'white-paper';
+		} elseif (
+			$categories[0]->name == 'Article'
+			|| $categories[0]->name == 'Guest Post'
+			|| $categories[0]->name == 'Weekly Summary'
+		) { //article || guest-post || weekly-summary
+			$categoryResultName = 'Articles';
+			$categorySlug = 'article';
+		} else {
+			$categoryResultName = 'Blogs';
+			$categorySlug = 'blog';
+		}
+	}
 }
 ?>
 <div class="page-wrapper">
@@ -22,9 +66,8 @@ if (has_category("White Paper", $postId)) {
 		<section class="section">
 			<div class="site-padding sm:py-60 pt-58">
 				<div class="mx-auto text-center">
-					<a href="#" class="font-semibold text-reg text-secondary">
-						< Back to <?php
-						echo $categoryTitle; ?>
+					<a href="<?= '/' . $categorySlug; ?>" class="font-semibold text-reg text-secondary">
+						< Back to <?= $categoryResultName; ?>
 					</a>
 				</div>
 			</div>
@@ -121,8 +164,10 @@ if (has_category("White Paper", $postId)) {
 								</div>
 							</div>
 							<div class="rt--default tracking-[1.6px]">
-								<h1><?php
-									the_title(); ?></h1>
+								<h1>
+									<?php
+									the_title(); ?>
+								</h1>
 								<?php
 								the_content(); ?>
 							</div>
@@ -131,7 +176,7 @@ if (has_category("White Paper", $postId)) {
 							<div class="mb-36">
 								<div class="mb-20">
 									<h2 class="text-2xl">More <?php
-										echo $categoryTitle; ?></h2>
+										echo $categoryResultName; ?></h2>
 								</div>
 								<?php
 								get_template_part("components/line-with-blinking-dot", null, [
@@ -178,21 +223,21 @@ if (has_category("White Paper", $postId)) {
 									<?php
 									while ($q->have_posts()):
 										$q->the_post(); ?>
-										<a href="<?php
-										the_permalink($q->ID); ?>" class="relative w-full group">
+										<a href="<?= get_permalink($q->post->ID) . '?category=' . $categorySlug; ?>"
+										   class="relative w-full group">
 											<div class="relative flex flex-col justify-between gap-20 h-full">
 												<div class="w-full">
 													<div class="mb-28">
 														<div class="overflow-hidden rounded-12 relative h-222 bg-cargogrey">
 															<img
 																src="<?php
-																echo get_the_post_thumbnail_url($q->ID)
-																	? get_the_post_thumbnail_url($q->ID)
+																echo get_the_post_thumbnail_url($q->post->ID)
+																	? get_the_post_thumbnail_url($q->post->ID)
 																	: get_stylesheet_directory_uri() .
 																	  "/assets/img/misc/default-card-img-thumbnail.avif"; ?>"
 																loading="lazy" alt="" class="image relative opacity-40">
 															<?php
-															$terms = get_the_terms($q->ID, "post_tag");
+															$terms = get_the_terms($q->post->ID, "post_tag");
 															if (!is_wp_error($terms) && !empty($terms)) {
 																$first = array_values($terms)[0]; ?>
 																<div class="absolute absolute--tl p-24 flex items-center justify-center">
@@ -215,12 +260,12 @@ if (has_category("White Paper", $postId)) {
 															<div class="flex items-center gap-8">
 																<div class="font-family-secondary text-sm capitalize">
 																	<?php
-																	echo $categoryTitle; ?>
+																	echo $categoryResultName; ?>
 																</div>
 															</div>
 															<div class="flex items-center gap-8 text-sm font-light font-family-secondary">
 																<div><?php
-																	echo get_the_date("F j, Y", $q->ID); ?></div>
+																	echo get_the_date("F j, Y", $q->post->ID); ?></div>
 																<!--<div>•</div>
 																<div>6 min 25 sec</div>-->
 															</div>
@@ -228,12 +273,12 @@ if (has_category("White Paper", $postId)) {
 													</div>
 													<h3 class="font-semibold text-lg" scn-text-limit="2"><?php
 														the_title(
-															$q->ID,
+															$q->post->ID,
 														); ?></h3>
 												</div>
 												<div class="w-full tracking-[1.4px] text-sm" scn-text-limit="3">
 													<?php
-													if (get_the_excerpt($q->ID)) {
+													if (get_the_excerpt($q->post->ID)) {
 														the_excerpt();
 													} ?>
 												</div>
@@ -250,8 +295,8 @@ if (has_category("White Paper", $postId)) {
 							<div>
 								<?php
 								echo get_template_part("components/ui/btn", null, [
-									"text" => "More " . $categoryTitle,
-									"link" => "/" . $categoryPage,
+									"text" => "More " . $categoryResultName,
+									"link" => "/" . $categorySlug,
 									"style" => "primary",
 									"class" => "",
 									/*'attributes' => [
