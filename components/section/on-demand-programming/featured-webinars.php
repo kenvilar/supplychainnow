@@ -16,8 +16,8 @@
 					<div role="list" class="flex justify-center gap-28 sm:flex-col w-dyn-items">
 						<?php
 						echo get_template_part("components/ui/card1", null, [
-							"q" => [
-								"posts_per_page" => 2,
+							'q' => [
+								'posts_per_page' => 2,
 								"meta_query" => [
 									"relation" => "AND",
 									[
@@ -27,6 +27,12 @@
 											"value" => "webinar-detail.php",
 											"compare" => "=",
 										],
+									],
+									[
+										"key" => "select_media_type",
+										"value" => ["webinar"],
+										"compare" => "IN",
+										"type" => "CHAR",
 									],
 								],
 							],
