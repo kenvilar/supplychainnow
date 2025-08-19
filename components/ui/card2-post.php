@@ -48,6 +48,7 @@ $defaults_args = [
 	"post__not_in" => [], //[get_the_ID()],
 	"orderby" => ["menu_order" => "ASC", "date" => "DESC"], //'rand',
 ];
+$firstCategoryName = '';
 if (!empty($taxQueryTerms)) {
 	$defaults_args['tax_query'] = [
 		[
@@ -57,6 +58,7 @@ if (!empty($taxQueryTerms)) {
 			'operator' => 'IN'
 		],
 	];
+	$firstCategoryName = $taxQueryTerms[0];
 }
 
 $query_args = array_merge($defaults_args, $override_args);
@@ -105,19 +107,35 @@ if ($q->have_posts()): ?>
 								<div class="font-family-secondary text-sm capitalize">
 									<?php
 									$categories = get_the_category($q->post->ID);
-									if (!empty($categories)) {
-										if ($categories[0]->name == 'eBook') { //slug is ebook
+									if ($firstCategoryName) {
+										if ($firstCategoryName == 'ebook') { //slug is ebook
 											echo 'E-Book';
-										} elseif ($categories[0]->name == 'News') { //news
+										} elseif ($firstCategoryName == 'news') { //news
 											echo 'News';
-										} elseif ($categories[0]->name == 'Visibility Guide') { //visibility-guide
+										} elseif ($firstCategoryName == 'visibility-guide') { //visibility-guide
 											echo 'Guide';
-										} elseif ($categories[0]->name == 'White Paper') { //white-paper
+										} elseif ($firstCategoryName == 'white-paper') { //white-paper
 											echo 'White Paper';
-										} elseif ($categories[0]->name == 'Article') { //article
+										} elseif ($firstCategoryName == 'article') { //article
 											echo 'Article';
 										} else {
 											echo 'Blog';
+										}
+									} else {
+										if (!empty($categories)) {
+											if ($categories[0]->name == 'eBook') { //slug is ebook
+												echo 'E-Book';
+											} elseif ($categories[0]->name == 'News') { //news
+												echo 'News';
+											} elseif ($categories[0]->name == 'Visibility Guide') { //visibility-guide
+												echo 'Guide';
+											} elseif ($categories[0]->name == 'White Paper') { //white-paper
+												echo 'White Paper';
+											} elseif ($categories[0]->name == 'Article') { //article
+												echo 'Article';
+											} else {
+												echo 'Blog';
+											}
 										}
 									}
 									?>
