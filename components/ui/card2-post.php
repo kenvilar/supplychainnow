@@ -69,8 +69,64 @@ if ($q->have_posts()): ?>
 	<?php
 	while ($q->have_posts()):
 		$q->the_post();
+
+		$categories = get_the_category($q->post->ID);
+		$categoryResultName = "";
+		$categorySlug = '';
+		if ($firstCategoryName) {
+			if ($firstCategoryName == 'ebook') { //slug is ebook
+				$categoryResultName = 'E-Book';
+				$categorySlug = 'ebook';
+			} elseif ($firstCategoryName == 'news') { //news
+				$categoryResultName = 'News';
+				$categorySlug = 'news';
+			} elseif ($firstCategoryName == 'visibility-guide') { //visibility-guide
+				$categoryResultName = 'Guide';
+				$categorySlug = 'visibility-guide';
+			} elseif ($firstCategoryName == 'white-paper') { //white-paper
+				$categoryResultName = 'White Paper';
+				$categorySlug = 'white-paper';
+			} elseif (
+				$firstCategoryName == 'article'
+				|| $firstCategoryName == 'guest-post'
+				|| $firstCategoryName == 'weekly-summary'
+			) { //article || guest-post || weekly-summary
+				$categoryResultName = 'Article';
+				$categorySlug = 'article';
+			} else {
+				$categoryResultName = 'Blog';
+				$categorySlug = 'blog';
+			}
+		} else {
+			if (!empty($categories)) {
+				if ($categories[0]->name == 'eBook') { //slug is ebook
+					$categoryResultName = 'E-Book';
+					$categorySlug = 'ebook';
+				} elseif ($categories[0]->name == 'News') { //news
+					$categoryResultName = 'News';
+					$categorySlug = 'news';
+				} elseif ($categories[0]->name == 'Visibility Guide') { //visibility-guide
+					$categoryResultName = 'Guide';
+					$categorySlug = 'visibility-guide';
+				} elseif ($categories[0]->name == 'White Paper') { //white-paper
+					$categoryResultName = 'White Paper';
+					$categorySlug = 'white-paper';
+				} elseif (
+					$categories[0]->name == 'Article'
+					|| $categories[0]->name == 'Guest Post'
+					|| $categories[0]->name == 'Weekly Summary'
+				) { //article || guest-post || weekly-summary
+					$categoryResultName = 'Article';
+					$categorySlug = 'article';
+				} else {
+					$categoryResultName = 'Blog';
+					$categorySlug = 'blog';
+				}
+			}
+		}
 		?>
-		<a href="<?= get_permalink($q->post->ID); ?>" class="relative w-full group <?= $classNames; ?>" <?= $attr_string ?>>
+		<a href="<?= get_permalink($q->post->ID) . '?category=' . $categorySlug; ?>"
+		   class="relative w-full group <?= $classNames; ?>" <?= $attr_string ?>>
 			<div class="relative flex flex-col justify-between gap-20 h-full">
 				<div class="w-full">
 					<div class="mb-28">
@@ -104,48 +160,7 @@ if ($q->have_posts()): ?>
 						<div class="flex items-center gap-32 sm:flex-wrap sm:gap-8">
 							<div class="flex items-center gap-8">
 								<div class="font-family-secondary text-sm capitalize">
-									<?php
-									$categories = get_the_category($q->post->ID);
-									if ($firstCategoryName) {
-										if ($firstCategoryName == 'ebook') { //slug is ebook
-											echo 'E-Book';
-										} elseif ($firstCategoryName == 'news') { //news
-											echo 'News';
-										} elseif ($firstCategoryName == 'visibility-guide') { //visibility-guide
-											echo 'Guide';
-										} elseif ($firstCategoryName == 'white-paper') { //white-paper
-											echo 'White Paper';
-										} elseif (
-											$firstCategoryName == 'article'
-											|| $firstCategoryName == 'guest-post'
-											|| $firstCategoryName == 'weekly-summary'
-										) { //article || guest-post || weekly-summary
-											echo 'Article';
-										} else {
-											echo 'Blog';
-										}
-									} else {
-										if (!empty($categories)) {
-											if ($categories[0]->name == 'eBook') { //slug is ebook
-												echo 'E-Book';
-											} elseif ($categories[0]->name == 'News') { //news
-												echo 'News';
-											} elseif ($categories[0]->name == 'Visibility Guide') { //visibility-guide
-												echo 'Guide';
-											} elseif ($categories[0]->name == 'White Paper') { //white-paper
-												echo 'White Paper';
-											} elseif (
-												$categories[0]->name == 'Article'
-												|| $categories[0]->name == 'Guest Post'
-												|| $categories[0]->name == 'Weekly Summary'
-											) { //article || guest-post || weekly-summary
-												echo 'Article';
-											} else {
-												echo 'Blog';
-											}
-										}
-									}
-									?>
+									<?= $categoryResultName; ?>
 								</div>
 							</div>
 							<div class="flex items-center gap-8 text-sm font-light font-family-secondary">
