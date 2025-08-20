@@ -6,7 +6,7 @@
 		<div class="w-layout-blockcontainer max-w-1252 w-container">
 			<div class="mb-52">
 				<div class="mb-20">
-					<h2 class="text-center">Also Produced by SCN</h2>
+					<h2 class="text-center">Also Produced by Supply Chain Now</h2>
 				</div>
 				<?php
 				get_template_part('components/line-with-blinking-dot', null, [
