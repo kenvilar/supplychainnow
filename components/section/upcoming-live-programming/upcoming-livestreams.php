@@ -10,46 +10,49 @@
 			</div>
 			<div class="mb-92 relative">
 				<div class="w-layout-blockcontainer max-w-1252 w-container">
-					<div slider-1="" class="splide">
+					<script src="https://gateway.on24.com/view/orion/engagement-hub/dist/embed/embed.js" data-width="100%"
+					        data-height="auto"
+					        data-url="https://gateway.on24.com/wcc/eh/4818584/category/143073/upcoming-livestreams"></script>
+					<!--<div slider-1="" class="splide">
 						<div class="splide__track">
 							<div class="splide__list">
 								<?php
-								echo get_template_part("components/ui/card2", null, [
-									"q" => [
-										"posts_per_page" => -1,
-										"meta_query" => [
-											"relation" => "AND",
-											[
-												"relation" => "OR",
-												[
-													"key" => "_wp_page_template",
-													"value" => "livestream-detail.php",
-													"compare" => "=",
-												],
-											],
-											[
-												"key" => "select_media_type",
-												"value" => ["livestream"],
-												"compare" => "IN",
-												"type" => "CHAR",
-											],
-										],
-										"date_query" => [
-											[
-												"after" => current_time("Y-m-d"),
-												"inclusive" => true, // include today
-											],
-										],
-									],
-									"attributes" => [],
-									"classNames" => "splide__slide",
-									"noItemsFound" =>
-										'<p class="w-full text-center">No upcoming livestreams found.</p>',
-								]); ?>
+					/*								echo get_template_part("components/ui/card2", null, [
+														"q" => [
+															"posts_per_page" => -1,
+															"meta_query" => [
+																"relation" => "AND",
+																[
+																	"relation" => "OR",
+																	[
+																		"key" => "_wp_page_template",
+																		"value" => "livestream-detail.php",
+																		"compare" => "=",
+																	],
+																],
+																[
+																	"key" => "select_media_type",
+																	"value" => ["livestream"],
+																	"compare" => "IN",
+																	"type" => "CHAR",
+																],
+															],
+															"date_query" => [
+																[
+																	"after" => current_time("Y-m-d"),
+																	"inclusive" => true, // include today
+																],
+															],
+														],
+														"attributes" => [],
+														"classNames" => "splide__slide",
+														"noItemsFound" =>
+															'<p class="w-full text-center">No upcoming livestreams found.</p>',
+													]); */ ?>
 							</div>
 						</div>
 						<?php
-						get_template_part("components/splide-arrows"); ?>
+					/*						get_template_part("components/splide-arrows"); */ ?>
 						<div class="display-none w-embed">
 							<style>
 								[slider-1] .splide__arrow {
@@ -114,7 +117,7 @@
 								});
 							</script>
 						</div>
-					</div>
+					</div>-->
 				</div>
 			</div>
 		</div>
