@@ -19,8 +19,8 @@ $pageId = get_the_ID();
 				<div class="site-padding sm:py-60 pt-29">
 					<div class="mx-auto max-w-1010 w-full md:max-w-full">
 						<div class="overflow-hidden rounded-25 relative">
-							<div class="relative z-1 max-h-568 h-full sm:h-200">
-								<img class="image" src="
+							<div class="relative z-1 h-426 sm:h-300">
+								<img class="image object-contain!" src="
 															<?php
 								if (get_the_post_thumbnail_url($pageId, 'full')) {
 									echo get_the_post_thumbnail_url($pageId, 'full');
