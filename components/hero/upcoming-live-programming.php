@@ -35,7 +35,7 @@
 							<?php
 							echo get_template_part("components/ui/btn", null, [
 								"text" => "Register Now",
-								"link" => "/contact",
+								"link" => "/upcoming-livestreams",
 								"style" => "primary",
 								"class" => "",
 								/*'attributes' => [
@@ -59,7 +59,7 @@
 							<?php
 							echo get_template_part("components/ui/btn", null, [
 								"text" => "Register Now",
-								"link" => "/contact",
+								"link" => "/upcoming-webinars",
 								"style" => "tertiary",
 								"class" => "",
 								/*'attributes' => [
