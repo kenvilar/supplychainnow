@@ -138,7 +138,7 @@ if ($q->have_posts()): ?>
 									? get_the_post_thumbnail_url($q->post->ID)
 									: get_stylesheet_directory_uri() .
 									  "/assets/img/misc/default-card-img-thumbnail.avif"; ?>"
-								loading="lazy" alt="" class="image relative opacity-40"/>
+								loading="lazy" alt="" class="image relative opacity-90"/>
 							<?php
 							$terms = get_the_terms($q->post->ID, "post_tag");
 							if (!is_wp_error($terms) && !empty($terms)) {
