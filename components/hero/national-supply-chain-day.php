@@ -2,7 +2,7 @@
 
 ?>
 <section class="section bg-cargogrey text-white rounded-b-100">
-	<div class="site-padding sm:py-60 pt-200 pb-116 relative z-10">
+	<div class="site-padding sm:py-60 pt-200 pb-100 relative z-10">
 		<div class="w-layout-blockcontainer max-w-888 w-container">
 			<div class="pt-20 md:pt-0">
 				<div class="flex items-center justify-between gap-20 sm:flex-col">
@@ -12,9 +12,8 @@
 							loading="lazy" alt="national supply chain day" class="w-full h-full max-w-none fit-cover">
 					</div>
 					<div class="max-w-500 w-full md:max-w-full sm:text-center">
-						<h1 class="font-family-alternate font-normal text-xl tracking-[2.4px]">A Celebration and Spotlight of
-							the
-							Industry That Connects the World
+						<h1 class="font-family-alternate font-normal text-xl tracking-[2.4px]">
+							A Celebration and Spotlight of the Industry That Connects the World
 						</h1>
 					</div>
 				</div>

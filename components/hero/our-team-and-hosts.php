@@ -1,8 +1,8 @@
 <?php
 
 ?>
-<section class="section bg-cargogrey text--white rounded-b-100">
-	<div class="site-padding sm:py-60 pt-200 pb-116 relative z-10">
+<section class="section bg-cargogrey text-white rounded-b-100">
+	<div class="site-padding sm:py-60 pt-200 pb-100 relative z-10">
 		<div class="w-layout-blockcontainer pt-20 w-container text-center">
 			<div class="mb-20">
 				<img
@@ -12,11 +12,6 @@
 			</div>
 			<div class="mb-16">
 				<h1>Our Team &amp; Hosts</h1>
-			</div>
-			<div>
-				<p>
-					<br>
-				</p>
 			</div>
 		</div>
 	</div>

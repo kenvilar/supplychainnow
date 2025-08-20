@@ -2,8 +2,8 @@
 
 ?>
 <section class="section bg-cargogrey text--white rounded-b-100">
-	<div class="site-padding sm:py-60 pt-200 pb-152 relative z-10">
-		<div class="w-layout-blockcontainer pt-40 w-container text-center max-w-960">
+	<div class="site-padding sm:py-60 pt-200 pb-100 relative z-10">
+		<div class="w-layout-blockcontainer pt-20 w-container text-center max-w-960">
 			<div class="mb-20">
 				<img
 					src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/686b5ed7b668ce59a9f33f23_notebook-with-one-person.svg"
