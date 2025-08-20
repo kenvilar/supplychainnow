@@ -35,13 +35,15 @@
 							<?php
 							echo get_template_part("components/ui/btn", null, [
 								"text" => "Register Now",
-								"link" => "/upcoming-livestreams",
+								"link" => "#upcoming-livestreams",
 								"style" => "primary",
 								"class" => "",
-								/*'attributes' => [
-											 'target' => '_blank',
-											 'rel'    => 'noopener noreferrer',
-										 ],*/
+								'attributes' => [
+									'onclick' => "location.href='#upcoming-livestreams'"
+									/*'target' => '_blank',
+									'rel' => 'noopener noreferrer',*/
+								],
+								//onclick="location.href='#target'"
 							]); ?>
 						</div>
 					</div>
@@ -59,13 +61,14 @@
 							<?php
 							echo get_template_part("components/ui/btn", null, [
 								"text" => "Register Now",
-								"link" => "/upcoming-webinars",
+								"link" => "#upcoming-webinars",
 								"style" => "tertiary",
 								"class" => "",
-								/*'attributes' => [
-											 'target' => '_blank',
-											 'rel'    => 'noopener noreferrer',
-										 ],*/
+								'attributes' => [
+									'onclick' => "location.href='#upcoming-webinars'"
+									/*'target' => '_blank',
+									'rel' => 'noopener noreferrer',*/
+								],
 							]); ?>
 						</div>
 					</div>

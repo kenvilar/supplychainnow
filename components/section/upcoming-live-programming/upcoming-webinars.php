@@ -1,4 +1,4 @@
-<section class="section">
+<section class="section" id="upcoming-webinars">
 	<div class="site-padding sm:py-60 py-60">
 		<div class="w-layout-blockcontainer max-w-1372 relative w-container">
 			<div class="mb-44">

@@ -98,6 +98,9 @@ from webflow, start
 	--shadow3: 0px 4.982px 24.908px 0 rgba(49, 63, 74, 0.25);
 	--shadow4: 0 4.368px 21.839px 0 rgba(49, 63, 74, 0.10);
 }
+html {
+	scroll-behavior: smooth;
+}
 /* MAIN ELEMENTS */
 p a {
 	color: var(--paragraph-link-color, red);
