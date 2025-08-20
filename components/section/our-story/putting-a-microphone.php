@@ -41,13 +41,13 @@
 				<?php
 				echo get_template_part('components/ui/btn', null, [
 					'text' => 'Explore Sponsorship',
-					'link' => 'https://lp.supplychainnow.com/Supply-Chain-Now-Media-Kit/?utm_source=LandingPage&amp;utm_medium=Website&amp;utm_campaign=MediaKit',
+					'link' => '/media-kit',
 					'style' => 'primary',
 					'class' => '',
-					'attributes' => [
+					/*'attributes' => [
 						'target' => '_blank',
 						'rel' => 'noopener noreferrer',
-					],
+					],*/
 				]);
 				?>
 			</div>
