@@ -1,7 +1,7 @@
 <?php
 
 ?>
-<section class="section sm:py-60 py-64">
+<section class="section sm:py-60 py-64 pb-92">
 	<div class="site-padding">
 		<div class="w-layout-blockcontainer max-w-1388 w-container">
 			<div class="mb-44">

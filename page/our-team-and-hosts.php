@@ -12,8 +12,8 @@ $pageId = get_the_ID();
 		get_template_part('components/hero/our-team-and-hosts');
 		get_template_part('components/section/our-team-and-hosts/the-team-behind-the-voice-of-supply-chain');
 		get_template_part('components/section/our-team-and-hosts/awards-and-recognitions');
-		get_template_part('components/section/our-team-and-hosts/our-hosts-behind-the-microphone');
 		get_template_part('components/section/our-team-and-hosts/meet-the-team');
+		get_template_part('components/section/our-team-and-hosts/our-hosts-behind-the-microphone');
 		get_template_part('components/section/our-team-and-hosts/meet-our-hosts');
 		?>
 	</div>
