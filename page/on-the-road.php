@@ -10,7 +10,7 @@ $pageId = get_the_ID();
 	<div class="main-wrapper">
 		<?php
 		get_template_part('components/hero/on-the-road');
-		get_template_part('components/section/on-the-road/on-site-events');
+		get_template_part('components/section/on-the-road/section1');
 		get_template_part('components/section/on-the-road/do-you-want-to-partner');
 		get_template_part('components/layout/footer/cta-footer-2');
 		?>
