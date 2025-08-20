@@ -55,7 +55,7 @@
 											<a href="/on-demand-programming" class="footer-link">On-Demand Programming</a>
 										</li>
 										<li class="flex flex-col gap-12">
-											<a href="/programs" class="footer-link">Brands</a>
+											<a href="/brands" class="footer-link">Brands</a>
 											<ul role="list" class="m-0 flex flex-col gap-8 w-list-unstyled">
 												<li>
 													<a href="/program/supply-chain-now" class="footer-link-sub">Supply Chain Now</a>

@@ -41,7 +41,7 @@
 								]);
 								echo get_template_part('components/ui/btn', null, [
 									'text' => 'Subscribe for Updates',
-									'link' => '/programs',
+									'link' => '/brands',
 									'style' => 'secondary-outline',
 									'class' => '',
 									/*'attributes' => [
