@@ -219,7 +219,7 @@ if ($categorySlug) {
 									"orderby" => "rand", // random order
 								];
 								if (!empty($categorySlug) && $categorySlug != 'blog') {
-									$defaults_args['tax_query'] = [
+									$default_args['tax_query'] = [
 										[
 											"taxonomy" => "category",
 											"field" => "slug",
