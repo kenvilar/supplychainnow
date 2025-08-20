@@ -227,7 +227,7 @@
 		<div class="w-nav-overlay" data-wf-ignore="" id="w-nav-overlay-0"></div>
 	</div>
 	<div class="display-none">
-		<div class="display-none w-embed">
+		<!--<div class="display-none w-embed">
 			<style>
 				.navbar {
 					background-color: red;
@@ -446,7 +446,7 @@
 					}
 				}
 			</style>
-		</div>
+		</div>-->
 		<div class="display-none w-embed w-script">
 			<script>
 				/* ======Fixed Navbar Scroll Animation====== */
