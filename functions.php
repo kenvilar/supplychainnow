@@ -6,24 +6,6 @@ add_post_type_support('page', 'excerpt');
 if (!function_exists('bridge_qode_child_theme_enqueue_scripts')) {
 	function bridge_qode_child_theme_enqueue_scripts()
 	{
-		$isSplide = is_front_page() || is_page('about') || is_page('our-team-and-hosts')
-		            || is_page(
-			            'upcoming-live-programming'
-		            )
-		            || is_page('on-demand-programming')
-		            || is_singular('program')
-		            || is_page('work-with-us')
-		            || is_page('podcasts-and-livestreams')
-		            || is_page('webinars')
-		            || is_page('blog-news')
-		            || is_page('blog')
-		            || is_page(
-			            'white-paper'
-		            )
-		            || is_page('ebook')
-		            || is_page('article')
-		            || is_page('news')
-		            || is_page('guide') || is_page('dev');
 		// Remove parent style
 		wp_dequeue_style('bridge-stylesheet');
 		wp_deregister_style('bridge-stylesheet');
@@ -32,7 +14,7 @@ if (!function_exists('bridge_qode_child_theme_enqueue_scripts')) {
 		wp_deregister_style('bridge-style-dynamic');
 
 		//splide style
-		if ($isSplide) {
+		if (scn_is_splide_page()) {
 			wp_register_style('splide-style', get_stylesheet_directory_uri() . '/assets/css/splide.min.css');
 			wp_enqueue_style('splide-style');
 		}
@@ -58,25 +40,7 @@ if (!function_exists('bridge_qode_child_theme_enqueue_scripts')) {
 
 	function supplyChainNowScripts()
 	{
-		$isSplide = is_front_page() || is_page('about') || is_page('our-team-and-hosts')
-		            || is_page(
-			            'upcoming-live-programming'
-		            )
-		            || is_page('on-demand-programming')
-		            || is_singular('program')
-		            || is_page('work-with-us')
-		            || is_page('podcasts-and-livestreams')
-		            || is_page('webinars')
-		            || is_page('blog-news')
-		            || is_page('blog')
-		            || is_page(
-			            'white-paper'
-		            )
-		            || is_page('ebook')
-		            || is_page('article')
-		            || is_page('news')
-		            || is_page('guide') || is_page('dev');
-		if ($isSplide) {
+		if (scn_is_splide_page()) {
 			//splide script
 			wp_enqueue_script(
 				'splide-script',
@@ -365,6 +329,27 @@ add_filter('acf/the_field/allow_unsafe_html', function ($allowed, $selector) {
 }, 10, 2);
 
 add_filter('acf/the_field/escape_html_optin', '__return_true');
+
+function scn_is_splide_page()
+{
+	return is_front_page()
+	       || is_page('about')
+	       || is_page('our-team-and-hosts')
+	       || is_page('upcoming-live-programming')
+	       || is_page('on-demand-programming')
+	       || is_singular('program')
+	       || is_page('work-with-us')
+	       || is_page('podcasts-and-livestreams')
+	       || is_page('webinars')
+	       || is_page('blog-news')
+	       || is_page('blog')
+	       || is_page('white-paper')
+	       || is_page('ebook')
+	       || is_page('article')
+	       || is_page('news')
+	       || is_page('guide')
+	       || is_page('dev');
+}
 
 /*
 add_action('admin_head', 'my_custom_css');
