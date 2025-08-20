@@ -6,6 +6,11 @@
 get_header();
 $pageId = get_the_ID();
 ?>
+<style>
+	html {
+		scroll-behavior: smooth;
+	}
+</style>
 <div class="page-wrapper">
 	<div class="main-wrapper">
 		<?php

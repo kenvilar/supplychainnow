@@ -126,7 +126,7 @@
 				<div class="flex justify-center gap-12 sm:flex-col">
 					<?php
 					echo get_template_part('components/ui/btn', null, [
-						'text' => 'Browse Upcoming Events',
+						'text' => 'Browse Upcoming Live Programming',
 						'link' => '/upcoming-live-programming',
 						'style' => 'primary',
 						'class' => '',
