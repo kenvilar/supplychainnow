@@ -1,0 +1,51 @@
+.navbar {
+	background-color: transparent;
+}
+.w-nav {
+	z-index: 1000;
+	background: #ddd;
+	position: relative;
+}
+.nav-padding {
+	padding-top: 54px;
+	padding-bottom: 20px;
+}
+.nav-padding, .navmenu {
+	padding: 0 20px;
+}
+.nav-container {
+	max-width: 1250px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.w-container:before, .w-container:after {
+	content: " ";
+	grid-area: 1 / 1 / 2 / 2;
+	display: table;
+}
+.w-container:after {
+	clear: both;
+}
+.nav-wrapper {
+	display: flex;
+	justify-content: space-between;
+}
+.nav__brandlink {
+	display: flex;
+	align-items: center;
+}
+.w-nav-brand {
+	float: left;
+	color: #333;
+	text-decoration: none;
+	position: relative;
+}
+.w-nav-overlay {
+	width: 100%;
+	display: none;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	right: 0;
+	overflow: hidden;
+}

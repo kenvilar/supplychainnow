@@ -100,6 +100,8 @@
 	}
 }
 /* Custom Styles */
+@import "./header-with-tailwind.css";
+@import "./custom-with-tailwind.css";
 /*text color*/
 .text--black, .hover-text--black:hover {
 	@apply text-black;
