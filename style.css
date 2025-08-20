@@ -397,7 +397,6 @@ a#back_to_top, footer .footer_inner {
 .section {
 	position: relative;
 	overflow: hidden;
-	width: 100%;
 }
 .display-block {
 	display: block

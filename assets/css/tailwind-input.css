@@ -334,3 +334,10 @@
 	font-size: 45px;
 	line-height: 55px
 }
+ol, ul, menu {
+	list-style-type: disc;
+}
+.boxed .section .section_inner, .grid_section .section_inner {
+	max-width: 1200px;
+	@apply mx-auto w-full;
+}
