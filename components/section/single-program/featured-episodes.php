@@ -24,9 +24,10 @@ $programFeaturedEpisodes = get_field('program_featured_episodes', $pageId)
 							$featured_episodes = $programFeaturedEpisodes;
 							//echo '<pre>';
 							//print_r($featured_episodes);
+							//echo '</pre>';
 
 							$keys = array_keys($featured_episodes);
-							for ($i = 0; $i < count($featured_episodes); $i++) {
+							for ($i = 0; $i < 2; $i++) { //for ($i = 0; $i < count($featured_episodes); $i++) {
 								//echo $keys[$i] . "{<br>";
 								foreach ($featured_episodes[$keys[$i]] as $key => $value) {
 									//echo $key . " : " . $value . "<br>";
