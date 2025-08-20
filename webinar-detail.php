@@ -416,15 +416,16 @@ $pageId = get_the_ID();
 											</a>
 										<?php
 										endwhile;
-										wp_reset_postdata(); ?>
-									<?php
+										wp_reset_postdata();
+									else:
+										echo '<p class="w-full">No webinars found.</p>';
 									endif; ?>
 								</div>
 								<div>
 									<?php
 									echo get_template_part('components/ui/btn', null, [
 										'text' => 'More Webinars',
-										'link' => '#',
+										'link' => '/webinars',
 										'style' => 'primary',
 										'class' => '',
 										/*'attributes' => [
