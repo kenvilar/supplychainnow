@@ -24,13 +24,13 @@
 						<?php
 						echo get_template_part('components/ui/btn', null, [
 							'text' => 'Download Now',
-							'link' => '#',
+							'link' => 'https://now.supplychainnow.com/supply-chain-podcasts',
 							'style' => 'primary',
 							'class' => '',
-							/*'attributes' => [
+							'attributes' => [
 								'target' => '_blank',
-								'rel'    => 'noopener noreferrer',
-							],*/
+								'rel' => 'noopener noreferrer',
+							],
 						]);
 						?>
 					</div>
