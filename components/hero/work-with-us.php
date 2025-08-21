@@ -154,7 +154,7 @@
 									perPage: 1,
 									gap: 21,
 									// autoplay: true,
-									pauseOnHover: true,
+									pauseOnHover: false,
 									updateOnMove: true,
 									interval: 2000,
 									speed: 2000,

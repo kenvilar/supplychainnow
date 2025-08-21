@@ -55,7 +55,7 @@ $nav_classnames = $args['nav_classnames'] ?? ''; // '' || 'fixed'
 										<a href="/on-demand-programming" class="nav_dropdown_link w-dropdown-link" tabindex="0">On-Demand
 											Programming
 										</a>
-										<a href="/programs" class="nav_dropdown_link w-dropdown-link" tabindex="0">Brands</a>
+										<a href="/brands" class="nav_dropdown_link w-dropdown-link" tabindex="0">Brands</a>
 										<ul role="list" class="nav_dropdown_link-sub-list w-list-unstyled">
 											<li>
 												<a href="/program/supply-chain-now" class="nav_dropdown_link-sub" tabindex="0">Supply Chain
@@ -239,7 +239,7 @@ $nav_classnames = $args['nav_classnames'] ?? ''; // '' || 'fixed'
 				function navWhileScrollAnimation() {
 					window.addEventListener("scroll", () => {
 						const scrollPos = window.scrollY;
-						const offset = 60;
+						const offset = 100;
 						if (scrollPos > offset) {
 							document.querySelector(".nav").classList.add("bg-cargogrey");
 						} else if (scrollPos <= offset) {
