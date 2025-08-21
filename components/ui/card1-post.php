@@ -135,7 +135,7 @@ if ($q->have_posts()): ?>
 							<img
 								src="<?php
 								echo get_the_post_thumbnail_url($q->post->ID)
-									? get_the_post_thumbnail_url($q->post->ID)
+									? get_the_post_thumbnail_url($q->post->ID, 'medium_large')
 									: get_stylesheet_directory_uri() .
 									  "/assets/img/misc/default-card-img-thumbnail.avif"; ?>"
 								loading="lazy" alt="" class="image relative opacity-90"/>
