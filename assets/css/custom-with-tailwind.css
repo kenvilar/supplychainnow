@@ -487,6 +487,11 @@ a#back_to_top, footer .footer_inner {
 .grid2 .column2 {
 	display: none;
 }
+.wrapper_inner {
+	width: 100%;
+	overflow: hidden;
+}
+/* Media Screens */
 @media only screen and (max-width: 1200px) {
 	.container_inner {
 		width: 100%;
