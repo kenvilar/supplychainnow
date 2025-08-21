@@ -13,3 +13,4 @@ hover-
 grid  
 .svg  
 .avif  
+.pe-none => pointer-events-none

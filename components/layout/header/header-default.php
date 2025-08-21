@@ -1,7 +1,7 @@
 <?php
 
 ?>
-<!--<div class="nav">
+<div class="nav">
 	<div data-animation="default" class="navbar w-nav" data-easing2="ease" data-easing="ease" data-collapse="all"
 	     role="banner" data-no-scroll="1" data-duration="400" data-doc-height="1">
 		<div class="nav-padding">
@@ -10,7 +10,8 @@
 					<a href="/" aria-current="page" class="nav__brandlink w-nav-brand w--current" aria-label="home">
 						<div>
 							<img
-								src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/68689411745c184d8b7f1835_header-logo.svg"
+								src="<?php
+								echo get_stylesheet_directory_uri(); ?>/assets/img/logo/header-logo.svg"
 								loading="lazy" alt="header logo" class="image h-auto!">
 						</div>
 					</a>
@@ -142,7 +143,7 @@
 										<a href="/campaign-directory" class="nav_dropdown_link w-dropdown-link" tabindex="0">Campaign
 											Directory
 										</a>
-										<a href="#" class="nav_dropdown_link pe-none w-dropdown-link" tabindex="0">Network Partners</a>
+										<a href="#" class="nav_dropdown_link pointer-events-none w-dropdown-link" tabindex="0">Network Partners</a>
 										<ul role="list" class="nav_dropdown_link-sub-list w-list-unstyled">
 											<li>
 												<a href="/easypost" class="nav_dropdown_link-sub" tabindex="0">EasyPost</a>
@@ -154,7 +155,7 @@
 												<a href="/us-bank" class="nav_dropdown_link-sub" tabindex="0">U.S. Bank</a>
 											</li>
 										</ul>
-										<a href="#" class="nav_dropdown_link pe-none w-dropdown-link" tabindex="0">Campaign Partners</a>
+										<a href="#" class="nav_dropdown_link pointer-events-none w-dropdown-link" tabindex="0">Campaign Partners</a>
 										<ul role="list" class="nav_dropdown_link-sub-list w-list-unstyled">
 											<li>
 												<a href="/altium" class="nav_dropdown_link-sub" tabindex="0">Altium</a>
@@ -253,12 +254,13 @@
 					function clickNavHamburgerBtn() {
 						let navMenuBtn = document.querySelector('.navmenu__btn');
 						let mainWrapper = document.querySelector('.main-wrapper');
+						let footer = document.querySelector('footer');
 						let wNavOverlay = document.querySelector('.w-nav-overlay');
 						navMenuBtn.addEventListener('click', function (event) {
-							console.log('hey', event);
+							navMenuBtn.classList.toggle('w--open');
 							mainWrapper.classList.toggle('display-none');
-							wNavOverlay.classList.toggle('overflow-visible');
-							wNavOverlay.classList.toggle('h-full');
+							footer.classList.toggle('display-none');
+							['overflow-visible!', 'h-full!', 'block!'].forEach(c => wNavOverlay.classList.toggle(c));
 						});
 					}
 
@@ -269,4 +271,4 @@
 			</script>
 		</div>
 	</div>
-</div>-->
+</div>

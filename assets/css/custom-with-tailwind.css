@@ -373,6 +373,9 @@ a#back_to_top, footer .footer_inner {
 .z-3 {
 	z-index: 3;
 }
+.pe-none {
+	pointer-events: none
+}
 .image {
 	object-fit: cover;
 	width: 100%;
@@ -490,6 +493,9 @@ a#back_to_top, footer .footer_inner {
 	}
 	.md\:display-none {
 		display: none
+	}
+	[blinking-dot] {
+		display: none;
 	}
 }
 /* Mobile L */
