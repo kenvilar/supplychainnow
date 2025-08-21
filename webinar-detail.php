@@ -8,6 +8,7 @@ set_query_var('header_args', [
 ]);
 get_header();
 $pageId = get_the_ID();
+$webinar_button_link = get_field('webinar_button_link', $pageId);
 ?>
 	<div class="page-wrapper">
 		<div class="main-wrapper">
@@ -23,16 +24,27 @@ $pageId = get_the_ID();
 					<div class="mx-auto max-w-1010 w-full md:max-w-full">
 						<div class="overflow-hidden rounded-25 relative">
 							<div class="relative z-1 h-426 sm:h-300">
-								<img class="image object-contain!" src="
-															<?php
-								if (get_the_post_thumbnail_url($pageId, 'full')) {
-									echo get_the_post_thumbnail_url($pageId, 'full');
+								<a href="<?php
+								if ($webinar_button_link) {
+									echo esc_url($webinar_button_link);
+								} ?>" target="<?php
+								if ($webinar_button_link) {
+									echo '_blank';
 								} else {
-									if (get_field('thumbnail_upload', $pageId)) {
-										echo get_field('thumbnail_upload', $pageId);
-									}
+									echo '_self';
 								}
-								?>" alt="">
+								?>">
+									<img class="image object-contain!" src="
+															<?php
+									if (get_the_post_thumbnail_url($pageId, 'full')) {
+										echo get_the_post_thumbnail_url($pageId, 'full');
+									} else {
+										if (get_field('thumbnail_upload', $pageId)) {
+											echo get_field('thumbnail_upload', $pageId);
+										}
+									}
+									?>" alt="">
+								</a>
 							</div>
 							<div class="absolute absolute--full bg-cargogrey z--1"></div>
 						</div>
@@ -105,13 +117,10 @@ $pageId = get_the_ID();
 											?>
 										</div>
 										<div class="flex items-center gap-12">
-											<?php
-											$webinar_button_link = get_field('webinar_button_link', $pageId);
-											?>
 											<a href="<?php
 											if ($webinar_button_link) {
 												echo esc_url($webinar_button_link);
-											} ?>" class="btn primary-outline w-inline-block" target="<?php
+											} ?>" class="btn primary w-inline-block" target="<?php
 											if ($webinar_button_link) {
 												echo '_blank';
 											} else {
