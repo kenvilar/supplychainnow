@@ -2,8 +2,7 @@
 
 ?>
 <div class="flex gap-8 items-center">
-	<a href="https://www.linkedin.com/sharing/share-offsite/?url=<?php
-	echo urlencode(get_permalink()); ?>" data-social="linkedin" target="_blank" rel="noopener noreferrer"
+	<a href="javascript:void(0)" onclick="shareToLinkedin();" data-social="linkedin"
 	   class="text-secondary hover:text-primary">
 		<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
 		     fill="none">
@@ -12,9 +11,7 @@
 			      fill="currentColor"/>
 		</svg>
 	</a>
-	<a href="https://twitter.com/intent/tweet?url=<?php
-	echo urlencode(get_permalink()); ?>&text=<?php
-	echo urlencode(get_the_title()); ?>" data-social="twitter" target="_blank" rel="noopener noreferrer"
+	<a href="javascript:void(0)" onclick="shareToTwitter();" data-social="twitter"
 	   class="text-secondary hover:text-primary">
 		<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
 		     fill="none">
@@ -40,8 +37,7 @@
 			      fill="currentColor"/>
 		</svg>
 	</a>
-	<a href="https://www.facebook.com/sharer/sharer.php?u=<?php
-	echo urlencode(get_permalink()); ?>" data-social="facebook" target="_blank" rel="noopener noreferrer"
+	<a href="javascript:void(0)" onclick="shareToFacebook();" data-social="facebook"
 	   class="text-secondary hover:text-primary">
 		<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
 		     fill="none">
@@ -67,6 +63,27 @@
 	</a>
 </div>
 <script>
+	function shareToFacebook() {
+		window.open('https://www.facebook.com/sharer.php?u=<?php
+			echo urlencode(get_permalink()); ?>', 'sharer', 'toolbar=0,status=0,width=620,height=280');
+	}
+
+	function shareToTwitter() {
+		popUp = window.open('https://twitter.com/intent/tweet?url=<?php
+			echo urlencode(get_permalink()); ?>&text=<?php
+			echo urlencode(get_the_title()); ?>', 'popupwindow', 'scrollbars=yes,width=800,height=400');
+		popUp.focus();
+		return false;
+	}
+
+	function shareToLinkedin() {
+		popUp = window.open('https://linkedin.com/shareArticle?mini=true&url=<?php
+			echo urlencode(get_permalink()); ?>&title=<?php
+			echo urlencode(get_the_title()); ?>', 'popupwindow', 'scrollbars=yes,width=800,height=400');
+		popUp.focus();
+		return false
+	}
+
 	function copyToClipboard(e, text) {
 		e.preventDefault();
 
