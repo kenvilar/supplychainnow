@@ -98,7 +98,7 @@ if ($categorySlug) {
 		<section class="section">
 			<div class="site-padding sm:py-60 py-64">
 				<div class="mx-auto max-w-1249 w-full md:max-w-full">
-					<div class="flex gap-20 justify-between">
+					<div class="flex gap-20 justify-between md:flex-col">
 						<div class="max-w-775 w-full md:max-w-full">
 							<div class="mb-60">
 								<div class="flex gap-28 items-center">

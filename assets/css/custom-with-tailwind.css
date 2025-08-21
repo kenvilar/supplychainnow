@@ -483,6 +483,11 @@ a#back_to_top, footer .footer_inner {
 	opacity: 1;
 	color: var(--primary);
 }
+@media only screen and (max-width: 1200px) {
+	.container_inner {
+		width: 100%;
+	}
+}
 /* Tablet */
 @media screen and (max-width: 991px) {
 	.md\:display-block {
