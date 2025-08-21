@@ -41,13 +41,13 @@
 								]);
 								echo get_template_part('components/ui/btn', null, [
 									'text' => 'Subscribe for Updates',
-									'link' => '/brands',
+									'link' => 'https://linktr.ee/supplychainnow',
 									'style' => 'secondary-outline',
 									'class' => '',
-									/*'attributes' => [
+									'attributes' => [
 										'target' => '_blank',
-										'rel'    => 'noopener noreferrer',
-									],*/
+										'rel' => 'noopener noreferrer',
+									],
 								]);
 								?>
 							</div>
