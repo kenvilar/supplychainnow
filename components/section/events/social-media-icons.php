@@ -2,7 +2,8 @@
 
 ?>
 <div class="flex gap-8 items-center">
-	<a href="" data-social="linkedin" target="_blank" rel="noopener noreferrer"
+	<a href="https://www.linkedin.com/sharing/share-offsite/?url=<?php
+	echo urlencode(get_permalink()); ?>" data-social="linkedin" target="_blank" rel="noopener noreferrer"
 	   class="text-secondary hover:text-primary">
 		<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
 		     fill="none">
@@ -11,7 +12,9 @@
 			      fill="currentColor"/>
 		</svg>
 	</a>
-	<a href="#" data-social="twitter" target="_blank" rel="noopener noreferrer"
+	<a href="https://twitter.com/intent/tweet?url=<?php
+	echo urlencode(get_permalink()); ?>&text=<?php
+	echo urlencode(get_the_title()); ?>" data-social="twitter" target="_blank" rel="noopener noreferrer"
 	   class="text-secondary hover:text-primary">
 		<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
 		     fill="none">
@@ -22,7 +25,7 @@
 			      fill="currentColor"/>
 		</svg>
 	</a>
-	<a href="#" data-social="instagram" target="_blank" rel="noopener noreferrer"
+	<a href="https://www.instagram.com/supplychainnow/" data-social="instagram" target="_blank" rel="noopener noreferrer"
 	   class="text-secondary hover:text-primary">
 		<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
 		     fill="none">
@@ -37,7 +40,8 @@
 			      fill="currentColor"/>
 		</svg>
 	</a>
-	<a href="#" data-social="facebook" target="_blank" rel="noopener noreferrer"
+	<a href="https://www.facebook.com/sharer/sharer.php?u=<?php
+	echo urlencode(get_permalink()); ?>" data-social="facebook" target="_blank" rel="noopener noreferrer"
 	   class="text-secondary hover:text-primary">
 		<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
 		     fill="none">
@@ -46,8 +50,8 @@
 			      fill="currentColor"/>
 		</svg>
 	</a>
-	<a href="#" data-social="copy-link" target="_blank" rel="noopener noreferrer"
-	   class="text-secondary hover:text-primary">
+	<a href="#" onclick="copyToClipboard(event, '<?php
+	echo get_permalink(); ?>')" data-social="copy-link" class="text-secondary hover:text-primary">
 		<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
 		     fill="none">
 			<circle cx="12" cy="12" r="12" fill="currentColor"/>
@@ -62,3 +66,25 @@
 		</svg>
 	</a>
 </div>
+<script>
+	function copyToClipboard(e, text) {
+		e.preventDefault();
+
+		if (navigator.clipboard && navigator.clipboard.writeText) {
+			navigator.clipboard.writeText(text).then(() => {
+				alert("Link copied!");
+			}).catch(err => {
+				console.error("Clipboard error:", err);
+			});
+		} else {
+			// Fallback
+			const input = document.createElement("input");
+			input.value = text;
+			document.body.appendChild(input);
+			input.select();
+			document.execCommand("copy");
+			document.body.removeChild(input);
+			alert("Link copied!");
+		}
+	}
+</script>
