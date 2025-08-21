@@ -1,6 +1,9 @@
 <?php
 
 /* Homepage */
+set_query_var('header_args', [
+	'nav_classnames' => '', // '' || 'fixed'
+]);
 get_header();
 ?>
 	<div class="page-wrapper">

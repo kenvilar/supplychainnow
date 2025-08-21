@@ -3,6 +3,9 @@
  * Template Name: National Supply Chain Day v2
  */
 
+set_query_var('header_args', [
+	'nav_classnames' => 'fixed', // '' || 'fixed'
+]);
 get_header();
 $pageId = get_the_ID();
 ?>
