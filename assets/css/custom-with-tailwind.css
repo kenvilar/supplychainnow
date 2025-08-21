@@ -483,6 +483,10 @@ a#back_to_top, footer .footer_inner {
 	opacity: 1;
 	color: var(--primary);
 }
+/*override the bridge theme */
+.grid2 .column2 {
+	display: none;
+}
 @media only screen and (max-width: 1200px) {
 	.container_inner {
 		width: 100%;
