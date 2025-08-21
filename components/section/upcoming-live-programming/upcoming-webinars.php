@@ -2,9 +2,9 @@
 	<div class="site-padding sm:py-60 py-60">
 		<div class="w-layout-blockcontainer max-w-1372 relative w-container">
 			<div class="mb-44">
-				<div class="mb-20">
+				<!--<div class="mb-20">
 					<h2 class="text-center">Upcoming Webinars</h2>
-				</div>
+				</div>-->
 				<?php
 				get_template_part("components/line-with-blinking-dot"); ?>
 			</div>
