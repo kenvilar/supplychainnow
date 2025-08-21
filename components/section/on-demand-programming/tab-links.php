@@ -32,3 +32,4 @@ $tabNumber = $args["tabNumber"] ?? 1;
 	</div>
 	<div class="w-full h-1 bg-cargogrey/25 opacity-75 xs:display-none"></div>
 </section>
+<section class="py-20"></section>
