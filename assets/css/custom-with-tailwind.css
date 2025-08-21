@@ -293,6 +293,9 @@ a#back_to_top, footer .footer_inner {
 .main-wrapper {
 	z-index: 1;
 	position: relative;
+	section {
+		width: 100%;
+	}
 }
 .section {
 	position: relative;
@@ -493,9 +496,6 @@ a#back_to_top, footer .footer_inner {
 	}
 	.md\:display-none {
 		display: none
-	}
-	[blinking-dot] {
-		display: none;
 	}
 }
 /* Mobile L */

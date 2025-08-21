@@ -3,6 +3,10 @@
 * Template Name: Dev Styles v2
 */
 
+set_query_var('header_args', [
+	'nav_classnames' => '', // '' || 'fixed'
+]);
+
 get_header();
 $pageId = get_the_ID();
 ?>

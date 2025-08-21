@@ -5,6 +5,9 @@
 .navbar {
 	background-color: transparent;
 }
+.nav-padding, .navmenu {
+	padding: 0 20px;
+}
 .nav-padding {
 	padding-top: 54px;
 	padding-bottom: 20px;
@@ -45,9 +48,6 @@
 .navmenu {
 	align-items: stretch;
 	font-size: 14px;
-}
-.nav-padding, .navmenu {
-	padding: 0 20px;
 }
 .w-nav-menu {
 	float: right;
@@ -238,6 +238,26 @@
 	right: 0;
 	overflow: hidden;
 }
+/* If nav is fixed */
+.nav.fixed {
+	z-index: 30;
+	width: 100%;
+	transition: all .3s;
+	position: fixed
+}
+.nav.fixed .nav__brandlink {
+	filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(300deg) brightness(104%) contrast(101%);
+}
+.nav.fixed .nav-dropdown__toggle, .nav.fixed .nav__link {
+	color: white;
+}
+/* If nav is not fixed but nav background color is text-color or cargo grey */
+.nav.bg--textcolor:not(.fixed) .navlink__group .nav_dropdown_link, .nav.bg--textcolor:not(.fixed) .navlink__group .nav_dropdown_link-sub {
+	color: var(--text-color);
+}
+.nav.bg--textcolor:not(.fixed) .navlink__group .nav-dropdown__toggle {
+	color: white;
+}
 @media screen and (max-width: 991px) {
 	.nav {
 		background-color: white;
@@ -302,5 +322,19 @@
 		&.w--open .navmenu__icon-bar.bottom {
 			transform: rotate(-45deg) translateX(0px) translateY(0px);
 		}
+	}
+	[blinking-dot] {
+		display: none;
+	}
+	/* If nav is fixed */
+	.nav.fixed {
+		position: relative;
+	}
+	.nav.fixed .nav-dropdown__toggle, .nav.fixed .nav__link {
+		color: inherit;
+	}
+	/* If nav is not fixed but nav background color is text-color or cargo grey */
+	.nav.bg--textcolor:not(.fixed) .navlink__group .nav-dropdown__toggle {
+		color: inherit;
 	}
 }
