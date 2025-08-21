@@ -40,7 +40,8 @@
 					<div class="flex items-center gap-16 xs:flex-col">
 						<div class="text-sm font-semibold">FOLLOW US</div>
 						<div class="flex items-center gap-12">
-							<a href="#" class="w-inline-block">
+							<a href="https://www.facebook.com/SupplyChainNow" class="w-inline-block" target="_blank"
+							   rel="noopener noreferrer">
 								<div class="flex items-center text-secondary hover:text-primary w-embed">
 									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
 										<path fill-rule="evenodd" clip-rule="evenodd"
@@ -49,7 +50,8 @@
 									</svg>
 								</div>
 							</a>
-							<a href="#" class="w-inline-block">
+							<a href="https://www.instagram.com/supplychainnow/" class="w-inline-block" target="_blank"
+							   rel="noopener noreferrer">
 								<div class="flex items-center text-secondary hover:text-primary w-embed">
 									<svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
 										<path
@@ -64,7 +66,8 @@
 									</svg>
 								</div>
 							</a>
-							<a href="#" class="w-inline-block">
+							<a href="https://www.linkedin.com/company/supply-chain-now/" class="w-inline-block" target="_blank"
+							   rel="noopener noreferrer">
 								<div class="flex items-center text-secondary hover:text-primary w-embed">
 									<svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
 										<path fill-rule="evenodd" clip-rule="evenodd"
@@ -73,7 +76,7 @@
 									</svg>
 								</div>
 							</a>
-							<a href="#" class="w-inline-block">
+							<a href="https://x.com/_supplychainnow" class="w-inline-block" target="_blank" rel="noopener noreferrer">
 								<div class="flex items-center text-secondary hover:text-primary w-embed">
 									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
 										<path d="M14.9424 17.0607H16.5501L9.14998 6.7032H7.54231L14.9424 17.0607Z"
@@ -84,7 +87,8 @@
 									</svg>
 								</div>
 							</a>
-							<a href="#" class="w-inline-block">
+							<a href="https://www.youtube.com/channel/UCuqKDp8uxinIM8ORIOLr0qw" class="w-inline-block" target="_blank"
+							   rel="noopener noreferrer">
 								<div class="flex items-center text-secondary hover:text-primary w-embed">
 									<svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
 										<path d="M14.7074 11.8644L11.593 10.0847V13.6441L14.7074 11.8644Z" fill="currentColor"></path>

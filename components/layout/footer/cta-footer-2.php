@@ -9,7 +9,7 @@
 			</div>
 			<ul role="list" class="flex items-center justify-center gap-16 m-0 w-list-unstyled">
 				<li class="flex">
-					<a href="https://www.facebook.com/SupplyChainNow" target="_blank"
+					<a href="https://www.facebook.com/SupplyChainNow" target="_blank" rel="noopener noreferrer"
 					   class="text-white hover:text-primary w-inline-block">
 						<div class="flex items-center justify-center w-embed">
 							<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
@@ -21,7 +21,7 @@
 					</a>
 				</li>
 				<li class="flex">
-					<a href="https://www.instagram.com/supplychainnow/" target="_blank"
+					<a href="https://www.instagram.com/supplychainnow/" target="_blank" rel="noopener noreferrer"
 					   class="text-white hover:text-primary w-inline-block">
 						<div class="flex w-embed">
 							<svg xmlns="http://www.w3.org/2000/svg" width="37" height="36" viewBox="0 0 37 36" fill="none">
@@ -39,7 +39,7 @@
 					</a>
 				</li>
 				<li class="flex">
-					<a href="https://www.linkedin.com/company/supply-chain-now/" target="_blank"
+					<a href="https://www.linkedin.com/company/supply-chain-now/" target="_blank" rel="noopener noreferrer"
 					   class="text-white hover:text-primary w-inline-block">
 						<div class="flex items-center justify-center w-embed">
 							<svg xmlns="http://www.w3.org/2000/svg" width="37" height="36" viewBox="0 0 37 36" fill="none">
@@ -51,7 +51,7 @@
 					</a>
 				</li>
 				<li class="flex">
-					<a href="https://x.com/_supplychainnow" target="_blank"
+					<a href="https://x.com/_supplychainnow" target="_blank" rel="noopener noreferrer"
 					   class="text-white hover:text-primary w-inline-block">
 						<div class="flex items-center justify-center w-embed">
 							<svg xmlns="http://www.w3.org/2000/svg" width="37" height="36" viewBox="0 0 37 36" fill="none">
@@ -65,7 +65,7 @@
 					</a>
 				</li>
 				<li class="flex">
-					<a href="https://www.youtube.com/channel/UCuqKDp8uxinIM8ORIOLr0qw" target="_blank"
+					<a href="https://www.youtube.com/channel/UCuqKDp8uxinIM8ORIOLr0qw" target="_blank" rel="noopener noreferrer"
 					   class="text-white hover:text-primary w-inline-block">
 						<div class="flex w-embed">
 							<svg xmlns="http://www.w3.org/2000/svg" width="37" height="36" viewBox="0 0 37 36" fill="none">
