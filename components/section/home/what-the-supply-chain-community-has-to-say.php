@@ -12,7 +12,7 @@
 			<div>
 				<div class="w-layout-blockcontainer max-w-1064 sm:relative w-container">
 					<div slider-4="" class="splide">
-						<div class="splide__track">
+						<div class="splide__track pb-20">
 							<div class="splide__list">
 								<?php
 								$q = new WP_Query([

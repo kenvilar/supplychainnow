@@ -17,6 +17,7 @@ $pageId = get_the_ID();
 		get_template_part('components/section/case-studies-customer-stories/quote-1');
 		get_template_part('components/section/case-studies-customer-stories/case-study-2');
 		get_template_part('components/section/case-studies-customer-stories/quote-2');
+		get_template_part('components/section/home/what-the-supply-chain-community-has-to-say');
 		get_template_part('components/layout/footer/cta-footer');
 		?>
 	</div>
