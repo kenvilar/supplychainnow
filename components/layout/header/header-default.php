@@ -256,11 +256,18 @@ $nav_classnames = $args['nav_classnames'] ?? ''; // '' || 'fixed'
 				function clickNavHamburgerBtn() {
 					let navMenuBtn = document.querySelector('.navmenu__btn');
 					let mainWrapper = document.querySelector('.main-wrapper');
+					let wrapperInnerContent = document.querySelector('.wrapper_inner .content');
 					let footer = document.querySelector('footer');
 					let wNavOverlay = document.querySelector('.w-nav-overlay');
 					navMenuBtn.addEventListener('click', function (event) {
 						navMenuBtn.classList.toggle('w--open');
-						mainWrapper.classList.toggle('display-none');
+						if (mainWrapper) {
+							mainWrapper.classList.toggle('display-none');
+						} else {
+							if (wrapperInnerContent) {
+								wrapperInnerContent.classList.toggle('display-none');
+							}
+						}
 						footer.classList.toggle('display-none');
 						['overflow-visible!', 'h-full!', 'block!'].forEach(c => wNavOverlay.classList.toggle(c));
 					});

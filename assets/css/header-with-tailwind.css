@@ -337,4 +337,7 @@
 	.nav.bg--textcolor:not(.fixed) .navlink__group .nav-dropdown__toggle {
 		color: inherit;
 	}
+	.w-nav-overlay {
+		position: relative;
+	}
 }
