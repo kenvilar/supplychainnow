@@ -2,7 +2,7 @@
 
 ?>
 <div class="flex gap-8 items-center">
-	<a href="#" class="text-secondary hover:text-primary">
+	<a href="javascript:void(0)" onclick="shareToLinkedin();" data-social="linkedin" class="text-secondary hover:text-primary">
 		<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
 		     fill="none">
 			<path fill-rule="evenodd" clip-rule="evenodd"
@@ -10,7 +10,7 @@
 			      fill="currentColor"/>
 		</svg>
 	</a>
-	<a href="#" class="text-secondary hover:text-primary">
+	<a href="javascript:void(0)" onclick="shareToTwitter();" data-social="twitter" class="text-secondary hover:text-primary">
 		<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
 		     fill="none">
 			<path d="M14.7561 17.0607H16.3638L8.9637 6.7032H7.35603L14.7561 17.0607Z"
@@ -20,7 +20,8 @@
 			      fill="currentColor"/>
 		</svg>
 	</a>
-	<a href="#" class="text-secondary hover:text-primary">
+	<a href="https://www.instagram.com/supplychainnow/" data-social="instagram" target="_blank" rel="noopener noreferrer"
+	   class="text-secondary hover:text-primary">
 		<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
 		     fill="none">
 			<path
@@ -34,7 +35,7 @@
 			      fill="currentColor"/>
 		</svg>
 	</a>
-	<a href="#" class="text-secondary hover:text-primary">
+	<a href="javascript:void(0)" onclick="shareToFacebook();" data-social="facebook" class="text-secondary hover:text-primary">
 		<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
 		     fill="none">
 			<path fill-rule="evenodd" clip-rule="evenodd"
@@ -42,7 +43,8 @@
 			      fill="currentColor"/>
 		</svg>
 	</a>
-	<a href="#" class="text-secondary hover:text-primary">
+	<a href="#" onclick="copyToClipboard(event, '<?php
+	echo get_permalink(); ?>')" data-social="copy-link" class="text-secondary hover:text-primary">
 		<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
 		     fill="none">
 			<circle cx="12" cy="12" r="12" fill="currentColor"/>
@@ -57,3 +59,46 @@
 		</svg>
 	</a>
 </div>
+<script>
+	function shareToFacebook() {
+		window.open('https://www.facebook.com/sharer.php?u=<?php
+			echo urlencode(get_permalink()); ?>', 'sharer', 'toolbar=0,status=0,width=620,height=280');
+	}
+
+	function shareToTwitter() {
+		popUp = window.open('https://twitter.com/intent/tweet?url=<?php
+			echo urlencode(get_permalink()); ?>&text=<?php
+			echo urlencode(get_the_title()); ?>', 'popupwindow', 'scrollbars=yes,width=800,height=400');
+		popUp.focus();
+		return false;
+	}
+
+	function shareToLinkedin() {
+		popUp = window.open('https://linkedin.com/shareArticle?mini=true&url=<?php
+			echo urlencode(get_permalink()); ?>&title=<?php
+			echo urlencode(get_the_title()); ?>', 'popupwindow', 'scrollbars=yes,width=800,height=400');
+		popUp.focus();
+		return false
+	}
+
+	function copyToClipboard(e, text) {
+		e.preventDefault();
+
+		if (navigator.clipboard && navigator.clipboard.writeText) {
+			navigator.clipboard.writeText(text).then(() => {
+				alert("Link copied!");
+			}).catch(err => {
+				console.error("Clipboard error:", err);
+			});
+		} else {
+			// Fallback
+			const input = document.createElement("input");
+			input.value = text;
+			document.body.appendChild(input);
+			input.select();
+			document.execCommand("copy");
+			document.body.removeChild(input);
+			alert("Link copied!");
+		}
+	}
+</script>
