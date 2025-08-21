@@ -143,7 +143,9 @@
 										<a href="/campaign-directory" class="nav_dropdown_link w-dropdown-link" tabindex="0">Campaign
 											Directory
 										</a>
-										<a href="#" class="nav_dropdown_link pointer-events-none w-dropdown-link" tabindex="0">Network Partners</a>
+										<a href="#" class="nav_dropdown_link pointer-events-none w-dropdown-link" tabindex="0">Network
+											Partners
+										</a>
 										<ul role="list" class="nav_dropdown_link-sub-list w-list-unstyled">
 											<li>
 												<a href="/easypost" class="nav_dropdown_link-sub" tabindex="0">EasyPost</a>
@@ -155,7 +157,9 @@
 												<a href="/us-bank" class="nav_dropdown_link-sub" tabindex="0">U.S. Bank</a>
 											</li>
 										</ul>
-										<a href="#" class="nav_dropdown_link pointer-events-none w-dropdown-link" tabindex="0">Campaign Partners</a>
+										<a href="#" class="nav_dropdown_link pointer-events-none w-dropdown-link" tabindex="0">Campaign
+											Partners
+										</a>
 										<ul role="list" class="nav_dropdown_link-sub-list w-list-unstyled">
 											<li>
 												<a href="/altium" class="nav_dropdown_link-sub" tabindex="0">Altium</a>
@@ -228,47 +232,131 @@
 		<div class="w-nav-overlay" data-wf-ignore="" id="w-nav-overlay-0"></div>
 	</div>
 	<div class="display-none">
-		<div class="display-none w-embed w-script">
-			<script>
-				/* ======Fixed Navbar Scroll Animation====== */
-				document.addEventListener("DOMContentLoaded", (event) => {
-					function navWhileScrollAnimation() {
-						window.addEventListener("scroll", () => {
-							const scrollPos = window.scrollY;
-							const offset = 60;
-							if (scrollPos > offset) {
-								document.querySelector(".nav").classList.add("bg-cargogrey");
-							} else if (scrollPos <= offset) {
-								document.querySelector(".nav").classList.remove("bg-cargogrey");
+		<script>
+			/* ======Fixed Navbar Scroll Animation====== */
+			document.addEventListener("DOMContentLoaded", (event) => {
+				function navWhileScrollAnimation() {
+					window.addEventListener("scroll", () => {
+						const scrollPos = window.scrollY;
+						const offset = 60;
+						if (scrollPos > offset) {
+							document.querySelector(".nav").classList.add("bg-cargogrey");
+						} else if (scrollPos <= offset) {
+							document.querySelector(".nav").classList.remove("bg-cargogrey");
+						}
+					});
+				}
+
+				navWhileScrollAnimation();
+			});
+		</script>
+		<script>
+			document.addEventListener('DOMContentLoaded', (event) => {
+				function clickNavHamburgerBtn() {
+					let navMenuBtn = document.querySelector('.navmenu__btn');
+					let mainWrapper = document.querySelector('.main-wrapper');
+					let footer = document.querySelector('footer');
+					let wNavOverlay = document.querySelector('.w-nav-overlay');
+					navMenuBtn.addEventListener('click', function (event) {
+						navMenuBtn.classList.toggle('w--open');
+						mainWrapper.classList.toggle('display-none');
+						footer.classList.toggle('display-none');
+						['overflow-visible!', 'h-full!', 'block!'].forEach(c => wNavOverlay.classList.toggle(c));
+					});
+				}
+
+				setTimeout(function () {
+					clickNavHamburgerBtn();
+				}, 500);
+			});
+		</script>
+		<script>
+			document.addEventListener('DOMContentLoaded', () => {
+				function navMenuMoveToOverlayWhenMobile() {
+					const navMenu = document.querySelector('.navmenu.w-nav-menu');
+					const navOverlay = document.querySelector('.w-nav-overlay');
+					const brandLink = document.querySelector('a.nav__brandlink.w-nav-brand');
+
+					if (!navMenu || !navOverlay || !brandLink) return;
+
+					const mq = window.matchMedia('(max-width: 991px)');
+
+					const placeNav = (m) => {
+						if (m.matches) {
+							// <= 991px: put nav inside overlay
+							if (navMenu.parentElement !== navOverlay) {
+								navOverlay.appendChild(navMenu);
 							}
-						});
-					}
+						} else {
+							// > 991px: put nav right AFTER the brand link (same parent, as a sibling)
+							if (brandLink.nextElementSibling !== navMenu) {
+								brandLink.insertAdjacentElement('afterend', navMenu);
+							}
+						}
+					};
 
-					navWhileScrollAnimation();
-				});
-			</script>
-		</div>
-		<div class="display-none w-embed w-script">
-			<script>
-				document.addEventListener('DOMContentLoaded', (event) => {
-					function clickNavHamburgerBtn() {
-						let navMenuBtn = document.querySelector('.navmenu__btn');
-						let mainWrapper = document.querySelector('.main-wrapper');
-						let footer = document.querySelector('footer');
-						let wNavOverlay = document.querySelector('.w-nav-overlay');
-						navMenuBtn.addEventListener('click', function (event) {
-							navMenuBtn.classList.toggle('w--open');
-							mainWrapper.classList.toggle('display-none');
-							footer.classList.toggle('display-none');
-							['overflow-visible!', 'h-full!', 'block!'].forEach(c => wNavOverlay.classList.toggle(c));
-						});
-					}
+					placeNav(mq); // on load
+					mq.addEventListener('change', placeNav); // on resize breakpoint changes
+				}
 
-					setTimeout(function () {
-						clickNavHamburgerBtn();
-					}, 500);
-				});
-			</script>
-		</div>
+				navMenuMoveToOverlayWhenMobile();
+			});
+		</script>
+		<script>
+			document.addEventListener('DOMContentLoaded', () => {
+				function navMenuClickDuringMobile() {
+					const dropdowns = document.querySelectorAll('.nav__dropdown.w-dropdown');
+
+					// turn off Webflow hover to avoid fighting
+					dropdowns.forEach((el) => el.setAttribute('data-hover', 'false'));
+
+					const canHover = window.matchMedia(
+						'(hover: hover) and (pointer: fine)'
+					).matches;
+
+					dropdowns.forEach((dd) => {
+						const list = dd.querySelector('.nav-dropdown__list.w-dropdown-list');
+						const toggle = dd.querySelector('.w-dropdown-toggle');
+						if (!list || !toggle) return;
+
+						const open = () => {
+							dd.classList.add('w--open');
+							list.classList.add('w--open');
+							toggle.setAttribute('aria-expanded', 'true');
+							list.style.display = 'block'; // override inline style from Webflow
+						};
+
+						const close = () => {
+							dd.classList.remove('w--open');
+							list.classList.remove('w--open');
+							toggle.setAttribute('aria-expanded', 'false');
+							list.style.display = '';
+						};
+
+						// desktop hover
+						if (canHover) {
+							dd.addEventListener('mouseenter', open);
+							dd.addEventListener('mouseleave', close);
+						}
+
+						// mobile tap
+						const onToggle = (e) => {
+							e.preventDefault();
+							e.stopPropagation();
+							dd.classList.contains('w--open') ? close() : open();
+						};
+						toggle.addEventListener('click', onToggle);
+						toggle.addEventListener('touchend', onToggle);
+
+						// close when tapping outside
+						document.addEventListener('click', (e) => {
+							if (!dd.contains(e.target)) close();
+						});
+					});
+				}
+
+				navMenuClickDuringMobile();
+			});
+		</script>
 	</div>
 </div>
