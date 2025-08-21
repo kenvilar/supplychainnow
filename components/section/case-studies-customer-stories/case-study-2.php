@@ -2,7 +2,7 @@
 
 ?>
 <section class="section">
-	<div class="site-padding sm:py-60 pb-52">
+	<div class="site-padding sm:py-60 py-80">
 		<div class="w-layout-blockcontainer max-w-1252 w-container">
 			<div class="flex gap-20 justify-between sm:flex-col">
 				<div class="max-w-608 w-full md:max-w-full">

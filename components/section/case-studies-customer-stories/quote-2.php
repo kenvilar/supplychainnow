@@ -2,7 +2,7 @@
 
 ?>
 <section class="section">
-	<div class="site-padding sm:py-60 pb-96">
+	<div class="site-padding sm:py-60 py-100">
 		<div class="w-layout-blockcontainer max-w-1252 w-container">
 			<div class="card">
 				<div class="py-80 px-20 sm:py-60 sm:px-12">
