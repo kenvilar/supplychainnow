@@ -40,6 +40,25 @@
 	text-decoration: none;
 	position: relative;
 }
+.w-nav[data-collapse='all'] .w-nav-menu {
+	display: flex;
+}
+.navmenu {
+	align-items: stretch;
+	font-size: 14px;
+}
+.nav-padding, .navmenu {
+	padding: 0 20px;
+}
+.navmenu {
+	grid-column-gap: 29px;
+	grid-row-gap: 29px;
+	font-weight: 600;
+}
+.w-nav-menu {
+	float: right;
+	position: relative;
+}
 .w-nav-overlay {
 	width: 100%;
 	display: none;

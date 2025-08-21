@@ -1,7 +1,7 @@
 <?php
 
 ?>
-<div class="nav">
+<!--<div class="nav">
 	<div data-animation="default" class="navbar w-nav" data-easing2="ease" data-easing="ease" data-collapse="all"
 	     role="banner" data-no-scroll="1" data-duration="400" data-doc-height="1">
 		<div class="nav-padding">
@@ -11,7 +11,7 @@
 						<div>
 							<img
 								src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/68689411745c184d8b7f1835_header-logo.svg"
-								loading="lazy" alt="header logo" class="image h-auto">
+								loading="lazy" alt="header logo" class="image h-auto!">
 						</div>
 					</a>
 					<nav role="navigation" class="navmenu w-nav-menu">
@@ -489,4 +489,4 @@
 			</script>
 		</div>
 	</div>
-</div>
+</div>-->
