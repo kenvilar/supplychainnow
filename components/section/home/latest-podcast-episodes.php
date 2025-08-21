@@ -22,7 +22,7 @@
 								<?php
 								echo get_template_part('components/ui/card2', null, [
 									'q' => [
-										'posts_per_page' => 20,
+										'posts_per_page' => 10,
 										'meta_query' => [
 											'relation' => 'AND',
 											[
@@ -68,14 +68,14 @@
 											perMove: 1,
 											perPage: 3,
 											gap: 32,
-											autoplay: true,
+											autoplay: false,
 											pauseOnHover: true,
 											autoScroll: {
 												speed: 1,
 											},
 											intersection: {
 												inView: {
-													autoplay: true,
+													autoplay: false,
 												},
 												outView: {
 													autoplay: false,
