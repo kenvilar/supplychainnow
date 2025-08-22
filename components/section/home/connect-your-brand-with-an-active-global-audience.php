@@ -19,6 +19,23 @@
 						</div>
 					</div>
 				</div>
+				<div class="mb-32"></div>
+				<div class="max-w-1120 mx-auto">
+					<div class="flex justify-end sm:justify-center">
+						<?php
+						echo get_template_part('components/ui/btn', null, [
+							'text' => 'Book a call to learn more',
+							'link' => '/contact',
+							'style' => 'primary',
+							'class' => '',
+							/*'attributes' => [
+								'target' => '_blank',
+								'rel'    => 'noopener noreferrer',
+							],*/
+						]);
+						?>
+					</div>
+				</div>
 			</div>
 			<div class="max-w-1176 w-container">
 				<div class="mb-68 sm:mb-20">
