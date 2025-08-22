@@ -11,6 +11,9 @@ Template: bridge
 /*
 from webflow, start
 */
+html {
+	margin-top: 0 !important;
+}
 @font-face {
 	font-family: Montserrat;
 	src: url(/wp-content/themes/bridge-child/assets/fonts/Montserrat-VariableFont_wght.ttf) format("truetype");

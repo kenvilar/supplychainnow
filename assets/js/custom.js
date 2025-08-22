@@ -13,5 +13,25 @@ document.addEventListener("DOMContentLoaded", function () {
 		});
 	}
 
+	function removeWPAdminBar() {
+		const wpadminbar = document.querySelector("#wpadminbar");
+		const offset = 50;
+
+		window.addEventListener("scroll", () => {
+			const scrollPos = window.scrollY;
+
+			if (scrollPos > offset) {
+				if (!wpadminbar.classList.contains("hidden")) {
+					wpadminbar.classList.add("hidden");
+				}
+			} else {
+				if (wpadminbar.classList.contains("hidden")) {
+					wpadminbar.classList.remove("hidden");
+				}
+			}
+		});
+	}
+
 	textLimiter();
+	removeWPAdminBar();
 });
