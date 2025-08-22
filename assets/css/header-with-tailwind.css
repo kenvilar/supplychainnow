@@ -1,3 +1,7 @@
+.nav {
+	opacity: 100%;
+	transition: all .6s;
+}
 .w-nav {
 	z-index: 1000;
 	position: relative;
@@ -239,16 +243,18 @@
 	overflow: hidden;
 }
 /* If nav is fixed */
-.nav.fixed {
+.nav.fixed,
+.nav.scroll-fixed {
 	z-index: 30;
 	width: 100%;
-	transition: all .3s;
 	position: fixed
 }
-.nav.fixed .nav__brandlink {
+.nav.fixed .nav__brandlink,
+.nav.scroll-fixed .nav__brandlink {
 	filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(300deg) brightness(104%) contrast(101%);
 }
-.nav.fixed .nav-dropdown__toggle, .nav.fixed .nav__link {
+.nav.fixed .nav-dropdown__toggle, .nav.fixed .nav__link,
+.nav.scroll-fixed .nav-dropdown__toggle, .nav.scroll-fixed .nav__link {
 	color: white;
 }
 /* If nav is not fixed but nav background color is text-color or cargo grey */

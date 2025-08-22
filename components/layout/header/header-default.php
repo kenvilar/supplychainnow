@@ -237,13 +237,31 @@ $nav_classnames = $args['nav_classnames'] ?? ''; // '' || 'fixed'
 			/* ======Fixed Navbar Scroll Animation====== */
 			document.addEventListener("DOMContentLoaded", (event) => {
 				function navWhileScrollAnimation() {
+					const nav = document.querySelector(".nav");
+					const offset = 100;
+
 					window.addEventListener("scroll", () => {
 						const scrollPos = window.scrollY;
-						const offset = 100;
+
 						if (scrollPos > offset) {
-							document.querySelector(".nav").classList.add("bg-cargogrey");
-						} else if (scrollPos <= offset) {
-							document.querySelector(".nav").classList.remove("bg-cargogrey");
+							console.log('1');
+							if (!nav.classList.contains("scroll-fixed")) {
+								console.log('1.1');
+								nav.classList.add("scroll-fixed", "bg-cargogrey");
+							} else {
+								console.log('1.2');
+								nav.classList.add("bg-cargogrey");
+							}
+						} else {
+							console.log('2');
+							if (nav.classList.contains("bg-cargogrey")) {
+								console.log('2.1');
+								nav.classList.add('opacity-0!');
+								setTimeout(() => {
+									nav.classList.remove("scroll-fixed", "bg-cargogrey");
+									nav.classList.remove('opacity-0!');
+								}, 100);
+							}
 						}
 					});
 				}
