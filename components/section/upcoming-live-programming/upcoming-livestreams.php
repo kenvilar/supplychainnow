@@ -6,9 +6,10 @@
 					<h2 class="text-center">Upcoming Livestreams</h2>
 				</div>-->
 				<?php
-				get_template_part("components/line-with-blinking-dot"); ?>
+				//get_template_part("components/line-with-blinking-dot");
+				?>
 			</div>
-			<div class="mb-92 relative">
+			<div class="relative">
 				<div class="w-layout-blockcontainer max-w-1252 w-container">
 					<script src="https://gateway.on24.com/view/orion/engagement-hub/dist/embed/embed.js" data-width="100%"
 					        data-height="auto"
