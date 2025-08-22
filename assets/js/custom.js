@@ -22,12 +22,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
 			if (scrollPos > offset) {
 				if (!wpadminbar.classList.contains("hidden")) {
-					wpadminbar.classList.add("hidden");
+					wpadminbar.style.display = 'none';
 				}
 			} else {
-				if (wpadminbar.classList.contains("hidden")) {
-					wpadminbar.classList.remove("hidden");
-				}
+				wpadminbar.style.display = '';
 			}
 		});
 	}

@@ -243,11 +243,15 @@
 	overflow: hidden;
 }
 /* If nav is fixed */
-.nav.fixed,
-.nav.scroll-fixed {
+.nav.fixed {
 	z-index: 30;
 	width: 100%;
 	position: fixed
+}
+.nav.scroll-fixed {
+	z-index: 30;
+	width: 100%;
+	position: fixed !important;
 }
 .nav.fixed .nav__brandlink,
 .nav.scroll-fixed .nav__brandlink {
