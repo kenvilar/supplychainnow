@@ -261,6 +261,11 @@
 .nav.scroll-fixed .nav-dropdown__toggle, .nav.scroll-fixed .nav__link {
 	color: white;
 }
+.nav.fixed .btn.primary-outline.client-portal,
+.nav.scroll-fixed .btn.primary-outline.client-portal {
+	border: 1px solid #fff;
+	color: white;
+}
 /* If nav is not fixed but nav background color is text-color or cargo grey */
 .nav.bg--textcolor:not(.fixed) .navlink__group .nav_dropdown_link, .nav.bg--textcolor:not(.fixed) .navlink__group .nav_dropdown_link-sub {
 	color: var(--text-color);

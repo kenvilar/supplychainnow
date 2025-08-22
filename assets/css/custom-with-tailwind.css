@@ -88,6 +88,21 @@ p a {
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
+.btn.primary-outline.client-portal {
+	background: transparent;
+	border: 1px solid var(--primary);
+}
+.btn.primary-outline.client-portal:hover {
+	background: var(--primary);
+	color: white;
+	border: 1px solid var(--primary) !important;
+}
+.btn.primary-outline.client-portal:hover div {
+	background: transparent;
+	background-clip: initial;
+	-webkit-background-clip: initial;
+	-webkit-text-fill-color: initial;
+}
 .btn.secondary-outline {
 	border: 1px solid var(--transparent);
 	color: var(--secondary);

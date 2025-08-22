@@ -214,7 +214,7 @@ $nav_classnames = $args['nav_classnames'] ?? ''; // '' || 'fixed'
 								<div>Contact Us</div>
 							</a>
 							<a href="https://account.moxo.com/getstarted/#/freeLogin/EnterYourAccount" target="_blank"
-							   class="btn primary-outline w-inline-block">
+							   class="btn primary-outline w-inline-block client-portal">
 								<div>Client Portal</div>
 							</a>
 						</div>
