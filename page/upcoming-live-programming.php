@@ -19,7 +19,9 @@ $pageId = get_the_ID();
 		<?php
 		get_template_part('components/hero/upcoming-live-programming');
 		//get_template_part('components/section/upcoming-live-programming/featured-upcoming-programming');
-		get_template_part('components/ui/searchbar');
+		get_template_part('components/ui/searchbar', null, [
+			'site_padding' => 'pt-60 pb-52',
+		]);
 		get_template_part('components/section/upcoming-live-programming/upcoming-livestreams');
 		get_template_part('components/layout/footer/cta-footer-2');
 		?>
