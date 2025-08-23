@@ -321,7 +321,7 @@ function acf_add_allowed_iframe_tag($tags, $context)
 	return $tags;
 }
 
-apply_filters('acf/the_field/allow_unsafe_html', false, $selector, $post_id, $field_type, $field_object);
+// apply_filters('acf/the_field/allow_unsafe_html', false, $selector, $post_id, $field_type, $field_object);
 
 add_filter('acf/the_field/allow_unsafe_html', function ($allowed, $selector) {
 	// return true;
