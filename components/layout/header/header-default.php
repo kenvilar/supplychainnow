@@ -245,23 +245,18 @@ $nav_classnames = $args['nav_classnames'] ?? ''; // '' || 'nav-fixed'
 						const scrollPos = window.scrollY;
 
 						if (scrollPos > offset) {
-							console.log('1');
 							if (!nav.classList.contains("scroll-fixed")) {
-								console.log('1.1');
 								nav.classList.add("scroll-fixed");
 								if (!mq.matches) {
 									nav.classList.add("bg-cargogrey")
 								}
 							} else {
-								console.log('1.2');
 								if (!mq.matches) {
 									nav.classList.add("bg-cargogrey")
 								}
 							}
 						} else {
-							console.log('2');
 							if (nav.classList.contains("bg-cargogrey")) {
-								console.log('2.1');
 								nav.classList.add('opacity-0!');
 								setTimeout(() => {
 									nav.classList.remove("scroll-fixed", "bg-cargogrey");
