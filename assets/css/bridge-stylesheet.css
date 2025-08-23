@@ -2667,10 +2667,10 @@ div[data-element_type=container].qode_elementor_container_inner {
 }
 
 section.section {
-    display: block;
+    /* display: block;
     position: relative;
     padding: 50px 0;
-    overflow: hidden
+    overflow: hidden */
 }
 
 div.section {
