@@ -86,10 +86,15 @@ add_action('admin_init', 'hide_editor');
 
 function hide_editor()
 {
-	$post_id = $_GET['post']
-		? $_GET['post']
-		: $_POST['post_ID'];
-	if (!isset($post_id)) {
+	$post_id = null;
+
+	if (isset($_GET['post'])) {
+		$post_id = (int) $_GET['post'];
+	} elseif (isset($_POST['post_ID'])) {
+		$post_id = (int) $_POST['post_ID'];
+	}
+
+	if (empty($post_id)) {
 		return;
 	}
 
@@ -186,8 +191,8 @@ add_shortcode('program_shortcode', 'custom_program_shortcode');
 
 function custom_related_post_shortcode()
 {
-	$orig_post = $post;
 	global $post;
+	$orig_post = $post;
 	//console.log("shortcode");
 	$post_type = get_post_type($post);
 
