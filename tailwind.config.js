@@ -15,7 +15,7 @@ const genDecimal = (max, step = 0.1) =>
 		}),
 	);
 module.exports = {
-	important: true,
+	// important: true,
 	content: [
 		"./**/*.php", // theme PHP
 		"./assets/js/**/*.js",
