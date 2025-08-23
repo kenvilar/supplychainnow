@@ -14,6 +14,9 @@
 					<script src="https://gateway.on24.com/view/orion/engagement-hub/dist/embed/embed.js" data-width="100%"
 					        data-height="auto"
 					        data-url="https://gateway.on24.com/wcc/eh/4818584/category/143073/upcoming-livestreams"></script>
+					<script src="https://gateway.on24.com/view/orion/engagement-hub/dist/embed/embed.js" data-width="100%"
+					        data-height="auto"
+					        data-url="https://gateway.on24.com/wcc/eh/4818584/category/141465/upcoming-webinars"></script>
 					<!--<div slider-1="" class="splide">
 						<div class="splide__track">
 							<div class="splide__list">
