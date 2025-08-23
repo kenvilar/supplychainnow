@@ -1,6 +1,6 @@
 <?php
 
-$nav_classnames = $args['nav_classnames'] ?? ''; // '' || 'fixed'
+$nav_classnames = $args['nav_classnames'] ?? ''; // '' || 'nav-fixed'
 ?>
 <div class="nav <?= esc_attr($nav_classnames); ?>">
 	<div data-animation="default" class="navbar w-nav" data-easing2="ease" data-easing="ease" data-collapse="all"
@@ -239,6 +239,7 @@ $nav_classnames = $args['nav_classnames'] ?? ''; // '' || 'fixed'
 				function navWhileScrollAnimation() {
 					const nav = document.querySelector(".nav");
 					const offset = 100;
+					const mq = window.matchMedia('(max-width: 991px)');
 
 					window.addEventListener("scroll", () => {
 						const scrollPos = window.scrollY;
@@ -247,10 +248,15 @@ $nav_classnames = $args['nav_classnames'] ?? ''; // '' || 'fixed'
 							console.log('1');
 							if (!nav.classList.contains("scroll-fixed")) {
 								console.log('1.1');
-								nav.classList.add("scroll-fixed", "bg-cargogrey");
+								nav.classList.add("scroll-fixed");
+								if (!mq.matches) {
+									nav.classList.add("bg-cargogrey")
+								}
 							} else {
 								console.log('1.2');
-								nav.classList.add("bg-cargogrey");
+								if (!mq.matches) {
+									nav.classList.add("bg-cargogrey")
+								}
 							}
 						} else {
 							console.log('2');
@@ -259,6 +265,12 @@ $nav_classnames = $args['nav_classnames'] ?? ''; // '' || 'fixed'
 								nav.classList.add('opacity-0!');
 								setTimeout(() => {
 									nav.classList.remove("scroll-fixed", "bg-cargogrey");
+									nav.classList.remove('opacity-0!');
+								}, 100);
+							} else {
+								nav.classList.add('opacity-0!');
+								setTimeout(() => {
+									nav.classList.remove("scroll-fixed");
 									nav.classList.remove('opacity-0!');
 								}, 100);
 							}

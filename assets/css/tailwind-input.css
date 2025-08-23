@@ -16,38 +16,40 @@
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
 		-o-font-smoothing: antialiased;
+		color: inherit;
 	}
 	body {
-		@apply text-reg font-normal text-textcolor;
-		font-family: var(--font-family---primary);
+		@apply text-reg! font-normal! text-textcolor!;
+		font-family: var(--font-family---primary) !important;
 	}
 	h1 {
-		@apply text-4xl sm:text-3xl;
+		@apply text-4xl! sm:text-3xl!;
 	}
 	h2 {
-		@apply text-3xl xs:text-2xl;
+		@apply text-3xl! xs:text-2xl!;
 	}
 	h3 {
-		@apply text-2xl;
+		@apply text-2xl!;
 	}
 	h4 {
-		@apply text-lg;
+		@apply text-lg!;
 	}
 	h5 {
-		@apply text-md;
+		@apply text-md!;
 	}
 	h6 {
-		@apply text-sm;
+		@apply text-sm!;
 	}
 	h1, h2, h3, .text-37, .text-45 {
-		@apply xs:wrap-break-word;
+		@apply xs:wrap-break-word!;
 	}
-	h1, h2, h3, h4, h5, h6 {
-		@apply font-semibold;
-		margin: 0;
+	.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+		@apply font-semibold! m-0;
+		color: inherit !important;
 	}
 	p {
 		margin: 0;
+		color: inherit;
 	}
 	img {
 		vertical-align: middle;
@@ -62,13 +64,13 @@
 		display: flex;
 	}
 	.w-container {
-		margin-left: auto;
-		margin-right: auto
+		margin-left: auto !important;
+		margin-right: auto !important;
 	}
 	.w-layout-blockcontainer {
 		max-width: 940px;
-		margin-left: auto;
-		margin-right: auto;
+		margin-left: auto !important;
+		margin-right: auto !important;
 		display: block;
 	}
 	.w-list-unstyled {

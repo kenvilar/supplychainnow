@@ -7,11 +7,11 @@ if (!function_exists('bridge_qode_child_theme_enqueue_scripts')) {
 	function bridge_qode_child_theme_enqueue_scripts()
 	{
 		// Remove parent style
-		wp_dequeue_style('bridge-stylesheet');
-		wp_deregister_style('bridge-stylesheet');
+		//wp_dequeue_style('bridge-stylesheet');
+		//wp_deregister_style('bridge-stylesheet');
 		// Remove parent style
-		wp_dequeue_style('bridge-style-dynamic');
-		wp_deregister_style('bridge-style-dynamic');
+		//wp_dequeue_style('bridge-style-dynamic');
+		//wp_deregister_style('bridge-style-dynamic');
 
 		//splide style
 		if (scn_is_splide_page()) {

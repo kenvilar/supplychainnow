@@ -310,6 +310,7 @@ a#back_to_top, footer .footer_inner {
 	position: relative;
 	section {
 		width: 100%;
+		padding: 0 !important;
 	}
 }
 .section {
@@ -435,6 +436,7 @@ a#back_to_top, footer .footer_inner {
 	font-size: var(--_font-size---14-sm);
 	font-weight: 600;
 	line-height: normal;
+	color: inherit;
 }
 .footer-link-heading:hover, .footer-link:hover, .footer-link-sub:hover {
 	color: var(--primary);
@@ -499,6 +501,9 @@ a#back_to_top, footer .footer_inner {
 	color: var(--primary);
 }
 /*override the bridge theme */
+.content {
+	margin-top: 0;
+}
 .grid2 .column2 {
 	display: none;
 }

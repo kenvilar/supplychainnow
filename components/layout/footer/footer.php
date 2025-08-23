@@ -17,12 +17,12 @@
 							<h3 class="text-xl">The #1 Voice of Supply Chain</h3>
 							<div class="w-layout-vflex flex gap-12">
 								<div class="font-semibold text-xs">
-									<a href="mailto:info@supplychainnow.com" class="hover:text-primary! w-inline-block">
+									<a href="mailto:info@supplychainnow.com" class="text-white hover:text-primary! w-inline-block">
 										<div>info@supplychainnow.com</div>
 									</a>
 								</div>
 								<div class="font-semibold text-xs">
-									<a href="#" class="hover:text-primary! w-inline-block">
+									<a href="#" class="text-white hover:text-primary! w-inline-block">
 										<div>3904 N Druid Hills, Suite 184, Decatur, GA 30033, US</div>
 									</a>
 								</div>

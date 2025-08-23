@@ -1,6 +1,8 @@
 .nav {
 	opacity: 100%;
 	transition: all .6s;
+	z-index: 9999 !important;
+	/*position: relative;*/
 }
 .w-nav {
 	z-index: 1000;
@@ -243,7 +245,7 @@
 	overflow: hidden;
 }
 /* If nav is fixed */
-.nav.fixed {
+.nav.nav-fixed {
 	z-index: 30;
 	width: 100%;
 	position: fixed
@@ -253,24 +255,24 @@
 	width: 100%;
 	position: fixed !important;
 }
-.nav.fixed .nav__brandlink,
+.nav.nav-fixed .nav__brandlink,
 .nav.scroll-fixed .nav__brandlink {
 	filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(300deg) brightness(104%) contrast(101%);
 }
-.nav.fixed .nav-dropdown__toggle, .nav.fixed .nav__link,
+.nav.nav-fixed .nav-dropdown__toggle, .nav.nav-fixed .nav__link,
 .nav.scroll-fixed .nav-dropdown__toggle, .nav.scroll-fixed .nav__link {
 	color: white;
 }
-.nav.fixed .btn.primary-outline.client-portal,
+.nav.nav-fixed .btn.primary-outline.client-portal,
 .nav.scroll-fixed .btn.primary-outline.client-portal {
 	border: 1px solid #fff;
 	color: white;
 }
 /* If nav is not fixed but nav background color is text-color or cargo grey */
-.nav.bg--textcolor:not(.fixed) .navlink__group .nav_dropdown_link, .nav.bg--textcolor:not(.fixed) .navlink__group .nav_dropdown_link-sub {
+.nav.bg--textcolor:not(.nav-fixed) .navlink__group .nav_dropdown_link, .nav.bg--textcolor:not(.nav-fixed) .navlink__group .nav_dropdown_link-sub {
 	color: var(--text-color);
 }
-.nav.bg--textcolor:not(.fixed) .navlink__group .nav-dropdown__toggle {
+.nav.bg--textcolor:not(.nav-fixed) .navlink__group .nav-dropdown__toggle {
 	color: white;
 }
 @media screen and (max-width: 991px) {
@@ -345,17 +347,25 @@
 		display: none;
 	}
 	/* If nav is fixed */
-	.nav.fixed {
+	.nav.nav-fixed {
 		position: relative;
 	}
-	.nav.fixed .nav-dropdown__toggle, .nav.fixed .nav__link {
+	.nav.nav-fixed .nav-dropdown__toggle, .nav.nav-fixed .nav__link {
 		color: inherit;
 	}
 	/* If nav is not fixed but nav background color is text-color or cargo grey */
-	.nav.bg--textcolor:not(.fixed) .navlink__group .nav-dropdown__toggle {
+	.nav.bg--textcolor:not(.nav-fixed) .navlink__group .nav-dropdown__toggle {
 		color: inherit;
 	}
 	.w-nav-overlay {
 		position: relative;
+	}
+	.btn.primary-outline.client-portal {
+		border: 1px solid var(--primary) !important;
+		background: 0 0;
+		color: var(--primary) !important;
+	}
+	.btn.primary-outline.client-portal:hover {
+		color: white !important;
 	}
 }
