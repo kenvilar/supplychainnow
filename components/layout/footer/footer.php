@@ -193,7 +193,7 @@
 			</div>
 			<div class="flex items-center justify-between gap-20 text-center xs:flex-col">
 				<a href="/" aria-current="page" class="w-inline-block w--current">
-					<div class="text-2xs tracking-[1px]">© Supply Chain Now 2025. All Rights Reserved.</div>
+					<div class="text-2xs tracking-[1px] text-white">© Supply Chain Now 2025. All Rights Reserved.</div>
 				</a>
 				<ul role="list" class="flex items-center gap-12 w-list-unstyled">
 					<li class="flex">
