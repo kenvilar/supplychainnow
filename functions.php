@@ -13,14 +13,24 @@ if (!function_exists('bridge_qode_child_theme_enqueue_scripts')) {
 		//wp_dequeue_style('bridge-style-dynamic');
 		//wp_deregister_style('bridge-style-dynamic');
 
+		// Asset versions (cache busting)
+		$theme_dir = get_stylesheet_directory();
+		$ver_bridge_stylesheet = file_exists($theme_dir . '/assets/css/bridge-stylesheet.css') ? filemtime($theme_dir . '/assets/css/bridge-stylesheet.css') : null;
+		$ver_mej_controls = file_exists($theme_dir . '/assets/css/mej-controls.css') ? filemtime($theme_dir . '/assets/css/mej-controls.css') : null;
+		$ver_style_css = file_exists($theme_dir . '/style.css') ? filemtime($theme_dir . '/style.css') : null;
+		$ver_tailwind = file_exists($theme_dir . '/assets/css/tailwind-output.css') ? filemtime($theme_dir . '/assets/css/tailwind-output.css') : null;
+
 		wp_enqueue_style(
 			'bridge-stylesheet-copy-from-parent',
 			get_stylesheet_directory_uri() . '/assets/css/bridge-stylesheet.css',
+			[],
+			$ver_bridge_stylesheet
 		);
 
 		//splide style
 		if (scn_is_splide_page()) {
-			wp_register_style('splide-style', get_stylesheet_directory_uri() . '/assets/css/splide.min.css');
+			$ver_splide_css = file_exists($theme_dir . '/assets/css/splide.min.css') ? filemtime($theme_dir . '/assets/css/splide.min.css') : null;
+			wp_register_style('splide-style', get_stylesheet_directory_uri() . '/assets/css/splide.min.css', [], $ver_splide_css);
 			wp_enqueue_style('splide-style');
 		}
 
@@ -28,49 +38,56 @@ if (!function_exists('bridge_qode_child_theme_enqueue_scripts')) {
 			'mej-controls-style',
 			get_stylesheet_directory_uri() . '/assets/css/mej-controls.css',
 			[],
+			$ver_mej_controls
 		);
 
 		wp_enqueue_style(
 			'bridge-childstyle',
 			get_stylesheet_uri(),
 			[],
+			$ver_style_css
 		);
 
 		wp_enqueue_style(
 			'tailwind-style',
 			get_stylesheet_directory_uri() . '/assets/css/tailwind-output.css',
 			['bridge-childstyle'],
+			$ver_tailwind
 		);
 	}
 
 	function supplyChainNowScripts()
 	{
+		$theme_dir = get_stylesheet_directory();
 		if (scn_is_splide_page()) {
 			//splide script
+			$ver_splide_js = file_exists($theme_dir . '/assets/js/splide.min.js') ? filemtime($theme_dir . '/assets/js/splide.min.js') : null;
 			wp_enqueue_script(
 				'splide-script',
 				get_stylesheet_directory_uri() . '/assets/js/splide.min.js',
 				[],
-				false,
+				$ver_splide_js,
 				true // load in footer
 			);
 
 			//splide auto scroll extension
+			$ver_splide_ext = file_exists($theme_dir . '/assets/js/splide-extension-auto-scroll.min.js') ? filemtime($theme_dir . '/assets/js/splide-extension-auto-scroll.min.js') : null;
 			wp_enqueue_script(
 				'splide-extension-auto-scroll',
 				get_stylesheet_directory_uri() . '/assets/js/splide-extension-auto-scroll.min.js',
 				[],
-				false,
+				$ver_splide_ext,
 				true // load in footer
 			);
 		}
 
 		//custom script
+		$ver_custom_js = file_exists($theme_dir . '/assets/js/custom.js') ? filemtime($theme_dir . '/assets/js/custom.js') : null;
 		wp_enqueue_script(
 			'supply-chain-now-custom-script',
 			get_stylesheet_directory_uri() . '/assets/js/custom.js',
 			[],
-			false,
+			$ver_custom_js,
 			true // load in footer
 		);
 	}
