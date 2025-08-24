@@ -27,7 +27,9 @@ $pageId = get_the_ID();
 		scn_render_if_no_filters('components/section/on-demand-programming--podcasts-and-livestreams/podcast-series');
 		scn_render_if_no_filters('components/section/on-demand-programming--podcasts-and-livestreams/women-in-supply-chain');
 
-		get_template_part('components/ui/search_results');
+		get_template_part('components/ui/search_results', null, [
+			'media_type' => 'podcasts-and-livestreams',
+		]);
 
 		get_template_part('components/layout/footer/cta-footer-2');
 		?>

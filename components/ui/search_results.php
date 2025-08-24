@@ -1,4 +1,7 @@
 <?php
+
+$media_type = $args['media_type'] ?? ''; // 'podcasts-and-livestreams' || 'podcasts' || 'webinars' || 'livestreams'
+
 // Read query params (component only; no header/footer)
 $search_query = isset($_GET['s']) ? sanitize_text_field(wp_unslash($_GET['s'])) : '';
 // Support custom param `search` when using in-page search (avoids WP search routing)
@@ -61,6 +64,68 @@ if ($search_query !== '' || $industries !== '') {
         ],
         "orderby" => ["menu_order" => "ASC", "date" => "DESC"], //'rand',
     ];
+
+    if ($media_type !== '' && $media_type == 'podcasts-and-livestreams') {
+        $args['meta_query'][] = [
+            "relation" => "AND",
+            [
+                "relation" => "OR",
+                [
+                    "key" => "_wp_page_template",
+                    "value" => "episode-detail.php",
+                    "compare" => "=",
+                ],
+                [
+                    "key" => "_wp_page_template",
+                    "value" => "livestream-detail.php",
+                    "compare" => "=",
+                ],
+            ],
+        ];
+    }
+
+    if ($media_type !== '' && $media_type == 'podcasts') {
+        $args['meta_query'][] = [
+            "relation" => "AND",
+            [
+                "relation" => "OR",
+                [
+                    "key" => "_wp_page_template",
+                    "value" => "episode-detail.php",
+                    "compare" => "=",
+                ],
+            ],
+        ];
+    }
+
+    if ($media_type !== '' && $media_type == 'webinars') {
+        $args['meta_query'][] = [
+            "relation" => "AND",
+            [
+                "relation" => "OR",
+                [
+                    "key" => "_wp_page_template",
+                    "value" => "webinar-detail.php",
+                    "compare" => "=",
+                ],
+            ],
+        ];
+    }
+
+    if ($media_type !== '' && $media_type == 'livestreams') {
+
+        $args['meta_query'][] = [
+            "relation" => "AND",
+            [
+                "relation" => "OR",
+                [
+                    "key" => "_wp_page_template",
+                    "value" => "livestream-detail.php",
+                    "compare" => "=",
+                ],
+            ],
+        ];
+    }
 
     if ($industries !== '') {
         $args['tax_query'] = [
