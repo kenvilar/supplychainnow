@@ -96,7 +96,7 @@ if ($search_query !== '' || $industries !== '') {
                     ?>
                 </div>
                 <?php if ($results_query->have_posts()) : ?>
-                    <div class="mb-20 grid gap-32 gap-y-60 grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
+                    <div class="mb-60 grid gap-32 gap-y-60 grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
                         <?php while ($results_query->have_posts()) :
                             $results_query->the_post();
                             $selectMediaType = get_field("select_media_type", $q->post->ID);
@@ -265,7 +265,7 @@ if ($search_query !== '' || $industries !== '') {
                         ]
                     );
                     if ($pagination) {
-                        echo '<nav class="pagination mt-24">' . $pagination . '</nav>';
+                        echo '<div class="pagination mt-24">' . $pagination . '</div>';
                     }
                     wp_reset_postdata();
                     ?>
