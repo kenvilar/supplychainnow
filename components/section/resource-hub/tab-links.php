@@ -6,7 +6,7 @@ $tabNumber = $args['tabNumber'] ?? 1;
 	<div class="site-padding py-0">
 		<div class="w-layout-blockcontainer max-w-full w-container">
 			<div class="flex justify-center items-center sm:flex-col">
-				<a href="/blog-news" class="resource-hub-link w-inline-block <?php
+				<a href="/resource-hub" class="resource-hub-link w-inline-block <?php
 				echo $tabNumber == 1 ? 'w--current' : ''; ?>">
 					<div>All Content</div>
 				</a>

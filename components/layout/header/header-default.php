@@ -202,7 +202,7 @@ $nav_classnames = $args['nav_classnames'] ?? ''; // '' || 'nav-fixed'
 									</div>
 								</nav>
 							</div>
-							<a href="/blog-news" class="nav__link group w-inline-block">
+							<a href="/resource-hub" class="nav__link group w-inline-block">
 								<div class="absolute absolute--t flex justify-center opacity-0 group-hover:opacity-100">
 									<div blinking-dot="" class="size-8 rounded-8 bg-primary"></div>
 								</div>

@@ -184,7 +184,7 @@
 							</div>
 							<div>
 								<div class="w-layout-vflex flex gap-16">
-									<a href="/blog-news" class="footer-link-heading">Resource Hub</a>
+									<a href="/resource-hub" class="footer-link-heading">Resource Hub</a>
 								</div>
 							</div>
 						</div>
