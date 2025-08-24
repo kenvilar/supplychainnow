@@ -35,12 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const form = document.querySelector(".form");
     const selectBox = document.querySelectorAll(".select");
 
-    // Check if the form element exist on page
-    if (form !== null) {
-      form.addEventListener("submit", (e) => {
-        e.preventDefault();
-      });
-    }
+    // Allow the form to submit normally (do not prevent default)
 
     // Initialize create custom select-box function
     const customSelectBox = (select) => {

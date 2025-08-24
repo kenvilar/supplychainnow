@@ -6,7 +6,7 @@ $selected_type = isset($_GET['type']) ? sanitize_text_field(wp_unslash($_GET['ty
 	<div class="site-padding sm:py-60 <?php echo esc_attr($site_padding); ?>">
 		<div class="max-w-615 mx-auto">
 			<form class="form"
-				method="get" action="<?php echo esc_url(home_url(add_query_arg([]))); ?>">
+				method="get" action="<?php echo esc_url(home_url('/')); ?>">
 				<div class="flex gap-11 justify-between items-stretch">
 					<div class="max-w-423 w-full md:max-w-full">
 
@@ -34,19 +34,19 @@ $selected_type = isset($_GET['type']) ? sanitize_text_field(wp_unslash($_GET['ty
 					<div class="max-w-181 w-full md:max-w-full">
 						<label class="sr-only" for="search-type">Filter type</label>
 						<div class="form-select-control">
-							<select id="search-type" name="type" class="select">
-								<option disabled>Sort by Industries</option>
-								<option value="apple">Manufacturing</option>
-								<option value="watermelon">Transportation</option>
-								<option value="banana">Supply Chain</option>
-								<option value="orange">Retail</option>
-								<option value="grape">IT & Services</option>
-								<option value="strawberry">SaaS</option>
-								<option value="mango">Distribution</option>
-								<option value="pineapple">Warehousing</option>
-								<option value="avocado">Supply Chain Tech</option>
-								<option value="blueberry">Logistics/3PLs</option>
-								<option value="papaya">Shipping</option>
+							<select id="search-type" name="industries" class="select">
+								<option value="" selected>Sort by Industries</option>
+								<option value="manufacturing">Manufacturing</option>
+								<option value="transportation">Transportation</option>
+								<option value="supply chain">Supply Chain</option>
+								<option value="retail">Retail</option>
+								<option value="it & services">IT & Services</option>
+								<option value="saas">SaaS</option>
+								<option value="distribution">Distribution</option>
+								<option value="warehousing">Warehousing</option>
+								<option value="supply chain tech">Supply Chain Tech</option>
+								<option value="logistics/3pls">Logistics/3PLs</option>
+								<option value="shipping">Shipping</option>
 							</select>
 						</div>
 					</div>
