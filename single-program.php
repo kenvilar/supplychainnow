@@ -1,7 +1,7 @@
 <?php
 
 set_query_var('header_args', [
-	'nav_classnames' => 'nav-fixed', // '' || 'fixed'
+	'nav_classnames' => 'nav-fixed', // '' || 'nav-fixed'
 ]);
 get_header();
 $pageId = get_the_ID();
