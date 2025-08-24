@@ -22,7 +22,14 @@ $pageId = get_the_ID();
 		get_template_part('components/ui/searchbar', null, [
 			'site_padding' => 'pt-60 pb-52',
 		]);
-		get_template_part('components/section/upcoming-live-programming/upcoming-livestreams');
+
+		$qs_s = isset($_GET['s']) ? sanitize_text_field(wp_unslash($_GET['s'])) : '';
+		$qs_ind = isset($_GET['industries']) ? sanitize_text_field(wp_unslash($_GET['industries'])) : '';
+		if ($qs_ind === '' && $qs_s === '') {
+			get_template_part('components/section/upcoming-live-programming/upcoming-livestreams');
+		}
+
+		get_template_part('components/ui/search_results');
 		get_template_part('components/layout/footer/cta-footer-2');
 		?>
 	</div>
