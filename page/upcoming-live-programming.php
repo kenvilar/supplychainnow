@@ -21,6 +21,7 @@ $pageId = get_the_ID();
 		//get_template_part('components/section/upcoming-live-programming/featured-upcoming-programming');
 		get_template_part('components/ui/searchbar', null, [
 			'site_padding' => 'pt-60 pb-52',
+			'taxonomy' => 'tags',
 		]);
 
 		$qs_s = isset($_GET['s']) ? sanitize_text_field(wp_unslash($_GET['s'])) : '';

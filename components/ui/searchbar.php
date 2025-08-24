@@ -2,12 +2,17 @@
 $site_padding = $args["site_padding"] ?? "";
 $selected_type = isset($_GET['type']) ? sanitize_text_field(wp_unslash($_GET['type'])) : '';
 $current_industries = isset($_GET['industries']) ? sanitize_text_field(wp_unslash($_GET['industries'])) : '';
+$passed_taxonomy = isset($args['taxonomy']) ? sanitize_key($args['taxonomy']) : null;
 ?>
 <section class="section overflow-visible!">
 	<div class="site-padding sm:py-60 <?php echo esc_attr($site_padding); ?>">
 		<div class="max-w-615 mx-auto">
 			<form class="form"
 				method="get" action="<?php echo esc_url(get_permalink()); ?>" onsubmit="if(!this.industries.value){this.industries.disabled=true}">
+				<?php
+				$current_taxonomy = isset($_GET['taxonomy']) ? sanitize_key($_GET['taxonomy']) : ($passed_taxonomy ?: 'post_tag');
+				?>
+				<input type="hidden" name="taxonomy" value="<?php echo esc_attr($current_taxonomy); ?>" />
 				<div class="flex gap-11 justify-between items-stretch">
 					<div class="max-w-423 w-full md:max-w-full">
 

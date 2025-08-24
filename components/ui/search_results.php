@@ -21,18 +21,33 @@ if ($paged < 1) {
 // Build query only if there is something to search/filter
 $results_query = null;
 if ($search_query !== '' || $industries !== '') {
-    $combined_search = trim($search_query . ' ' . $industries);
+    $taxonomy = isset($_GET['taxonomy']) ? sanitize_key($_GET['taxonomy']) : 'post_tag';
 
     $args = [
         'post_type'      => 'page',
-        's'              => $combined_search,
+        's'              => $search_query,
         'post_status'    => 'publish',
         'posts_per_page' => 10,
         'paged'          => $paged,
     ];
 
+    if ($industries !== '') {
+        $args['tax_query'] = [
+            [
+                'taxonomy' => $taxonomy,
+                'field'    => 'name',
+                'terms'    => [$industries],
+                'include_children' => false,
+            ],
+        ];
+    }
+
     $results_query = new WP_Query($args);
 }
+
+var_dump($search_query);
+var_dump($taxonomy);
+var_dump($industries)
 ?>
 <section class="section">
     <div class="site-padding sm:py-60 pb-60">
@@ -72,6 +87,9 @@ if ($search_query !== '' || $industries !== '') {
                     }
                     if ($industries !== '') {
                         $add_args['industries'] = $industries;
+                    }
+                    if (isset($_GET['taxonomy'])) {
+                        $add_args['taxonomy'] = sanitize_key($_GET['taxonomy']);
                     }
                     $pagination = paginate_links(
                         [
