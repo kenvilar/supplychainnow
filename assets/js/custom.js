@@ -44,6 +44,10 @@ document.addEventListener("DOMContentLoaded", function () {
       const selectOptions = select.querySelectorAll("option");
       const optionsArray = Array.prototype.slice.call(selectOptions);
 
+      // Determine initially selected option (fallback to first)
+      let initialSelectedIndex = optionsArray.findIndex((opt) => opt.selected);
+      if (initialSelectedIndex < 0) initialSelectedIndex = 0;
+
       // Create custom Select element and add class select
       const customSelect = document.createElement("div");
       customSelect.classList.add("select");
@@ -53,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const selectedOption = document.createElement("div");
       selectedOption.classList.add("select-option");
       selectedOption.innerHTML = `
-		<div>${optionsArray[0].textContent}</div>
+		<div>${optionsArray[initialSelectedIndex].textContent}</div>
 		<div style="display:flex;"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="8" viewBox="0 0 14 8" fill="none">
 	  <path d="M12.4198 0.451988L13.4798 1.51299L7.70277 7.29199C7.6102 7.38514 7.50012 7.45907 7.37887 7.50952C7.25762 7.55997 7.12759 7.58594 6.99627 7.58594C6.86494 7.58594 6.73491 7.55997 6.61366 7.50952C6.49241 7.45907 6.38233 7.38514 6.28977 7.29199L0.509766 1.51299L1.56977 0.452987L6.99477 5.87699L12.4198 0.451988Z" fill="currentColor"/>
 	</svg></div>
@@ -77,7 +81,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // Loops all options and create custom option
       // Append it to the select-munu-inner element
-      optionsArray.forEach((option) => {
+      optionsArray.forEach((option, idx) => {
         const optionItem = document.createElement("li");
         optionItem.classList.add("select-item");
         optionItem.dataset.value = option.value;
@@ -87,12 +91,15 @@ document.addEventListener("DOMContentLoaded", function () {
         optionItem.addEventListener("click", () => {
           setSelectedOption(optionItem, selectedOption, selectWrapper, select);
         });
+
+        // Reflect initial selected state
+        if (idx === initialSelectedIndex) {
+          optionItem.classList.add("is-selected");
+        }
       });
 
-      // Add selected class to first custom select option
       // Add click event to close custom select-box if clicked outside
       // Hide the original select-box
-      selectMenu.querySelector("li").classList.add("selected");
       document.addEventListener("click", (e) => {
         isClickedOutside(e, customSelect, selectWrapper);
       });
