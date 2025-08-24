@@ -46,12 +46,12 @@ $passed_taxonomy = isset($args['taxonomy']) ? sanitize_key($args['taxonomy']) : 
 								<option value="transportation" <?php echo $current_industries === 'transportation' ? 'selected' : ''; ?>>Transportation</option>
 								<option value="supply chain" <?php echo $current_industries === 'supply chain' ? 'selected' : ''; ?>>Supply Chain</option>
 								<option value="retail" <?php echo $current_industries === 'retail' ? 'selected' : ''; ?>>Retail</option>
-								<option value="it & services" <?php echo $current_industries === 'it & services' ? 'selected' : ''; ?>>IT & Services</option>
+								<option value="it" <?php echo $current_industries === 'it' ? 'selected' : ''; ?>>IT & Services</option>
 								<option value="saas" <?php echo $current_industries === 'saas' ? 'selected' : ''; ?>>SaaS</option>
 								<option value="distribution" <?php echo $current_industries === 'distribution' ? 'selected' : ''; ?>>Distribution</option>
 								<option value="warehousing" <?php echo $current_industries === 'warehousing' ? 'selected' : ''; ?>>Warehousing</option>
 								<option value="supply chain tech" <?php echo $current_industries === 'supply chain tech' ? 'selected' : ''; ?>>Supply Chain Tech</option>
-								<option value="logistics/3pls" <?php echo $current_industries === 'logistics/3pls' ? 'selected' : ''; ?>>Logistics/3PLs</option>
+								<option value="logistics" <?php echo $current_industries === 'logistics' ? 'selected' : ''; ?>>Logistics/3PLs</option>
 								<option value="shipping" <?php echo $current_industries === 'shipping' ? 'selected' : ''; ?>>Shipping</option>
 							</select>
 						</div>

@@ -27,7 +27,7 @@ if ($search_query !== '' || $industries !== '') {
         'post_type'       => 'page',            // try 'any' to test
         's'               => $search_query,     // from ?search=
         'post_status'     => 'publish',
-        'posts_per_page'  => 10,
+        'posts_per_page'  => 9,
         'paged'           => $paged,
         'search_columns'  => ['post_title', 'post_content'],
         'suppress_filters' => true               // critical: ignore posts_where/posts_search filters
