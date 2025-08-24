@@ -9,7 +9,7 @@ if ($search_query === '' && isset($_GET['search'])) {
 $industries   = isset($_GET['industries']) ? sanitize_text_field(wp_unslash($_GET['industries'])) : '';
 
 // Early return if no filters/search so this component can be included anywhere safely
-if ($search_query === '' && $industries === '') {
+if ($search_query === '' && $industries === '' && (is_singular('program') && !isset($_GET['taxonomy']))) {
     return;
 }
 
@@ -23,11 +23,9 @@ if ($paged < 1) {
     $paged = isset($_GET['paged']) ? max(1, (int) $_GET['paged']) : 1;
 }
 
-$select_programs_for_webinar = get_field('select_programs_for_webinar', $pageId);
-
 // Build query only if there is something to search/filter
 $results_query = null;
-if ($search_query !== '' || $industries !== '') {
+if ($search_query !== '' || $industries !== '' || (is_singular('program') && isset($_GET['taxonomy']))) {
     $taxonomy = isset($_GET['taxonomy']) ? sanitize_key($_GET['taxonomy']) : 'post_tag';
 
     $args = [
@@ -35,29 +33,16 @@ if ($search_query !== '' || $industries !== '') {
         'post_status'     => 'publish',
         's'               => $search_query,     // from ?search=
         'posts_per_page'  => 9,
-        "offset" => 0,
         'paged'           => $paged,
         'search_columns'  => ['post_title', 'post_content'],
         'suppress_filters' => true,               // critical: ignore posts_where/posts_search filters
         "meta_query" => [
             "relation" => "AND",
             [
-                "relation" => "OR",
-                [
-                    "key" => "_wp_page_template",
-                    "value" => "episode-detail.php",
-                    "compare" => "=",
-                ],
-                [
-                    "key" => "_wp_page_template",
-                    "value" => "webinar-detail.php",
-                    "compare" => "=",
-                ],
-                [
-                    "key" => "_wp_page_template",
-                    "value" => "livestream-detail.php",
-                    "compare" => "=",
-                ],
+                'key'     => '_wp_page_template',
+                'value'   => ['episode-detail.php', 'webinar-detail.php', 'livestream-detail.php'],
+                'compare' => 'IN',
+                'type'    => 'CHAR',
             ],
             [
                 "key" => "select_media_type",
@@ -70,98 +55,83 @@ if ($search_query !== '' || $industries !== '') {
     ];
 
     if ($media_type !== '' && $media_type == 'podcasts-and-livestreams') {
-        $args['meta_query'][] = [
+        $args['meta_query'] = [
             "relation" => "AND",
             [
-                "relation" => "OR",
-                [
-                    "key" => "_wp_page_template",
-                    "value" => "episode-detail.php",
-                    "compare" => "=",
-                ],
-                [
-                    "key" => "_wp_page_template",
-                    "value" => "livestream-detail.php",
-                    "compare" => "=",
-                ],
+                'key'     => '_wp_page_template',
+                'value'   => ['episode-detail.php', 'livestream-detail.php'],
+                'compare' => 'IN',
+                'type'    => 'CHAR',
             ],
         ];
     }
 
     if ($media_type !== '' && $media_type == 'podcasts') {
-        $args['meta_query'][] = [
+        $args['meta_query'] = [
             "relation" => "AND",
             [
-                "relation" => "OR",
-                [
-                    "key" => "_wp_page_template",
-                    "value" => "episode-detail.php",
-                    "compare" => "=",
-                ],
+                'key'     => '_wp_page_template',
+                'value'   => ['episode-detail.php'],
+                'compare' => 'IN',
+                'type'    => 'CHAR',
             ],
         ];
     }
 
     if ($media_type !== '' && $media_type == 'webinars') {
-        $args['meta_query'][] = [
+        $args['meta_query'] = [
             "relation" => "AND",
             [
-                "relation" => "OR",
-                [
-                    "key" => "_wp_page_template",
-                    "value" => "webinar-detail.php",
-                    "compare" => "=",
-                ],
+                'key'     => '_wp_page_template',
+                'value'   => ['webinar-detail.php'],
+                'compare' => 'IN',
+                'type'    => 'CHAR',
             ],
         ];
     }
 
     if ($media_type !== '' && $media_type == 'livestreams') {
 
-        $args['meta_query'][] = [
+        $args['meta_query'] = [
             "relation" => "AND",
             [
-                "relation" => "OR",
-                [
-                    "key" => "_wp_page_template",
-                    "value" => "livestream-detail.php",
-                    "compare" => "=",
-                ],
+                'key'     => '_wp_page_template',
+                'value'   => ['livestream-detail.php'],
+                'compare' => 'IN',
+                'type'    => 'CHAR',
             ],
         ];
     }
 
     if (is_singular('program')) {
-        $args['meta_query'][] = [
+        $args['meta_query'] = [
             "relation" => "AND",
             [
-                "relation" => "OR",
-                [
-                    "key" => "_wp_page_template",
-                    "value" => "episode-detail.php",
-                    "compare" => "=",
-                ],
-                [
-                    "key" => "_wp_page_template",
-                    "value" => "webinar-detail.php",
-                    "compare" => "=",
-                ],
-                [
-                    "key" => "_wp_page_template",
-                    "value" => "livestream-detail.php",
-                    "compare" => "=",
-                ],
+                'key'     => '_wp_page_template',
+                'value'   => ['episode-detail.php', 'webinar-detail.php', 'livestream-detail.php'],
+                'compare' => 'IN',
+                'type'    => 'CHAR',
             ],
             [
-                "key" => "select_media_type",
-                "value" => ["podcast", "livestream", "webinar"],
-                "compare" => "IN",
-                "type" => "CHAR",
-            ],
-            [
-                "key" => "select_programs_for_webinar",
-                "value" => $pageId,
-                "compare" => "=",
+                'relation' => 'OR',
+                [
+                    'key'     => 'select_programs',
+                    'value'   => '"' . (int) $pageId . '"',
+                    'compare' => 'LIKE',
+                    'type'    => 'CHAR',
+                ],
+                [
+                    'key'     => 'select_programs_for_webinar',
+                    'value'   => '"' . (int) $pageId . '"',
+                    'compare' => 'LIKE',
+                    'type'    => 'CHAR',
+                ],
+                [
+                    'key'     => 'select_programs_for_livestream',
+                    'value'   => '"' . (int) $pageId . '"',
+                    'compare' => 'LIKE',
+                    'type'    => 'CHAR',
+                ],
             ],
         ];
     }
