@@ -42,9 +42,11 @@ if ($search_query !== '' || $industries !== '') {
                         <h2 class="text-center">Search Results</h2>
                     </div>
                     <?php
-                    get_template_part('components/line-with-blinking-dot', null, [
+                    get_template_part(
+                        'components/line-with-blinking-dot', null, [
                         'maxWidthClassnames' => ''
-                    ]);
+                        ]
+                    );
                     ?>
                 </div>
                 <?php if ($results_query->have_posts()) : ?>
@@ -68,7 +70,8 @@ if ($search_query !== '' || $industries !== '') {
                     if ($industries !== '') {
                         $add_args['industries'] = $industries;
                     }
-                    $pagination = paginate_links([
+                    $pagination = paginate_links(
+                        [
                         'base'      => str_replace($big, '%#%', esc_url(get_pagenum_link($big))),
                         'format'    => '?paged=%#%',
                         'current'   => $paged,
@@ -76,7 +79,8 @@ if ($search_query !== '' || $industries !== '') {
                         'prev_text' => '« Prev',
                         'next_text' => 'Next »',
                         'add_args'  => !empty($add_args) ? $add_args : false,
-                    ]);
+                        ]
+                    );
                     if ($pagination) {
                         echo '<nav class="pagination mt-24">' . $pagination . '</nav>';
                     }
