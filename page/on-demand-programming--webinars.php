@@ -16,8 +16,17 @@ $pageId = get_the_ID();
 		get_template_part('components/section/on-demand-programming/tab-links', null, [
 			'tabNumber' => 3,
 		]);
-		get_template_part('components/section/on-demand-programming--webinars/featured-webinars');
-		get_template_part('components/section/on-demand-programming--webinars/recent-webinars');
+
+		get_template_part('components/ui/searchbar', null, [
+			'site_padding' => 'pt-52 pb-40',
+			'taxonomy' => 'tags',
+		]);
+
+		scn_render_if_no_filters('components/section/on-demand-programming--webinars/featured-webinars');
+		scn_render_if_no_filters('components/section/on-demand-programming--webinars/recent-webinars');
+
+		get_template_part('components/ui/search_results');
+
 		get_template_part('components/layout/footer/cta-footer-2');
 		?>
 	</div>
