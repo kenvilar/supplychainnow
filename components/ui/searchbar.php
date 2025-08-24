@@ -6,7 +6,7 @@ $selected_type = isset($_GET['type']) ? sanitize_text_field(wp_unslash($_GET['ty
 	<div class="site-padding sm:py-60 <?php echo esc_attr($site_padding); ?>">
 		<div class="max-w-615 mx-auto">
 			<form class="form"
-				method="get" action="<?php echo esc_url(home_url('/')); ?>">
+				method="get" action="<?php echo esc_url(add_query_arg([])); ?>">
 				<div class="flex gap-11 justify-between items-stretch">
 					<div class="max-w-423 w-full md:max-w-full">
 
