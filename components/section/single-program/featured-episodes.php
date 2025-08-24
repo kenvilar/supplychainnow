@@ -8,7 +8,7 @@ $programFeaturedEpisodes = get_field('program_featured_episodes', $pageId)
 		<div class="w-layout-blockcontainer max-w-1252 w-container">
 			<?php
 			if ($programFeaturedEpisodes):
-				?>
+			?>
 				<div class="mb-44">
 					<div class="mb-20">
 						<h2 class="text-center">Featured Episodes</h2>
@@ -35,25 +35,24 @@ $programFeaturedEpisodes = get_field('program_featured_episodes', $pageId)
 									$episode_url = get_permalink($value);
 
 									$selectMediaType = get_field('select_media_type', $value);
-									?>
+							?>
 									<a href="<?php
-									echo esc_url($episode_url); ?>" class="relative w-full group">
+												echo esc_url($episode_url); ?>" class="relative w-full group">
 										<div class="relative flex flex-col justify-between gap-20 h-full">
 											<div class="w-full">
 												<div class="mb-28">
 													<div class="overflow-hidden rounded-12 relative h-344 bg-cargogrey">
 														<img
 															src="<?php
-															echo get_the_post_thumbnail_url($value)
-																? get_the_post_thumbnail_url($value)
-																: get_stylesheet_directory_uri(
-																  ) . '/assets/img/misc/default-card-img-thumbnail.avif' ?>"
+																	echo get_the_post_thumbnail_url($value, 'medium_large')
+																		? get_the_post_thumbnail_url($value, 'medium_large')
+																		: get_stylesheet_directory_uri() . '/assets/img/misc/default-card-img-thumbnail.avif' ?>"
 															loading="lazy" alt="" class="image relative opacity-90">
 														<?php
 														$terms = get_the_terms($value, 'tags');
 														if (!is_wp_error($terms) && !empty($terms)) {
 															$first = array_values($terms)[0];
-															?>
+														?>
 															<div class="absolute absolute--tl p-24 flex items-center justify-center">
 																<div class="relative rounded-full overflow-hidden py-4 px-8">
 																	<div class="relative font-semibold uppercase text-2xs text-white lh-normal z-10">
@@ -73,36 +72,33 @@ $programFeaturedEpisodes = get_field('program_featured_episodes', $pageId)
 																	?>
 																</div>
 															</div>
-															<?php
+														<?php
 														}
 														?>
 														<div
 															class="absolute absolute--full flex items-center justify-center translate-y-220 group-hover:translate-y-0 transition-all duration-500">
 															<?php
 															if ($selectMediaType == 'livestream') {
-																?>
+															?>
 																<img
 																	src="<?php
-																	echo get_stylesheet_directory_uri(
-																	     ) . '/assets/img/icons/play-button-livestream.avif'; ?>"
+																			echo get_stylesheet_directory_uri() . '/assets/img/icons/play-button-livestream.avif'; ?>"
 																	loading="lazy" alt="play-button-livestream">
-																<?php
+															<?php
 															} elseif ($selectMediaType == 'podcast') {
-																?>
+															?>
 																<img
 																	src="<?php
-																	echo get_stylesheet_directory_uri(
-																	     ) . '/assets/img/icons/play-button-podcast.avif'; ?>"
+																			echo get_stylesheet_directory_uri() . '/assets/img/icons/play-button-podcast.avif'; ?>"
 																	loading="lazy" alt="play-button-podcast">
-																<?php
+															<?php
 															} elseif ($selectMediaType == 'webinar') {
-																?>
+															?>
 																<img
 																	src="<?php
-																	echo get_stylesheet_directory_uri(
-																	     ) . '/assets/img/icons/play-button-webinar.avif'; ?>"
+																			echo get_stylesheet_directory_uri() . '/assets/img/icons/play-button-webinar.avif'; ?>"
 																	loading="lazy" alt="play-button-webinar">
-																<?php
+															<?php
 															}
 															?>
 														</div>
@@ -114,41 +110,40 @@ $programFeaturedEpisodes = get_field('program_featured_episodes', $pageId)
 															<div class="flex items-center">
 																<?php
 																if ($selectMediaType == 'livestream') {
-																	?>
+																?>
 																	<img
 																		src="<?php
-																		echo get_stylesheet_directory_uri(
-																		     ) . '/assets/img/icons/livestream-card-icon.svg'; ?>"
+																				echo get_stylesheet_directory_uri() . '/assets/img/icons/livestream-card-icon.svg'; ?>"
 																		loading="lazy" alt="livestream-music">
-																	<?php
+																<?php
 																} elseif ($selectMediaType == 'podcast') {
-																	?>
+																?>
 																	<img
 																		class="size-24"
 																		src="<?php
-																		echo get_stylesheet_directory_uri() . '/assets/img/icons/podcast-card-icon.png'; ?>"
+																				echo get_stylesheet_directory_uri() . '/assets/img/icons/podcast-card-icon.png'; ?>"
 																		loading="lazy" alt="podcast-blue-microphone">
-																	<?php
+																<?php
 																} elseif ($selectMediaType == 'webinar') {
-																	?>
+																?>
 																	<img
 																		class="size-24"
 																		src="<?php
-																		echo get_stylesheet_directory_uri() . '/assets/img/icons/webinar-card-icon.png'; ?>"
+																				echo get_stylesheet_directory_uri() . '/assets/img/icons/webinar-card-icon.png'; ?>"
 																		loading="lazy" alt="webinar-person">
-																	<?php
+																<?php
 																}
 																?>
 															</div>
 															<?php
 															if ($selectMediaType) {
-																?>
+															?>
 																<div class="font-family-secondary text-sm capitalize">
 																	<?php
 																	echo $selectMediaType;
 																	?>
 																</div>
-																<?php
+															<?php
 															}
 															?>
 														</div>
@@ -182,7 +177,7 @@ $programFeaturedEpisodes = get_field('program_featured_episodes', $pageId)
 											</div>
 										</div>
 									</a>
-									<?php
+							<?php
 								}
 							}
 							?>
@@ -201,6 +196,19 @@ $programFeaturedEpisodes = get_field('program_featured_episodes', $pageId)
 					?>
 				</div>
 			</div>
+			<div class="flex justify-center">
+				<?php
+				echo get_template_part('components/ui/btn', null, [
+					'text' => 'View Episodes',
+					'link' => get_permalink($pageId) . '/?taxonomy=tags&search=',
+					'style' => 'primary',
+					'class' => '',
+					/*'attributes' => [
+								'target' => '_blank',
+								'rel'    => 'noopener noreferrer',
+							],*/
+				]);
+				?>
+			</div>
 		</div>
-	</div>
 </section>

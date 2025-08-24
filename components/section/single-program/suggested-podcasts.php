@@ -33,20 +33,20 @@ $pageId = get_the_ID();
 									while ($q->have_posts()): $q->the_post(); ?>
 										<div class="splide__slide">
 											<a href="<?php
-											the_permalink(); ?>" class="w-full h-full overflow-hidden rounded-24 w-inline-block"
-											   tabindex="-1">
+														the_permalink(); ?>" class="w-full h-full overflow-hidden rounded-24 w-inline-block"
+												tabindex="-1">
 												<img
 													src="<?php
-													if (get_field('program_thumbnail_image_upload', $q->ID)) {
-														echo get_field('program_thumbnail_image_upload', $q->ID);
-													} else {
-														if (has_post_thumbnail($q->ID)) {
-															echo the_post_thumbnail_url();
-														} else {
-															echo get_stylesheet_directory_uri() . '/assets/img/misc/default-card-img-thumbnail.avif';
-														}
-													}
-													?>"
+															if (get_field('program_thumbnail_image_upload', $q->ID)) {
+																echo get_field('program_thumbnail_image_upload', $q->ID);
+															} else {
+																if (has_post_thumbnail($q->ID)) {
+																	echo the_post_thumbnail_url('thumbnail');
+																} else {
+																	echo get_stylesheet_directory_uri() . '/assets/img/misc/default-card-img-thumbnail.avif';
+																}
+															}
+															?>"
 													loading="lazy" alt="" class="image">
 											</a>
 										</div>
@@ -62,7 +62,7 @@ $pageId = get_the_ID();
 						?>
 						<div class="display-none w-embed w-script">
 							<script>
-								document.addEventListener('DOMContentLoaded', function () {
+								document.addEventListener('DOMContentLoaded', function() {
 									function slider1() {
 										let splideTarget = '[slider-1]';
 										let splideTargetEl = document.querySelector(`${splideTarget}`);
@@ -96,7 +96,10 @@ $pageId = get_the_ID();
 												991: {
 													// 		type: 'slide',
 													perPage: 2,
-													padding: {left: 42, right: 42},
+													padding: {
+														left: 42,
+														right: 42
+													},
 													// 		perMove: 1,
 													// 		fixedWidth: '100%',
 													// 		padding: { left: 0, right: 0 },
@@ -105,7 +108,10 @@ $pageId = get_the_ID();
 													perPage: 1,
 													gap: '4rem',
 													fixedWidth: '100%',
-													padding: {left: 42, right: 42},
+													padding: {
+														left: 42,
+														right: 42
+													},
 												},
 											},
 										};
@@ -113,7 +119,7 @@ $pageId = get_the_ID();
 										splide.mount();
 									}
 
-									setTimeout(function () {
+									setTimeout(function() {
 										slider1();
 									}, 500);
 								});
