@@ -45,9 +45,6 @@ if ($search_query !== '' || $industries !== '') {
     $results_query = new WP_Query($args);
 }
 
-var_dump($search_query);
-var_dump($taxonomy);
-var_dump($industries)
 ?>
 <section class="section">
     <div class="site-padding sm:py-60 pb-60">
