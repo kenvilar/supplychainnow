@@ -2,6 +2,8 @@
 
 $media_type = $args['media_type'] ?? ''; // 'podcasts-and-livestreams' || 'podcasts' || 'webinars' || 'livestreams'
 
+$pageId = get_the_ID();
+
 // Read query params (component only; no header/footer)
 $search_query = isset($_GET['s']) ? sanitize_text_field(wp_unslash($_GET['s'])) : '';
 // Support custom param `search` when using in-page search (avoids WP search routing)
@@ -20,6 +22,8 @@ $paged = (int) get_query_var('paged');
 if ($paged < 1) {
     $paged = isset($_GET['paged']) ? max(1, (int) $_GET['paged']) : 1;
 }
+
+$select_programs_for_webinar = get_field('select_programs_for_webinar', $pageId);
 
 // Build query only if there is something to search/filter
 $results_query = null;
@@ -123,6 +127,41 @@ if ($search_query !== '' || $industries !== '') {
                     "value" => "livestream-detail.php",
                     "compare" => "=",
                 ],
+            ],
+        ];
+    }
+
+    if (is_singular('program')) {
+        $args['meta_query'][] = [
+            "relation" => "AND",
+            [
+                "relation" => "OR",
+                [
+                    "key" => "_wp_page_template",
+                    "value" => "episode-detail.php",
+                    "compare" => "=",
+                ],
+                [
+                    "key" => "_wp_page_template",
+                    "value" => "webinar-detail.php",
+                    "compare" => "=",
+                ],
+                [
+                    "key" => "_wp_page_template",
+                    "value" => "livestream-detail.php",
+                    "compare" => "=",
+                ],
+            ],
+            [
+                "key" => "select_media_type",
+                "value" => ["podcast", "livestream", "webinar"],
+                "compare" => "IN",
+                "type" => "CHAR",
+            ],
+            [
+                "key" => "select_programs_for_webinar",
+                "value" => $pageId,
+                "compare" => "=",
             ],
         ];
     }
