@@ -1,6 +1,10 @@
 <?php
 // Read query params (component only; no header/footer)
 $search_query = isset($_GET['s']) ? sanitize_text_field(wp_unslash($_GET['s'])) : '';
+// Support custom param `search` when using in-page search (avoids WP search routing)
+if ($search_query === '' && isset($_GET['search'])) {
+    $search_query = sanitize_text_field(wp_unslash($_GET['search']));
+}
 $industries   = isset($_GET['industries']) ? sanitize_text_field(wp_unslash($_GET['industries'])) : '';
 
 // Early return if no filters/search so this component can be included anywhere safely
@@ -56,7 +60,9 @@ if ($search_query !== '' || $industries !== '') {
                     <?php
                     $big = 999999999; // unlikely integer
                     $add_args = [];
-                    if ($search_query !== '') {
+                    if (isset($_GET['search'])) {
+                        $add_args['search'] = $search_query;
+                    } elseif ($search_query !== '') {
                         $add_args['s'] = $search_query;
                     }
                     if ($industries !== '') {

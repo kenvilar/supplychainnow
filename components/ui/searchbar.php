@@ -6,7 +6,7 @@ $selected_type = isset($_GET['type']) ? sanitize_text_field(wp_unslash($_GET['ty
 	<div class="site-padding sm:py-60 <?php echo esc_attr($site_padding); ?>">
 		<div class="max-w-615 mx-auto">
 			<form class="form"
-				method="get" action="<?php echo esc_url(add_query_arg([])); ?>">
+				method="get" action="<?php echo esc_url(get_permalink()); ?>" onsubmit="if(!this.industries.value){this.industries.disabled=true}">
 				<div class="flex gap-11 justify-between items-stretch">
 					<div class="max-w-423 w-full md:max-w-full">
 
@@ -14,8 +14,8 @@ $selected_type = isset($_GET['type']) ? sanitize_text_field(wp_unslash($_GET['ty
 							<label>
 								<input
 									type="search"
-									name="s"
-									value="<?php echo esc_attr(get_search_query()); ?>"
+									name="search"
+									value="<?php echo isset($_GET['search']) ? esc_attr(sanitize_text_field(wp_unslash($_GET['search']))) : ''; ?>"
 									placeholder="Search by episode, topic, name, etc..."
 									class="overflow-hidden rounded-100 w-full h-43 py-14 pl-48 pr-12 text-sm font-light placeholder:text-secondary" />
 							</label>
