@@ -24,6 +24,7 @@ if ($search_query !== '' || $industries !== '') {
     $combined_search = trim($search_query . ' ' . $industries);
 
     $args = [
+        'post_type'      => 'page',
         's'              => $combined_search,
         'post_status'    => 'publish',
         'posts_per_page' => 10,
@@ -43,8 +44,10 @@ if ($search_query !== '' || $industries !== '') {
                     </div>
                     <?php
                     get_template_part(
-                        'components/line-with-blinking-dot', null, [
-                        'maxWidthClassnames' => ''
+                        'components/line-with-blinking-dot',
+                        null,
+                        [
+                            'maxWidthClassnames' => ''
                         ]
                     );
                     ?>
@@ -72,13 +75,13 @@ if ($search_query !== '' || $industries !== '') {
                     }
                     $pagination = paginate_links(
                         [
-                        'base'      => str_replace($big, '%#%', esc_url(get_pagenum_link($big))),
-                        'format'    => '?paged=%#%',
-                        'current'   => $paged,
-                        'total'     => (int) $results_query->max_num_pages,
-                        'prev_text' => '« Prev',
-                        'next_text' => 'Next »',
-                        'add_args'  => !empty($add_args) ? $add_args : false,
+                            'base'      => str_replace($big, '%#%', esc_url(get_pagenum_link($big))),
+                            'format'    => '?paged=%#%',
+                            'current'   => $paged,
+                            'total'     => (int) $results_query->max_num_pages,
+                            'prev_text' => '« Prev',
+                            'next_text' => 'Next »',
+                            'add_args'  => !empty($add_args) ? $add_args : false,
                         ]
                     );
                     if ($pagination) {
