@@ -33,9 +33,9 @@ $current_industries = isset($_GET['industries']) ? sanitize_text_field(wp_unslas
 
 					</div>
 					<div class="max-w-181 w-full md:max-w-full">
-						<label class="sr-only" for="search-type">Filter type</label>
+						<label class="sr-only" for="search-industries">Filter type</label>
 						<div class="form-select-control">
-							<select id="search-type" name="industries" class="select">
+							<select id="search-industries" name="industries" class="select">
 								<option value="" <?php echo $current_industries === '' ? 'selected' : ''; ?>>Sort by Industries</option>
 								<option value="manufacturing" <?php echo $current_industries === 'manufacturing' ? 'selected' : ''; ?>>Manufacturing</option>
 								<option value="transportation" <?php echo $current_industries === 'transportation' ? 'selected' : ''; ?>>Transportation</option>
