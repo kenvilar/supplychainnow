@@ -3,6 +3,11 @@
 $search_query = isset($_GET['s']) ? sanitize_text_field(wp_unslash($_GET['s'])) : '';
 $industries   = isset($_GET['industries']) ? sanitize_text_field(wp_unslash($_GET['industries'])) : '';
 
+// Early return if no filters/search so this component can be included anywhere safely
+if ($search_query === '' && $industries === '') {
+    return;
+}
+
 // Determine current page for pagination
 $paged = (int) get_query_var('paged');
 if ($paged < 1) {
@@ -74,9 +79,6 @@ if ($search_query !== '' || $industries !== '') {
                 <?php else : ?>
                     <p class="text-center">No results found.</p>
                 <?php endif; ?>
-            <?php else : ?>
-                <h1 class="text-3xl mb-20">Search</h1>
-                <p>Use the search bar to find content.</p>
             <?php endif; ?>
         </div>
     </div>
