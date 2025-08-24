@@ -627,6 +627,41 @@ footer .footer_inner {
   font-weight: 500;
 }
 /*end custom select*/
+/* Pagination styles */
+.pagination {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+}
+.pagination a,
+.pagination span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 36px;
+  height: 36px;
+  padding: 0 12px;
+  border: 1px solid var(--primary);
+  border-radius: 9999px;
+  font-size: 14px;
+  line-height: 1;
+  text-decoration: none;
+}
+.pagination a {
+  color: var(--primary);
+  background: transparent;
+}
+.pagination a:hover {
+  background: var(--primary);
+  color: #fff;
+}
+.pagination .current {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+}
+/* End Pagination styles */
 /*override the bridge theme */
 .content {
   margin-top: 0;
@@ -695,39 +730,4 @@ footer .footer_inner {
 @media (min-width: 1920px) {
 }
 @media (min-width: 3440px) {
-}
-
-/* Pagination styles */
-.pagination {
-	display: flex;
-	gap: 8px;
-	justify-content: center;
-	align-items: center;
-}
-.pagination a,
-.pagination span {
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	min-width: 36px;
-	height: 36px;
-	padding: 0 12px;
-	border: 1px solid var(--primary);
-	border-radius: 9999px;
-	font-size: 14px;
-	line-height: 1;
-	text-decoration: none;
-}
-.pagination a {
-	color: var(--primary);
-	background: transparent;
-}
-.pagination a:hover {
-	background: var(--primary);
-	color: #fff;
-}
-.pagination .current {
-	background: var(--primary);
-	color: #fff;
-	border-color: var(--primary);
 }
