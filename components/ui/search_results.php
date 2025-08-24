@@ -99,23 +99,23 @@ if ($search_query !== '' || $industries !== '') {
                     <div class="mb-60 grid gap-32 gap-y-60 grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
                         <?php while ($results_query->have_posts()) :
                             $results_query->the_post();
-                            $selectMediaType = get_field("select_media_type", $q->post->ID);
+                            $selectMediaType = get_field("select_media_type", $results_query->post->ID);
                         ?>
                             <a href="<?php
-                                        the_permalink($q->post->ID); ?>" class="relative w-full group <?php echo $classNames; ?>" <?php echo $attr_string ?>>
+                                        the_permalink($results_query->post->ID); ?>" class="relative w-full group <?php echo $classNames; ?>">
                                 <div class="relative flex flex-col justify-between gap-20 h-full">
                                     <div class="w-full">
                                         <div class="mb-28">
                                             <div class="overflow-hidden rounded-12 relative h-222 bg-cargogrey">
                                                 <img
                                                     src="<?php
-                                                            echo get_the_post_thumbnail_url($q->post->ID)
-                                                                ? get_the_post_thumbnail_url($q->post->ID, 'medium')
+                                                            echo get_the_post_thumbnail_url($results_query->post->ID)
+                                                                ? get_the_post_thumbnail_url($results_query->post->ID, 'medium')
                                                                 : get_stylesheet_directory_uri() .
                                                                 "/assets/img/misc/default-card-img-thumbnail.avif"; ?>"
                                                     loading="lazy" alt="" class="image relative opacity-90">
                                                 <?php
-                                                $terms = get_the_terms($q->post->ID, "tags");
+                                                $terms = get_the_terms($results_query->post->ID, "tags");
                                                 if (!is_wp_error($terms) && !empty($terms)) {
                                                     $first = array_values($terms)[0]; ?>
                                                     <div class="absolute absolute--tl p-24 flex items-center justify-center">
@@ -210,10 +210,10 @@ if ($search_query !== '' || $industries !== '') {
                                                 <div class="flex items-center gap-8 text-sm font-light font-family-secondary">
                                                     <div>
                                                         <?php
-                                                        echo get_the_date("F j, Y", $q->post->ID); ?>
+                                                        echo get_the_date("F j, Y", $results_query->post->ID); ?>
                                                     </div>
                                                     <!--<div>•</div>
-                                <div>6 min 25 sec</div>-->
+                                                    <div>6 min 25 sec</div>-->
                                                 </div>
                                             </div>
                                         </div>
@@ -224,14 +224,14 @@ if ($search_query !== '' || $industries !== '') {
                                     </div>
                                     <div class="w-full tracking-[1.4px] text-sm" scn-text-limit="3">
                                         <?php
-                                        if (get_the_excerpt($q->post->ID)) {
+                                        if (get_the_excerpt($results_query->post->ID)) {
                                             the_excerpt();
-                                        } elseif (get_field("livestream_description", $q->post->ID)) {
-                                            the_field("livestream_description", $q->post->ID);
-                                        } elseif (get_field("episode_summary", $q->post->ID)) {
-                                            the_field("episode_summary", $q->post->ID);
-                                        } elseif (get_field("webinar_description", $q->post->ID)) {
-                                            the_field("webinar_description", $q->post->ID);
+                                        } elseif (get_field("livestream_description", $results_query->post->ID)) {
+                                            the_field("livestream_description", $results_query->post->ID);
+                                        } elseif (get_field("episode_summary", $results_query->post->ID)) {
+                                            the_field("episode_summary", $results_query->post->ID);
+                                        } elseif (get_field("webinar_description", $results_query->post->ID)) {
+                                            the_field("webinar_description", $results_query->post->ID);
                                         } ?>
                                     </div>
                                 </div>
@@ -244,9 +244,9 @@ if ($search_query !== '' || $industries !== '') {
                     if (current_user_can('administrator')) {
                         echo '<!-- DEBUG $_GET: ' . print_r($_GET, true) . ' -->';
                     }
-                    
+
                     $big = 999999999; // unlikely integer
-                    
+
                     // Build pagination arguments manually from clean values
                     $add_args = [];
                     if ($search_query !== '') {
@@ -264,9 +264,9 @@ if ($search_query !== '' || $industries !== '') {
                     if ($total_pages > 1) {
                         $current_url = strtok($_SERVER["REQUEST_URI"], '?');
                         $query_string = http_build_query($add_args);
-                        
+
                         echo '<div class="pagination mt-24">';
-                        
+
                         // Previous link
                         if ($paged > 1) {
                             $prev_page = $paged - 1;
@@ -276,12 +276,12 @@ if ($search_query !== '' || $industries !== '') {
                             }
                             echo '<a href="' . esc_url($prev_url) . '">« Prev</a> ';
                         }
-                        
+
                         // Page numbers with smart pagination
                         $range = 2; // Show 2 pages before and after current page
                         $start_page = max(1, $paged - $range);
                         $end_page = min($total_pages, $paged + $range);
-                        
+
                         // Show first page and ellipsis if needed
                         if ($start_page > 1) {
                             $page_url = $current_url . '?paged=1';
@@ -289,39 +289,39 @@ if ($search_query !== '' || $industries !== '') {
                                 $page_url .= '&' . $query_string;
                             }
                             echo '<a href="' . esc_url($page_url) . '">1</a> ';
-                            
+
                             if ($start_page > 2) {
                                 echo '<span>…</span> ';
                             }
                         }
-                        
+
                         // Show page range around current page
                         for ($i = $start_page; $i <= $end_page; $i++) {
                             $page_url = $current_url . '?paged=' . $i;
                             if ($query_string) {
                                 $page_url .= '&' . $query_string;
                             }
-                            
+
                             if ($i == $paged) {
                                 echo '<span class="current">' . $i . '</span> ';
                             } else {
                                 echo '<a href="' . esc_url($page_url) . '">' . $i . '</a> ';
                             }
                         }
-                        
+
                         // Show ellipsis and last page if needed
                         if ($end_page < $total_pages) {
                             if ($end_page < $total_pages - 1) {
                                 echo '<span>…</span> ';
                             }
-                            
+
                             $page_url = $current_url . '?paged=' . $total_pages;
                             if ($query_string) {
                                 $page_url .= '&' . $query_string;
                             }
                             echo '<a href="' . esc_url($page_url) . '">' . $total_pages . '</a> ';
                         }
-                        
+
                         // Next link
                         if ($paged < $total_pages) {
                             $next_page = $paged + 1;
@@ -331,7 +331,7 @@ if ($search_query !== '' || $industries !== '') {
                             }
                             echo '<a href="' . esc_url($next_url) . '">Next »</a>';
                         }
-                        
+
                         echo '</div>';
                     }
                     wp_reset_postdata();

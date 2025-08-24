@@ -16,10 +16,19 @@ $pageId = get_the_ID();
 		get_template_part('components/section/on-demand-programming/tab-links', null, [
 			'tabNumber' => 2,
 		]);
-		get_template_part('components/section/on-demand-programming--podcasts-and-livestreams/featured-podcast-episodes');
-		get_template_part('components/section/on-demand-programming--podcasts-and-livestreams/recent-episodes');
-		get_template_part('components/section/on-demand-programming--podcasts-and-livestreams/podcast-series');
-		get_template_part('components/section/on-demand-programming--podcasts-and-livestreams/women-in-supply-chain');
+
+		get_template_part('components/ui/searchbar', null, [
+			'site_padding' => 'pt-52 pb-40',
+			'taxonomy' => 'tags',
+		]);
+
+		scn_render_if_no_filters('components/section/on-demand-programming--podcasts-and-livestreams/featured-podcast-episodes');
+		scn_render_if_no_filters('components/section/on-demand-programming--podcasts-and-livestreams/recent-episodes');
+		scn_render_if_no_filters('components/section/on-demand-programming--podcasts-and-livestreams/podcast-series');
+		scn_render_if_no_filters('components/section/on-demand-programming--podcasts-and-livestreams/women-in-supply-chain');
+
+		get_template_part('components/ui/search_results');
+
 		get_template_part('components/layout/footer/cta-footer-2');
 		?>
 	</div>
