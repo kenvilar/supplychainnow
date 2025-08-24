@@ -139,6 +139,11 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       });
       optionItem.classList.add("is-selected");
+
+      // Submit the form when a selection is made
+      if (form) {
+        form.submit();
+      }
     };
 
     // Check if select-box are exist
