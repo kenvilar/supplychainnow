@@ -379,6 +379,22 @@ function scn_is_splide_page()
 }
 
 /*
+Sample:
+scn_render_if_no_filters('path/to/part', ['foo' => 'bar']);
+*/
+function scn_render_if_no_filters(string $template_slug, array $template_args = []): void
+{
+	$qs_s = isset($_GET['s']) ? sanitize_text_field(wp_unslash($_GET['s'])) : '';
+	if ($qs_s === '' && isset($_GET['search'])) {
+		$qs_s = sanitize_text_field(wp_unslash($_GET['search']));
+	}
+	$qs_ind = isset($_GET['industries']) ? sanitize_text_field(wp_unslash($_GET['industries'])) : '';
+	if ($qs_ind === '' && $qs_s === '') {
+		get_template_part($template_slug, null, $template_args);
+	}
+}
+
+/*
 add_action('admin_head', 'my_custom_css');
 
 function my_custom_css() {
