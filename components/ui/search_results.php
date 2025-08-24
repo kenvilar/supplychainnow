@@ -240,32 +240,99 @@ if ($search_query !== '' || $industries !== '') {
                     </div>
 
                     <?php
+                    // Debug: Output current $_GET to understand the corruption
+                    if (current_user_can('administrator')) {
+                        echo '<!-- DEBUG $_GET: ' . print_r($_GET, true) . ' -->';
+                    }
+                    
                     $big = 999999999; // unlikely integer
+                    
+                    // Build pagination arguments manually from clean values
                     $add_args = [];
-                    if (isset($_GET['search'])) {
+                    if ($search_query !== '') {
                         $add_args['search'] = $search_query;
-                    } elseif ($search_query !== '') {
-                        $add_args['s'] = $search_query;
                     }
                     if ($industries !== '') {
                         $add_args['industries'] = $industries;
                     }
-                    if (isset($_GET['taxonomy'])) {
+                    // Only add taxonomy if it exists and doesn't contain HTML entities
+                    if (isset($_GET['taxonomy']) && strpos($_GET['taxonomy'], '#038;') === false) {
                         $add_args['taxonomy'] = sanitize_key($_GET['taxonomy']);
                     }
-                    $pagination = paginate_links(
-                        [
-                            'base'      => str_replace($big, '%#%', esc_url(get_pagenum_link($big))),
-                            'format'    => '?paged=%#%',
-                            'current'   => $paged,
-                            'total'     => (int) $results_query->max_num_pages,
-                            'prev_text' => '« Prev',
-                            'next_text' => 'Next »',
-                            'add_args'  => !empty($add_args) ? $add_args : false,
-                        ]
-                    );
-                    if ($pagination) {
-                        echo '<div class="pagination mt-24">' . $pagination . '</div>';
+                    // Custom pagination to avoid WordPress URL corruption issues
+                    $total_pages = (int) $results_query->max_num_pages;
+                    if ($total_pages > 1) {
+                        $current_url = strtok($_SERVER["REQUEST_URI"], '?');
+                        $query_string = http_build_query($add_args);
+                        
+                        echo '<div class="pagination mt-24">';
+                        
+                        // Previous link
+                        if ($paged > 1) {
+                            $prev_page = $paged - 1;
+                            $prev_url = $current_url . '?paged=' . $prev_page;
+                            if ($query_string) {
+                                $prev_url .= '&' . $query_string;
+                            }
+                            echo '<a href="' . esc_url($prev_url) . '">« Prev</a> ';
+                        }
+                        
+                        // Page numbers with smart pagination
+                        $range = 2; // Show 2 pages before and after current page
+                        $start_page = max(1, $paged - $range);
+                        $end_page = min($total_pages, $paged + $range);
+                        
+                        // Show first page and ellipsis if needed
+                        if ($start_page > 1) {
+                            $page_url = $current_url . '?paged=1';
+                            if ($query_string) {
+                                $page_url .= '&' . $query_string;
+                            }
+                            echo '<a href="' . esc_url($page_url) . '">1</a> ';
+                            
+                            if ($start_page > 2) {
+                                echo '<span>…</span> ';
+                            }
+                        }
+                        
+                        // Show page range around current page
+                        for ($i = $start_page; $i <= $end_page; $i++) {
+                            $page_url = $current_url . '?paged=' . $i;
+                            if ($query_string) {
+                                $page_url .= '&' . $query_string;
+                            }
+                            
+                            if ($i == $paged) {
+                                echo '<span class="current">' . $i . '</span> ';
+                            } else {
+                                echo '<a href="' . esc_url($page_url) . '">' . $i . '</a> ';
+                            }
+                        }
+                        
+                        // Show ellipsis and last page if needed
+                        if ($end_page < $total_pages) {
+                            if ($end_page < $total_pages - 1) {
+                                echo '<span>…</span> ';
+                            }
+                            
+                            $page_url = $current_url . '?paged=' . $total_pages;
+                            if ($query_string) {
+                                $page_url .= '&' . $query_string;
+                            }
+                            echo '<a href="' . esc_url($page_url) . '">' . $total_pages . '</a> ';
+                        }
+                        
+                        // Next link
+                        if ($paged < $total_pages) {
+                            $next_page = $paged + 1;
+                            $next_url = $current_url . '?paged=' . $next_page;
+                            if ($query_string) {
+                                $next_url .= '&' . $query_string;
+                            }
+                            echo '<a href="' . esc_url($next_url) . '">Next »</a>';
+                        }
+                        
+                        echo '</div>';
                     }
                     wp_reset_postdata();
                     ?>
