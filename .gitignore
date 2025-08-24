@@ -50,3 +50,6 @@ node_modules
 .DS_Store
 **/.DS_Store
 .vscode
+vendor
+composer.lock
+composer.json
