@@ -30,8 +30,7 @@ if (!function_exists('bridge_qode_child_theme_enqueue_scripts')) {
 		//splide style
 		if (scn_is_splide_page()) {
 			$ver_splide_css = file_exists($theme_dir . '/assets/css/splide.min.css') ? filemtime($theme_dir . '/assets/css/splide.min.css') : null;
-			wp_register_style('splide-style', get_stylesheet_directory_uri() . '/assets/css/splide.min.css', [], $ver_splide_css);
-			wp_enqueue_style('splide-style');
+			wp_enqueue_style('splide-style', get_stylesheet_directory_uri() . '/assets/css/splide.min.css', [], $ver_splide_css);
 		}
 
 		wp_enqueue_style(
@@ -360,23 +359,23 @@ add_filter('acf/the_field/escape_html_optin', '__return_true');
 function scn_is_splide_page()
 {
 	return is_front_page()
-	       || is_page('about')
-	       || is_page('our-team-and-hosts')
-	       || is_page('upcoming-live-programming')
-	       || is_page('on-demand-programming')
-	       || is_singular('program')
-	       || is_page('work-with-us')
-	       || is_page('podcasts-and-livestreams')
-	       || is_page('webinars')
-	       || is_page('blog-news')
-	       || is_page('blog')
-	       || is_page('white-paper')
-	       || is_page('ebook')
-	       || is_page('article')
-	       || is_page('news')
-	       || is_page('guide')
-	       || is_page('dev')
-	       || is_page('case-studies-customer-stories');
+		|| is_page('about')
+		|| is_page('our-team-and-hosts')
+		|| is_page('upcoming-live-programming')
+		|| is_page('on-demand-programming')
+		|| is_singular('program')
+		|| is_page('work-with-us')
+		|| is_page('podcasts-and-livestreams')
+		|| is_page('webinars')
+		|| is_page('blog-news')
+		|| is_page('blog')
+		|| is_page('white-paper')
+		|| is_page('ebook')
+		|| is_page('article')
+		|| is_page('news')
+		|| is_page('guide')
+		|| is_page('dev')
+		|| is_page('case-studies-customer-stories');
 }
 
 /*
