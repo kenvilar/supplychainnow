@@ -12,7 +12,7 @@ $pageId = get_the_ID();
 		get_template_part('components/hero/single-program');
 
 		get_template_part('components/ui/searchbar', null, [
-			'site_padding' => 'pt-58 pb-0',
+			'site_padding' => 'pt-58 pb-40',
 			'taxonomy' => 'tags',
 		]);
 
