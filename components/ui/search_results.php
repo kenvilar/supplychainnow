@@ -13,6 +13,8 @@ if ($search_query === '' && $industries === '' && (is_singular('program') && !is
     return;
 }
 
+$post_type = $args['post_type'] ?? 'page';
+$resource_hub = $args['resource_hub'] ?? false;
 $media_type = $args['media_type'] ?? ''; // 'podcasts-and-livestreams' || 'podcasts' || 'webinars' || 'livestreams'
 
 $pageId = get_the_ID();
@@ -29,7 +31,7 @@ if ($search_query !== '' || $industries !== '' || (is_singular('program') && iss
     $taxonomy = isset($_GET['taxonomy']) ? sanitize_key($_GET['taxonomy']) : 'post_tag';
 
     $args = [
-        'post_type'       => 'page',            // try 'any' to test
+        'post_type'       => $post_type,            // try 'any' to test
         'post_status'     => 'publish',
         's'               => $search_query,     // from ?search=
         'posts_per_page'  => 9,
@@ -134,6 +136,10 @@ if ($search_query !== '' || $industries !== '' || (is_singular('program') && iss
                 ],
             ],
         ];
+    }
+
+    if ($resource_hub) {
+        //$args['meta_query'] = [];
     }
 
     if ($industries !== '') {
