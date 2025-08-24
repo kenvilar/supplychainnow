@@ -623,7 +623,8 @@ footer .footer_inner {
 }
 .form .select-item.is-selected,
 .form .select-item.is-selected:hover {
-  background-color: violet;
+  opacity: 1;
+  font-weight: 500;
 }
 /*end custom select*/
 /*override the bridge theme */
