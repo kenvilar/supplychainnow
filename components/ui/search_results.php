@@ -29,9 +29,9 @@ if ($search_query !== '' || $industries !== '') {
         'post_status'     => 'publish',
         'posts_per_page'  => 10,
         'paged'           => $paged,
-        'search_columns'  => ['post_title','post_content'],
-        'suppress_filters'=> true               // critical: ignore posts_where/posts_search filters
-      ];
+        'search_columns'  => ['post_title', 'post_content'],
+        'suppress_filters' => true               // critical: ignore posts_where/posts_search filters
+    ];
 
     if ($industries !== '') {
         $args['tax_query'] = [
@@ -43,14 +43,14 @@ if ($search_query !== '' || $industries !== '') {
             ],
         ];
     }
-    
+
     $results_query = new WP_Query($args);
 }
 
 ?>
 <section class="section">
     <div class="site-padding sm:py-60 pb-60">
-        <div class="max-w-615 mx-auto">
+        <div class="max-w-1252 mx-auto">
             <?php if ($results_query instanceof WP_Query) : ?>
                 <div class="mb-52">
                     <div class="mb-20">
@@ -67,14 +67,148 @@ if ($search_query !== '' || $industries !== '') {
                     ?>
                 </div>
                 <?php if ($results_query->have_posts()) : ?>
-                    <ul class="list-unstyled grid gap-20">
-                        <?php while ($results_query->have_posts()) : $results_query->the_post(); ?>
-                            <li class="border border-secondary/30 rounded-10 p-20">
-                                <a href="<?php the_permalink(); ?>" class="text-primary text-lg font-semibold"><?php the_title(); ?></a>
-                                <p class="mt-8 text-sm text-textcolor/80"><?php echo esc_html(wp_trim_words(get_the_excerpt(), 32, '…')); ?></p>
-                            </li>
+                    <div class="mb-20 grid gap-32 gap-y-60 grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
+                        <?php while ($results_query->have_posts()) :
+                            $results_query->the_post();
+                            $selectMediaType = get_field("select_media_type", $q->post->ID);
+                        ?>
+                            <a href="<?php
+                                        the_permalink($q->post->ID); ?>" class="relative w-full group <?php echo $classNames; ?>" <?php echo $attr_string ?>>
+                                <div class="relative flex flex-col justify-between gap-20 h-full">
+                                    <div class="w-full">
+                                        <div class="mb-28">
+                                            <div class="overflow-hidden rounded-12 relative h-222 bg-cargogrey">
+                                                <img
+                                                    src="<?php
+                                                            echo get_the_post_thumbnail_url($q->post->ID)
+                                                                ? get_the_post_thumbnail_url($q->post->ID, 'medium')
+                                                                : get_stylesheet_directory_uri() .
+                                                                "/assets/img/misc/default-card-img-thumbnail.avif"; ?>"
+                                                    loading="lazy" alt="" class="image relative opacity-90">
+                                                <?php
+                                                $terms = get_the_terms($q->post->ID, "tags");
+                                                if (!is_wp_error($terms) && !empty($terms)) {
+                                                    $first = array_values($terms)[0]; ?>
+                                                    <div class="absolute absolute--tl p-24 flex items-center justify-center">
+                                                        <div class="relative rounded-full overflow-hidden py-4 px-8">
+                                                            <div class="relative font-semibold uppercase text-2xs text-white lh-normal z-10">
+                                                                <?php
+                                                                echo $first->name; ?>
+                                                            </div>
+                                                            <?php
+                                                            echo $selectMediaType == "livestream"
+                                                                ? '<div class="absolute absolute--full bg-primary"></div>'
+                                                                : "";
+                                                            echo $selectMediaType == "podcast"
+                                                                ? '<div class="absolute absolute--full bg-secondary"></div>'
+                                                                : "";
+                                                            echo $selectMediaType == "webinar"
+                                                                ? '<div class="absolute absolute--full bg-tertiary"></div>'
+                                                                : "";
+                                                            ?>
+                                                        </div>
+                                                    </div>
+                                                <?php
+                                                }
+                                                ?>
+                                                <div
+                                                    class="absolute absolute--full flex items-center justify-center translate-y-220 group-hover:translate-y-0 transition-all duration-500">
+                                                    <?php
+                                                    if ($selectMediaType == "livestream") { ?>
+                                                        <img
+                                                            src="<?php
+                                                                    echo get_stylesheet_directory_uri() .
+                                                                        "/assets/img/icons/play-button-livestream.avif"; ?>"
+                                                            loading="lazy" alt="play-button-livestream">
+                                                    <?php
+                                                    } elseif ($selectMediaType == "podcast") { ?>
+                                                        <img
+                                                            src="<?php
+                                                                    echo get_stylesheet_directory_uri() .
+                                                                        "/assets/img/icons/play-button-podcast.avif"; ?>"
+                                                            loading="lazy" alt="play-button-podcast">
+                                                    <?php
+                                                    } elseif ($selectMediaType == "webinar") { ?>
+                                                        <img
+                                                            src="<?php
+                                                                    echo get_stylesheet_directory_uri() .
+                                                                        "/assets/img/icons/play-button-webinar.avif"; ?>"
+                                                            loading="lazy" alt="play-button-webinar">
+                                                    <?php
+                                                    } ?>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-12">
+                                            <div class="flex items-center gap-32 sm:flex-wrap sm:gap-8">
+                                                <div class="flex items-center gap-8">
+                                                    <div class="flex items-center">
+                                                        <?php
+                                                        if ($selectMediaType == "livestream") { ?>
+                                                            <img
+                                                                src="<?php
+                                                                        echo get_stylesheet_directory_uri() .
+                                                                            "/assets/img/icons/livestream-card-icon.svg"; ?>"
+                                                                loading="lazy" alt="livestream-music">
+                                                        <?php
+                                                        } elseif ($selectMediaType == "podcast") { ?>
+                                                            <img
+                                                                class="size-24"
+                                                                src="<?php
+                                                                        echo get_stylesheet_directory_uri() .
+                                                                            "/assets/img/icons/podcast-card-icon.png"; ?>"
+                                                                loading="lazy" alt="podcast-blue-microphone">
+                                                        <?php
+                                                        } elseif ($selectMediaType == "webinar") { ?>
+                                                            <img
+                                                                class="size-24"
+                                                                src="<?php
+                                                                        echo get_stylesheet_directory_uri() .
+                                                                            "/assets/img/icons/webinar-card-icon.png"; ?>"
+                                                                loading="lazy" alt="webinar-person">
+                                                        <?php
+                                                        } ?>
+                                                    </div>
+                                                    <?php
+                                                    if ($selectMediaType) { ?>
+                                                        <div class="font-family-secondary text-sm capitalize">
+                                                            <?php
+                                                            echo $selectMediaType; ?>
+                                                        </div>
+                                                    <?php
+                                                    } ?>
+                                                </div>
+                                                <div class="flex items-center gap-8 text-sm font-light font-family-secondary">
+                                                    <div>
+                                                        <?php
+                                                        echo get_the_date("F j, Y", $q->post->ID); ?>
+                                                    </div>
+                                                    <!--<div>•</div>
+                                <div>6 min 25 sec</div>-->
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <h3 class="font-semibold text-lg" scn-text-limit="2">
+                                            <?php
+                                            the_title(); ?>
+                                        </h3>
+                                    </div>
+                                    <div class="w-full tracking-[1.4px] text-sm" scn-text-limit="3">
+                                        <?php
+                                        if (get_the_excerpt($q->post->ID)) {
+                                            the_excerpt();
+                                        } elseif (get_field("livestream_description", $q->post->ID)) {
+                                            the_field("livestream_description", $q->post->ID);
+                                        } elseif (get_field("episode_summary", $q->post->ID)) {
+                                            the_field("episode_summary", $q->post->ID);
+                                        } elseif (get_field("webinar_description", $q->post->ID)) {
+                                            the_field("webinar_description", $q->post->ID);
+                                        } ?>
+                                    </div>
+                                </div>
+                            </a>
                         <?php endwhile; ?>
-                    </ul>
+                    </div>
 
                     <?php
                     $big = 999999999; // unlikely integer
