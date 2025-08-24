@@ -25,12 +25,41 @@ if ($search_query !== '' || $industries !== '') {
 
     $args = [
         'post_type'       => 'page',            // try 'any' to test
-        's'               => $search_query,     // from ?search=
         'post_status'     => 'publish',
+        's'               => $search_query,     // from ?search=
         'posts_per_page'  => 9,
+        "offset" => 0,
         'paged'           => $paged,
         'search_columns'  => ['post_title', 'post_content'],
-        'suppress_filters' => true               // critical: ignore posts_where/posts_search filters
+        'suppress_filters' => true,               // critical: ignore posts_where/posts_search filters
+        "meta_query" => [
+            "relation" => "AND",
+            [
+                "relation" => "OR",
+                [
+                    "key" => "_wp_page_template",
+                    "value" => "episode-detail.php",
+                    "compare" => "=",
+                ],
+                [
+                    "key" => "_wp_page_template",
+                    "value" => "webinar-detail.php",
+                    "compare" => "=",
+                ],
+                [
+                    "key" => "_wp_page_template",
+                    "value" => "livestream-detail.php",
+                    "compare" => "=",
+                ],
+            ],
+            [
+                "key" => "select_media_type",
+                "value" => ["podcast", "livestream", "webinar"],
+                "compare" => "IN",
+                "type" => "CHAR",
+            ],
+        ],
+        "orderby" => ["menu_order" => "ASC", "date" => "DESC"], //'rand',
     ];
 
     if ($industries !== '') {
