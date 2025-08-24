@@ -16,7 +16,7 @@ $pageId = get_the_ID();
 			'taxonomy' => 'tags',
 		]);
 
-		if (!isset($_GET['search']) || !isset($_GET['industries'])) {
+		if (!isset($_GET['taxonomy'])) {
 			get_template_part('components/section/single-program/featured-episodes');
 			get_template_part('components/section/single-program/suggested-podcasts');
 		}

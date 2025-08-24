@@ -1,9 +1,5 @@
 <?php
 
-$media_type = $args['media_type'] ?? ''; // 'podcasts-and-livestreams' || 'podcasts' || 'webinars' || 'livestreams'
-
-$pageId = get_the_ID();
-
 // Read query params (component only; no header/footer)
 $search_query = isset($_GET['s']) ? sanitize_text_field(wp_unslash($_GET['s'])) : '';
 // Support custom param `search` when using in-page search (avoids WP search routing)
@@ -16,6 +12,10 @@ $industries   = isset($_GET['industries']) ? sanitize_text_field(wp_unslash($_GE
 if ($search_query === '' && $industries === '') {
     return;
 }
+
+$media_type = $args['media_type'] ?? ''; // 'podcasts-and-livestreams' || 'podcasts' || 'webinars' || 'livestreams'
+
+$pageId = get_the_ID();
 
 // Determine current page for pagination
 $paged = (int) get_query_var('paged');
