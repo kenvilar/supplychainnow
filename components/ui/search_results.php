@@ -34,7 +34,7 @@ if ($search_query !== '' || $industries !== '') {
 }
 ?>
 <section class="section">
-    <div class="site-padding">
+    <div class="site-padding sm:py-60 pb-60">
         <div class="max-w-615 mx-auto">
             <?php if ($results_query instanceof WP_Query) : ?>
                 <div class="mb-52">
