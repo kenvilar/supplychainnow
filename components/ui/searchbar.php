@@ -1,6 +1,7 @@
 <?php
 $site_padding = $args["site_padding"] ?? "";
 $selected_type = isset($_GET['type']) ? sanitize_text_field(wp_unslash($_GET['type'])) : '';
+$current_industries = isset($_GET['industries']) ? sanitize_text_field(wp_unslash($_GET['industries'])) : '';
 ?>
 <section class="section overflow-visible!">
 	<div class="site-padding sm:py-60 <?php echo esc_attr($site_padding); ?>">
@@ -35,18 +36,18 @@ $selected_type = isset($_GET['type']) ? sanitize_text_field(wp_unslash($_GET['ty
 						<label class="sr-only" for="search-type">Filter type</label>
 						<div class="form-select-control">
 							<select id="search-type" name="industries" class="select">
-								<option value="" selected>Sort by Industries</option>
-								<option value="manufacturing">Manufacturing</option>
-								<option value="transportation">Transportation</option>
-								<option value="supply chain">Supply Chain</option>
-								<option value="retail">Retail</option>
-								<option value="it & services">IT & Services</option>
-								<option value="saas">SaaS</option>
-								<option value="distribution">Distribution</option>
-								<option value="warehousing">Warehousing</option>
-								<option value="supply chain tech">Supply Chain Tech</option>
-								<option value="logistics/3pls">Logistics/3PLs</option>
-								<option value="shipping">Shipping</option>
+								<option value="" <?php echo $current_industries === '' ? 'selected' : ''; ?>>Sort by Industries</option>
+								<option value="manufacturing" <?php echo $current_industries === 'manufacturing' ? 'selected' : ''; ?>>Manufacturing</option>
+								<option value="transportation" <?php echo $current_industries === 'transportation' ? 'selected' : ''; ?>>Transportation</option>
+								<option value="supply chain" <?php echo $current_industries === 'supply chain' ? 'selected' : ''; ?>>Supply Chain</option>
+								<option value="retail" <?php echo $current_industries === 'retail' ? 'selected' : ''; ?>>Retail</option>
+								<option value="it & services" <?php echo $current_industries === 'it & services' ? 'selected' : ''; ?>>IT & Services</option>
+								<option value="saas" <?php echo $current_industries === 'saas' ? 'selected' : ''; ?>>SaaS</option>
+								<option value="distribution" <?php echo $current_industries === 'distribution' ? 'selected' : ''; ?>>Distribution</option>
+								<option value="warehousing" <?php echo $current_industries === 'warehousing' ? 'selected' : ''; ?>>Warehousing</option>
+								<option value="supply chain tech" <?php echo $current_industries === 'supply chain tech' ? 'selected' : ''; ?>>Supply Chain Tech</option>
+								<option value="logistics/3pls" <?php echo $current_industries === 'logistics/3pls' ? 'selected' : ''; ?>>Logistics/3PLs</option>
+								<option value="shipping" <?php echo $current_industries === 'shipping' ? 'selected' : ''; ?>>Shipping</option>
 							</select>
 						</div>
 					</div>
