@@ -77,7 +77,7 @@ if ($categorySlug) {
 				<div class="mx-auto max-w-1010 w-full md:max-w-full">
 					<div class="overflow-hidden rounded-25 relative">
 						<div class="relative z-1 h-568 sm:h-200">
-							<img class="image relative z-10" src="
+							<img class="image relative z-10 object-contain!" src="
 							<?php
 							if (has_post_thumbnail($postId)) {
 								the_post_thumbnail_url("full");
@@ -85,10 +85,10 @@ if ($categorySlug) {
 								echo get_stylesheet_directory_uri() .
 								     "/assets/img/misc/default-card-img-thumbnail.avif";
 							} ?>" alt="">
-							<img class="absolute absolute--full image z-1" src="<?php
+							<!-- <img class="absolute absolute--full image z-1" src="<?php
 							echo get_stylesheet_directory_uri() .
 							     "/assets/img/misc/default-card-img-thumbnail.avif"; ?>"
-							     alt="">
+							     alt=""> -->
 						</div>
 						<div class="absolute absolute--full bg-cargogrey z--1"></div>
 					</div>
