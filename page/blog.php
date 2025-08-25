@@ -17,7 +17,7 @@ $pageId = get_the_ID();
 			'tabNumber' => 2
 		]);
 
-		get_template_part('components/ui/searchbar', [
+		get_template_part('components/ui/searchbar', null, [
 			'site_padding' => 'pt-52 pb-40',
 			'taxonomy' => 'post_tag',
 		]);
@@ -48,7 +48,7 @@ $pageId = get_the_ID();
 			'sitePaddingClassnames' => 'pb-92',
 		]);
 
-		get_template_part('components/ui/search_results', [
+		get_template_part('components/ui/search_results', null, [
 			'post_type' => 'post',
 			'resource_hub' => true,
 		]);
