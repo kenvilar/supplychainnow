@@ -3,6 +3,8 @@ $site_padding = $args["site_padding"] ?? "";
 $selected_type = isset($_GET['type']) ? sanitize_text_field(wp_unslash($_GET['type'])) : '';
 $current_industries = isset($_GET['industries']) ? sanitize_text_field(wp_unslash($_GET['industries'])) : '';
 $passed_taxonomy = isset($args['taxonomy']) ? sanitize_key($args['taxonomy']) : null;
+$hide_dropdown = isset($args['hide_dropdown']) ? $args['hide_dropdown'] : false;
+$placeholder = isset($args['placeholder']) ? $args['placeholder'] : 'Search by episode, topic, name, etc...';
 ?>
 <section class="section overflow-visible!">
 	<div class="site-padding sm:py-60 <?php echo esc_attr($site_padding); ?>">
@@ -22,7 +24,7 @@ $passed_taxonomy = isset($args['taxonomy']) ? sanitize_key($args['taxonomy']) : 
 									type="search"
 									name="search"
 									value="<?php echo isset($_GET['search']) ? esc_attr(sanitize_text_field(wp_unslash($_GET['search']))) : ''; ?>"
-									placeholder="Search by episode, topic, name, etc..."
+									placeholder="<?php echo $placeholder; ?>"
 									class="overflow-hidden rounded-100 w-full h-43 py-14 pl-48 pr-12 text-sm font-light placeholder:text-secondary" />
 							</label>
 							<div class="absolute absolute--l flex items-center justify-center pl-22">
@@ -37,7 +39,7 @@ $passed_taxonomy = isset($args['taxonomy']) ? sanitize_key($args['taxonomy']) : 
 
 
 					</div>
-					<div class="max-w-181 w-full md:max-w-full">
+					<div class="max-w-181 w-full md:max-w-full <?php echo $hide_dropdown ? 'hidden!' : '';?>">
 						<label class="sr-only" for="search-industries">Filter type</label>
 						<div class="form-select-control">
 							<select id="search-industries" name="industries" class="select">

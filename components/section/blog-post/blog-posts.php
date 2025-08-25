@@ -68,7 +68,7 @@ if ($categorySlug) {
 				<div class="mx-auto text-center">
 					<a href="<?= '/' . $categorySlug; ?>" class="font-semibold text-reg text-secondary">
 						< Back to <?= $categoryResultName; ?>
-					</a>
+							</a>
 				</div>
 			</div>
 		</section>
@@ -83,11 +83,11 @@ if ($categorySlug) {
 								the_post_thumbnail_url("full");
 							} else {
 								echo get_stylesheet_directory_uri() .
-								     "/assets/img/misc/default-card-img-thumbnail.avif";
+									"/assets/img/misc/default-card-img-thumbnail.avif";
 							} ?>" alt="">
 							<!-- <img class="absolute absolute--full image z-1" src="<?php
-							echo get_stylesheet_directory_uri() .
-							     "/assets/img/misc/default-card-img-thumbnail.avif"; ?>"
+																						echo get_stylesheet_directory_uri() .
+																							"/assets/img/misc/default-card-img-thumbnail.avif"; ?>"
 							     alt=""> -->
 						</div>
 						<div class="absolute absolute--full bg-cargogrey z--1"></div>
@@ -123,7 +123,7 @@ if ($categorySlug) {
 							<div class="mb-36">
 								<div class="mb-20">
 									<h2 class="text-2xl">More <?php
-										echo $categoryResultName; ?></h2>
+																echo $categoryResultName; ?></h2>
 								</div>
 								<?php
 								get_template_part("components/line-with-blinking-dot", null, [
@@ -133,16 +133,16 @@ if ($categorySlug) {
 							<div class="mb-52">
 								<!--<form class="relative overflow-hidden rounded-100 border border-secondary/50 bg-[#EBF6FF]"
 								      method="get" action="<?php
-								/*									echo esc_url(home_url(add_query_arg([]))); */
+															/*									echo esc_url(home_url(add_query_arg([]))); */
 
-								?>">
+															?>">
 									<input
 										type="search"
 										name="s"
 										value="<?php
-								/*											echo esc_attr(get_search_query()); */
+												/*											echo esc_attr(get_search_query()); */
 
-								?>"
+												?>"
 										placeholder="Search by episode, topic, name, etc..."
 										class="overflow-hidden rounded-100 w-full h-43 py-14 pl-48 pr-12 text-sm font-light placeholder:text-secondary"
 									/>
@@ -155,6 +155,14 @@ if ($categorySlug) {
 										</svg>
 									</div>
 								</form>-->
+								<?php
+								get_template_part('components/ui/searchbar', null, [
+									'site_padding' => 'px-0! py-0 pb-0',
+									'taxonomy' => 'post_tag',
+									'hide_dropdown' => true,
+									'placeholder' => 'Search',
+								]);
+								?>
 							</div>
 							<div class="mb-52 flex flex-col gap-58 sm:gap-20">
 								<?php
@@ -182,17 +190,17 @@ if ($categorySlug) {
 									while ($q->have_posts()):
 										$q->the_post(); ?>
 										<a href="<?= get_permalink($q->post->ID) . '?category=' . $categorySlug; ?>"
-										   class="relative w-full group">
+											class="relative w-full group">
 											<div class="relative flex flex-col justify-between gap-20 h-full">
 												<div class="w-full">
 													<div class="mb-28">
 														<div class="overflow-hidden rounded-12 relative h-222 bg-cargogrey">
 															<img
 																src="<?php
-																echo get_the_post_thumbnail_url($q->post->ID)
-																	? get_the_post_thumbnail_url($q->post->ID)
-																	: get_stylesheet_directory_uri() .
-																	  "/assets/img/misc/default-card-img-thumbnail.avif"; ?>"
+																		echo get_the_post_thumbnail_url($q->post->ID)
+																			? get_the_post_thumbnail_url($q->post->ID)
+																			: get_stylesheet_directory_uri() .
+																			"/assets/img/misc/default-card-img-thumbnail.avif"; ?>"
 																loading="lazy" alt="" class="image relative opacity-90">
 															<?php
 															$terms = get_the_terms($q->post->ID, "post_tag");
@@ -208,7 +216,7 @@ if ($categorySlug) {
 																		<div class="absolute absolute--full bg-white"></div>
 																	</div>
 																</div>
-																<?php
+															<?php
 															}
 															?>
 														</div>
@@ -223,14 +231,14 @@ if ($categorySlug) {
 															</div>
 															<div class="flex items-center gap-8 text-sm font-light font-family-secondary">
 																<div><?php
-																	echo get_the_date("F j, Y", $q->post->ID); ?></div>
+																		echo get_the_date("F j, Y", $q->post->ID); ?></div>
 																<!--<div>•</div>
 																<div>6 min 25 sec</div>-->
 															</div>
 														</div>
 													</div>
 													<h3 class="font-semibold text-lg" scn-text-limit="2"><?php
-														the_title(); ?></h3>
+																											the_title(); ?></h3>
 												</div>
 												<div class="w-full tracking-[1.4px] text-sm" scn-text-limit="3">
 													<?php
