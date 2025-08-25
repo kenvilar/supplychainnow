@@ -16,17 +16,13 @@ if ($categorySlug) {
 	} elseif ($categorySlug == 'news') { //news
 		$categoryResultName = 'News';
 		$categorySlug = 'news';
-	} elseif ($categorySlug == 'visibility-guide' || $categorySlug == 'guide') { //visibility-guide
+	} elseif ($categorySlug == 'guide') { //guide
 		$categoryResultName = 'Guides';
-		$categorySlug = 'visibility-guide';
+		$categorySlug = 'guide';
 	} elseif ($categorySlug == 'white-paper') { //white-paper
 		$categoryResultName = 'White Papers';
 		$categorySlug = 'white-paper';
-	} elseif (
-		$categorySlug == 'article'
-		|| $categorySlug == 'guest-post'
-		|| $categorySlug == 'weekly-summary'
-	) { //article || guest-post || weekly-summary
+	} elseif ($categorySlug == 'article' || $categorySlug == 'weekly-summary') { //article || weekly-summary
 		$categoryResultName = 'Articles';
 		$categorySlug = 'article';
 	} else {
@@ -41,17 +37,13 @@ if ($categorySlug) {
 		} elseif ($categories[0]->name == 'News') { //news
 			$categoryResultName = 'News';
 			$categorySlug = 'news';
-		} elseif ($categories[0]->name == 'Visibility Guide') { //visibility-guide
+		} elseif ($categories[0]->name == 'Guide') { //visibility-guide
 			$categoryResultName = 'Guides';
-			$categorySlug = 'visibility-guide';
+			$categorySlug = 'guide';
 		} elseif ($categories[0]->name == 'White Paper') { //white-paper
 			$categoryResultName = 'White Papers';
 			$categorySlug = 'white-paper';
-		} elseif (
-			$categories[0]->name == 'Article'
-			|| $categories[0]->name == 'Guest Post'
-			|| $categories[0]->name == 'Weekly Summary'
-		) { //article || guest-post || weekly-summary
+		} elseif ($categories[0]->name == 'Article' || $categories[0]->name == 'Weekly Summary') { //article || weekly-summary
 			$categoryResultName = 'Articles';
 			$categorySlug = 'article';
 		} else {
@@ -80,7 +72,7 @@ if ($categorySlug) {
 							<img class="image relative z-10 object-contain!" src="
 							<?php
 							if (has_post_thumbnail($postId)) {
-								the_post_thumbnail_url("full");
+								the_post_thumbnail_url("medium_large");
 							} else {
 								echo get_stylesheet_directory_uri() .
 									"/assets/img/misc/default-card-img-thumbnail.avif";
@@ -198,8 +190,8 @@ if ($categorySlug) {
 														<div class="overflow-hidden rounded-12 relative h-222 bg-cargogrey">
 															<img
 																src="<?php
-																		echo get_the_post_thumbnail_url($q->post->ID)
-																			? get_the_post_thumbnail_url($q->post->ID)
+																		echo get_the_post_thumbnail_url($q->post->ID, 'thumbnail')
+																			? get_the_post_thumbnail_url($q->post->ID, 'thumbnail')
 																			: get_stylesheet_directory_uri() .
 																			"/assets/img/misc/default-card-img-thumbnail.avif"; ?>"
 																loading="lazy" alt="" class="image relative opacity-90">

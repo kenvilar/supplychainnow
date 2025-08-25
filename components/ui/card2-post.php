@@ -81,17 +81,13 @@ if ($q->have_posts()): ?>
 			} elseif ($firstCategoryName == 'news') { //news
 				$categoryResultName = 'News';
 				$categorySlug = 'news';
-			} elseif ($firstCategoryName == 'visibility-guide') { //visibility-guide
+			} elseif ($firstCategoryName == 'guide') { //guide
 				$categoryResultName = 'Guide';
-				$categorySlug = 'visibility-guide';
+				$categorySlug = 'guide';
 			} elseif ($firstCategoryName == 'white-paper') { //white-paper
 				$categoryResultName = 'White Paper';
 				$categorySlug = 'white-paper';
-			} elseif (
-				$firstCategoryName == 'article'
-				|| $firstCategoryName == 'guest-post'
-				|| $firstCategoryName == 'weekly-summary'
-			) { //article || guest-post || weekly-summary
+			} elseif ($firstCategoryName == 'article' || $firstCategoryName == 'weekly-summary') { //article || weekly-summary
 				$categoryResultName = 'Article';
 				$categorySlug = 'article';
 			} else {
@@ -106,17 +102,13 @@ if ($q->have_posts()): ?>
 				} elseif ($categories[0]->name == 'News') { //news
 					$categoryResultName = 'News';
 					$categorySlug = 'news';
-				} elseif ($categories[0]->name == 'Visibility Guide') { //visibility-guide
+				} elseif ($categories[0]->name == 'Guide') { //guide
 					$categoryResultName = 'Guide';
-					$categorySlug = 'visibility-guide';
+					$categorySlug = 'guide';
 				} elseif ($categories[0]->name == 'White Paper') { //white-paper
 					$categoryResultName = 'White Paper';
 					$categorySlug = 'white-paper';
-				} elseif (
-					$categories[0]->name == 'Article'
-					|| $categories[0]->name == 'Guest Post'
-					|| $categories[0]->name == 'Weekly Summary'
-				) { //article || guest-post || weekly-summary
+				} elseif ($categories[0]->name == 'Article' || $categories[0]->name == 'Weekly Summary') { //article || weekly-summary
 					$categoryResultName = 'Article';
 					$categorySlug = 'article';
 				} else {
@@ -125,19 +117,19 @@ if ($q->have_posts()): ?>
 				}
 			}
 		}
-		?>
+	?>
 		<a href="<?= get_permalink($q->post->ID) . '?category=' . $categorySlug; ?>"
-		   class="relative w-full group <?= $classNames; ?>" <?= $attr_string ?>>
+			class="relative w-full group <?= $classNames; ?>" <?= $attr_string ?>>
 			<div class="relative flex flex-col justify-between gap-20 h-full">
 				<div class="w-full">
 					<div class="mb-28">
 						<div class="overflow-hidden rounded-12 relative h-222 bg-cargogrey">
 							<img
 								src="<?php
-								echo get_the_post_thumbnail_url($q->post->ID)
-									? get_the_post_thumbnail_url($q->post->ID, 'medium')
-									: get_stylesheet_directory_uri() .
-									  "/assets/img/misc/default-card-img-thumbnail.avif"; ?>"
+										echo get_the_post_thumbnail_url($q->post->ID)
+											? get_the_post_thumbnail_url($q->post->ID, 'medium')
+											: get_stylesheet_directory_uri() .
+											"/assets/img/misc/default-card-img-thumbnail.avif"; ?>"
 								loading="lazy" alt="" class="image relative opacity-90">
 							<?php
 							$terms = get_the_terms($q->post->ID, "post_tag");
@@ -152,7 +144,7 @@ if ($q->have_posts()): ?>
 										<div class="absolute absolute--full bg-white"></div>
 									</div>
 								</div>
-								<?php
+							<?php
 							}
 							?>
 						</div>
