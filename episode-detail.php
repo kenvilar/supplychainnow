@@ -157,7 +157,7 @@ $youtube_url = $matches[1] ?? '';
 									</div>
 								</div>
 							</div>
-							<div class="tracking-[1.6px]">
+							<div class="rt--default tracking-[1.6px]">
 								<h3 class="mb-50 text-34 lh-43 font-semibold">
 									PODCAST EPISODE:
 									<?php
