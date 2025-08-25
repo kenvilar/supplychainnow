@@ -24,7 +24,7 @@
 					<div class="flex justify-end sm:justify-center">
 						<?php
 						echo get_template_part('components/ui/btn', null, [
-							'text' => 'Book a call to learn more',
+							'text' => 'Book a Call to Learn More',
 							'link' => '/contact',
 							'style' => 'primary',
 							'class' => '',
