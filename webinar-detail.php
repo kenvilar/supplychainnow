@@ -124,7 +124,7 @@ $webinar_button_link = get_field('webinar_button_link', $pageId);
 										<a href="<?php
 													if ($webinar_button_link) {
 														echo esc_url($webinar_button_link);
-													} ?>" class="btn primary w-inline-block" target="<?php
+													} ?>" class="btn primary w-inline-block py-20! px-32!" target="<?php
 																										if ($webinar_button_link) {
 																											echo '_blank';
 																										} else {
