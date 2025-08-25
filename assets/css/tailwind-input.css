@@ -91,6 +91,9 @@
   .w-list-unstyled {
     padding-left: 0;
     list-style: none !important;
+    li {
+      list-style: none !important;
+    }
   }
   .w-layout-vflex {
     flex-direction: column;
@@ -314,7 +317,9 @@
     color: var(--primary);
   }
 }
-.rt--default, .cli_pg_page_contaner, .wpb_wrapper {
+.rt--default,
+.cli_pg_page_contaner,
+.wpb_wrapper {
   letter-spacing: 1.6px !important;
   word-wrap: break-word;
   h1,
