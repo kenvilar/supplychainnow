@@ -159,11 +159,14 @@ $youtube_url = $matches[1] ?? '';
 							</div>
 							<div class="tracking-[1.6px]">
 								<h3 class="mb-50 text-34 lh-43 font-semibold">
+									PODCAST EPISODE:
+									<?php
+									the_title();
+									?>
+									<br>
 									<?php
 									if (get_field('episode_title', $pageId)) {
 										echo get_field('episode_title', $pageId);
-									} else {
-										the_title();
 									}
 									?>
 								</h3>
@@ -444,7 +447,7 @@ $youtube_url = $matches[1] ?? '';
 	<div class="relative">
 		<div class="min-h-990 h-full flex justify-center pt-70 pb-57 px-32">
 			<div class="w-layout-blockcontainer max-w-841 w-full md:max-w-full w-container">
-				<div class="mb-16 flex items-center gap-22">
+				<div class="hidden mb-16 flex items-center gap-22">
 					<div class="lh-normal"><?php
 											echo get_the_date('F j, Y', $pageId) ?></div>
 					<?php
