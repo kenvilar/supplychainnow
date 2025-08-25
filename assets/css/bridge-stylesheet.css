@@ -2656,7 +2656,7 @@ div[data-element_type=container].qode_elementor_container_inner {
 }
 
 .content .container .container_inner.page_container_inner,.full_page_container_inner {
-    padding: 30px 0 0
+    padding: 30px 0 60px;
 }
 
 .header_bottom .container_inner {
