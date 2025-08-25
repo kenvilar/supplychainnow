@@ -407,7 +407,7 @@ if ($search_query !== '' || $industries !== '' || (is_singular('program') && iss
                         // Show ellipsis and last page if needed
                         if ($end_page < $total_pages) {
                             if ($end_page < $total_pages - 1) {
-                                echo '<span>…</span> ';
+                                echo '<span class="text-primary">…</span> ';
                             }
 
                             $page_url = $current_url . '?paged=' . $total_pages;
