@@ -5,14 +5,19 @@ $current_industries = isset($_GET['industries']) ? sanitize_text_field(wp_unslas
 $passed_taxonomy = isset($args['taxonomy']) ? sanitize_key($args['taxonomy']) : null;
 $hide_dropdown = isset($args['hide_dropdown']) ? $args['hide_dropdown'] : false;
 $placeholder = isset($args['placeholder']) ? $args['placeholder'] : 'Search by episode, topic, name, etc...';
+$redirect_to = isset($args['redirect_to']) ? $args['redirect_to'] : '';
 ?>
 <section class="section overflow-visible!">
 	<div class="site-padding sm:py-60 <?php echo esc_attr($site_padding); ?>">
 		<div class="max-w-615 mx-auto">
 			<form class="form"
-				method="get" action="<?php echo esc_url(get_permalink()); ?>" onsubmit="if(!this.industries.value){this.industries.disabled=true}">
+				method="get" action="<?php echo esc_url($redirect_to ? $redirect_to : get_permalink()); ?>" onsubmit="if(!this.industries.value){this.industries.disabled=true}">
 				<?php
 				$current_taxonomy = isset($_GET['taxonomy']) ? sanitize_key($_GET['taxonomy']) : ($passed_taxonomy ?: 'post_tag');
+				// If redirecting to another page (e.g., /blog), force taxonomy to post_tag unless explicitly provided
+				if (!empty($redirect_to) && !isset($_GET['taxonomy'])) {
+					$current_taxonomy = 'post_tag';
+				}
 				?>
 				<input type="hidden" name="taxonomy" value="<?php echo esc_attr($current_taxonomy); ?>" />
 				<div class="flex gap-11 justify-between items-stretch">

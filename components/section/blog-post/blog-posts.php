@@ -161,6 +161,7 @@ if ($categorySlug) {
 									'taxonomy' => 'post_tag',
 									'hide_dropdown' => true,
 									'placeholder' => 'Search',
+									'redirect_to' => '/blog',
 								]);
 								?>
 							</div>
