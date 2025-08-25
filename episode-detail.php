@@ -228,7 +228,7 @@ $youtube_url = $matches[1] ?? '';
 									'site_padding' => 'px-0! py-0 pb-0',
 									'taxonomy' => 'tags',
 									'hide_dropdown' => true,
-									'redirect_to' => '/podcasts-and-livestreams',
+									'redirect_to' => '/on-demand-programming',
 								]);
 								?>
 							</div>

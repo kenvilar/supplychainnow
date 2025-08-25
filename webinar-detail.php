@@ -125,12 +125,12 @@ $webinar_button_link = get_field('webinar_button_link', $pageId);
 													if ($webinar_button_link) {
 														echo esc_url($webinar_button_link);
 													} ?>" class="btn primary w-inline-block py-20! px-32!" target="<?php
-																										if ($webinar_button_link) {
-																											echo '_blank';
-																										} else {
-																											echo '_self';
-																										}
-																										?>" rel="noopener noreferrer">
+																													if ($webinar_button_link) {
+																														echo '_blank';
+																													} else {
+																														echo '_self';
+																													}
+																													?>" rel="noopener noreferrer">
 											<div class="flex items-center gap-8">
 												<div>View this Webinar</div>
 											</div>
@@ -182,6 +182,14 @@ $webinar_button_link = get_field('webinar_button_link', $pageId);
 										</svg>
 									</div>
 								</form>-->
+								<?php
+								get_template_part('components/ui/searchbar', null, [
+									'site_padding' => 'px-0! py-0 pb-0',
+									'taxonomy' => 'tags',
+									'hide_dropdown' => true,
+									'redirect_to' => '/on-demand-programming',
+								]);
+								?>
 							</div>
 							<div class="mb-52 flex flex-col gap-58 sm:gap-20">
 								<?php
