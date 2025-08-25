@@ -17,9 +17,8 @@
 						<?php
 						echo get_template_part("components/ui/card1", null, [
 							"q" => [
-								"posts_per_page" => 2,
 								"meta_query" => [
-									"relation" => "AND",
+									"relation" => "OR",
 									[
 										"relation" => "OR",
 										[
@@ -33,14 +32,10 @@
 											"compare" => "=",
 										],
 									],
-									[
-										"key" => "select_media_type",
-										"value" => ["podcast", "livestream"],
-										"compare" => "IN",
-										"type" => "CHAR",
-									],
 								],
 							],
+							"q_post" => [],
+							"post_per_page" => 2,
 							"attributes" => [],
 							"classNames" => "",
 							"noItemsFound" => "",

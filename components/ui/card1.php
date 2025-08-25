@@ -9,6 +9,8 @@ echo get_template_part('components/ui/card1', null, [
 */
 
 $override_args = $args["q"] ?? [];
+$override_args_post = $args["q_post"] ?? [];
+$post_per_page = $args["post_per_page"] ?? 1;
 $attributes = $args["attributes"] ?? [];
 $classNames = $args["classNames"] ?? '';
 $noItemsFound = $args["noItemsFound"] ?? '<p class="w-full text-center">No items found.</p>';
@@ -22,13 +24,13 @@ foreach ($attributes as $key => $value) {
 	$attr_string .= sprintf(' %s="%s"', esc_attr($key), esc_attr($value));
 }
 
-$defaults_args = [
+// Query for pages with specific templates
+$page_args = [
 	"post_type" => "page",
 	"post_status" => "publish",
-	"posts_per_page" => 1,
+	"posts_per_page" => -1,
 	"offset" => 0,
 	"meta_query" => [
-		"relation" => "AND",
 		[
 			"relation" => "OR",
 			[
@@ -47,24 +49,60 @@ $defaults_args = [
 				"compare" => "=",
 			],
 		],
-		[
-			"key" => "select_media_type",
-			"value" => ["podcast", "livestream", "webinar"],
-			"compare" => "IN",
-			"type" => "CHAR",
-		],
 	],
-	/*'date_query' => [ //used for upcoming or future
-		[
-			'after' => current_time('Y-m-d'),
-			'inclusive' => true, // include today
-		]
-	],*/
-	"post__not_in" => [], //[get_the_ID()],
-	"orderby" => ["menu_order" => "ASC", "date" => "DESC"], //'rand',
+	"orderby" => ["menu_order" => "ASC", "date" => "DESC"],
 ];
 
-$query_args = array_merge($defaults_args, $override_args);
+// Query for posts with specific categories
+$post_args = [
+	"post_type" => "post",
+	"post_status" => "publish",
+	"posts_per_page" => -1,
+	"offset" => 0,
+	"tax_query" => [
+		[
+			"taxonomy" => "category",
+			"field" => "name",
+			"terms" => [
+				"Supply Chain Now",
+				"Digital Transformers",
+				"Logistics with Purpose",
+				"Podcast Episode",
+				"Tango Tango",
+				"Veteran Voices"
+			],
+			"operator" => "IN",
+		],
+	],
+	"orderby" => ["menu_order" => "ASC", "date" => "DESC"],
+];
+
+// Merge override args with page and post queries
+$page_query_args = array_merge($page_args, $override_args);
+$post_query_args = array_merge($post_args, $override_args_post);
+
+// Execute the queries
+$page_query = new WP_Query($page_query_args);
+$post_query = new WP_Query($post_query_args);
+
+$post_ids = [];
+if ($page_query->have_posts()) {
+	$post_ids = array_merge($post_ids, wp_list_pluck($page_query->posts, 'ID'));
+}
+if ($post_query->have_posts()) {
+	$post_ids = array_merge($post_ids, wp_list_pluck($post_query->posts, 'ID'));
+}
+
+$defaults_args = [
+	"post_type" => ["page", "post"],
+	"post_status" => "publish",
+	"posts_per_page" => $post_per_page,
+	"offset" => 0,
+	"post__in" => $post_ids,
+	"orderby" => ["menu_order" => "ASC", "date" => "DESC"],
+];
+
+$query_args = array_merge($defaults_args);
 
 $q = new WP_Query($query_args);
 
@@ -74,19 +112,19 @@ if ($q->have_posts()): ?>
 
 		$q->the_post();
 		$selectMediaType = get_field("select_media_type", $q->post->ID);
-		?>
+	?>
 		<a href="<?php
-		the_permalink($q->post->ID); ?>" class="relative w-full group <?= $classNames; ?>" <?= $attr_string ?>>
+					the_permalink($q->post->ID); ?>" class="relative w-full group <?= $classNames; ?>" <?= $attr_string ?>>
 			<div class="relative flex flex-col justify-between gap-20 h-full">
 				<div class="w-full">
 					<div class="mb-28">
 						<div class="overflow-hidden rounded-12 relative h-344 bg-cargogrey">
 							<img
 								src="<?php
-								echo get_the_post_thumbnail_url($q->post->ID)
-									? get_the_post_thumbnail_url($q->post->ID, 'medium_large')
-									: get_stylesheet_directory_uri() .
-									  "/assets/img/misc/default-card-img-thumbnail.avif"; ?>"
+										echo get_the_post_thumbnail_url($q->post->ID)
+											? get_the_post_thumbnail_url($q->post->ID, 'medium_large')
+											: get_stylesheet_directory_uri() .
+											"/assets/img/misc/default-card-img-thumbnail.avif"; ?>"
 								loading="lazy" alt="" class="image relative opacity-90">
 							<?php
 							$terms = get_the_terms($q->post->ID, "tags");
@@ -111,7 +149,7 @@ if ($q->have_posts()): ?>
 										?>
 									</div>
 								</div>
-								<?php
+							<?php
 							}
 							?>
 							<div
@@ -120,24 +158,24 @@ if ($q->have_posts()): ?>
 								if ($selectMediaType == "livestream") { ?>
 									<img
 										src="<?php
-										echo get_stylesheet_directory_uri() .
-										     "/assets/img/icons/play-button-livestream.avif"; ?>"
+												echo get_stylesheet_directory_uri() .
+													"/assets/img/icons/play-button-livestream.avif"; ?>"
 										loading="lazy" alt="play-button-livestream">
-									<?php
+								<?php
 								} elseif ($selectMediaType == "podcast") { ?>
 									<img
 										src="<?php
-										echo get_stylesheet_directory_uri() .
-										     "/assets/img/icons/play-button-podcast.avif"; ?>"
+												echo get_stylesheet_directory_uri() .
+													"/assets/img/icons/play-button-podcast.avif"; ?>"
 										loading="lazy" alt="play-button-podcast">
-									<?php
+								<?php
 								} elseif ($selectMediaType == "webinar") { ?>
 									<img
 										src="<?php
-										echo get_stylesheet_directory_uri() .
-										     "/assets/img/icons/play-button-webinar.avif"; ?>"
+												echo get_stylesheet_directory_uri() .
+													"/assets/img/icons/play-button-webinar.avif"; ?>"
 										loading="lazy" alt="play-button-webinar">
-									<?php
+								<?php
 								}
 								?>
 							</div>
@@ -151,26 +189,26 @@ if ($q->have_posts()): ?>
 									if ($selectMediaType == "livestream") { ?>
 										<img
 											src="<?php
-											echo get_stylesheet_directory_uri() .
-											     "/assets/img/icons/livestream-card-icon.svg"; ?>"
+													echo get_stylesheet_directory_uri() .
+														"/assets/img/icons/livestream-card-icon.svg"; ?>"
 											loading="lazy" alt="livestream-music">
-										<?php
+									<?php
 									} elseif ($selectMediaType == "podcast") { ?>
 										<img
 											class="size-24"
 											src="<?php
-											echo get_stylesheet_directory_uri() .
-											     "/assets/img/icons/podcast-card-icon.png"; ?>"
+													echo get_stylesheet_directory_uri() .
+														"/assets/img/icons/podcast-card-icon.png"; ?>"
 											loading="lazy" alt="podcast-blue-microphone">
-										<?php
+									<?php
 									} elseif ($selectMediaType == "webinar") { ?>
 										<img
 											class="size-24"
 											src="<?php
-											echo get_stylesheet_directory_uri() .
-											     "/assets/img/icons/webinar-card-icon.png"; ?>"
+													echo get_stylesheet_directory_uri() .
+														"/assets/img/icons/webinar-card-icon.png"; ?>"
 											loading="lazy" alt="webinar-person">
-										<?php
+									<?php
 									}
 									?>
 								</div>
@@ -180,7 +218,7 @@ if ($q->have_posts()): ?>
 										<?php
 										echo $selectMediaType; ?>
 									</div>
-									<?php
+								<?php
 								} ?>
 							</div>
 							<div class="flex items-center gap-8 text-sm font-light font-family-secondary">
