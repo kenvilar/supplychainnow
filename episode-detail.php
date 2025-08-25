@@ -223,6 +223,14 @@ $youtube_url = $matches[1] ?? '';
 										</svg>
 									</div>
 								</form>-->
+								<?php
+								get_template_part('components/ui/searchbar', null, [
+									'site_padding' => 'px-0! py-0 pb-0',
+									'taxonomy' => 'tags',
+									'hide_dropdown' => true,
+									'redirect_to' => '/podcasts-and-livestreams',
+								]);
+								?>
 							</div>
 							<div class="mb-52 flex flex-col gap-58 sm:gap-20">
 								<?php

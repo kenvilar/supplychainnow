@@ -15,9 +15,9 @@ $redirect_to = isset($args['redirect_to']) ? $args['redirect_to'] : '';
 				<?php
 				$current_taxonomy = isset($_GET['taxonomy']) ? sanitize_key($_GET['taxonomy']) : ($passed_taxonomy ?: 'post_tag');
 				// If redirecting to another page (e.g., /blog), force taxonomy to post_tag unless explicitly provided
-				if (!empty($redirect_to) && !isset($_GET['taxonomy'])) {
-					$current_taxonomy = 'post_tag';
-				}
+				// if (!empty($redirect_to) && !isset($_GET['taxonomy'])) {
+				// 	$current_taxonomy = 'post_tag';
+				// }
 				?>
 				<input type="hidden" name="taxonomy" value="<?php echo esc_attr($current_taxonomy); ?>" />
 				<div class="flex gap-11 justify-between items-stretch">
@@ -44,7 +44,7 @@ $redirect_to = isset($args['redirect_to']) ? $args['redirect_to'] : '';
 
 
 					</div>
-					<div class="max-w-181 w-full md:max-w-full <?php echo $hide_dropdown ? 'hidden!' : '';?>">
+					<div class="max-w-181 w-full md:max-w-full <?php echo $hide_dropdown ? 'hidden!' : ''; ?>">
 						<label class="sr-only" for="search-industries">Filter type</label>
 						<div class="form-select-control">
 							<select id="search-industries" name="industries" class="select">
