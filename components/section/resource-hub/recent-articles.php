@@ -29,7 +29,10 @@ $sitePaddingClassnames = $args['sitePaddingClassnames'] ?? '';
 									'attributes' => [],
 									'classNames' => 'splide__slide',
 									'noItemsFound' => '',
-									'taxQueryTerms' => ["article", "guest-post", "weekly-summary"],
+									'taxQueryTerms' => [
+										'article',
+										'weekly-summary',
+									],
 								]);
 								?>
 							</div>
@@ -47,7 +50,7 @@ $sitePaddingClassnames = $args['sitePaddingClassnames'] ?? '';
 					</div>
 					<div class="display-none w-embed w-script">
 						<script>
-							document.addEventListener('DOMContentLoaded', function () {
+							document.addEventListener('DOMContentLoaded', function() {
 								function slider4() {
 									let splideTarget = '[slider-4]';
 									let splideTargetEl = document.querySelector(`${splideTarget}`);
@@ -81,7 +84,10 @@ $sitePaddingClassnames = $args['sitePaddingClassnames'] ?? '';
 											991: {
 												// 		type: 'slide',
 												perPage: 2,
-												padding: {left: 42, right: 42},
+												padding: {
+													left: 42,
+													right: 42
+												},
 												// 		perMove: 1,
 												// 		fixedWidth: '100%',
 												// 		padding: { left: 0, right: 0 },
@@ -89,7 +95,10 @@ $sitePaddingClassnames = $args['sitePaddingClassnames'] ?? '';
 											767: {
 												perPage: 1,
 												gap: 50,
-												padding: {left: 42, right: 42},
+												padding: {
+													left: 42,
+													right: 42
+												},
 											},
 										},
 									};
@@ -97,7 +106,7 @@ $sitePaddingClassnames = $args['sitePaddingClassnames'] ?? '';
 									splide.mount();
 								}
 
-								setTimeout(function () {
+								setTimeout(function() {
 									slider4();
 								}, 500);
 							});

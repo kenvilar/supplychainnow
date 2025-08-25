@@ -30,13 +30,14 @@ $sitePaddingClassnames = $args['sitePaddingClassnames'] ?? '';
 												"taxonomy" => "category",
 												"field" => "slug",
 												"terms" => [
-													"ebook",
-													"news",
-													"visibility-guide",
-													"white-paper",
-													"article",
-													"guest-post",
-													"weekly-summary"
+													// 'blog-post',
+													// 'guest-post',
+													'white-paper',
+													'ebook',
+													'article',
+													'weekly-summary',
+													'news',
+													'guide',
 												],
 												"operator" => "NOT IN",
 											],
@@ -63,7 +64,7 @@ $sitePaddingClassnames = $args['sitePaddingClassnames'] ?? '';
 					</div>
 					<div class="display-none w-embed w-script">
 						<script>
-							document.addEventListener('DOMContentLoaded', function () {
+							document.addEventListener('DOMContentLoaded', function() {
 								function slider1() {
 									let splideTarget = '[slider-1]';
 									let splideTargetEl = document.querySelector(`${splideTarget}`);
@@ -97,7 +98,10 @@ $sitePaddingClassnames = $args['sitePaddingClassnames'] ?? '';
 											991: {
 												// 		type: 'slide',
 												perPage: 2,
-												padding: {left: 42, right: 42},
+												padding: {
+													left: 42,
+													right: 42
+												},
 												// 		perMove: 1,
 												// 		fixedWidth: '100%',
 												// 		padding: { left: 0, right: 0 },
@@ -105,7 +109,10 @@ $sitePaddingClassnames = $args['sitePaddingClassnames'] ?? '';
 											767: {
 												perPage: 1,
 												gap: 50,
-												padding: {left: 42, right: 42},
+												padding: {
+													left: 42,
+													right: 42
+												},
 											},
 										},
 									};
@@ -113,7 +120,7 @@ $sitePaddingClassnames = $args['sitePaddingClassnames'] ?? '';
 									splide.mount();
 								}
 
-								setTimeout(function () {
+								setTimeout(function() {
 									slider1();
 								}, 500);
 							});

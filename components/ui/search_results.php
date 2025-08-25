@@ -155,14 +155,14 @@ if ($search_query !== '' || $industries !== '' || (is_singular('program') && iss
             'taxonomy' => 'category',
             'field'    => 'slug',
             'terms'    => [
-                'article',
                 'blog-post',
-                'ebook',
                 'guest-post',
-                'guide',
-                'news',
+                'white-paper',
+                'ebook',
+                'article',
                 'weekly-summary',
-                'white-paper'
+                'news',
+                'guide',
             ],
             'operator' => 'IN',
         ];
@@ -172,7 +172,7 @@ if ($search_query !== '' || $industries !== '' || (is_singular('program') && iss
 }
 
 ?>
-        <section class="section">
+<section class="section">
     <div class="site-padding sm:py-60 pb-60">
         <div class="max-w-1252 mx-auto">
             <?php if ($results_query instanceof WP_Query) : ?>
@@ -218,7 +218,7 @@ if ($search_query !== '' || $industries !== '' || (is_singular('program') && iss
                                                             <div class="relative font-semibold uppercase text-2xs text-white lh-normal z-10">
                                                                 <?php
                                                                 echo $first->name; ?>
-            </div>
+                                                            </div>
                                                             <?php
                                                             echo $selectMediaType == "livestream"
                                                                 ? '<div class="absolute absolute--full bg-primary"></div>'
@@ -230,9 +230,9 @@ if ($search_query !== '' || $industries !== '' || (is_singular('program') && iss
                                                                 ? '<div class="absolute absolute--full bg-tertiary"></div>'
                                                                 : "";
                                                             ?>
-    </div>
-</div>
-<?php
+                                                        </div>
+                                                    </div>
+                                                <?php
                                                 }
                                                 ?>
                                                 <div

@@ -23,7 +23,9 @@ $pageId = get_the_ID();
 		scn_render_if_no_filters('components/section/resource-hub/featured-content', [
 			'q' => [],
 			'sectionName' => 'Guides',
-			'taxQueryTerms' => ['visibility-guide'],
+			'taxQueryTerms' => [
+				'guide',
+			],
 		]);
 		scn_render_if_no_filters('components/section/resource-hub/recent-guides', [
 			'posts_per_page' => -1,

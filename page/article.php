@@ -23,7 +23,10 @@ $pageId = get_the_ID();
 		scn_render_if_no_filters('components/section/resource-hub/featured-content', [
 			'q' => [],
 			'sectionName' => 'Articles',
-			'taxQueryTerms' => ["article", "guest-post", "weekly-summary"],
+			'taxQueryTerms' => [
+				'article',
+				'weekly-summary',
+			],
 		]);
 		scn_render_if_no_filters('components/section/resource-hub/recent-articles', [
 			'posts_per_page' => -1,
