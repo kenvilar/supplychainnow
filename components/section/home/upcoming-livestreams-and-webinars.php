@@ -23,7 +23,7 @@
 									<?php
 									echo get_template_part('components/ui/card2', null, [
 										'q' => [
-											'posts_per_page' => 10,
+											'posts_per_page' => 8,
 											'meta_query' => [
 												'relation' => 'AND',
 												[
