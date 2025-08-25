@@ -352,6 +352,7 @@
     display: list-item !important;
     text-align: -webkit-match-parent !important;
     unicode-bidi: isolate !important;
+    list-style-position: outside;
   }
   a {
     color: var(--primary) !important;
