@@ -17,12 +17,12 @@ $pageId = get_the_ID();
 			'tabNumber' => 2
 		]);
 
-		get_template_part('components/ui/searchbar', null, [
+		get_template_part('components/ui/searchbar', [
 			'site_padding' => 'pt-52 pb-40',
 			'taxonomy' => 'post_tag',
 		]);
 
-		scn_render_if_no_filters('components/section/resource-hub/featured-content', null, [
+		scn_render_if_no_filters('components/section/resource-hub/featured-content', [
 			'q' => [
 				"tax_query" => [
 					[
@@ -43,12 +43,12 @@ $pageId = get_the_ID();
 			],
 			'sectionName' => 'Blogs',
 		]);
-		scn_render_if_no_filters('components/section/resource-hub/recent-blogs', null, [
+		scn_render_if_no_filters('components/section/resource-hub/recent-blogs', [
 			'posts_per_page' => -1,
 			'sitePaddingClassnames' => 'pb-92',
 		]);
 
-		get_template_part('components/ui/search_results', null, [
+		get_template_part('components/ui/search_results', [
 			'post_type' => 'post',
 			'resource_hub' => true,
 		]);
