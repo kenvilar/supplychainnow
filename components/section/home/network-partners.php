@@ -5,7 +5,7 @@
 	<section class="section">
 		<div class="site-padding sm:py-60 py-68">
 			<div class="w-layout-blockcontainer max-w-1036 w-container">
-				<div class="mb-80 sm:mb-20">
+				<div class="mb-40 sm:mb-20">
 					<div class="mb-20">
 						<h2 class="text-center">Network Partners</h2>
 					</div>
@@ -14,6 +14,15 @@
 						'maxWidthClassnames' => ''
 					]);
 					?>
+				</div>
+				<div class="mb-44">
+					<div class="w-layout-blockcontainer max-w-612 w-container">
+						<div class="text-center">
+							<p class="tracking-[1.6px]">
+								Supply Chain Now is powered by partnerships. Our Network Partners are top content creators in the supply chain space - discover their content below.
+							</p>
+						</div>
+					</div>
 				</div>
 				<div class="mb-48 sm:mb-20">
 					<div class="flex gap-24 justify-between sm:flex-col">
