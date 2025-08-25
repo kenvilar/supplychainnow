@@ -314,7 +314,7 @@
     color: var(--primary);
   }
 }
-.rt--default {
+.rt--default, .cli_pg_page_contaner, .wpb_wrapper {
   letter-spacing: 1.6px !important;
   word-wrap: break-word;
   h1,

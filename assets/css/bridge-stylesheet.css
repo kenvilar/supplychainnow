@@ -378,6 +378,7 @@ html:has(.qode-smooth-scroll-enabled) {
 }
 
 body {
+    font-family: Montserrat,Arial,sans-serif;
     /* font-family: Raleway,sans-serif;
     font-size: 14px;
     line-height: 26px;
@@ -3052,7 +3053,8 @@ div.video_section {
     height: 100px;
     text-align: left;
     z-index: 101;
-    border-bottom-color: #eee
+    border-bottom-color: #eee;
+    background-color: #313f4a;
 }
 
 .title_outer.with_image .title {
@@ -3074,7 +3076,8 @@ div.video_section {
     height: 100%;
     left: 0;
     position: relative;
-    width: 100%
+    width: 100%;
+    color: white;
 }
 
 .title_outer .has_background.title .title_holder,.title_outer .has_fixed_background.title .title_holder,.title_outer.with_image .title .title_holder {
