@@ -3055,6 +3055,8 @@ div.video_section {
     z-index: 101;
     border-bottom-color: #eee;
     background-color: #313f4a;
+    border-bottom-right-radius: 100px;
+    border-bottom-left-radius: 100px;
 }
 
 .title_outer.with_image .title {
