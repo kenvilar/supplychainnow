@@ -138,10 +138,6 @@ if ($search_query !== '' || $industries !== '' || (is_singular('program') && iss
         ];
     }
 
-    if ($resource_hub) {
-        //$args['meta_query'] = [];
-    }
-
     if ($industries !== '') {
         $args['tax_query'] = [
             [
@@ -149,6 +145,35 @@ if ($search_query !== '' || $industries !== '' || (is_singular('program') && iss
                 'field'    => 'name',
                 'terms'    => [$industries],
                 'include_children' => false,
+            ],
+        ];
+    }
+
+    if ($resource_hub) {
+        $args['meta_query'] = [];
+        $args['tax_query'] = [
+            'relation' => 'AND',
+            [
+                'taxonomy' => 'category',
+                'field'    => 'slug',
+                'terms'    => [
+                    'article',
+                    'blog-post',
+                    'ebook',
+                    'guest-post',
+                    'guide',
+                    'news',
+                    'weekly-summary',
+                    'white-paper'
+                ],
+                'operator' => 'IN',
+            ],
+            [
+                'taxonomy'         => 'post_tag',
+                'field'            => 'slug',
+                'terms'            => [sanitize_title($industries)], // e.g. 'retail'
+                'include_children' => false,
+                'operator'         => 'IN',
             ],
         ];
     }
