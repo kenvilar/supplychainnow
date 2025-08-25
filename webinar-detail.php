@@ -29,12 +29,12 @@ $webinar_button_link = get_field('webinar_button_link', $pageId);
 										if ($webinar_button_link) {
 											echo esc_url($webinar_button_link);
 										} ?>" target="<?php
-												if ($webinar_button_link) {
-													echo '_blank';
-												} else {
-													echo '_self';
-												}
-												?>">
+														if ($webinar_button_link) {
+															echo '_blank';
+														} else {
+															echo '_self';
+														}
+														?>">
 								<img class="image object-contain!" src="
 															<?php
 															if (get_the_post_thumbnail_url($pageId, 'full')) {
@@ -52,14 +52,17 @@ $webinar_button_link = get_field('webinar_button_link', $pageId);
 				</div>
 			</div>
 		</section>
-		<section class="section">
+		<section class="section hidden!">
 			<div class="site-padding sm:py-60 py-88">
 				<div class="mx-auto max-w-1249 w-full md:max-w-full">
 					<div class="relative overflow-hidden shadow4 rounded-8 pt-56 pb-47 px-20">
 						<div class="mx-auto max-w-1129 w-full md:max-w-full">
 							<div class="mb-16 flex items-center gap-22">
-								<div class="lh-normal"><?php
-														echo get_the_date('F j, Y', $pageId) ?></div>
+								<div class="lh-normal">
+									<?php
+									echo get_the_date('F j, Y', $pageId)
+									?>
+								</div>
 								<?php
 								$terms = get_the_terms($pageId, 'tags');
 								if (!is_wp_error($terms) && !empty($terms)) {
@@ -122,12 +125,12 @@ $webinar_button_link = get_field('webinar_button_link', $pageId);
 													if ($webinar_button_link) {
 														echo esc_url($webinar_button_link);
 													} ?>" class="btn primary w-inline-block" target="<?php
-																								if ($webinar_button_link) {
-																									echo '_blank';
-																								} else {
-																									echo '_self';
-																								}
-																								?>" rel="noopener noreferrer">
+																										if ($webinar_button_link) {
+																											echo '_blank';
+																										} else {
+																											echo '_self';
+																										}
+																										?>" rel="noopener noreferrer">
 											<div class="flex items-center gap-8">
 												<div>View this Webinar</div>
 											</div>
@@ -136,6 +139,10 @@ $webinar_button_link = get_field('webinar_button_link', $pageId);
 								</div>
 							</div>
 							<div class="tracking-[1.6px]">
+								<h3 class="mb-50 text-34 lh-43 font-semibold">
+									WEBINAR: <?php
+												echo get_field("webinar_title", $pageId); ?>
+								</h3>
 								<?php
 								if (get_field('webinar_description', $pageId)) {
 									echo wp_kses_post(get_field('webinar_description', $pageId));
