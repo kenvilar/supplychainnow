@@ -19,7 +19,7 @@ $pageId = get_the_ID();
 
 		get_template_part('components/ui/searchbar', null, [
 			'site_padding' => 'pt-52 pb-40',
-			'taxonomy' => 'tags',
+			'taxonomy' => 'post_tag',
 		]);
 
 		scn_render_if_no_filters('components/section/resource-hub/featured-content');
