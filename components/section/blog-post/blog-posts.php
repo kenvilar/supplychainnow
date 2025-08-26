@@ -34,27 +34,39 @@ if ($categorySlug) {
 		if ($categories[0]->name == 'eBook') { //slug is ebook
 			$categoryResultName = 'E-Books';
 			$categorySlug = 'ebook';
-		} elseif ($categories[0]->name == 'News') { //news
+		}
+		if ($categories[0]->name == 'News') { //news
 			$categoryResultName = 'News';
 			$categorySlug = 'news';
-		} elseif ($categories[0]->name == 'Guide') { //visibility-guide
+		}
+		if ($categories[0]->name == 'Guide') { //visibility-guide
 			$categoryResultName = 'Guides';
 			$categorySlug = 'guide';
-		} elseif ($categories[0]->name == 'White Paper') { //white-paper
+		}
+		if ($categories[0]->name == 'White Paper') { //white-paper
 			$categoryResultName = 'White Papers';
 			$categorySlug = 'white-paper';
-		} elseif ($categories[0]->name == 'Article' || $categories[0]->name == 'Weekly Summary') {
+		}
+		if ($categories[0]->name == 'Article' || $categories[0]->name == 'Weekly Summary') {
 			$categoryResultName = 'Articles';
 			$categorySlug = 'article';
-		} elseif ($categories[0]->name == 'Blog Post' || $categories[0]->name == 'Guest Post') {
+		}
+		if ($categories[0]->name == 'Blog Post' || $categories[0]->name == 'Guest Post') {
 			$categoryResultName = 'Blogs';
 			$categorySlug = 'blog';
-		} else {
+		}
+		if (array_intersect(array_column($categories, 'name'), ['Supply Chain Now', 'Digital Transformers', 'Logistics with Purpose', 'Podcast Episode', 'Tango Tango', 'Veteran Voices'])) {
 			$categoryResultName = 'Episodes';
 			$categorySlug = 'on-demand-programming';
 		}
+
+		echo $categoryResultName;
 	}
 }
+
+echo '<pre>';
+var_dump(array_intersect(array_column($categories, 'name'), ['Supply Chain Now', 'Digital Transformers', 'Logistics with Purpose', 'Podcast Episode', 'Tango Tango', 'Veteran Voices']));
+echo '</pre>';
 ?>
 <div class="page-wrapper">
 	<div class="main-wrapper">
