@@ -173,6 +173,7 @@ if ($categorySlug) {
 									"post_status" => "publish",
 									"posts_per_page" => 2,
 									"offset" => 0,
+									"post__not_in" => [$postId],
 									"orderby" => "rand", // random order
 								];
 								if (!empty($categorySlug)) {
@@ -254,6 +255,7 @@ if ($categorySlug) {
 											"posts_per_page" => 2,
 											"offset" => 0,
 											"post__in" => $post_ids,
+											"post__not_in" => [$postId],
 											"orderby" => "rand", // random order
 										];
 									}
