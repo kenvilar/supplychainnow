@@ -2,6 +2,13 @@
 
 add_post_type_support('page', 'excerpt');
 
+add_filter('redirect_canonical', function ($redirect_url, $requested_url) {
+	if (is_singular('brands')) {
+		return false; // disable only on these CPTs
+	}
+	return $redirect_url;
+}, 10, 2);
+
 
 if (!function_exists('bridge_qode_child_theme_enqueue_scripts')) {
 	function bridge_qode_child_theme_enqueue_scripts()
