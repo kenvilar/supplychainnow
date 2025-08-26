@@ -14,6 +14,7 @@ $post_per_page = $args["post_per_page"] ?? 1;
 $offset = $args["offset"] ?? 0;
 $orderby = $args["orderby"] ?? ["menu_order" => "ASC", "date" => "DESC"];
 $post_type = $args["post_type"] ?? ["page", "post"];
+$card_size = $args["card_size"] ?? 'large'; // 'large' || 'small'
 $attributes = $args["attributes"] ?? [];
 $classNames = $args["classNames"] ?? '';
 $noItemsFound = $args["noItemsFound"] ?? '<p class="w-full text-center">No items found.</p>';
@@ -31,8 +32,11 @@ foreach ($attributes as $key => $value) {
 $page_args = [
   "post_type" => "page",
   "post_status" => "publish",
-  "posts_per_page" => -1,
+  "posts_per_page" => $post_per_page,
   "offset" => 0,
+  'no_found_rows' => true,  // set true if not paginating
+  'update_post_meta_cache' => false, // set false if not reading lots of meta
+  'update_post_term_cache' => false,
   "meta_query" => [
     [
       "relation" => "AND",
@@ -51,8 +55,11 @@ $page_args = [
 $post_args = [
   "post_type" => "post",
   "post_status" => "publish",
-  "posts_per_page" => -1,
+  "posts_per_page" => $post_per_page,
   "offset" => 0,
+  'no_found_rows' => true,  // set true if not paginating
+  'update_post_meta_cache' => false, // set false if not reading lots of meta
+  'update_post_term_cache' => false,
   "tax_query" => [
     [
       "taxonomy" => "category",
