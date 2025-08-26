@@ -20,30 +20,25 @@
 						<?php
 						echo get_template_part('components/ui/card1', null, [
 							'q' => [
-								'posts_per_page' => 2,
+								"post_type" => "page",
+								"post_status" => "publish",
+								"posts_per_page" => -1,
+								"offset" => 0,
 								"meta_query" => [
-									"relation" => "AND",
 									[
-										"relation" => "OR",
+										"relation" => "AND",
 										[
-											"key" => "_wp_page_template",
-											"value" => "episode-detail.php",
-											"compare" => "=",
+											'key'     => '_wp_page_template',
+											'value'   => ['episode-detail.php', 'livestream-detail.php',],
+											'compare' => 'IN',
+											'type'    => 'CHAR',
 										],
-										[
-											"key" => "_wp_page_template",
-											"value" => "livestream-detail.php",
-											"compare" => "=",
-										],
-									],
-									[
-										"key" => "select_media_type",
-										"value" => ["podcast", "livestream",],
-										"compare" => "IN",
-										"type" => "CHAR",
 									],
 								],
+								"orderby" => ["menu_order" => "ASC", "date" => "DESC"],
 							],
+							'q_post' => [],
+							'post_per_page' => 2,
 							'attributes' => [],
 							'classNames' => '',
 							'noItemsFound' => '',
