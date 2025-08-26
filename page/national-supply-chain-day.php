@@ -46,6 +46,11 @@ $pageId = get_the_ID();
 				let openModal = document.querySelector('[open-modal]');
 				if (openModal) {
 					openModal.addEventListener('click', function (e) {
+						// If the attribute value is explicitly "false", do not trigger opening the modal
+						if (openModal.getAttribute('open-modal') === 'false') {
+							e.preventDefault();
+							return;
+						}
 						e.preventDefault();
 						// open the modal
 						setTimeout(function () {
