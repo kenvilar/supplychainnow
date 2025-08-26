@@ -111,7 +111,7 @@
                     perMove: 1,
                     perPage: 3,
                     gap: 32,
-                    autoplay: true,
+                    autoplay: false,
                     pauseOnHover: true,
                     updateOnMove: true,
                     autoScroll: {
@@ -119,7 +119,7 @@
                     },
                     intersection: {
                       inView: {
-                        autoplay: true
+                        autoplay: false
                       },
                       outView: {
                         autoplay: false
