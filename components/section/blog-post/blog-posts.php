@@ -161,7 +161,7 @@ if ($categorySlug) {
 									'site_padding' => 'px-0! py-0 pb-0',
 									'taxonomy' => 'post_tag',
 									'hide_dropdown' => true,
-									'placeholder' => 'Search',
+									'placeholder' => $categoryResultName == 'Episodes' ? 'Search by episode, topic, name, etc...' : 'Search',
 									'redirect_to' => '/' . $categorySlug,
 								]);
 								?>
@@ -194,7 +194,7 @@ if ($categorySlug) {
 											],
 										];
 									}
-									if ($categorySlug == 'podcasts-and-livestreams') {
+									if ($categoryResultName == 'Episodes') {
 										$page_args = [
 											"post_type" => "page",
 											"post_status" => "publish",
