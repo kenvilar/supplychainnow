@@ -36,19 +36,10 @@ $page_args = [
 		[
 			"relation" => "OR",
 			[
-				"key" => "_wp_page_template",
-				"value" => "episode-detail.php",
-				"compare" => "=",
-			],
-			[
-				"key" => "_wp_page_template",
-				"value" => "webinar-detail.php",
-				"compare" => "=",
-			],
-			[
-				"key" => "_wp_page_template",
-				"value" => "livestream-detail.php",
-				"compare" => "=",
+				'key'     => '_wp_page_template',
+				'value'   => ['episode-detail.php', 'webinar-detail.php', 'livestream-detail.php'],
+				'compare' => 'IN',
+				'type'    => 'CHAR',
 			],
 		],
 	],
