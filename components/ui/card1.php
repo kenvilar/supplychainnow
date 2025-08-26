@@ -11,6 +11,8 @@ echo get_template_part('components/ui/card1', null, [
 $override_args = $args["q"] ?? [];
 $override_args_post = $args["q_post"] ?? [];
 $post_per_page = $args["post_per_page"] ?? 1;
+$offset = $args["offset"] ?? 0;
+$orderby = $args["orderby"] ?? ["menu_order" => "ASC", "date" => "DESC"];
 $attributes = $args["attributes"] ?? [];
 $classNames = $args["classNames"] ?? '';
 $noItemsFound = $args["noItemsFound"] ?? '<p class="w-full text-center">No items found.</p>';
@@ -50,7 +52,7 @@ $page_args = [
 			],
 		],
 	],
-	"orderby" => ["menu_order" => "ASC", "date" => "DESC"],
+	"orderby" => $orderby,
 ];
 
 // Query for posts with specific categories
@@ -67,7 +69,7 @@ $post_args = [
 			"operator" => "IN",
 		],
 	],
-	"orderby" => ["menu_order" => "ASC", "date" => "DESC"],
+	"orderby" => $orderby,
 ];
 
 // Merge override args with page and post queries
@@ -90,9 +92,9 @@ $defaults_args = [
 	"post_type" => ["page", "post"],
 	"post_status" => "publish",
 	"posts_per_page" => $post_per_page,
-	"offset" => 0,
+	"offset" => $offset,
 	"post__in" => $post_ids,
-	"orderby" => ["menu_order" => "ASC", "date" => "DESC"],
+	"orderby" => $orderby,
 ];
 
 $query_args = array_merge($defaults_args);
