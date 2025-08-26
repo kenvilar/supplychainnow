@@ -55,7 +55,7 @@ if ($categorySlug) {
 			$categoryResultName = 'Blogs';
 			$categorySlug = 'blog';
 		}
-		if (array_intersect(array_column($categories, 'name'), ['Supply Chain Now', 'Digital Transformers', 'Logistics with Purpose', 'Podcast Episode', 'Tango Tango', 'Veteran Voices'])) {
+		if (array_intersect(array_column($categories, 'name'), ['Podcast Episode'])) {
 			$categoryResultName = 'Episodes';
 			$categorySlug = 'on-demand-programming';
 		}

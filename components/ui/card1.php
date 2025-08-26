@@ -63,14 +63,7 @@ $post_args = [
 		[
 			"taxonomy" => "category",
 			"field" => "name",
-			"terms" => [
-				"Supply Chain Now",
-				"Digital Transformers",
-				"Logistics with Purpose",
-				"Podcast Episode",
-				"Tango Tango",
-				"Veteran Voices"
-			],
+			"terms" => ["Podcast Episode",],
 			"operator" => "IN",
 		],
 	],
