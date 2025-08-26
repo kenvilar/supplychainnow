@@ -30,16 +30,23 @@ $defaults_args = [
 	"posts_per_page" => 1,
 	"offset" => 0,
 	"meta_query" => [],
-	/*"tax_query" => [
+	"tax_query" => [
 		[
 			"taxonomy" => "category",
 			"field" => "slug",
-			"terms" => ["ebook", "news", "visibility-guide", "white-paper", "article", "guest-post", "weekly-summary"],
-			// category slug
-			"operator" => "NOT IN",
-			// exclude these terms
+			"terms" => [
+				'blog-post',
+				'guest-post',
+				'white-paper',
+				'ebook',
+				'article',
+				'weekly-summary',
+				'news',
+				'guide',
+			], // category slug
+			"operator" => "IN", // exclude these terms
 		],
-	],*/
+	],
 	/*'date_query' => [ //used for upcoming or future
 		[
 			'after' => current_time('Y-m-d'),
