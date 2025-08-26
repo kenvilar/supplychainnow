@@ -18,10 +18,13 @@
 				<div role="list" class="grid grid-cols-3 gap-32 md:grid-cols-2 sm:grid-cols-1 w-dyn-items">
 					<?php
 					$defaults_args = [
-						"post_type" => "program",
+						"post_type" => "brands",
 						"post_status" => "publish",
 						"posts_per_page" => 6,
 						"offset" => 0,
+            'no_found_rows' => true,  // set true if not paginating
+            'update_post_meta_cache' => false, // set false if not reading lots of meta
+            'update_post_term_cache' => false,
 						'post_name__in' => [
 							'supply-chain-is-boring',
 							'digital-transformers',
@@ -60,7 +63,7 @@
 						?>
 					<?php
 					else:
-						echo '<p class="w-full text-center">No items found.</p>';
+						echo '<p class="w-full text-center">No items were found.</p>';
 					endif;
 					?>
 				</div>
