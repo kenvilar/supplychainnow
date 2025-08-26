@@ -34,7 +34,7 @@ $page_args = [
 	"offset" => 0,
 	"meta_query" => [
 		[
-			"relation" => "OR",
+			"relation" => "AND",
 			[
 				'key'     => '_wp_page_template',
 				'value'   => ['episode-detail.php', 'livestream-detail.php', 'webinar-detail.php',],
