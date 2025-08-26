@@ -3,7 +3,7 @@
 ?>
 <div class="flex gap-8 items-center">
   <a href="javascript:void(0)" onclick="shareToLinkedin();" data-social="linkedin"
-     class="text-secondary! hover:text-primary">
+     class="text-secondary! hover:text-primary!">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
          fill="none">
       <path fill-rule="evenodd" clip-rule="evenodd"
@@ -12,7 +12,7 @@
     </svg>
   </a>
   <a href="javascript:void(0)" onclick="shareToTwitter();" data-social="twitter"
-     class="text-secondary! hover:text-primary">
+     class="text-secondary! hover:text-primary!">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
          fill="none">
       <path d="M14.7561 17.0607H16.3638L8.9637 6.7032H7.35603L14.7561 17.0607Z"
@@ -23,7 +23,7 @@
     </svg>
   </a>
   <a href="https://www.instagram.com/supplychainnow/" data-social="instagram" target="_blank" rel="noopener noreferrer"
-     class="text-secondary! hover:text-primary">
+     class="text-secondary! hover:text-primary!">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
          fill="none">
       <path
@@ -38,7 +38,7 @@
     </svg>
   </a>
   <a href="javascript:void(0)" onclick="shareToFacebook();" data-social="facebook"
-     class="text-secondary! hover:text-primary">
+     class="text-secondary! hover:text-primary!">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
          fill="none">
       <path fill-rule="evenodd" clip-rule="evenodd"
@@ -47,7 +47,7 @@
     </svg>
   </a>
   <a href="#" onclick="copyToClipboard(event, '<?php
-  echo get_permalink(); ?>')" data-social="copy-link" class="text-secondary! hover:text-primary">
+  echo get_permalink(); ?>')" data-social="copy-link" class="text-secondary! hover:text-primary!">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
          fill="none">
       <circle cx="12" cy="12" r="12" fill="currentColor" />
