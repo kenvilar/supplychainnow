@@ -112,11 +112,12 @@ if ($q->have_posts()): ?>
       <div class="relative flex flex-col justify-between gap-20 h-full">
         <div class="w-full">
           <div class="mb-28">
-            <div class="overflow-hidden rounded-12 relative h-344 bg-cargogrey">
+            <div
+              class="overflow-hidden rounded-12 relative <?= $card_size == 'large' ? 'h-344' : 'h-222'; ?> bg-cargogrey">
               <img
                 src="<?php
                 echo get_the_post_thumbnail_url($q->post->ID)
-                  ? get_the_post_thumbnail_url($q->post->ID, 'medium_large')
+                  ? get_the_post_thumbnail_url($q->post->ID, $card_size == 'large' ? 'medium_large' : 'medium')
                   : get_stylesheet_directory_uri() .
                     "/assets/img/misc/default-card-img-thumbnail.avif"; ?>"
                 loading="lazy" alt="" class="image relative opacity-90">
@@ -230,12 +231,14 @@ if ($q->have_posts()): ?>
               </div>
             </div>
           </div>
-          <h3 class="font-semibold" scn-text-limit="3">
+          <h3 class="font-semibold <?= $card_size == 'large' ? '' : 'text-lg'; ?>"
+              scn-text-limit="<?= $card_size == 'large' ? '3' : '2'; ?>">
             <?php
             the_title(); ?>
           </h3>
         </div>
-        <div class="w-full tracking-[1.6px]" scn-text-limit="2">
+        <div class="w-full tracking-[1.6px] <?= $card_size == 'large' ? '' : 'text-sm'; ?>"
+             scn-text-limit="<?= $card_size == 'large' ? '2' : '3'; ?>">
           <?php
           if (get_the_excerpt($q->post->ID)) {
             the_excerpt();
