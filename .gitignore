@@ -53,3 +53,4 @@ node_modules
 vendor
 composer.lock
 composer.json
+.idea
