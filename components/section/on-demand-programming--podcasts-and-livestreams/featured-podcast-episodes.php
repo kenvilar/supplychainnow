@@ -22,14 +22,13 @@
 							'q' => [
 								"post_type" => "page",
 								"post_status" => "publish",
-								"posts_per_page" => -1,
 								"offset" => 0,
 								"meta_query" => [
 									[
 										"relation" => "AND",
 										[
 											'key'     => '_wp_page_template',
-											'value'   => ['episode-detail.php', 'livestream-detail.php',],
+											'value'   => ['episode-detail.php',],
 											'compare' => 'IN',
 											'type'    => 'CHAR',
 										],
