@@ -127,44 +127,58 @@ function hide_editor()
 }
 
 
-function cptui_register_my_cpts_program()
-{
-	/**
-	 * Post Type: Programs.
-	 */
+//function cptui_register_my_cpts_program()
+//{
+//	/**
+//	 * Post Type: Programs.
+//	 */
+//
+//	$labels = [
+//		"name" => __("Programs", "custom-post-type-ui"),
+//		"singular_name" => __("program", "custom-post-type-ui"),
+//	];
+//
+//	$args = [
+//		"label" => __("Programs", "custom-post-type-ui"),
+//		"labels" => $labels,
+//		"description" => "",
+//		"public" => true,
+//		"publicly_queryable" => true,
+//		"show_ui" => true,
+//		"show_in_rest" => true,
+//		"rest_base" => "",
+//		"rest_controller_class" => "WP_REST_Posts_Controller",
+//		"has_archive" => false,
+//		"show_in_menu" => true,
+//		"show_in_nav_menus" => true,
+//		"delete_with_user" => false,
+//		"exclude_from_search" => false,
+//		"capability_type" => "post",
+//		"map_meta_cap" => true,
+//		"hierarchical" => false,
+//		"rewrite" => ["slug" => "program", "with_front" => true],
+//		"query_var" => true,
+//		"supports" => ["title", "editor", "thumbnail"],
+//	];
+//
+//	register_post_type("program", $args);
+//}
+//
+//add_action('init', 'cptui_register_my_cpts_program');
 
-	$labels = [
-		"name" => __("Programs", "custom-post-type-ui"),
-		"singular_name" => __("program", "custom-post-type-ui"),
-	];
+add_action('template_redirect', function () {
+	if (is_admin() || wp_doing_ajax() || (defined('REST_REQUEST') && REST_REQUEST)) return;
 
-	$args = [
-		"label" => __("Programs", "custom-post-type-ui"),
-		"labels" => $labels,
-		"description" => "",
-		"public" => true,
-		"publicly_queryable" => true,
-		"show_ui" => true,
-		"show_in_rest" => true,
-		"rest_base" => "",
-		"rest_controller_class" => "WP_REST_Posts_Controller",
-		"has_archive" => false,
-		"show_in_menu" => true,
-		"show_in_nav_menus" => true,
-		"delete_with_user" => false,
-		"exclude_from_search" => false,
-		"capability_type" => "post",
-		"map_meta_cap" => true,
-		"hierarchical" => false,
-		"rewrite" => ["slug" => "program", "with_front" => true],
-		"query_var" => true,
-		"supports" => ["title", "editor", "thumbnail"],
-	];
+	$req  = $_SERVER['REQUEST_URI'] ?? '/';
+	$base = parse_url(home_url('/'), PHP_URL_PATH) ?: '/';
+	if ($base !== '/' && str_starts_with($req, $base)) $req = substr($req, strlen($base));
+	$path = ltrim(parse_url($req, PHP_URL_PATH) ?: '', '/');
 
-	register_post_type("program", $args);
-}
-
-add_action('init', 'cptui_register_my_cpts_program');
+	if (preg_match('/^program\/([^\/?#]+)\/?$/i', $path, $m)) {
+		wp_redirect( home_url( user_trailingslashit('brands/'.$m[1]) ), 301 );
+		exit;
+	}
+}, 0);
 
 /* Filter the single_template with our custom function
 add_filter('single_template', 'custom_program');
