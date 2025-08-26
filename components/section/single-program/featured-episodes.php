@@ -200,7 +200,7 @@ $programFeaturedEpisodes = get_field('program_featured_episodes', $pageId)
 				<?php
 				echo get_template_part('components/ui/btn', null, [
 					'text' => 'View Episodes',
-					'link' => get_permalink($pageId) . '/?taxonomy=tags&search=',
+					'link' => get_permalink($pageId) . '?taxonomy=tags&search=',
 					'style' => 'primary',
 					'class' => '',
 					/*'attributes' => [
