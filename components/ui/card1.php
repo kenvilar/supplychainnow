@@ -202,17 +202,22 @@ if ($q->have_posts()): ?>
 														"/assets/img/icons/webinar-card-icon.png"; ?>"
 											loading="lazy" alt="webinar-person">
 									<?php
+									} else {
+									?>
+										<img
+											class="size-24"
+											src="<?php
+													echo get_stylesheet_directory_uri() .
+														"/assets/img/icons/podcast-card-icon.png"; ?>"
+											loading="lazy" alt="podcast-blue-microphone">
+									<?php
 									}
 									?>
 								</div>
-								<?php
-								if ($selectMediaType) { ?>
-									<div class="font-family-secondary text-sm capitalize">
-										<?php
-										echo $selectMediaType; ?>
-									</div>
-								<?php
-								} ?>
+								<div class="font-family-secondary text-sm capitalize">
+									<?php
+									echo $selectMediaType ?? 'Podcast'; ?>
+								</div>
 							</div>
 							<div class="flex items-center gap-8 text-sm font-light font-family-secondary">
 								<div>
