@@ -20,10 +20,13 @@ $pageId = get_the_ID();
 							<div class="splide__list">
 								<?php
 								$q = new WP_Query([
-									'post_type' => 'program',
+									'post_type' => 'brands',
 									'post_status' => 'publish',
 									'posts_per_page' => -1,
 									'offset' => 0,
+                  'no_found_rows' => true,  // set true if not paginating
+                  'update_post_meta_cache' => false, // set false if not reading lots of meta
+                  'update_post_term_cache' => false,
 									"post__not_in" => [$pageId],
 									'orderby' => 'rand', // random order
 								]);
