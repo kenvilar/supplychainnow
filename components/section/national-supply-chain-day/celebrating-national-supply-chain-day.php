@@ -32,7 +32,7 @@
 			<div class="flex justify-center sm:flex-col">
 				<div open-modal="" class="flex">
 					<a href="#" class="btn primary w-inline-block">
-						<div>Register for 2026’s Event</div>
+						<div>Register for the 2026 Event</div>
 					</a>
 				</div>
 			</div>
