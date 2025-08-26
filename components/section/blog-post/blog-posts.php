@@ -59,8 +59,6 @@ if ($categorySlug) {
 			$categoryResultName = 'Episodes';
 			$categorySlug = 'on-demand-programming';
 		}
-
-		echo $categoryResultName;
 	}
 }
 ?>
