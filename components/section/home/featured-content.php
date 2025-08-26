@@ -18,9 +18,7 @@
 				<div class="flex justify-center gap-28 sm:flex-col">
 					<?php
 					echo get_template_part('components/ui/card1', null, [
-						'q' => [
-							'posts_per_page' => 2,
-						],
+						"post_per_page" => 2,
 						'attributes' => [],
 						'classNames' => '',
 					]);

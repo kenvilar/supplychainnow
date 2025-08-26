@@ -26548,7 +26548,8 @@ nav.vertical_menu_on_click li.narrow .second .inner ul,nav.vertical_menu_toggle 
 }
 
 .transparent_content .container_inner.default_template_holder,.transparent_content .content,.transparent_content .content .container,.transparent_content .full_width,.transparent_content .more_facts_holder,.transparent_content .paspartu_bottom,.transparent_content .paspartu_left,.transparent_content .paspartu_outer,.transparent_content .paspartu_outer .content:not(.has_slider) .content_inner,.transparent_content .paspartu_outer .edgt_slider,.transparent_content .paspartu_right,.transparent_content .wrapper {
-    background-color: transparent!important
+    background-color: transparent!important;
+    padding-top: 0 !important;
 }
 
 .transparent_content.overlapping_content .content .content_inner>.container,.transparent_content.overlapping_content .content .content_inner>.full_width>.full_width_inner {
