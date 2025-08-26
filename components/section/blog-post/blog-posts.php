@@ -57,7 +57,7 @@ if ($categorySlug) {
 		}
 		if (array_intersect(array_column($categories, 'name'), ['Podcast Episode'])) {
 			$categoryResultName = 'Episodes';
-			$categorySlug = 'on-demand-programming';
+			$categorySlug = 'podcasts-and-livestreams';
 		}
 	}
 }
@@ -194,6 +194,69 @@ if ($categorySlug) {
 											],
 										];
 									}
+									if ($categorySlug == 'podcasts-and-livestreams') {
+										$page_args = [
+											"post_type" => "page",
+											"post_status" => "publish",
+											"posts_per_page" => -1,
+											"offset" => 0,
+											"meta_query" => [
+												[
+													"relation" => "OR",
+													[
+														"key" => "_wp_page_template",
+														"value" => "episode-detail.php",
+														"compare" => "=",
+													],
+													[
+														"key" => "_wp_page_template",
+														"value" => "webinar-detail.php",
+														"compare" => "=",
+													],
+													[
+														"key" => "_wp_page_template",
+														"value" => "livestream-detail.php",
+														"compare" => "=",
+													],
+												],
+											],
+											"orderby" => ["menu_order" => "ASC", "date" => "DESC"],
+										];
+										$post_args = [
+											"post_type" => "post",
+											"post_status" => "publish",
+											"posts_per_page" => -1,
+											"offset" => 0,
+											"tax_query" => [
+												[
+													"taxonomy" => "category",
+													"field" => "name",
+													"terms" => ["Podcast Episode",],
+													"operator" => "IN",
+												],
+											],
+											"orderby" => ["menu_order" => "ASC", "date" => "DESC"],
+										];
+										$page_query = new WP_Query($page_args);
+										$post_query = new WP_Query($post_args);
+
+										$post_ids = [];
+										if ($page_query->have_posts()) {
+											$post_ids = array_merge($post_ids, wp_list_pluck($page_query->posts, 'ID'));
+										}
+										if ($post_query->have_posts()) {
+											$post_ids = array_merge($post_ids, wp_list_pluck($post_query->posts, 'ID'));
+										}
+
+										$default_args = [
+											"post_type" => ["page", "post"],
+											"post_status" => "publish",
+											"posts_per_page" => 2,
+											"offset" => 0,
+											"post__in" => $post_ids,
+											"orderby" => "rand", // random order
+										];
+									}
 								}
 								$q = new WP_Query($default_args);
 
@@ -238,7 +301,7 @@ if ($categorySlug) {
 															<div class="flex items-center gap-8">
 																<div class="font-family-secondary text-sm capitalize">
 																	<?php
-																	echo $categoryResultName; ?>
+																	echo $categoryResultName ?? 'Podcast'; ?>
 																</div>
 															</div>
 															<div class="flex items-center gap-8 text-sm font-light font-family-secondary">
