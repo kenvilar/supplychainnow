@@ -10,7 +10,7 @@ echo get_template_part('components/ui/card1', null, [
 
 $override_args = $args["q"] ?? [];
 $override_args_post = $args["q_post"] ?? [];
-$post_per_page = $args["post_per_page"] ?? 1;
+$post_per_page = $args["post_per_page"] ?? 2;
 $offset = $args["offset"] ?? 0;
 $orderby = $args["orderby"] ?? ["menu_order" => "ASC", "date" => "DESC"];
 $post_type = $args["post_type"] ?? ["page", "post"];
@@ -20,6 +20,9 @@ $classNames = $args["classNames"] ?? '';
 $noItemsFound = $args["noItemsFound"] ?? '<p class="w-full text-center">No items found.</p>';
 if (!is_array($override_args)) {
   $override_args = [];
+}
+if (!is_array($override_args_post)) {
+  $override_args_post = [];
 }
 
 // Convert attributes array to HTML string
