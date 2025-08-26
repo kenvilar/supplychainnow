@@ -31,14 +31,6 @@ if ($categorySlug) {
 	}
 } else {
 	if (!empty($categories)) {
-		if ($categories[0]->name == 'eBook') { //slug is ebook
-			$categoryResultName = 'E-Books';
-			$categorySlug = 'ebook';
-		}
-		if ($categories[0]->name == 'News') { //news
-			$categoryResultName = 'News';
-			$categorySlug = 'news';
-		}
 		if ($categories[0]->name == 'Guide') { //visibility-guide
 			$categoryResultName = 'Guides';
 			$categorySlug = 'guide';
@@ -47,11 +39,19 @@ if ($categorySlug) {
 			$categoryResultName = 'White Papers';
 			$categorySlug = 'white-paper';
 		}
+		if ($categories[0]->name == 'eBook') { //slug is ebook
+			$categoryResultName = 'E-Books';
+			$categorySlug = 'ebook';
+		}
 		if ($categories[0]->name == 'Article' || $categories[0]->name == 'Weekly Summary') {
 			$categoryResultName = 'Articles';
 			$categorySlug = 'article';
 		}
-		if ($categories[0]->name == 'Blog Post' || $categories[0]->name == 'Guest Post') {
+		if ($categories[0]->name == 'News') { //news
+			$categoryResultName = 'News';
+			$categorySlug = 'news';
+		}
+		if (array_intersect(array_column($categories, 'name'), ['Blog Post', 'Guest Post'])) {
 			$categoryResultName = 'Blogs';
 			$categorySlug = 'blog';
 		}
@@ -63,10 +63,6 @@ if ($categorySlug) {
 		echo $categoryResultName;
 	}
 }
-
-echo '<pre>';
-var_dump(array_intersect(array_column($categories, 'name'), ['Supply Chain Now', 'Digital Transformers', 'Logistics with Purpose', 'Podcast Episode', 'Tango Tango', 'Veteran Voices']));
-echo '</pre>';
 ?>
 <div class="page-wrapper">
 	<div class="main-wrapper">
