@@ -52,7 +52,7 @@ $page_args = [
 			],
 		],
 	],
-	"orderby" => $orderby,
+	"orderby" => ["menu_order" => "ASC", "date" => "DESC"],
 ];
 
 // Query for posts with specific categories
@@ -69,7 +69,7 @@ $post_args = [
 			"operator" => "IN",
 		],
 	],
-	"orderby" => $orderby,
+	"orderby" => ["menu_order" => "ASC", "date" => "DESC"],
 ];
 
 // Merge override args with page and post queries
