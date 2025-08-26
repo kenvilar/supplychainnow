@@ -12,6 +12,9 @@ $industries = isset($_GET['industries']) ? sanitize_text_field(wp_unslash($_GET[
 if ($search_query === '' && $industries === '' && (is_singular('program') && !isset($_GET['taxonomy']))) {
   return;
 }
+if ($search_query === '' && $industries === '' && (is_singular('brands') && !isset($_GET['taxonomy']))) {
+  return;
+}
 
 $post_type = $args['post_type'] ?? 'page';
 $resource_hub = $args['resource_hub'] ?? false;
@@ -27,7 +30,7 @@ if ($paged < 1) {
 
 // Build query only if there is something to search/filter
 $results_query = null;
-if ($search_query !== '' || $industries !== '' || (is_singular('program') && isset($_GET['taxonomy']))) {
+if ($search_query !== '' || $industries !== '' || (is_singular('program') && isset($_GET['taxonomy'])) || (is_singular('brands') && isset($_GET['taxonomy']))) {
   $taxonomy = isset($_GET['taxonomy']) ? sanitize_key($_GET['taxonomy']) : 'post_tag';
 
   $args = [
@@ -106,7 +109,7 @@ if ($search_query !== '' || $industries !== '' || (is_singular('program') && iss
     ];
   }
 
-  if (is_singular('program')) {
+  if (is_singular('program') || is_singular('brands')) {
     $args['meta_query'] = [
       "relation" => "AND",
       [

@@ -196,7 +196,7 @@ $programFeaturedEpisodes = get_field('program_featured_episodes', $pageId)
 					?>
 				</div>
 			</div>
-			<div class="flex justify-center">
+			<div class="pt-20 flex justify-center">
 				<?php
 				echo get_template_part('components/ui/btn', null, [
 					'text' => 'View Episodes',
