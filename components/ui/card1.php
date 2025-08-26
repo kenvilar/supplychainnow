@@ -16,7 +16,7 @@ $orderby = $args["orderby"] ?? ["menu_order" => "ASC", "date" => "DESC"];
 $post_type = $args["post_type"] ?? ["page", "post"];
 $card_size = $args["card_size"] ?? 'large'; // 'large' || 'small'
 $attributes = $args["attributes"] ?? [];
-$classNames = $args["classNames"] ?? '';
+$classNames = $args["classNames"] ?? ''; // 'splide__slide'
 $noItemsFound = $args["noItemsFound"] ?? '<p class="w-full text-center">No items found.</p>';
 if (!is_array($override_args)) {
   $override_args = [];
