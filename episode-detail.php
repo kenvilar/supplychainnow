@@ -142,7 +142,7 @@ $youtube_url = $matches[1] ?? '';
 										<a href="<?php
 													if ($youtube_url) {
 														echo esc_url($youtube_url);
-													} ?>" class="btn primary w-inline-block py-20! px-32!" target="_blank" rel="noopener noreferrer">
+                          } ?>" class="btn primary w-inline-block py-20! px-32! <?php echo empty($youtube_url) ? 'hidden' : ''; ?>" target="_blank" rel="noopener noreferrer">
 											<div class="flex items-center gap-8">
 												<div>Watch on Youtube</div>
 												<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 20 20"
@@ -516,7 +516,7 @@ $youtube_url = $matches[1] ?? '';
 						<a href="<?php
 									if ($youtube_url) {
 										echo esc_url($youtube_url);
-									} ?>" class="btn primary w-inline-block" target="_blank" rel="noopener noreferrer">
+									} ?>" class="btn primary w-inline-block <?php echo empty($youtube_url) ? 'hidden' : ''; ?>" target="_blank" rel="noopener noreferrer">
 							<div class="flex items-center gap-8">
 								<div>Watch on Youtube</div>
 								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 20 20"
