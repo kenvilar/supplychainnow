@@ -22,10 +22,10 @@ if ($categorySlug) {
 	} elseif ($categorySlug == 'white-paper') { //white-paper
 		$categoryResultName = 'White Papers';
 		$categorySlug = 'white-paper';
-	} elseif ($categorySlug == 'article' || $categorySlug == 'weekly-summary') { //article || weekly-summary
+	} elseif ($categorySlug == 'article') {
 		$categoryResultName = 'Articles';
 		$categorySlug = 'article';
-	} else {
+	} elseif ($categorySlug == 'blog') {
 		$categoryResultName = 'Blogs';
 		$categorySlug = 'blog';
 	}
@@ -43,12 +43,15 @@ if ($categorySlug) {
 		} elseif ($categories[0]->name == 'White Paper') { //white-paper
 			$categoryResultName = 'White Papers';
 			$categorySlug = 'white-paper';
-		} elseif ($categories[0]->name == 'Article' || $categories[0]->name == 'Weekly Summary') { //article || weekly-summary
+		} elseif ($categories[0]->name == 'Article' || $categories[0]->name == 'Weekly Summary') {
 			$categoryResultName = 'Articles';
 			$categorySlug = 'article';
-		} else {
+		} elseif ($categories[0]->name == 'Blog Post' || $categories[0]->name == 'Guest Post') {
 			$categoryResultName = 'Blogs';
 			$categorySlug = 'blog';
+		} else {
+			$categoryResultName = 'Episodes';
+			$categorySlug = 'on-demand-programming';
 		}
 	}
 }
@@ -166,7 +169,7 @@ if ($categorySlug) {
 									"offset" => 0,
 									"orderby" => "rand", // random order
 								];
-								if (!empty($categorySlug) && $categorySlug != 'blog') {
+								if (!empty($categorySlug)) {
 									$default_args['tax_query'] = [
 										[
 											"taxonomy" => "category",
@@ -175,6 +178,16 @@ if ($categorySlug) {
 											'operator' => 'IN'
 										],
 									];
+									if ($categorySlug == 'blog') {
+										$default_args['tax_query'] = [
+											[
+												"taxonomy" => "category",
+												"field" => "slug",
+												"terms" => ['blog-post', 'guest-post'],
+												'operator' => 'IN'
+											],
+										];
+									}
 								}
 								$q = new WP_Query($default_args);
 
