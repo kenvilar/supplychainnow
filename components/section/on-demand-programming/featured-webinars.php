@@ -19,7 +19,6 @@
               'q' => [
                 "post_type" => "page",
                 "post_status" => "publish",
-                "posts_per_page" => 2,
                 "offset" => 0,
                 'no_found_rows' => true,  // set true if not paginating
                 'update_post_meta_cache' => false, // set false if not reading lots of meta

@@ -17,7 +17,7 @@
             <div class="splide__track">
               <div class="splide__list">
                 <?php
-                echo get_template_part("components/ui/card2", null, [
+                /*echo get_template_part("components/ui/card2", null, [
                   "q" => [
                     "posts_per_page" => -1,
                     'search_title' => 'episode',
@@ -47,7 +47,27 @@
                   "attributes" => [],
                   "classNames" => "splide__slide",
                   "noItemsFound" => "",
-                ]); ?>
+                ]);*/
+                echo get_template_part('components/ui/card1', null, [
+                  'q' => [
+                    "meta_query" => [
+                      [
+                        "relation" => "AND",
+                        [
+                          'key' => '_wp_page_template',
+                          'value' => ['episode-detail.php',],
+                          'compare' => 'IN',
+                          'type' => 'CHAR',
+                        ],
+                      ],
+                    ],
+                  ],
+                  'card_size' => 'small',
+                  "post_per_page" => 15,
+                  'attributes' => [],
+                  'classNames' => 'splide__slide',
+                ]);
+                ?>
               </div>
             </div>
             <?php
