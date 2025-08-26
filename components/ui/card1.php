@@ -37,7 +37,7 @@ $page_args = [
 			"relation" => "OR",
 			[
 				'key'     => '_wp_page_template',
-				'value'   => ['episode-detail.php', 'webinar-detail.php', 'livestream-detail.php'],
+				'value'   => ['episode-detail.php', 'livestream-detail.php', 'webinar-detail.php',],
 				'compare' => 'IN',
 				'type'    => 'CHAR',
 			],
