@@ -19,7 +19,7 @@
 							"q" => [
 								"post_type" => "page",
 								"post_status" => "publish",
-								"posts_per_page" => -1,
+								"posts_per_page" => 2,
 								"offset" => 0,
 								"meta_query" => [
 									[
@@ -32,6 +32,9 @@
 										],
 									],
 								],
+                'no_found_rows' => true,  // set true if not paginating
+                'update_post_meta_cache' => false, // set false if not reading lots of meta
+                'update_post_term_cache' => false,
 								"orderby" => ["menu_order" => "ASC", "date" => "DESC"],
 							],
 							"post_per_page" => 2,

@@ -20,6 +20,9 @@
 								echo get_template_part("components/ui/card2", null, [
 									"q" => [
 										"posts_per_page" => -1,
+                    'no_found_rows' => true,  // set true if not paginating
+                    'update_post_meta_cache' => false, // set false if not reading lots of meta
+                    'update_post_term_cache' => false,
 										"meta_query" => [
 											"relation" => "AND",
 											[
@@ -79,7 +82,7 @@
 										perMove: 1,
 										perPage: 3,
 										gap: 32,
-										autoplay: true,
+										autoplay: false,
 										pauseOnHover: true,
 										updateOnMove: true,
 										autoScroll: {
@@ -87,7 +90,7 @@
 										},
 										intersection: {
 											inView: {
-												autoplay: true,
+												autoplay: false,
 											},
 											outView: {
 												autoplay: false,
