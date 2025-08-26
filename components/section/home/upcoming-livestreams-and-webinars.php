@@ -69,6 +69,7 @@
                     ],
                     'card_size' => 'small',
                     "post_per_page" => 8,
+                    'post_type' => ['page'],
                     'attributes' => [],
                     'classNames' => 'splide__slide',
                   ]);
