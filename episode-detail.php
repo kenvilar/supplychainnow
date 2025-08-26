@@ -158,7 +158,7 @@ $youtube_url = $matches[1] ?? '';
 								</div>
 							</div>
 							<div class="rt--default tracking-[1.6px]">
-								<h3 class="mb-50 text-34 lh-43 font-semibold">
+								<h1 class="hidden mb-50 text-34 lh-43 font-semibold">
 									PODCAST EPISODE:
 									<?php
 									the_title();
@@ -169,7 +169,7 @@ $youtube_url = $matches[1] ?? '';
 										echo get_field('episode_title', $pageId);
 									}
 									?>
-								</h3>
+								</h1>
 								<?php
 								if (get_field('episode_summary', $pageId)) {
 									echo wp_kses_post(get_field('episode_summary', $pageId));
