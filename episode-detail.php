@@ -18,7 +18,7 @@ $youtube_url = $matches[1] ?? '';
 		<section class="section">
 			<div class="site-padding sm:py-60 pt-58">
 				<div class="mx-auto text-center">
-					<a href="/podcasts-and-livestreams" class="font-semibold text-reg text-secondary">
+					<a href="/podcasts-and-livestreams" class="font-semibold text-reg text-secondary!">
 						< Back to Episodes</a>
 				</div>
 			</div>
@@ -64,7 +64,7 @@ $youtube_url = $matches[1] ?? '';
 									$first = array_values($terms)[0];
 								?>
 									<div class="relative rounded-full overflow-hidden py-4 px-8">
-										<div class="relative font-semibold uppercase text-2xs text--white lh-normal z-10">
+										<div class="relative font-semibold uppercase text-2xs text--white! lh-normal z-10">
 											<?php
 											echo $first->name; ?>
 										</div>
