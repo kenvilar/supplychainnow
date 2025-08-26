@@ -36,6 +36,7 @@
 							],
 							'q_post' => [],
 							'post_per_page' => 2,
+							'post_type' => ['page'],
 							"attributes" => [],
 							"classNames" => "",
 							"noItemsFound" => "",

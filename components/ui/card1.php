@@ -13,6 +13,7 @@ $override_args_post = $args["q_post"] ?? [];
 $post_per_page = $args["post_per_page"] ?? 1;
 $offset = $args["offset"] ?? 0;
 $orderby = $args["orderby"] ?? ["menu_order" => "ASC", "date" => "DESC"];
+$post_type = $args["post_type"] ?? ["page", "post"];
 $attributes = $args["attributes"] ?? [];
 $classNames = $args["classNames"] ?? '';
 $noItemsFound = $args["noItemsFound"] ?? '<p class="w-full text-center">No items found.</p>';
@@ -80,7 +81,7 @@ if ($post_query->have_posts()) {
 }
 
 $defaults_args = [
-	"post_type" => ["page", "post"],
+	"post_type" => $post_type,
 	"post_status" => "publish",
 	"posts_per_page" => $post_per_page,
 	"offset" => $offset,
