@@ -258,6 +258,9 @@ $youtube_url = $matches[1] ?? '';
                     'post_status' => 'publish',
                     'posts_per_page' => 2,
                     'offset' => 0,
+                    'no_found_rows' => true,  // set true if not paginating
+                    'update_post_meta_cache' => false, // set false if not reading lots of meta
+                    'update_post_term_cache' => false,
                     'meta_query' => [
                       'relation' => 'AND',
                       [
