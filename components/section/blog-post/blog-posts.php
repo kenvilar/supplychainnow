@@ -61,6 +61,8 @@ if ($categorySlug) {
 		}
 	}
 }
+
+$mp3_url = get_first_media_player(get_the_content());
 ?>
 <div class="page-wrapper">
 	<div class="main-wrapper">
@@ -77,7 +79,7 @@ if ($categorySlug) {
 			<div class="site-padding sm:py-60 pt-29">
 				<div class="mx-auto max-w-1010 w-full md:max-w-full">
 					<div class="overflow-hidden rounded-25 relative">
-						<div class="relative z-1 h-568 sm:h-200">
+						<div class="relative group z-1 h-568 sm:h-200">
 							<img class="image relative z-10 object-contain!" src="
 							<?php
 							if (has_post_thumbnail($postId)) {
@@ -90,6 +92,23 @@ if ($categorySlug) {
 																						echo get_stylesheet_directory_uri() .
 																							"/assets/img/misc/default-card-img-thumbnail.avif"; ?>"
 							     alt=""> -->
+              <?php
+              if ($mp3_url) {
+                ?>
+                <a href="<?php
+                if ($mp3_url) {
+                  echo esc_url($mp3_url);
+                } ?>" target="_blank" rel="noopener noreferrer"
+                   class="absolute absolute--full z-10 flex items-center justify-center translate-y-300 group-hover:translate-y-0 transition-all duration-500">
+                  <img
+                    src="<?php
+                    echo get_stylesheet_directory_uri() .
+                         "/assets/img/icons/play-button-podcast.avif"; ?>"
+                    loading="lazy" alt="play-button-podcast">
+                </a>
+                <?php
+              }
+              ?>
 						</div>
 						<div class="absolute absolute--full bg-cargogrey z--1"></div>
 					</div>
