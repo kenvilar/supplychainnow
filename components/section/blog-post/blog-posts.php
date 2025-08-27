@@ -64,6 +64,10 @@ if ( $categorySlug ) {
 
 $mp3_url      = get_first_media_player( get_the_content() );
 $download_url = get_first_download_link( get_the_content() );
+$white_paper_ebook_guide_link = get_field('white_paper_ebook_guide_link', $postId);
+if (!empty($white_paper_ebook_guide_link)) {
+  $download_url = $white_paper_ebook_guide_link;
+}
 ?>
 <div class="page-wrapper">
   <div class="main-wrapper">
