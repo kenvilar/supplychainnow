@@ -29,31 +29,28 @@ $youtube_url = $matches[1] ?? '';
           <div class="mx-auto max-w-1010 w-full md:max-w-full">
             <div class="overflow-hidden rounded-25 relative">
               <div class="relative group z-1 h-426 sm:h-300">
-                <a href="<?php
-                if ($youtube_url) {
-                  echo esc_url($youtube_url);
-                } ?>" target="_blank" rel="noopener noreferrer" class="<?php
-                empty($youtube_url) ? 'pointer-events-none' : ''; ?>">
-                  <img class="image object-contain!" src="
+                <img class="image object-contain!" src="
 															<?php
-                  if (get_field('upload_cover_image', $pageId)) {
-                    echo get_field('upload_cover_image', $pageId);
-                  } else {
-                    the_post_thumbnail_url('full');
-                  }
-                  ?>" alt="">
-                </a>
+                if (get_field('upload_cover_image', $pageId)) {
+                  echo get_field('upload_cover_image', $pageId);
+                } else {
+                  the_post_thumbnail_url('full');
+                }
+                ?>" alt="">
                 <?php
                 if ($youtube_url) {
                   ?>
-                  <div
-                    class="absolute absolute--full flex items-center justify-center translate-y-300 group-hover:translate-y-0 transition-all duration-500">
+                  <a href="<?php
+                  if ($youtube_url) {
+                    echo esc_url($youtube_url);
+                  } ?>" target="_blank" rel="noopener noreferrer"
+                     class="absolute absolute--full flex items-center justify-center translate-y-300 group-hover:translate-y-0 transition-all duration-500">
                     <img
                       src="<?php
                       echo get_stylesheet_directory_uri() .
                            "/assets/img/icons/play-button-podcast.avif"; ?>"
                       loading="lazy" alt="play-button-podcast">
-                  </div>
+                  </a>
                   <?php
                 }
                 ?>

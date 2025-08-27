@@ -26,33 +26,30 @@ $webinar_button_link = get_field('webinar_button_link', $pageId);
           <div class="mx-auto max-w-1010 w-full md:max-w-full">
             <div class="overflow-hidden rounded-25 relative">
               <div class="relative group z-1 h-426 sm:h-300">
-                <a href="<?php
-                if ($webinar_button_link) {
-                  echo esc_url($webinar_button_link);
-                } ?>" target="_blank" rel="noopener noreferrer" class="<?php
-                empty($webinar_button_link) ? 'pointer-events-none' : ''; ?>">
-                  <img class="image object-contain!" src="
+                <img class="image object-contain!" src="
 															<?php
-                  if (get_the_post_thumbnail_url($pageId, 'full')) {
-                    echo get_the_post_thumbnail_url($pageId, 'full');
-                  } else {
-                    if (get_field('thumbnail_upload', $pageId)) {
-                      echo get_field('thumbnail_upload', $pageId);
-                    }
+                if (get_the_post_thumbnail_url($pageId, 'full')) {
+                  echo get_the_post_thumbnail_url($pageId, 'full');
+                } else {
+                  if (get_field('thumbnail_upload', $pageId)) {
+                    echo get_field('thumbnail_upload', $pageId);
                   }
-                  ?>" alt="">
-                </a>
+                }
+                ?>" alt="">
                 <?php
                 if ($webinar_button_link) {
                   ?>
-                  <div
-                    class="absolute absolute--full flex items-center justify-center translate-y-300 group-hover:translate-y-0 transition-all duration-500">
+                  <a href="<?php
+                  if ($webinar_button_link) {
+                    echo esc_url($webinar_button_link);
+                  } ?>" target="_blank" rel="noopener noreferrer"
+                     class="absolute absolute--full flex items-center justify-center translate-y-300 group-hover:translate-y-0 transition-all duration-500">
                     <img
                       src="<?php
                       echo get_stylesheet_directory_uri() .
                            "/assets/img/icons/play-button-webinar.avif"; ?>"
                       loading="lazy" alt="play-button-webinar">
-                  </div>
+                  </a>
                   <?php
                 }
                 ?>
