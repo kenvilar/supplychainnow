@@ -676,7 +676,7 @@ footer .footer_inner {
 .cli_pg_page_contaner div {
   margin-bottom: 22px;
 }
-.content, .content .container, .full_width, .transparent_content .content .container {
+.content .container, .full_width, .transparent_content .content .container {
 	padding-top: 60px !important;
 }
 /* Media Screens */
