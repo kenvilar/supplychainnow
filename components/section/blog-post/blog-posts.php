@@ -192,6 +192,9 @@ $mp3_url = get_first_media_player( get_the_content() );
                   "post_status"    => "publish",
                   "posts_per_page" => 2,
                   "offset"         => 0,
+                  'no_found_rows' => true,  // set true if not paginating
+                  'update_post_meta_cache' => false, // set false if not reading lots of meta
+                  'update_post_term_cache' => false,
                   "post__not_in"   => [ $postId ],
                   "orderby"        => "rand", // random order
                 ];
@@ -220,6 +223,9 @@ $mp3_url = get_first_media_player( get_the_content() );
                       "post_status"    => "publish",
                       "posts_per_page" => - 1,
                       "offset"         => 0,
+                      'no_found_rows' => true,  // set true if not paginating
+                      'update_post_meta_cache' => false, // set false if not reading lots of meta
+                      'update_post_term_cache' => false,
                       "meta_query"     => [
                         [
                           "relation" => "OR",
@@ -247,6 +253,9 @@ $mp3_url = get_first_media_player( get_the_content() );
                       "post_status"    => "publish",
                       "posts_per_page" => - 1,
                       "offset"         => 0,
+                      'no_found_rows' => true,  // set true if not paginating
+                      'update_post_meta_cache' => false, // set false if not reading lots of meta
+                      'update_post_term_cache' => false,
                       "tax_query"      => [
                         [
                           "taxonomy" => "category",
