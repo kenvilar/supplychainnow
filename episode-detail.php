@@ -32,7 +32,8 @@ $youtube_url = $matches[1] ?? '';
                 <a href="<?php
                 if ($youtube_url) {
                   echo esc_url($youtube_url);
-                } ?>" target="_blank" rel="noopener noreferrer">
+                } ?>" target="_blank" rel="noopener noreferrer" class="<?php
+                empty($youtube_url) ? 'pointer-events-none' : ''; ?>">
                   <img class="image object-contain!" src="
 															<?php
                   if (get_field('upload_cover_image', $pageId)) {
@@ -42,13 +43,20 @@ $youtube_url = $matches[1] ?? '';
                   }
                   ?>" alt="">
                 </a>
-                <div class="absolute absolute--full flex items-center justify-center translate-y-300 group-hover:translate-y-0 transition-all duration-500">
-                  <img
-                    src="<?php
-                    echo get_stylesheet_directory_uri() .
-                         "/assets/img/icons/play-button-podcast.avif"; ?>"
-                    loading="lazy" alt="play-button-podcast">
-                </div>
+                <?php
+                if ($youtube_url) {
+                  ?>
+                  <div
+                    class="absolute absolute--full flex items-center justify-center translate-y-300 group-hover:translate-y-0 transition-all duration-500">
+                    <img
+                      src="<?php
+                      echo get_stylesheet_directory_uri() .
+                           "/assets/img/icons/play-button-podcast.avif"; ?>"
+                      loading="lazy" alt="play-button-podcast">
+                  </div>
+                  <?php
+                }
+                ?>
               </div>
               <div class="absolute absolute--full bg-cargogrey z--1"></div>
             </div>
@@ -147,22 +155,27 @@ $youtube_url = $matches[1] ?? '';
                         ],
                       ]);
                       ?>
-                      <a href="<?php
+
+                      <?php
                       if ($youtube_url) {
-                        echo esc_url($youtube_url);
-                      } ?>" class="btn primary w-inline-block py-20! px-32! <?php
-                      echo empty($youtube_url) ? 'hidden' : ''; ?>" target="_blank" rel="noopener noreferrer">
-                        <div class="flex items-center gap-8">
-                          <div>Watch on Youtube</div>
-                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 20 20"
-                               fill="none">
-                            <path d="M11.625 10L9 8.5V11.5L11.625 10Z" fill="white" />
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                  d="M0 10C0 4.47715 4.47715 0 10 0C15.5228 0 20 4.47715 20 10C20 15.5228 15.5228 20 10 20C4.47715 20 0 15.5228 0 10ZM13.875 6.6875C14.3125 6.8125 14.625 7.125 14.75 7.5625C15 8.375 15 10 15 10C15 10 15 11.625 14.8125 12.4375C14.6875 12.875 14.375 13.1875 13.9375 13.3125C13.125 13.5 10 13.5 10 13.5C10 13.5 6.8125 13.5 6.0625 13.3125C5.625 13.1875 5.3125 12.875 5.1875 12.4375C5 11.625 5 10 5 10C5 10 5 8.375 5.125 7.5625C5.25 7.125 5.5625 6.8125 6 6.6875C6.8125 6.5 9.9375 6.5 9.9375 6.5C9.9375 6.5 13.125 6.5 13.875 6.6875Z"
-                                  fill="white" />
-                          </svg>
-                        </div>
-                      </a>
+                        ?>
+                        <a href="<?php
+                        echo esc_url($youtube_url); ?>" class="btn primary w-inline-block py-20! px-32!" target="_blank"
+                           rel="noopener noreferrer">
+                          <div class="flex items-center gap-8">
+                            <div>Watch on Youtube</div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 20 20"
+                                 fill="none">
+                              <path d="M11.625 10L9 8.5V11.5L11.625 10Z" fill="white" />
+                              <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M0 10C0 4.47715 4.47715 0 10 0C15.5228 0 20 4.47715 20 10C20 15.5228 15.5228 20 10 20C4.47715 20 0 15.5228 0 10ZM13.875 6.6875C14.3125 6.8125 14.625 7.125 14.75 7.5625C15 8.375 15 10 15 10C15 10 15 11.625 14.8125 12.4375C14.6875 12.875 14.375 13.1875 13.9375 13.3125C13.125 13.5 10 13.5 10 13.5C10 13.5 6.8125 13.5 6.0625 13.3125C5.625 13.1875 5.3125 12.875 5.1875 12.4375C5 11.625 5 10 5 10C5 10 5 8.375 5.125 7.5625C5.25 7.125 5.5625 6.8125 6 6.6875C6.8125 6.5 9.9375 6.5 9.9375 6.5C9.9375 6.5 13.125 6.5 13.875 6.6875Z"
+                                    fill="white" />
+                            </svg>
+                          </div>
+                        </a>
+                        <?php
+                      }
+                      ?>
                     </div>
                   </div>
                 </div>
