@@ -67,7 +67,15 @@ $defaults_args = [
 ];
 $firstCategoryName = '';
 if (!empty($taxQueryTerms)) {
-  $defaults_args['tax_query'] = [
+  $firstCategoryName = $taxQueryTerms[0];
+}
+
+$query_args = array_merge($defaults_args, $override_args);
+
+// Combine tax_query conditions if taxQueryTerms is provided
+if (!empty($taxQueryTerms)) {
+  $existing_tax_query = $query_args['tax_query'] ?? [];
+  $tax_query_terms = [
     [
       "taxonomy" => "category",
       "field" => "slug",
@@ -75,10 +83,8 @@ if (!empty($taxQueryTerms)) {
       'operator' => 'IN'
     ],
   ];
-  $firstCategoryName = $taxQueryTerms[0];
+  $query_args['tax_query'] = array_merge($existing_tax_query, $tax_query_terms);
 }
-
-$query_args = array_merge($defaults_args, $override_args);
 
 $q = new WP_Query($query_args);
 
