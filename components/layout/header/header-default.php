@@ -58,46 +58,46 @@ $nav_classnames = $args['nav_classnames'] ?? ''; // '' || 'nav-fixed'
 										<a href="/brands" class="nav_dropdown_link w-dropdown-link" tabindex="0">Brands</a>
 										<ul role="list" class="nav_dropdown_link-sub-list w-list-unstyled">
 											<li>
-												<a href="/program/supply-chain-now" class="nav_dropdown_link-sub" tabindex="0">Supply Chain
+												<a href="/brands/supply-chain-now" class="nav_dropdown_link-sub" tabindex="0">Supply Chain
 													Now
 												</a>
 											</li>
 											<li>
-												<a href="/program/supply-chain-now-en-espanol" class="nav_dropdown_link-sub" tabindex="0">Supply
+												<a href="/brands/supply-chain-now-en-espanol" class="nav_dropdown_link-sub" tabindex="0">Supply
 													Chain Now en Español
 												</a>
 											</li>
 											<li>
-												<a href="/program/logistics-with-purpose" class="nav_dropdown_link-sub" tabindex="0">Logistics
+												<a href="/brands/logistics-with-purpose" class="nav_dropdown_link-sub" tabindex="0">Logistics
 													With Purpose
 												</a>
 											</li>
 											<li>
-												<a href="/program/tango-tango" class="nav_dropdown_link-sub" tabindex="0">Tango Tango</a>
+												<a href="/brands/tango-tango" class="nav_dropdown_link-sub" tabindex="0">Tango Tango</a>
 											</li>
 											<li>
-												<a href="/program/supply-chain-is-boring" class="nav_dropdown_link-sub" tabindex="0">Supply
+												<a href="/brands/supply-chain-is-boring" class="nav_dropdown_link-sub" tabindex="0">Supply
 													Chain is Boring
 												</a>
 											</li>
 											<li>
-												<a href="/program/digital-transformers" class="nav_dropdown_link-sub" tabindex="0">Digital
+												<a href="/brands/digital-transformers" class="nav_dropdown_link-sub" tabindex="0">Digital
 													Transformers
 												</a>
 											</li>
 											<li>
-												<a href="/program/veteran-voices" class="nav_dropdown_link-sub" tabindex="0">Veteran Voices</a>
+												<a href="/brands/veteran-voices" class="nav_dropdown_link-sub" tabindex="0">Veteran Voices</a>
 											</li>
 											<li>
-												<a href="/program/business-history" class="nav_dropdown_link-sub" tabindex="0">The Week in
+												<a href="/brands/business-history" class="nav_dropdown_link-sub" tabindex="0">The Week in
 													Business History
 												</a>
 											</li>
 											<li>
-												<a href="/program/tektok" class="nav_dropdown_link-sub" tabindex="0">TEK TOK</a>
+												<a href="/brands/tektok" class="nav_dropdown_link-sub" tabindex="0">TEK TOK</a>
 											</li>
 											<li>
-												<a href="/program/techquila-sunrise" class="nav_dropdown_link-sub" tabindex="0">TECHquila
+												<a href="/brands/techquila-sunrise" class="nav_dropdown_link-sub" tabindex="0">TECHquila
 													Sunrise
 												</a>
 											</li>

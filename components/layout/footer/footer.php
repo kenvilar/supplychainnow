@@ -58,36 +58,36 @@
 											<a href="/brands" class="footer-link">Brands</a>
 											<ul role="list" class="m-0 flex flex-col gap-8 w-list-unstyled">
 												<li>
-													<a href="/program/supply-chain-now" class="footer-link-sub">Supply Chain Now</a>
+													<a href="/brands/supply-chain-now" class="footer-link-sub">Supply Chain Now</a>
 												</li>
 												<li>
-													<a href="/program/supply-chain-now-en-espanol" class="footer-link-sub">Supply Chain Now en
+													<a href="/brands/supply-chain-now-en-espanol" class="footer-link-sub">Supply Chain Now en
 														Español
 													</a>
 												</li>
 												<li>
-													<a href="/program/logistics-with-purpose" class="footer-link-sub">Logistics With Purpose</a>
+													<a href="/brands/logistics-with-purpose" class="footer-link-sub">Logistics With Purpose</a>
 												</li>
 												<li>
-													<a href="/program/tango-tango" class="footer-link-sub">Tango Tango</a>
+													<a href="/brands/tango-tango" class="footer-link-sub">Tango Tango</a>
 												</li>
 												<li>
-													<a href="/program/supply-chain-is-boring" class="footer-link-sub">Supply Chain is Boring</a>
+													<a href="/brands/supply-chain-is-boring" class="footer-link-sub">Supply Chain is Boring</a>
 												</li>
 												<li>
-													<a href="/program/digital-transformers" class="footer-link-sub">Digital Transformers</a>
+													<a href="/brands/digital-transformers" class="footer-link-sub">Digital Transformers</a>
 												</li>
 												<li>
-													<a href="/program/veteran-voices" class="footer-link-sub">Veteran Voices</a>
+													<a href="/brands/veteran-voices" class="footer-link-sub">Veteran Voices</a>
 												</li>
 												<li>
-													<a href="/program/business-history" class="footer-link-sub">The Week in Business History</a>
+													<a href="/brands/business-history" class="footer-link-sub">The Week in Business History</a>
 												</li>
 												<li>
-													<a href="/program/tektok" class="footer-link-sub">TEK TOK</a>
+													<a href="/brands/tektok" class="footer-link-sub">TEK TOK</a>
 												</li>
 												<li>
-													<a href="/program/techquila-sunrise" class="footer-link-sub">TECHquila Sunrise</a>
+													<a href="/brands/techquila-sunrise" class="footer-link-sub">TECHquila Sunrise</a>
 												</li>
 											</ul>
 										</li>
