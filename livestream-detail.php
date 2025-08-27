@@ -34,7 +34,7 @@ $youtube_url = $matches[1] ?? '';
                 if (get_field('thumbnail_upload', $pageId)) {
                   echo get_field('thumbnail_upload', $pageId);
                 } else {
-                  the_post_thumbnail_url('full');
+                  the_post_thumbnail_url('medium_large');
                 }
                 ?>" alt="">
                 <?php
@@ -248,7 +248,7 @@ $youtube_url = $matches[1] ?? '';
                                 <img
                                   src="<?php
                                   echo get_the_post_thumbnail_url($q->post->ID)
-                                    ? get_the_post_thumbnail_url($q->post->ID)
+                                    ? get_the_post_thumbnail_url($q->post->ID, 'medium_large')
                                     : get_stylesheet_directory_uri(
                                       ) . '/assets/img/misc/default-card-img-thumbnail.avif' ?>"
                                   loading="lazy" alt="" class="image relative opacity-90">

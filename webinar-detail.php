@@ -28,8 +28,8 @@ $webinar_button_link = get_field('webinar_button_link', $pageId);
               <div class="relative group z-1 h-426 sm:h-300">
                 <img class="image object-contain!" src="
 															<?php
-                if (get_the_post_thumbnail_url($pageId, 'full')) {
-                  echo get_the_post_thumbnail_url($pageId, 'full');
+                if (get_the_post_thumbnail_url($pageId)) {
+                  echo get_the_post_thumbnail_url($pageId, 'medium_large');
                 } else {
                   if (get_field('thumbnail_upload', $pageId)) {
                     echo get_field('thumbnail_upload', $pageId);
@@ -240,7 +240,7 @@ $webinar_button_link = get_field('webinar_button_link', $pageId);
                                 <img
                                   src="<?php
                                   echo get_the_post_thumbnail_url($q->post->ID)
-                                    ? get_the_post_thumbnail_url($q->post->ID)
+                                    ? get_the_post_thumbnail_url($q->post->ID, 'medium_large')
                                     : get_stylesheet_directory_uri(
                                       ) . '/assets/img/misc/default-card-img-thumbnail.avif' ?>"
                                   loading="lazy" alt="" class="image relative opacity-90">
