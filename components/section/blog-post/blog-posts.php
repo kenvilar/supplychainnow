@@ -62,7 +62,11 @@ if ( $categorySlug ) {
   }
 }
 
-$mp3_url      = get_first_media_player( get_the_content() );
+$mp3_url = get_first_media_player( get_the_content() );
+$captivate_player_link = get_field('captivate_player_link', $postId);
+if (!empty($captivate_player_link)) {
+  $mp3_url = $captivate_player_link;
+}
 $download_url = get_first_download_link( get_the_content() );
 $white_paper_ebook_guide_link = get_field('white_paper_ebook_guide_link', $postId);
 if (!empty($white_paper_ebook_guide_link)) {
