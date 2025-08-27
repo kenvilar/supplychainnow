@@ -174,6 +174,14 @@ if ($q->have_posts()): ?>
                          "/assets/img/icons/play-button-webinar.avif"; ?>"
                     loading="lazy" alt="play-button-webinar">
                   <?php
+                } else {
+                  ?>
+                  <img
+                    src="<?php
+                    echo get_stylesheet_directory_uri() .
+                         "/assets/img/icons/play-button-podcast.avif"; ?>"
+                    loading="lazy" alt="play-button-podcast">
+                  <?php
                 }
                 ?>
               </div>
