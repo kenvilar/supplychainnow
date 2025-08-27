@@ -21,7 +21,16 @@ $pageId = get_the_ID();
 			'taxonomy' => 'post_tag',
 		]);
 		scn_render_if_no_filters('components/section/resource-hub/featured-content', [
-			'q' => [],
+			'q' => [
+				"tax_query" => [
+					[
+						"taxonomy" => "category",
+						"field" => "slug",
+						"terms" => ["podcast-episode"],
+						"operator" => "NOT IN",
+					],
+				],
+			],
 			'sectionName' => 'E-Books',
 			'taxQueryTerms' => ['ebook'],
 		]);

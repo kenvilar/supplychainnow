@@ -35,6 +35,7 @@ $pageId = get_the_ID();
 							'weekly-summary',
 							'news',
 							'guide',
+							'podcast-episode',
 						],
 						"operator" => "NOT IN",
 					],
