@@ -62,7 +62,8 @@ if ( $categorySlug ) {
   }
 }
 
-$mp3_url = get_first_media_player( get_the_content() );
+$mp3_url      = get_first_media_player( get_the_content() );
+$download_url = get_first_download_link( get_the_content() );
 ?>
 <div class="page-wrapper">
   <div class="main-wrapper">
@@ -96,15 +97,23 @@ $mp3_url = get_first_media_player( get_the_content() );
               if ( $mp3_url ) {
                 ?>
                 <a href="<?php
-                if ( $mp3_url ) {
-                  echo esc_url( $mp3_url );
-                } ?>" target="_blank" rel="noopener noreferrer"
-                   class="absolute absolute--full z-10 flex items-center justify-center translate-y-300 group-hover:translate-y-0 transition-all duration-500">
+                echo esc_url( $mp3_url ); ?>" target="_blank" rel="noopener noreferrer"
+                   class="absolute absolute--full z-10 flex items-center justify-center translate-y-400 group-hover:translate-y-0 transition-all duration-500">
                   <img
                     src="<?php
                     echo get_stylesheet_directory_uri() .
                          "/assets/img/icons/play-button-podcast.avif"; ?>"
                     loading="lazy" alt="play-button-podcast">
+                </a>
+                <?php
+              } elseif ( $download_url ) {
+                ?>
+                <a href="<?php
+                echo esc_url( $download_url ); ?>" target="_blank" rel="noopener noreferrer"
+                   class="absolute absolute--full z-99 flex items-center justify-center translate-y-400 group-hover:translate-y-0 transition-all duration-500">
+                  <div class="btn primary">
+                    Download
+                  </div>
                 </a>
                 <?php
               }
@@ -188,15 +197,15 @@ $mp3_url = get_first_media_player( get_the_content() );
               <div class="mb-52 flex flex-col gap-58 sm:gap-20">
                 <?php
                 $default_args = [
-                  "post_type"      => "post",
-                  "post_status"    => "publish",
-                  "posts_per_page" => 2,
-                  "offset"         => 0,
-                  'no_found_rows' => true,  // set true if not paginating
+                  "post_type"              => "post",
+                  "post_status"            => "publish",
+                  "posts_per_page"         => 2,
+                  "offset"                 => 0,
+                  'no_found_rows'          => true,  // set true if not paginating
                   'update_post_meta_cache' => false, // set false if not reading lots of meta
                   'update_post_term_cache' => false,
-                  "post__not_in"   => [ $postId ],
-                  "orderby"        => "rand", // random order
+                  "post__not_in"           => [ $postId ],
+                  "orderby"                => "rand", // random order
                 ];
                 if ( ! empty( $categorySlug ) ) {
                   $default_args['tax_query'] = [
@@ -219,14 +228,14 @@ $mp3_url = get_first_media_player( get_the_content() );
                   }
                   if ( $categoryResultName == 'Episodes' ) {
                     $page_args  = [
-                      "post_type"      => "page",
-                      "post_status"    => "publish",
-                      "posts_per_page" => - 1,
-                      "offset"         => 0,
-                      'no_found_rows' => true,  // set true if not paginating
+                      "post_type"              => "page",
+                      "post_status"            => "publish",
+                      "posts_per_page"         => - 1,
+                      "offset"                 => 0,
+                      'no_found_rows'          => true,  // set true if not paginating
                       'update_post_meta_cache' => false, // set false if not reading lots of meta
                       'update_post_term_cache' => false,
-                      "meta_query"     => [
+                      "meta_query"             => [
                         [
                           "relation" => "OR",
                           [
@@ -246,17 +255,17 @@ $mp3_url = get_first_media_player( get_the_content() );
                           ],
                         ],
                       ],
-                      "orderby"        => [ "menu_order" => "ASC", "date" => "DESC" ],
+                      "orderby"                => [ "menu_order" => "ASC", "date" => "DESC" ],
                     ];
                     $post_args  = [
-                      "post_type"      => "post",
-                      "post_status"    => "publish",
-                      "posts_per_page" => - 1,
-                      "offset"         => 0,
-                      'no_found_rows' => true,  // set true if not paginating
+                      "post_type"              => "post",
+                      "post_status"            => "publish",
+                      "posts_per_page"         => - 1,
+                      "offset"                 => 0,
+                      'no_found_rows'          => true,  // set true if not paginating
                       'update_post_meta_cache' => false, // set false if not reading lots of meta
                       'update_post_term_cache' => false,
-                      "tax_query"      => [
+                      "tax_query"              => [
                         [
                           "taxonomy" => "category",
                           "field"    => "name",
@@ -264,7 +273,7 @@ $mp3_url = get_first_media_player( get_the_content() );
                           "operator" => "IN",
                         ],
                       ],
-                      "orderby"        => [ "menu_order" => "ASC", "date" => "DESC" ],
+                      "orderby"                => [ "menu_order" => "ASC", "date" => "DESC" ],
                     ];
                     $page_query = new WP_Query( $page_args );
                     $post_query = new WP_Query( $post_args );

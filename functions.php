@@ -468,6 +468,47 @@ function get_first_media_player($content) {
 	return !empty($mp3_urls) ? $mp3_urls[0] : null;
 }
 
+/**
+ * Extract download links from anchor tags containing "download" text
+ * 
+ * @param string $content The content to search through
+ * @return array Array of download URLs found in the content
+ */
+function get_the_download_links($content) {
+	if (empty($content)) {
+		return [];
+	}
+	
+	$download_urls = [];
+	
+	// Pattern to match <a> tags containing "download" text (case insensitive)
+	preg_match_all('/<a[^>]*href=["\']([^"\']+)["\'][^>]*>(.*?)<\/a>/is', $content, $matches, PREG_SET_ORDER);
+	
+	foreach ($matches as $match) {
+		$url = $match[1];
+		$link_text = $match[2];
+		
+		// Check if the link text contains "download" (case insensitive)
+		if (stripos($link_text, 'download') !== false) {
+			$download_urls[] = $url;
+		}
+	}
+	
+	// Remove duplicates and return
+	return array_unique($download_urls);
+}
+
+/**
+ * Get first download link from content
+ * 
+ * @param string $content The content to search through
+ * @return string|null First download URL found or null if none
+ */
+function get_first_download_link($content) {
+	$download_urls = get_the_download_links($content);
+	return !empty($download_urls) ? $download_urls[0] : null;
+}
+
 /*
 add_action('admin_head', 'my_custom_css');
 
