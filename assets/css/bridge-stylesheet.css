@@ -3148,8 +3148,8 @@ div.video_section {
 }
 
 .title.title_size_large h1 {
-    font-size: 47px;
-    line-height: 60px
+    /*font-size: 47px;*/
+    /*line-height: 60px*/
 }
 
 .title_text_shadow .title h1 {
