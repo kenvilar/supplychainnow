@@ -416,6 +416,58 @@ function scn_render_if_no_filters(string $template_slug, array $template_args = 
 	}
 }
 
+/**
+ * Extract MP3 media player URLs from content
+ * 
+ * @param string $content The content to search through
+ * @return array Array of MP3 URLs found in the content
+ */
+function get_the_media_player($content) {
+	if (empty($content)) {
+		return [];
+	}
+	
+	$mp3_urls = [];
+	
+	// Pattern 1: Direct MP3 links
+	preg_match_all('/https?:\/\/[^\s<>"]+\.mp3/i', $content, $direct_matches);
+	if (!empty($direct_matches[0])) {
+		$mp3_urls = array_merge($mp3_urls, $direct_matches[0]);
+	}
+	
+	// Pattern 2: Audio shortcodes [audio src="..."]
+	preg_match_all('/\[audio[^\]]*src=["\']([^"\']*\.mp3)["\'][^\]]*\]/i', $content, $shortcode_matches);
+	if (!empty($shortcode_matches[1])) {
+		$mp3_urls = array_merge($mp3_urls, $shortcode_matches[1]);
+	}
+	
+	// Pattern 3: HTML audio tags
+	preg_match_all('/<audio[^>]*>.*?<source[^>]*src=["\']([^"\']*\.mp3)["\'][^>]*>.*?<\/audio>/is', $content, $html_matches);
+	if (!empty($html_matches[1])) {
+		$mp3_urls = array_merge($mp3_urls, $html_matches[1]);
+	}
+	
+	// Pattern 4: Audio tags with direct src
+	preg_match_all('/<audio[^>]*src=["\']([^"\']*\.mp3)["\'][^>]*>/i', $content, $audio_src_matches);
+	if (!empty($audio_src_matches[1])) {
+		$mp3_urls = array_merge($mp3_urls, $audio_src_matches[1]);
+	}
+	
+	// Remove duplicates and return
+	return array_unique($mp3_urls);
+}
+
+/**
+ * Get first MP3 URL from content
+ * 
+ * @param string $content The content to search through
+ * @return string|null First MP3 URL found or null if none
+ */
+function get_first_media_player($content) {
+	$mp3_urls = get_the_media_player($content);
+	return !empty($mp3_urls) ? $mp3_urls[0] : null;
+}
+
 /*
 add_action('admin_head', 'my_custom_css');
 
