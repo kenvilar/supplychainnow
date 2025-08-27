@@ -28,7 +28,7 @@ $youtube_url = $matches[1] ?? '';
         <div class="site-padding sm:py-60 pt-29">
           <div class="mx-auto max-w-1010 w-full md:max-w-full">
             <div class="overflow-hidden rounded-25 relative">
-              <div class="relative z-1 h-426 sm:h-300">
+              <div class="relative group z-1 h-426 sm:h-300">
                 <a href="<?php
                 if ($youtube_url) {
                   echo esc_url($youtube_url);
@@ -42,6 +42,13 @@ $youtube_url = $matches[1] ?? '';
                   }
                   ?>" alt="">
                 </a>
+                <div class="absolute absolute--full flex items-center justify-center translate-y-300 group-hover:translate-y-0 transition-all duration-500">
+                  <img
+                    src="<?php
+                    echo get_stylesheet_directory_uri() .
+                         "/assets/img/icons/play-button-podcast.avif"; ?>"
+                    loading="lazy" alt="play-button-podcast">
+                </div>
               </div>
               <div class="absolute absolute--full bg-cargogrey z--1"></div>
             </div>
