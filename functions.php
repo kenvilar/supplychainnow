@@ -3,8 +3,8 @@
 add_post_type_support('page', 'excerpt');
 
 add_filter('redirect_canonical', function ($redirect_url, $requested_url) {
-	if (is_singular('brands')) {
-		return false; // disable only on these CPTs
+	if (is_singular('brands') || is_page('resource-hub') || is_page('blog') || is_page('white-paper') || is_page('ebook') || is_page('article') || is_page('news') || is_page('guide')) {
+		return false;
 	}
 	return $redirect_url;
 }, 10, 2);
