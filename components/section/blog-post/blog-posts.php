@@ -206,6 +206,14 @@ $download_url = get_first_download_link( get_the_content() );
                   'update_post_term_cache' => false,
                   "post__not_in"           => [ $postId ],
                   "orderby"                => "rand", // random order
+                  "tax_query" => [
+                    [
+                      "taxonomy" => "category",
+                      "field" => "slug",
+                      "terms" => ["podcast-episode"],
+                      "operator" => "NOT IN",
+                    ],
+                  ],
                 ];
                 if ( ! empty( $categorySlug ) ) {
                   $default_args['tax_query'] = [

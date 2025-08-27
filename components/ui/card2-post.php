@@ -33,6 +33,14 @@ $defaults_args = [
   'update_post_meta_cache' => false, // set false if not reading lots of meta
   'update_post_term_cache' => false,
   "meta_query" => [],
+  "tax_query" => [
+    [
+      "taxonomy" => "category",
+      "field" => "slug",
+      "terms" => ["podcast-episode"],
+      "operator" => "NOT IN",
+    ],
+  ],
   /*"tax_query" => [
     [
       "taxonomy" => "category",

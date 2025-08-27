@@ -167,6 +167,12 @@ if ($search_query !== '' || $industries !== '' || (is_singular('brands') && isse
       ],
       'operator' => 'IN',
     ];
+    $args['tax_query'][] = [
+      'taxonomy' => 'category',
+      'field' => 'slug',
+      'terms' => ['podcast-episode'],
+      'operator' => 'NOT IN',
+    ];
   }
 
   $results_query = new WP_Query($args);

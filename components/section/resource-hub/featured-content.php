@@ -6,6 +6,14 @@ $taxQueryTerms = $args["taxQueryTerms"] ?? [];
 
 $defaults_args = [
 	'posts_per_page' => 2,
+  "tax_query" => [
+    [
+      "taxonomy" => "category",
+      "field" => "slug",
+      "terms" => ["podcast-episode"],
+      "operator" => "NOT IN",
+    ],
+  ],
 ];
 ?>
 <section class="section">

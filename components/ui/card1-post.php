@@ -49,6 +49,12 @@ $defaults_args = [
       ], // category slug
       "operator" => "IN", // exclude these terms
     ],
+    [
+      "taxonomy" => "category",
+      "field" => "slug",
+      "terms" => ["podcast-episode"],
+      "operator" => "NOT IN",
+    ],
   ],
   /*'date_query' => [ //used for upcoming or future
     [

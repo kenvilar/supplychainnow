@@ -38,6 +38,7 @@ $sitePaddingClassnames = $args['sitePaddingClassnames'] ?? '';
 													'weekly-summary',
 													'news',
 													'guide',
+													'podcast-episode',
 												],
 												"operator" => "NOT IN",
 											],

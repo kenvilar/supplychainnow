@@ -25,6 +25,14 @@ $sitePaddingClassnames = $args['sitePaddingClassnames'] ?? '';
 								echo get_template_part('components/ui/card2-post', null, [
 									'q' => [
 										'posts_per_page' => $posts_per_page,
+										"tax_query" => [
+											[
+												"taxonomy" => "category",
+												"field" => "slug",
+												"terms" => ["podcast-episode"],
+												"operator" => "NOT IN",
+											],
+										],
 									],
 									'attributes' => [],
 									'classNames' => 'splide__slide',
