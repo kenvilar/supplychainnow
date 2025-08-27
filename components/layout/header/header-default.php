@@ -1,6 +1,6 @@
 <?php
 
-$nav_classnames = $args['nav_classnames'] ?? 'nav-fixed'; // '' || 'nav-fixed'
+$nav_classnames = $args['nav_classnames'] ?? ''; // '' || 'nav-fixed'
 ?>
 <div class="nav <?= esc_attr($nav_classnames); ?>">
 	<div data-animation="default" class="navbar w-nav" data-easing2="ease" data-easing="ease" data-collapse="all"
