@@ -6,7 +6,7 @@
 			<div class="w-layout-blockcontainer pt-40 w-container text-center max-w-960">
 				<div class="mb-20">
 					<img
-						src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688792a77943c0d141521efc_calendar.svg"
+						src="<?= get_stylesheet_directory_uri() . '/assets/img/icons/calendar.svg' ?>"
 						loading="lazy" alt="">
 				</div>
 				<div class="mb-16">
