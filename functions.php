@@ -18,6 +18,103 @@ function my_custom_menus() {
 
 add_action( 'init', 'my_custom_menus' );
 
+class SCN_Nav_Walker extends Walker_Nav_Menu {
+
+	function start_lvl( &$output, $depth = 0, $args = null ) {
+		$indent = str_repeat( "\t", $depth );
+		if ( $depth == 0 ) {
+			$output .= "\n$indent<nav class=\"nav-dropdown__list w-dropdown-list\" aria-labelledby=\"nav-toggle-{$this->current_item_id}\">\n";
+			$output .= "$indent\t<div class=\"nav-dropdown__listmenu\">\n";
+		} else {
+			$output .= "\n$indent<ul role=\"list\" class=\"nav_dropdown_link-sub-list w-list-unstyled\">\n";
+		}
+	}
+
+	function end_lvl( &$output, $depth = 0, $args = null ) {
+		$indent = str_repeat( "\t", $depth );
+		if ( $depth == 0 ) {
+			$output .= "$indent\t</div>\n";
+			$output .= "$indent</nav>\n";
+		} else {
+			$output .= "$indent</ul>\n";
+		}
+	}
+
+	function start_el( &$output, $item, $depth = 0, $args = null, $id = 0 ) {
+		$indent    = ( $depth ) ? str_repeat( "\t", $depth ) : '';
+		$classes   = empty( $item->classes ) ? array() : (array) $item->classes;
+		$classes[] = 'menu-item-' . $item->ID;
+
+		$this->current_item_id = $item->ID;
+
+		$class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args ) );
+		$class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';
+
+		$id = apply_filters( 'nav_menu_item_id', 'menu-item-' . $item->ID, $item, $args );
+		$id = $id ? ' id="' . esc_attr( $id ) . '"' : '';
+
+		$has_children = in_array( 'menu-item-has-children', $classes );
+
+		if ( $depth == 0 && $has_children ) {
+			$output .= $indent . '<div data-delay="0" data-hover="true" class="nav__dropdown w-dropdown" style="max-width: 1250px;">';
+			$output .= '<div class="nav-dropdown__toggle group w-dropdown-toggle" id="nav-toggle-' . $item->ID . '" aria-controls="nav-list-' . $item->ID . '" aria-haspopup="menu" aria-expanded="false" role="button" tabindex="0">';
+			$output .= '<div class="absolute absolute--t flex justify-center opacity-0 group-hover:opacity-100">';
+			$output .= '<div blinking-dot="" class="size-8 rounded-8 bg-primary"></div>';
+			$output .= '</div>';
+			$output .= '<div>' . apply_filters( 'the_title', $item->title, $item->ID ) . '</div>';
+			$output .= '</div>';
+		} elseif ( $depth == 0 ) {
+			$attributes = ! empty( $item->attr_title ) ? ' title="' . esc_attr( $item->attr_title ) . '"' : '';
+			$attributes .= ! empty( $item->target ) ? ' target="' . esc_attr( $item->target ) . '"' : '';
+			$attributes .= ! empty( $item->xfn ) ? ' rel="' . esc_attr( $item->xfn ) . '"' : '';
+			$attributes .= ! empty( $item->url ) ? ' href="' . esc_attr( $item->url ) . '"' : '';
+
+			$output .= $indent . '<a' . $attributes . ' class="nav__link group w-inline-block">';
+			$output .= '<div class="absolute absolute--t flex justify-center opacity-0 group-hover:opacity-100">';
+			$output .= '<div blinking-dot="" class="size-8 rounded-8 bg-primary"></div>';
+			$output .= '</div>';
+			$output .= '<div>' . apply_filters( 'the_title', $item->title, $item->ID ) . '</div>';
+			$output .= '</a>';
+		} elseif ( $depth == 1 ) {
+			if ( $has_children ) {
+				$output .= $indent . '<a href="#" class="nav_dropdown_link pointer-events-none w-dropdown-link" tabindex="0">' . apply_filters( 'the_title',
+						$item->title,
+						$item->ID ) . '</a>';
+			} else {
+				$attributes = ! empty( $item->attr_title ) ? ' title="' . esc_attr( $item->attr_title ) . '"' : '';
+				$attributes .= ! empty( $item->target ) ? ' target="' . esc_attr( $item->target ) . '"' : '';
+				$attributes .= ! empty( $item->xfn ) ? ' rel="' . esc_attr( $item->xfn ) . '"' : '';
+				$attributes .= ! empty( $item->url ) ? ' href="' . esc_attr( $item->url ) . '"' : '';
+
+				$output .= $indent . '<a' . $attributes . ' class="nav_dropdown_link w-dropdown-link" tabindex="0">' . apply_filters( 'the_title',
+						$item->title,
+						$item->ID ) . '</a>';
+			}
+		} else {
+			$attributes = ! empty( $item->attr_title ) ? ' title="' . esc_attr( $item->attr_title ) . '"' : '';
+			$attributes .= ! empty( $item->target ) ? ' target="' . esc_attr( $item->target ) . '"' : '';
+			$attributes .= ! empty( $item->xfn ) ? ' rel="' . esc_attr( $item->xfn ) . '"' : '';
+			$attributes .= ! empty( $item->url ) ? ' href="' . esc_attr( $item->url ) . '"' : '';
+
+			$output .= $indent . '<li>';
+			$output .= '<a' . $attributes . ' class="nav_dropdown_link-sub" tabindex="0">' . apply_filters( 'the_title',
+					$item->title,
+					$item->ID ) . '</a>';
+		}
+	}
+
+	function end_el( &$output, $item, $depth = 0, $args = null ) {
+		$classes      = empty( $item->classes ) ? array() : (array) $item->classes;
+		$has_children = in_array( 'menu-item-has-children', $classes );
+
+		if ( $depth == 0 && $has_children ) {
+			$output .= "</div>\n";
+		} elseif ( $depth > 1 ) {
+			$output .= "</li>\n";
+		}
+	}
+}
+
 
 if ( ! function_exists( 'bridge_qode_child_theme_enqueue_scripts' ) ) {
 	function bridge_qode_child_theme_enqueue_scripts() {
