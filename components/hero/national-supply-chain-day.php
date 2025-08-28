@@ -22,7 +22,13 @@
   </div>
   <div class="absolute absolute--full w-full h-full">
     <img
-      src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/687633973ba7ad6eb3a523eb_hero-national-supply-chain-day.avif"
+      src="<?php
+      if ( has_post_thumbnail( get_the_ID() ) ) {
+        echo get_the_post_thumbnail_url( get_the_ID(), 'full' );
+      } else {
+        echo get_stylesheet_directory_uri() . '/assets/img/hero-img/hero--national-supply-chain-day.avif';
+      }
+      ?>"
       loading="lazy" alt="hero-national-supply-chain-day" class="image opacity-10">
   </div>
 </section>
