@@ -61,8 +61,8 @@
 													<a href="/brands/supply-chain-now" class="footer-link-sub">Supply Chain Now</a>
 												</li>
 												<li>
-													<a href="/brands/supply-chain-now-en-espanol" class="footer-link-sub">Supply Chain Now en
-														Español
+													<a href="/brands/supply-chain-now-en-espanol" class="footer-link-sub">
+                            Supply Chain Now en Español
 													</a>
 												</li>
 												<li>
