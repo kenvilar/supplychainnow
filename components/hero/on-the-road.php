@@ -6,7 +6,8 @@
     <div class="w-layout-blockcontainer pt-20 w-container text-center max-w-548">
       <div class="mb-20">
         <img
-          src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/687614272c917096266ced65_on-the-road.svg"
+          src="<?php
+          echo get_stylesheet_directory_uri() . '/assets/img/icons/on-the-road.svg'; ?>"
           loading="lazy" alt="on-the-road icon">
       </div>
       <div class="mb-16">

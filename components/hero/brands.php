@@ -6,7 +6,8 @@
     <div class="w-layout-blockcontainer pt-20 w-container text-center max-w-1220">
       <div class="mb-20">
         <img
-          src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/6889a4f52de91445c3439aa0_play-icon.svg"
+          src="<?php
+          echo get_stylesheet_directory_uri() . '/assets/img/icons/play-icon.svg'; ?>"
           loading="lazy" alt="play-icon">
       </div>
       <div class="mb-16">

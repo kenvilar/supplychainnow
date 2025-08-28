@@ -6,7 +6,8 @@
     <div class="w-layout-blockcontainer pt-20 w-container text-center max-w-960">
       <div class="mb-20">
         <img
-          src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/686b5ed7b668ce59a9f33f23_notebook-with-one-person.svg"
+          src="<?php
+          echo get_stylesheet_directory_uri() . '/assets/img/icons/notebook-with-one-person.svg'; ?>"
           loading="lazy" alt="notebook-with-one-person">
       </div>
       <div class="mb-16">

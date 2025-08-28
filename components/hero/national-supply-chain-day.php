@@ -8,7 +8,8 @@
         <div class="flex items-center justify-between gap-20 sm:flex-col">
           <div class="max-w-328 w-full md:max-w-full">
             <img
-              src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/68750e51de62f4bb5523af0d_national%20supply%20chain%20day.avif"
+              src="<?php
+              echo get_stylesheet_directory_uri() . '/assets/img/national-supply-chain-day/national-supply-chain-day.avif'; ?>"
               loading="lazy" alt="national supply chain day" class="w-full h-full max-w-none fit-cover">
           </div>
           <div class="max-w-500 w-full md:max-w-full sm:text-center">

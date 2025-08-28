@@ -6,7 +6,8 @@
     <div class="w-layout-blockcontainer pt-20 w-container text-center">
       <div class="mb-20">
         <img
-          src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/6879e74d071f729dd8db1580_like-icon.svg"
+          src="<?php
+          echo get_stylesheet_directory_uri() . '/assets/img/icons/like-icon.svg'; ?>"
           loading="lazy" alt="like-icon">
       </div>
       <div class="mb-16">

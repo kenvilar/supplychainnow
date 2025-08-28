@@ -5,8 +5,10 @@
   <div class="site-padding sm:py-60 pt-200 pb-100 relative z-10">
     <div class="w-layout-blockcontainer pt-20 w-container text-center max-w-960">
       <div class="mb-20">
-        <img src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688dc2a18bab3380ddb6006f_movie.svg"
-             loading="lazy" alt="movie">
+        <img
+          src="<?php
+          echo get_stylesheet_directory_uri() . '/assets/img/icons/movie.svg'; ?>"
+          loading="lazy" alt="movie">
       </div>
       <div class="mb-16">
         <h1>On-Demand Programming</h1>
