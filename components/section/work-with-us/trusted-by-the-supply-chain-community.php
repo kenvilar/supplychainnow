@@ -146,57 +146,68 @@
             <ul class="splide__list items-center">
               <li class="splide__slide">
                 <img
-                  src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880c4770292a948560dc_ratelinx-logo.svg"
+                  src="<?php
+                  echo get_stylesheet_directory_uri() . '/assets/img/work-with-us/ratelinx-logo.svg'; ?>"
                   loading="lazy" alt="ratelinx-logo">
               </li>
               <li class="splide__slide">
                 <img
-                  src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880d83f8490edb0402c4_omp-logo.svg"
+                  src="<?php
+                  echo get_stylesheet_directory_uri() . '/assets/img/work-with-us/omp-logo.svg'; ?>"
                   loading="lazy" alt="omp-logo">
               </li>
               <li class="splide__slide">
                 <img
-                  src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880c15668191452d2493_lockheed-marting-logo.svg"
+                  src="<?php
+                  echo get_stylesheet_directory_uri() . '/assets/img/work-with-us/lockheed-marting-logo.svg'; ?>"
                   loading="lazy" alt="lockheed-marting-logo">
               </li>
               <li class="splide__slide">
                 <img
-                  src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880df7f2a214364cff23_uber-freight-logo.svg"
+                  src="<?php
+                  echo get_stylesheet_directory_uri() . '/assets/img/work-with-us/uber-freight-logo.svg'; ?>"
                   loading="lazy" alt="uber-freight-logo">
               </li>
               <li class="splide__slide">
                 <img
-                  src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880c9667b3a9ce6a1f34_clorox-logo.svg"
+                  src="<?php
+                  echo get_stylesheet_directory_uri() . '/assets/img/work-with-us/clorox-logo.svg'; ?>"
                   loading="lazy" alt="clorox-logo">
               </li>
               <li class="splide__slide">
                 <img
-                  src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880c1bd0bd362260d09d_gartner-logo.svg"
+                  src="<?php
+                  echo get_stylesheet_directory_uri() . '/assets/img/work-with-us/gartner-logo.svg'; ?>"
                   loading="lazy" alt="gartner-logo">
               </li>
               <li class="splide__slide">
                 <img
-                  src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880c6cac07a59a5140a9_johnson-and-johnson-logo.svg"
+                  src="<?php
+                  echo get_stylesheet_directory_uri() . '/assets/img/work-with-us/johnson-and-johnson-logo.svg'; ?>"
                   loading="lazy" alt="johnson-and-johnson-logo">
               </li>
               <li class="splide__slide">
                 <img
-                  src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880cf0c4c0c5257ec62b_georgia-pacific-logo.svg"
+                  src="<?php
+                  echo get_stylesheet_directory_uri() . '/assets/img/work-with-us/georgia-pacific-logo.svg'; ?>"
                   loading="lazy" alt="georgia-pacific-logo">
               </li>
               <li class="splide__slide">
                 <img
-                  src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880c631104c6bc6c3116_astrazeneca-logo.svg"
+                  src="<?php
+                  echo get_stylesheet_directory_uri() . '/assets/img/work-with-us/astrazeneca-logo.svg'; ?>"
                   loading="lazy" alt="astrazeneca-logo">
               </li>
               <li class="splide__slide">
                 <img
-                  src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880dabfe3eb2b60847f8_manhattan-logo.svg"
+                  src="<?php
+                  echo get_stylesheet_directory_uri() . '/assets/img/work-with-us/manhattan-logo.svg'; ?>"
                   loading="lazy" alt="manhattan-logo">
               </li>
               <li class="splide__slide">
                 <img
-                  src="https://cdn.prod.website-files.com/6858d0b082937600c76df99a/688c880cc814f568550bb1ca_scheneider-electric-logo.svg"
+                  src="<?php
+                  echo get_stylesheet_directory_uri() . '/assets/img/work-with-us/scheneider-electric-logo.svg'; ?>"
                   loading="lazy" alt="scheneider-electric-logo">
               </li>
             </ul>
