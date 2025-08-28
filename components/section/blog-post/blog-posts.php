@@ -62,21 +62,21 @@ if ( $categorySlug ) {
   }
 }
 
-$mp3_url = get_first_media_player( get_the_content() );
-$captivate_player_link = get_field('captivate_player_link', $postId);
-if (!empty($captivate_player_link)) {
+$mp3_url               = get_first_media_player( get_the_content() );
+$captivate_player_link = get_field( 'captivate_player_link', $postId );
+if ( ! empty( $captivate_player_link ) ) {
   $mp3_url = $captivate_player_link;
 }
-$download_url = get_first_download_link( get_the_content() );
-$white_paper_ebook_guide_link = get_field('white_paper_ebook_guide_link', $postId);
-if (!empty($white_paper_ebook_guide_link)) {
+$download_url                 = get_first_download_link( get_the_content() );
+$white_paper_ebook_guide_link = get_field( 'white_paper_ebook_guide_link', $postId );
+if ( ! empty( $white_paper_ebook_guide_link ) ) {
   $download_url = $white_paper_ebook_guide_link;
 }
 ?>
 <div class="page-wrapper">
   <div class="main-wrapper">
     <section class="section">
-      <div class="site-padding sm:py-60 pt-58">
+      <div class="site-padding sm:py-60 pt-0">
         <div class="mx-auto text-center">
           <a href="<?= '/' . $categorySlug; ?>" class="font-semibold text-reg text-secondary">
             < Back to <?= $categoryResultName; ?>
@@ -132,6 +132,32 @@ if (!empty($white_paper_ebook_guide_link)) {
         </div>
       </div>
     </section>
+    <?php
+    if ( $mp3_url ) {
+      ?>
+      <section class="section">
+        <div class="site-padding sm:py-60 pt-20 pb-40">
+          <div class="mx-auto max-w-1249 w-full md:max-w-full">
+            <div class="relative overflow-hidden shadow4 rounded-8 pt-56 pb-47 px-20">
+              <div class="mx-auto max-w-1129 w-full md:max-w-full">
+                <div>
+                  <audio class="wp-audio-shortcode" id="audio-26231-1" preload="none" style="width: 100%;"
+                         controls="controls">
+                    <source type="audio/mpeg"
+                            src="<?= $mp3_url; ?>?_=1" />
+                    <a href="<?= $mp3_url; ?>">
+                      https://episodes.captivate.fm/episode/28f8a5ee-e04d-4324-9bf2-74880d8ed8f5.mp3
+                    </a>
+                  </audio>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <?php
+    }
+    ?>
     <section class="section">
       <div class="site-padding sm:py-60 py-64">
         <div class="mx-auto max-w-1249 w-full md:max-w-full">
@@ -214,11 +240,11 @@ if (!empty($white_paper_ebook_guide_link)) {
                   'update_post_term_cache' => false,
                   "post__not_in"           => [ $postId ],
                   "orderby"                => "rand", // random order
-                  "tax_query" => [
+                  "tax_query"              => [
                     [
                       "taxonomy" => "category",
-                      "field" => "slug",
-                      "terms" => ["podcast-episode"],
+                      "field"    => "slug",
+                      "terms"    => [ "podcast-episode" ],
                       "operator" => "NOT IN",
                     ],
                   ],
