@@ -500,7 +500,7 @@ function get_the_download_links( $content ) {
 		// Check if the link text contains "download" (case insensitive)
 		if ( stripos( $link_text, 'download' ) !== false ) {
 			// Replace scnnowdev.wpenginepowered.com with supplychainnow.com
-			$url = str_replace( 'scnnowdev.wpenginepowered.com', 'supplychainnow.com', $url );
+			$url             = str_replace( 'scnnowdev.wpenginepowered.com', 'supplychainnow.com', $url );
 			$download_urls[] = $url;
 		}
 	}
