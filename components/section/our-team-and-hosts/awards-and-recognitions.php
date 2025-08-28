@@ -17,7 +17,7 @@
     </div>
   </div>
   <div slider-1="" class="splide">
-    <div class="splide__track overflow-visible">
+    <div class="splide__track overflow-visible!">
       <div class="splide__list">
         <div class="splide__slide">
           <div class="awards-pentagon-block">
