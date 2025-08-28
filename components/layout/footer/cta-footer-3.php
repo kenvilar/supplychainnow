@@ -32,7 +32,7 @@
     <img
       loading="lazy"
       src="<?php
-      echo get_template_directory_uri() . '/assets/img/footer/professional-video-shoot-camera.avif'; ?>"
+      echo get_stylesheet_directory_uri() . '/assets/img/footer/professional-video-shoot-camera.avif'; ?>"
       alt="Camera capturing a professional video shoot setup" class="image opacity-15" />
   </div>
 </section>

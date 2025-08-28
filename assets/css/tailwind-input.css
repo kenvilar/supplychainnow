@@ -92,7 +92,7 @@
     padding-left: 0;
     list-style: none !important;
     li {
-      list-style: none !important;
+      list-style: none;
     }
   }
   .w-layout-vflex {
@@ -296,7 +296,7 @@
   padding: 16px 0 0;
 }
 .list-circle {
-  list-style-type: disc;
+  list-style-type: disc !important;
 }
 .resource-hub-link {
   opacity: 0.5;

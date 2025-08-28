@@ -12,7 +12,7 @@
           <div class="overflow-hidden rounded-24">
             <img
               src="<?php
-              echo get_template_directory_uri() . '/assets/img/national-supply-chain-day/celebrating-national-supply-chain-day.avif'; ?>"
+              echo get_stylesheet_directory_uri() . '/assets/img/national-supply-chain-day/celebrating-national-supply-chain-day.avif'; ?>"
               loading="lazy" alt="celebrating national supply chain day"
               class="w-full h-full max-w-none fit-cover">
           </div>

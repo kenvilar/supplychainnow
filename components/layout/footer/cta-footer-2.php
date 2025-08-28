@@ -85,7 +85,7 @@
     <img
       loading="lazy"
       src="<?php
-      echo get_template_directory_uri() . '/assets/img/footer/bg-footer-cta-media-kit.avif'; ?>"
+      echo get_stylesheet_directory_uri() . '/assets/img/footer/bg-footer-cta-media-kit.avif'; ?>"
       alt="bg-footer-cta-media-kit" class="image opacity-15">
   </div>
 </section>
