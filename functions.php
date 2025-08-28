@@ -13,6 +13,7 @@ add_filter( 'redirect_canonical', function ( $redirect_url, $requested_url ) {
 function my_custom_menus() {
 	register_nav_menus( array(
 		'scn_primary_menu' => __( 'SCN Primary Menu' ),
+		'scn_footer_menu' => __( 'SCN Footer Menu' ),
 	) );
 }
 
@@ -117,6 +118,89 @@ class SCN_Nav_Walker extends Walker_Nav_Menu {
 		if ( $depth == 0 && $has_children ) {
 			$output .= "</div>\n";
 		} elseif ( $depth > 1 ) {
+			$output .= "</li>\n";
+		}
+	}
+}
+
+class SCN_Footer_Walker extends Walker_Nav_Menu {
+	
+	function start_lvl( &$output, $depth = 0, $args = null ) {
+		$indent = str_repeat("\t", $depth);
+		if ( $depth == 0 ) {
+			$output .= "\n$indent<ul role=\"list\" class=\"m-0 flex flex-col gap-12 w-list-unstyled\">\n";
+		} else {
+			$output .= "\n$indent<ul role=\"list\" class=\"m-0 flex flex-col gap-8 w-list-unstyled\">\n";
+		}
+	}
+
+	function end_lvl( &$output, $depth = 0, $args = null ) {
+		$indent = str_repeat("\t", $depth);
+		$output .= "$indent</ul>\n";
+	}
+
+	function start_el( &$output, $item, $depth = 0, $args = null, $id = 0 ) {
+		$indent = ($depth) ? str_repeat("\t", $depth) : '';
+		$classes = empty( $item->classes ) ? array() : (array) $item->classes;
+		$classes[] = 'menu-item-' . $item->ID;
+		
+		$class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args ) );
+		$class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';
+		
+		$id = apply_filters( 'nav_menu_item_id', 'menu-item-'. $item->ID, $item, $args );
+		$id = $id ? ' id="' . esc_attr( $id ) . '"' : '';
+		
+		$has_children = in_array('menu-item-has-children', $classes);
+		
+		if ( $depth == 0 && $has_children ) {
+			$pointer_events_class = ( empty( $item->url ) || $item->url === '#' ) ? ' pointer-events-none' : '';
+			$output .= $indent . '<div class="w-layout-vflex flex gap-16">';
+			$output .= '<a href="' . esc_attr( $item->url ) . '" class="footer-link-heading' . $pointer_events_class . '">' . apply_filters( 'the_title', $item->title, $item->ID ) . '</a>';
+		} elseif ( $depth == 0 ) {
+			$attributes = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';
+			$attributes .= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target     ) .'"' : '';
+			$attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
+			$attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
+			
+			$output .= $indent . '<div class="w-layout-vflex flex gap-16">';
+			$output .= '<a' . $attributes . ' class="footer-link-heading">' . apply_filters( 'the_title', $item->title, $item->ID ) . '</a>';
+			$output .= '</div>';
+		} elseif ( $depth == 1 ) {
+			if ( $has_children ) {
+				$pointer_events_class = ( empty( $item->url ) || $item->url === '#' ) ? ' not-link' : '';
+				$output .= $indent . '<li class="flex flex-col gap-12">';
+				$output .= '<a href="' . esc_attr( $item->url ) . '" class="footer-link' . $pointer_events_class . '">' . apply_filters( 'the_title', $item->title, $item->ID ) . '</a>';
+			} else {
+				$attributes = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';
+				$attributes .= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target     ) .'"' : '';
+				$attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
+				$attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
+				
+				$output .= $indent . '<li>';
+				$output .= '<a' . $attributes . ' class="footer-link">' . apply_filters( 'the_title', $item->title, $item->ID ) . '</a>';
+				$output .= '</li>';
+			}
+		} else {
+			$attributes = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';
+			$attributes .= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target     ) .'"' : '';
+			$attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
+			$attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
+			
+			$output .= $indent . '<li>';
+			$output .= '<a' . $attributes . ' class="footer-link-sub">' . apply_filters( 'the_title', $item->title, $item->ID ) . '</a>';
+			$output .= '</li>';
+		}
+	}
+
+	function end_el( &$output, $item, $depth = 0, $args = null ) {
+		$classes = empty( $item->classes ) ? array() : (array) $item->classes;
+		$has_children = in_array('menu-item-has-children', $classes);
+		
+		if ( $depth == 0 && $has_children ) {
+			$output .= "</div>\n";
+		} elseif ( $depth == 0 ) {
+			// Already closed in start_el for single items
+		} elseif ( $depth == 1 && $has_children ) {
 			$output .= "</li>\n";
 		}
 	}
