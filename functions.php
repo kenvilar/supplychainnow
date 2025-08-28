@@ -10,6 +10,14 @@ add_filter( 'redirect_canonical', function ( $redirect_url, $requested_url ) {
 	return $redirect_url;
 }, 10, 2 );
 
+function my_custom_menus() {
+	register_nav_menus( array(
+		'scn_primary_menu' => __( 'SCN Primary Menu' ),
+	) );
+}
+
+add_action( 'init', 'my_custom_menus' );
+
 
 if ( ! function_exists( 'bridge_qode_child_theme_enqueue_scripts' ) ) {
 	function bridge_qode_child_theme_enqueue_scripts() {
