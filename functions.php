@@ -77,7 +77,14 @@ class SCN_Nav_Walker extends Walker_Nav_Menu {
 			$output .= '</a>';
 		} elseif ( $depth == 1 ) {
 			if ( $has_children ) {
-				$output .= $indent . '<a href="#" class="nav_dropdown_link pointer-events-none w-dropdown-link" tabindex="0">' . apply_filters( 'the_title',
+				$attributes = ! empty( $item->attr_title ) ? ' title="' . esc_attr( $item->attr_title ) . '"' : '';
+				$attributes .= ! empty( $item->target ) ? ' target="' . esc_attr( $item->target ) . '"' : '';
+				$attributes .= ! empty( $item->xfn ) ? ' rel="' . esc_attr( $item->xfn ) . '"' : '';
+				$attributes .= ! empty( $item->url ) ? ' href="' . esc_attr( $item->url ) . '"' : '';
+				
+				$pointer_events_class = ( empty( $item->url ) || $item->url === '#' ) ? ' pointer-events-none' : '';
+				
+				$output .= $indent . '<a' . $attributes . ' class="nav_dropdown_link' . $pointer_events_class . ' w-dropdown-link" tabindex="0">' . apply_filters( 'the_title',
 						$item->title,
 						$item->ID ) . '</a>';
 			} else {
