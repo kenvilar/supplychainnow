@@ -19,7 +19,7 @@
 			if (has_post_thumbnail(get_the_ID())) {
 				echo get_the_post_thumbnail_url(get_the_ID(), 'full');
 			} else {
-				echo get_stylesheet_directory_uri() . '/assets/img/resource-hub/hero--resource hub.avif';
+				echo get_stylesheet_directory_uri() . '/assets/img/resource-hub/hero--resource-hub.avif';
 			}
 			?>"
 			loading="lazy" alt="hero--resource hub" class="image opacity-10">

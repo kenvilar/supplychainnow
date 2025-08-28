@@ -18,7 +18,7 @@
 	<div class="absolute absolute--full w-full h-full">
 		<img
 			src="<?php
-			echo get_stylesheet_directory_uri() . '/assets/img/our-story/hero-our-story.avif' ?>"
+			echo get_stylesheet_directory_uri() . '/assets/img/our-story/hero--our-story.avif' ?>"
 			loading="lazy" alt="hero-our-story" class="image opacity-10">
 	</div>
 </section>
