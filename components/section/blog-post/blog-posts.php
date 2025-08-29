@@ -185,8 +185,16 @@ if ( ! empty( $white_paper_ebook_guide_link ) ) {
             <div class="max-w-395 w-full md:max-w-full">
               <div class="mb-36">
                 <div class="mb-20">
-                  <h2 class="text-2xl">More <?php
-                    echo $categoryResultName; ?></h2>
+                  <h2 class="text-2xl">
+                    More
+                    <?php
+                    if ( $categoryResultName == 'Episodes' ) {
+                      echo 'Podcast Episodes';
+                    } else {
+                      echo $categoryResultName;
+                    }
+                    ?>
+                  </h2>
                 </div>
                 <?php
                 get_template_part( "components/line-with-blinking-dot", null, [
@@ -353,8 +361,8 @@ if ( ! empty( $white_paper_ebook_guide_link ) ) {
                             <div class="overflow-hidden rounded-12 relative h-222 bg-cargogrey">
                               <img
                                 src="<?php
-                                echo get_the_post_thumbnail_url( $q->post->ID, 'thumbnail' )
-                                  ? get_the_post_thumbnail_url( $q->post->ID, 'thumbnail' )
+                                echo get_the_post_thumbnail_url( $q->post->ID )
+                                  ? get_the_post_thumbnail_url( $q->post->ID, 'medium_large' )
                                   : get_stylesheet_directory_uri() .
                                     "/assets/img/misc/default-card-img-thumbnail.avif"; ?>"
                                 loading="lazy" alt="" class="image relative opacity-90">
