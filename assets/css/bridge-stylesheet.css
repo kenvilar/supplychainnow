@@ -2748,7 +2748,7 @@ div.video_section {
 
 @media only screen and (min-width: 1300px) {
     .qode_grid_1200 .carousel-inner .slider_content_outer,.qode_grid_1200 .container_inner,.qode_grid_1200 .container_inner nav.content_menu,.qode_grid_1200 .elementor-container .elementor-widget-wrap>.qode_elementor_container_inner,.qode_grid_1200 .elementor-row .elementor-widget-wrap>.qode_elementor_container_inner,.qode_grid_1200 .footer_bottom_border.in_grid,.qode_grid_1200 .footer_top_border.in_grid,.qode_grid_1200 .full_width .parallax_content,.qode_grid_1200 .grid_section .section_inner,.qode_grid_1200 .qode_elementor_container_inner,.qode_grid_1200 .title_border_in_grid_holder,.qode_grid_1200 div[data-element_type=container].qode_elementor_container_inner,.qode_grid_1200 nav.content_menu ul,.qode_grid_1200.boxed .section .section_inner,.qode_grid_1200.boxed nav.content_menu.fixed {
-        width:1200px
+        width:1340px
     }
 
     .qode_grid_1200.boxed .carousel-inner,.qode_grid_1200.boxed .header_inner,body.qode_grid_1200.boxed .footer_inner,body.qode_grid_1200.boxed .wrapper_inner {
