@@ -388,20 +388,19 @@ if ( ! empty( $white_paper_ebook_guide_link ) ) {
                           <div class="mb-12">
                             <div class="flex items-center gap-32 sm:flex-wrap sm:gap-8">
                               <div class="flex items-center gap-8">
-                                <div class="flex items-center">
-                                  <?php
-                                  if ($categoryResultName == 'Episodes') {
-                                    ?>
+                                <?php
+                                if ( $categoryResultName == 'Episodes' ) {
+                                  ?>
+                                  <div class="flex items-center">
                                     <img
                                       class="size-24"
                                       src="<?php
-                                      echo get_stylesheet_directory_uri(
-                                           ) . '/assets/img/icons/podcast-card-icon.png'; ?>"
+                                      echo get_stylesheet_directory_uri() . '/assets/img/icons/podcast-card-icon.png'; ?>"
                                       loading="lazy" alt="podcast-blue-microphone">
-                                    <?php
-                                  }
-                                  ?>
-                                </div>
+                                  </div>
+                                  <?php
+                                }
+                                ?>
                                 <div class="font-family-secondary text-sm capitalize">
                                   <?php
                                   if ( $categoryResultName == 'Episodes' ) {
