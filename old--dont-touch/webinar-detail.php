@@ -1,6 +1,6 @@
 <?php
 /*
- * Template Name: Webinar Detail
+ * xxTemplate Namexx:xx Webinar Detailxx
  */
 
 get_header();

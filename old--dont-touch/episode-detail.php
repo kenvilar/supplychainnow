@@ -1,6 +1,6 @@
 <?php
 /*
- * XXXXXXXTemplate Name: Episode Detailxxxxxxxxxx
+ * xxTemplate Namexx:xx XXEpisode Detailxx
  */
 
 get_header();

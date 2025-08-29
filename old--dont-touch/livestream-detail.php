@@ -1,6 +1,6 @@
 <?php
 /*
- * Template Name: Livestream Detail
+ * xxTemplate Namexx:xx Livestream Detailxx
  */
 
 get_header();
