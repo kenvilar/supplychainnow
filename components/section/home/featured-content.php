@@ -60,6 +60,7 @@ $featured_content = get_field( 'featured_content', $postId )
                     'post__in' => [ $post->ID ],
                   ],
                   "post_per_page" => 1,
+                  'card_size'     => 'small',
                   'attributes'    => [],
                   'classNames'    => '',
                 ] );
