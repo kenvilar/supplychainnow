@@ -6,7 +6,7 @@
     <div class="w-layout-blockcontainer max-w-1372 relative w-container">
       <div class="mb-52">
         <div class="mb-20">
-          <h2 class="text-center">Podcast Series</h2>
+          <h2 class="text-center">The Buzz</h2>
         </div>
         <?php
         get_template_part('components/line-with-blinking-dot', null, [
