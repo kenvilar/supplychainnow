@@ -22,7 +22,10 @@ $pageId = get_the_ID();
 			'taxonomy' => 'tags',
 		]);
 
-		scn_render_if_no_filters('components/section/on-demand-programming--webinars/featured-webinars');
+		//scn_render_if_no_filters('components/section/on-demand-programming--webinars/featured-webinars');
+    scn_render_if_no_filters('components/section/on-demand-programming/featured-webinars', [
+      'site_padding' => 'pt-60 pb-80',
+    ]);
 		scn_render_if_no_filters('components/section/on-demand-programming--webinars/recent-webinars');
 
 		get_template_part('components/ui/search_results', null, [

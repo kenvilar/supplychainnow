@@ -1,10 +1,11 @@
 <?php
 
 $postId                    = get_the_ID();
+$site_padding = $args["site_padding"] ?? "";
 $featured_content_webinars = get_field( 'featured_content_webinars', $postId );
 ?>
 <section class="section">
-  <div class="site-padding sm:py-60 pb-80">
+  <div class="site-padding sm:py-60 pb-80 <?php echo esc_attr($site_padding); ?>">
     <div class="w-layout-blockcontainer max-w-1372 relative w-container">
       <div class="mb-44">
         <div class="mb-20">
