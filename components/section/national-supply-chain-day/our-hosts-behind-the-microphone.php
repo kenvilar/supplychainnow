@@ -6,7 +6,7 @@
 		<div class="w-layout-blockcontainer max-w-708 w-container">
 			<div class="mb-44">
 				<div class="mb-20">
-					<h2 class="text-center">Our Hosts Behind the Microphone</h2>
+					<h2 class="text-center">Celebrating the Backbone of the Industry</h2>
 				</div>
 				<div class="w-layout-blockcontainer max-w-136 w-full h-1 relative bg-cargogrey/25 w-container">
 					<div class="absolute absolute--r flex items-center pr-32">

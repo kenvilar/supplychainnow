@@ -14,7 +14,7 @@
           </div>
           <div class="max-w-500 w-full md:max-w-full sm:text-center">
             <h1 class="font-family-alternate font-normal text-xl tracking-[2.4px]">
-              Celebrating the Backbone of the Industry
+              A Celebration and Spotlight of the Industry That Connects the World
             </h1>
           </div>
         </div>
