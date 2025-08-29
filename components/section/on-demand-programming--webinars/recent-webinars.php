@@ -62,6 +62,7 @@
                   'q_post' => [],
                   'post_per_page' => 1000,
                   'post_type' => ['page'],
+                  'card_size' => 'small',
                   'attributes' => [],
                   'classNames' => 'splide__slide',
                   'noItemsFound' => '',
