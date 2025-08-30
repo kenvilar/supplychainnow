@@ -7,7 +7,7 @@
       <div class="mb-20">
         <img
           src="<?php
-          echo get_stylesheet_directory_uri() . '/assets/img/convo.svg'; ?>"
+          echo get_stylesheet_directory_uri() . '/assets/img/icons/convo.svg'; ?>"
           loading="lazy" alt="convo">
       </div>
       <div class="mb-16">
