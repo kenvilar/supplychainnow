@@ -92,7 +92,7 @@
     padding-left: 0;
     list-style: none !important;
     li {
-      list-style: none;
+      list-style: none !important;
     }
   }
   .w-layout-vflex {
