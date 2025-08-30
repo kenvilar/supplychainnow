@@ -48,12 +48,6 @@ if ($search_query !== '' || $industries !== '' || (is_singular('brands') && isse
         'compare' => 'IN',
         'type' => 'CHAR',
       ],
-      [
-        "key" => "select_media_type",
-        "value" => ["podcast", "livestream", "webinar"],
-        "compare" => "IN",
-        "type" => "CHAR",
-      ],
     ],
     "orderby" => ["menu_order" => "ASC", "date" => "DESC"], //'rand',
   ];
