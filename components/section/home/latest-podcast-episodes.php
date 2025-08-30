@@ -92,6 +92,9 @@
                       gap: 32,
                       autoplay: false,
                       pauseOnHover: true,
+                      lazyLoad: 'nearby', //boost performance
+                      drag: false, //boost performance
+                      speed: 400, //boost performance
                       autoScroll: {
                         speed: 1
                       },

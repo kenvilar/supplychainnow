@@ -72,7 +72,7 @@ $pageId = get_the_ID();
 										if (!splideTargetEl) return;
 										var options = {
 											/*suggested options*/
-											type: 'loop', //'fade', //"slide", //"loop",
+											type: 'slide', //'fade', //"slide", //"loop",
 											arrows: true,
 											pagination: false,
 											/*custom options*/
@@ -81,15 +81,18 @@ $pageId = get_the_ID();
 											perMove: 1,
 											perPage: 4,
 											gap: 22,
-											autoplay: true,
+											autoplay: false,
 											pauseOnHover: true,
 											updateOnMove: true,
+                      lazyLoad: 'nearby', //boost performance
+                      drag: false, //boost performance
+                      speed: 400, //boost performance
 											autoScroll: {
 												speed: 1,
 											},
 											intersection: {
 												inView: {
-													autoplay: true,
+													autoplay: false,
 												},
 												outView: {
 													autoplay: false,
