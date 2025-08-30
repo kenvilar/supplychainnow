@@ -73,7 +73,7 @@
                       ],
                     ],
                   ],
-                  'post_per_page' => 1000,
+                  'post_per_page' => 500,
                   'card_size' => 'small',
                   'attributes' => [],
                   'classNames' => 'splide__slide',
