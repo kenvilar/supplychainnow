@@ -32,11 +32,11 @@
               <div role="listitem" class="group">
                 <div class="overflow-hidden rounded-24 relative h-396">
                   <div
-                    class="relative z-10 w-full h-full gradient8 translate-y-396 group-hover:translate-y-0 transition-all duration-500">
+                    class="relative z-10 w-full h-full gradient8 md:bg-linear-[158deg,transparent_0%,transparent_0%]! translate-y-396 md:translate-y-0 group-hover:translate-y-0 transition-all duration-500">
                     <div class="px-12 pt-40 pb-28 h-full">
                       <div class="w-layout-blockcontainer max-w-312 h-full w-container">
                         <div class="w-layout-vflex h-full flex justify-between">
-                          <div>
+                          <div class="md:invisible">
                             <div class="mb-4">
                               <h3 from-fullname-wrapper="" class="text-2xl"><?php
                                 the_title(); ?></h3>
@@ -59,7 +59,7 @@
                             </div>
                           </div>
                           <div class="flex justify-between gap-12 items-center w-full">
-                            <div class="flex items-center gap-12">
+                            <div class="flex items-center gap-12 md:invisible">
                               <div class="font-family-secondary text-xs uppercase tracking-[1.2px]">FOLLOW ME</div>
                               <div from-linkedin-wrapper="" class="flex items-center">
                                 <a href="<?php
