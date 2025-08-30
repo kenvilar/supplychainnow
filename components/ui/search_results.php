@@ -210,7 +210,7 @@ if ($search_query !== '' || $industries !== '' || (is_singular('brands') && isse
                         <img
                           src="<?php
                           echo get_the_post_thumbnail_url($results_query->post->ID)
-                            ? get_the_post_thumbnail_url($results_query->post->ID, 'medium')
+                            ? get_the_post_thumbnail_url($results_query->post->ID, 'medium_large')
                             : get_stylesheet_directory_uri() .
                               "/assets/img/misc/default-card-img-thumbnail.avif"; ?>"
                           loading="lazy" alt="" class="image relative opacity-90">
