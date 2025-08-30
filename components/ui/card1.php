@@ -125,7 +125,7 @@ if ($q->have_posts()): ?>
     ?>
     <a href="<?php
     the_permalink($q->post->ID); ?>" class="relative w-full group <?= $classNames; ?>" <?= $attr_string ?>>
-      <div class="relative flex flex-col justify-between gap-20 h-full">
+      <div class="relative flex flex-col justify-start gap-20 h-full">
         <div class="w-full">
           <div class="mb-28">
             <div
