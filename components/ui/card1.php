@@ -108,7 +108,20 @@ if ($q->have_posts()): ?>
   while ($q->have_posts()):
 
     $q->the_post();
-    $selectMediaType = get_field("select_media_type", $q->post->ID);
+    // Determine media type based on page template
+    $template = get_page_template_slug($q->post->ID);
+    $selectMediaType = '';
+
+    if ($template === 'livestream-detail.php') {
+        $selectMediaType = 'livestream';
+    } elseif ($template === 'episode-detail.php') {
+        $selectMediaType = 'podcast';
+    } elseif ($template === 'webinar-detail.php') {
+        $selectMediaType = 'webinar';
+    } else {
+        // Default for posts or other content types
+        $selectMediaType = 'podcast';
+    }
     ?>
     <a href="<?php
     the_permalink($q->post->ID); ?>" class="relative w-full group <?= $classNames; ?>" <?= $attr_string ?>>
