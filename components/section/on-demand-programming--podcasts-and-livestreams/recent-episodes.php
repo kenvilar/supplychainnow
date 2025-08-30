@@ -94,7 +94,7 @@
                   if (!splideTargetEl) return;
                   var options = {
                     /*suggested options*/
-                    type: "loop", //'fade', //"slide", //"loop",
+                    type: "slide", //'fade', //"slide", //"loop",
                     arrows: true,
                     pagination: false,
                     /*custom options*/
@@ -106,6 +106,9 @@
                     autoplay: false,
                     pauseOnHover: true,
                     updateOnMove: true,
+                    lazyLoad: 'nearby', //boost performance
+                    drag: false, //boost performance
+                    speed: 400, //boost performance
                     autoScroll: {
                       speed: 1
                     },
