@@ -28,8 +28,9 @@ $youtube_url = $matches[1] ?? '';
         <div class="site-padding sm:py-60 pt-29">
           <div class="mx-auto max-w-1010 w-full md:max-w-full">
             <div class="overflow-hidden rounded-25 relative">
-              <div class="relative group z-1 h-426 sm:h-300">
-                <img class="image object-contain!" src="
+              <div class="relative group z-1 text-align-center">
+                <img class="relative z-10 w-auto overflow-hidden rounded-25 max-h-568 sm:max-h-200"
+                     src="
 															<?php
                 if ( get_field( 'upload_cover_image', $pageId ) ) {
                   echo get_field( 'upload_cover_image', $pageId );
@@ -55,7 +56,7 @@ $youtube_url = $matches[1] ?? '';
                 }
                 ?>
               </div>
-              <div class="absolute absolute--full bg-cargogrey z--1"></div>
+              <!--<div class="absolute absolute--full bg-cargogrey z--1"></div>-->
             </div>
           </div>
         </div>
