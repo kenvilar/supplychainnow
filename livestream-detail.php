@@ -32,12 +32,12 @@ $youtube_url = $matches[1] ?? '';
                 <img class="relative z-10 w-auto overflow-hidden rounded-25 max-h-568 sm:max-h-200"
                      src="
 															<?php
-                if ( get_field( 'thumbnail_upload', $pageId ) ) {
-                  echo get_field( 'thumbnail_upload', $pageId );
-                } else {
-                  the_post_thumbnail_url( 'medium_large' );
-                }
-                ?>" alt="">
+                     if ( get_field( 'thumbnail_upload', $pageId ) ) {
+                       echo get_field( 'thumbnail_upload', $pageId );
+                     } else {
+                       the_post_thumbnail_url( 'medium_large' );
+                     }
+                     ?>" alt="">
                 <?php
                 if ( $youtube_url ) {
                   ?>

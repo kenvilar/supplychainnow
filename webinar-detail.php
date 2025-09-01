@@ -29,14 +29,14 @@ $webinar_button_link = get_field( 'webinar_button_link', $pageId );
                 <img class="relative z-10 w-auto overflow-hidden rounded-25 max-h-568 sm:max-h-200"
                      src="
 															<?php
-                if ( get_the_post_thumbnail_url( $pageId ) ) {
-                  echo get_the_post_thumbnail_url( $pageId, 'medium_large' );
-                } else {
-                  if ( get_field( 'thumbnail_upload', $pageId ) ) {
-                    echo get_field( 'thumbnail_upload', $pageId );
-                  }
-                }
-                ?>" alt="">
+                     if ( get_the_post_thumbnail_url( $pageId ) ) {
+                       echo get_the_post_thumbnail_url( $pageId, 'medium_large' );
+                     } else {
+                       if ( get_field( 'thumbnail_upload', $pageId ) ) {
+                         echo get_field( 'thumbnail_upload', $pageId );
+                       }
+                     }
+                     ?>" alt="">
                 <?php
                 if ( $webinar_button_link ) {
                   ?>

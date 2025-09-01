@@ -100,12 +100,12 @@ if ( in_array( $categorySlug, [ 'white-paper', 'ebook', 'guide' ] ) ) {
               <img class="relative z-10 w-auto overflow-hidden rounded-25 max-h-568 sm:max-h-200"
                    src="
 							<?php
-              if ( has_post_thumbnail( $postId ) ) {
-                the_post_thumbnail_url( "medium_large" );
-              } else {
-                echo get_stylesheet_directory_uri() .
-                     "/assets/img/misc/default-card-img-thumbnail.avif";
-              } ?>" alt="">
+                   if ( has_post_thumbnail( $postId ) ) {
+                     the_post_thumbnail_url( "medium_large" );
+                   } else {
+                     echo get_stylesheet_directory_uri() .
+                          "/assets/img/misc/default-card-img-thumbnail.avif";
+                   } ?>" alt="">
               <!-- <img class="absolute absolute--full image z-1" src="<?php
               echo get_stylesheet_directory_uri() .
                    "/assets/img/misc/default-card-img-thumbnail.avif"; ?>"
