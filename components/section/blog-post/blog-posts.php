@@ -76,6 +76,11 @@ if ( in_array( $categorySlug, [ 'white-paper', 'ebook', 'guide' ] ) ) {
   }
 }
 ?>
+<style>
+	.container_inner.default_template_holder {
+		padding-top: 0 !important;
+	}
+</style>
 <div class="page-wrapper">
   <div class="main-wrapper">
     <section class="section">
