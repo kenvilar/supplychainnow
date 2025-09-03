@@ -175,7 +175,7 @@ $webinar_button_link = get_field( 'webinar_button_link', $pageId );
                     'site_padding'  => 'px-0! py-0 pb-0',
                     'taxonomy'      => 'tags',
                     'hide_dropdown' => true,
-                    'redirect_to'   => '/on-demand-programming',
+                    'redirect_to'   => '/webinars',
                   ] );
                   ?>
                 </div>
