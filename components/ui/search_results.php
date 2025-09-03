@@ -249,7 +249,7 @@ if ( $search_query !== '' || $industries !== '' || ( is_singular( 'brands' ) && 
 
   $results_query = new WP_Query( $args );
 
-  if ( $media_type !== '' ) {
+  if ( $media_type !== '' && $media_type !== 'webinars' ) {
     $post_args = [
       'post_type'              => "post",
       'post_status'            => 'publish',
