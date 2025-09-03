@@ -344,7 +344,16 @@ if ( $search_query !== '' || $industries !== '' || ( is_singular( 'brands' ) && 
                                    "/assets/img/icons/play-button-webinar.avif"; ?>"
                               loading="lazy" alt="play-button-webinar">
                             <?php
-                          } ?>
+                          } else {
+                            ?>
+                            <img
+                              src="<?php
+                              echo get_stylesheet_directory_uri() .
+                                   "/assets/img/icons/play-button-podcast.avif"; ?>"
+                              loading="lazy" alt="play-button-podcast">
+                            <?php
+                          }
+                          ?>
                         </div>
                       </div>
                     </div>
@@ -376,16 +385,22 @@ if ( $search_query !== '' || $industries !== '' || ( is_singular( 'brands' ) && 
                                      "/assets/img/icons/webinar-card-icon.png"; ?>"
                                 loading="lazy" alt="webinar-person">
                               <?php
-                            } ?>
-                          </div>
-                          <?php
-                          if ( $selectMediaType ) { ?>
-                            <div class="font-family-secondary text-sm capitalize">
+                            } else {
+                              ?>
+                              <img
+                                class="size-24"
+                                src="<?php
+                                echo get_stylesheet_directory_uri() .
+                                     "/assets/img/icons/podcast-card-icon.png"; ?>"
+                                loading="lazy" alt="podcast-blue-microphone">
                               <?php
-                              echo $selectMediaType; ?>
-                            </div>
+                            }
+                            ?>
+                          </div>
+                          <div class="font-family-secondary text-sm capitalize">
                             <?php
-                          } ?>
+                            echo $selectMediaType ?? 'Podcast'; ?>
+                          </div>
                         </div>
                         <div class="flex items-center gap-8 text-sm font-light font-family-secondary">
                           <div>
