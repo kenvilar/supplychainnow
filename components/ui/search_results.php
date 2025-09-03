@@ -16,6 +16,7 @@ if ( $search_query === '' && $industries === '' && ( is_singular( 'brands' ) && 
 $post_type    = $args['post_type'] ?? 'page';
 $resource_hub = $args['resource_hub'] ?? false;
 $media_type   = $args['media_type'] ?? ''; // 'podcasts-and-livestreams' || 'podcasts' || 'webinars' || 'livestreams'
+$classNames = $args["classNames"] ?? ''; // 'splide__slide'
 
 $pageId = get_the_ID();
 
