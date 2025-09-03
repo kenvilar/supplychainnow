@@ -16,7 +16,7 @@ if ( $search_query === '' && $industries === '' && ( is_singular( 'brands' ) && 
 $post_type    = $args['post_type'] ?? 'page';
 $resource_hub = $args['resource_hub'] ?? false;
 $media_type   = $args['media_type'] ?? ''; // 'podcasts-and-livestreams' || 'podcasts' || 'webinars' || 'livestreams'
-$classNames = $args["classNames"] ?? ''; // 'splide__slide'
+$classNames   = $args["classNames"] ?? ''; // 'splide__slide'
 
 $pageId = get_the_ID();
 
@@ -215,7 +215,7 @@ if ( $search_query !== '' || $industries !== '' || ( is_singular( 'brands' ) && 
       ];
       $brands_post_args['tax_query'][] = [
         [
-          'taxonomy'         => $taxonomy,
+          'taxonomy'         => 'post_tag',
           'field'            => 'name',
           'terms'            => [ $industries ],
           'include_children' => false,
@@ -234,18 +234,27 @@ if ( $search_query !== '' || $industries !== '' || ( is_singular( 'brands' ) && 
       $post_ids = array_merge( $post_ids, wp_list_pluck( $brands_post_query->posts, 'ID' ) );
     }
 
-    $brands_args = [
-      'post_type'      => [ 'page', 'post' ],
-      'post_status'    => 'publish',
-      //'s'                      => $search_query,     // from ?search=
-      'posts_per_page' => 9,
-      'paged'          => $paged,
-      'search_columns' => [ 'post_title', 'post_content' ],
-      "post__in"       => $post_ids,
-      //'suppress_filters'       => true,               // critical: ignore posts_where/posts_search filters
-      //'update_post_meta_cache' => false, // set false if not reading lots of meta
-      //'update_post_term_cache' => false,
-    ];
+    if ( empty( $post_ids ) ) {
+      $brands_args = [
+        'post_type'      => [ 'page', 'post' ],
+        'post_status'    => 'publish',
+        'posts_per_page' => 0,
+        'post__in'       => [ 0 ], // Force no results by searching for non-existent post ID
+      ];
+    } else {
+      $brands_args = [
+        'post_type'              => [ 'page', 'post' ],
+        'post_status'            => 'publish',
+        //'s'                      => $search_query,     // from ?search=
+        'posts_per_page'         => 9,
+        'paged'                  => $paged,
+        'search_columns'         => [ 'post_title', 'post_content' ],
+        "post__in"               => $post_ids,
+        'suppress_filters'       => true,               // critical: ignore posts_where/posts_search filters
+        'update_post_meta_cache' => false, // set false if not reading lots of meta
+        'update_post_term_cache' => false,
+      ];
+    }
 
     $brands_args = array_merge( $brands_args );
 
