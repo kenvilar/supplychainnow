@@ -139,6 +139,7 @@ if ($q->have_posts()): ?>
                 loading="lazy" alt="" class="image relative opacity-90">
               <?php
               $terms = get_the_terms($q->post->ID, "tags");
+              $post_tag = get_the_terms( $q->post->ID, "post_tag" );
               if (!is_wp_error($terms) && !empty($terms)) {
                 $first = array_values($terms)[0]; ?>
                 <div class="absolute absolute--tl p-24 flex items-center justify-center">
@@ -155,6 +156,35 @@ if ($q->have_posts()): ?>
                       ? '<div class="absolute absolute--full bg-secondary"></div>'
                       : "";
                     echo $selectMediaType == "webinar"
+                      ? '<div class="absolute absolute--full bg-tertiary"></div>'
+                      : "";
+                    echo ( $selectMediaType != "livestream" || $selectMediaType != "podcast" || $selectMediaType != "webinar" )
+                      ? '<div class="absolute absolute--full bg-tertiary"></div>'
+                      : "";
+                    ?>
+                  </div>
+                </div>
+                <?php
+              }
+              if ( ! is_wp_error( $post_tag ) && ! empty( $post_tag ) ) {
+                $first = array_values( $post_tag )[0]; ?>
+                <div class="absolute absolute--tl p-24 flex items-center justify-center">
+                  <div class="relative rounded-full overflow-hidden py-4 px-8">
+                    <div class="relative font-semibold uppercase text-2xs text-white lh-normal z-10">
+                      <?php
+                      echo $first->name; ?>
+                    </div>
+                    <?php
+                    echo $selectMediaType == "livestream"
+                      ? '<div class="absolute absolute--full bg-primary"></div>'
+                      : "";
+                    echo $selectMediaType == "podcast"
+                      ? '<div class="absolute absolute--full bg-secondary"></div>'
+                      : "";
+                    echo $selectMediaType == "webinar"
+                      ? '<div class="absolute absolute--full bg-tertiary"></div>'
+                      : "";
+                    echo ( $selectMediaType != "livestream" || $selectMediaType != "podcast" || $selectMediaType != "webinar" )
                       ? '<div class="absolute absolute--full bg-tertiary"></div>'
                       : "";
                     ?>
