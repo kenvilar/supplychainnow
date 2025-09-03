@@ -232,27 +232,17 @@ if ( $search_query !== '' || $industries !== '' || ( is_singular( 'brands' ) && 
       $post_ids = array_merge( $post_ids, wp_list_pluck( $brands_post_query->posts, 'ID' ) );
     }
 
-    if ( empty( $post_ids ) ) {
-      $brands_args = [
-        'post_type'      => [ 'page', 'post' ],
-        'post_status'    => 'publish',
-        'posts_per_page' => 0,
-        'post__in'       => [ 0 ], // Force no results by searching for non-existent post ID
-      ];
-    } else {
-      $brands_args = [
-        'post_type'              => [ 'page', 'post' ],
-        'post_status'            => 'publish',
-        //'s'                      => $search_query,     // from ?search=
-        'posts_per_page'         => 9,
-        'paged'                  => $paged,
-        'search_columns'         => [ 'post_title', 'post_content' ],
-        "post__in"               => $post_ids,
-        'suppress_filters'       => true,               // critical: ignore posts_where/posts_search filters
-        'update_post_meta_cache' => false, // set false if not reading lots of meta
-        'update_post_term_cache' => false,
-      ];
-    }
+    $brands_args = [
+      'post_type'              => [ 'page', 'post' ],
+      'post_status'            => 'publish',
+      'posts_per_page'         => empty( $post_ids ) ? 0 : 9,
+      'paged'                  => empty( $post_ids ) ? 1 : $paged,
+      'search_columns'         => empty( $post_ids ) ? [] : [ 'post_title', 'post_content' ],
+      "post__in"               => $post_ids ?: [ 0 ],
+      'suppress_filters'       => empty( $post_ids ) ? false : true,
+      'update_post_meta_cache' => empty( $post_ids ) ? true : false,
+      'update_post_term_cache' => empty( $post_ids ) ? true : false,
+    ];
 
     $args = array_merge( $brands_args );
   }

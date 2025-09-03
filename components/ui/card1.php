@@ -90,23 +90,14 @@ if ( $post_query->have_posts() ) {
   $post_ids = array_merge( $post_ids, wp_list_pluck( $post_query->posts, 'ID' ) );
 }
 
-if ( empty( $post_ids ) ) {
-  $defaults_args = [
-    "post_type"      => $post_type,
-    "post_status"    => "publish",
-    "posts_per_page" => 0,
-    'post__in'       => [ 0 ], // Force no results by searching for non-existent post ID
-  ];
-} else {
-  $defaults_args = [
-    "post_type"      => $post_type,
-    "post_status"    => "publish",
-    "posts_per_page" => $post_per_page,
-    "offset"         => $offset,
-    "post__in"       => $post_ids,
-    "orderby"        => $orderby,
-  ];
-}
+$defaults_args = [
+  "post_type"      => $post_type,
+  "post_status"    => "publish",
+  "posts_per_page" => empty( $post_ids ) ? 0 : $post_per_page,
+  "offset"         => empty( $post_ids ) ? 0 : $offset,
+  "post__in"       => $post_ids ?: [ 0 ],
+  "orderby"        => empty( $post_ids ) ? "date" : $orderby,
+];
 
 $query_args = array_merge( $defaults_args );
 
