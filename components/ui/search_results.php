@@ -258,6 +258,70 @@ if ( $search_query !== '' || $industries !== '' || ( is_singular( 'brands' ) && 
   }
 
   $results_query = new WP_Query( $args );
+
+  if ( $media_type !== '' ) {
+    $post_args = [
+      'post_type'              => "post",
+      'post_status'            => 'publish',
+      's'                      => $search_query,
+      'posts_per_page'         => - 1,
+      'search_columns'         => [ 'post_title', 'post_content' ],
+      'suppress_filters'       => true,
+      'update_post_meta_cache' => false,
+      'update_post_term_cache' => false,
+      "tax_query"              => [
+        [
+          "taxonomy" => "category",
+          "field"    => "slug",
+          "terms"    => [
+            'podcast-episode',
+            'supplychainnow',
+            'tango-tango',
+            'digital-transformers',
+            'logistics-with-purpose',
+            'veteran-voices'
+          ],
+          "operator" => "IN",
+        ],
+      ],
+      "orderby"                => [ "menu_order" => "ASC", "date" => "DESC" ],
+    ];
+
+    if ( $industries !== '' ) {
+      $post_args['tax_query'][] = [
+        [
+          'taxonomy'         => 'post_tag',
+          'field'            => 'name',
+          'terms'            => [ $industries ],
+          'include_children' => false,
+        ],
+      ];
+    }
+
+    $post_query = new WP_Query( $post_args );
+
+    $post_ids = [];
+    if ( $results_query->have_posts() ) {
+      $post_ids = array_merge( $post_ids, wp_list_pluck( $results_query->posts, 'ID' ) );
+    }
+    if ( $post_query->have_posts() ) {
+      $post_ids = array_merge( $post_ids, wp_list_pluck( $post_query->posts, 'ID' ) );
+    }
+
+    $defaults_args = [
+      'post_type'              => [ 'page', 'post' ],
+      'post_status'            => 'publish',
+      'posts_per_page'         => 9,
+      'paged'                  => $paged,
+      "offset"                 => 0,
+      "post__in"               => $post_ids + [ 0 ],
+      'suppress_filters'       => true,
+      'update_post_meta_cache' => false,
+      'update_post_term_cache' => false,
+    ];
+
+    $results_query = new WP_Query( $defaults_args );
+  }
 }
 
 ?>
