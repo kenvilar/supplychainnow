@@ -140,8 +140,6 @@ if ( $search_query !== '' || $industries !== '' || ( is_singular( 'brands' ) && 
     ];
   }
 
-  $results_query = new WP_Query( $args );
-
   if ( is_singular( 'brands' ) ) {
     $brands_page_args = [
       'post_type'              => 'page',            // try 'any' to test
@@ -256,10 +254,10 @@ if ( $search_query !== '' || $industries !== '' || ( is_singular( 'brands' ) && 
       ];
     }
 
-    $brands_args = array_merge( $brands_args );
-
-    $results_query = new WP_Query( $brands_args );
+    $args = array_merge( $brands_args );
   }
+
+  $results_query = new WP_Query( $args );
 }
 
 ?>
