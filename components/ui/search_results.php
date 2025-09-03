@@ -25,6 +25,9 @@ if ( $paged < 1 ) {
   $paged = isset( $_GET['paged'] ) ? max( 1, (int) $_GET['paged'] ) : 1;
 }
 
+// Extracts brand slug from URL
+$brand_name = get_post_field( 'post_name', get_the_ID() );
+
 // Build query only if there is something to search/filter
 $results_query = null;
 if ( $search_query !== '' || $industries !== '' || ( is_singular( 'brands' ) && isset( $_GET['taxonomy'] ) ) ) {
@@ -100,39 +103,6 @@ if ( $search_query !== '' || $industries !== '' || ( is_singular( 'brands' ) && 
     ];
   }
 
-  if ( is_singular( 'brands' ) ) {
-    $args['meta_query'] = [
-      "relation" => "AND",
-      [
-        'key'     => '_wp_page_template',
-        'value'   => [ 'episode-detail.php', 'webinar-detail.php', 'livestream-detail.php' ],
-        'compare' => 'IN',
-        'type'    => 'CHAR',
-      ],
-      [
-        'relation' => 'OR',
-        [
-          'key'     => 'select_programs',
-          'value'   => '"' . (int) $pageId . '"',
-          'compare' => 'LIKE',
-          'type'    => 'CHAR',
-        ],
-        [
-          'key'     => 'select_programs_for_webinar',
-          'value'   => '"' . (int) $pageId . '"',
-          'compare' => 'LIKE',
-          'type'    => 'CHAR',
-        ],
-        [
-          'key'     => 'select_programs_for_livestream',
-          'value'   => '"' . (int) $pageId . '"',
-          'compare' => 'LIKE',
-          'type'    => 'CHAR',
-        ],
-      ],
-    ];
-  }
-
   if ( $industries !== '' ) {
     $args['tax_query'] = [
       [
@@ -170,6 +140,116 @@ if ( $search_query !== '' || $industries !== '' || ( is_singular( 'brands' ) && 
   }
 
   $results_query = new WP_Query( $args );
+
+  if ( is_singular( 'brands' ) ) {
+    $brands_page_args = [
+      'post_type'              => 'page',            // try 'any' to test
+      'post_status'            => 'publish',
+      's'                      => $search_query,     // from ?search=
+      'posts_per_page'         => - 1,
+      'search_columns'         => [ 'post_title', 'post_content' ],
+      'suppress_filters'       => true,               // critical: ignore posts_where/posts_search filters
+      'update_post_meta_cache' => false, // set false if not reading lots of meta
+      'update_post_term_cache' => false,
+      "meta_query"             => [
+        "relation" => "AND",
+        [
+          'key'     => '_wp_page_template',
+          'value'   => [ 'episode-detail.php', 'webinar-detail.php', 'livestream-detail.php' ],
+          'compare' => 'IN',
+          'type'    => 'CHAR',
+        ],
+        [
+          'relation' => 'OR',
+          [
+            'key'     => 'select_programs',
+            'value'   => '"' . (int) $pageId . '"',
+            'compare' => 'LIKE',
+            'type'    => 'CHAR',
+          ],
+          [
+            'key'     => 'select_programs_for_webinar',
+            'value'   => '"' . (int) $pageId . '"',
+            'compare' => 'LIKE',
+            'type'    => 'CHAR',
+          ],
+          [
+            'key'     => 'select_programs_for_livestream',
+            'value'   => '"' . (int) $pageId . '"',
+            'compare' => 'LIKE',
+            'type'    => 'CHAR',
+          ],
+        ],
+      ],
+      "orderby"                => [ "menu_order" => "ASC", "date" => "DESC" ], //'rand',
+    ];
+    $brands_post_args = [
+      'post_type'              => "post",            // try 'any' to test
+      'post_status'            => 'publish',
+      's'                      => $search_query,     // from ?search=
+      'posts_per_page'         => - 1,
+      'search_columns'         => [ 'post_title', 'post_content' ],
+      'suppress_filters'       => true,               // critical: ignore posts_where/posts_search filters
+      'update_post_meta_cache' => false, // set false if not reading lots of meta
+      'update_post_term_cache' => false,
+      "tax_query"              => [
+        [
+          "taxonomy" => "category",
+          "field"    => "slug",
+          "terms"    => [ $brand_name ],
+          "operator" => "IN",
+        ],
+      ],
+      "orderby"                => [ "menu_order" => "ASC", "date" => "DESC" ],
+    ];
+
+    if ( $industries !== '' ) {
+      $brands_page_args['tax_query']   = [
+        [
+          'taxonomy'         => $taxonomy,
+          'field'            => 'name',
+          'terms'            => [ $industries ],
+          'include_children' => false,
+        ],
+      ];
+      $brands_post_args['tax_query'][] = [
+        [
+          'taxonomy'         => $taxonomy,
+          'field'            => 'name',
+          'terms'            => [ $industries ],
+          'include_children' => false,
+        ],
+      ];
+    }
+
+    $brands_page_query = new WP_Query( $brands_page_args );
+    $brands_post_query = new WP_Query( $brands_post_args );
+
+    $post_ids = [];
+    if ( $brands_page_query->have_posts() ) {
+      $post_ids = array_merge( $post_ids, wp_list_pluck( $brands_page_query->posts, 'ID' ) );
+    }
+    if ( $brands_post_query->have_posts() ) {
+      $post_ids = array_merge( $post_ids, wp_list_pluck( $brands_post_query->posts, 'ID' ) );
+    }
+
+    $brands_args = [
+      'post_type'      => [ 'page', 'post' ],
+      'post_status'    => 'publish',
+      //'s'                      => $search_query,     // from ?search=
+      'posts_per_page' => 9,
+      'paged'          => $paged,
+      'search_columns' => [ 'post_title', 'post_content' ],
+      "post__in"       => $post_ids,
+      //'suppress_filters'       => true,               // critical: ignore posts_where/posts_search filters
+      //'update_post_meta_cache' => false, // set false if not reading lots of meta
+      //'update_post_term_cache' => false,
+    ];
+
+    $brands_args = array_merge( $brands_args );
+
+    $results_query = new WP_Query( $brands_args );
+  }
 }
 
 ?>
