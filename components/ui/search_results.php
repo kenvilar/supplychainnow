@@ -15,7 +15,7 @@ if ( $search_query === '' && $industries === '' && ( is_singular( 'brands' ) && 
 
 $post_type    = $args['post_type'] ?? 'page';
 $resource_hub = $args['resource_hub'] ?? false;
-$media_type   = $args['media_type'] ?? ''; // 'podcasts-and-livestreams' || 'podcasts' || 'webinars' || 'livestreams'
+$media_type   = $args['media_type'] ?? ''; // 'all-events' || 'podcasts-and-livestreams' || 'podcasts' || 'webinars' || 'livestreams'
 $classNames   = $args["classNames"] ?? ''; // 'splide__slide'
 
 $pageId = get_the_ID();
@@ -249,7 +249,10 @@ if ( $search_query !== '' || $industries !== '' || ( is_singular( 'brands' ) && 
 
   $results_query = new WP_Query( $args );
 
-  if ( $media_type !== '' && $media_type !== 'webinars' ) {
+  if (
+    ($media_type !== '' && $media_type !== 'webinars') ||
+    ($media_type !== '' && $media_type == 'all-events')
+  ) {
     $post_args = [
       'post_type'              => "post",
       'post_status'            => 'publish',

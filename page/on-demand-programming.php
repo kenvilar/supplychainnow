@@ -27,7 +27,9 @@ $pageId = get_the_ID();
 		scn_render_if_no_filters('components/section/on-demand-programming/podcast-episodes');
 		scn_render_if_no_filters('components/section/on-demand-programming/on-demand-webinars');
 
-		get_template_part('components/ui/search_results');
+    get_template_part('components/ui/search_results', null, [
+      'media_type' => 'all-events',
+    ]);
 
 		get_template_part('components/layout/footer/cta-footer-2');
 		?>
