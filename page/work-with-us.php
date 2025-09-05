@@ -13,7 +13,7 @@ $pageId = get_the_ID();
 	.w-list-unstyled li {
 		list-style: disc !important;
 		list-style-type: disc !important;
-  }
+	}
 	li ::marker {
 		font-size: 9px;
 	}

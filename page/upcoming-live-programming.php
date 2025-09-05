@@ -36,7 +36,8 @@ $pageId = get_the_ID();
       <div class="h-full flex justify-center pt-68 pb-80 px-20">
         <div class="w-layout-blockcontainer max-w-796 w-full md:max-w-full w-container">
           <script src="https://js.hsforms.net/forms/embed/49227407.js" defer></script>
-          <div class="hs-form-frame" data-region="na1" data-form-id="d724459f-7eb6-4028-aeff-576f78a92fdc" data-portal-id="49227407"></div>
+          <div class="hs-form-frame" data-region="na1" data-form-id="d724459f-7eb6-4028-aeff-576f78a92fdc"
+               data-portal-id="49227407"></div>
         </div>
       </div>
       <div close-modal="" class="flex absolute absolute--tr p-12 mt-36 mr-36 cursor-pointer w-embed">
@@ -54,12 +55,12 @@ $pageId = get_the_ID();
           const myModal = document.querySelector(".my-modal");
           const closeModal = document.querySelector("[close-modal]");
           let openModal = document.querySelector("[open-modal]");
-          
+
           // Open modal after page load
           setTimeout(function() {
             myModal.showModal();
           }, 1000);
-          
+
           if (openModal) {
             openModal.addEventListener("click", function(e) {
               e.preventDefault();
