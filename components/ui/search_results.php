@@ -29,6 +29,19 @@ if ( $paged < 1 ) {
 // Extracts brand slug from URL
 $brand_name = get_post_field( 'post_name', get_the_ID() );
 
+$wp_page_template = '';
+if ( $media_type == 'all-events' ) {
+  $wp_page_template = [ 'episode-detail.php', 'livestream-detail.php', 'webinar-detail.php', ];
+} elseif ( $media_type == 'podcasts-and-livestreams' ) {
+  $wp_page_template = [ 'episode-detail.php', 'livestream-detail.php', ];
+} elseif ( $media_type == 'podcasts' ) {
+  $wp_page_template = [ 'episode-detail.php', ];
+} elseif ( $media_type == 'webinars' ) {
+  $wp_page_template = [ 'webinar-detail.php', ];
+} elseif ( $media_type == 'livestreams' ) {
+  $wp_page_template = [ 'livestream-detail.php', ];
+}
+
 // Build query only if there is something to search/filter
 $results_query = null;
 if ( $search_query !== '' || $industries !== '' || ( is_singular( 'brands' ) && isset( $_GET['taxonomy'] ) ) ) {
@@ -56,53 +69,15 @@ if ( $search_query !== '' || $industries !== '' || ( is_singular( 'brands' ) && 
     "orderby"                => [ "menu_order" => "ASC", "date" => "DESC" ], //'rand',
   ];
 
-  if ( $media_type !== '' && $media_type == 'podcasts-and-livestreams' ) {
-    $args['meta_query'] = [
-      "relation" => "AND",
-      [
-        'key'     => '_wp_page_template',
-        'value'   => [ 'episode-detail.php', 'livestream-detail.php' ],
-        'compare' => 'IN',
-        'type'    => 'CHAR',
-      ],
-    ];
-  }
-
-  if ( $media_type !== '' && $media_type == 'podcasts' ) {
-    $args['meta_query'] = [
-      "relation" => "AND",
-      [
-        'key'     => '_wp_page_template',
-        'value'   => [ 'episode-detail.php' ],
-        'compare' => 'IN',
-        'type'    => 'CHAR',
-      ],
-    ];
-  }
-
-  if ( $media_type !== '' && $media_type == 'webinars' ) {
-    $args['meta_query'] = [
-      "relation" => "AND",
-      [
-        'key'     => '_wp_page_template',
-        'value'   => [ 'webinar-detail.php' ],
-        'compare' => 'IN',
-        'type'    => 'CHAR',
-      ],
-    ];
-  }
-
-  if ( $media_type !== '' && $media_type == 'livestreams' ) {
-    $args['meta_query'] = [
-      "relation" => "AND",
-      [
-        'key'     => '_wp_page_template',
-        'value'   => [ 'livestream-detail.php' ],
-        'compare' => 'IN',
-        'type'    => 'CHAR',
-      ],
-    ];
-  }
+  $args['meta_query'] = [
+    "relation" => "AND",
+    [
+      'key'     => '_wp_page_template',
+      'value'   => $wp_page_template,
+      'compare' => 'IN',
+      'type'    => 'CHAR',
+    ],
+  ];
 
   if ( $industries !== '' ) {
     $args['tax_query'] = [
@@ -250,8 +225,10 @@ if ( $search_query !== '' || $industries !== '' || ( is_singular( 'brands' ) && 
   $results_query = new WP_Query( $args );
 
   if (
-    ( $media_type !== '' && $media_type !== 'webinars' )
-    || ( $media_type !== '' && $media_type == 'all-events' )
+    $media_type == "all-events"
+    || $media_type == "podcasts-and-livestreams"
+    || $media_type == "podcasts"
+    || $media_type == "livestreams"
   ) {
     $page_args = [
       'post_type'              => 'page',            // try 'any' to test
@@ -266,7 +243,7 @@ if ( $search_query !== '' || $industries !== '' || ( is_singular( 'brands' ) && 
         "relation" => "AND",
         [
           'key'     => '_wp_page_template',
-          'value'   => [ 'episode-detail.php', 'livestream-detail.php' ],
+          'value'   => $wp_page_template,
           'compare' => 'IN',
           'type'    => 'CHAR',
         ],
@@ -361,7 +338,7 @@ if ( $search_query !== '' || $industries !== '' || ( is_singular( 'brands' ) && 
         "relation" => "AND",
         [
           'key'     => '_wp_page_template',
-          'value'   => [ 'episode-detail.php', 'webinar-detail.php', 'livestream-detail.php' ],
+          'value'   => $wp_page_template,
           'compare' => 'IN',
           'type'    => 'CHAR',
         ],
@@ -407,6 +384,17 @@ if ( $search_query !== '' || $industries !== '' || ( is_singular( 'brands' ) && 
       ],
       "orderby"                => [ "menu_order" => "ASC", "date" => "DESC" ],
     ];
+
+    if ( $industries !== '' ) {
+      $fallback_args['tax_query'] = [
+        [
+          'taxonomy'         => $taxonomy,
+          'field'            => 'name',
+          'terms'            => [ $industries ],
+          'include_children' => false,
+        ],
+      ];
+    }
 
     $results_query = new WP_Query( $fallback_args );
   }
