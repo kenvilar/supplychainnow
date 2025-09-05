@@ -32,7 +32,7 @@
       </div>
       <div class="flex justify-center sm:flex-col">
         <div class="flex">
-          <a href="/contact" class="btn primary w-inline-block">
+          <a href="/contact/?register-for-the-2026-event=true" class="btn primary w-inline-block">
             <div>Register for the 2026 Event</div>
           </a>
         </div>

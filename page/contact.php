@@ -54,6 +54,14 @@ $pageId = get_the_ID();
         const myModal = document.querySelector(".my-modal");
         const closeModal = document.querySelector("[close-modal]");
         let openModal = document.querySelector("[open-modal]");
+
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get("register-for-the-2026-event") === "true") {
+          setTimeout(function() {
+            myModal.showModal();
+          }, 200);
+        }
+
         if (openModal) {
           openModal.addEventListener("click", function(e) {
             e.preventDefault();
