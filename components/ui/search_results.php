@@ -531,13 +531,17 @@ if ( $search_query !== '' || $industries !== '' || ( is_singular( 'brands' ) && 
                               loading="lazy" alt="play-button-webinar">
                             <?php
                           } else {
-                            ?>
-                            <img
-                              src="<?php
-                              echo get_stylesheet_directory_uri() .
-                                   "/assets/img/icons/play-button-podcast.avif"; ?>"
-                              loading="lazy" alt="play-button-podcast">
-                            <?php
+                            if ( $resource_hub ) {
+                              echo '';
+                            } else {
+                              ?>
+                              <img
+                                src="<?php
+                                echo get_stylesheet_directory_uri() .
+                                     "/assets/img/icons/play-button-podcast.avif"; ?>"
+                                loading="lazy" alt="play-button-podcast">
+                              <?php
+                            }
                           }
                           ?>
                         </div>
@@ -546,43 +550,53 @@ if ( $search_query !== '' || $industries !== '' || ( is_singular( 'brands' ) && 
                     <div class="mb-12">
                       <div class="flex items-center gap-32 sm:flex-wrap sm:gap-8">
                         <div class="flex items-center gap-8">
-                          <div class="flex items-center">
-                            <?php
-                            if ( $selectMediaType == "livestream" ) { ?>
+                          <?php
+                          if ( $selectMediaType == "livestream" ) { ?>
+                            <div class="flex items-center">
                               <img
                                 src="<?php
                                 echo get_stylesheet_directory_uri() .
                                      "/assets/img/icons/livestream-card-icon.svg"; ?>"
                                 loading="lazy" alt="livestream-music">
-                              <?php
-                            } elseif ( $selectMediaType == "podcast" ) { ?>
+                            </div>
+                            <?php
+                          } elseif ( $selectMediaType == "podcast" ) { ?>
+                            <div class="flex items-center">
                               <img
                                 class="size-24"
                                 src="<?php
                                 echo get_stylesheet_directory_uri() .
                                      "/assets/img/icons/podcast-card-icon.png"; ?>"
                                 loading="lazy" alt="podcast-blue-microphone">
-                              <?php
-                            } elseif ( $selectMediaType == "webinar" ) { ?>
+                            </div>
+                            <?php
+                          } elseif ( $selectMediaType == "webinar" ) { ?>
+                            <div class="flex items-center">
                               <img
                                 class="size-24"
                                 src="<?php
                                 echo get_stylesheet_directory_uri() .
                                      "/assets/img/icons/webinar-card-icon.png"; ?>"
                                 loading="lazy" alt="webinar-person">
-                              <?php
+                            </div>
+                            <?php
+                          } else {
+                            if ( $resource_hub ) {
+                              echo '';
                             } else {
                               ?>
-                              <img
-                                class="size-24"
-                                src="<?php
-                                echo get_stylesheet_directory_uri() .
-                                     "/assets/img/icons/podcast-card-icon.png"; ?>"
-                                loading="lazy" alt="podcast-blue-microphone">
+                              <div class="flex items-center">
+                                <img
+                                  class="size-24"
+                                  src="<?php
+                                  echo get_stylesheet_directory_uri() .
+                                       "/assets/img/icons/podcast-card-icon.png"; ?>"
+                                  loading="lazy" alt="podcast-blue-microphone">
+                              </div>
                               <?php
                             }
-                            ?>
-                          </div>
+                          }
+                          ?>
                           <div class="font-family-secondary text-sm capitalize">
                             <?php
                             echo $selectMediaType ?? 'Podcast'; ?>
