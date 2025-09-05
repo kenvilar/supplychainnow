@@ -438,6 +438,8 @@ if ( $search_query !== '' || $industries !== '' || ( is_singular( 'brands' ) && 
                 $selectMediaType = 'podcast';
               } elseif ( $template === 'webinar-detail.php' ) {
                 $selectMediaType = 'webinar';
+              } elseif ( $resource_hub ) {
+                $selectMediaType = '';
               }
               ?>
               <a href="<?php
@@ -466,18 +468,15 @@ if ( $search_query !== '' || $industries !== '' || ( is_singular( 'brands' ) && 
                                 echo $first->name; ?>
                               </div>
                               <?php
-                              echo $selectMediaType == "livestream"
-                                ? '<div class="absolute absolute--full bg-primary"></div>'
-                                : "";
-                              echo $selectMediaType == "podcast"
-                                ? '<div class="absolute absolute--full bg-secondary"></div>'
-                                : "";
-                              echo $selectMediaType == "webinar"
-                                ? '<div class="absolute absolute--full bg-tertiary"></div>'
-                                : "";
-                              echo ( $selectMediaType != "livestream" || $selectMediaType != "podcast" || $selectMediaType != "webinar" )
-                                ? '<div class="absolute absolute--full bg-tertiary"></div>'
-                                : "";
+                              if ( $selectMediaType == "livestream" ) {
+                                echo '<div class="absolute absolute--full bg-primary"></div>';
+                              } elseif ( $selectMediaType == "podcast" ) {
+                                echo '<div class="absolute absolute--full bg-secondary"></div>';
+                              } elseif ( $selectMediaType == "webinar" ) {
+                                echo '<div class="absolute absolute--full bg-tertiary"></div>';
+                              } else {
+                                echo '<div class="absolute absolute--full bg-tertiary"></div>';
+                              }
                               ?>
                             </div>
                           </div>
@@ -492,18 +491,15 @@ if ( $search_query !== '' || $industries !== '' || ( is_singular( 'brands' ) && 
                                 echo $first->name; ?>
                               </div>
                               <?php
-                              echo $selectMediaType == "livestream"
-                                ? '<div class="absolute absolute--full bg-primary"></div>'
-                                : "";
-                              echo $selectMediaType == "podcast"
-                                ? '<div class="absolute absolute--full bg-secondary"></div>'
-                                : "";
-                              echo $selectMediaType == "webinar"
-                                ? '<div class="absolute absolute--full bg-tertiary"></div>'
-                                : "";
-                              echo ( $selectMediaType != "livestream" || $selectMediaType != "podcast" || $selectMediaType != "webinar" )
-                                ? '<div class="absolute absolute--full bg-tertiary"></div>'
-                                : "";
+                              if ( $selectMediaType == "livestream" ) {
+                                echo '<div class="absolute absolute--full bg-primary"></div>';
+                              } elseif ( $selectMediaType == "podcast" ) {
+                                echo '<div class="absolute absolute--full bg-secondary"></div>';
+                              } elseif ( $selectMediaType == "webinar" ) {
+                                echo '<div class="absolute absolute--full bg-tertiary"></div>';
+                              } else {
+                                echo '<div class="absolute absolute--full bg-tertiary"></div>';
+                              }
                               ?>
                             </div>
                           </div>
