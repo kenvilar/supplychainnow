@@ -250,8 +250,8 @@ if ( $search_query !== '' || $industries !== '' || ( is_singular( 'brands' ) && 
   $results_query = new WP_Query( $args );
 
   if (
-    ($media_type !== '' && $media_type !== 'webinars') ||
-    ($media_type !== '' && $media_type == 'all-events')
+    ( $media_type !== '' && $media_type !== 'webinars' )
+    || ( $media_type !== '' && $media_type == 'all-events' )
   ) {
     $post_args = [
       'post_type'              => "post",
