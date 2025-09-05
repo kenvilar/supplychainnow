@@ -426,7 +426,19 @@ if ( $search_query !== '' || $industries !== '' || ( is_singular( 'brands' ) && 
             <?php
             while ( $results_query->have_posts() ) :
               $results_query->the_post();
-              $selectMediaType = get_field( "select_media_type", $results_query->post->ID );
+              // Determine media type based on page template
+              $template = get_page_template_slug( $results_query->post->ID );
+
+              // Default for posts or other content types
+              $selectMediaType = 'podcast';
+
+              if ( $template === 'livestream-detail.php' ) {
+                $selectMediaType = 'livestream';
+              } elseif ( $template === 'episode-detail.php' ) {
+                $selectMediaType = 'podcast';
+              } elseif ( $template === 'webinar-detail.php' ) {
+                $selectMediaType = 'webinar';
+              }
               ?>
               <a href="<?php
               the_permalink( $results_query->post->ID ); ?>" class="relative w-full group <?php
@@ -434,7 +446,7 @@ if ( $search_query !== '' || $industries !== '' || ( is_singular( 'brands' ) && 
                 <div class="relative flex flex-col justify-between gap-20 h-full">
                   <div class="w-full">
                     <div class="mb-28">
-                      <div class="overflow-hidden rounded-12 relative h-222 bg-cargogrey">
+                      <div class="overflow-hidden rounded-12 relative h-222 md:h-auto bg-cargogrey">
                         <img
                           src="<?php
                           echo get_the_post_thumbnail_url( $results_query->post->ID )
@@ -613,11 +625,6 @@ if ( $search_query !== '' || $industries !== '' || ( is_singular( 'brands' ) && 
             endwhile; ?>
           </div>
           <?php
-          // Debug: Output current $_GET to understand the corruption
-          if ( current_user_can( 'administrator' ) ) {
-            echo '<!-- DEBUG $_GET: ' . print_r( $_GET, true ) . ' -->';
-          }
-
           $big = 999999999; // unlikely integer
 
           // Build pagination arguments manually from clean values
