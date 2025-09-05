@@ -90,7 +90,7 @@
 			</div>
 		</div>
 		<div class="absolute absolute--r w-full h-full z--1 flex justify-end items-center md:relative">
-			<div class="w-[50%] h-540 md:w-full">
+			<div class="w-[50%] h-540 xs:h-full md:w-full">
 				<div class="max-w-624 w-full h-full ml-auto md:max-w-full">
 					<div slider-1 class="splide">
 						<div class="splide__track">
@@ -182,6 +182,10 @@
 										991: {
 											fixedWidth: '100%',
 										},
+                    479: {
+                      autoHeight: true,
+                      fixedHeight: "auto",
+                    }
 									},
 								};
 								var splide = new Splide(`${splideTarget}`, options);

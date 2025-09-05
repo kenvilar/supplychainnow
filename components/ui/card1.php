@@ -129,7 +129,7 @@ if ( $q->have_posts() ): ?>
         <div class="w-full">
           <div class="mb-28">
             <div
-              class="overflow-hidden rounded-12 relative <?= $card_size == 'large' ? 'h-344' : 'h-222'; ?> bg-cargogrey">
+              class="overflow-hidden rounded-12 relative <?= $card_size == 'large' ? 'h-344 md:h-auto' : 'h-222 md:h-auto'; ?> bg-cargogrey">
               <img
                 src="<?php
                 echo get_the_post_thumbnail_url( $q->post->ID )
