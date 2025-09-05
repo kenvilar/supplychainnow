@@ -316,6 +316,26 @@ if ( $search_query !== '' || $industries !== '' || ( is_singular( 'brands' ) && 
     ( $media_type !== '' && $media_type !== 'webinars' )
     || ( $media_type !== '' && $media_type == 'all-events' )
   ) {
+    $page_args = [
+      'post_type'              => 'page',            // try 'any' to test
+      'post_status'            => 'publish',
+      's'                      => $search_query,     // from ?search=
+      'posts_per_page'         => - 1,
+      'search_columns'         => [ 'post_title', 'post_content' ],
+      'suppress_filters'       => true,               // critical: ignore posts_where/posts_search filters
+      'update_post_meta_cache' => false, // set false if not reading lots of meta
+      'update_post_term_cache' => false,
+      "meta_query"             => [
+        "relation" => "AND",
+        [
+          'key'     => '_wp_page_template',
+          'value'   => [ 'episode-detail.php', 'livestream-detail.php' ],
+          'compare' => 'IN',
+          'type'    => 'CHAR',
+        ],
+      ],
+      "orderby"                => [ "menu_order" => "ASC", "date" => "DESC" ], //'rand',
+    ];
     $post_args = [
       'post_type'              => "post",
       'post_status'            => 'publish',
@@ -344,6 +364,14 @@ if ( $search_query !== '' || $industries !== '' || ( is_singular( 'brands' ) && 
     ];
 
     if ( $industries !== '' ) {
+      $page_args['tax_query']   = [
+        [
+          'taxonomy'         => $taxonomy,
+          'field'            => 'name',
+          'terms'            => [ $industries ],
+          'include_children' => false,
+        ],
+      ];
       $post_args['tax_query'][] = [
         [
           'taxonomy'         => 'post_tag',
@@ -354,23 +382,27 @@ if ( $search_query !== '' || $industries !== '' || ( is_singular( 'brands' ) && 
       ];
     }
 
+    $page_query = new WP_Query( $page_args );
     $post_query = new WP_Query( $post_args );
 
     $post_ids = [];
-    if ( $results_query->have_posts() ) {
-      $post_ids = array_merge( $post_ids, wp_list_pluck( $results_query->posts, 'ID' ) );
+    if ( $page_query->have_posts() ) {
+      $post_ids = array_merge( $post_ids, wp_list_pluck( $page_query->posts, 'ID' ) );
     }
     if ( $post_query->have_posts() ) {
       $post_ids = array_merge( $post_ids, wp_list_pluck( $post_query->posts, 'ID' ) );
     }
+
+    // Remove duplicate IDs to avoid issues with post__in query
+    $post_ids = array_unique( $post_ids );
 
     $defaults_args = [
       'post_type'              => [ 'page', 'post' ],
       'post_status'            => 'publish',
       'posts_per_page'         => 9,
       'paged'                  => $paged,
-      "offset"                 => 0,
-      "post__in"               => $post_ids + [ 0 ],
+      "post__in"               => ! empty( $post_ids ) ? $post_ids : [ 0 ],
+      'orderby'                => 'post__in',
       'suppress_filters'       => true,
       'update_post_meta_cache' => false,
       'update_post_term_cache' => false,
