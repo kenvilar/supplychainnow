@@ -249,69 +249,6 @@ if ( $search_query !== '' || $industries !== '' || ( is_singular( 'brands' ) && 
 
   $results_query = new WP_Query( $args );
 
-  // Fallback logic: If no results found, try searching episode_summary ACF field in 'page' post type
-  if ( ! $results_query->have_posts() && ! empty( $search_query ) ) {
-    $fallback_args = [
-      'post_type'              => 'page',
-      'post_status'            => 'publish',
-      'posts_per_page'         => 9,
-      'paged'                  => $paged,
-      'update_post_meta_cache' => false,
-      'update_post_term_cache' => false,
-      'meta_query'             => [
-        "relation" => "AND",
-        [
-          'key'     => '_wp_page_template',
-          'value'   => [ 'episode-detail.php', 'webinar-detail.php', 'livestream-detail.php' ],
-          'compare' => 'IN',
-          'type'    => 'CHAR',
-        ],
-        [
-          'relation' => 'OR',
-          [
-            'key'     => 'episode_summary',
-            'value'   => $search_query,
-            'compare' => 'LIKE',
-            'type'    => 'CHAR',
-          ],
-          [
-            'key'     => 'episode_title',
-            'value'   => $search_query,
-            'compare' => 'LIKE',
-            'type'    => 'CHAR',
-          ],
-          [
-            'key'     => 'livestream_title',
-            'value'   => $search_query,
-            'compare' => 'LIKE',
-            'type'    => 'CHAR',
-          ],
-          [
-            'key'     => 'livestream_description',
-            'value'   => $search_query,
-            'compare' => 'LIKE',
-            'type'    => 'CHAR',
-          ],
-          [
-            'key'     => 'webinar_title',
-            'value'   => $search_query,
-            'compare' => 'LIKE',
-            'type'    => 'CHAR',
-          ],
-          [
-            'key'     => 'webinar_description',
-            'value'   => $search_query,
-            'compare' => 'LIKE',
-            'type'    => 'CHAR',
-          ],
-        ],
-      ],
-      "orderby"                => [ "menu_order" => "ASC", "date" => "DESC" ],
-    ];
-
-    $results_query = new WP_Query( $fallback_args );
-  }
-
   if (
     ( $media_type !== '' && $media_type !== 'webinars' )
     || ( $media_type !== '' && $media_type == 'all-events' )
@@ -409,6 +346,69 @@ if ( $search_query !== '' || $industries !== '' || ( is_singular( 'brands' ) && 
     ];
 
     $results_query = new WP_Query( $defaults_args );
+  }
+
+  // FINAL Fallback logic: If no results found after all attempts, try searching ACF fields in 'page' post type
+  if ( ! $results_query->have_posts() && ! empty( $search_query ) ) {
+    $fallback_args = [
+      'post_type'              => 'page',
+      'post_status'            => 'publish',
+      'posts_per_page'         => 9,
+      'paged'                  => $paged,
+      'update_post_meta_cache' => false,
+      'update_post_term_cache' => false,
+      'meta_query'             => [
+        "relation" => "AND",
+        [
+          'key'     => '_wp_page_template',
+          'value'   => [ 'episode-detail.php', 'webinar-detail.php', 'livestream-detail.php' ],
+          'compare' => 'IN',
+          'type'    => 'CHAR',
+        ],
+        [
+          'relation' => 'OR',
+          [
+            'key'     => 'episode_summary',
+            'value'   => $search_query,
+            'compare' => 'LIKE',
+            'type'    => 'CHAR',
+          ],
+          [
+            'key'     => 'episode_title',
+            'value'   => $search_query,
+            'compare' => 'LIKE',
+            'type'    => 'CHAR',
+          ],
+          [
+            'key'     => 'livestream_title',
+            'value'   => $search_query,
+            'compare' => 'LIKE',
+            'type'    => 'CHAR',
+          ],
+          [
+            'key'     => 'livestream_description',
+            'value'   => $search_query,
+            'compare' => 'LIKE',
+            'type'    => 'CHAR',
+          ],
+          [
+            'key'     => 'webinar_title',
+            'value'   => $search_query,
+            'compare' => 'LIKE',
+            'type'    => 'CHAR',
+          ],
+          [
+            'key'     => 'webinar_description',
+            'value'   => $search_query,
+            'compare' => 'LIKE',
+            'type'    => 'CHAR',
+          ],
+        ],
+      ],
+      "orderby"                => [ "menu_order" => "ASC", "date" => "DESC" ],
+    ];
+
+    $results_query = new WP_Query( $fallback_args );
   }
 }
 
