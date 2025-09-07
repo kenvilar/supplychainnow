@@ -439,7 +439,21 @@ if ( $search_query !== '' || $industries !== '' || ( is_singular( 'brands' ) && 
               } elseif ( $template === 'webinar-detail.php' ) {
                 $selectMediaType = 'webinar';
               } elseif ( $resource_hub ) {
-                $selectMediaType = '';
+                if ( is_page( 'guide' ) ) {
+                  $selectMediaType = 'Guide';
+                } elseif ( is_page( 'news' ) ) {
+                  $selectMediaType = 'News';
+                } elseif ( is_page( 'article' ) ) {
+                  $selectMediaType = 'Article';
+                } elseif ( is_page( 'ebook' ) ) {
+                  $selectMediaType = 'E-Book';
+                } elseif ( is_page( 'white-paper' ) ) {
+                  $selectMediaType = 'White Paper';
+                } elseif ( is_page( 'blog' ) ) {
+                  $selectMediaType = 'Blog';
+                } else {
+                  $selectMediaType = '';
+                }
               }
               ?>
               <a href="<?php
@@ -596,11 +610,16 @@ if ( $search_query !== '' || $industries !== '' || ( is_singular( 'brands' ) && 
                               <?php
                             }
                           }
-                          ?>
-                          <div class="font-family-secondary text-sm capitalize">
+
+                          if ( ! empty( $selectMediaType ) ) {
+                            ?>
+                            <div class="font-family-secondary text-sm capitalize">
+                              <?php
+                              echo $selectMediaType; ?>
+                            </div>
                             <?php
-                            echo $selectMediaType ?? 'Podcast'; ?>
-                          </div>
+                          }
+                          ?>
                         </div>
                         <div class="flex items-center gap-8 text-sm font-light font-family-secondary">
                           <div>
