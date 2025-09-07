@@ -613,16 +613,11 @@ if ( $search_query !== '' || $industries !== '' || ( is_singular( 'brands' ) && 
                                 <?php
                               }
                             }
-
-                            if ( ! empty( $selectMediaType ) ) {
-                              ?>
-                              <div class="font-family-secondary text-sm capitalize">
-                                <?php
-                                echo $selectMediaType; ?>
-                              </div>
-                              <?php
-                            }
                             ?>
+                            <div class="font-family-secondary text-sm capitalize">
+                              <?php
+                              echo $selectMediaType; ?>
+                            </div>
                           </div>
                           <?php
                         }
