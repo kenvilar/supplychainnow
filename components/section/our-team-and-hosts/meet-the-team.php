@@ -1,5 +1,8 @@
 <?php
 
+$postId  = get_the_ID();
+$section = get_field( 'Meet_the_Team_Section', $postId );
+$title   = esc_html( ! empty( $section['Title'] ) ? $section['Title'] : 'Meet the Team' );
 ?>
 <div class="gradient1 rounded-100">
   <section class="section text-white">
@@ -7,7 +10,7 @@
       <div class="w-layout-blockcontainer max-w-1252 sm:text-center w-container">
         <div class="mb-44">
           <div class="mb-20">
-            <h2 class="text-center">Meet the Team</h2>
+            <h2 class="text-center"><?= $title; ?></h2>
           </div>
           <?php
           get_template_part( 'components/line-with-blinking-dot', null, [
