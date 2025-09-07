@@ -46,7 +46,7 @@ $featured_content = get_field( 'featured_content', $postId )
         </div>
       </div>
       <div class="mb-64">
-        <div class="grid grid-cols-3 justify-center items-center gap-32 sm:grid-cols-2 xs:grid-cols-1">
+        <div class="grid grid-cols-3 justify-center gap-32 sm:grid-cols-2 xs:grid-cols-1">
           <?php
           if ( $featured_content ) {
             foreach ( $featured_content as $index => $item ) {
