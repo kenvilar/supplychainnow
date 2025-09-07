@@ -91,22 +91,83 @@ if ( $search_query !== '' || $industries !== '' || ( is_singular( 'brands' ) && 
   }
 
   if ( $resource_hub ) {
-    $args['meta_query']  = [];
-    $args['tax_query'][] = [
-      'taxonomy' => 'category',
-      'field'    => 'slug',
-      'terms'    => [
-        'blog-post',
-        'guest-post',
-        'white-paper',
-        'ebook',
-        'article',
-        'weekly-summary',
-        'news',
-        'guide',
-      ],
-      'operator' => 'IN',
-    ];
+    var_dump( 'whoa!' );
+    $args['meta_query'] = [];
+
+    if ( is_page( 'guide' ) ) {
+      $args['tax_query'][] = [
+        'taxonomy' => 'category',
+        'field'    => 'slug',
+        'terms'    => [
+          'guide',
+        ],
+        'operator' => 'IN',
+      ];
+    } elseif ( is_page( 'news' ) ) {
+      $args['tax_query'][] = [
+        'taxonomy' => 'category',
+        'field'    => 'slug',
+        'terms'    => [
+          'news',
+        ],
+        'operator' => 'IN',
+      ];
+    } elseif ( is_page( 'article' ) ) {
+      $args['tax_query'][] = [
+        'taxonomy' => 'category',
+        'field'    => 'slug',
+        'terms'    => [
+          'article',
+          'weekly-summary',
+        ],
+        'operator' => 'IN',
+      ];
+    } elseif ( is_page( 'ebook' ) ) {
+      $args['tax_query'][] = [
+        'taxonomy' => 'category',
+        'field'    => 'slug',
+        'terms'    => [
+          'ebook',
+        ],
+        'operator' => 'IN',
+      ];
+    } elseif ( is_page( 'white-paper' ) ) {
+      $args['tax_query'][] = [
+        'taxonomy' => 'category',
+        'field'    => 'slug',
+        'terms'    => [
+          'white-paper',
+        ],
+        'operator' => 'IN',
+      ];
+    } elseif ( is_page( 'blog' ) ) {
+      $args['tax_query'][] = [
+        'taxonomy' => 'category',
+        'field'    => 'slug',
+        'terms'    => [
+          'blog-post',
+          'guest-post',
+        ],
+        'operator' => 'IN',
+      ];
+    } else {
+      $args['tax_query'][] = [
+        'taxonomy' => 'category',
+        'field'    => 'slug',
+        'terms'    => [
+          'blog-post',
+          'guest-post',
+          'white-paper',
+          'ebook',
+          'article',
+          'weekly-summary',
+          'news',
+          'guide',
+        ],
+        'operator' => 'IN',
+      ];
+    }
+
     $args['tax_query'][] = [
       'taxonomy' => 'category',
       'field'    => 'slug',
