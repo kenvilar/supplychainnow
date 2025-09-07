@@ -1,12 +1,15 @@
 <?php
 
+$postId = get_the_ID();
+$group  = get_field( 'Awards_&_Recognitions', $postId );
+$title  = esc_html( ! empty( $group['Title'] ) ? $group['Title'] : 'Awards &amp; Recognitions' );
 ?>
 <section class="section sm:py-60 py-64 pb-92">
   <div class="site-padding">
     <div class="w-layout-blockcontainer max-w-1388 w-container">
       <div class="mb-44">
         <div class="mb-20">
-          <h2 class="text-center">Awards &amp; Recognitions</h2>
+          <h2 class="text-center"><?= $title; ?></h2>
         </div>
         <?php
         get_template_part( 'components/line-with-blinking-dot', null, [
@@ -19,78 +22,97 @@
   <div slider-1="" class="splide">
     <div class="splide__track overflow-visible!">
       <div class="splide__list">
-        <div class="splide__slide">
-          <div class="awards-pentagon-block">
-            <img alt="" loading="lazy"
-                 src="<?php
-                 echo get_stylesheet_directory_uri() . '/assets/img/our-team-and-hosts/team--awards-1.avif'; ?>"
-                 class="image h-auto">
+        <?php
+        if ( $group['Image_Slider'] ):
+          foreach ( $group['Image_Slider'] as $image ):
+            $image = esc_url( $image );
+            ?>
+            <div class="splide__slide">
+              <div class="awards-pentagon-block">
+                <img alt="" loading="lazy"
+                     src="<?= $image; ?>"
+                     class="image h-auto">
+              </div>
+            </div>
+          <?php
+          endforeach;
+        else:
+          ?>
+          <div class="splide__slide">
+            <div class="awards-pentagon-block">
+              <img alt="" loading="lazy"
+                   src="<?php
+                   echo get_stylesheet_directory_uri() . '/assets/img/our-team-and-hosts/team--awards-1.avif'; ?>"
+                   class="image h-auto">
+            </div>
           </div>
-        </div>
-        <div class="splide__slide">
-          <div class="awards-pentagon-block">
-            <img alt="" loading="lazy"
-                 src="<?php
-                 echo get_stylesheet_directory_uri() . '/assets/img/our-team-and-hosts/team--awards-2.avif'; ?>"
-                 class="image h-auto">
+          <div class="splide__slide">
+            <div class="awards-pentagon-block">
+              <img alt="" loading="lazy"
+                   src="<?php
+                   echo get_stylesheet_directory_uri() . '/assets/img/our-team-and-hosts/team--awards-2.avif'; ?>"
+                   class="image h-auto">
+            </div>
           </div>
-        </div>
-        <div class="splide__slide">
-          <div class="awards-pentagon-block">
-            <img alt="" loading="lazy"
-                 src="<?php
-                 echo get_stylesheet_directory_uri() . '/assets/img/our-team-and-hosts/team--awards-3.avif'; ?>"
-                 class="image h-auto">
+          <div class="splide__slide">
+            <div class="awards-pentagon-block">
+              <img alt="" loading="lazy"
+                   src="<?php
+                   echo get_stylesheet_directory_uri() . '/assets/img/our-team-and-hosts/team--awards-3.avif'; ?>"
+                   class="image h-auto">
+            </div>
           </div>
-        </div>
-        <div class="splide__slide">
-          <div class="awards-pentagon-block">
-            <img alt="" loading="lazy"
-                 src="<?php
-                 echo get_stylesheet_directory_uri() . '/assets/img/our-team-and-hosts/team--awards-4.avif'; ?>"
-                 class="image h-auto">
+          <div class="splide__slide">
+            <div class="awards-pentagon-block">
+              <img alt="" loading="lazy"
+                   src="<?php
+                   echo get_stylesheet_directory_uri() . '/assets/img/our-team-and-hosts/team--awards-4.avif'; ?>"
+                   class="image h-auto">
+            </div>
           </div>
-        </div>
-        <div class="splide__slide">
-          <div class="awards-pentagon-block">
-            <img alt="" loading="lazy"
-                 src="<?php
-                 echo get_stylesheet_directory_uri() . '/assets/img/our-team-and-hosts/team--awards-5.avif'; ?>"
-                 class="image h-auto">
+          <div class="splide__slide">
+            <div class="awards-pentagon-block">
+              <img alt="" loading="lazy"
+                   src="<?php
+                   echo get_stylesheet_directory_uri() . '/assets/img/our-team-and-hosts/team--awards-5.avif'; ?>"
+                   class="image h-auto">
+            </div>
           </div>
-        </div>
-        <div class="splide__slide">
-          <div class="awards-pentagon-block">
-            <img alt="" loading="lazy"
-                 src="<?php
-                 echo get_stylesheet_directory_uri() . '/assets/img/our-team-and-hosts/team--awards-6.avif'; ?>"
-                 class="image h-auto">
+          <div class="splide__slide">
+            <div class="awards-pentagon-block">
+              <img alt="" loading="lazy"
+                   src="<?php
+                   echo get_stylesheet_directory_uri() . '/assets/img/our-team-and-hosts/team--awards-6.avif'; ?>"
+                   class="image h-auto">
+            </div>
           </div>
-        </div>
-        <div class="splide__slide">
-          <div class="awards-pentagon-block">
-            <img alt="" loading="lazy"
-                 src="<?php
-                 echo get_stylesheet_directory_uri() . '/assets/img/our-team-and-hosts/team--awards-7.avif'; ?>"
-                 class="image h-auto">
+          <div class="splide__slide">
+            <div class="awards-pentagon-block">
+              <img alt="" loading="lazy"
+                   src="<?php
+                   echo get_stylesheet_directory_uri() . '/assets/img/our-team-and-hosts/team--awards-7.avif'; ?>"
+                   class="image h-auto">
+            </div>
           </div>
-        </div>
-        <div class="splide__slide">
-          <div class="awards-pentagon-block">
-            <img alt="" loading="lazy"
-                 src="<?php
-                 echo get_stylesheet_directory_uri() . '/assets/img/our-team-and-hosts/team--awards-8.avif'; ?>"
-                 class="image h-auto">
+          <div class="splide__slide">
+            <div class="awards-pentagon-block">
+              <img alt="" loading="lazy"
+                   src="<?php
+                   echo get_stylesheet_directory_uri() . '/assets/img/our-team-and-hosts/team--awards-8.avif'; ?>"
+                   class="image h-auto">
+            </div>
           </div>
-        </div>
-        <div class="splide__slide">
-          <div class="awards-pentagon-block">
-            <img alt="" loading="lazy"
-                 src="<?php
-                 echo get_stylesheet_directory_uri() . '/assets/img/our-team-and-hosts/team--awards-9.avif'; ?>"
-                 class="image h-auto">
+          <div class="splide__slide">
+            <div class="awards-pentagon-block">
+              <img alt="" loading="lazy"
+                   src="<?php
+                   echo get_stylesheet_directory_uri() . '/assets/img/our-team-and-hosts/team--awards-9.avif'; ?>"
+                   class="image h-auto">
+            </div>
           </div>
-        </div>
+        <?php
+        endif;
+        ?>
       </div>
     </div>
     <div class="display-none w-embed">
@@ -120,7 +142,7 @@
               //autoplay: true,
               pauseOnHover: true,
               //updateOnMove: true,
-              lazyLoad: 'nearby', //boost performance
+              lazyLoad: "nearby", //boost performance
               drag: false, //boost performance
               speed: 400, //boost performance
               autoScroll: {
