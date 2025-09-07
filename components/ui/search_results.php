@@ -91,7 +91,6 @@ if ( $search_query !== '' || $industries !== '' || ( is_singular( 'brands' ) && 
   }
 
   if ( $resource_hub ) {
-    var_dump( 'whoa!' );
     $args['meta_query'] = [];
 
     if ( is_page( 'guide' ) ) {
