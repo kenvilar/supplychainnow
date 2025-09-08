@@ -9,9 +9,9 @@
           <h2 class="text-center">Latest Podcast Episodes</h2>
         </div>
         <?php
-        get_template_part('components/line-with-blinking-dot', null, [
+        get_template_part( 'components/line-with-blinking-dot', null, [
           'maxWidthClassnames' => ''
-        ]);
+        ] );
         ?>
       </div>
       <div class="mb-44">
@@ -44,33 +44,33 @@
                   'attributes' => [],
                   'classNames' => 'splide__slide',
                 ]);*/
-                echo get_template_part('components/ui/card1', null, [
-                  'q' => [
-                    'no_found_rows' => true,  // set true if not paginating
+                echo get_template_part( 'components/ui/card1', null, [
+                  'q'             => [
+                    'no_found_rows'          => true,  // set true if not paginating
                     'update_post_meta_cache' => false, // set false if not reading lots of meta
                     'update_post_term_cache' => false,
-                    "meta_query" => [
+                    "meta_query"             => [
                       [
                         "relation" => "AND",
                         [
-                          'key' => '_wp_page_template',
-                          'value' => ['episode-detail.php',],
+                          'key'     => '_wp_page_template',
+                          'value'   => [ 'episode-detail.php', ],
                           'compare' => 'IN',
-                          'type' => 'CHAR',
+                          'type'    => 'CHAR',
                         ],
                       ],
                     ],
                   ],
-                  'card_size' => 'small',
+                  'card_size'     => 'small',
                   "post_per_page" => 8,
-                  'attributes' => [],
-                  'classNames' => 'splide__slide',
-                ]);
+                  'attributes'    => [],
+                  'classNames'    => 'splide__slide',
+                ] );
                 ?>
               </div>
             </div>
             <?php
-            get_template_part('components/splide-arrows');
+            get_template_part( 'components/splide-arrows' );
             ?>
             <div class="display-none w-embed w-script">
               <script>
@@ -92,7 +92,7 @@
                       gap: 32,
                       autoplay: false,
                       pauseOnHover: true,
-                      lazyLoad: 'nearby', //boost performance
+                      lazyLoad: "nearby", //boost performance
                       drag: false, //boost performance
                       speed: 400, //boost performance
                       autoScroll: {
@@ -137,16 +137,16 @@
       </div>
       <div class="flex justify-center gap-12 sm:flex-col">
         <?php
-        echo get_template_part('components/ui/btn', null, [
-          'text' => 'Browse All Podcasts',
-          'link' => '/podcasts-and-livestreams',
+        echo get_template_part( 'components/ui/btn', null, [
+          'text'  => 'Browse All Podcasts',
+          'link'  => '/podcasts-and-livestreams',
           'style' => 'primary',
           'class' => '',
           /*'attributes' => [
             'target' => '_blank',
             'rel'    => 'noopener noreferrer',
           ],*/
-        ]);
+        ] );
         ?>
       </div>
     </div>
