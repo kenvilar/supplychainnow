@@ -1,12 +1,15 @@
 <?php
 
+$postID  = get_the_ID();
+$section = get_field( 'What_the_Supply_Chain_Community_Has_to_Say_Section', $postID );
+$title   = esc_html( ! empty( $section['Title'] ) ? $section['Title'] : 'What the Supply Chain Community Has to Say' );
 ?>
 <section class="section">
   <div class="site-padding sm:py-60 py-68 pb-140">
     <div class="w-layout-blockcontainer max-w-1248 relative w-container">
       <div class="mb-32">
         <div class="w-layout-blockcontainer max-w-500 w-container">
-          <h2 class="text-center">What the Supply Chain Community Has to Say</h2>
+          <h2 class="text-center"><?= $title; ?></h2>
         </div>
       </div>
       <div>
@@ -15,17 +18,10 @@
             <div class="splide__track pb-20">
               <div class="splide__list">
                 <?php
-                $q = new WP_Query( [
-                  'post_type'      => 'testimonials',
-                  'post_status'    => 'publish',
-                  'posts_per_page' => - 1,
-                  'offset'         => 0,
-                  'orderby'        => [ 'menu_order' => 'ASC', 'date' => 'DESC' ],
-                ] );
-
-                if ( $q->have_posts() ): ?>
-                  <?php
-                  while ( $q->have_posts() ): $q->the_post(); ?>
+                if ( ! empty( $section['Testimonials'] ) ) :
+                  foreach ( $section['Testimonials'] as $idx => $testimonial ) :
+                    $testimonial = $testimonial['Item'];
+                    ?>
                     <div class="splide__slide">
                       <div class="card v2">
                         <div class="w-full flex flex-col justify-between gap-52 p-32">
@@ -34,13 +30,13 @@
                               <div class="size-40 overflow-hidden rounded-full">
                                 <img
                                   src="<?php
-                                  the_post_thumbnail_url(); ?>"
+                                  echo get_the_post_thumbnail_url( $testimonial->ID, 'full' ); ?>"
                                   loading="lazy" alt="" class="image">
                               </div>
                             </div>
                             <div class="text-xs tracking-[1.35px] w-richtext">
                               <?php
-                              echo esc_html( get_post_meta( get_the_ID(), 'qode_testimonial-text', true ) );
+                              echo esc_html( get_post_meta( $testimonial->ID, 'qode_testimonial-text', true ) );
                               ?>
                             </div>
                           </div>
@@ -48,24 +44,69 @@
                             <div class="mb-8">
                               <div class="font-family-secondary text-sm tracking-[1.52px]">
                                 <?php
-                                echo get_post_meta( get_the_ID(), 'qode_testimonial-author', true ); ?>
+                                echo get_post_meta( $testimonial->ID, 'qode_testimonial-author', true ); ?>
                               </div>
                             </div>
-                            <!--<div class="uppercase font-family-secondary text-2xs tracking-[1.01px]">
-                              <div class="display-inline">Senior Director, Logistics &amp; Manufacturing Solutions
-                              </div>
-                              <div class="display-inline">&nbsp;•</div>
-                              <div class="display-inline">Cisco</div>
-                            </div>-->
                           </div>
                         </div>
                       </div>
                     </div>
                   <?php
-                  endwhile;
-                  wp_reset_postdata(); ?>
-                <?php
-                endif; ?>
+                  endforeach;
+                else:
+                  $q = new WP_Query( [
+                    'post_type'      => 'testimonials',
+                    'post_status'    => 'publish',
+                    'posts_per_page' => - 1,
+                    'offset'         => 0,
+                    'orderby'        => [ 'menu_order' => 'ASC', 'date' => 'DESC' ],
+                  ] );
+
+                  if ( $q->have_posts() ): ?>
+                    <?php
+                    while ( $q->have_posts() ): $q->the_post(); ?>
+                      <div class="splide__slide">
+                        <div class="card v2">
+                          <div class="w-full flex flex-col justify-between gap-52 p-32">
+                            <div>
+                              <div class="mb-20">
+                                <div class="size-40 overflow-hidden rounded-full">
+                                  <img
+                                    src="<?php
+                                    the_post_thumbnail_url(); ?>"
+                                    loading="lazy" alt="" class="image">
+                                </div>
+                              </div>
+                              <div class="text-xs tracking-[1.35px] w-richtext">
+                                <?php
+                                echo esc_html( get_post_meta( get_the_ID(), 'qode_testimonial-text', true ) );
+                                ?>
+                              </div>
+                            </div>
+                            <div>
+                              <div class="mb-8">
+                                <div class="font-family-secondary text-sm tracking-[1.52px]">
+                                  <?php
+                                  echo get_post_meta( get_the_ID(), 'qode_testimonial-author', true ); ?>
+                                </div>
+                              </div>
+                              <!--<div class="uppercase font-family-secondary text-2xs tracking-[1.01px]">
+                                <div class="display-inline">Senior Director, Logistics &amp; Manufacturing Solutions
+                                </div>
+                                <div class="display-inline">&nbsp;•</div>
+                                <div class="display-inline">Cisco</div>
+                              </div>-->
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    <?php
+                    endwhile;
+                    wp_reset_postdata(); ?>
+                  <?php
+                  endif;
+                endif;
+                ?>
               </div>
             </div>
             <?php
