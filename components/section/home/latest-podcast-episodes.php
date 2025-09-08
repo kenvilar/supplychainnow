@@ -1,12 +1,17 @@
 <?php
 
+$postID     = get_the_ID();
+$section    = get_field( 'Latest_Podcast_Episodes_Section', $postID );
+$title      = esc_html( ! empty( $section['Title'] ) ? $section['Title'] : 'Latest Podcast Episodes' );
+$buttonText = esc_html( ! empty( $section['Button_Text'] ) ? $section['Button_Text'] : 'Browse All Podcasts' );
+$buttonLink = esc_url( ! empty( $section['Button_Link'] ) ? $section['Button_Link'] : '/podcasts-and-livestreams' );
 ?>
 <section class="section">
   <div class="site-padding sm:py-60 py-88">
     <div class="max-w-1372 relative w-container">
       <div class="mb-44">
         <div class="mb-20">
-          <h2 class="text-center">Latest Podcast Episodes</h2>
+          <h2 class="text-center"><?= $title; ?></h2>
         </div>
         <?php
         get_template_part( 'components/line-with-blinking-dot', null, [
@@ -20,30 +25,6 @@
             <div class="splide__track">
               <div class="splide__list">
                 <?php
-                /*echo get_template_part('components/ui/card2', null, [
-                  'q' => [
-                    'posts_per_page' => 8,
-                    'meta_query' => [
-                      'relation' => 'AND',
-                      [
-                        'relation' => 'OR',
-                        [
-                          'key' => '_wp_page_template',
-                          'value' => 'episode-detail.php',
-                          'compare' => '=',
-                        ],
-                      ],
-                      [
-                        'key' => 'select_media_type',
-                        'value' => ['podcast'],
-                        'compare' => 'IN',
-                        'type' => 'CHAR',
-                      ],
-                    ],
-                  ],
-                  'attributes' => [],
-                  'classNames' => 'splide__slide',
-                ]);*/
                 echo get_template_part( 'components/ui/card1', null, [
                   'q'             => [
                     'no_found_rows'          => true,  // set true if not paginating
@@ -138,8 +119,8 @@
       <div class="flex justify-center gap-12 sm:flex-col">
         <?php
         echo get_template_part( 'components/ui/btn', null, [
-          'text'  => 'Browse All Podcasts',
-          'link'  => '/podcasts-and-livestreams',
+          'text'  => $buttonText,
+          'link'  => $buttonLink,
           'style' => 'primary',
           'class' => '',
           /*'attributes' => [
