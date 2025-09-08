@@ -3,6 +3,18 @@
 $postID  = get_the_ID();
 $section = get_field( 'Hero_Section', $postID );
 $title   = esc_html( ! empty( $section['Page_Title'] ) ? $section['Page_Title'] : 'The #1 Voice of Supply Chain' );
+
+$card1Title       = esc_html( ! empty( $section['Card_1_Title'] ) ? $section['Card_1_Title'] : 'JOIN THE CONVERSATION' );
+$card1Description = esc_html( ! empty( $section['Card_1_Description'] ) ? $section['Card_1_Description'] : 'Get expert takes on the industry’s latest topics, via podcast, livestream, or webinar.' );
+$card1Button1Text = esc_html( ! empty( $section['Card_1_Button_1_Text'] ) ? $section['Card_1_Button_1_Text'] : 'Listen Now' );
+$card1Button1Link = esc_url( ! empty( $section['Card_1_Button_1_Link'] ) ? $section['Card_1_Button_1_Link'] : '/on-demand-programming' );
+$card1Button2Text = esc_html( ! empty( $section['Card_1_Button_2_Text'] ) ? $section['Card_1_Button_2_Text'] : 'Subscribe for Updates' );
+$card1Button2Link = esc_url( ! empty( $section['Card_1_Button_2_Link'] ) ? $section['Card_1_Button_2_Link'] : 'https://linktr.ee/supplychainnow' );
+
+$card2Title       = esc_html( ! empty( $section['Card_2_Title'] ) ? $section['Card_2_Title'] : 'WORK WITH US' );
+$card2Description = esc_html( ! empty( $section['Card_2_Description'] ) ? $section['Card_2_Description'] : 'Reach the right audience as a sponsor or campaign partner and generate high-value leads for your brand.' );
+$card2Button1Text = esc_html( ! empty( $section['Card_2_Button_1_Text'] ) ? $section['Card_2_Button_1_Text'] : 'Learn More About Working with Us' );
+$card2Button1Link = esc_url( ! empty( $section['Card_2_Button_1_Link'] ) ? $section['Card_2_Button_1_Link'] : '/work-with-us' );
 ?>
 <section class="section sm:text-center py-60">
   <div class="site-padding">
@@ -19,22 +31,22 @@ $title   = esc_html( ! empty( $section['Page_Title'] ) ? $section['Page_Title'] 
           <div class="pt-48 pb-36 px-12">
             <div class="w-layout-blockcontainer max-w-388 w-full md:max-w-full w-container">
               <div class="mb-16">
-                <div class="font-family-alternate font-medium text-xl tracking-[2.4px] xs:text-md">JOIN THE
-                  CONVERSATION
+                <div class="font-family-alternate font-medium text-xl tracking-[2.4px] xs:text-md">
+                  <?= $card1Title; ?>
                 </div>
               </div>
               <div class="mb-40">
                 <div class="max-w-348 w-full md:max-w-full">
-                  <p class="tracking-[1.6px]">Get expert takes on
-                    the industry’s latest topics, via podcast, livestream, or webinar.
+                  <p class="tracking-[1.6px]">
+                    <?= $card1Description; ?>
                   </p>
                 </div>
               </div>
               <div class="flex gap-12 xs:flex-col sm:flex-col flex-wrap">
                 <?php
                 echo get_template_part( 'components/ui/btn', null, [
-                  'text'  => 'Listen Now',
-                  'link'  => '/on-demand-programming',
+                  'text'  => $card1Button1Text,
+                  'link'  => $card1Button1Link,
                   'style' => 'secondary',
                   'class' => '',
                   /*'attributes' => [
@@ -43,8 +55,8 @@ $title   = esc_html( ! empty( $section['Page_Title'] ) ? $section['Page_Title'] 
                   ],*/
                 ] );
                 echo get_template_part( 'components/ui/btn', null, [
-                  'text'       => 'Subscribe for Updates',
-                  'link'       => 'https://linktr.ee/supplychainnow',
+                  'text'       => $card1Button2Text,
+                  'link'       => $card1Button2Link,
                   'style'      => 'secondary-outline',
                   'class'      => '',
                   'attributes' => [
@@ -61,23 +73,22 @@ $title   = esc_html( ! empty( $section['Page_Title'] ) ? $section['Page_Title'] 
           <div class="pt-48 pb-36 px-12">
             <div class="w-layout-blockcontainer max-w-432 w-full md:max-w-full w-container">
               <div class="mb-16">
-                <div class="font-family-alternate font-medium text-xl tracking-[2.4px] xs:text-md">WORK WITH
-                  US
+                <div class="font-family-alternate font-medium text-xl tracking-[2.4px] xs:text-md">
+                  <?= $card2Title; ?>
                 </div>
               </div>
               <div class="mb-40">
                 <div class="max-w-432 w-full md:max-w-full">
-                  <p class="tracking-[1.6px]">Reach the right
-                    audience as a sponsor or campaign partner and generate high-value leads for your
-                    brand.
+                  <p class="tracking-[1.6px]">
+                    <?= $card2Description; ?>
                   </p>
                 </div>
               </div>
               <div class="flex gap-12 sm:flex-col">
                 <?php
                 echo get_template_part( 'components/ui/btn', null, [
-                  'text'  => 'Learn More About Working with Us',
-                  'link'  => '/work-with-us',
+                  'text'  => $card2Button1Text,
+                  'link'  => $card2Button1Link,
                   'style' => 'primary',
                   'class' => '',
                   /*'attributes' => [
