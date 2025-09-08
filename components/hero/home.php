@@ -1,5 +1,8 @@
 <?php
 
+$postID  = get_the_ID();
+$section = get_field( 'Hero_Section', $postID );
+$title   = esc_html( ! empty( $section['Page_Title'] ) ? $section['Page_Title'] : 'The #1 Voice of Supply Chain' );
 ?>
 <section class="section sm:text-center py-60">
   <div class="site-padding">
@@ -7,7 +10,7 @@
       <div class="mb-36">
         <div class="flex gap-20 justify-between sm:flex-col">
           <div class="max-w-664 w-full">
-            <h1>The #1 Voice of Supply Chain</h1>
+            <h1><?= $title; ?></h1>
           </div>
         </div>
       </div>
@@ -95,55 +98,71 @@
           <div slider-1 class="splide">
             <div class="splide__track">
               <div class="splide__list">
-                <div class="splide__slide">
-                  <img
-                    src="<?php
-                    echo get_stylesheet_directory_uri() . '/assets/img/home/homepage-slider-1.avif'; ?>"
-                    loading="lazy" alt="homepage-slider-1"
-                    class="overflow-hidden image rounded-l-24 md:rounded-24">
-                </div>
-                <div class="splide__slide">
-                  <img
-                    src="<?php
-                    echo get_stylesheet_directory_uri() . '/assets/img/home/homepage-slider-2.avif'; ?>"
-                    loading="lazy" alt="homepage-slider-2"
-                    class="overflow-hidden image rounded-l-24 md:rounded-24">
-                </div>
-                <div class="splide__slide">
-                  <img
-                    src="<?php
-                    echo get_stylesheet_directory_uri() . '/assets/img/home/homepage-slider-3.avif'; ?>"
-                    loading="lazy" alt="homepage-slider-3"
-                    class="overflow-hidden image rounded-l-24 md:rounded-24">
-                </div>
-                <div class="splide__slide">
-                  <img
-                    src="<?php
-                    echo get_stylesheet_directory_uri() . '/assets/img/home/homepage-slider-4.avif'; ?>"
-                    loading="lazy" alt="homepage-slider-4"
-                    class="overflow-hidden image rounded-l-24 md:rounded-24">
-                </div>
-                <div class="splide__slide">
-                  <img
-                    src="<?php
-                    echo get_stylesheet_directory_uri() . '/assets/img/home/homepage-slider-5.avif'; ?>"
-                    loading="lazy" alt="homepage-slider-5"
-                    class="overflow-hidden image rounded-l-24 md:rounded-24">
-                </div>
-                <div class="splide__slide">
-                  <img
-                    src="<?php
-                    echo get_stylesheet_directory_uri() . '/assets/img/home/homepage-slider-6.avif'; ?>"
-                    loading="lazy" alt="homepage-slider-6"
-                    class="overflow-hidden image rounded-l-24 md:rounded-24">
-                </div>
-                <div class="splide__slide">
-                  <img
-                    src="<?php
-                    echo get_stylesheet_directory_uri() . '/assets/img/home/homepage-slider-7.avif'; ?>"
-                    loading="lazy" alt="homepage-slider-7"
-                    class="overflow-hidden image rounded-l-24 md:rounded-24">
-                </div>
+                <?php
+                if ( $section['Hero_Image_Slider'] ) :
+                  foreach ( $section['Hero_Image_Slider'] as $idx => $image ) :
+                    $image = esc_url( $image );
+                    ?>
+                    <img
+                      src="<?= $image; ?>"
+                      loading="lazy" alt="homepage-slider-<?= $idx + 1; ?>"
+                      class="splide__slide overflow-hidden image rounded-l-24 md:rounded-24">
+                  <?php
+                  endforeach;
+                else:
+                  ?>
+                  <div class="splide__slide">
+                    <img
+                      src="<?php
+                      echo get_stylesheet_directory_uri() . '/assets/img/home/homepage-slider-1.avif'; ?>"
+                      loading="lazy" alt="homepage-slider-1"
+                      class="overflow-hidden image rounded-l-24 md:rounded-24">
+                  </div>
+                  <div class="splide__slide">
+                    <img
+                      src="<?php
+                      echo get_stylesheet_directory_uri() . '/assets/img/home/homepage-slider-2.avif'; ?>"
+                      loading="lazy" alt="homepage-slider-2"
+                      class="overflow-hidden image rounded-l-24 md:rounded-24">
+                  </div>
+                  <div class="splide__slide">
+                    <img
+                      src="<?php
+                      echo get_stylesheet_directory_uri() . '/assets/img/home/homepage-slider-3.avif'; ?>"
+                      loading="lazy" alt="homepage-slider-3"
+                      class="overflow-hidden image rounded-l-24 md:rounded-24">
+                  </div>
+                  <div class="splide__slide">
+                    <img
+                      src="<?php
+                      echo get_stylesheet_directory_uri() . '/assets/img/home/homepage-slider-4.avif'; ?>"
+                      loading="lazy" alt="homepage-slider-4"
+                      class="overflow-hidden image rounded-l-24 md:rounded-24">
+                  </div>
+                  <div class="splide__slide">
+                    <img
+                      src="<?php
+                      echo get_stylesheet_directory_uri() . '/assets/img/home/homepage-slider-5.avif'; ?>"
+                      loading="lazy" alt="homepage-slider-5"
+                      class="overflow-hidden image rounded-l-24 md:rounded-24">
+                  </div>
+                  <div class="splide__slide">
+                    <img
+                      src="<?php
+                      echo get_stylesheet_directory_uri() . '/assets/img/home/homepage-slider-6.avif'; ?>"
+                      loading="lazy" alt="homepage-slider-6"
+                      class="overflow-hidden image rounded-l-24 md:rounded-24">
+                  </div>
+                  <div class="splide__slide">
+                    <img
+                      src="<?php
+                      echo get_stylesheet_directory_uri() . '/assets/img/home/homepage-slider-7.avif'; ?>"
+                      loading="lazy" alt="homepage-slider-7"
+                      class="overflow-hidden image rounded-l-24 md:rounded-24">
+                  </div>
+                <?php
+                endif;
+                ?>
               </div>
             </div>
           </div>
@@ -160,7 +179,7 @@
                   pagination: false,
                   /*custom options*/
                   rewind: true,
-                  fixedWidth: "auto",
+                  fixedWidth: "100%",
                   fixedHeight: 540,
                   perMove: 1,
                   perPage: 1,
