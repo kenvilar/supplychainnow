@@ -1,5 +1,9 @@
 <?php
 
+$postID      = get_the_ID();
+$section     = get_field( 'Network_Partners_Section', $postID );
+$title       = esc_html( ! empty( $section['Title'] ) ? $section['Title'] : 'Network Partners' );
+$description = esc_html( ! empty( $section['Description'] ) ? $section['Description'] : 'Supply Chain Now is powered by partnerships. Our Network Partners are top content creators in the supply chain space - discover their content below.' );
 ?>
 <div class="rounded-b-100 overflow-hidden relative">
   <section class="section">
@@ -7,7 +11,7 @@
       <div class="w-layout-blockcontainer max-w-1036 w-container">
         <div class="mb-40 sm:mb-20">
           <div class="mb-20">
-            <h2 class="text-center">Network Partners</h2>
+            <h2 class="text-center"><?= $title; ?></h2>
           </div>
           <?php
           get_template_part( 'components/line-with-blinking-dot', null, [
@@ -19,8 +23,7 @@
           <div class="w-layout-blockcontainer max-w-612 w-container">
             <div class="text-center">
               <p class="tracking-[1.6px]">
-                Supply Chain Now is powered by partnerships. Our Network Partners are top content creators in the supply
-                chain space - discover their content below.
+                <?= $description; ?>
               </p>
             </div>
           </div>
