@@ -1,5 +1,19 @@
 <?php
 
+$postID           = get_the_ID();
+$section          = get_field( 'Content_that_Converts_to_Sales_Leads_Section', $postID );
+$title            = esc_html( ! empty ( $section['Title'] ) ? $section['Title'] : 'Content that Converts to Sales Leads' );
+$description      = ! empty ( $section['Description'] ) ? $section['Description'] : 'In just one webinar with Supply Chain Now, one company received <em>394 total registrations</em>.';
+$button1Text      = esc_html( ! empty ( $section['Button_1_Text'] ) ? $section['Button_1_Text'] : 'Read More Case Studies' );
+$button1Link      = esc_html( ! empty ( $section['Button_1_Link'] ) ? $section['Button_1_Link'] : '/case-studies-customer-stories' );
+$button2Text      = esc_html( ! empty ( $section['Button_2_Text'] ) ? $section['Button_2_Text'] : 'Explore Sponsorship' );
+$button2Link      = esc_html( ! empty ( $section['Button_2_Link'] ) ? $section['Button_2_Link'] : '/media-kit' );
+$card1Number      = esc_html( ! empty ( $section['Card_1_Number'] ) ? $section['Card_1_Number'] : '207' );
+$card1Title       = esc_html( ! empty ( $section['Card_1_Title'] ) ? $section['Card_1_Title'] : 'People attended' );
+$card1Description = esc_html( ! empty ( $section['Card_1_Description'] ) ? $section['Card_1_Description'] : 'for a 52% registration-to-attendee conversion rate.' );
+$card2Number      = esc_html( ! empty ( $section['Card_2_Number'] ) ? $section['Card_2_Number'] : '191' );
+$card2Title       = esc_html( ! empty ( $section['Card_2_Title'] ) ? $section['Card_2_Title'] : 'Attendees were net new qualified leads' );
+$card2Description = esc_html( ! empty ( $section['Card_2_Description'] ) ? $section['Card_2_Description'] : 'and passed on to the sales team.' );
 ?>
 <section class="section sm:text-center">
   <div class="site-padding pb-60 sm:py-60">
@@ -7,18 +21,18 @@
       <div class="flex gap-20 justify-between sm:flex-col items-center sm:gap-40">
         <div class="max-w-488 w-full md:max-w-full pt-120 sm:pt-0">
           <div class="mb-20">
-            <h2>Content that Converts to Sales Leads</h2>
+            <h2><?= $title; ?></h2>
           </div>
           <div class="mb-40">
-            <p class="font-family-alternate font-semibold text-lg text-secondary">In just one webinar with Supply Chain
-              Now, one company received <em>394 total registrations</em>.
-            </p>
+            <div class="font-family-alternate font-semibold! text-lg! text-secondary!">
+              <?= $description; ?>
+            </div>
           </div>
           <div class="flex items-center gap-12 sm:flex-col sm:items-stretch">
             <?php
             echo get_template_part( 'components/ui/btn', null, [
-              'text'  => 'Read More Case Studies',
-              'link'  => '/case-studies-customer-stories',
+              'text'  => $button1Text,
+              'link'  => $button1Link,
               'style' => 'primary',
               'class' => '',
               /*'attributes' => [
@@ -27,8 +41,8 @@
               ],*/
             ] );
             echo get_template_part( 'components/ui/btn', null, [
-              'text'       => 'Explore Sponsorship',
-              'link'       => '/media-kit',
+              'text'       => $button2Text,
+              'link'       => $button2Link,
               'style'      => 'primary-outline',
               'class'      => '',
               'attributes' => [
@@ -97,12 +111,12 @@
               <div class="text-center rounded-t-24 overflow-hidden relative px-20 pt-48 pb-112 cursor-pointer">
                 <div class="w-layout-blockcontainer max-w-200 w-full md:max-w-full w-container">
                   <div class="mb-4">
-                    <div class="text-36 tracking-[3.6px] text-secondary">207</div>
+                    <div class="text-36 tracking-[3.6px] text-secondary"><?= $card1Number; ?></div>
                   </div>
                   <div class="mb-28">
-                    <div class="text-md font-semibold">People attended</div>
+                    <div class="text-md font-semibold"><?= $card1Title; ?></div>
                   </div>
-                  <div class="text-sm tracking-[1.4px]">for a 52% registration-to-attendee conversion rate.</div>
+                  <div class="text-sm tracking-[1.4px]"><?= $card1Description; ?></div>
                 </div>
                 <div class="absolute absolute--full w-full h-full z--1">
                   <div class="_w-full h-full gradient2 opacity-25 group-hover-gradient5"></div>
@@ -169,12 +183,12 @@
               <div class="text-center rounded-t-24 overflow-hidden relative px-20 pt-48 pb-148 cursor-pointer">
                 <div class="w-layout-blockcontainer max-w-200 w-full md:max-w-full w-container">
                   <div class="mb-4">
-                    <div class="text-36 tracking-[3.6px] text-secondary">191</div>
+                    <div class="text-36 tracking-[3.6px] text-secondary"><?= $card2Number; ?></div>
                   </div>
                   <div class="mb-28">
-                    <div class="text-md font-semibold">Attendees were net new qualified leads</div>
+                    <div class="text-md font-semibold"><?= $card2Title; ?></div>
                   </div>
-                  <div class="text-sm tracking-[1.4px]">and passed on to the sales team.</div>
+                  <div class="text-sm tracking-[1.4px]"><?= $card2Description; ?></div>
                 </div>
                 <div class="absolute absolute--full w-full h-full z--1">
                   <div class="_w-full h-full gradient2 opacity-25 group-hover-gradient5"></div>
