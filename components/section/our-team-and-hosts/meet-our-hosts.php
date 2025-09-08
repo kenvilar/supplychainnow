@@ -106,6 +106,7 @@ $postID = get_the_ID();
               </div>
             <?php
             endwhile;
+            wp_reset_postdata();
           endif;
           ?>
           <!--<div role="listitem" class="group">

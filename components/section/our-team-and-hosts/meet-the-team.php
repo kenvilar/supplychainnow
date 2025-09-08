@@ -194,7 +194,9 @@ $title   = esc_html( ! empty( $section['Title'] ) ? $section['Title'] : 'Meet th
                 </div>
               </div>
             <?php
-            endwhile; ?>
+            endwhile;
+            wp_reset_postdata();
+            ?>
           </div>
         <?php
         else:
