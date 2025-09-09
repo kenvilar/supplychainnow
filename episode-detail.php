@@ -162,34 +162,12 @@ $episode_captivate_link_get_link_only = $episode_captivate_link_matches[1] ?? ''
                   </div>
                 </div>
                 <div class="rt--default tracking-[1.6px]">
-                  <h1 class="hidden mb-50 text-34 lh-43 font-semibold">
-                    PODCAST EPISODE:
-                    <?php
-                    the_title();
-                    ?>
-                    <br>
-                    <?php
-                    if ( get_field( 'episode_title', $pageId ) ) {
-                      echo get_field( 'episode_title', $pageId );
-                    }
-                    ?>
-                  </h1>
                   <?php
                   if ( get_field( 'episode_summary', $pageId ) ) {
                     echo wp_kses_post( get_field( 'episode_summary', $pageId ) );
                   } else {
                     if ( get_field( 'episode_summary_espanol', $pageId ) ) {
                       echo get_field( 'episode_summary_espanol', $pageId );
-                    } else {
-                      if ( get_field( 'episode_quote', $pageId ) ) {
-                        echo wp_kses_post( get_field( 'episode_quote', $pageId ) );
-                      } else {
-                        if ( get_field( 'text_for_youtube_section', $pageId ) ) {
-                          echo wp_kses_post( get_field( 'text_for_youtube_section', $pageId ) );
-                        } else {
-                          echo '';
-                        }
-                      }
                     }
                   }
                   ?>
@@ -207,26 +185,6 @@ $episode_captivate_link_get_link_only = $episode_captivate_link_matches[1] ?? ''
                   ?>
                 </div>
                 <div class="mb-52">
-                  <!--<form class="relative overflow-hidden rounded-100 border border-secondary/50 bg-[#EBF6FF]"
-								      method="get" action="<?php
-                  /*									echo esc_url(home_url(add_query_arg([]))); */ ?>">
-									<input
-										type="search"
-										name="s"
-										value="<?php
-                  /*											echo esc_attr(get_search_query()); */ ?>"
-										placeholder="Search by episode, topic, name, etc..."
-										class="overflow-hidden rounded-100 w-full h-43 py-14 pl-48 pr-12 text-sm font-light placeholder:text-secondary"
-									/>
-									<div class="absolute absolute--l flex items-center justify-center pl-22">
-										<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none">
-											<path
-												d="M6.31756 11.6351C9.25436 11.6351 11.6351 9.25436 11.6351 6.31756C11.6351 3.38075 9.25436 1 6.31756 1C3.38075 1 1 3.38075 1 6.31756C1 9.25436 3.38075 11.6351 6.31756 11.6351Z"
-												stroke="#4E88B6" stroke-miterlimit="10"/>
-											<path d="M14 13.9997L10.4529 10.4526" stroke="#4E88B6" stroke-miterlimit="10"/>
-										</svg>
-									</div>
-								</form>-->
                   <?php
                   get_template_part( 'components/ui/searchbar', null, [
                     'site_padding'  => 'px-0! py-0 pb-0',
@@ -341,10 +299,7 @@ $episode_captivate_link_get_link_only = $episode_captivate_link_matches[1] ?? ''
                                   if ( get_field( 'webinar_description', $q->post->ID ) ) {
                                     the_field( 'webinar_description', $q->post->ID );
                                   } else {
-                                    echo 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum
-							tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero
-							vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus
-							tristique posuere.';
+                                    echo '';
                                   }
                                 }
                               }
@@ -385,25 +340,6 @@ $episode_captivate_link_get_link_only = $episode_captivate_link_matches[1] ?? ''
     <div class="relative">
       <div class="min-h-990 h-full flex justify-center pt-70 pb-57 px-32">
         <div class="w-layout-blockcontainer max-w-841 w-full md:max-w-full w-container">
-          <div class="hidden mb-16 flex items-center gap-22">
-            <div class="lh-normal"><?php
-              echo get_the_date( 'F j, Y', $pageId ) ?></div>
-            <?php
-            $terms = get_the_terms( get_the_ID(), 'tags' );
-            if ( ! is_wp_error( $terms ) && ! empty( $terms ) ) {
-              $first = array_values( $terms )[0];
-              ?>
-              <div class="relative rounded-full overflow-hidden py-4 px-8">
-                <div class="relative font-semibold uppercase text-2xs text--white lh-normal z-10">
-                  <?php
-                  echo $first->name; ?>
-                </div>
-                <div class="absolute absolute--full bg-secondary"></div>
-              </div>
-              <?php
-            }
-            ?>
-          </div>
           <h3 class="mb-36 text-34 lh-43 font-semibold" scn-text-limit="2">
             <?php
             the_title(); ?>
@@ -444,12 +380,6 @@ $episode_captivate_link_get_link_only = $episode_captivate_link_matches[1] ?? ''
               } else {
                 if ( get_field( 'episode_summary', $pageId ) ) {
                   echo wp_kses_post( get_field( 'episode_summary', $pageId ) );
-                } else {
-                  if ( get_field( 'text_for_youtube_section', $pageId ) ) {
-                    echo wp_kses_post( get_field( 'text_for_youtube_section', $pageId ) );
-                  } else {
-                    echo '';
-                  }
                 }
               }
             }
