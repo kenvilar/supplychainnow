@@ -20,7 +20,7 @@ $programFeaturedEpisodes = get_field( 'program_featured_episodes', $pageId )
         <div class="mb-100">
           <div class="w-dyn-list">
             <div role="list"
-                 class="flex justify-center flex-wrap gap-28 gap-y-32 sm:flex-col sm:items-center w-dyn-items">
+                 class="flex justify-center gap-28 gap-y-32 sm:flex-col sm:items-center w-dyn-items">
               <?php
               $featured_episodes = $programFeaturedEpisodes;
               //echo '<pre>';
@@ -38,11 +38,13 @@ $programFeaturedEpisodes = get_field( 'program_featured_episodes', $pageId )
                   $selectMediaType = get_field( 'select_media_type', $value );
                   ?>
                   <a href="<?php
-                  echo esc_url( $episode_url ); ?>" class="relative w-[45%] sm:w-full group">
+                  echo esc_url( $episode_url ); ?>"
+                     class="relative <?= count( $featured_episodes ) >= 3 ? 'w-full' : 'w-[45%]'; ?> sm:w-full group">
                     <div class="relative flex flex-col justify-between gap-20 h-full">
                       <div class="w-full">
                         <div class="mb-28">
-                          <div class="overflow-hidden rounded-12 relative h-344 bg-cargogrey">
+                          <div
+                            class="overflow-hidden rounded-12 relative <?= count( $featured_episodes ) >= 3 ? 'h-222 md:h-auto' : 'h-344 md:h-auto'; ?> bg-cargogrey">
                             <img
                               src="<?php
                               echo get_the_post_thumbnail_url( $value, 'medium_large' )
@@ -100,6 +102,13 @@ $programFeaturedEpisodes = get_field( 'program_featured_episodes', $pageId )
                                   echo get_stylesheet_directory_uri() . '/assets/img/icons/play-button-webinar.avif'; ?>"
                                   loading="lazy" alt="play-button-webinar">
                                 <?php
+                              } else {
+                                ?>
+                                <img
+                                  src="<?php
+                                  echo get_stylesheet_directory_uri() . '/assets/img/icons/play-button-podcast.avif'; ?>"
+                                  loading="lazy" alt="play-button-podcast">
+                                <?php
                               }
                               ?>
                             </div>
@@ -133,20 +142,22 @@ $programFeaturedEpisodes = get_field( 'program_featured_episodes', $pageId )
                                     echo get_stylesheet_directory_uri() . '/assets/img/icons/webinar-card-icon.png'; ?>"
                                     loading="lazy" alt="webinar-person">
                                   <?php
+                                } else {
+                                  ?>
+                                  <img
+                                    class="size-24"
+                                    src="<?php
+                                    echo get_stylesheet_directory_uri() . '/assets/img/icons/podcast-card-icon.png'; ?>"
+                                    loading="lazy" alt="podcast-blue-microphone">
+                                  <?php
                                 }
                                 ?>
                               </div>
-                              <?php
-                              if ( $selectMediaType ) {
-                                ?>
-                                <div class="font-family-secondary text-sm capitalize">
-                                  <?php
-                                  echo $selectMediaType;
-                                  ?>
-                                </div>
+                              <div class="font-family-secondary text-sm capitalize">
                                 <?php
-                              }
-                              ?>
+                                echo $selectMediaType ?? 'Podcast';
+                                ?>
+                              </div>
                             </div>
                             <div class="flex items-center gap-8 text-sm font-light font-family-secondary">
                               <div>
@@ -158,12 +169,14 @@ $programFeaturedEpisodes = get_field( 'program_featured_episodes', $pageId )
                             </div>
                           </div>
                         </div>
-                        <h3 class="font-semibold" scn-text-limit="3">
+                        <h3 class="font-semibold <?= count( $featured_episodes ) <= 2 ? '' : 'text-lg'; ?>"
+                            scn-text-limit="<?= count( $featured_episodes ) >= 3 ? '2' : '3'; ?>">
                           <?php
                           echo get_the_title( $value ); ?>
                         </h3>
                       </div>
-                      <div class="w-full tracking-[1.6px]" scn-text-limit="2">
+                      <div class="w-full tracking-[1.6px] <?= count( $featured_episodes ) <= 2 ? '' : 'text-sm'; ?>"
+                           scn-text-limit="<?= count( $featured_episodes ) <= 2 ? '2' : '3'; ?>">
                         <?php
                         if ( get_the_excerpt( $value ) ) {
                           echo get_the_excerpt( $value );
