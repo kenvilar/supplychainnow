@@ -1,12 +1,15 @@
 <?php
 
+$pageID  = get_the_ID();
+$section = get_field( 'Women_in_Supply_Chain_Section', $pageID );
+$title   = esc_html( ! empty( $section['Title'] ) ? $section['Title'] : 'Women in Supply Chain' );
 ?>
 <section class="section">
   <div class="site-padding sm:py-60 pb-80">
     <div class="w-layout-blockcontainer max-w-1372 relative w-container">
       <div class="mb-52">
         <div class="mb-20">
-          <h2 class="text-center">Women in Supply Chain</h2>
+          <h2 class="text-center"><?= $title; ?></h2>
         </div>
         <?php
         get_template_part( 'components/line-with-blinking-dot', null, [
@@ -20,65 +23,59 @@
             <div class="splide__track">
               <div class="splide__list">
                 <?php
-                /*echo get_template_part('components/ui/card2', null, [
-                  'q' => [
-                    'posts_per_page' => -1,
-                    "meta_query" => [],
-                    'tax_query' => [
-                      [
-                        'taxonomy' => 'tags',
-                        'field' => 'slug',
-                        'terms' => ['women-in-supply-chain'],
-                      ]
-                    ],
-                  ],
-                  'attributes' => [],
-                  'classNames' => 'splide__slide',
-                  'noItemsFound' => '',
-                ]);*/
-                echo get_template_part( 'components/ui/card1', null, [
-                  'q'             => [
-                    "meta_query" => [
-                      [
-                        "relation" => "AND",
+                if ( ! empty( $section['Women_in_Supply_Chain_Repeater'] ) ) :
+                  foreach ( $section['Women_in_Supply_Chain_Repeater'] as $idx => $item ) :
+                    $item = $item['Item'];
+                    echo get_template_part( 'components/ui/card-for-slider', null, [
+                      "item" => $item,
+                    ] );
+                  endforeach;
+                  wp_reset_postdata();
+                else:
+                  echo get_template_part( 'components/ui/card1', null, [
+                    'q'             => [
+                      "meta_query" => [
                         [
-                          'key'     => '_wp_page_template',
-                          'value'   => [ 'episode-detail.php', 'livestream-detail.php', ],
-                          'compare' => 'IN',
-                          'type'    => 'CHAR',
+                          "relation" => "AND",
+                          [
+                            'key'     => '_wp_page_template',
+                            'value'   => [ 'episode-detail.php', 'livestream-detail.php', ],
+                            'compare' => 'IN',
+                            'type'    => 'CHAR',
+                          ],
+                        ],
+                      ],
+                      'tax_query'  => [
+                        [
+                          'taxonomy' => 'tags',
+                          'field'    => 'slug',
+                          'terms'    => [ 'women-in-supply-chain' ],
+                        ]
+                      ],
+                    ],
+                    'q_post'        => [
+                      "tax_query" => [
+                        'relationship' => "OR",
+                        [
+                          "taxonomy" => "category",
+                          "field"    => "name",
+                          "terms"    => [ "Podcast Episode", ],
+                          "operator" => "IN",
+                        ],
+                        [
+                          'taxonomy' => 'tags',
+                          'field'    => 'slug',
+                          'terms'    => [ 'women-in-supply-chain' ],
                         ],
                       ],
                     ],
-                    'tax_query'  => [
-                      [
-                        'taxonomy' => 'tags',
-                        'field'    => 'slug',
-                        'terms'    => [ 'women-in-supply-chain' ],
-                      ]
-                    ],
-                  ],
-                  'q_post'        => [
-                    "tax_query" => [
-                      'relationship' => "OR",
-                      [
-                        "taxonomy" => "category",
-                        "field"    => "name",
-                        "terms"    => [ "Podcast Episode", ],
-                        "operator" => "IN",
-                      ],
-                      [
-                        'taxonomy' => 'tags',
-                        'field'    => 'slug',
-                        'terms'    => [ 'women-in-supply-chain' ],
-                      ],
-                    ],
-                  ],
-                  'post_per_page' => 500,
-                  'card_size'     => 'small',
-                  'attributes'    => [],
-                  'classNames'    => 'splide__slide',
-                  'noItemsFound'  => '',
-                ] );
+                    'post_per_page' => 500,
+                    'card_size'     => 'small',
+                    'attributes'    => [],
+                    'classNames'    => 'splide__slide',
+                    'noItemsFound'  => '',
+                  ] );
+                endif;
                 ?>
               </div>
             </div>
