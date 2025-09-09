@@ -9,9 +9,14 @@ set_query_var( 'header_args', [
 get_header();
 $pageId = get_the_ID();
 
-$iframe = get_field( 'youtube_embed_link', $pageId ); // returns iframe HTML
-preg_match( '/src="([^"]+)"/', $iframe, $matches ); // Extract the src attribute from the iframe
+$iframe_youtube = get_field( 'youtube_embed_link', $pageId ); // returns iframe HTML
+preg_match( '/src="([^"]+)"/', $iframe_youtube, $matches ); // Extract the src attribute from the iframe
 $youtube_url = $matches[1] ?? '';
+
+$mp3AudioLink           = get_field( 'MP3Audio_Link', $pageId );
+$episode_captivate_link = get_field( 'episode_captivate_link', $pageId );
+preg_match( '/src="([^"]+)"/', $episode_captivate_link, $episode_captivate_link_matches );
+$episode_captivate_link_get_link_only = $episode_captivate_link_matches[1] ?? '';
 ?>
   <div class="page-wrapper">
     <div class="main-wrapper">
@@ -30,8 +35,7 @@ $youtube_url = $matches[1] ?? '';
             <div class="overflow-hidden rounded-25 relative">
               <div class="relative group z-1 text-align-center">
                 <img class="relative z-10 w-auto overflow-hidden rounded-25 max-h-568 sm:max-h-200"
-                     src="
-															<?php
+                     src="<?php
                      if ( get_field( 'upload_cover_image', $pageId ) ) {
                        echo get_field( 'upload_cover_image', $pageId );
                      } else {
@@ -39,11 +43,19 @@ $youtube_url = $matches[1] ?? '';
                      }
                      ?>" alt="">
                 <?php
-                if ( $youtube_url ) {
+                if ( $youtube_url || $episode_captivate_link_get_link_only || $mp3AudioLink ) :
                   ?>
                   <a href="<?php
                   if ( $youtube_url ) {
                     echo esc_url( $youtube_url );
+                  } else {
+                    if ( ! empty( $episode_captivate_link_get_link_only ) ) {
+                      echo $episode_captivate_link_get_link_only;
+                    } else {
+                      if ( ! empty( $mp3AudioLink ) ) {
+                        echo $mp3AudioLink;
+                      }
+                    }
                   } ?>" target="_blank" rel="noopener noreferrer"
                      class="absolute absolute--full z-10 flex items-center justify-center translate-y-300 group-hover:translate-y-0 transition-all duration-500">
                     <img
@@ -52,8 +64,8 @@ $youtube_url = $matches[1] ?? '';
                            "/assets/img/icons/play-button-podcast.avif"; ?>"
                       loading="lazy" alt="play-button-podcast">
                   </a>
-                  <?php
-                }
+                <?php
+                endif;
                 ?>
               </div>
               <!--<div class="absolute absolute--full bg-cargogrey z--1"></div>-->
@@ -61,54 +73,44 @@ $youtube_url = $matches[1] ?? '';
           </div>
         </div>
       </section>
-      <section class="section">
-        <div class="site-padding sm:py-60 pt-20 pb-40">
-          <div class="mx-auto max-w-1249 w-full md:max-w-full">
-            <div class="relative overflow-hidden shadow4 rounded-8 pt-56 pb-47 px-20">
-              <div class="mx-auto max-w-1129 w-full md:max-w-full">
-                <div class="hidden mb-16 flex items-center gap-22">
-                  <div class="lh-normal">
-                    <?php
-                    echo get_the_date( 'F j, Y', $pageId )
-                    ?>
-                  </div>
+      <?php
+      if ( $episode_captivate_link || $mp3AudioLink || $iframe_youtube ) :
+        ?>
+        <section class="section">
+          <div class="site-padding sm:py-60 pt-20 pb-40">
+            <div class="mx-auto max-w-1249 w-full md:max-w-full">
+              <div class="relative overflow-hidden shadow4 rounded-8 pt-56 pb-47 px-20">
+                <div class="mx-auto max-w-1129 w-full md:max-w-full flex justify-center">
                   <?php
-                  $terms = get_the_terms( $pageId, 'tags' );
-                  if ( ! is_wp_error( $terms ) && ! empty( $terms ) ) {
-                    $first = array_values( $terms )[0];
-                    ?>
-                    <div class="relative rounded-full overflow-hidden py-4 px-8">
-                      <div class="relative font-semibold uppercase text-2xs text--white! lh-normal z-10">
-                        <?php
-                        echo $first->name; ?>
-                      </div>
-                      <div class="absolute absolute--full bg-secondary"></div>
-                    </div>
-                    <?php
-                  }
-                  ?>
-                </div>
-                <h3 class="hidden mb-50 text-34 lh-43 font-semibold">
-                  <?php
-                  if ( get_field( 'episode_title', $pageId ) ) {
-                    echo get_field( 'episode_title', $pageId );
+                  if ( ! empty( $episode_captivate_link ) ) {
+                    echo $episode_captivate_link;
                   } else {
-                    the_title();
-                  }
-                  ?>
-                </h3>
-                <div>
-                  <?php
-                  if ( ! empty( get_field( 'episode_captivate_link', $pageId ) ) ) {
-                    echo get_field( "episode_captivate_link", $pageId );
+                    if ( ! empty( $mp3AudioLink ) ) {
+                      ?>
+                      <audio class="wp-audio-shortcode" id="audio-26231-1" preload="none" style="width: 100%;"
+                             controls="controls">
+                        <source type="audio/mpeg"
+                                src="<?= $mp3AudioLink; ?>?_=1" />
+                        <a href="<?= $mp3AudioLink; ?>">
+                          https://episodes.captivate.fm/episode/28f8a5ee-e04d-4324-9bf2-74880d8ed8f5.mp3
+                        </a>
+                      </audio>
+                      <?php
+                    } else {
+                      if ( ! empty( $iframe_youtube ) ) {
+                        echo $iframe_youtube;
+                      }
+                    }
                   }
                   ?>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      <?php
+      endif;
+      ?>
       <section class="section">
         <div class="site-padding sm:py-60 py-64">
           <div class="mx-auto max-w-1249 w-full md:max-w-full">
@@ -414,13 +416,6 @@ $youtube_url = $matches[1] ?? '';
               ?>
             </div>
             <div class="flex items-center gap-12">
-              <?php
-              $iframe = get_field( 'youtube_embed_link', $pageId ); // returns iframe HTML
-
-              // Extract the src attribute from the iframe
-              preg_match( '/src="([^"]+)"/', $iframe, $matches );
-              $youtube_url = $matches[1] ?? '';
-              ?>
               <a href="<?php
               if ( $youtube_url ) {
                 echo esc_url( $youtube_url );
