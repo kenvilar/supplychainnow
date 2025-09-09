@@ -9,36 +9,36 @@
           <h2 class="text-center">Featured Webinars</h2>
         </div>
         <?php
-        get_template_part('components/line-with-blinking-dot', null, [
+        get_template_part( 'components/line-with-blinking-dot', null, [
           'maxWidthClassnames' => ''
-        ]);
+        ] );
         ?>
       </div>
       <div class="w-layout-blockcontainer max-w-1252 w-container">
         <div class="w-dyn-list">
           <div role="list" class="flex justify-center gap-28 sm:flex-col w-dyn-items">
             <?php
-            echo get_template_part('components/ui/card1', null, [
-              'q' => [
+            echo get_template_part( 'components/ui/card1', null, [
+              'q'             => [
                 "meta_query" => [
                   [
                     "relation" => "AND",
                     [
-                      'key' => '_wp_page_template',
-                      'value' => ['webinar-detail.php',],
+                      'key'     => '_wp_page_template',
+                      'value'   => [ 'webinar-detail.php', ],
                       'compare' => 'IN',
-                      'type' => 'CHAR',
+                      'type'    => 'CHAR',
                     ],
                   ],
                 ],
               ],
-              'q_post' => [],
+              'q_post'        => [],
               'post_per_page' => 2,
-              'post_type' => ['page'],
-              'attributes' => [],
-              'classNames' => '',
-              'noItemsFound' => '',
-            ]);
+              'post_type'     => [ 'page' ],
+              'attributes'    => [],
+              'classNames'    => '',
+              'noItemsFound'  => '',
+            ] );
             ?>
           </div>
         </div>

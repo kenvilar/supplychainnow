@@ -9,9 +9,9 @@
           <h2 class="text-center">Women in Supply Chain</h2>
         </div>
         <?php
-        get_template_part('components/line-with-blinking-dot', null, [
+        get_template_part( 'components/line-with-blinking-dot', null, [
           'maxWidthClassnames' => ''
-        ]);
+        ] );
         ?>
       </div>
       <div class="relative">
@@ -36,54 +36,54 @@
                   'classNames' => 'splide__slide',
                   'noItemsFound' => '',
                 ]);*/
-                echo get_template_part('components/ui/card1', null, [
-                  'q' => [
+                echo get_template_part( 'components/ui/card1', null, [
+                  'q'             => [
                     "meta_query" => [
                       [
                         "relation" => "AND",
                         [
-                          'key' => '_wp_page_template',
-                          'value' => ['episode-detail.php', 'livestream-detail.php',],
+                          'key'     => '_wp_page_template',
+                          'value'   => [ 'episode-detail.php', 'livestream-detail.php', ],
                           'compare' => 'IN',
-                          'type' => 'CHAR',
+                          'type'    => 'CHAR',
                         ],
                       ],
                     ],
-                    'tax_query' => [
+                    'tax_query'  => [
                       [
                         'taxonomy' => 'tags',
-                        'field' => 'slug',
-                        'terms' => ['women-in-supply-chain'],
+                        'field'    => 'slug',
+                        'terms'    => [ 'women-in-supply-chain' ],
                       ]
                     ],
                   ],
-                  'q_post' => [
+                  'q_post'        => [
                     "tax_query" => [
                       'relationship' => "OR",
                       [
                         "taxonomy" => "category",
-                        "field" => "name",
-                        "terms" => ["Podcast Episode",],
+                        "field"    => "name",
+                        "terms"    => [ "Podcast Episode", ],
                         "operator" => "IN",
                       ],
                       [
                         'taxonomy' => 'tags',
-                        'field' => 'slug',
-                        'terms' => ['women-in-supply-chain'],
+                        'field'    => 'slug',
+                        'terms'    => [ 'women-in-supply-chain' ],
                       ],
                     ],
                   ],
                   'post_per_page' => 500,
-                  'card_size' => 'small',
-                  'attributes' => [],
-                  'classNames' => 'splide__slide',
-                  'noItemsFound' => '',
-                ]);
+                  'card_size'     => 'small',
+                  'attributes'    => [],
+                  'classNames'    => 'splide__slide',
+                  'noItemsFound'  => '',
+                ] );
                 ?>
               </div>
             </div>
             <?php
-            get_template_part('components/splide-arrows');
+            get_template_part( 'components/splide-arrows' );
             ?>
           </div>
           <div class="display-none w-embed">
@@ -114,7 +114,7 @@
                     autoplay: false,
                     pauseOnHover: true,
                     updateOnMove: true,
-                    lazyLoad: 'nearby', //boost performance
+                    lazyLoad: "nearby", //boost performance
                     drag: false, //boost performance
                     speed: 400, //boost performance
                     autoScroll: {

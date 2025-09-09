@@ -110,7 +110,7 @@
                   // autoplay: true,
                   pauseOnHover: true,
                   updateOnMove: true,
-                  lazyLoad: 'nearby', //boost performance
+                  lazyLoad: "nearby", //boost performance
                   drag: false, //boost performance
                   speed: 400, //boost performance
                   autoScroll: {
@@ -236,7 +236,7 @@
                   // autoplay: true,
                   pauseOnHover: true,
                   updateOnMove: true,
-                  lazyLoad: 'nearby', //boost performance
+                  lazyLoad: "nearby", //boost performance
                   drag: false, //boost performance
                   speed: 400, //boost performance
                   autoScroll: {

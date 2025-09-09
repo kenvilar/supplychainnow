@@ -65,21 +65,21 @@
 <script>
   function shareToFacebook() {
     window.open('https://www.facebook.com/sharer.php?u=<?php
-      echo urlencode(get_permalink()); ?>', "sharer", "toolbar=0,status=0,width=620,height=280");
+      echo urlencode( get_permalink() ); ?>', "sharer", "toolbar=0,status=0,width=620,height=280");
   }
 
   function shareToTwitter() {
     popUp = window.open('https://twitter.com/intent/tweet?url=<?php
-      echo urlencode(get_permalink()); ?>&text=<?php
-      echo urlencode(get_the_title()); ?>', "popupwindow", "scrollbars=yes,width=800,height=400");
+      echo urlencode( get_permalink() ); ?>&text=<?php
+      echo urlencode( get_the_title() ); ?>', "popupwindow", "scrollbars=yes,width=800,height=400");
     popUp.focus();
     return false;
   }
 
   function shareToLinkedin() {
     popUp = window.open('https://linkedin.com/shareArticle?mini=true&url=<?php
-      echo urlencode(get_permalink()); ?>&title=<?php
-      echo urlencode(get_the_title()); ?>', "popupwindow", "scrollbars=yes,width=800,height=400");
+      echo urlencode( get_permalink() ); ?>&title=<?php
+      echo urlencode( get_the_title() ); ?>', "popupwindow", "scrollbars=yes,width=800,height=400");
     popUp.focus();
     return false;
   }

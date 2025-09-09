@@ -9,7 +9,7 @@
           <h2 class="text-center">On-Demand Webinars</h2>
         </div>
         <?php
-        get_template_part("components/line-with-blinking-dot"); ?>
+        get_template_part( "components/line-with-blinking-dot" ); ?>
       </div>
       <div class="relative">
         <div class="w-layout-blockcontainer max-w-1252 w-container">
@@ -52,31 +52,31 @@
                   "classNames" => "splide__slide",
                   "noItemsFound" => "",
                 ]);*/
-                echo get_template_part('components/ui/card1', null, [
-                  'q' => [
+                echo get_template_part( 'components/ui/card1', null, [
+                  'q'             => [
                     "meta_query" => [
                       [
                         "relation" => "AND",
                         [
-                          'key' => '_wp_page_template',
-                          'value' => ['webinar-detail.php',],
+                          'key'     => '_wp_page_template',
+                          'value'   => [ 'webinar-detail.php', ],
                           'compare' => 'IN',
-                          'type' => 'CHAR',
+                          'type'    => 'CHAR',
                         ],
                       ],
                     ],
                   ],
-                  'card_size' => 'small',
+                  'card_size'     => 'small',
                   "post_per_page" => 15,
-                  'post_type' => ['page'],
-                  'attributes' => [],
-                  'classNames' => 'splide__slide',
-                ]);
+                  'post_type'     => [ 'page' ],
+                  'attributes'    => [],
+                  'classNames'    => 'splide__slide',
+                ] );
                 ?>
               </div>
             </div>
             <?php
-            get_template_part("components/splide-arrows"); ?>
+            get_template_part( "components/splide-arrows" ); ?>
           </div>
           <div class="display-none w-embed">
             <style>
@@ -106,7 +106,7 @@
                     autoplay: false,
                     pauseOnHover: true,
                     updateOnMove: true,
-                    lazyLoad: 'nearby', //boost performance
+                    lazyLoad: "nearby", //boost performance
                     drag: false, //boost performance
                     speed: 400, //boost performance
                     autoScroll: {
