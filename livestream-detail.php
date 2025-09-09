@@ -45,7 +45,7 @@ $youtube_url = $matches[1] ?? '';
                   if ( $youtube_url ) {
                     echo esc_url( $youtube_url );
                   } ?>" target="_blank" rel="noopener noreferrer"
-                     class="absolute absolute--full z-0 flex items-center justify-center translate-y-300 group-hover:translate-y-0 transition-all duration-500">
+                     class="absolute absolute--full z-10 flex items-center justify-center translate-y-300 group-hover:translate-y-0 transition-all duration-500">
                     <img
                       src="<?php
                       echo get_stylesheet_directory_uri() .

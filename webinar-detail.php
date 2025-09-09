@@ -44,7 +44,7 @@ $webinar_button_link = get_field( 'webinar_button_link', $pageId );
                   if ( $webinar_button_link ) {
                     echo esc_url( $webinar_button_link );
                   } ?>" target="_blank" rel="noopener noreferrer"
-                     class="absolute absolute--full flex items-center justify-center translate-y-300 group-hover:translate-y-0 transition-all duration-500">
+                     class="absolute absolute--full z-10 flex items-center justify-center translate-y-300 group-hover:translate-y-0 transition-all duration-500">
                     <img
                       src="<?php
                       echo get_stylesheet_directory_uri() .
