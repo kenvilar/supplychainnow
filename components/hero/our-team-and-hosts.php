@@ -1,9 +1,9 @@
 <?php
 
-$postId     = get_the_ID();
-$page_title = get_field( 'Page_Title', $postId ) ?: 'Our Team & Hosts';
+$pageID     = get_the_ID();
+$page_title = get_field( 'Page_Title', $pageID ) ?: 'Our Team & Hosts';
 $hero_image = get_field( 'Hero_Image',
-  $postId ) ?: get_stylesheet_directory_uri() . '/assets/img/hero-img/hero--our-team-and-hosts.avif';
+  $pageID ) ?: get_stylesheet_directory_uri() . '/assets/img/hero-img/hero--our-team-and-hosts.avif';
 ?>
 <section class="section bg-cargogrey text-white rounded-b-100">
   <div class="site-padding sm:py-60 pt-200 pb-100 relative z-10">
