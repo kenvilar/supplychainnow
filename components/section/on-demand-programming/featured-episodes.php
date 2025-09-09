@@ -1,14 +1,16 @@
 <?php
 
-$postId                    = get_the_ID();
-$featured_content_podcasts = get_field( 'featured_content_podcasts', $postId );
+$pageID                    = get_the_ID();
+$featured_content_podcasts = get_field( 'featured_content_podcasts', $pageID );
+$section                   = get_field( 'Featured_Episodes_Section', $pageID );
+$title                     = esc_html( ! empty( $section['Title'] ) ? $section['Title'] : 'Featured Episodes' );
 ?>
 <section class="section">
   <div class="site-padding sm:py-60 pt-60 pb-80">
     <div class="w-layout-blockcontainer max-w-1372 relative w-container">
       <div class="mb-44">
         <div class="mb-20">
-          <h2 class="text-center">Featured Episodes</h2>
+          <h2 class="text-center"><?= $title; ?></h2>
         </div>
         <?php
         get_template_part( "components/line-with-blinking-dot" ); ?>
@@ -47,25 +49,6 @@ $featured_content_podcasts = get_field( 'featured_content_podcasts', $postId );
                 }
               }
             }
-            /*echo get_template_part("components/ui/card1", null, [
-              "q" => [
-                "meta_query" => [
-                  [
-                    "relation" => "AND",
-                    [
-                      'key'     => '_wp_page_template',
-                      'value'   => ['episode-detail.php', 'livestream-detail.php'],
-                      'compare' => 'IN',
-                      'type'    => 'CHAR',
-                    ],
-                  ],
-                ],
-              ],
-              "post_per_page" => 2,
-              "attributes" => [],
-              "classNames" => "",
-              "noItemsFound" => "",
-            ]);*/
             ?>
           </div>
         </div>
