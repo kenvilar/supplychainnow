@@ -1,12 +1,15 @@
 <?php
 
+$pageID  = get_the_ID();
+$section = get_field( 'Awards_&_Recognitions_Section', $pageID );
+$title   = esc_html( ! empty( $section['Title'] ) ? $section['Title'] : 'Awards &amp; Recognitions' );
 ?>
 <section class="section sm:py-60 py-64">
   <div class="site-padding">
     <div class="w-layout-blockcontainer max-w-1388 w-container">
       <div class="mb-44">
         <div class="mb-20">
-          <h2 class="text-center">Awards &amp; Recognitions</h2>
+          <h2 class="text-center"><?= $title; ?></h2>
         </div>
         <?php
         get_template_part( 'components/line-with-blinking-dot', null, [
@@ -18,23 +21,39 @@
   </div>
   <div slider-1="" class="splide">
     <div class="splide__track overflow-visible!">
-      <div class="splide__list">
+      <div class="splide__list items-center">
         <?php
-        // Number of images you have
-        $total_awards = 8;
-
-        for ( $i = 1; $i <= $total_awards; $i ++ ) : ?>
-          <div class="splide__slide">
-            <div class="awards-pentagon-block">
-              <img
-                src="<?php
-                echo get_stylesheet_directory_uri() . "/assets/img/our-story/about--awards-{$i}.avif"; ?>"
-                loading="lazy" alt="Award <?php
-              echo $i; ?>" class="image h-auto">
+        if ( ! empty( $section['Slider'] ) ) :
+          foreach ( $section['Slider'] as $idx => $image ) :
+            $image = esc_url( $image );
+            ?>
+            <div class="splide__slide">
+              <div class="awards-pentagon-block">
+                <img
+                  src="<?= $image; ?>"
+                  loading="lazy" alt="Award <?= $idx + 1; ?>" class="image h-auto">
+              </div>
             </div>
-          </div>
-        <?php
-        endfor; ?>
+          <?php
+          endforeach;
+        else:
+          // Number of images you have
+          $total_awards = 8;
+
+          for ( $i = 1; $i <= $total_awards; $i ++ ) : ?>
+            <div class="splide__slide">
+              <div class="awards-pentagon-block">
+                <img
+                  src="<?php
+                  echo get_stylesheet_directory_uri() . "/assets/img/our-story/about--awards-{$i}.avif"; ?>"
+                  loading="lazy" alt="Award <?php
+                echo $i; ?>" class="image h-auto">
+              </div>
+            </div>
+          <?php
+          endfor;
+        endif;
+        ?>
       </div>
     </div>
     <div class="display-none w-embed">
