@@ -43,20 +43,21 @@ $episode_captivate_link_get_link_only = $episode_captivate_link_matches[1] ?? ''
                      }
                      ?>" alt="">
                 <?php
-                if ( $episode_captivate_link_get_link_only || $mp3AudioLink || $youtube_url ) :
+                if ( $mp3AudioLink || $episode_captivate_link_get_link_only || $youtube_url ) :
                   ?>
                   <a href="<?php
-                  if ( ! empty( $episode_captivate_link_get_link_only ) ) {
-                    echo esc_url( $episode_captivate_link_get_link_only );
-                  } else {
-                    if ( ! empty( $mp3AudioLink ) ) {
-                      echo esc_url( $mp3AudioLink );
-                    } else {
-                      if ( ! empty( $youtube_url ) ) {
+                  if ( ! empty( $mp3AudioLink ) ):
+                    echo esc_url( $mp3AudioLink );
+                  else:
+                    if ( ! empty( $episode_captivate_link_get_link_only ) ):
+                      echo esc_url( $episode_captivate_link_get_link_only );
+                    else:
+                      if ( ! empty( $youtube_url ) ):
                         echo esc_url( $youtube_url );
-                      }
-                    }
-                  } ?>" target="_blank" rel="noopener noreferrer"
+                      endif;
+                    endif;
+                  endif;
+                  ?>" target="_blank" rel="noopener noreferrer"
                      class="absolute absolute--full z-10 flex items-center justify-center translate-y-300 group-hover:translate-y-0 transition-all duration-500">
                     <img
                       src="<?php
