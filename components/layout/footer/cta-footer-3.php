@@ -8,15 +8,14 @@
         <h2 class="text-45">Book a Free Strategy Session</h2>
       </div>
       <div class="mb-28">
-        <p class="font-family-alternate font-semibold text-lg">Ready to get in front of 1M+ Supply Chain
-          Professionals?
+        <p class="font-family-alternate font-semibold text-lg">
+          Ready to get in front of 1M+ Supply Chain Professionals?
         </p>
       </div>
       <div class="mb-52">
         <div class="w-layout-blockcontainer max-w-568 w-container">
-          <p class="tracking-[1.6px]">Book a call today to learn about our packages that include podcasts,
-            livestreams,
-            webinars, and much more.
+          <p class="tracking-[1.6px]">
+            Book a call today to learn about our packages that include podcasts, livestreams, webinars, and much more.
           </p>
         </div>
       </div>
