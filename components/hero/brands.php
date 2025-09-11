@@ -23,7 +23,7 @@ $hide_icon   = get_field( 'Hide_Icon', $pageID ) ?: false;
         <h1><?= $page_title; ?></h1>
       </div>
       <div>
-        <p class="font-family-alternate font-medium text-xl tracking-[2.4px] capitalize">
+        <p class="font-family-alternate font-medium text-xl tracking-[2.4px]">
           <?= $description; ?>
         </p>
       </div>
