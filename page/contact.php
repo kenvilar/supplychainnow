@@ -7,7 +7,8 @@ set_query_var( 'header_args', [
   'nav_classnames' => 'nav-fixed', // '' || 'nav-fixed'
 ] );
 get_header();
-$pageId = get_the_ID();
+$pageId     = get_the_ID();
+$embed_code = get_field( 'Embed_Code', $pageId ) ?: '';
 ?>
 <div class="page-wrapper">
   <div class="main-wrapper">
@@ -18,9 +19,17 @@ $pageId = get_the_ID();
       <div class="site-padding sm:py-60 py-84">
         <div class="w-layout-blockcontainer max-w-1252 w-container">
           <div class="w-embed w-script">
-            <script src="https://js.hsforms.net/forms/embed/49227407.js" defer></script>
-            <div class="hs-form-frame" data-region="na1" data-form-id="f4a3b3e0-7d0c-4a13-a9f5-4e952150321d"
-                 data-portal-id="49227407"></div>
+            <?php
+            if ( ! empty( $embed_code ) ):
+              echo $embed_code;
+            else:
+              ?>
+              <script src="https://js.hsforms.net/forms/embed/49227407.js" defer></script>
+              <div class="hs-form-frame" data-region="na1" data-form-id="f4a3b3e0-7d0c-4a13-a9f5-4e952150321d"
+                   data-portal-id="49227407"></div>
+            <?php
+            endif;
+            ?>
           </div>
         </div>
       </div>
