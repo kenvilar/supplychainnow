@@ -1,30 +1,32 @@
 <?php
 
+$pageID      = get_the_ID();
+$page_title  = esc_html( get_field( 'Page_Title', $pageID ) ?: 'Upcoming Live Programming' );
+$description = esc_html( get_field( 'Description', $pageID ) ?: "" );
+$hero_image  = esc_url( get_field( 'Hero_Image',
+  $pageID ) ?: get_stylesheet_directory_uri() . '/assets/img/hero-img/hero--upcoming-live-programming.avif' );
+$icon        = esc_url( get_field( 'Icon',
+  $pageID ) ?: get_stylesheet_directory_uri() . '/assets/img/icons/calendar.svg' );
+$hide_icon   = get_field( 'Hide_Icon', $pageID ) ?: false;
 ?>
 <div class="relative">
   <section class="section bg-cargogrey text-white rounded-b-100 overflow-visible!">
     <div class="site-padding sm:py-60 pt-200 pb-100 relative z-10 pb-200">
       <div class="w-layout-blockcontainer pt-40 w-container text-center max-w-960">
-        <div class="mb-20">
+        <div class="mb-20 <?= $hide_icon ? 'hidden' : '' ?>">
           <img
-            src="<?= get_stylesheet_directory_uri() . '/assets/img/icons/calendar.svg' ?>"
+            class="size-53 mx-auto"
+            src="<?= $icon; ?>"
             loading="lazy" alt="">
         </div>
         <div class="mb-16">
-          <h1>Upcoming Live Programming</h1>
+          <h1><?= $page_title; ?></h1>
         </div>
       </div>
     </div>
     <div class="absolute absolute--full w-full h-full">
       <img
-        src="<?php
-        /*if ( has_post_thumbnail( get_the_ID() ) ) {
-          echo get_the_post_thumbnail_url( get_the_ID(), 'full' );
-        } else {
-          echo get_stylesheet_directory_uri() . '/assets/img/hero-img/hero--upcoming-live-programming.avif';
-        }*/
-        echo get_stylesheet_directory_uri() . '/assets/img/hero-img/hero--upcoming-live-programming.avif';
-        ?>"
+        src="<?= $hero_image; ?>"
         loading="lazy" alt="hero-upcoming-live-programming" class="image opacity-10">
     </div>
   </section>
