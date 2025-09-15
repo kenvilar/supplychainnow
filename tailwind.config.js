@@ -67,6 +67,13 @@ module.exports = {
 			45: ["45px", {lineHeight: "55px"}],
 		},
 	},
+  //another option of you want to have desktop first and then mobile
+  /*screens: {
+    lg: { max: '1279px' },
+    md: { max: '991px' },
+    sm: { max: '767px' },
+    xs: { max: '479px' },
+  },*/
 	plugins: [
 		plugin(function ({matchUtilities, theme}) {
 			matchUtilities(
