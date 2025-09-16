@@ -9,7 +9,6 @@ set_query_var( 'header_args', [
 get_header();
 $pageId  = get_the_ID();
 $section = get_field( 'Popup_Modal_Section', $pageId );
-var_dump( $section['Is_Modal_Disable'] );
 ?>
   <style>
 		html {
