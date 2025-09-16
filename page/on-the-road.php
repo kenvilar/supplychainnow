@@ -7,7 +7,8 @@ set_query_var( 'header_args', [
   'nav_classnames' => 'nav-fixed', // '' || 'nav-fixed'
 ] );
 get_header();
-$pageId = get_the_ID();
+$pageId  = get_the_ID();
+$section = get_field( 'Do_you_want_to_partner_with_Supply_Chain_Now_Section', $pageId );
 ?>
 <div class="page-wrapper">
   <div class="main-wrapper">
@@ -23,9 +24,17 @@ $pageId = get_the_ID();
   <div class="relative">
     <div class="h-full flex justify-center pt-68 pb-80 px-20">
       <div class="w-layout-blockcontainer max-w-796 w-full md:max-w-full w-container">
-        <script src="https://js.hsforms.net/forms/embed/49227407.js" defer></script>
-        <div class="hs-form-frame" data-region="na1" data-form-id="29f0ac3d-a381-4fa1-aa52-b3f8a87d060f"
-             data-portal-id="49227407"></div>
+        <?php
+        if ( ! empty( $section['Popup_Modal_Content'] ) ) :
+          echo $section['Popup_Modal_Content'];
+        else:
+          ?>
+          <script src="https://js.hsforms.net/forms/embed/49227407.js" defer></script>
+          <div class="hs-form-frame" data-region="na1" data-form-id="29f0ac3d-a381-4fa1-aa52-b3f8a87d060f"
+               data-portal-id="49227407"></div>
+        <?php
+        endif;
+        ?>
       </div>
     </div>
     <div close-modal="" class="flex absolute absolute--tr p-12 mt-36 mr-36 cursor-pointer w-embed">
@@ -46,10 +55,16 @@ $pageId = get_the_ID();
         if (openModal) {
           openModal.addEventListener("click", function(e) {
             e.preventDefault();
+            <?php
+            if ( ! $section['Is_Modal_Disable'] ) :
+            ?>
             // open the modal
             setTimeout(function() {
               myModal.showModal();
             }, 200);
+            <?php
+            endif;
+            ?>
           });
         }
         if (closeModal) {
