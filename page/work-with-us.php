@@ -10,11 +10,11 @@ get_header();
 $pageId = get_the_ID();
 ?>
 <style>
-	.w-list-unstyled li {
+	.list-circle li {
 		list-style: disc !important;
 		list-style-type: disc !important;
 	}
-	li ::marker {
+	.list-circle li ::marker {
 		font-size: 9px;
 	}
 </style>
