@@ -1,12 +1,15 @@
 <?php
 
+$pageID  = get_the_ID();
+$section = get_field( 'On-Demand_Webinars_Section', $pageID );
+$title   = esc_html( ! empty( $section['Title'] ) ? $section['Title'] : 'On-Demand Webinars' );
 ?>
 <section class="section">
   <div class="site-padding sm:py-60 pb-80">
     <div class="w-layout-blockcontainer max-w-1372 relative w-container">
       <div class="mb-52">
         <div class="mb-20">
-          <h2 class="text-center">On-Demand Webinars</h2>
+          <h2 class="text-center"><?= $title; ?></h2>
         </div>
         <?php
         get_template_part( "components/line-with-blinking-dot" ); ?>
@@ -17,61 +20,36 @@
             <div class="splide__track">
               <div class="splide__list">
                 <?php
-                /*echo get_template_part("components/ui/card2", null, [
-                  "q" => [
-                    "posts_per_page" => -1,
-                    'no_found_rows' => true,  // set true if not paginating
-                    'update_post_meta_cache' => false, // set false if not reading lots of meta
-                    'update_post_term_cache' => false,
-                    "meta_query" => [
-                      "relation" => "AND",
-                      [
-                        "relation" => "OR",
+                if ( ! empty( $section['On-Demand_Webinars_Repeater'] ) ) :
+                  foreach ( $section['On-Demand_Webinars_Repeater'] as $idx => $item ) :
+                    $item = $item['Item'];
+                    echo get_template_part( 'components/ui/card-for-slider', null, [
+                      "item" => $item,
+                    ] );
+                  endforeach;
+                  wp_reset_postdata();
+                else:
+                  echo get_template_part( 'components/ui/card1', null, [
+                    'q'             => [
+                      "meta_query" => [
                         [
-                          "key" => "_wp_page_template",
-                          "value" => "webinar-detail.php",
-                          "compare" => "=",
-                        ],
-                      ],
-                      [
-                        "key" => "select_media_type",
-                        "value" => ["webinar"],
-                        "compare" => "IN",
-                        "type" => "CHAR",
-                      ],
-                    ],
-                    'tax_query' => [
-                      [
-                        'taxonomy' => 'tags',
-                        'field' => 'slug',
-                        'terms' => ['consumer-demand', 'customer-demands', 'demand', 'on-demand'],
-                      ]
-                    ],
-                  ],
-                  "attributes" => [],
-                  "classNames" => "splide__slide",
-                  "noItemsFound" => "",
-                ]);*/
-                echo get_template_part( 'components/ui/card1', null, [
-                  'q'             => [
-                    "meta_query" => [
-                      [
-                        "relation" => "AND",
-                        [
-                          'key'     => '_wp_page_template',
-                          'value'   => [ 'webinar-detail.php', ],
-                          'compare' => 'IN',
-                          'type'    => 'CHAR',
+                          "relation" => "AND",
+                          [
+                            'key'     => '_wp_page_template',
+                            'value'   => [ 'webinar-detail.php', ],
+                            'compare' => 'IN',
+                            'type'    => 'CHAR',
+                          ],
                         ],
                       ],
                     ],
-                  ],
-                  'card_size'     => 'small',
-                  "post_per_page" => 15,
-                  'post_type'     => [ 'page' ],
-                  'attributes'    => [],
-                  'classNames'    => 'splide__slide',
-                ] );
+                    'card_size'     => 'small',
+                    "post_per_page" => 15,
+                    'post_type'     => [ 'page' ],
+                    'attributes'    => [],
+                    'classNames'    => 'splide__slide',
+                  ] );
+                endif;
                 ?>
               </div>
             </div>
