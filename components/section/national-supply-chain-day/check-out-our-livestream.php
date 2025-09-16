@@ -1,5 +1,9 @@
 <?php
 
+$pageID          = get_the_ID();
+$section         = get_field( 'Check_Out_Our_2025_Livestream_Section', $pageID );
+$title           = esc_html( ! empty( $section['Title'] ) ? $section['Title'] : 'Check Out Our 2025 Livestream' );
+$youtubeEmbedUrl = esc_url( ! empty( $section['Youtube_Embed_URL'] ) ? $section['Youtube_Embed_URL'] : 'https://www.youtube.com/embed/eyzGyoHDNGg' );
 ?>
 <div class="rounded-t-100 overflow-hidden relative">
   <section class="section text-white relative z-10">
@@ -7,7 +11,7 @@
       <div class="w-layout-blockcontainer w-container max-w-1250">
         <div class="mb-52">
           <div class="mb-20">
-            <h2 class="text-center">Check Out Our 2025 Livestream</h2>
+            <h2 class="text-center"><?= $title; ?></h2>
           </div>
           <div
             class="w-layout-blockcontainer max-w-136 w-full h-1 relative bg-cargogrey/25 w-container bg-white/25">
@@ -17,7 +21,7 @@
           </div>
         </div>
         <div class="overflow-hidden rounded-24 bg-brightgray">
-          <iframe width="100%" height="528" src="https://www.youtube.com/embed/eyzGyoHDNGg"
+          <iframe width="100%" height="528" src="<?= $youtubeEmbedUrl; ?>"
                   title="Celebrating National Supply Chain Day" frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
