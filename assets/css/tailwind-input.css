@@ -415,3 +415,6 @@ menu {
   max-width: 1200px;
   @apply mx-auto w-full;
 }
+.text-white\! * {
+	color: #fff !important;
+}
