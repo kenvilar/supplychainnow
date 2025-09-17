@@ -23,7 +23,7 @@ $pageId = get_the_ID();
 				</div>
 				<div class="max-w-816 w-full md:max-w-full">
 					<div class="mb-12">
-						<h1 class="text-3xl"><?php
+						<h1 class="text-3xl text-white!"><?php
 							if (get_field('program_title', $pageId)) {
 								the_field('program_title', $pageId);
 							} ?></h1>
@@ -32,7 +32,7 @@ $pageId = get_the_ID();
 						<h2 class="font-family-alternate font-medium text-lg tracking-[2px] uppercase w-dyn-bind-empty"></h2>
 					</div>
 					<div class="mb-32">
-						<div class="rt--default tracking-[1.6px] w-richtext">
+						<div class="rt--default tracking-[1.6px] w-richtext text-white!">
 							<?php
 							if (get_field('program_description', $pageId)) {
 								the_field('program_description', $pageId);
