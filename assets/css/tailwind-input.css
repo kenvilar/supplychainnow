@@ -295,8 +295,12 @@
   margin: 0;
   padding: 16px 0 0;
 }
-.list-circle {
-  list-style-type: disc !important;
+.list-circle li {
+	list-style: disc !important;
+	list-style-type: disc !important;
+}
+.list-circle li ::marker {
+	font-size: 9px;
 }
 .resource-hub-link {
   opacity: 0.5;

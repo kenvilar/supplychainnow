@@ -1,5 +1,7 @@
 <?php
 
+$pageID  = get_the_ID();
+$section = get_field( 'Testimonial_1_Section', $pageID );
 ?>
 <section class="section">
   <div class="site-padding sm:py-60 py-80">
@@ -8,12 +10,21 @@
         <div class="py-80 px-20 sm:py-60 sm:px-12">
           <div class="w-layout-blockcontainer max-w-976 relative px-28 w-container">
             <div class="w-layout-blockcontainer max-w-876 w-container">
-              <p class="font-family-alternate font-medium text-lg">We don’t just work with the Supply Chain Now
-                team once and are done. <em class="text-secondary">We view the partnership as an extension to our
+              <div class="font-family-alternate font-medium text-lg">
+                <?php
+                if ( ! empty( $section['Testimonial'] ) ):
+                  echo $section['Testimonial'];
+                else:
+                  ?>
+                  We don’t just work with the Supply Chain Now
+                  team once and are done. <em class="text-secondary">We view the partnership as an extension to our
                   marketing and sales teams,</em> and continue to <em class="text-secondary">repurpose
                   content</em> and follow-up with the <em class="text-secondary">warm leads</em> from each show.
-                The content we create with Supply Chain Now is a lead magnet for our ideal customers.
-              </p>
+                  The content we create with Supply Chain Now is a lead magnet for our ideal customers.
+                <?php
+                endif;
+                ?>
+              </div>
             </div>
             <div class="absolute absolute--tl">
               <div class="flex w-embed">

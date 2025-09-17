@@ -1,5 +1,7 @@
 <?php
 
+$pageID  = get_the_ID();
+$section = get_field( 'Testimonial_2_Section', $pageID );
 ?>
 <section class="section">
   <div class="site-padding sm:py-60 py-100">
@@ -8,11 +10,22 @@
         <div class="py-80 px-20 sm:py-60 sm:px-12">
           <div class="w-layout-blockcontainer max-w-976 relative px-28 w-container">
             <div class="w-layout-blockcontainer max-w-876 w-container">
-              <p class="font-family-alternate font-medium text-lg">In addition to <em class="text-secondary">outperforming
-                  any other webinar we have done internally or externally (by 180%),</em> we had people reaching
-                out directly on LinkedIn after to connect with our presenter and learn more about what we do. We
-                continue to use the lead list from our Supply Chain Now shows for <em class="text-secondary">ABM
-                  Marketing.</em></p>
+              <div class="font-family-alternate font-medium text-lg">
+                <?php
+                if ( ! empty( $section['Testimonial'] ) ):
+                  echo $section['Testimonial'];
+                else:
+                  ?>
+                  In addition to <em class="text-secondary">outperforming
+                  any other webinar we have done internally or externally (by
+                  180%),</em>
+                  we had people reaching out directly on LinkedIn after to connect with our presenter and
+                  learn more about what we do. We continue to use the lead list from our Supply Chain Now shows for
+                  <em class="text-secondary">ABM Marketing.</em>
+                <?php
+                endif;
+                ?>
+              </div>
             </div>
             <div class="absolute absolute--tl">
               <div class="flex w-embed">
