@@ -1,12 +1,17 @@
 <?php
 
+$pageID        = get_the_ID();
+$section       = get_field( 'Your_Roadmap_to_Content_that_Converts_to_Leads_Section', $pageID );
+$title         = esc_html( ! empty( $section['Title'] ) ? $section['Title'] : 'Your Roadmap to Content that Converts to Leads' );
+$timelineText  = esc_html( ! empty( $section['Timeline_Text'] ) ? $section['Timeline_Text'] : '120 DAY TIMELINE' );
+$timelineImage = esc_url( ! empty( $section['Timeline_Image'] ) ? $section['Timeline_Image'] : get_stylesheet_directory_uri() . '/assets/img/work-with-us/120-day-timeline.avif' );
 ?>
 <section class="section">
   <div class="site-padding sm:py-60 py-72">
     <div class="w-layout-blockcontainer max-w-692 w-container">
       <div class="mb-36">
         <div class="mb-20">
-          <h2 class="text-center">Your Roadmap to Content that Converts to Leads</h2>
+          <h2 class="text-center"><?= $title; ?></h2>
         </div>
         <div class="w-layout-blockcontainer max-w-136 w-full h-1 relative bg-cargogrey/25 w-container">
           <div class="absolute absolute--r flex items-center pr-32">
@@ -14,11 +19,18 @@
           </div>
         </div>
       </div>
-      <p class="tracking-[1.6px] text-center">Our 120-day plan, taking you pre-show to post-show, is our tried and
-        true
-        process for optimal results from every partnership– for better engagement, more downloads, and more
-        qualified leads.
-      </p>
+      <div class="tracking-[1.6px] text-center">
+        <?php
+        if ( ! empty( $section['Description'] ) ):
+          echo $section['Description'];
+        else:
+          ?>
+          Our 120-day plan, taking you pre-show to post-show, is our tried and true process for optimal results from
+          every partnership for better engagement, more downloads, and more qualified leads.
+        <?php
+        endif;
+        ?>
+      </div>
     </div>
     <div class="mb-72"></div>
     <div class="w-layout-blockcontainer max-w-1248 relative sm:text-center w-container">
@@ -38,7 +50,7 @@
                     stroke-miterlimit="10"></path>
             </svg>
           </div>
-          <div class="font-semibold text-2xl">120 DAY TIMELINE</div>
+          <div class="font-semibold text-2xl"><?= $timelineText; ?></div>
         </div>
       </div>
       <div class="absolute absolute--full w-full flex items-center justify-center z--1">
@@ -52,8 +64,7 @@
     <div class="w-layout-blockcontainer max-w-1264 w-container">
       <div class="flex justify-center">
         <img
-          src="<?php
-          echo get_stylesheet_directory_uri() . '/assets/img/work-with-us/120-day-timeline.avif'; ?>"
+          src="<?= $timelineImage; ?>"
           loading="lazy" alt="120 day timeline" class="image">
       </div>
     </div>

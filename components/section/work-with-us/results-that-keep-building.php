@@ -1,5 +1,9 @@
 <?php
 
+$pageID  = get_the_ID();
+$section = get_field( 'Results_that_Keep_Building_Section', $pageID );
+$title   = esc_html( ! empty( $section['Title'] ) ? $section['Title'] : 'Results that Keep Building' );
+$image   = esc_url( ! empty( $section['Image'] ) ? $section['Image'] : get_stylesheet_directory_uri() . '/assets/img/work-with-us/results-that-keep-building.avif' );
 ?>
 <div class="rounded-100 bg-whispergray">
   <section class="section">
@@ -8,14 +12,13 @@
         <div class="mb-32">
           <div class="site-padding">
             <div class="w-layout-blockcontainer max-w-836 text-center w-container">
-              <h2>Results that Keep Building</h2>
+              <h2><?= $title; ?></h2>
             </div>
           </div>
         </div>
         <div class="flex items-center justify-center">
           <img
-            src="<?php
-            echo get_stylesheet_directory_uri() . '/assets/img/work-with-us/results-that-keep-building.avif'; ?>"
+            src="<?= $image; ?>"
             loading="lazy" alt="results that keep building" class="image">
         </div>
       </div>
