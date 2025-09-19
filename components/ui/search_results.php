@@ -544,11 +544,15 @@ if ( $search_query !== '' || $industries !== '' || ( is_singular( 'brands' ) && 
 														<div class="relative rounded-full overflow-hidden py-4 px-8">
 															<div class="relative font-semibold uppercase text-2xs text-white lh-normal z-10">
 																<?php
-																if ( ! empty( $primaryTag->name ) ):
-																	echo $primaryTag->name;
-																else:
-																	echo $randomTerm->name;
-																endif;
+																if ( $industries != "" ) {
+																	echo $industries;
+																} else {
+																	if ( ! empty( $primaryTag->name ) ) {
+																		echo $primaryTag->name;
+																	} else {
+																		echo $randomTerm->name;
+																	}
+																}
 																?>
 															</div>
 															<?php
@@ -575,11 +579,15 @@ if ( $search_query !== '' || $industries !== '' || ( is_singular( 'brands' ) && 
 														<div class="relative rounded-full overflow-hidden py-4 px-8">
 															<div class="relative font-semibold uppercase text-2xs text-white lh-normal z-10">
 																<?php
-																if ( ! empty( $primaryTag->name ) ):
-																	echo $primaryTag->name;
-																else:
-																	echo $randomTerm->name;
-																endif;
+																if ( $industries != "" ) {
+																	echo $industries;
+																} else {
+																	if ( ! empty( $primaryTag->name ) ) {
+																		echo $primaryTag->name;
+																	} else {
+																		echo $randomTerm->name;
+																	}
+																}
 																?>
 															</div>
 															<?php
