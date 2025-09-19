@@ -182,13 +182,26 @@ the_permalink( $item ); ?>" class="relative w-full group splide__slide">
 		<div class="w-full tracking-[1.6px] text-sm rt--plain" scn-text-limit="3">
 			<?php
 			if ( $template == 'livestream-detail.php' ) {
-				echo get_field( "livestream_description", $item );
-			} elseif ( $template == 'episode-detail.php' ) {
-				//echo get_field( "episode_summary", $item );
-			} elseif ( $template == 'webinar-detail.php' ) {
-				echo get_field( "webinar_description", $item );
+				echo esc_html( kv_build_acf_fields_like_excerpt( [
+					get_field( "livestream_description", $item ),
+					get_the_content( null, false, $item ),
+				] ) );
 			} else {
-				echo get_the_content( null, false, $item );
+				if ( $template == 'episode-detail.php' ) {
+					echo esc_html( kv_build_acf_fields_like_excerpt( [
+						get_field( "episode_summary", $item ),
+						get_the_content( null, false, $item ),
+					] ) );
+				} else {
+					if ( $template == 'webinar-detail.php' ) {
+						echo esc_html( kv_build_acf_fields_like_excerpt( [
+							get_field( "webinar_description", $item ),
+							get_the_content( null, false, $item ),
+						] ) );
+					} else {
+						echo esc_html( kv_build_excerpt( get_the_content( null, false, $item ) ) );
+					}
+				}
 			}
 			?>
 		</div>

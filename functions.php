@@ -837,6 +837,49 @@ function get_first_download_link( $content ) {
 	return ! empty( $download_urls ) ? $download_urls[0] : null;
 }
 
+// for example "echo esc_html( kv_build_excerpt( get_the_content( null, false, get_the_ID() ) ) );"
+function kv_build_excerpt( $text, $words = 200 ) {
+	// 1) get content
+	$content = $text;
+
+	// 2) remove block wrappers and shortcodes
+	if ( function_exists( 'excerpt_remove_blocks' ) ) {
+		$content = excerpt_remove_blocks( $content );
+	}
+	$content = strip_shortcodes( $content );
+
+	// 3) run the_content filters if you need embeds converted, then strip tags
+	$content = apply_filters( 'the_content', $content );
+	$content = wp_strip_all_tags( $content, true );
+
+	// 4) normalize spaces and decode entities like &nbsp; and &amp;
+	$content = preg_replace( '/\x{00A0}/u', ' ', $content ); // non-breaking space
+	$content = preg_replace( '/\s+/', ' ', $content );
+	$content = html_entity_decode( $content, ENT_QUOTES, get_bloginfo( 'charset' ) );
+
+	// 5) trim to N words
+	return wp_trim_words( trim( $content ), $words, '…' );
+}
+
+// for example
+// esc_html( kv_build_acf_fields_like_excerpt( [
+//   get_field( "episode_summary", get_the_ID() ),
+//	 get_the_content( null, false, get_the_ID() ),
+// ] ) );
+function kv_build_acf_fields_like_excerpt( array $text, $words = 200 ) {
+	$sources = $text;
+
+	$text = '';
+	foreach ( $sources as $src ) {
+		if ( is_string( $src ) && trim( $src ) !== '' ) {
+			$text = $src;
+			break;
+		}
+	}
+
+	return kv_build_excerpt( $text, $words );
+}
+
 /*
 add_action('admin_head', 'my_custom_css');
 
