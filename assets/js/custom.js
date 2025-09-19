@@ -56,6 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // Create element for selected option input
       const selectedOption = document.createElement("div");
       selectedOption.classList.add("select-option");
+	    selectedOption.classList.add("capitalize");
       selectedOption.innerHTML = `
 		<div>${optionsArray[initialSelectedIndex].textContent}</div>
 		<div style="display:flex;"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="8" viewBox="0 0 14 8" fill="none">
@@ -84,6 +85,7 @@ document.addEventListener("DOMContentLoaded", function () {
       optionsArray.forEach((option, idx) => {
         const optionItem = document.createElement("li");
         optionItem.classList.add("select-item");
+	      optionItem.classList.add("capitalize");
         optionItem.dataset.value = option.value;
         optionItem.textContent = option.textContent;
         selectMenu.appendChild(optionItem);

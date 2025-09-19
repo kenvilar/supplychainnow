@@ -459,8 +459,6 @@ if ( $search_query !== '' || $industries !== '' || ( is_singular( 'brands' ) && 
 		$results_query = new WP_Query( $fallback_args );
 	}
 }
-
-$primaryTag = get_field( "Primary_Tag", $results_query->post->ID );
 ?>
 <section class="section">
 	<div class="site-padding sm:py-60 pb-60">
@@ -532,8 +530,11 @@ $primaryTag = get_field( "Primary_Tag", $results_query->post->ID );
 														  "/assets/img/misc/default-card-img-thumbnail.avif"; ?>"
 													loading="lazy" alt="" class="image relative opacity-90">
 												<?php
+												$primaryTag = get_field( "Primary_Tag", $results_query->post->ID );
+
 												$terms    = get_the_terms( $results_query->post->ID, "tags" );
 												$post_tag = get_the_terms( $results_query->post->ID, "post_tag" );
+
 												if ( ! is_wp_error( $terms ) && ! empty( $terms ) ) {
 													$terms      = array_values( $terms );
 													$randIndex  = array_rand( $terms );

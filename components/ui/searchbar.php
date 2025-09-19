@@ -1,5 +1,6 @@
 <?php
 
+$pageID             = get_the_ID();
 $site_padding       = $args["site_padding"] ?? "";
 $selected_type      = isset( $_GET['type'] ) ? sanitize_text_field( wp_unslash( $_GET['type'] ) ) : '';
 $current_industries = isset( $_GET['industries'] ) ? sanitize_text_field( wp_unslash( $_GET['industries'] ) ) : '';
@@ -7,6 +8,9 @@ $passed_taxonomy    = isset( $args['taxonomy'] ) ? sanitize_key( $args['taxonomy
 $hide_dropdown      = isset( $args['hide_dropdown'] ) ? $args['hide_dropdown'] : false;
 $placeholder        = isset( $args['placeholder'] ) ? $args['placeholder'] : 'Search by episode, topic, name, etc...';
 $redirect_to        = isset( $args['redirect_to'] ) ? $args['redirect_to'] : '';
+
+$section       = get_field( 'Searchbar_Section', $pageID );
+$dropdownTitle = esc_html( ! empty( $section['Title'] ) ? $section['Title'] : 'Industries' );
 ?>
 <section class="section overflow-visible!">
 	<div class="site-padding sm:py-60 <?php
@@ -54,43 +58,59 @@ $redirect_to        = isset( $args['redirect_to'] ) ? $args['redirect_to'] : '';
 						<div class="form-select-control">
 							<select id="search-industries" name="industries" class="select">
 								<option value="" <?php
-								echo $current_industries === '' ? 'selected' : ''; ?>>Sort by Industries
+								echo $current_industries === '' ? 'selected' : ''; ?>>Sort by <?= $dropdownTitle; ?>
 								</option>
-								<option value="manufacturing" <?php
-								echo $current_industries === 'manufacturing' ? 'selected' : ''; ?>>Manufacturing
-								</option>
-								<option value="transportation" <?php
-								echo $current_industries === 'transportation' ? 'selected' : ''; ?>>Transportation
-								</option>
-								<option value="supply chain" <?php
-								echo $current_industries === 'supply chain' ? 'selected' : ''; ?>>Supply Chain
-								</option>
-								<option value="retail" <?php
-								echo $current_industries === 'retail' ? 'selected' : ''; ?>>Retail
-								</option>
-								<!-- in post should be "it" and "service" -->
-								<option value="it" <?php
-								echo $current_industries === 'it' ? 'selected' : ''; ?>>IT & Services
-								</option>
-								<option value="saas" <?php
-								echo $current_industries === 'saas' ? 'selected' : ''; ?>>SaaS
-								</option>
-								<option value="distribution" <?php
-								echo $current_industries === 'distribution' ? 'selected' : ''; ?>>Distribution
-								</option>
-								<option value="warehousing" <?php
-								echo $current_industries === 'warehousing' ? 'selected' : ''; ?>>Warehousing
-								</option>
-								<option value="supply chain tech" <?php
-								echo $current_industries === 'supply chain tech' ? 'selected' : ''; ?>>Supply Chain Tech
-								</option>
-								<!-- in post should be "logistics" and "3pl" -->
-								<option value="logistics" <?php
-								echo $current_industries === 'logistics' ? 'selected' : ''; ?>>Logistics/3PLs
-								</option>
-								<option value="shipping" <?php
-								echo $current_industries === 'shipping' ? 'selected' : ''; ?>>Shipping
-								</option>
+								<?php
+								if ( ! empty( $section['Taxonomy_Item'] ) ):
+									foreach ( $section['Taxonomy_Item'] as $taxonomy_item ):
+										$name = $taxonomy_item->name;
+										$slug = $taxonomy_item->slug;
+										?>
+										<option value="<?= $slug; ?>" <?php
+										echo $current_industries === $slug ? 'selected' : ''; ?>><?= $name; ?>
+										</option>
+									<?php
+									endforeach;
+								else:
+									?>
+									<option value="manufacturing" <?php
+									echo $current_industries === 'manufacturing' ? 'selected' : ''; ?>>Manufacturing
+									</option>
+									<option value="transportation" <?php
+									echo $current_industries === 'transportation' ? 'selected' : ''; ?>>Transportation
+									</option>
+									<option value="supply chain" <?php
+									echo $current_industries === 'supply chain' ? 'selected' : ''; ?>>Supply Chain
+									</option>
+									<option value="retail" <?php
+									echo $current_industries === 'retail' ? 'selected' : ''; ?>>Retail
+									</option>
+									<!-- in post should be "it" and "service" -->
+									<option value="it" <?php
+									echo $current_industries === 'it' ? 'selected' : ''; ?>>IT & Services
+									</option>
+									<option value="saas" <?php
+									echo $current_industries === 'saas' ? 'selected' : ''; ?>>SaaS
+									</option>
+									<option value="distribution" <?php
+									echo $current_industries === 'distribution' ? 'selected' : ''; ?>>Distribution
+									</option>
+									<option value="warehousing" <?php
+									echo $current_industries === 'warehousing' ? 'selected' : ''; ?>>Warehousing
+									</option>
+									<option value="supply chain tech" <?php
+									echo $current_industries === 'supply chain tech' ? 'selected' : ''; ?>>Supply Chain Tech
+									</option>
+									<!-- in post should be "logistics" and "3pl" -->
+									<option value="logistics" <?php
+									echo $current_industries === 'logistics' ? 'selected' : ''; ?>>Logistics/3PLs
+									</option>
+									<option value="shipping" <?php
+									echo $current_industries === 'shipping' ? 'selected' : ''; ?>>Shipping
+									</option>
+								<?php
+								endif;
+								?>
 							</select>
 						</div>
 					</div>
