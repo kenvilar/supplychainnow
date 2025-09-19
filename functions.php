@@ -716,7 +716,7 @@ function scn_is_splide_page() {
 	       || is_page( 'news' )
 	       || is_page( 'guide' )
 	       || is_page( 'dev' )
-	       || is_page( 'case-studies-customer-stories' );
+	       || is_page( 'success-stories' );
 }
 
 /*
