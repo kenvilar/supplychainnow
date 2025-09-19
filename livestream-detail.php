@@ -229,15 +229,24 @@ $youtube_url = $matches[1] ?? '';
 																		: get_stylesheet_directory_uri() . '/assets/img/misc/default-card-img-thumbnail.avif' ?>"
 																	loading="lazy" alt="" class="image relative opacity-90">
 																<?php
-																$terms = get_the_terms( $q->post->ID, 'tags' );
+																$primaryTag = get_field( "Primary_Tag", $q->post->ID );
+																$terms      = get_the_terms( $q->post->ID, 'tags' );
+
 																if ( ! is_wp_error( $terms ) && ! empty( $terms ) ) {
-																	$first = array_values( $terms )[0];
+																	$terms      = array_values( $terms );
+																	$randIndex  = array_rand( $terms );
+																	$randomTerm = $terms[ $randIndex ];
 																	?>
 																	<div class="absolute absolute--tl p-24 flex items-center justify-center">
 																		<div class="relative rounded-full overflow-hidden py-4 px-8">
 																			<div class="relative font-semibold uppercase text-2xs text--white lh-normal z-10">
 																				<?php
-																				echo $first->name; ?>
+																				if ( ! empty( $primaryTag->name ) ):
+																					echo $primaryTag->name;
+																				else:
+																					echo $randomTerm->name;
+																				endif;
+																				?>
 																			</div>
 																			<div class="absolute absolute--full bg-primary"></div>
 																		</div>
@@ -280,7 +289,12 @@ $youtube_url = $matches[1] ?? '';
 													</div>
 													<div class="w-full tracking-[1.4px] text-sm" scn-text-limit="3">
 														<?php
-														if ( get_the_excerpt( $q->post->ID ) ) {
+														echo esc_html( kv_build_acf_fields_like_excerpt( [
+															get_field( "livestream_description", $q->post->ID ),
+															get_the_content( null, false, $q->post->ID ),
+															get_the_excerpt( $q->post->ID ),
+														] ) );
+														/*if ( get_the_excerpt( $q->post->ID ) ) {
 															the_excerpt();
 														} else {
 															if ( get_field( 'livestream_description', $q->post->ID ) ) {
@@ -299,7 +313,7 @@ $youtube_url = $matches[1] ?? '';
 																	}
 																}
 															}
-														}
+														}*/
 														?>
 													</div>
 												</div>
