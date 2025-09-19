@@ -26,7 +26,7 @@ the_permalink( $item ); ?>" class="relative w-full group splide__slide">
 							? get_the_post_thumbnail_url( $item, 'medium_large' )
 							: get_stylesheet_directory_uri() .
 							  "/assets/img/misc/default-card-img-thumbnail.avif"; ?>"
-						loading="lazy" alt="" class="image relative opacity-90">
+						loading="lazy" alt="" class="image relative opacity-90"/>
 					<?php
 					$terms    = get_the_terms( $item, "tags" );
 					$post_tag = get_the_terms( $item, "post_tag" );
@@ -91,21 +91,21 @@ the_permalink( $item ); ?>" class="relative w-full group splide__slide">
 								src="<?php
 								echo get_stylesheet_directory_uri() .
 								     "/assets/img/icons/play-button-livestream.avif"; ?>"
-								loading="lazy" alt="play-button-livestream">
+								loading="lazy" alt="play-button-livestream"/>
 							<?php
 						} elseif ( $selectMediaType == "podcast" ) { ?>
 							<img
 								src="<?php
 								echo get_stylesheet_directory_uri() .
 								     "/assets/img/icons/play-button-podcast.avif"; ?>"
-								loading="lazy" alt="play-button-podcast">
+								loading="lazy" alt="play-button-podcast"/>
 							<?php
 						} elseif ( $selectMediaType == "webinar" ) { ?>
 							<img
 								src="<?php
 								echo get_stylesheet_directory_uri() .
 								     "/assets/img/icons/play-button-webinar.avif"; ?>"
-								loading="lazy" alt="play-button-webinar">
+								loading="lazy" alt="play-button-webinar"/>
 							<?php
 						} else {
 							?>
@@ -113,7 +113,7 @@ the_permalink( $item ); ?>" class="relative w-full group splide__slide">
 								src="<?php
 								echo get_stylesheet_directory_uri() .
 								     "/assets/img/icons/play-button-podcast.avif"; ?>"
-								loading="lazy" alt="play-button-podcast">
+								loading="lazy" alt="play-button-podcast"/>
 							<?php
 						}
 						?>
@@ -130,7 +130,7 @@ the_permalink( $item ); ?>" class="relative w-full group splide__slide">
 									src="<?php
 									echo get_stylesheet_directory_uri() .
 									     "/assets/img/icons/livestream-card-icon.svg"; ?>"
-									loading="lazy" alt="livestream-music">
+									loading="lazy" alt="livestream-music"/>
 								<?php
 							} elseif ( $selectMediaType == "podcast" ) { ?>
 								<img
@@ -138,7 +138,7 @@ the_permalink( $item ); ?>" class="relative w-full group splide__slide">
 									src="<?php
 									echo get_stylesheet_directory_uri() .
 									     "/assets/img/icons/podcast-card-icon.png"; ?>"
-									loading="lazy" alt="podcast-blue-microphone">
+									loading="lazy" alt="podcast-blue-microphone"/>
 								<?php
 							} elseif ( $selectMediaType == "webinar" ) { ?>
 								<img
@@ -146,7 +146,7 @@ the_permalink( $item ); ?>" class="relative w-full group splide__slide">
 									src="<?php
 									echo get_stylesheet_directory_uri() .
 									     "/assets/img/icons/webinar-card-icon.png"; ?>"
-									loading="lazy" alt="webinar-person">
+									loading="lazy" alt="webinar-person"/>
 								<?php
 							} else {
 								?>
@@ -155,7 +155,7 @@ the_permalink( $item ); ?>" class="relative w-full group splide__slide">
 									src="<?php
 									echo get_stylesheet_directory_uri() .
 									     "/assets/img/icons/podcast-card-icon.png"; ?>"
-									loading="lazy" alt="podcast-blue-microphone">
+									loading="lazy" alt="podcast-blue-microphone"/>
 								<?php
 							}
 							?>
@@ -179,17 +179,18 @@ the_permalink( $item ); ?>" class="relative w-full group splide__slide">
 				<?= get_the_title( $item ); ?>
 			</h3>
 		</div>
-		<div class="w-full tracking-[1.6px] text-sm" scn-text-limit="3">
+		<div class="w-full tracking-[1.6px] text-sm rt--plain" scn-text-limit="3">
 			<?php
-			if ( get_the_excerpt( $item ) ) {
-				the_excerpt();
-			} elseif ( get_field( "livestream_description", $item ) ) {
-				the_field( "livestream_description", $item );
-			} elseif ( get_field( "episode_summary", $item ) ) {
-				the_field( "episode_summary", $item );
-			} elseif ( get_field( "webinar_description", $item ) ) {
-				the_field( "webinar_description", $item );
-			} ?>
+			if ( $template == 'livestream-detail.php' ) {
+				echo get_field( "livestream_description", $item );
+			} elseif ( $template == 'episode-detail.php' ) {
+				//echo get_field( "episode_summary", $item );
+			} elseif ( $template == 'webinar-detail.php' ) {
+				echo get_field( "webinar_description", $item );
+			} else {
+				echo get_the_content( null, false, $item );
+			}
+			?>
 		</div>
 	</div>
 </a>
