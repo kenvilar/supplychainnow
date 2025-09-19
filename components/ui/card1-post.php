@@ -195,12 +195,9 @@ if ( $q->have_posts() ): ?>
 				</div>
 				<div class="w-full tracking-[1.6px]" scn-text-limit="2">
 					<?php
-					echo esc_html(
-						kv_build_acf_fields_like_excerpt(
-							[ get_the_content( null, false, $q->post->ID ) ],
-							200
-						)
-					);
+					echo esc_html( kv_build_acf_fields_like_excerpt( [
+						get_the_content( null, false, $q->post->ID )
+					] ) );
 					?>
 				</div>
 			</div>

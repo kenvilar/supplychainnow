@@ -200,7 +200,9 @@ the_permalink( $item ); ?>" class="relative w-full group splide__slide">
 						] ) );
 					} else {
 						if ( get_the_content( null, false, $item ) ) {
-							echo esc_html( kv_build_excerpt( get_the_content( null, false, $item ) ) );
+							echo esc_html( kv_build_acf_fields_like_excerpt( [
+								get_the_content( null, false, $item )
+							] ) );
 						} else {
 							echo esc_html( get_the_excerpt( $item ) );
 						}

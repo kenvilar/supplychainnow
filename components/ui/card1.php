@@ -312,7 +312,9 @@ if ( $q->have_posts() ): ?>
 								] ) );
 							} else {
 								if ( get_the_content( null, false, $q->post->ID ) ) {
-									echo esc_html( kv_build_excerpt( get_the_content( null, false, $q->post->ID ) ) );
+									echo esc_html( kv_build_acf_fields_like_excerpt( [
+										get_the_content( null, false, $q->post->ID )
+									] ) );
 								} else {
 									echo esc_html( get_the_excerpt( $q->post->ID ) );
 								}

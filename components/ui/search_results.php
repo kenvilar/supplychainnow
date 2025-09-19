@@ -718,9 +718,9 @@ if ( $search_query !== '' || $industries !== '' || ( is_singular( 'brands' ) && 
 													] ) );
 												} else {
 													if ( get_the_content( null, false, $results_query->post->ID ) ) {
-														echo esc_html( kv_build_excerpt( get_the_content( null,
-															false,
-															$results_query->post->ID ) ) );
+														echo esc_html( kv_build_acf_fields_like_excerpt( [
+															get_the_content( null, false, $results_query->post->ID )
+														] ) );
 													} else {
 														echo esc_html( get_the_excerpt( $results_query->post->ID ) );
 													}
