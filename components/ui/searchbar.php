@@ -29,7 +29,7 @@ $dropdownTitle = esc_html( ! empty( $section['Title'] ) ? $section['Title'] : 'I
 				?>
 				<input type="hidden" name="taxonomy" value="<?php
 				echo esc_attr( $current_taxonomy ); ?>"/>
-				<div class="flex gap-11 justify-center items-stretch">
+				<div class="flex gap-11 justify-center items-stretch sm:flex-col">
 					<div class="max-w-423 w-full md:max-w-full">
 						<div class="relative overflow-hidden rounded-100 border border-secondary/50 bg-[#EBF6FF]">
 							<label>
