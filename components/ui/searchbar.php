@@ -15,7 +15,7 @@ $dropdownTitle = esc_html( ! empty( $section['Title'] ) ? $section['Title'] : 'I
 <section class="section overflow-visible!">
 	<div class="site-padding sm:py-60 <?php
 	echo esc_attr( $site_padding ); ?>">
-		<div class="max-w-615 mx-auto">
+		<div class="max-w-1252 mx-auto">
 			<form class="form"
 			      method="get" action="<?php
 			echo esc_url( $redirect_to ? $redirect_to : get_permalink() ); ?>"
@@ -29,7 +29,7 @@ $dropdownTitle = esc_html( ! empty( $section['Title'] ) ? $section['Title'] : 'I
 				?>
 				<input type="hidden" name="taxonomy" value="<?php
 				echo esc_attr( $current_taxonomy ); ?>"/>
-				<div class="flex gap-11 justify-between items-stretch">
+				<div class="flex gap-11 justify-center items-stretch">
 					<div class="max-w-423 w-full md:max-w-full">
 						<div class="relative overflow-hidden rounded-100 border border-secondary/50 bg-[#EBF6FF]">
 							<label>
@@ -52,7 +52,7 @@ $dropdownTitle = esc_html( ! empty( $section['Title'] ) ? $section['Title'] : 'I
 							</div>
 						</div>
 					</div>
-					<div class="max-w-181 w-full md:max-w-full <?php
+					<div class="md:max-w-full <?php
 					echo $hide_dropdown ? 'hidden!' : ''; ?>">
 						<label class="sr-only" for="search-industries">Filter type</label>
 						<div class="form-select-control">
