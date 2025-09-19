@@ -142,7 +142,10 @@ if ( $q->have_posts() ): ?>
 							$terms    = get_the_terms( $q->post->ID, "tags" );
 							$post_tag = get_the_terms( $q->post->ID, "post_tag" );
 							if ( ! is_wp_error( $terms ) && ! empty( $terms ) ) {
-								$first = array_values( $terms )[0]; ?>
+								$terms      = array_values( $terms );
+								$randIndex  = array_rand( $terms );
+								$randomTerm = $terms[ $randIndex ];
+								?>
 								<div class="absolute absolute--tl p-24 flex items-center justify-center">
 									<div class="relative rounded-full overflow-hidden py-4 px-8">
 										<div class="relative font-semibold uppercase text-2xs text-white lh-normal z-10">
@@ -150,7 +153,7 @@ if ( $q->have_posts() ): ?>
 											if ( ! empty( $primaryTag->name ) ):
 												echo $primaryTag->name;
 											else:
-												echo $first->name;
+												echo $randomTerm->name;
 											endif;
 											?>
 										</div>
@@ -173,7 +176,10 @@ if ( $q->have_posts() ): ?>
 								<?php
 							}
 							if ( ! is_wp_error( $post_tag ) && ! empty( $post_tag ) ) {
-								$first = array_values( $post_tag )[0]; ?>
+								$terms      = array_values( $post_tag );
+								$randIndex  = array_rand( $post_tag );
+								$randomTerm = $terms[ $randIndex ];
+								?>
 								<div class="absolute absolute--tl p-24 flex items-center justify-center">
 									<div class="relative rounded-full overflow-hidden py-4 px-8">
 										<div class="relative font-semibold uppercase text-2xs text-white lh-normal z-10">
@@ -181,7 +187,7 @@ if ( $q->have_posts() ): ?>
 											if ( ! empty( $primaryTag->name ) ):
 												echo $primaryTag->name;
 											else:
-												echo $first->name;
+												echo $randomTerm->name;
 											endif;
 											?>
 										</div>
