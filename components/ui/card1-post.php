@@ -139,6 +139,8 @@ if ( $q->have_posts() ): ?>
 				}
 			}
 		}
+
+		$primaryTag = get_field( "Primary_Tag", $q->post->ID );
 		?>
 		<a href="<?= get_permalink( $q->post->ID ) . '?category=' . $categorySlug; ?>"
 		   class="relative w-full group <?= $classNames; ?>" <?= $attr_string; ?>>
@@ -161,7 +163,12 @@ if ( $q->have_posts() ): ?>
 									<div class="relative rounded-full overflow-hidden py-4 px-8">
 										<div class="relative font-semibold uppercase text-2xs text-textcolor lh-normal z-10">
 											<?php
-											echo $first->name; ?>
+											if ( ! empty( $primaryTag->name ) ):
+												echo $primaryTag->name;
+											else:
+												echo $first->name;
+											endif;
+											?>
 										</div>
 										<div class="absolute absolute--full bg-white"></div>
 									</div>

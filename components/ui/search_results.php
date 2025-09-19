@@ -460,6 +460,7 @@ if ( $search_query !== '' || $industries !== '' || ( is_singular( 'brands' ) && 
 	}
 }
 
+$primaryTag = get_field( "Primary_Tag", $results_query->post->ID );
 ?>
 <section class="section">
 	<div class="site-padding sm:py-60 pb-60">
@@ -539,7 +540,12 @@ if ( $search_query !== '' || $industries !== '' || ( is_singular( 'brands' ) && 
 														<div class="relative rounded-full overflow-hidden py-4 px-8">
 															<div class="relative font-semibold uppercase text-2xs text-white lh-normal z-10">
 																<?php
-																echo $first->name; ?>
+																if ( ! empty( $primaryTag->name ) ):
+																	echo $primaryTag->name;
+																else:
+																	echo $first->name;
+																endif;
+																?>
 															</div>
 															<?php
 															if ( $selectMediaType == "livestream" ) {
@@ -562,7 +568,12 @@ if ( $search_query !== '' || $industries !== '' || ( is_singular( 'brands' ) && 
 														<div class="relative rounded-full overflow-hidden py-4 px-8">
 															<div class="relative font-semibold uppercase text-2xs text-white lh-normal z-10">
 																<?php
-																echo $first->name; ?>
+																if ( ! empty( $primaryTag->name ) ):
+																	echo $primaryTag->name;
+																else:
+																	echo $first->name;
+																endif;
+																?>
 															</div>
 															<?php
 															if ( $selectMediaType == "livestream" ) {

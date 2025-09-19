@@ -121,6 +121,8 @@ if ( $q->have_posts() ): ?>
 		} elseif ( $template === 'webinar-detail.php' ) {
 			$selectMediaType = 'webinar';
 		}
+
+		$primaryTag = get_field( "Primary_Tag", $q->post->ID );
 		?>
 		<a href="<?php
 		the_permalink( $q->post->ID ); ?>" class="relative w-full group <?= $classNames; ?>" <?= $attr_string ?>>
@@ -145,7 +147,12 @@ if ( $q->have_posts() ): ?>
 									<div class="relative rounded-full overflow-hidden py-4 px-8">
 										<div class="relative font-semibold uppercase text-2xs text-white lh-normal z-10">
 											<?php
-											echo $first->name; ?>
+											if ( ! empty( $primaryTag->name ) ):
+												echo $primaryTag->name;
+											else:
+												echo $first->name;
+											endif;
+											?>
 										</div>
 										<?php
 										echo $selectMediaType == "livestream"
@@ -171,7 +178,12 @@ if ( $q->have_posts() ): ?>
 									<div class="relative rounded-full overflow-hidden py-4 px-8">
 										<div class="relative font-semibold uppercase text-2xs text-white lh-normal z-10">
 											<?php
-											echo $first->name; ?>
+											if ( ! empty( $primaryTag->name ) ):
+												echo $primaryTag->name;
+											else:
+												echo $first->name;
+											endif;
+											?>
 										</div>
 										<?php
 										echo $selectMediaType == "livestream"

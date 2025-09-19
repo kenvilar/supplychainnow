@@ -12,6 +12,7 @@ if ( $template === 'livestream-detail.php' ) {
 } elseif ( $template === 'webinar-detail.php' ) {
 	$selectMediaType = 'webinar';
 }
+$primaryTag = get_field( "Primary_Tag", $item );
 ?>
 <a href="<?php
 the_permalink( $item ); ?>" class="relative w-full group splide__slide">
@@ -36,7 +37,12 @@ the_permalink( $item ); ?>" class="relative w-full group splide__slide">
 							<div class="relative rounded-full overflow-hidden py-4 px-8">
 								<div class="relative font-semibold uppercase text-2xs text-white lh-normal z-10">
 									<?php
-									echo $first->name; ?>
+									if ( ! empty( $primaryTag->name ) ):
+										echo $primaryTag->name;
+									else:
+										echo $first->name;
+									endif;
+									?>
 								</div>
 								<?php
 								echo $selectMediaType == "livestream"
@@ -62,7 +68,12 @@ the_permalink( $item ); ?>" class="relative w-full group splide__slide">
 							<div class="relative rounded-full overflow-hidden py-4 px-8">
 								<div class="relative font-semibold uppercase text-2xs text-white lh-normal z-10">
 									<?php
-									echo $first->name; ?>
+									if ( ! empty( $primaryTag->name ) ):
+										echo $primaryTag->name;
+									else:
+										echo $first->name;
+									endif;
+									?>
 								</div>
 								<?php
 								echo $selectMediaType == "livestream"
