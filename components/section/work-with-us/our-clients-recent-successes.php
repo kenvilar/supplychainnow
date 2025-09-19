@@ -5,7 +5,7 @@ $section    = get_field( 'Our_Clients’_Recent_Successes_Section', $pageID );
 $topTitle   = esc_html( ! empty( $section['Top_Title'] ) ? $section['Top_Title'] : 'Turn One Webinar into a Year’s Worth of Leads' );
 $title      = esc_html( ! empty( $section['Title'] ) ? $section['Title'] : 'Our Clients’ Recent Successes' );
 $buttonText = esc_html( ! empty( $section['Button_Text'] ) ? $section['Button_Text'] : 'Read More' );
-$buttonLink = esc_url( ! empty( $section['Button_Link'] ) ? $section['Button_Link'] : '/case-studies-customer-stories' );
+$buttonLink = esc_url( ! empty( $section['Button_Link'] ) ? $section['Button_Link'] : '/success-stories' );
 ?>
 <div class="overflow-hidden relative rounded-t-100">
   <section class="section relative z-10">

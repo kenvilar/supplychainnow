@@ -108,7 +108,7 @@
                       <a href="/work-with-us" class="footer-link">Work With Us</a>
                     </li>
                     <li class="flex flex-col gap-12">
-                      <a href="/case-studies-customer-stories" class="footer-link">Case Studies &amp; Customer Stories
+                      <a href="/success-stories" class="footer-link">Case Studies &amp; Customer Stories
                       </a>
                     </li>
                     <li>

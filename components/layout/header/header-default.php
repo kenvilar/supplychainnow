@@ -122,7 +122,7 @@ $nav_classnames = $args['nav_classnames'] ?? ''; // '' || 'nav-fixed'
 								     aria-labelledby="w-dropdown-toggle-2">
 									<div class="nav-dropdown__listmenu">
 										<a href="/work-with-us" class="nav_dropdown_link w-dropdown-link" tabindex="0">Work With Us</a>
-										<a href="/case-studies-customer-stories" class="nav_dropdown_link w-dropdown-link" tabindex="0">Case
+										<a href="/success-stories" class="nav_dropdown_link w-dropdown-link" tabindex="0">Case
 											Studies &amp; Customer Stories
 										</a>
 										<a href="/media-kit" class="nav_dropdown_link w-dropdown-link" tabindex="0">Media Kit</a>
