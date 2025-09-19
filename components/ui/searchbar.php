@@ -52,7 +52,7 @@ $dropdownTitle = esc_html( ! empty( $section['Title'] ) ? $section['Title'] : 'I
 							</div>
 						</div>
 					</div>
-					<div class="md:max-w-full <?php
+					<div class="min-w-166 md:max-w-full <?php
 					echo $hide_dropdown ? 'hidden!' : ''; ?>">
 						<label class="sr-only" for="search-industries">Filter type</label>
 						<div class="form-select-control">
