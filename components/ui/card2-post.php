@@ -190,9 +190,12 @@ if ( $q->have_posts() ): ?>
 				</div>
 				<div class="w-full tracking-[1.4px] text-sm" scn-text-limit="3">
 					<?php
-					if ( has_excerpt() ) {
-						the_excerpt();
-					}
+					echo esc_html(
+						kv_build_acf_fields_like_excerpt(
+							[ get_the_content( null, false, $q->post->ID ) ],
+							200
+						)
+					);
 					?>
 				</div>
 			</div>

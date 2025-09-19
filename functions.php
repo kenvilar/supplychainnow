@@ -866,18 +866,36 @@ function kv_build_excerpt( $text, $words = 200 ) {
 //   get_field( "episode_summary", get_the_ID() ),
 //	 get_the_content( null, false, get_the_ID() ),
 // ] ) );
-function kv_build_acf_fields_like_excerpt( array $text, $words = 200 ) {
-	$sources = $text;
+function kv_build_acf_fields_like_excerpt( $text, $words = 200 ) {
+	// Allow both string and array inputs.
+	$sources = is_array( $text ) ? $text : [ $text ];
 
-	$text = '';
+	$chosen = '';
 	foreach ( $sources as $src ) {
 		if ( is_string( $src ) && trim( $src ) !== '' ) {
-			$text = $src;
+			$chosen = $src;
 			break;
 		}
 	}
 
-	return kv_build_excerpt( $text, $words );
+	// Normalize Visual Composer/shortcodes-heavy content to plain text.
+	if ( $chosen !== '' ) {
+		// Render any nested shortcodes to avoid keeping placeholders, then remove shortcodes and tags.
+		$rendered      = do_shortcode( $chosen );
+		$no_shortcodes = strip_shortcodes( $rendered );
+		$plain         = wp_strip_all_tags( $no_shortcodes, true );
+		$plain         = trim( preg_replace( '/\s+/', ' ', $plain ) );
+
+		// If stripped result is empty, fall back to original plain-stripped content.
+		if ( $plain === '' ) {
+			$plain = wp_strip_all_tags( strip_shortcodes( $chosen ), true );
+			$plain = trim( preg_replace( '/\s+/', ' ', $plain ) );
+		}
+
+		return kv_build_excerpt( $plain, $words );
+	}
+
+	return kv_build_excerpt( '', $words );
 }
 
 /*
