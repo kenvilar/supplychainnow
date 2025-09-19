@@ -294,26 +294,6 @@ $youtube_url = $matches[1] ?? '';
 															get_the_content( null, false, $q->post->ID ),
 															get_the_excerpt( $q->post->ID ),
 														] ) );
-														/*if ( get_the_excerpt( $q->post->ID ) ) {
-															the_excerpt();
-														} else {
-															if ( get_field( 'livestream_description', $q->post->ID ) ) {
-																the_field( 'livestream_description', $q->post->ID );
-															} else {
-																if ( get_field( 'episode_summary', $q->post->ID ) ) {
-																	the_field( 'episode_summary', $q->post->ID );
-																} else {
-																	if ( get_field( 'webinar_description', $q->post->ID ) ) {
-																		the_field( 'webinar_description', $q->post->ID );
-																	} else {
-																		echo 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum
-							tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero
-							vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus
-							tristique posuere.';
-																	}
-																}
-															}
-														}*/
 														?>
 													</div>
 												</div>
