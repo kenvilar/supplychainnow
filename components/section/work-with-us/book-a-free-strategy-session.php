@@ -10,51 +10,51 @@ $buttonText  = esc_html( ! empty( $section['Button_Text'] ) ? $section['Button_T
 $buttonLink  = esc_url( ! empty( $section['Button_Link'] ) ? $section['Button_Link'] : '/contact' );
 ?>
 <div class="overflow-hidden relative rounded-t-100">
-  <section class="section sm:text-center">
-    <div class="site-padding sm:py-60 pt-100">
-      <div class="w-layout-blockcontainer max-w-1172 w-container">
-        <div class="flex items-center justify-between gap-20 sm:flex-col">
-          <div class="max-w-528 w-full md:max-w-full">
-            <img
-              src="<?= $image; ?>"
-              loading="lazy" alt="Book a Free Strategy Session" class="image">
-          </div>
-          <div class="max-w-548 w-full md:max-w-full">
-            <div class="mb-20">
-              <div class="max-w-348 w-full md:max-w-full">
-                <h2><?= $title; ?></h2>
-              </div>
-            </div>
-            <div class="mb-28">
-              <div class="max-w-416 w-full md:max-w-full">
-                <div class="font-family-alternate font-semibold text-lg text-secondary">
-                  <?= $subtitle; ?>
-                </div>
-              </div>
-            </div>
-            <div class="mb-36">
-              <div class="tracking-[1.6px]">
-                <?= $description; ?>
-              </div>
-            </div>
-            <div class="flex sm:justify-center">
-              <?php
-              echo get_template_part( 'components/ui/btn', null, [
-                'text'  => $buttonText,
-                'link'  => $buttonLink,
-                'style' => 'primary',
-                'class' => '',
-                /*'attributes' => [
-                  'target' => '_blank',
-                  'rel'    => 'noopener noreferrer',
-                ],*/
-              ] );
-              ?>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <div class="absolute absolute--full gradient2 opacity-25 z--1 h-half"></div>
+	<section class="section sm:text-center">
+		<div class="site-padding sm:py-60 pt-100">
+			<div class="w-layout-blockcontainer max-w-1172 w-container">
+				<div class="flex items-center justify-between gap-20 sm:flex-col">
+					<div class="max-w-528 w-full md:max-w-full">
+						<img
+							src="<?= $image; ?>"
+							loading="lazy" alt="Book a Free Strategy Session" class="image">
+					</div>
+					<div class="max-w-548 w-full md:max-w-full">
+						<div class="mb-20">
+							<div class="max-w-348 w-full md:max-w-full">
+								<h2><?= $title; ?></h2>
+							</div>
+						</div>
+						<div class="mb-28">
+							<div class="max-w-416 w-full md:max-w-full">
+								<div class="font-family-alternate font-semibold text-lg text-secondary">
+									<?= $subtitle; ?>
+								</div>
+							</div>
+						</div>
+						<div class="mb-36">
+							<div class="tracking-[1.6px]">
+								<?= $description; ?>
+							</div>
+						</div>
+						<div class="flex sm:justify-center">
+							<?php
+							echo get_template_part( 'components/ui/btn', null, [
+								'text'  => $buttonText,
+								'link'  => $buttonLink,
+								'style' => 'primary',
+								'class' => '',
+								/*'attributes' => [
+									'target' => '_blank',
+									'rel'    => 'noopener noreferrer',
+								],*/
+							] );
+							?>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<div class="absolute absolute--full gradient2 opacity-25 z--1 h-half"></div>
 </div>

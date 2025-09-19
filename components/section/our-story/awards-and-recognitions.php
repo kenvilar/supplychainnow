@@ -5,117 +5,117 @@ $section = get_field( 'Awards_&_Recognitions_Section', $pageID );
 $title   = esc_html( ! empty( $section['Title'] ) ? $section['Title'] : 'Awards &amp; Recognitions' );
 ?>
 <section class="section sm:py-60 py-64">
-  <div class="site-padding">
-    <div class="w-layout-blockcontainer max-w-1388 w-container">
-      <div class="mb-44">
-        <div class="mb-20">
-          <h2 class="text-center"><?= $title; ?></h2>
-        </div>
-        <?php
-        get_template_part( 'components/line-with-blinking-dot', null, [
-          'maxWidthClassnames' => ''
-        ] );
-        ?>
-      </div>
-    </div>
-  </div>
-  <div slider-1="" class="splide">
-    <div class="splide__track overflow-visible!">
-      <div class="splide__list items-center">
-        <?php
-        if ( ! empty( $section['Slider'] ) ) :
-          foreach ( $section['Slider'] as $idx => $image ) :
-            $image = esc_url( $image );
-            ?>
-            <div class="splide__slide">
-              <div class="awards-pentagon-block">
-                <img
-                  src="<?= $image; ?>"
-                  loading="lazy" alt="Award <?= $idx + 1; ?>" class="image h-auto">
-              </div>
-            </div>
-          <?php
-          endforeach;
-        else:
-          // Number of images you have
-          $total_awards = 8;
+	<div class="site-padding">
+		<div class="w-layout-blockcontainer max-w-1388 w-container">
+			<div class="mb-44">
+				<div class="mb-20">
+					<h2 class="text-center"><?= $title; ?></h2>
+				</div>
+				<?php
+				get_template_part( 'components/line-with-blinking-dot', null, [
+					'maxWidthClassnames' => ''
+				] );
+				?>
+			</div>
+		</div>
+	</div>
+	<div slider-1="" class="splide">
+		<div class="splide__track overflow-visible!">
+			<div class="splide__list items-center">
+				<?php
+				if ( ! empty( $section['Slider'] ) ) :
+					foreach ( $section['Slider'] as $idx => $image ) :
+						$image = esc_url( $image );
+						?>
+						<div class="splide__slide">
+							<div class="awards-pentagon-block">
+								<img
+									src="<?= $image; ?>"
+									loading="lazy" alt="Award <?= $idx + 1; ?>" class="image h-auto">
+							</div>
+						</div>
+					<?php
+					endforeach;
+				else:
+					// Number of images you have
+					$total_awards = 8;
 
-          for ( $i = 1; $i <= $total_awards; $i ++ ) : ?>
-            <div class="splide__slide">
-              <div class="awards-pentagon-block">
-                <img
-                  src="<?php
-                  echo get_stylesheet_directory_uri() . "/assets/img/our-story/about--awards-{$i}.avif"; ?>"
-                  loading="lazy" alt="Award <?php
-                echo $i; ?>" class="image h-auto">
-              </div>
-            </div>
-          <?php
-          endfor;
-        endif;
-        ?>
-      </div>
-    </div>
-    <div class="display-none w-embed">
-      <style>
+					for ( $i = 1; $i <= $total_awards; $i ++ ) : ?>
+						<div class="splide__slide">
+							<div class="awards-pentagon-block">
+								<img
+									src="<?php
+									echo get_stylesheet_directory_uri() . "/assets/img/our-story/about--awards-{$i}.avif"; ?>"
+									loading="lazy" alt="Award <?php
+								echo $i; ?>" class="image h-auto">
+							</div>
+						</div>
+					<?php
+					endfor;
+				endif;
+				?>
+			</div>
+		</div>
+		<div class="display-none w-embed">
+			<style>
 				.awards-pentagon-block:hover {
 					filter: drop-shadow(0px 4.982px 24.908px rgba(49, 63, 74, 0.25));
 				}
-      </style>
-    </div>
-    <div class="display-none w-embed w-script">
-      <script>
-        document.addEventListener("DOMContentLoaded", function() {
-          function slider1() {
-            let splideTarget = "[slider-1]";
-            let splideTargetEl = document.querySelector(`${splideTarget}`);
-            if (!splideTargetEl) return;
-            var options = {
-              /*suggested options*/
-              type: "loop", //'fade', //"slide", //"loop",
-              arrows: false,
-              pagination: false,
-              /*custom options*/
-              rewind: true,
-              fixedWidth: 200,
-              perMove: 1,
-              gap: 37.91,
-              //autoplay: true,
-              pauseOnHover: true,
-              updateOnMove: true,
-              lazyLoad: "nearby", //boost performance
-              drag: false, //boost performance
-              speed: 400, //boost performance
-              autoScroll: {
-                speed: 0.3
-              },
-              intersection: {
-                inView: {
-                  //autoplay: true,
-                },
-                outView: {
-                  //autoplay: false,
-                }
-              }
-              // breakpoints: {
-              // 	479: {
-              // 		type: 'slide',
-              // 		perPage: 1,
-              // 		perMove: 1,
-              // 		fixedWidth: '100%',
-              // 		padding: { left: 0, right: 0 },
-              // 	},
-              // },
-            };
-            var splide = new Splide(`${splideTarget}`, options);
-            splide.mount(window.splide.Extensions);
-          }
+			</style>
+		</div>
+		<div class="display-none w-embed w-script">
+			<script>
+				document.addEventListener("DOMContentLoaded", function () {
+					function slider1() {
+						let splideTarget = "[slider-1]";
+						let splideTargetEl = document.querySelector(`${splideTarget}`);
+						if (!splideTargetEl) return;
+						var options = {
+							/*suggested options*/
+							type: "loop", //'fade', //"slide", //"loop",
+							arrows: false,
+							pagination: false,
+							/*custom options*/
+							rewind: true,
+							fixedWidth: 200,
+							perMove: 1,
+							gap: 37.91,
+							//autoplay: true,
+							pauseOnHover: true,
+							updateOnMove: true,
+							lazyLoad: "nearby", //boost performance
+							drag: false, //boost performance
+							speed: 400, //boost performance
+							autoScroll: {
+								speed: 0.3
+							},
+							intersection: {
+								inView: {
+									//autoplay: true,
+								},
+								outView: {
+									//autoplay: false,
+								}
+							}
+							// breakpoints: {
+							// 	479: {
+							// 		type: 'slide',
+							// 		perPage: 1,
+							// 		perMove: 1,
+							// 		fixedWidth: '100%',
+							// 		padding: { left: 0, right: 0 },
+							// 	},
+							// },
+						};
+						var splide = new Splide(`${splideTarget}`, options);
+						splide.mount(window.splide.Extensions);
+					}
 
-          setTimeout(function() {
-            slider1();
-          }, 500);
-        });
-      </script>
-    </div>
-  </div>
+					setTimeout(function () {
+						slider1();
+					}, 500);
+				});
+			</script>
+		</div>
+	</div>
 </section>

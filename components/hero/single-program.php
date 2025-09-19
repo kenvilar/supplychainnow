@@ -10,11 +10,11 @@ $pageId = get_the_ID();
 					<div class="overflow-hidden rounded-24 h-368 w-full sm:h-200">
 						<img
 							src="<?php
-							if (get_field('program_thumbnail_image_upload', $pageId)) {
-								echo get_field('program_thumbnail_image_upload', $pageId);
+							if ( get_field( 'program_thumbnail_image_upload', $pageId ) ) {
+								echo get_field( 'program_thumbnail_image_upload', $pageId );
 							} else {
-								if (get_field('recent_episode_thumbnail_upload', $pageId)) {
-									echo get_field('recent_episode_thumbnail_upload', $pageId);
+								if ( get_field( 'recent_episode_thumbnail_upload', $pageId ) ) {
+									echo get_field( 'recent_episode_thumbnail_upload', $pageId );
 								}
 							}
 							?>"
@@ -24,8 +24,8 @@ $pageId = get_the_ID();
 				<div class="max-w-816 w-full md:max-w-full">
 					<div class="mb-12">
 						<h1 class="text-3xl text-white!"><?php
-							if (get_field('program_title', $pageId)) {
-								the_field('program_title', $pageId);
+							if ( get_field( 'program_title', $pageId ) ) {
+								the_field( 'program_title', $pageId );
 							} ?></h1>
 					</div>
 					<div class="mb-32 w-condition-invisible">
@@ -34,8 +34,8 @@ $pageId = get_the_ID();
 					<div class="mb-32">
 						<div class="rt--default tracking-[1.6px] w-richtext text-white!">
 							<?php
-							if (get_field('program_description', $pageId)) {
-								the_field('program_description', $pageId);
+							if ( get_field( 'program_description', $pageId ) ) {
+								the_field( 'program_description', $pageId );
 							}
 							?>
 						</div>
@@ -43,8 +43,8 @@ $pageId = get_the_ID();
 					<ul role="list" class="m-0 p-0 flex items-center gap-32 sm:flex-col sm:gap-20 w-list-unstyled">
 						<li class="flex">
 							<a href="<?php
-							if (get_field('program_subscribe_link', $pageId)) {
-								the_field('program_subscribe_link', $pageId);
+							if ( get_field( 'program_subscribe_link', $pageId ) ) {
+								the_field( 'program_subscribe_link', $pageId );
 							} ?>" target="_blank"
 							   class="btn secondary w-inline-block" rel="noopener noreferrer">
 								<div class="flex items-center gap-8">
@@ -66,8 +66,8 @@ $pageId = get_the_ID();
 							<div class="font-semibold text-sm">LISTEN ON</div>
 							<div class="flex gap-8 items-center">
 								<a href="<?php
-								if (get_field('program_youtube_link', $pageId)) {
-									the_field('program_youtube_link', $pageId);
+								if ( get_field( 'program_youtube_link', $pageId ) ) {
+									the_field( 'program_youtube_link', $pageId );
 								} else {
 									echo '#';
 								} ?>" class="text-primary hover:text-secondary w-inline-block">
@@ -82,8 +82,8 @@ $pageId = get_the_ID();
 									</div>
 								</a>
 								<a href="<?php
-								if (get_field('listen_to_spotify', $pageId)) {
-									the_field('listen_to_spotify', $pageId);
+								if ( get_field( 'listen_to_spotify', $pageId ) ) {
+									the_field( 'listen_to_spotify', $pageId );
 								} else {
 									echo '#';
 								} ?>" class="text-primary hover:text-secondary w-inline-block">
@@ -97,8 +97,8 @@ $pageId = get_the_ID();
 									</div>
 								</a>
 								<a href="<?php
-								if (get_field('listen_to_amazon_music', $pageId)) {
-									the_field('listen_to_amazon_music', $pageId);
+								if ( get_field( 'listen_to_amazon_music', $pageId ) ) {
+									the_field( 'listen_to_amazon_music', $pageId );
 								} else {
 									echo '#';
 								} ?>" class="text-primary hover:text-secondary w-inline-block">
@@ -115,8 +115,8 @@ $pageId = get_the_ID();
 									</div>
 								</a>
 								<a href="<?php
-								if (get_field('listen_to_apple_podcast', $pageId)) {
-									the_field('listen_to_apple_podcast', $pageId);
+								if ( get_field( 'listen_to_apple_podcast', $pageId ) ) {
+									the_field( 'listen_to_apple_podcast', $pageId );
 								} else {
 									echo '#';
 								} ?>" class="text-primary hover:text-secondary w-inline-block">
@@ -144,15 +144,15 @@ $pageId = get_the_ID();
 							<div class="font-semibold text-sm">FOLLOW US</div>
 							<div class="flex gap-8 items-center">
 								<?php
-								$facebookLink = get_field('facebook', $pageId);
+								$facebookLink = get_field( 'facebook', $pageId );
 								?>
 								<a href="<?php
-								if ($facebookLink) {
+								if ( $facebookLink ) {
 									echo $facebookLink;
 								} else {
 									echo '#';
 								} ?>" target="<?php
-								if ($facebookLink) {
+								if ( $facebookLink ) {
 									echo '_blank';
 								} else {
 									echo '_self';
@@ -166,16 +166,16 @@ $pageId = get_the_ID();
 									</div>
 								</a>
 								<?php
-								$instagramLink = get_field('instagram', $pageId);
+								$instagramLink = get_field( 'instagram', $pageId );
 								?>
 								<a href="<?php
-								if ($instagramLink) {
+								if ( $instagramLink ) {
 									echo $instagramLink;
 								} else {
 									echo '#';
 								}
 								?>" target="<?php
-								if ($instagramLink) {
+								if ( $instagramLink ) {
 									echo '_blank';
 								} else {
 									echo '_self';
@@ -196,16 +196,16 @@ $pageId = get_the_ID();
 									</div>
 								</a>
 								<?php
-								$linkedinLink = get_field('linkedin', $pageId);
+								$linkedinLink = get_field( 'linkedin', $pageId );
 								?>
 								<a href="<?php
-								if ($linkedinLink) {
+								if ( $linkedinLink ) {
 									echo $linkedinLink;
 								} else {
 									echo '#';
 								}
 								?>" target="<?php
-								if ($linkedinLink) {
+								if ( $linkedinLink ) {
 									echo '_blank';
 								} else {
 									echo '_self';
@@ -219,16 +219,16 @@ $pageId = get_the_ID();
 									</div>
 								</a>
 								<?php
-								$twitter = get_field('twitter', $pageId);
+								$twitter = get_field( 'twitter', $pageId );
 								?>
 								<a href="<?php
-								if ($twitter) {
+								if ( $twitter ) {
 									echo $twitter;
 								} else {
 									echo '#';
 								}
 								?>" target="<?php
-								if ($twitter) {
+								if ( $twitter ) {
 									echo '_blank';
 								} else {
 									echo '_self';
@@ -245,16 +245,16 @@ $pageId = get_the_ID();
 									</div>
 								</a>
 								<?php
-								$youtube = get_field('youtube', $pageId);
+								$youtube = get_field( 'youtube', $pageId );
 								?>
 								<a href="<?php
-								if ($youtube) {
+								if ( $youtube ) {
 									echo $youtube;
 								} else {
 									echo '#';
 								}
 								?>" target="<?php
-								if ($youtube) {
+								if ( $youtube ) {
 									echo '_blank';
 								} else {
 									echo '_self';

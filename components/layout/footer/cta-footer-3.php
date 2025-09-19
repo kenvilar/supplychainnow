@@ -10,35 +10,35 @@ $button_text      = esc_html( ! empty( $section['Button_Text'] ) ? $section['But
 $button_link      = esc_url( ! empty( $section['Button_Link'] ) ? $section['Button_Link'] : '/contact' );
 ?>
 <section class="section rounded-t-100 overflow-hidden text-white select-none">
-  <div class="site-padding sm:py-60 py-144">
-    <div class="w-layout-blockcontainer max-w-788 text-center w-container">
-      <div class="mb-20">
-        <h2 class="text-45"><?= $title; ?></h2>
-      </div>
-      <div class="mb-28">
-        <p class="font-family-alternate font-semibold text-lg">
-          <?= $sub_title; ?>
-        </p>
-      </div>
-      <div class="mb-52">
-        <div class="w-layout-blockcontainer max-w-568 w-container">
-          <p class="tracking-[1.6px]">
-            <?= $description; ?>
-          </p>
-        </div>
-      </div>
-      <div class="flex justify-center">
-        <a href="<?= $button_link; ?>" class="btn primary w-inline-block">
-          <div><?= $button_text; ?></div>
-        </a>
-      </div>
-    </div>
-  </div>
-  <div class="absolute absolute--full w-full h-full gradient1 rotate-180 z--2"></div>
-  <div class="absolute absolute--full w-full h-full z--1">
-    <img
-      loading="lazy"
-      src="<?= $background_image; ?>"
-      alt="Camera capturing a professional video shoot setup" class="image opacity-15" />
-  </div>
+	<div class="site-padding sm:py-60 py-144">
+		<div class="w-layout-blockcontainer max-w-788 text-center w-container">
+			<div class="mb-20">
+				<h2 class="text-45"><?= $title; ?></h2>
+			</div>
+			<div class="mb-28">
+				<p class="font-family-alternate font-semibold text-lg">
+					<?= $sub_title; ?>
+				</p>
+			</div>
+			<div class="mb-52">
+				<div class="w-layout-blockcontainer max-w-568 w-container">
+					<p class="tracking-[1.6px]">
+						<?= $description; ?>
+					</p>
+				</div>
+			</div>
+			<div class="flex justify-center">
+				<a href="<?= $button_link; ?>" class="btn primary w-inline-block">
+					<div><?= $button_text; ?></div>
+				</a>
+			</div>
+		</div>
+	</div>
+	<div class="absolute absolute--full w-full h-full gradient1 rotate-180 z--2"></div>
+	<div class="absolute absolute--full w-full h-full z--1">
+		<img
+			loading="lazy"
+			src="<?= $background_image; ?>"
+			alt="Camera capturing a professional video shoot setup" class="image opacity-15"/>
+	</div>
 </section>

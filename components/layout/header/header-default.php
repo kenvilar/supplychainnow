@@ -2,7 +2,7 @@
 
 $nav_classnames = $args['nav_classnames'] ?? ''; // '' || 'nav-fixed'
 ?>
-<div class="nav <?= esc_attr($nav_classnames); ?>">
+<div class="nav <?= esc_attr( $nav_classnames ); ?>">
 	<div data-animation="default" class="navbar w-nav" data-easing2="ease" data-easing="ease" data-collapse="all"
 	     role="banner" data-no-scroll="1" data-duration="400" data-doc-height="1">
 		<div class="nav-padding">

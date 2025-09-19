@@ -2,7 +2,7 @@
 
 $nav_classnames = $args['nav_classnames'] ?? ''; // '' || 'nav-fixed'
 ?>
-<div class="nav <?= esc_attr($nav_classnames); ?>">
+<div class="nav <?= esc_attr( $nav_classnames ); ?>">
 	<div data-animation="default" class="navbar w-nav" data-easing2="ease" data-easing="ease" data-collapse="all"
 	     role="banner" data-no-scroll="1" data-duration="400" data-doc-height="1">
 		<div class="nav-padding">
@@ -19,13 +19,13 @@ $nav_classnames = $args['nav_classnames'] ?? ''; // '' || 'nav-fixed'
 					<nav role="navigation" class="navmenu w-nav-menu">
 						<div class="navlink__group">
 							<?php
-							wp_nav_menu(array(
+							wp_nav_menu( array(
 								'theme_location' => 'scn_primary_menu',
-								'walker' => new SCN_Nav_Walker(),
-								'container' => false,
-								'items_wrap' => '%3$s',
-								'fallback_cb' => false,
-							));
+								'walker'         => new SCN_Nav_Walker(),
+								'container'      => false,
+								'items_wrap'     => '%3$s',
+								'fallback_cb'    => false,
+							) );
 							?>
 						</div>
 						<div class="navlink_cta__group">
