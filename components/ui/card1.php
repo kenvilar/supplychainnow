@@ -293,15 +293,33 @@ if ( $q->have_posts() ): ?>
 				<div class="w-full tracking-[1.6px] <?= $card_size == 'large' ? '' : 'text-sm'; ?>"
 				     scn-text-limit="<?= $card_size == 'large' ? '2' : '3'; ?>">
 					<?php
-					if ( get_the_excerpt( $q->post->ID ) ) {
-						the_excerpt();
-					} elseif ( get_field( "livestream_description", $q->post->ID ) ) {
-						the_field( "livestream_description", $q->post->ID );
-					} elseif ( get_field( "episode_summary", $q->post->ID ) ) {
-						the_field( "episode_summary", $q->post->ID );
-					} elseif ( get_field( "webinar_description", $q->post->ID ) ) {
-						the_field( "webinar_description", $q->post->ID );
-					} ?>
+					if ( get_field( "livestream_description", $q->post->ID ) ) {
+						echo esc_html( kv_build_acf_fields_like_excerpt( [
+							get_field( "livestream_description", $q->post->ID ),
+							get_the_content( null, false, $q->post->ID ),
+						] ) );
+					} else {
+						if ( get_field( "episode_summary", $q->post->ID ) ) {
+							echo esc_html( kv_build_acf_fields_like_excerpt( [
+								get_field( "episode_summary", $q->post->ID ),
+								get_the_content( null, false, $q->post->ID ),
+							] ) );
+						} else {
+							if ( get_field( "webinar_description", $q->post->ID ) ) {
+								echo esc_html( kv_build_acf_fields_like_excerpt( [
+									get_field( "webinar_description", $q->post->ID ),
+									get_the_content( null, false, $q->post->ID ),
+								] ) );
+							} else {
+								if ( get_the_content( null, false, $q->post->ID ) ) {
+									echo esc_html( kv_build_excerpt( get_the_content( null, false, $q->post->ID ) ) );
+								} else {
+									echo esc_html( get_the_excerpt( $q->post->ID ) );
+								}
+							}
+						}
+					}
+					?>
 				</div>
 			</div>
 		</a>
