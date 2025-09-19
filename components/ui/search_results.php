@@ -699,15 +699,35 @@ if ( $search_query !== '' || $industries !== '' || ( is_singular( 'brands' ) && 
 									</div>
 									<div class="w-full tracking-[1.4px] text-sm" scn-text-limit="3">
 										<?php
-										if ( get_the_excerpt( $results_query->post->ID ) ) {
-											the_excerpt();
-										} elseif ( get_field( "livestream_description", $results_query->post->ID ) ) {
-											the_field( "livestream_description", $results_query->post->ID );
-										} elseif ( get_field( "episode_summary", $results_query->post->ID ) ) {
-											the_field( "episode_summary", $results_query->post->ID );
-										} elseif ( get_field( "webinar_description", $results_query->post->ID ) ) {
-											the_field( "webinar_description", $results_query->post->ID );
-										} ?>
+										if ( get_field( "livestream_description", $results_query->post->ID ) ) {
+											echo esc_html( kv_build_acf_fields_like_excerpt( [
+												get_field( "livestream_description", $results_query->post->ID ),
+												get_the_content( null, false, $results_query->post->ID ),
+											] ) );
+										} else {
+											if ( get_field( "episode_summary", $results_query->post->ID ) ) {
+												echo esc_html( kv_build_acf_fields_like_excerpt( [
+													get_field( "episode_summary", $results_query->post->ID ),
+													get_the_content( null, false, $results_query->post->ID ),
+												] ) );
+											} else {
+												if ( get_field( "webinar_description", $results_query->post->ID ) ) {
+													echo esc_html( kv_build_acf_fields_like_excerpt( [
+														get_field( "webinar_description", $results_query->post->ID ),
+														get_the_content( null, false, $results_query->post->ID ),
+													] ) );
+												} else {
+													if ( get_the_content( null, false, $results_query->post->ID ) ) {
+														echo esc_html( kv_build_excerpt( get_the_content( null,
+															false,
+															$results_query->post->ID ) ) );
+													} else {
+														echo esc_html( get_the_excerpt( $results_query->post->ID ) );
+													}
+												}
+											}
+										}
+										?>
 									</div>
 								</div>
 							</a>
