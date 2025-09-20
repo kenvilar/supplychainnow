@@ -10,18 +10,18 @@ $icon        = esc_url( get_field( 'Icon',
 	$pageID ) ?: get_stylesheet_directory_uri() . '/assets/img/national-supply-chain-day/national-supply-chain-day.avif' );
 $hide_icon   = get_field( 'Hide_Icon', $pageID ) ?: false;
 ?>
-<section class="section bg-cargogrey text-white rounded-b-100">
+<section class="section bg-cargogrey text-white rounded-b-100 sm:rounded-b-none">
 	<div class="site-padding sm:py-60 pt-200 pb-100 relative z-10">
 		<div class="w-layout-blockcontainer max-w-888 w-container">
 			<div class="pt-20 md:pt-0">
 				<div class="flex items-center justify-between gap-20 sm:flex-col">
-					<div class="max-w-328 w-full md:max-w-full <?= $hide_icon ? 'hidden' : '' ?>">
+					<div class="max-w-328 w-full <?= $hide_icon ? 'hidden' : '' ?>">
 						<img
 							src="<?= $icon; ?>"
 							loading="lazy" alt="national supply chain day" class="w-full h-full max-w-none fit-cover">
 					</div>
 					<div class="max-w-500 w-full md:max-w-full sm:text-center">
-						<h1 class="font-family-alternate font-normal text-xl tracking-[2.4px]">
+						<h1 class="font-semibold text-3xl xs:text-2xl tracking-[2.4px]">
 							<?= $page_title; ?>
 						</h1>
 					</div>

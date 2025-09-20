@@ -43,7 +43,7 @@ $buttonLink = esc_url( ! empty( $section['Button_Link'] ) ? $section['Button_Lin
 					?>
 				</div>
 			</div>
-			<div class="flex justify-center sm:flex-col">
+			<div class="flex justify-center">
 				<div class="flex">
 					<a href="<?= $buttonLink; ?>" class="btn primary w-inline-block">
 						<div><?= $buttonText; ?></div>

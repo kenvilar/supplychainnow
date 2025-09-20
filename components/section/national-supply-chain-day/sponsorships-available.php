@@ -7,7 +7,7 @@ $subtitle   = esc_html( ! empty( $section['Subtitle'] ) ? $section['Subtitle'] :
 $buttonText = esc_html( ! empty( $section['Button_Text'] ) ? $section['Button_Text'] : 'Contact Us' );
 $buttonLink = esc_url( ! empty( $section['Button_Link'] ) ? $section['Button_Link'] : '/contact' );
 ?>
-<div class="overflow-hidden relative rounded-t-100">
+<div class="overflow-hidden relative rounded-t-100 sm:rounded-t-none">
 	<section class="section">
 		<div class="site-padding sm:py-60 py-92">
 			<div class="w-layout-blockcontainer max-w-1248 w-container">

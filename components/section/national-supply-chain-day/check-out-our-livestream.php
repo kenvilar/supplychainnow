@@ -5,7 +5,7 @@ $section         = get_field( 'Check_Out_Our_2025_Livestream_Section', $pageID )
 $title           = esc_html( ! empty( $section['Title'] ) ? $section['Title'] : 'Check Out Our 2025 Livestream' );
 $youtubeEmbedUrl = esc_url( ! empty( $section['Youtube_Embed_URL'] ) ? $section['Youtube_Embed_URL'] : 'https://www.youtube.com/embed/eyzGyoHDNGg' );
 ?>
-<div class="rounded-t-100 overflow-hidden relative">
+<div class="rounded-t-100 overflow-hidden relative sm:rounded-t-none">
 	<section class="section text-white relative z-10">
 		<div class="site-padding sm:py-60 py-84">
 			<div class="w-layout-blockcontainer w-container max-w-1250">
