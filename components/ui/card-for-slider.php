@@ -52,18 +52,13 @@ the_permalink( $item ); ?>" class="relative w-full group splide__slide">
 									?>
 								</div>
 								<?php
-								echo $selectMediaType == "livestream"
-									? '<div class="absolute absolute--full bg-primary"></div>'
-									: "";
-								echo $selectMediaType == "podcast"
-									? '<div class="absolute absolute--full bg-secondary"></div>'
-									: "";
-								echo $selectMediaType == "webinar"
-									? '<div class="absolute absolute--full bg-tertiary"></div>'
-									: "";
-								echo ( $selectMediaType != "livestream" || $selectMediaType != "podcast" || $selectMediaType != "webinar" )
-									? '<div class="absolute absolute--full bg-tertiary"></div>'
-									: "";
+								$bgByType = [
+									'livestream' => 'bg-primary',
+									'podcast'    => 'bg-secondary',
+									'webinar'    => 'bg-tertiary',
+								];
+								$bgClass  = $bgByType[ $selectMediaType ] ?? 'bg-tertiary';
+								echo '<div class="absolute absolute--full ' . esc_attr( $bgClass ) . '"></div>';
 								?>
 							</div>
 							<?php
@@ -83,18 +78,13 @@ the_permalink( $item ); ?>" class="relative w-full group splide__slide">
 									?>
 								</div>
 								<?php
-								echo $selectMediaType == "livestream"
-									? '<div class="absolute absolute--full bg-primary"></div>'
-									: "";
-								echo $selectMediaType == "podcast"
-									? '<div class="absolute absolute--full bg-secondary"></div>'
-									: "";
-								echo $selectMediaType == "webinar"
-									? '<div class="absolute absolute--full bg-tertiary"></div>'
-									: "";
-								echo ( $selectMediaType != "livestream" || $selectMediaType != "podcast" || $selectMediaType != "webinar" )
-									? '<div class="absolute absolute--full bg-tertiary"></div>'
-									: "";
+								$bgByType = [
+									'livestream' => 'bg-primary',
+									'podcast'    => 'bg-secondary',
+									'webinar'    => 'bg-tertiary',
+								];
+								$bgClass  = $bgByType[ $selectMediaType ] ?? 'bg-tertiary';
+								echo '<div class="absolute absolute--full ' . esc_attr( $bgClass ) . '"></div>';
 								?>
 							</div>
 							<?php

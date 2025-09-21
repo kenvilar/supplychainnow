@@ -560,15 +560,13 @@ if ( $search_query !== '' || $industries !== '' || ( is_singular( 'brands' ) && 
 																?>
 															</div>
 															<?php
-															if ( $selectMediaType == "livestream" ) {
-																echo '<div class="absolute absolute--full bg-primary"></div>';
-															} elseif ( $selectMediaType == "podcast" ) {
-																echo '<div class="absolute absolute--full bg-secondary"></div>';
-															} elseif ( $selectMediaType == "webinar" ) {
-																echo '<div class="absolute absolute--full bg-tertiary"></div>';
-															} else {
-																echo '<div class="absolute absolute--full bg-tertiary"></div>';
-															}
+															$bgByType = [
+																'livestream' => 'bg-primary',
+																'podcast'    => 'bg-secondary',
+																'webinar'    => 'bg-tertiary',
+															];
+															$bgClass  = $bgByType[ $selectMediaType ] ?? 'bg-tertiary';
+															echo '<div class="absolute absolute--full ' . esc_attr( $bgClass ) . '"></div>';
 															?>
 														</div>
 													</div>
@@ -595,15 +593,13 @@ if ( $search_query !== '' || $industries !== '' || ( is_singular( 'brands' ) && 
 																?>
 															</div>
 															<?php
-															if ( $selectMediaType == "livestream" ) {
-																echo '<div class="absolute absolute--full bg-primary"></div>';
-															} elseif ( $selectMediaType == "podcast" ) {
-																echo '<div class="absolute absolute--full bg-secondary"></div>';
-															} elseif ( $selectMediaType == "webinar" ) {
-																echo '<div class="absolute absolute--full bg-tertiary"></div>';
-															} else {
-																echo '<div class="absolute absolute--full bg-tertiary"></div>';
-															}
+															$bgByType = [
+																'livestream' => 'bg-primary',
+																'podcast'    => 'bg-secondary',
+																'webinar'    => 'bg-tertiary',
+															];
+															$bgClass  = $bgByType[ $selectMediaType ] ?? 'bg-tertiary';
+															echo '<div class="absolute absolute--full ' . esc_attr( $bgClass ) . '"></div>';
 															?>
 														</div>
 													</div>

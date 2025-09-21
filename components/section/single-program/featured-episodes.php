@@ -68,15 +68,13 @@ $programFeaturedEpisodes = get_field( 'program_featured_episodes', $pageId )
 																		echo $first->name; ?>
 																	</div>
 																	<?php
-																	echo $selectMediaType == 'livestream'
-																		? '<div class="absolute absolute--full bg-primary"></div>'
-																		: '';
-																	echo $selectMediaType == 'podcast'
-																		? '<div class="absolute absolute--full bg-secondary"></div>'
-																		: '';
-																	echo $selectMediaType == 'webinar'
-																		? '<div class="absolute absolute--full bg-tertiary"></div>'
-																		: '';
+																	$bgByType = [
+																		'livestream' => 'bg-primary',
+																		'podcast'    => 'bg-secondary',
+																		'webinar'    => 'bg-tertiary',
+																	];
+																	$bgClass  = $bgByType[ $selectMediaType ] ?? 'bg-tertiary';
+																	echo '<div class="absolute absolute--full ' . esc_attr( $bgClass ) . '"></div>';
 																	?>
 																</div>
 															</div>
