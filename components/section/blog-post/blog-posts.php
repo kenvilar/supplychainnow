@@ -379,14 +379,14 @@ if ( in_array( $categorySlug, [ 'white-paper', 'ebook', 'guide' ] ) ) {
 											<div class="relative flex flex-col justify-between gap-20 h-full">
 												<div class="w-full">
 													<div class="mb-28">
-														<div class="overflow-hidden rounded-12 relative h-222 md:h-auto bg-cargogrey">
+														<div class="overflow-hidden rounded-0 relative h-222 md:h-auto bg-cargogrey">
 															<img
 																src="<?php
 																echo get_the_post_thumbnail_url( $q->post->ID )
-																	? get_the_post_thumbnail_url( $q->post->ID, 'medium_large' )
+																	? get_the_post_thumbnail_url( $q->post->ID, 'large' )
 																	: get_stylesheet_directory_uri() .
 																	  "/assets/img/misc/default-card-img-thumbnail.avif"; ?>"
-																loading="lazy" alt="" class="image relative opacity-90">
+																loading="lazy" alt="" class="image relative object-contain max-w-full">
 															<?php
 															$primaryTag = get_field( "Primary_Tag", $q->post->ID );
 															$terms      = get_the_terms( $q->post->ID, "post_tag" );
@@ -414,6 +414,17 @@ if ( in_array( $categorySlug, [ 'white-paper', 'ebook', 'guide' ] ) ) {
 																<?php
 															}
 															?>
+															<div
+																class="absolute absolute--full flex items-center justify-center translate-y-220 group-hover:translate-y-0 transition-all duration-500">
+																<?php
+																if ( $categoryResultName == 'Episodes' ) { ?>
+																	<img
+																		src="<?= get_stylesheet_directory_uri() . "/assets/img/icons/play-button-podcast.avif"; ?>"
+																		loading="lazy" alt="play-button-podcast"/>
+																	<?php
+																}
+																?>
+															</div>
 														</div>
 													</div>
 													<div class="mb-12">

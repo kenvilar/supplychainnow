@@ -431,12 +431,6 @@ footer .footer_inner {
 .pe-none {
 	pointer-events: none;
 }
-.image {
-	object-fit: cover;
-	width: 100%;
-	max-width: none;
-	height: 100%;
-}
 .card {
 	background-color: white;
 	border: 1px solid #313f4a40;

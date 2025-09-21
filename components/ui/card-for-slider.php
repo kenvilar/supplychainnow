@@ -20,14 +20,14 @@ the_permalink( $item ); ?>" class="relative w-full group splide__slide">
 		<div class="w-full">
 			<div class="mb-28">
 				<div
-					class="overflow-hidden rounded-12 relative h-222 md:h-auto bg-cargogrey">
+					class="overflow-hidden rounded-0 relative h-222 md:h-auto">
 					<img
 						src="<?php
 						echo get_the_post_thumbnail_url( $item )
-							? get_the_post_thumbnail_url( $item, 'medium_large' )
+							? get_the_post_thumbnail_url( $item, 'large' )
 							: get_stylesheet_directory_uri() .
 							  "/assets/img/misc/default-card-img-thumbnail.avif"; ?>"
-						loading="lazy" alt="" class="image relative opacity-90"/>
+						loading="lazy" alt="" class="image relative object-contain max-w-full"/>
 					<?php
 					$terms    = get_the_terms( $item, "tags" );
 					$post_tag = get_the_terms( $item, "post_tag" );

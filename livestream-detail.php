@@ -35,7 +35,7 @@ $youtube_url = $matches[1] ?? '';
 								     if ( get_field( 'thumbnail_upload', $pageId ) ) {
 									     echo get_field( 'thumbnail_upload', $pageId );
 								     } else {
-									     the_post_thumbnail_url( 'medium_large' );
+									     the_post_thumbnail_url( 'large' );
 								     }
 								     ?>" alt="">
 								<?php
@@ -221,13 +221,13 @@ $youtube_url = $matches[1] ?? '';
 												<div class="relative flex flex-col justify-between gap-20 h-full">
 													<div class="w-full">
 														<div class="mb-28">
-															<div class="overflow-hidden rounded-12 relative h-222 bg-cargogrey">
+															<div class="overflow-hidden rounded-0 relative h-222 bg-cargogrey">
 																<img
 																	src="<?php
 																	echo get_the_post_thumbnail_url( $q->post->ID )
-																		? get_the_post_thumbnail_url( $q->post->ID, 'medium_large' )
+																		? get_the_post_thumbnail_url( $q->post->ID, 'large' )
 																		: get_stylesheet_directory_uri() . '/assets/img/misc/default-card-img-thumbnail.avif' ?>"
-																	loading="lazy" alt="" class="image relative opacity-90">
+																	loading="lazy" alt="" class="image relative object-contain max-w-full">
 																<?php
 																$primaryTag = get_field( "Primary_Tag", $q->post->ID );
 																$terms      = get_the_terms( $q->post->ID, 'tags' );

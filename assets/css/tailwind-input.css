@@ -71,6 +71,12 @@
     max-width: 100%;
     display: inline-block;
   }
+	.image {
+		object-fit: cover;
+		width: 100%;
+		max-width: none;
+		height: 100%;
+	}
   .w-inline-block {
     max-width: 100%;
     display: inline-block;
