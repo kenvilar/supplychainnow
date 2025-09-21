@@ -11,7 +11,7 @@ $section     = get_field( 'Hero_Section', $pageID );
 $buttonText  = esc_html( ! empty( $section['Button_Text'] ) ? $section['Button_Text'] : 'Get Started' );
 $buttonLink  = esc_url( ! empty( $section['Button_Link'] ) ? $section['Button_Link'] : '/contact' );
 ?>
-<section class="section bg-cargogrey text-white rounded-b-100">
+<section class="section bg-cargogrey text-white rounded-b-100 sm:rounded-b-none">
 	<div class="site-padding sm:py-60 pt-200 pb-100 relative z-10">
 		<div class="w-layout-blockcontainer pt-20 w-container text-center max-w-960">
 			<div class="mb-28">

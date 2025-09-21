@@ -7,7 +7,7 @@ $title      = esc_html( ! empty( $section['Title'] ) ? $section['Title'] : 'Our 
 $buttonText = esc_html( ! empty( $section['Button_Text'] ) ? $section['Button_Text'] : 'Read More' );
 $buttonLink = esc_url( ! empty( $section['Button_Link'] ) ? $section['Button_Link'] : '/success-stories' );
 ?>
-<div class="overflow-hidden relative rounded-t-100">
+<div class="overflow-hidden relative rounded-t-100 sm:rounded-t-none">
 	<section class="section relative z-10">
 		<div class="site-padding sm:py-60 pt-64 pb-100">
 			<div class="w-layout-blockcontainer max-w-1252 w-container">

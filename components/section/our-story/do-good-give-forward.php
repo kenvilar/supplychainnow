@@ -21,7 +21,7 @@ $cardTitle4 = ! empty( $section['Card_Repeater'][3]['Title'] ) ? $section['Card_
 		font-weight: 600;
 	}
 </style>
-<div class="gradient1 rounded-100">
+<div class="gradient1 rounded-100 sm:rounded-none">
 	<section class="section text-white">
 		<div class="site-padding sm:py-60 relative z-10 pt-80 pb-56">
 			<div class="mb-88">

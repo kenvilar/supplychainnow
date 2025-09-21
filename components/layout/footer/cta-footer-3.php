@@ -9,11 +9,11 @@ $background_image = esc_url( ! empty( $section['Background_Image'] ) ? $section[
 $button_text      = esc_html( ! empty( $section['Button_Text'] ) ? $section['Button_Text'] : 'Get Started' );
 $button_link      = esc_url( ! empty( $section['Button_Link'] ) ? $section['Button_Link'] : '/contact' );
 ?>
-<section class="section rounded-t-100 overflow-hidden text-white select-none">
+<section class="section rounded-t-100 overflow-hidden text-white select-none sm:rounded-t-none">
 	<div class="site-padding sm:py-60 py-144">
 		<div class="w-layout-blockcontainer max-w-788 text-center w-container">
 			<div class="mb-20">
-				<h2 class="text-45"><?= $title; ?></h2>
+				<h2 class="text-45 sm:text-2xl!"><?= $title; ?></h2>
 			</div>
 			<div class="mb-28">
 				<p class="font-family-alternate font-semibold text-lg">

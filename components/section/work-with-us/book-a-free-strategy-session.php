@@ -9,7 +9,7 @@ $description = ! empty( $section['Description'] ) ? $section['Description'] : 'R
 $buttonText  = esc_html( ! empty( $section['Button_Text'] ) ? $section['Button_Text'] : 'Get Started' );
 $buttonLink  = esc_url( ! empty( $section['Button_Link'] ) ? $section['Button_Link'] : '/contact' );
 ?>
-<div class="overflow-hidden relative rounded-t-100">
+<div class="overflow-hidden relative rounded-t-100 sm:rounded-t-none">
 	<section class="section sm:text-center">
 		<div class="site-padding sm:py-60 pt-100">
 			<div class="w-layout-blockcontainer max-w-1172 w-container">

@@ -8,7 +8,7 @@ $icon       = esc_url( get_field( 'Icon',
 	$pageID ) ?: get_stylesheet_directory_uri() . '/assets/img/icons/notebook-with-one-person.svg' );
 $hide_icon  = get_field( 'Hide_Icon', $pageID ) ?: false;
 ?>
-<section class="section bg-cargogrey text--white rounded-b-100">
+<section class="section bg-cargogrey text--white rounded-b-100 sm:rounded-b-none">
 	<div class="site-padding sm:py-60 pt-200 pb-100 relative z-10">
 		<div class="w-layout-blockcontainer pt-20 w-container text-center max-w-960">
 			<div class="mb-20 <?= $hide_icon ? 'hidden' : '' ?>">

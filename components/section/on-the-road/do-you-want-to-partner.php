@@ -6,7 +6,7 @@ $title      = esc_html( ! empty( $section['Title'] ) ? $section['Title'] : 'Do y
 $buttonText = esc_html( ! empty( $section['Button_Text'] ) ? $section['Button_Text'] : 'Partner With Us' );
 $buttonLink = esc_url( ! empty( $section['Button_Link'] ) ? $section['Button_Link'] : '#' );
 ?>
-<div class="overflow-hidden relative rounded-t-100">
+<div class="overflow-hidden relative rounded-t-100 sm:rounded-t-none">
 	<section class="section">
 		<div class="site-padding sm:py-60 py-76">
 			<div class="w-layout-blockcontainer max-w-776 w-container">

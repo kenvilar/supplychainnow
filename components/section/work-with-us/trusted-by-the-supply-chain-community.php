@@ -10,7 +10,7 @@ $stat2Title  = esc_html( ! empty( $section['Statistics_2_Title'] ) ? $section['S
 $stat3Number = esc_html( ! empty( $section['Statistics_3_Number'] ) ? $section['Statistics_3_Number'] : '7M+' );
 $stat3Title  = esc_html( ! empty( $section['Statistics_3_Title'] ) ? $section['Statistics_3_Title'] : 'Downloads' );
 ?>
-<div class="gradient1 rounded-100">
+<div class="gradient1 rounded-100 sm:rounded-none">
 	<section class="section text-white py-96 sm:py-60">
 		<div class="relative z-10">
 			<div class="mb-72">

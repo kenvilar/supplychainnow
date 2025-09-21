@@ -2,12 +2,12 @@
 
 $pageId = get_the_ID();
 ?>
-<section class="section bg-cargogrey text-white rounded-b-100">
+<section class="section bg-cargogrey text-white rounded-b-100 sm:rounded-b-none sm:text-center">
 	<div class="site-padding sm:py-60 pt-200 pb-84 md:py-60">
 		<div class="w-layout-blockcontainer max-w-1248 w-container">
 			<div class="flex gap-20 items-center justify-between md:flex-col">
 				<div class="max-w-368 w-full md:max-w-full">
-					<div class="overflow-hidden rounded-24 h-368 w-full sm:h-200">
+					<div class="overflow-hidden rounded-24 h-368 w-full sm:h-auto">
 						<img
 							src="<?php
 							if ( get_field( 'program_thumbnail_image_upload', $pageId ) ) {

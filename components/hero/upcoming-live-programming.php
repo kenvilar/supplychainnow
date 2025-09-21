@@ -20,7 +20,7 @@ $buttonLink1  = esc_url( ! empty( $section['Button_Link_1'] ) ? $section['Button
 $buttonLink2  = esc_url( ! empty( $section['Button_Link_2'] ) ? $section['Button_Link_2'] : '#upcoming-webinars' );
 ?>
 <div class="relative">
-	<section class="section bg-cargogrey text-white rounded-b-100 overflow-visible!">
+	<section class="section bg-cargogrey text-white rounded-b-100 overflow-visible! sm:rounded-b-none">
 		<div class="site-padding sm:py-60 pt-200 pb-100 relative z-10 pb-200">
 			<div class="w-layout-blockcontainer pt-40 w-container text-center max-w-960">
 				<div class="mb-20 <?= $hide_icon ? 'hidden' : '' ?>">

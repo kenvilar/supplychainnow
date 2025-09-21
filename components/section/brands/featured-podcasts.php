@@ -27,7 +27,7 @@ $title   = esc_html( ! empty( $section['Title'] ) ? $section['Title'] : 'Feature
 								?>
 								<a href="<?php
 								the_permalink( $item ); ?>" class="w-full overflow-hidden rounded-24 hover-shadow2 w-inline-block">
-									<div class="h-496 sm:h-200">
+									<div class="h-496 sm:h-auto">
 										<img
 											src="<?php
 											if ( get_field( 'program_thumbnail_image_upload', $item ) ) {

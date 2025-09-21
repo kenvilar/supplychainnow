@@ -5,11 +5,11 @@ $section          = get_field( 'Footer_CTA_Section', $pageID );
 $title            = esc_html( ! empty( $section['Title'] ) ? $section['Title'] : 'Follow Supply Chain Now for the latest updates, insights, and news.' );
 $background_image = esc_url( ! empty( $section['Background_Image'] ) ? $section['Background_Image'] : get_stylesheet_directory_uri() . '/assets/img/footer/bg-footer-cta-media-kit.avif' );
 ?>
-<section class="section rounded-t-100 overflow-hidden text-white select-none">
+<section class="section rounded-t-100 overflow-hidden text-white select-none sm:rounded-t-none">
 	<div class="site-padding sm:py-60 py-164">
 		<div class="w-layout-blockcontainer max-w-816 text-center w-container">
 			<div class="mb-44">
-				<h2 class="text-45"><?= $title; ?></h2>
+				<h2 class="text-45 sm:text-2xl!"><?= $title; ?></h2>
 			</div>
 			<ul role="list" class="flex items-center justify-center gap-16 m-0 w-list-unstyled">
 				<li class="flex">
