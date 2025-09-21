@@ -44,7 +44,7 @@ $pageId = get_the_ID();
 														echo get_field( 'program_thumbnail_image_upload', $q->ID );
 													} else {
 														if ( has_post_thumbnail( $q->ID ) ) {
-															echo the_post_thumbnail_url( 'thumbnail' );
+															the_post_thumbnail_url( 'large' );
 														} else {
 															echo get_stylesheet_directory_uri() . '/assets/img/misc/default-card-img-thumbnail.avif';
 														}

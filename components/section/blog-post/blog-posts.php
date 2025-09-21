@@ -379,7 +379,7 @@ if ( in_array( $categorySlug, [ 'white-paper', 'ebook', 'guide' ] ) ) {
 											<div class="relative flex flex-col justify-between gap-20 h-full">
 												<div class="w-full">
 													<div class="mb-28">
-														<div class="overflow-hidden rounded-0 relative h-222 md:h-auto bg-cargogrey">
+														<div class="overflow-hidden rounded-0 relative h-222 md:h-auto">
 															<img
 																src="<?php
 																echo get_the_post_thumbnail_url( $q->post->ID )

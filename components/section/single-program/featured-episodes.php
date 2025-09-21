@@ -44,13 +44,18 @@ $programFeaturedEpisodes = get_field( 'program_featured_episodes', $pageId )
 											<div class="w-full">
 												<div class="mb-28">
 													<div
-														class="overflow-hidden rounded-12 relative <?= count( $featured_episodes ) >= 3 ? 'h-222 md:h-auto' : 'h-344 md:h-auto'; ?> bg-cargogrey">
+														class="overflow-hidden rounded-0 relative <?php
+														echo count( $featured_episodes ) >= 3 ? 'h-222 md:h-auto' : 'h-344 md:h-auto';
+														if ( $selectMediaType == 'livestream' ) {
+															echo 'bg-cargogrey';
+														}
+														?>">
 														<img
 															src="<?php
-															echo get_the_post_thumbnail_url( $value, 'medium_large' )
-																? get_the_post_thumbnail_url( $value, 'medium_large' )
+															echo get_the_post_thumbnail_url( $value, 'large' )
+																? get_the_post_thumbnail_url( $value, 'large' )
 																: get_stylesheet_directory_uri() . '/assets/img/misc/default-card-img-thumbnail.avif' ?>"
-															loading="lazy" alt="" class="image relative opacity-90">
+															loading="lazy" alt="" class="image relative object-contain max-w-full">
 														<?php
 														$terms = get_the_terms( $value, 'tags' );
 														if ( ! is_wp_error( $terms ) && ! empty( $terms ) ) {

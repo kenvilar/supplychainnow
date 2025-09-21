@@ -234,7 +234,7 @@ $episode_captivate_link_get_link_only = $episode_captivate_link_matches[1] ?? ''
 												<div class="relative flex flex-col justify-between gap-20 h-full">
 													<div class="w-full">
 														<div class="mb-28">
-															<div class="overflow-hidden rounded-0 relative h-222 bg-cargogrey">
+															<div class="overflow-hidden rounded-0 relative h-222">
 																<img
 																	src="<?php
 																	echo get_the_post_thumbnail_url( $q->post->ID )

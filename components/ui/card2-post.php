@@ -138,7 +138,7 @@ if ( $q->have_posts() ): ?>
 		$primaryTag = get_field( "Primary_Tag", $q->post->ID );
 		?>
 		<a href="<?= get_permalink( $q->post->ID ) . '?category=' . $categorySlug; ?>"
-		   class="relative w-full group <?= $classNames; ?>" <?= $attr_string ?>>
+		   class="relative w-full group <?= $classNames; ?>" <?= $attr_string; ?>>
 			<div class="relative flex flex-col justify-between gap-20 h-full">
 				<div class="w-full">
 					<div class="mb-28">
