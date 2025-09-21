@@ -32,62 +32,83 @@ the_permalink( $item ); ?>" class="relative w-full group splide__slide">
 							: get_stylesheet_directory_uri() .
 							  "/assets/img/misc/default-card-img-thumbnail.avif"; ?>"
 						loading="lazy" alt="" class="image relative object-contain max-w-full"/>
-					<div class="absolute absolute--tl p-24 flex items-center justify-center">
+					<div class="absolute absolute--tl p-24 flex flex-wrap items-center gap-4">
 						<?php
 						$terms    = get_the_terms( $item, "tags" );
 						$post_tag = get_the_terms( $item, "post_tag" );
-						if ( ! is_wp_error( $terms ) && ! empty( $terms ) ) {
-							$terms      = array_values( $terms );
-							$randIndex  = array_rand( $terms );
-							$randomTerm = $terms[ $randIndex ];
-							?>
-							<div class="relative rounded-full overflow-hidden py-4 px-8">
-								<div class="relative font-semibold uppercase text-2xs text-white lh-normal z-10">
+						if ( ! empty( $primaryTag ) ) {
+							foreach ( $primaryTag as $primaryTagItem ) {
+								?>
+								<div class="relative rounded-full overflow-hidden py-4 px-8">
+									<div class="relative font-semibold uppercase text-2xs text-white lh-normal z-10">
+										<?= $primaryTagItem->name; ?>
+									</div>
 									<?php
-									if ( ! empty( $primaryTag->name ) ):
-										echo $primaryTag->name;
-									else:
-										echo $randomTerm->name;
-									endif;
+									$bgByType = [
+										'livestream' => 'bg-primary',
+										'podcast'    => 'bg-secondary',
+										'webinar'    => 'bg-tertiary',
+									];
+									$bgClass  = $bgByType[ $selectMediaType ] ?? 'bg-tertiary';
+									echo '<div class="absolute absolute--full ' . esc_attr( $bgClass ) . '"></div>';
 									?>
 								</div>
 								<?php
-								$bgByType = [
-									'livestream' => 'bg-primary',
-									'podcast'    => 'bg-secondary',
-									'webinar'    => 'bg-tertiary',
-								];
-								$bgClass  = $bgByType[ $selectMediaType ] ?? 'bg-tertiary';
-								echo '<div class="absolute absolute--full ' . esc_attr( $bgClass ) . '"></div>';
+							}
+						} else {
+							if ( ! is_wp_error( $terms ) && ! empty( $terms ) ) {
+								$terms      = array_values( $terms );
+								$randIndex  = array_rand( $terms );
+								$randomTerm = $terms[ $randIndex ];
 								?>
-							</div>
-							<?php
-						} elseif ( ! is_wp_error( $post_tag ) && ! empty( $post_tag ) ) {
-							$terms      = array_values( $post_tag );
-							$randIndex  = array_rand( $post_tag );
-							$randomTerm = $terms[ $randIndex ];
-							?>
-							<div class="relative rounded-full overflow-hidden py-4 px-8">
-								<div class="relative font-semibold uppercase text-2xs text-white lh-normal z-10">
+								<div class="relative rounded-full overflow-hidden py-4 px-8">
+									<div class="relative font-semibold uppercase text-2xs text-white lh-normal z-10">
+										<?php
+										if ( ! empty( $primaryTag->name ) ):
+											echo $primaryTag->name;
+										else:
+											echo $randomTerm->name;
+										endif;
+										?>
+									</div>
 									<?php
-									if ( ! empty( $primaryTag->name ) ):
-										echo $primaryTag->name;
-									else:
-										echo $randomTerm->name;
-									endif;
+									$bgByType = [
+										'livestream' => 'bg-primary',
+										'podcast'    => 'bg-secondary',
+										'webinar'    => 'bg-tertiary',
+									];
+									$bgClass  = $bgByType[ $selectMediaType ] ?? 'bg-tertiary';
+									echo '<div class="absolute absolute--full ' . esc_attr( $bgClass ) . '"></div>';
 									?>
 								</div>
 								<?php
-								$bgByType = [
-									'livestream' => 'bg-primary',
-									'podcast'    => 'bg-secondary',
-									'webinar'    => 'bg-tertiary',
-								];
-								$bgClass  = $bgByType[ $selectMediaType ] ?? 'bg-tertiary';
-								echo '<div class="absolute absolute--full ' . esc_attr( $bgClass ) . '"></div>';
+							} elseif ( ! is_wp_error( $post_tag ) && ! empty( $post_tag ) ) {
+								$terms      = array_values( $post_tag );
+								$randIndex  = array_rand( $post_tag );
+								$randomTerm = $terms[ $randIndex ];
 								?>
-							</div>
-							<?php
+								<div class="relative rounded-full overflow-hidden py-4 px-8">
+									<div class="relative font-semibold uppercase text-2xs text-white lh-normal z-10">
+										<?php
+										if ( ! empty( $primaryTag->name ) ):
+											echo $primaryTag->name;
+										else:
+											echo $randomTerm->name;
+										endif;
+										?>
+									</div>
+									<?php
+									$bgByType = [
+										'livestream' => 'bg-primary',
+										'podcast'    => 'bg-secondary',
+										'webinar'    => 'bg-tertiary',
+									];
+									$bgClass  = $bgByType[ $selectMediaType ] ?? 'bg-tertiary';
+									echo '<div class="absolute absolute--full ' . esc_attr( $bgClass ) . '"></div>';
+									?>
+								</div>
+								<?php
+							}
 						}
 						?>
 					</div>

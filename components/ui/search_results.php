@@ -533,18 +533,18 @@ if ( $search_query !== '' || $industries !== '' || ( is_singular( 'brands' ) && 
 														: get_stylesheet_directory_uri() .
 														  "/assets/img/misc/default-card-img-thumbnail.avif"; ?>"
 													loading="lazy" alt="" class="image relative object-contain max-w-full">
-												<?php
-												$primaryTag = get_field( "Primary_Tag", $results_query->post->ID );
+												<div class="absolute absolute--tl p-24 flex flex-wrap items-center gap-4">
+													<?php
+													$primaryTag = get_field( "Primary_Tag", $results_query->post->ID );
 
-												$terms    = get_the_terms( $results_query->post->ID, "tags" );
-												$post_tag = get_the_terms( $results_query->post->ID, "post_tag" );
+													$terms    = get_the_terms( $results_query->post->ID, "tags" );
+													$post_tag = get_the_terms( $results_query->post->ID, "post_tag" );
 
-												if ( ! is_wp_error( $terms ) && ! empty( $terms ) ) {
-													$terms      = array_values( $terms );
-													$randIndex  = array_rand( $terms );
-													$randomTerm = $terms[ $randIndex ];
-													?>
-													<div class="absolute absolute--tl p-24 flex items-center justify-center">
+													if ( ! is_wp_error( $terms ) && ! empty( $terms ) ) {
+														$terms      = array_values( $terms );
+														$randIndex  = array_rand( $terms );
+														$randomTerm = $terms[ $randIndex ];
+														?>
 														<div class="relative rounded-full overflow-hidden py-4 px-8">
 															<div class="relative font-semibold uppercase text-2xs text-white lh-normal z-10">
 																<?php
@@ -569,15 +569,12 @@ if ( $search_query !== '' || $industries !== '' || ( is_singular( 'brands' ) && 
 															echo '<div class="absolute absolute--full ' . esc_attr( $bgClass ) . '"></div>';
 															?>
 														</div>
-													</div>
-													<?php
-												}
-												if ( ! is_wp_error( $post_tag ) && ! empty( $post_tag ) ) {
-													$terms      = array_values( $post_tag );
-													$randIndex  = array_rand( $post_tag );
-													$randomTerm = $terms[ $randIndex ];
-													?>
-													<div class="absolute absolute--tl p-24 flex items-center justify-center">
+														<?php
+													} elseif ( ! is_wp_error( $post_tag ) && ! empty( $post_tag ) ) {
+														$terms      = array_values( $post_tag );
+														$randIndex  = array_rand( $post_tag );
+														$randomTerm = $terms[ $randIndex ];
+														?>
 														<div class="relative rounded-full overflow-hidden py-4 px-8">
 															<div class="relative font-semibold uppercase text-2xs text-white lh-normal z-10">
 																<?php
@@ -602,10 +599,10 @@ if ( $search_query !== '' || $industries !== '' || ( is_singular( 'brands' ) && 
 															echo '<div class="absolute absolute--full ' . esc_attr( $bgClass ) . '"></div>';
 															?>
 														</div>
-													</div>
-													<?php
-												}
-												?>
+														<?php
+													}
+													?>
+												</div>
 												<div
 													class="absolute absolute--full flex items-center justify-center translate-y-220 group-hover:translate-y-0 transition-all duration-500">
 													<?php
