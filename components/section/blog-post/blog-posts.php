@@ -386,34 +386,42 @@ if ( in_array( $categorySlug, [ 'white-paper', 'ebook', 'guide' ] ) ) {
 																	? get_the_post_thumbnail_url( $q->post->ID, 'large' )
 																	: get_stylesheet_directory_uri() .
 																	  "/assets/img/misc/default-card-img-thumbnail.avif"; ?>"
-																loading="lazy" alt="" class="image relative object-contain max-w-full">
-															<?php
-															$primaryTag = get_field( "Primary_Tag", $q->post->ID );
-															$terms      = get_the_terms( $q->post->ID, "post_tag" );
-
-															if ( ! is_wp_error( $terms ) && ! empty( $terms ) ) {
-																$terms      = array_values( $terms );
-																$randIndex  = array_rand( $terms );
-																$randomTerm = $terms[ $randIndex ];
-																?>
-																<div class="absolute absolute--tl p-24 flex items-center justify-center">
-																	<div class="relative rounded-full overflow-hidden py-4 px-8">
-																		<div
-																			class="relative font-semibold uppercase text-2xs text-textcolor lh-normal z-10">
-																			<?php
-																			if ( ! empty( $primaryTag->name ) ):
-																				echo $primaryTag->name;
-																			else:
-																				echo $randomTerm->name;
-																			endif;
-																			?>
-																		</div>
-																		<div class="absolute absolute--full bg-white"></div>
-																	</div>
-																</div>
+																loading="lazy" alt="" class="image relative object-contain max-w-full"/>
+															<div class="absolute absolute--tl p-24 flex flex-wrap items-center gap-4">
 																<?php
-															}
-															?>
+																$primaryTag = get_field( "Primary_Tag", $q->post->ID );
+																$terms      = get_the_terms( $q->post->ID, "post_tag" );
+
+																if ( ! empty( $primaryTag ) ) {
+																	foreach ( $primaryTag as $primaryTagItem ) {
+																		?>
+																		<div class="relative rounded-full overflow-hidden py-4 px-8">
+																			<div
+																				class="relative font-semibold uppercase text-2xs text-textcolor lh-normal z-10">
+																				<?= $primaryTagItem->name; ?>
+																			</div>
+																			<div class="absolute absolute--full bg-white"></div>
+																		</div>
+																		<?php
+																	}
+																} else {
+																	if ( ! is_wp_error( $terms ) && ! empty( $terms ) ) {
+																		$terms      = array_values( $terms );
+																		$randIndex  = array_rand( $terms );
+																		$randomTerm = $terms[ $randIndex ];
+																		?>
+																		<div class="relative rounded-full overflow-hidden py-4 px-8">
+																			<div
+																				class="relative font-semibold uppercase text-2xs text-textcolor lh-normal z-10">
+																				<?= $randomTerm->name; ?>
+																			</div>
+																			<div class="absolute absolute--full bg-white"></div>
+																		</div>
+																		<?php
+																	}
+																}
+																?>
+															</div>
 															<div
 																class="absolute absolute--full flex items-center justify-center translate-y-220 group-hover:translate-y-0 transition-all duration-500">
 																<?php

@@ -233,24 +233,33 @@ $youtube_url = $matches[1] ?? '';
 																	$primaryTag = get_field( "Primary_Tag", $q->post->ID );
 																	$terms      = get_the_terms( $q->post->ID, 'tags' );
 
-																	if ( ! is_wp_error( $terms ) && ! empty( $terms ) ) {
-																		$terms      = array_values( $terms );
-																		$randIndex  = array_rand( $terms );
-																		$randomTerm = $terms[ $randIndex ];
-																		?>
-																		<div class="relative rounded-full overflow-hidden py-4 px-8">
-																			<div class="relative font-semibold uppercase text-2xs text--white lh-normal z-10">
-																				<?php
-																				if ( ! empty( $primaryTag->name ) ):
-																					echo $primaryTag->name;
-																				else:
-																					echo $randomTerm->name;
-																				endif;
-																				?>
+																	if ( ! empty( $primaryTag ) ) {
+																		foreach ( $primaryTag as $primaryTagItem ) {
+																			?>
+																			<div class="relative rounded-full overflow-hidden py-4 px-8">
+																				<div
+																					class="relative font-semibold uppercase text-2xs text--white lh-normal z-10">
+																					<?= $primaryTagItem->name; ?>
+																				</div>
+																				<div class="absolute absolute--full bg-primary"></div>
 																			</div>
-																			<div class="absolute absolute--full bg-primary"></div>
-																		</div>
-																		<?php
+																			<?php
+																		}
+																	} else {
+																		if ( ! is_wp_error( $terms ) && ! empty( $terms ) ) {
+																			$terms      = array_values( $terms );
+																			$randIndex  = array_rand( $terms );
+																			$randomTerm = $terms[ $randIndex ];
+																			?>
+																			<div class="relative rounded-full overflow-hidden py-4 px-8">
+																				<div
+																					class="relative font-semibold uppercase text-2xs text--white lh-normal z-10">
+																					<?= $randomTerm->name; ?>
+																				</div>
+																				<div class="absolute absolute--full bg-primary"></div>
+																			</div>
+																			<?php
+																		}
 																	}
 																	?>
 																</div>
