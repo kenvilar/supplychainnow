@@ -143,15 +143,15 @@ if ( $q->have_posts() ): ?>
 									: get_stylesheet_directory_uri() .
 									  "/assets/img/misc/default-card-img-thumbnail.avif"; ?>"
 								loading="lazy" alt="" class="image relative object-contain max-w-full">
-							<?php
-							$terms    = get_the_terms( $q->post->ID, "tags" );
-							$post_tag = get_the_terms( $q->post->ID, "post_tag" );
-							if ( ! is_wp_error( $terms ) && ! empty( $terms ) ) {
-								$terms      = array_values( $terms );
-								$randIndex  = array_rand( $terms );
-								$randomTerm = $terms[ $randIndex ];
-								?>
-								<div class="absolute absolute--tl p-24 flex items-center justify-center">
+							<div class="absolute absolute--tl p-24 flex items-center justify-center">
+								<?php
+								$terms    = get_the_terms( $q->post->ID, "tags" );
+								$post_tag = get_the_terms( $q->post->ID, "post_tag" );
+								if ( ! is_wp_error( $terms ) && ! empty( $terms ) ) {
+									$terms      = array_values( $terms );
+									$randIndex  = array_rand( $terms );
+									$randomTerm = $terms[ $randIndex ];
+									?>
 									<div class="relative rounded-full overflow-hidden py-4 px-8">
 										<div class="relative font-semibold uppercase text-2xs text-white lh-normal z-10">
 											<?php
@@ -177,15 +177,12 @@ if ( $q->have_posts() ): ?>
 											: "";
 										?>
 									</div>
-								</div>
-								<?php
-							}
-							if ( ! is_wp_error( $post_tag ) && ! empty( $post_tag ) ) {
-								$terms      = array_values( $post_tag );
-								$randIndex  = array_rand( $post_tag );
-								$randomTerm = $terms[ $randIndex ];
-								?>
-								<div class="absolute absolute--tl p-24 flex items-center justify-center">
+									<?php
+								} elseif ( ! is_wp_error( $post_tag ) && ! empty( $post_tag ) ) {
+									$terms      = array_values( $post_tag );
+									$randIndex  = array_rand( $post_tag );
+									$randomTerm = $terms[ $randIndex ];
+									?>
 									<div class="relative rounded-full overflow-hidden py-4 px-8">
 										<div class="relative font-semibold uppercase text-2xs text-white lh-normal z-10">
 											<?php
@@ -211,10 +208,10 @@ if ( $q->have_posts() ): ?>
 											: "";
 										?>
 									</div>
-								</div>
-								<?php
-							}
-							?>
+									<?php
+								}
+								?>
+							</div>
 							<div
 								class="absolute absolute--full flex items-center justify-center translate-y-220 group-hover:translate-y-0 transition-all duration-500">
 								<?php
