@@ -540,24 +540,11 @@ if ( $search_query !== '' || $industries !== '' || ( is_singular( 'brands' ) && 
 													$terms    = get_the_terms( $results_query->post->ID, "tags" );
 													$post_tag = get_the_terms( $results_query->post->ID, "post_tag" );
 
-													if ( ! is_wp_error( $terms ) && ! empty( $terms ) ) {
-														$terms      = array_values( $terms );
-														$randIndex  = array_rand( $terms );
-														$randomTerm = $terms[ $randIndex ];
+													if ( $industries != "" ) {
 														?>
 														<div class="relative rounded-full overflow-hidden py-4 px-8">
 															<div class="relative font-semibold uppercase text-2xs text-white lh-normal z-10">
-																<?php
-																if ( $industries != "" ) {
-																	echo $industries;
-																} else {
-																	if ( ! empty( $primaryTag->name ) ) {
-																		echo $primaryTag->name;
-																	} else {
-																		echo $randomTerm->name;
-																	}
-																}
-																?>
+																<?= $industries; ?>
 															</div>
 															<?php
 															$bgByType = [
@@ -570,36 +557,69 @@ if ( $search_query !== '' || $industries !== '' || ( is_singular( 'brands' ) && 
 															?>
 														</div>
 														<?php
-													} elseif ( ! is_wp_error( $post_tag ) && ! empty( $post_tag ) ) {
-														$terms      = array_values( $post_tag );
-														$randIndex  = array_rand( $post_tag );
-														$randomTerm = $terms[ $randIndex ];
-														?>
-														<div class="relative rounded-full overflow-hidden py-4 px-8">
-															<div class="relative font-semibold uppercase text-2xs text-white lh-normal z-10">
-																<?php
-																if ( $industries != "" ) {
-																	echo $industries;
-																} else {
-																	if ( ! empty( $primaryTag->name ) ) {
-																		echo $primaryTag->name;
-																	} else {
-																		echo $randomTerm->name;
-																	}
-																}
+													} else {
+														if ( ! empty( $primaryTag ) ) {
+															foreach ( $primaryTag as $primaryTagItem ) {
 																?>
-															</div>
-															<?php
-															$bgByType = [
-																'livestream' => 'bg-primary',
-																'podcast'    => 'bg-secondary',
-																'webinar'    => 'bg-tertiary',
-															];
-															$bgClass  = $bgByType[ $selectMediaType ] ?? 'bg-tertiary';
-															echo '<div class="absolute absolute--full ' . esc_attr( $bgClass ) . '"></div>';
-															?>
-														</div>
-														<?php
+																<div class="relative rounded-full overflow-hidden py-4 px-8">
+																	<div class="relative font-semibold uppercase text-2xs text-white lh-normal z-10">
+																		<?= $primaryTagItem->name; ?>
+																	</div>
+																	<?php
+																	$bgByType = [
+																		'livestream' => 'bg-primary',
+																		'podcast'    => 'bg-secondary',
+																		'webinar'    => 'bg-tertiary',
+																	];
+																	$bgClass  = $bgByType[ $selectMediaType ] ?? 'bg-tertiary';
+																	echo '<div class="absolute absolute--full ' . esc_attr( $bgClass ) . '"></div>';
+																	?>
+																</div>
+																<?php
+															}
+														} else {
+															if ( ! is_wp_error( $terms ) && ! empty( $terms ) ) {
+																$terms      = array_values( $terms );
+																$randIndex  = array_rand( $terms );
+																$randomTerm = $terms[ $randIndex ];
+																?>
+																<div class="relative rounded-full overflow-hidden py-4 px-8">
+																	<div class="relative font-semibold uppercase text-2xs text-white lh-normal z-10">
+																		<?= $randomTerm->name; ?>
+																	</div>
+																	<?php
+																	$bgByType = [
+																		'livestream' => 'bg-primary',
+																		'podcast'    => 'bg-secondary',
+																		'webinar'    => 'bg-tertiary',
+																	];
+																	$bgClass  = $bgByType[ $selectMediaType ] ?? 'bg-tertiary';
+																	echo '<div class="absolute absolute--full ' . esc_attr( $bgClass ) . '"></div>';
+																	?>
+																</div>
+																<?php
+															} elseif ( ! is_wp_error( $post_tag ) && ! empty( $post_tag ) ) {
+																$terms      = array_values( $post_tag );
+																$randIndex  = array_rand( $post_tag );
+																$randomTerm = $terms[ $randIndex ];
+																?>
+																<div class="relative rounded-full overflow-hidden py-4 px-8">
+																	<div class="relative font-semibold uppercase text-2xs text-white lh-normal z-10">
+																		<?= $randomTerm->name; ?>
+																	</div>
+																	<?php
+																	$bgByType = [
+																		'livestream' => 'bg-primary',
+																		'podcast'    => 'bg-secondary',
+																		'webinar'    => 'bg-tertiary',
+																	];
+																	$bgClass  = $bgByType[ $selectMediaType ] ?? 'bg-tertiary';
+																	echo '<div class="absolute absolute--full ' . esc_attr( $bgClass ) . '"></div>';
+																	?>
+																</div>
+																<?php
+															}
+														}
 													}
 													?>
 												</div>

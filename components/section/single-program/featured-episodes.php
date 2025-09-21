@@ -55,13 +55,13 @@ $programFeaturedEpisodes = get_field( 'program_featured_episodes', $pageId )
 															echo get_the_post_thumbnail_url( $value, 'large' )
 																? get_the_post_thumbnail_url( $value, 'large' )
 																: get_stylesheet_directory_uri() . '/assets/img/misc/default-card-img-thumbnail.avif' ?>"
-															loading="lazy" alt="" class="image relative object-contain max-w-full">
-														<?php
-														$terms = get_the_terms( $value, 'tags' );
-														if ( ! is_wp_error( $terms ) && ! empty( $terms ) ) {
-															$first = array_values( $terms )[0];
-															?>
-															<div class="absolute absolute--tl p-24 flex items-center justify-center">
+															loading="lazy" alt="" class="image relative object-contain max-w-full"/>
+														<div class="absolute absolute--tl p-24 flex flex-wrap items-center gap-4">
+															<?php
+															$terms = get_the_terms( $value, 'tags' );
+															if ( ! is_wp_error( $terms ) && ! empty( $terms ) ) {
+																$first = array_values( $terms )[0];
+																?>
 																<div class="relative rounded-full overflow-hidden py-4 px-8">
 																	<div class="relative font-semibold uppercase text-2xs text-white lh-normal z-10">
 																		<?php
@@ -77,10 +77,10 @@ $programFeaturedEpisodes = get_field( 'program_featured_episodes', $pageId )
 																	echo '<div class="absolute absolute--full ' . esc_attr( $bgClass ) . '"></div>';
 																	?>
 																</div>
-															</div>
-															<?php
-														}
-														?>
+																<?php
+															}
+															?>
+														</div>
 														<div
 															class="absolute absolute--full flex items-center justify-center translate-y-220 group-hover:translate-y-0 transition-all duration-500">
 															<?php
