@@ -415,7 +415,8 @@ if ( in_array( $categorySlug, [ 'white-paper', 'ebook', 'guide' ] ) ) {
 																				class="relative font-semibold uppercase text-2xs text-textcolor lh-normal z-10">
 																				<?= $randomTerm->name; ?>
 																			</div>
-																			<div class="absolute absolute--full bg-white"></div>
+																			<div
+																				class="absolute absolute--full bg-<?= ( $categoryResultName == 'Episodes' ) ? 'secondary' : 'white' ?>"></div>
 																		</div>
 																		<?php
 																	}
