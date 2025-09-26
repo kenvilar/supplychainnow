@@ -122,7 +122,8 @@ if ( $q->have_posts() ): ?>
 			$selectMediaType = 'webinar';
 		}
 
-		$primaryTag = get_field( "_scn_selected_page_tag_name", $q->post->ID );
+		$primaryTag = get_field( "_scn_selected_page_tag_name", $q->post->ID ) . get_field( "_scn_selected_post_tag_name",
+				$q->post->ID );
 		?>
 		<a href="<?php
 		the_permalink( $q->post->ID ); ?>" class="relative w-full group <?= $classNames; ?>" <?= $attr_string ?>>
