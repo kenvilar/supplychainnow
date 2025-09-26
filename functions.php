@@ -747,12 +747,14 @@ add_action( 'save_post', function ( $post_id ) {
 		}
 	}
 
-	// Helper to validate selection against assigned terms
+	// Helper to validate selection against assigned terms and store readable name
 	$validate_and_save = function ( $meta_key, $maybe_id, $taxonomy ) use ( $post_id ) {
-		$maybe_id = is_string( $maybe_id ) ? sanitize_text_field( wp_unslash( $maybe_id ) ) : $maybe_id;
+		$maybe_id      = is_string( $maybe_id ) ? sanitize_text_field( wp_unslash( $maybe_id ) ) : $maybe_id;
+		$name_meta_key = $meta_key . '_name';
 
 		if ( $maybe_id === '' ) {
 			delete_post_meta( $post_id, $meta_key );
+			delete_post_meta( $post_id, $name_meta_key );
 
 			return;
 		}
@@ -762,6 +764,7 @@ add_action( 'save_post', function ( $post_id ) {
 		if ( ! taxonomy_exists( $taxonomy ) ) {
 			// Taxonomy missing -> don't save stray values
 			delete_post_meta( $post_id, $meta_key );
+			delete_post_meta( $post_id, $name_meta_key );
 
 			return;
 		}
@@ -769,6 +772,7 @@ add_action( 'save_post', function ( $post_id ) {
 		$assigned_terms = get_the_terms( $post_id, $taxonomy );
 		if ( is_wp_error( $assigned_terms ) || empty( $assigned_terms ) ) {
 			delete_post_meta( $post_id, $meta_key );
+			delete_post_meta( $post_id, $name_meta_key );
 
 			return;
 		}
@@ -776,9 +780,18 @@ add_action( 'save_post', function ( $post_id ) {
 		$assigned_ids = wp_list_pluck( $assigned_terms, 'term_id' );
 		if ( in_array( $maybe_id, $assigned_ids, true ) ) {
 			update_post_meta( $post_id, $meta_key, $maybe_id );
+
+			// Save readable name alongside the ID for easy display.
+			$term_obj = get_term( $maybe_id, $taxonomy );
+			if ( $term_obj && ! is_wp_error( $term_obj ) ) {
+				update_post_meta( $post_id, $name_meta_key, sanitize_text_field( $term_obj->name ) );
+			} else {
+				delete_post_meta( $post_id, $name_meta_key );
+			}
 		} else {
 			// Only allow saving values that are actually assigned on the post
 			delete_post_meta( $post_id, $meta_key );
+			delete_post_meta( $post_id, $name_meta_key );
 		}
 	};
 
@@ -792,6 +805,49 @@ add_action( 'save_post', function ( $post_id ) {
 		$validate_and_save( '_scn_selected_post_tag', $_POST['scn_selected_post_tag'], 'post_tag' );
 	}
 } );
+
+/**
+ * Get the readable selected tag name for a post.
+ *
+ * Checks the pre-saved name meta first, then falls back to resolving via the stored ID.
+ *
+ * @param int $post_id
+ *
+ * @return string Readable term name or empty string if none.
+ */
+if ( ! function_exists( 'scn_get_selected_tag_name' ) ) {
+	function scn_get_selected_tag_name( $post_id ) {
+		// Prefer stored readable names if available.
+		$name = get_post_meta( $post_id, '_scn_selected_page_tag_name', true );
+		if ( is_string( $name ) && $name !== '' ) {
+			return $name;
+		}
+
+		$name = get_post_meta( $post_id, '_scn_selected_post_tag_name', true );
+		if ( is_string( $name ) && $name !== '' ) {
+			return $name;
+		}
+
+		// Fallback: compute name from stored IDs.
+		$id = (int) get_post_meta( $post_id, '_scn_selected_page_tag', true );
+		if ( $id > 0 ) {
+			$term = get_term( $id, 'tags' );
+			if ( $term && ! is_wp_error( $term ) ) {
+				return $term->name;
+			}
+		}
+
+		$id = (int) get_post_meta( $post_id, '_scn_selected_post_tag', true );
+		if ( $id > 0 ) {
+			$term = get_term( $id, 'post_tag' );
+			if ( $term && ! is_wp_error( $term ) ) {
+				return $term->name;
+			}
+		}
+
+		return '';
+	}
+}
 
 // FacetWP functions
 add_filter( 'facetwp_facet_dropdown_show_counts', '__return_false' );
