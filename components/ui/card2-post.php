@@ -135,7 +135,8 @@ if ( $q->have_posts() ): ?>
 			}
 		}
 
-		$primaryTag = get_field( "Primary_Tag", $q->post->ID );
+		$primaryTag = get_field( "_scn_selected_page_tag_name", $q->post->ID ) . get_field( "_scn_selected_post_tag_name",
+				$q->post->ID );
 		?>
 		<a href="<?= get_permalink( $q->post->ID ) . '?category=' . $categorySlug; ?>"
 		   class="relative w-full group <?= $classNames; ?>" <?= $attr_string; ?>>

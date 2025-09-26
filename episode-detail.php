@@ -243,7 +243,8 @@ $episode_captivate_link_get_link_only = $episode_captivate_link_matches[1] ?? ''
 																	loading="lazy" alt="" class="image relative object-contain max-w-full">
 																<div class="absolute absolute--tl p-24 flex flex-wrap items-center gap-4">
 																	<?php
-																	$primaryTag = get_field( "Primary_Tag", $q->post->ID );
+																	$primaryTag = get_field( "_scn_selected_page_tag_name",
+																			$q->post->ID ) . get_field( "_scn_selected_post_tag_name", $q->post->ID );
 																	$terms      = get_the_terms( $q->post->ID, 'tags' );
 
 																	if ( ! empty( $primaryTag ) ) {

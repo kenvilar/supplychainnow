@@ -535,7 +535,9 @@ if ( $search_query !== '' || $industries !== '' || ( is_singular( 'brands' ) && 
 													loading="lazy" alt="" class="image relative object-contain max-w-full">
 												<div class="absolute absolute--tl p-24 flex flex-wrap items-center gap-4">
 													<?php
-													$primaryTag = get_field( "Primary_Tag", $results_query->post->ID );
+													$primaryTag = get_field( "_scn_selected_page_tag_name",
+															$results_query->post->ID ) . get_field( "_scn_selected_post_tag_name",
+															$results_query->post->ID );
 
 													$terms    = get_the_terms( $results_query->post->ID, "tags" );
 													$post_tag = get_the_terms( $results_query->post->ID, "post_tag" );

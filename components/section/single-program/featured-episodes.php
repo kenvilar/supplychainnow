@@ -58,7 +58,9 @@ $programFeaturedEpisodes = get_field( 'program_featured_episodes', $pageId )
 															loading="lazy" alt="" class="image relative object-contain max-w-full"/>
 														<div class="absolute absolute--tl p-24 flex flex-wrap items-center gap-4">
 															<?php
-															$terms = get_the_terms( $value, 'tags' );
+															$primaryTag = get_field( "_scn_selected_page_tag_name",
+																	$value ) . get_field( "_scn_selected_post_tag_name", $value );
+															$terms      = get_the_terms( $value, 'tags' );
 
 															if ( ! empty( $primaryTag ) ) {
 																foreach ( $primaryTag as $primaryTagItem ) {

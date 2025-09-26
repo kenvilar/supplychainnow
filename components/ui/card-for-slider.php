@@ -12,7 +12,7 @@ if ( $template === 'livestream-detail.php' ) {
 } elseif ( $template === 'webinar-detail.php' ) {
 	$selectMediaType = 'webinar';
 }
-$primaryTag = get_field( "Primary_Tag", $item );
+$primaryTag = get_field( "_scn_selected_page_tag_name", $item ) . get_field( "_scn_selected_post_tag_name", $item );
 ?>
 <a href="<?php
 the_permalink( $item ); ?>" class="relative w-full group splide__slide">
