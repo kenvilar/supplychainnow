@@ -618,6 +618,181 @@ add_shortcode( 'custom_related_post', 'custom_related_post_shortcode' );
 
 add_filter( 'rp4wp_append_content', '__return_false' );
 
+
+// Meta fields to select from already-selected tags.
+// - Pages use taxonomy "tags"
+// - Posts use taxonomy "post_tag"
+add_action( 'add_meta_boxes', function () {
+	// Pages: taxonomy "tags"
+	add_meta_box(
+		'scn_page_selected_tags_meta',
+		'Primary Tag (from selected tags)',
+		'scn_render_selected_tags_meta_box_pages',
+		'page',
+		'side',
+		'default'
+	);
+
+	// Posts: taxonomy "post_tag"
+	add_meta_box(
+		'scn_post_selected_post_tags_meta',
+		'Related Post Tag (from selected post_tags)',
+		'scn_render_selected_tags_meta_box_posts',
+		'post',
+		'side',
+		'default'
+	);
+} );
+
+/**
+ * Render meta box for Pages (taxonomy = tags)
+ */
+function scn_render_selected_tags_meta_box_pages( $post ) {
+	$taxonomy = 'tags'; // taxonomy used on pages per request
+	wp_nonce_field( 'scn_save_selected_tag_meta', 'scn_selected_tag_nonce' );
+
+	$options = array();
+	if ( taxonomy_exists( $taxonomy ) ) {
+		$assigned_terms = get_the_terms( $post->ID, $taxonomy );
+		if ( ! is_wp_error( $assigned_terms ) && ! empty( $assigned_terms ) ) {
+			foreach ( $assigned_terms as $term ) {
+				$options[ $term->term_id ] = $term->name;
+			}
+			// Sort options by name for better UX.
+			asort( $options, SORT_NATURAL | SORT_FLAG_CASE );
+		}
+	}
+
+	$current = get_post_meta( $post->ID, '_scn_selected_page_tag', true );
+
+	echo '<p><label for="scn_selected_page_tag">Choose one of the selected tags:</label></p>';
+	echo '<select id="scn_selected_page_tag" name="scn_selected_page_tag" style="width:100%;">';
+	echo '<option value="">— None —</option>';
+	foreach ( $options as $term_id => $label ) {
+		printf(
+			'<option value="%d"%s>%s</option>',
+			(int) $term_id,
+			selected( (int) $current, (int) $term_id, false ),
+			esc_html( $label )
+		);
+	}
+	echo '</select>';
+
+	if ( empty( $options ) ) {
+		echo '<p style="margin-top:8px;color:#666;">No tags are selected on this page. Assign some tags in the Tags box first.</p>';
+	}
+}
+
+/**
+ * Render meta box for Posts (taxonomy = post_tag)
+ */
+function scn_render_selected_tags_meta_box_posts( $post ) {
+	$taxonomy = 'post_tag';
+	wp_nonce_field( 'scn_save_selected_tag_meta', 'scn_selected_tag_nonce' );
+
+	$options = array();
+	if ( taxonomy_exists( $taxonomy ) ) {
+		$assigned_terms = get_the_terms( $post->ID, $taxonomy );
+		if ( ! is_wp_error( $assigned_terms ) && ! empty( $assigned_terms ) ) {
+			foreach ( $assigned_terms as $term ) {
+				$options[ $term->term_id ] = $term->name;
+			}
+			asort( $options, SORT_NATURAL | SORT_FLAG_CASE );
+		}
+	}
+
+	$current = get_post_meta( $post->ID, '_scn_selected_post_tag', true );
+
+	echo '<p><label for="scn_selected_post_tag">Choose one of the selected post tags:</label></p>';
+	echo '<select id="scn_selected_post_tag" name="scn_selected_post_tag" style="width:100%;">';
+	echo '<option value="">— None —</option>';
+	foreach ( $options as $term_id => $label ) {
+		printf(
+			'<option value="%d"%s>%s</option>',
+			(int) $term_id,
+			selected( (int) $current, (int) $term_id, false ),
+			esc_html( $label )
+		);
+	}
+	echo '</select>';
+
+	if ( empty( $options ) ) {
+		echo '<p style="margin-top:8px;color:#666;">No post tags are selected on this post. Assign some tags in the Tags panel first.</p>';
+	}
+}
+
+/**
+ * Save meta box selections safely and only if chosen term is among assigned terms
+ */
+add_action( 'save_post', function ( $post_id ) {
+	// Basic checks
+	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+		return;
+	}
+	if ( ! isset( $_POST['scn_selected_tag_nonce'] )
+	     || ! wp_verify_nonce( $_POST['scn_selected_tag_nonce'],
+			'scn_save_selected_tag_meta' )
+	) {
+		return;
+	}
+
+	// Capability checks
+	if ( isset( $_POST['post_type'] ) && 'page' === $_POST['post_type'] ) {
+		if ( ! current_user_can( 'edit_page', $post_id ) ) {
+			return;
+		}
+	} else {
+		if ( ! current_user_can( 'edit_post', $post_id ) ) {
+			return;
+		}
+	}
+
+	// Helper to validate selection against assigned terms
+	$validate_and_save = function ( $meta_key, $maybe_id, $taxonomy ) use ( $post_id ) {
+		$maybe_id = is_string( $maybe_id ) ? sanitize_text_field( wp_unslash( $maybe_id ) ) : $maybe_id;
+
+		if ( $maybe_id === '' ) {
+			delete_post_meta( $post_id, $meta_key );
+
+			return;
+		}
+
+		$maybe_id = (int) $maybe_id;
+
+		if ( ! taxonomy_exists( $taxonomy ) ) {
+			// Taxonomy missing -> don't save stray values
+			delete_post_meta( $post_id, $meta_key );
+
+			return;
+		}
+
+		$assigned_terms = get_the_terms( $post_id, $taxonomy );
+		if ( is_wp_error( $assigned_terms ) || empty( $assigned_terms ) ) {
+			delete_post_meta( $post_id, $meta_key );
+
+			return;
+		}
+
+		$assigned_ids = wp_list_pluck( $assigned_terms, 'term_id' );
+		if ( in_array( $maybe_id, $assigned_ids, true ) ) {
+			update_post_meta( $post_id, $meta_key, $maybe_id );
+		} else {
+			// Only allow saving values that are actually assigned on the post
+			delete_post_meta( $post_id, $meta_key );
+		}
+	};
+
+	// Save for Page (taxonomy=tags)
+	if ( isset( $_POST['scn_selected_page_tag'] ) && ( isset( $_POST['post_type'] ) && 'page' === $_POST['post_type'] ) ) {
+		$validate_and_save( '_scn_selected_page_tag', $_POST['scn_selected_page_tag'], 'tags' );
+	}
+
+	// Save for Post (taxonomy=post_tag)
+	if ( isset( $_POST['scn_selected_post_tag'] ) && ( ! isset( $_POST['post_type'] ) || 'post' === $_POST['post_type'] ) ) {
+		$validate_and_save( '_scn_selected_post_tag', $_POST['scn_selected_post_tag'], 'post_tag' );
+	}
+} );
+
 // FacetWP functions
 add_filter( 'facetwp_facet_dropdown_show_counts', '__return_false' );
 
