@@ -561,24 +561,22 @@ if ( $search_query !== '' || $industries !== '' || ( is_singular( 'brands' ) && 
 														<?php
 													} else {
 														if ( ! empty( $primaryTag ) ) {
-															foreach ( $primaryTag as $primaryTagItem ) {
-																?>
-																<div class="relative rounded-full overflow-hidden py-4 px-8">
-																	<div class="relative font-semibold uppercase text-2xs text-white lh-normal z-10">
-																		<?= $primaryTagItem->name; ?>
-																	</div>
-																	<?php
-																	$bgByType = [
-																		'livestream' => 'bg-primary',
-																		'podcast'    => 'bg-secondary',
-																		'webinar'    => 'bg-tertiary',
-																	];
-																	$bgClass  = $bgByType[ $selectMediaType ] ?? 'bg-tertiary';
-																	echo '<div class="absolute absolute--full ' . esc_attr( $bgClass ) . '"></div>';
-																	?>
+															?>
+															<div class="relative rounded-full overflow-hidden py-4 px-8">
+																<div class="relative font-semibold uppercase text-2xs text-white lh-normal z-10">
+																	<?= $primaryTag; ?>
 																</div>
 																<?php
-															}
+																$bgByType = [
+																	'livestream' => 'bg-primary',
+																	'podcast'    => 'bg-secondary',
+																	'webinar'    => 'bg-tertiary',
+																];
+																$bgClass  = $bgByType[ $selectMediaType ] ?? 'bg-tertiary';
+																echo '<div class="absolute absolute--full ' . esc_attr( $bgClass ) . '"></div>';
+																?>
+															</div>
+															<?php
 														} else {
 															if ( ! is_wp_error( $terms ) && ! empty( $terms ) ) {
 																$terms      = array_values( $terms );

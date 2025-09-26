@@ -226,17 +226,15 @@ $webinar_button_link = get_field( 'webinar_button_link', $pageId );
 																	$terms      = get_the_terms( $q->post->ID, 'tags' );
 
 																	if ( ! empty( $primaryTag ) ) {
-																		foreach ( $primaryTag as $primaryTagItem ) {
-																			?>
-																			<div class="relative rounded-full overflow-hidden py-4 px-8">
-																				<div
-																					class="relative font-semibold uppercase text-2xs text-white lh-normal z-10">
-																					<?= $primaryTagItem->name; ?>
-																				</div>
-																				<div class="absolute absolute--full bg-tertiary"></div>
+																		?>
+																		<div class="relative rounded-full overflow-hidden py-4 px-8">
+																			<div
+																				class="relative font-semibold uppercase text-2xs text-white lh-normal z-10">
+																				<?= $primaryTag; ?>
 																			</div>
-																			<?php
-																		}
+																			<div class="absolute absolute--full bg-tertiary"></div>
+																		</div>
+																		<?php
 																	} else {
 																		if ( ! is_wp_error( $terms ) && ! empty( $terms ) ) {
 																			$terms      = array_values( $terms );

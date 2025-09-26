@@ -37,24 +37,22 @@ the_permalink( $item ); ?>" class="relative w-full group splide__slide">
 						$terms    = get_the_terms( $item, "tags" );
 						$post_tag = get_the_terms( $item, "post_tag" );
 						if ( ! empty( $primaryTag ) ) {
-							foreach ( $primaryTag as $primaryTagItem ) {
-								?>
-								<div class="relative rounded-full overflow-hidden py-4 px-8">
-									<div class="relative font-semibold uppercase text-2xs text-white lh-normal z-10">
-										<?= $primaryTagItem->name; ?>
-									</div>
-									<?php
-									$bgByType = [
-										'livestream' => 'bg-primary',
-										'podcast'    => 'bg-secondary',
-										'webinar'    => 'bg-tertiary',
-									];
-									$bgClass  = $bgByType[ $selectMediaType ] ?? 'bg-tertiary';
-									echo '<div class="absolute absolute--full ' . esc_attr( $bgClass ) . '"></div>';
-									?>
+							?>
+							<div class="relative rounded-full overflow-hidden py-4 px-8">
+								<div class="relative font-semibold uppercase text-2xs text-white lh-normal z-10">
+									<?= $primaryTag; ?>
 								</div>
 								<?php
-							}
+								$bgByType = [
+									'livestream' => 'bg-primary',
+									'podcast'    => 'bg-secondary',
+									'webinar'    => 'bg-tertiary',
+								];
+								$bgClass  = $bgByType[ $selectMediaType ] ?? 'bg-tertiary';
+								echo '<div class="absolute absolute--full ' . esc_attr( $bgClass ) . '"></div>';
+								?>
+							</div>
+							<?php
 						} else {
 							if ( ! is_wp_error( $terms ) && ! empty( $terms ) ) {
 								$terms      = array_values( $terms );
@@ -63,13 +61,7 @@ the_permalink( $item ); ?>" class="relative w-full group splide__slide">
 								?>
 								<div class="relative rounded-full overflow-hidden py-4 px-8">
 									<div class="relative font-semibold uppercase text-2xs text-white lh-normal z-10">
-										<?php
-										if ( ! empty( $primaryTag->name ) ):
-											echo $primaryTag->name;
-										else:
-											echo $randomTerm->name;
-										endif;
-										?>
+										<?= $randomTerm->name; ?>
 									</div>
 									<?php
 									$bgByType = [
@@ -89,13 +81,7 @@ the_permalink( $item ); ?>" class="relative w-full group splide__slide">
 								?>
 								<div class="relative rounded-full overflow-hidden py-4 px-8">
 									<div class="relative font-semibold uppercase text-2xs text-white lh-normal z-10">
-										<?php
-										if ( ! empty( $primaryTag->name ) ):
-											echo $primaryTag->name;
-										else:
-											echo $randomTerm->name;
-										endif;
-										?>
+										<?= $randomTerm->name; ?>
 									</div>
 									<?php
 									$bgByType = [
