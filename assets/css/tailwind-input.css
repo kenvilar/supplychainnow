@@ -428,3 +428,7 @@ menu {
 	padding-left: 0;
 	padding-right: 0;
 }
+.parallax_section_inner_margin, .section_inner_margin {
+	margin-left: 0;
+	margin-right: 0;
+}
