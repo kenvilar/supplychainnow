@@ -22,27 +22,27 @@
     @apply text-reg! font-normal! text-textcolor!;
     font-family: var(--font-family---primary);
   }
-  h1 {
-    @apply text-4xl sm:text-3xl;
+  h1, .h1 {
+    @apply text-4xl! sm:text-3xl;
   }
-  h2 {
-    @apply text-3xl xs:text-2xl;
+  h2, .h2 {
+    @apply text-3xl! xs:text-2xl;
   }
-  h3 {
-    @apply text-2xl;
+  h3, .h3 {
+    @apply text-2xl!;
   }
-  h4 {
+  h4, .h4 {
     @apply text-lg;
   }
-  h5 {
+  h5, .h5 {
     @apply text-md;
   }
-  h6 {
+  h6, .h6 {
     @apply text-sm;
   }
-  h1,
-  h2,
-  h3,
+  h1, .h1,
+  h2, .h2,
+  h3, .h3,
   .text-37,
   .text-45 {
     @apply xs:wrap-break-word;
@@ -423,4 +423,8 @@ menu {
 }
 .text-white\! * {
 	color: #fff !important;
+}
+.vc_column_container>.vc_column-inner {
+	padding-left: 0;
+	padding-right: 0;
 }
