@@ -365,7 +365,7 @@
 		list-style-position: outside;
 	}
 	a {
-		color: var(--primary) !important;
+		color: var(--primary);
 	}
 }
 .rt--plain {

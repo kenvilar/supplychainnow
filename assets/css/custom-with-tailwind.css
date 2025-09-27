@@ -54,7 +54,7 @@ p a {
 }
 .btn.primary {
 	outline-color: var(--primary);
-	color: var(--white);
+	color: var(--white) !important;
 	background: linear-gradient(134deg, var(--primary), var(--primary));
 }
 .btn.primary:hover {
@@ -63,7 +63,7 @@ p a {
 }
 .btn.secondary {
 	outline-color: var(--secondary);
-	color: var(--white);
+	color: var(--white) !important;
 	background: linear-gradient(129deg, var(--secondary), var(--secondary));
 }
 .btn.secondary:hover {
@@ -73,7 +73,7 @@ p a {
 .btn.tertiary {
 	background-color: var(--tertiary);
 	outline-color: var(--tertiary);
-	color: var(--white);
+	color: var(--white) !important;
 }
 .btn.primary-outline {
 	border: 1px solid var(--transparent);
