@@ -328,8 +328,7 @@
 	}
 }
 .rt--default,
-.cli_pg_page_contaner,
-.wpb_wrapper {
+.cli_pg_page_contaner {
 	letter-spacing: 1.6px !important;
 	word-wrap: break-word;
 	h1,
