@@ -929,7 +929,8 @@ add_filter( 'acf/the_field/allow_unsafe_html', function ( $allowed, $selector ) 
 add_filter( 'acf/the_field/escape_html_optin', '__return_true' );
 
 function scn_is_splide_page() {
-	return is_front_page()
+	return true;
+	/*return is_front_page()
 	       || is_page( 'about' )
 	       || is_page( 'our-team-and-hosts' )
 	       || is_page( 'upcoming-live-programming' )
@@ -947,7 +948,7 @@ function scn_is_splide_page() {
 	       || is_page( 'news' )
 	       || is_page( 'guide' )
 	       || is_page( 'dev' )
-	       || is_page( 'success-stories' );
+	       || is_page( 'success-stories' );*/
 }
 
 /*
@@ -1195,4 +1196,11 @@ add_action('admin_footer', 'custom_admin_js');
 $scn_btn_shortcode_file = get_stylesheet_directory() . '/components/shortcodes/btn.php';
 if ( file_exists( $scn_btn_shortcode_file ) ) {
 	require_once $scn_btn_shortcode_file;
+}
+
+
+// Include custom [hero_slider] shortcode file
+$scn_hero_slider_shortcode_file = get_stylesheet_directory() . '/components/shortcodes/home/hero-slider.php';
+if ( file_exists( $scn_hero_slider_shortcode_file ) ) {
+	require_once $scn_hero_slider_shortcode_file;
 }

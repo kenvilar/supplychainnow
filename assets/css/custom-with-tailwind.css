@@ -352,6 +352,7 @@ footer .footer_inner {
 .section {
 	position: relative;
 	overflow: hidden;
+	background-position: inherit;
 }
 .display-block {
 	display: block;
@@ -687,6 +688,27 @@ footer .footer_inner {
 }
 .content .container, .transparent_content .content .container {
 	padding-top: 60px !important;
+}
+.boxed .section .section_inner,
+.grid_section .section_inner {
+	max-width: 1400px;
+	@apply mx-auto w-full;
+}
+.vc_column_container > .vc_column-inner {
+	padding-left: 0;
+	padding-right: 0;
+}
+.parallax_section_inner_margin, .section_inner_margin {
+	margin-left: 0;
+	margin-right: 0;
+}
+.content .container, .transparent_content .content .container {
+	margin-left: auto;
+	margin-right: auto;
+}
+.vc_row {
+	margin-left: 0;
+	margin-right: 0;
 }
 /* Media Screens */
 @media only screen and (max-width: 1200px) {

@@ -10,7 +10,7 @@ $card1Title  = esc_html( ! empty ( $section['Card_1_Title'] ) ? $section['Card_1
 $card2Title  = esc_html( ! empty ( $section['Card_2_Title'] ) ? $section['Card_2_Title'] : 'Share your thought-leadership.' );
 $card3Title  = esc_html( ! empty ( $section['Card_3_Title'] ) ? $section['Card_3_Title'] : 'Generate new leads.' );
 ?>
-<div class="gradient1 rounded-100">
+<div class="gradient1 rounded-100 sm:rounded-none">
 	<section class="section text-white">
 		<div class="site-padding sm:py-60 py-80 relative z-10">
 			<div class="mb-88">

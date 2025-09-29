@@ -7,7 +7,7 @@ $description = esc_html( ! empty( $section['Description'] ) ? $section['Descript
 $buttonText  = esc_html( ! empty( $section['Button_Text'] ) ? $section['Button_Text'] : 'Explore More Partners' );
 $buttonLink  = esc_url( ! empty( $section['Button_Link'] ) ? $section['Button_Link'] : '/campaign-directory' );
 ?>
-<div class="rounded-b-100 overflow-hidden relative">
+<div class="rounded-b-100 sm:rounded-b-none overflow-hidden relative">
 	<section class="section">
 		<div class="site-padding sm:py-60 py-68">
 			<div class="w-layout-blockcontainer max-w-1036 w-container">

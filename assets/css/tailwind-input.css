@@ -110,7 +110,7 @@
 /* Custom utilities */
 @layer utilities {
 	.site-padding {
-		@apply px-[40px] md:px-[32px] sm:px-[20px] xs:px-[12px];
+		@apply pl-40 pr-40 md:pl-32 md:pr-32 sm:pl-20 sm:pr-20 xs:pl-12 xs:pr-12;
 	}
 	.text-4xl {
 		@apply sm:text-3xl;
@@ -415,23 +415,6 @@ ul,
 menu {
 	list-style-type: disc;
 }
-.boxed .section .section_inner,
-.grid_section .section_inner {
-	max-width: 1400px;
-	@apply mx-auto w-full;
-}
 .text-white\! * {
 	color: #fff !important;
-}
-.vc_column_container > .vc_column-inner {
-	padding-left: 0;
-	padding-right: 0;
-}
-.parallax_section_inner_margin, .section_inner_margin {
-	margin-left: 0;
-	margin-right: 0;
-}
-.content .container, .transparent_content .content .container {
-	margin-left: auto;
-	margin-right: auto;
 }

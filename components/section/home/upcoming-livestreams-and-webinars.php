@@ -1,7 +1,7 @@
 <?php
 
 ?>
-<div class="gradient1 rounded-100">
+<div class="gradient1 rounded-100 sm:rounded-none">
 	<section class="section text-white">
 		<div class="site-padding sm:py-60 py-88">
 			<div class="w-layout-blockcontainer max-w-1372 relative w-container">
