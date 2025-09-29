@@ -338,7 +338,7 @@
 		line-height: 43px !important;
 	}
 	h1 {
-		margin-bottom: 50px !important;
+		margin-bottom: 50px;
 	}
 	h2,
 	h3,
@@ -431,4 +431,8 @@ menu {
 .parallax_section_inner_margin, .section_inner_margin {
 	margin-left: 0;
 	margin-right: 0;
+}
+.content .container, .transparent_content .content .container {
+	margin-left: auto;
+	margin-right: auto;
 }
