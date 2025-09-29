@@ -1189,3 +1189,10 @@ function custom_admin_js() {
 add_action('admin_footer', 'custom_admin_js');
 
 */
+
+
+// Include custom [btn] shortcode file
+$scn_btn_shortcode_file = get_stylesheet_directory() . '/components/shortcodes/btn.php';
+if ( file_exists( $scn_btn_shortcode_file ) ) {
+	require_once $scn_btn_shortcode_file;
+}
