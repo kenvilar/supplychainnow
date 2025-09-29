@@ -1,6 +1,6 @@
 <?php
 /**
- * Shortcode: [hero_slider]
+ * Shortcode: [home_hero_slider]
  *
  * Renders the hero image slider using ACF data, following the provided
  * template exactly (no shortcode attributes). It attempts to read the
@@ -180,5 +180,5 @@ if ( ! function_exists( 'scn_hero_slider_shortcode' ) ) {
 
 // Register shortcode
 add_action( 'init', function () {
-	add_shortcode( 'hero_slider', 'scn_hero_slider_shortcode' );
+	add_shortcode( 'home_hero_slider', 'scn_hero_slider_shortcode' );
 } );

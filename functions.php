@@ -1225,3 +1225,9 @@ $scn_home_featured_content_shortcode_file = get_stylesheet_directory() . '/compo
 if ( file_exists( $scn_home_featured_content_shortcode_file ) ) {
 	require_once $scn_home_featured_content_shortcode_file;
 }
+
+// Include custom [latest_podcast_episodes] shortcode file
+$scn_latest_podcast_episodes_shortcode_file = get_stylesheet_directory() . '/components/shortcodes/home/latest-podcast-episodes.php';
+if ( file_exists( $scn_latest_podcast_episodes_shortcode_file ) ) {
+	require_once $scn_latest_podcast_episodes_shortcode_file;
+}
