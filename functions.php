@@ -1198,9 +1198,14 @@ if ( file_exists( $scn_btn_shortcode_file ) ) {
 	require_once $scn_btn_shortcode_file;
 }
 
-
 // Include custom [hero_slider] shortcode file
 $scn_hero_slider_shortcode_file = get_stylesheet_directory() . '/components/shortcodes/home/hero-slider.php';
 if ( file_exists( $scn_hero_slider_shortcode_file ) ) {
 	require_once $scn_hero_slider_shortcode_file;
+}
+
+// Include custom [heading_separator] shortcode file
+$scn_heading_separator_shortcode_file = get_stylesheet_directory() . '/components/shortcodes/heading-separator.php';
+if ( file_exists( $scn_heading_separator_shortcode_file ) ) {
+	require_once $scn_heading_separator_shortcode_file;
 }
