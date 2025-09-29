@@ -1130,6 +1130,16 @@ function kv_build_acf_fields_like_excerpt( $text, $words = 200 ) {
 	return kv_build_excerpt( '', $words );
 }
 
+function override_tinymce_option( $initArray ) {
+	$opts                                 = '*[*]';
+	$initArray['valid_elements']          = $opts;
+	$initArray['extended_valid_elements'] = $opts;
+
+	return $initArray;
+}
+
+add_filter( 'tiny_mce_before_init', 'override_tinymce_option' );
+
 /*
 add_action('admin_head', 'my_custom_css');
 
