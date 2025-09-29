@@ -1209,3 +1209,9 @@ $scn_heading_separator_shortcode_file = get_stylesheet_directory() . '/component
 if ( file_exists( $scn_heading_separator_shortcode_file ) ) {
 	require_once $scn_heading_separator_shortcode_file;
 }
+
+// Include custom [home_featured_content] shortcode file
+$scn_home_featured_content_shortcode_file = get_stylesheet_directory() . '/components/shortcodes/home/featured-content.php';
+if ( file_exists( $scn_home_featured_content_shortcode_file ) ) {
+	require_once $scn_home_featured_content_shortcode_file;
+}
