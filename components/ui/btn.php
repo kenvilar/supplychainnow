@@ -14,5 +14,5 @@ foreach ( $attributes as $key => $value ) {
 ?>
 <a href="<?= esc_attr( $link ); ?>"
    class="btn <?= esc_attr( $style ); ?> w-inline-block <?= esc_attr( $class ); ?>" <?= $attr_string; ?>>
-	<div><?= esc_html( $text ); ?></div>
+	<?= esc_html( $text ); ?>
 </a>

@@ -39,7 +39,7 @@ if ( ! function_exists( 'scn_btn_shortcode' ) ) {
 		$classes = trim( sprintf( 'btn %s w-inline-block %s', $atts['style'], $atts['class'] ) );
 
 		return sprintf(
-			'<a href="%s" class="%s"%s><div>%s</div></a>',
+			'<a href="%s" class="%s"%s>%s</a>',
 			$href,
 			esc_attr( $classes ),
 			$attr_string,
