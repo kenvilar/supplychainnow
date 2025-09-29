@@ -110,7 +110,7 @@
 /* Custom utilities */
 @layer utilities {
 	.site-padding {
-		@apply pl-40 pr-40 md:pl-32 md:pr-32 sm:pl-20 sm:pr-20 xs:pl-12 xs:pr-12;
+		@apply pl-40! pr-40! md:pl-32! md:pr-32! sm:pl-20! sm:pr-20! xs:pl-12! xs:pr-12!;
 	}
 	.text-4xl {
 		@apply sm:text-3xl;

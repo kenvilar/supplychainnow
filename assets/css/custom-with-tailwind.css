@@ -692,7 +692,7 @@ footer .footer_inner {
 .boxed .section .section_inner,
 .grid_section .section_inner {
 	max-width: 1400px;
-	@apply mx-auto w-full;
+	@apply mx-auto w-full!;
 }
 .vc_column_container > .vc_column-inner {
 	padding-left: 0;
