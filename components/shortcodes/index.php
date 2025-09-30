@@ -35,3 +35,9 @@ $scn_recent_webinars_slider_shortcode_file = get_stylesheet_directory() . '/comp
 if ( file_exists( $scn_recent_webinars_slider_shortcode_file ) ) {
 	require_once $scn_recent_webinars_slider_shortcode_file;
 }
+
+// Include custom [home_network_partners_cards] shortcode file
+$scn_network_partners_cards_shortcode_file = get_stylesheet_directory() . '/components/shortcodes/home/network-partners-cards.php';
+if ( file_exists( $scn_network_partners_cards_shortcode_file ) ) {
+	require_once $scn_network_partners_cards_shortcode_file;
+}
