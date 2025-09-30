@@ -7,7 +7,7 @@
  *
  * Example usage:
  *   [heading_separator]
- *   [heading_separator maxWidthClassnames="max-w-624 md:max-w-full"]
+ *   [heading_separator maxWidthClassnames="bg-white/25"]
  */
 
 if ( ! function_exists( 'scn_heading_separator_shortcode' ) ) {

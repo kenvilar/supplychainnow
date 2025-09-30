@@ -694,7 +694,7 @@ footer .footer_inner {
 	max-width: 1400px;
 	@apply mx-auto w-full!;
 }
-/*.vc_column_container > .vc_column-inner {
+.vc_column_container > .vc_column-inner {
 	padding-left: 0;
 	padding-right: 0;
 }
@@ -712,7 +712,7 @@ footer .footer_inner {
 }
 .vc_col-sm-12 {
 	float: none;
-}*/
+}
 /* Media Screens */
 @media only screen and (max-width: 1200px) {
 	.container_inner {
