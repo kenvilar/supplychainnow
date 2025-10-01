@@ -34,7 +34,7 @@ $buttonLink  = esc_url( ! empty( $section['Button_Link'] ) ? $section['Button_Li
 					<div class="flex gap-24 justify-between sm:flex-col">
 						<?php
 						if ( shortcode_exists( 'home_network_partners_cards' ) ) {
-							do_shortcode( '[home_network_partners_cards]' );
+							echo do_shortcode( '[home_network_partners_cards]' );
 						}
 						?>
 					</div>
