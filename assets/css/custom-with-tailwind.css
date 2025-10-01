@@ -720,8 +720,9 @@ footer .footer_inner {
 .section_inner_margin,
 .vc_column-inner,
 .full_section_inner,
-.wpb_wrapper {
-	display: contents;
+.wpb_wrapper,
+.vc_single_image-wrapper {
+	display: contents !important;
 }
 .full_section_inner.clearfix:after, .full_section_inner.clearfix:before {
 	display: none;
