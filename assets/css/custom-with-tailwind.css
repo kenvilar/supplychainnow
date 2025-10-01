@@ -713,6 +713,28 @@ footer .footer_inner {
 .vc_col-sm-12 {
 	float: none;
 }
+.full_section_inner {
+	position: static;
+	z-index: 0;
+}
+.section_inner_margin,
+.vc_column-inner,
+.full_section_inner,
+.wpb_wrapper {
+	display: contents;
+}
+.full_section_inner.clearfix:after, .full_section_inner.clearfix:before {
+	display: none;
+}
+.vc_column-inner:after, .vc_column-inner:before {
+	display: none;
+}
+.vc_row:after, .vc_row:before {
+	display: none;
+}
+.section_inner_margin.clearfix {
+	display: none;
+}
 /* Media Screens */
 @media only screen and (max-width: 1200px) {
 	.container_inner {
