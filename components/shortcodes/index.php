@@ -41,3 +41,9 @@ $scn_network_partners_cards_shortcode_file = get_stylesheet_directory() . '/comp
 if ( file_exists( $scn_network_partners_cards_shortcode_file ) ) {
 	require_once $scn_network_partners_cards_shortcode_file;
 }
+
+// Include custom [home_testimonial_slider] shortcode file
+$scn_home_testimonial_slider_shortcode_file = get_stylesheet_directory() . '/components/shortcodes/home/home_testimonial_slider.php';
+if ( file_exists( $scn_home_testimonial_slider_shortcode_file ) ) {
+	require_once $scn_home_testimonial_slider_shortcode_file;
+}
