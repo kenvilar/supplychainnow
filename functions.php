@@ -724,6 +724,8 @@ function scn_render_selected_tags_meta_box_posts( $post ) {
 /**
  * Save meta box selections safely and only if chosen term is among assigned terms
  */
+// Run after taxonomies are saved to avoid wiping the selected primary tag when terms
+// haven’t been persisted yet (Gutenberg/REST timing).
 add_action( 'save_post', function ( $post_id ) {
 	// Basic checks
 	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
@@ -804,7 +806,7 @@ add_action( 'save_post', function ( $post_id ) {
 	if ( isset( $_POST['scn_selected_post_tag'] ) && ( ! isset( $_POST['post_type'] ) || 'post' === $_POST['post_type'] ) ) {
 		$validate_and_save( '_scn_selected_post_tag', $_POST['scn_selected_post_tag'], 'post_tag' );
 	}
-} );
+}, 20 );
 
 /**
  * Get the readable selected tag name for a post.
