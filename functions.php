@@ -772,10 +772,12 @@ add_action( 'save_post', function ( $post_id ) {
 		}
 
 		$assigned_terms = get_the_terms( $post_id, $taxonomy );
-		if ( is_wp_error( $assigned_terms ) || empty( $assigned_terms ) ) {
-			delete_post_meta( $post_id, $meta_key );
-			delete_post_meta( $post_id, $name_meta_key );
-
+		if ( is_wp_error( $assigned_terms ) ) {
+			// If terms can't be fetched right now, do not modify existing selection.
+			return;
+		}
+		if ( empty( $assigned_terms ) ) {
+			// Terms may not be persisted yet (editor timing). Avoid clearing previous selection.
 			return;
 		}
 
@@ -791,9 +793,9 @@ add_action( 'save_post', function ( $post_id ) {
 				delete_post_meta( $post_id, $name_meta_key );
 			}
 		} else {
-			// Only allow saving values that are actually assigned on the post
-			delete_post_meta( $post_id, $meta_key );
-			delete_post_meta( $post_id, $name_meta_key );
+			// The selected term isn’t among the post's assigned terms at this moment.
+			// This can occur due to timing; avoid clearing previous value.
+			return;
 		}
 	};
 
@@ -806,7 +808,7 @@ add_action( 'save_post', function ( $post_id ) {
 	if ( isset( $_POST['scn_selected_post_tag'] ) && ( ! isset( $_POST['post_type'] ) || 'post' === $_POST['post_type'] ) ) {
 		$validate_and_save( '_scn_selected_post_tag', $_POST['scn_selected_post_tag'], 'post_tag' );
 	}
-}, 20 );
+}, 100 );
 
 /**
  * Get the readable selected tag name for a post.
