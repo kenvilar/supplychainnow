@@ -752,6 +752,7 @@ header.entry-header {
 	height: 100%;
 	display: flex;
 	align-items: center;
+	margin-bottom: 90px;
 }
 h1.entry-title {
 	max-width: 1300px;
@@ -760,7 +761,7 @@ h1.entry-title {
 	margin-right: auto !important;
 	height: 100%;
 }
-.entry-content {
+article:not(.full-width) .entry-content {
 	max-width: 1250px;
 	margin-inline: auto;
 }

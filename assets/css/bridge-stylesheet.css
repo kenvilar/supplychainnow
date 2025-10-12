@@ -2507,7 +2507,7 @@ header:not(.centered_logo) .header_fixed_right_area {
 }
 
 .content,.content .container,.full_width {
-    background-color: #f6f6f6
+    background-color: white;
 }
 
 .side_menu_button>a {
