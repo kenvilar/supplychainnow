@@ -15149,7 +15149,7 @@ aside #lang_sel img.iclflag,aside #lang_sel_click img.iclflag,footer #lang_sel i
 }
 
 .element_from_bottom>div,.element_from_fade>div,.element_from_left>div,.element_from_right>div,.element_from_top>div {
-    opacity: 0;
+    opacity: 1;
     display: inline-block;
     vertical-align: middle;
     width: 100%;
