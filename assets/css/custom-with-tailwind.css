@@ -736,6 +736,33 @@ footer .footer_inner {
 .section_inner_margin.clearfix {
 	display: none;
 }
+/*override the wordpress default theme (twentynineteen) */
+header.entry-header {
+	width: 100%;
+	height: 100px;
+	text-align: center;
+	z-index: 101;
+	border-bottom-color: #eee;
+	background-color: #313f4a;
+	border-bottom-right-radius: 100px;
+	border-bottom-left-radius: 100px;
+	color: white;
+	min-height: 500px;
+	height: 100%;
+	display: flex;
+	align-items: center;
+}
+h1.entry-title {
+	max-width: 1300px;
+	width: 100%;
+	margin-left: auto !important;
+	margin-right: auto !important;
+	height: 100%;
+}
+.entry-content {
+	max-width: 1250px;
+	margin-inline: auto;
+}
 /* Media Screens */
 @media only screen and (max-width: 1200px) {
 	.container_inner {
