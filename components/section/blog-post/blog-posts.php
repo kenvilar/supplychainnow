@@ -155,7 +155,7 @@ if ( in_array( $categorySlug, [ 'white-paper', 'ebook', 'guide' ] ) ) {
                     <source type="audio/mpeg"
                             src="<?= $mp3_url; ?>?_=1" />
                     <a href="<?= $mp3_url; ?>">
-                      https://episodes.captivate.fm/episode/28f8a5ee-e04d-4324-9bf2-74880d8ed8f5.mp3
+                      <?= $mp3_url; ?>
                     </a>
                   </audio>
                 </div>
