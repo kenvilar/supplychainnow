@@ -119,7 +119,7 @@ img {
 } */
 
 body:not([class*=bridge-core]) .h1,body:not([class*=bridge-core]) .h2,body:not([class*=bridge-core]) .h3,body:not([class*=bridge-core]) .h4,body:not([class*=bridge-core]) .h5,body:not([class*=bridge-core]) .h6,body:not([class*=bridge-core]) h1,body:not([class*=bridge-core]) h2,body:not([class*=bridge-core]) h3,body:not([class*=bridge-core]) h4,body:not([class*=bridge-core]) h5,body:not([class*=bridge-core]) h6 {
-    margin: 20px 0
+    /*margin: 20px 0*/
 }
 
 /* .h1,body.qode-overridden-elementors-fonts .elementor-widget-heading h1.elementor-heading-title,h1 {
