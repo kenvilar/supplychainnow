@@ -2643,11 +2643,12 @@ header.sticky .header_inner_right.left_side {
 }
 
 .container {
-    width: 100%
+    width: 100%;
+		max-width: 100%;
 }
 
 .container_inner,.elementor-container .elementor-widget-wrap>.qode_elementor_container_inner,.elementor-row .elementor-widget-wrap>.qode_elementor_container_inner,.qode_elementor_container_inner,div[data-element_type=container].qode_elementor_container_inner {
-    width: 1100px;
+    /*width: 1100px;*/
     margin: 0 auto
 }
 
