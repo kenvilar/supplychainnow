@@ -1388,15 +1388,22 @@ add_action( 'admin_menu', function () {
 	// List the plugin page slugs you want to move (the value after ?page=)
 	$targets = [
 		'windpress',        // WindPress
-		'vc-general',        // WPBakery Page Builder
-		'leadin',            // HubSpot
 	];
 
-	// Create Settings links that redirect to the original pages
-	foreach ( $targets as $slug ) {
+	// Ensure we know which plugin slugs actually exist in the admin menu
+	global $menu;
+	$existing_slugs = [];
+	foreach ( (array) $menu as $m ) {
+		if ( ! empty( $m[2] ) && in_array( $m[2], $targets, true ) ) {
+			$existing_slugs[] = $m[2];
+		}
+	}
+	$existing_slugs = array_unique( $existing_slugs );
+
+	// Create Settings links that redirect to the original pages (only for existing plugins)
+	foreach ( $existing_slugs as $slug ) {
 		$title = ucwords( str_replace( [ '-', '_' ], ' ', $slug ) ); // fallback title
 		// Try to grab the real title from the admin menu if available
-		global $menu;
 		foreach ( (array) $menu as $m ) {
 			if ( ! empty( $m[2] ) && $m[2] === $slug && ! empty( $m[0] ) ) {
 				$title = wp_strip_all_tags( $m[0] );
@@ -1418,8 +1425,8 @@ add_action( 'admin_menu', function () {
 		);
 	}
 
-	// Hide original top-level menus (do this late)
-	foreach ( $targets as $slug ) {
+	// Hide original top-level menus (do this late) - only for existing plugins
+	foreach ( $existing_slugs as $slug ) {
 		remove_menu_page( $slug );
 	}
 }, PHP_INT_MAX );
@@ -1429,7 +1436,29 @@ add_action( 'admin_head', function () {
 	if ( ! current_user_can( 'manage_options' ) ) {
 		return;
 	}
-	foreach ( [ 'windpress', 'vc-general', 'leadin' ] as $slug ) {
+	// Only attempt to remove known slugs that exist
+	global $menu;
+	$existing_slugs = [];
+	foreach ( [ 'windpress' ] as $slug ) {
+		foreach ( (array) $menu as $m ) {
+			if ( ! empty( $m[2] ) && $m[2] === $slug ) {
+				$existing_slugs[] = $slug;
+				break;
+			}
+		}
+	}
+	$existing_slugs = array_unique( $existing_slugs );
+	foreach ( $existing_slugs as $slug ) {
+		remove_menu_page( $slug );
+	}
+}, PHP_INT_MAX );
+
+// Belt and suspenders: if a plugin re-adds its menu after ours
+add_action( 'admin_head', function () {
+	if ( ! current_user_can( 'manage_options' ) ) {
+		return;
+	}
+	foreach ( [ 'windpress' ] as $slug ) {
 		remove_menu_page( $slug );
 	}
 }, PHP_INT_MAX );
