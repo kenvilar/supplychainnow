@@ -1,6 +1,8 @@
 <?php
 
-$bridge_qode_options = bridge_qode_return_global_options();
+if ( function_exists( 'bridge_qode_return_global_options' ) ) {
+  $bridge_qode_options = bridge_qode_return_global_options();
+}
 
 $header_args = get_query_var( 'header_args', [] );
 ?>
@@ -11,13 +13,16 @@ language_attributes(); ?>>
   <meta charset="<?php
   bloginfo( 'charset' ); ?>" />
   <?php
-  $bridge_qode_is_IE = bridge_qode_return_is_ie_variable();
+  if ( function_exists( 'bridge_qode_return_is_ie_variable' ) ) {
+    $bridge_qode_is_IE = bridge_qode_return_is_ie_variable();
 
-  if ( ! empty( $bridge_qode_is_IE ) && $bridge_qode_is_IE ) { ?>
-    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
-    <?php
-  } ?>
-
+    if ( ! empty( $bridge_qode_is_IE ) && $bridge_qode_is_IE ) { ?>
+      <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+      <?php
+    }
+  }
+  ?>
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
   <?php
   /**
    * bridge_qode_header_meta hook
@@ -42,13 +47,19 @@ do_action( 'wp_body_open' );
 ?>
 
 <?php
-$params = bridge_qode_header_parameters();
+if ( function_exists( 'bridge_qode_header_parameters' ) ) {
+  $params = bridge_qode_header_parameters();
+} else {
+  $params = [];
+}
 extract( $params );
 
-echo bridge_qode_get_module_template_part( 'templates/parts/ajax-loader', 'header' );
+if ( function_exists( 'bridge_qode_get_module_template_part' ) ) {
+  echo bridge_qode_get_module_template_part( 'templates/parts/ajax-loader', 'header' );
 
-echo bridge_qode_get_module_template_part( 'templates/side-area/side-area', 'header', '', $params );
-echo bridge_qode_get_module_template_part( 'templates/panel-area', 'panel-area', '', $params );
+  echo bridge_qode_get_module_template_part( 'templates/side-area/side-area', 'header', '', $params );
+  echo bridge_qode_get_module_template_part( 'templates/panel-area', 'panel-area', '', $params );
+}
 ?>
 <div class="wrapper">
   <div class="wrapper_inner">
@@ -76,9 +87,11 @@ echo bridge_qode_get_module_template_part( 'templates/panel-area', 'panel-area',
     //get_template_part('components/layout/header/header-default', null, $header_args);
     get_template_part( 'components/layout/header/header-nav-menu', null, $header_args );
 
-    echo bridge_qode_get_module_template_part( 'templates/parts/back-to-top', 'header', '', $params );
-    echo bridge_qode_get_module_template_part( 'templates/popup-menu/popup-menu', 'header', '', $params );
-    echo bridge_qode_get_module_template_part( 'templates/parts/fullscreen-search', 'header', '', $params );
+    if ( function_exists( 'bridge_qode_get_module_template_part' ) ) {
+      echo bridge_qode_get_module_template_part( 'templates/parts/back-to-top', 'header', '', $params );
+      echo bridge_qode_get_module_template_part( 'templates/popup-menu/popup-menu', 'header', '', $params );
+      echo bridge_qode_get_module_template_part( 'templates/parts/fullscreen-search', 'header', '', $params );
+    }
     ?>
 
 
