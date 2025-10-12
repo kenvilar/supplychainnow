@@ -1376,3 +1376,60 @@ $main_shortocdes = get_stylesheet_directory() . '/components/shortcodes/index.ph
 if ( file_exists( $main_shortocdes ) ) {
 	require_once $main_shortocdes;
 }
+
+/**
+ * Move selected plugin pages under Settings and hide their top-level menus.
+ */
+add_action( 'admin_menu', function () {
+	if ( ! current_user_can( 'manage_options' ) ) {
+		return;
+	}
+
+	// List the plugin page slugs you want to move (the value after ?page=)
+	$targets = [
+		'windpress',        // WindPress
+		'vc-general',        // WPBakery Page Builder
+		'leadin',            // HubSpot
+	];
+
+	// Create Settings links that redirect to the original pages
+	foreach ( $targets as $slug ) {
+		$title = ucwords( str_replace( [ '-', '_' ], ' ', $slug ) ); // fallback title
+		// Try to grab the real title from the admin menu if available
+		global $menu;
+		foreach ( (array) $menu as $m ) {
+			if ( ! empty( $m[2] ) && $m[2] === $slug && ! empty( $m[0] ) ) {
+				$title = wp_strip_all_tags( $m[0] );
+				break;
+			}
+		}
+
+		// Add under Settings → {Title}
+		add_submenu_page(
+			'options-general.php',
+			$title,
+			$title,
+			'manage_options',
+			"kv-relay-$slug",
+			function () use ( $slug ) {
+				wp_safe_redirect( admin_url( "admin.php?page=$slug" ) );
+				exit;
+			}
+		);
+	}
+
+	// Hide original top-level menus (do this late)
+	foreach ( $targets as $slug ) {
+		remove_menu_page( $slug );
+	}
+}, PHP_INT_MAX );
+
+// Belt and suspenders: if a plugin re-adds its menu after ours
+add_action( 'admin_head', function () {
+	if ( ! current_user_can( 'manage_options' ) ) {
+		return;
+	}
+	foreach ( [ 'windpress', 'vc-general', 'leadin' ] as $slug ) {
+		remove_menu_page( $slug );
+	}
+}, PHP_INT_MAX );
