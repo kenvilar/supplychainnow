@@ -768,6 +768,9 @@ article:not(.full-width) .entry-content {
 article.hide-title .entry-header {
 	display: none;
 }
+article.type-post {
+	padding-top: 58px;
+}
 .entry-footer span.edit-link {
 	display: none;
 }
