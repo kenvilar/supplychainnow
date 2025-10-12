@@ -687,7 +687,8 @@ footer .footer_inner {
 	margin-bottom: 22px;
 }
 .content .container, .transparent_content .content .container {
-	padding-top: 60px !important;
+	/*padding-top: 60px !important;*/
+	padding-top: 0px !important;
 }
 .boxed .section .section_inner,
 .grid_section .section_inner {
