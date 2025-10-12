@@ -5,10 +5,13 @@ Description: A child theme of Bridge Theme
 Author: Qode Interactive
 Author URI: http://www.qodethemes.com/
 Version: 1.0.0
-Template: bridge
+Template: twentynineteen
 */
-/*@import url("../bridge/style.css");*/
 /*
+@import url("../bridge/style.css");
+
+original Template: is 'bridge'
+
 from webflow, start
 */
 html {

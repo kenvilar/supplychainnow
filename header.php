@@ -7,7 +7,7 @@ if ( function_exists( 'bridge_qode_return_global_options' ) ) {
 $header_args = get_query_var( 'header_args', [] );
 ?>
 <!DOCTYPE html>
-<html <?php
+<html data-ken="1" <?php
 language_attributes(); ?>>
 <head>
   <meta charset="<?php
@@ -49,10 +49,10 @@ do_action( 'wp_body_open' );
 <?php
 if ( function_exists( 'bridge_qode_header_parameters' ) ) {
   $params = bridge_qode_header_parameters();
+  extract( $params );
 } else {
   $params = [];
 }
-extract( $params );
 
 if ( function_exists( 'bridge_qode_get_module_template_part' ) ) {
   echo bridge_qode_get_module_template_part( 'templates/parts/ajax-loader', 'header' );
@@ -96,18 +96,18 @@ if ( function_exists( 'bridge_qode_get_module_template_part' ) ) {
 
 
     <?php
-    if ( bridge_qode_options()->getOptionValue( 'paspartu' ) == 'yes' ){ ?>
+    if ( function_exists( 'bridge_qode_options' ) && bridge_qode_options()->getOptionValue( 'paspartu' ) == 'yes' ){ ?>
     <div class="paspartu_outer <?php
     echo bridge_qode_get_paspartu_class(); ?>">
       <?php
-      if ( bridge_qode_options()->getOptionValue( 'vertical_area' ) == "yes" && bridge_qode_options()->getOptionValue( 'vertical_menu_inside_paspartu' ) == 'no' ) { ?>
+      if ( function_exists( 'bridge_qode_options' ) && bridge_qode_options()->getOptionValue( 'vertical_area' ) == "yes" && bridge_qode_options()->getOptionValue( 'vertical_menu_inside_paspartu' ) == 'no' ) { ?>
       <div class="paspartu_middle_inner">
         <?php
         } ?>
 
         <?php
-        if ( ( bridge_qode_options()->getOptionValue( 'paspartu_on_top' ) == 'yes' && bridge_qode_options()->getOptionValue( 'paspartu_on_top_fixed' ) == 'yes' )
-             || ( bridge_qode_options()->getOptionValue( 'vertical_area' ) == "yes" && bridge_qode_options()->getOptionValue( 'vertical_menu_inside_paspartu' ) == 'yes' )
+        if ( ( function_exists( 'bridge_qode_options' ) && bridge_qode_options()->getOptionValue( 'paspartu_on_top' ) == 'yes' && bridge_qode_options()->getOptionValue( 'paspartu_on_top_fixed' ) == 'yes' )
+             || ( function_exists( 'bridge_qode_options' ) && bridge_qode_options()->getOptionValue( 'vertical_area' ) == "yes" && bridge_qode_options()->getOptionValue( 'vertical_menu_inside_paspartu' ) == 'yes' )
         ) { ?>
           <div class="paspartu_top"></div>
           <?php
@@ -138,13 +138,17 @@ if ( function_exists( 'bridge_qode_get_module_template_part' ) ) {
             <?php
           } ?>
           <div class="content <?php
-          echo bridge_qode_get_content_class(); ?>">
+          if ( function_exists( 'bridge_qode_get_content_class' ) ) {
+            echo bridge_qode_get_content_class();
+          }
+          ?>">
             <?php
             $animation = get_post_meta( $id, "qode_show-animation", true );
             if ( ! empty( $_SESSION['qode_animation'] ) && $animation == "" ) {
               $animation = $_SESSION['qode_animation'];
             }
-            if ( in_array( bridge_qode_options()->getOptionValue( 'page_transitions' ),
+            if ( function_exists( 'bridge_qode_options' )
+                 && in_array( bridge_qode_options()->getOptionValue( 'page_transitions' ),
                 array( '1', '2', '3', '4' ) )
                  || in_array( $animation,
                 array( "updown", "fade", "updown_fade", "leftright" ) )
@@ -167,7 +171,8 @@ if ( function_exists( 'bridge_qode_get_module_template_part' ) ) {
             <div class="content_inner <?php
             echo esc_attr( $animation ); ?> ">
               <?php
-              if ( in_array( bridge_qode_options()->getOptionValue( 'page_transitions' ),
+              if ( function_exists( 'bridge_qode_options' )
+                   && in_array( bridge_qode_options()->getOptionValue( 'page_transitions' ),
                   array( '1', '2', '3', '4' ) )
                    || in_array( $animation,
                   array( "updown", "fade", "updown_fade", "leftright" ) )

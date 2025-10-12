@@ -1,7 +1,15 @@
 <?php
 
-extract( bridge_qode_get_blog_single_params() ); ?>
-<?php
+if ( function_exists( 'bridge_qode_get_blog_single_params' ) ) {
+  extract( bridge_qode_get_blog_single_params() );
+}
+$single_loop        = "blog_single";
+$sidebar            = "default";
+$single_type        = "";
+$background_color   = "";
+$single_grid        = "no";
+$blog_hide_comments = "yes";
+
 get_header(); ?>
 <?php
 if ( have_posts() ): ?>
@@ -29,9 +37,10 @@ if ( have_posts() ): ?>
         <?php
       } ?>
       <div class="full_width_inner" <?php
-      bridge_qode_inline_style(
-        $content_style_spacing,
-      ); ?>>
+      if ( function_exists( 'bridge_qode_inline_style' ) ) {
+        bridge_qode_inline_style( $content_style_spacing );
+      }
+      ?>>
     <?php
     // post type
     // post type
@@ -49,9 +58,10 @@ if ( have_posts() ): ?>
         <?php
       } ?>
       <div class="container_inner default_template_holder" <?php
-      bridge_qode_inline_style(
-        $content_style_spacing,
-      ); ?>>
+      if ( function_exists( 'bridge_qode_inline_style' ) ) {
+        bridge_qode_inline_style( $content_style_spacing );
+      }
+      ?>>
     <?php
     endif;
     // post type end
@@ -59,7 +69,10 @@ if ( have_posts() ): ?>
     <?php
     if ( $sidebar == "default" || $sidebar == "" ): ?>
       <div <?php
-      bridge_qode_class_attribute( implode( " ", $single_class ) ); ?>>
+      if ( function_exists( 'bridge_qode_class_attribute' ) ) {
+        bridge_qode_class_attribute( implode( " ", $single_class ) );
+      }
+      ?>>
         <?php
         get_template_part( "templates/" . $single_loop, "loop" ); ?>
         <?php
@@ -70,7 +83,7 @@ if ( have_posts() ): ?>
             endif; ?>
             <?php
             if ( $blog_hide_comments != "yes" ) {
-              //comments_template('', true);
+              comments_template( '', true );
             } else {
               echo "<br/><br/>";
             } ?>
