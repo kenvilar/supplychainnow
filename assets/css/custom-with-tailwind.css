@@ -765,6 +765,12 @@ article:not(.full-width) .entry-content {
 	max-width: 1250px;
 	margin-inline: auto;
 }
+article.hide-title .entry-header {
+	display: none;
+}
+.entry-footer span.edit-link {
+	display: none;
+}
 /* Media Screens */
 @media only screen and (max-width: 1200px) {
 	.container_inner {
