@@ -1397,6 +1397,12 @@ if ( file_exists( $main_shortocdes ) ) {
 	require_once $main_shortocdes;
 }
 
+// Metabox
+$main_metabox = get_stylesheet_directory() . '/metabox/index.php';
+if ( file_exists( $main_metabox ) ) {
+	require_once $main_metabox;
+}
+
 /**
  * Move selected plugin pages under Settings and hide their top-level menus.
  */
@@ -1530,6 +1536,7 @@ function scn_add_navbar_fixed_meta_box() {
 		'default'
 	);
 }
+
 add_action( 'add_meta_boxes', 'scn_add_navbar_fixed_meta_box' );
 
 // Render Navbar Fixed metabox
@@ -1574,4 +1581,5 @@ function scn_save_navbar_fixed_meta( $post_id ) {
 	$new_value = isset( $_POST['scn_navbar_fixed'] ) ? '1' : '0';
 	update_post_meta( $post_id, '_scn_navbar_fixed', $new_value );
 }
+
 add_action( 'save_post', 'scn_save_navbar_fixed_meta' );
