@@ -18,7 +18,7 @@ $hide_icon  = get_field( 'Hide_Icon', $pageID ) ?: false;
 					loading="lazy" alt="open envelope">
 			</div>
 			<div class="mb-16">
-				<h1><?= $page_title; ?></h1>
+				<h1 class="scn-page-title"><?= $page_title; ?></h1>
 			</div>
 		</div>
 	</div>

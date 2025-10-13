@@ -15,7 +15,7 @@ $buttonLink  = esc_url( ! empty( $section['Button_Link'] ) ? $section['Button_Li
 	<div class="site-padding sm:py-60 pt-200 pb-100 relative z-10">
 		<div class="w-layout-blockcontainer pt-20 w-container text-center max-w-960">
 			<div class="mb-28">
-				<h1><?= $page_title; ?></h1>
+				<h1 class="scn-page-title"><?= $page_title; ?></h1>
 			</div>
 			<div class="mb-36">
 				<div slider-1="" class="splide">

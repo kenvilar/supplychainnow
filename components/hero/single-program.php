@@ -23,7 +23,7 @@ $pageId = get_the_ID();
 				</div>
 				<div class="max-w-816 w-full md:max-w-full">
 					<div class="mb-12">
-						<h1 class="text-3xl text-white!"><?php
+						<h1 class="text-3xl text-white! scn-page-title"><?php
 							if ( get_field( 'program_title', $pageId ) ) {
 								the_field( 'program_title', $pageId );
 							} ?></h1>

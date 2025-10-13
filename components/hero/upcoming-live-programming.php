@@ -30,7 +30,7 @@ $buttonLink2  = esc_url( ! empty( $section['Button_Link_2'] ) ? $section['Button
 						loading="lazy" alt="">
 				</div>
 				<div class="mb-16">
-					<h1><?= $page_title; ?></h1>
+					<h1 class="scn-page-title"><?= $page_title; ?></h1>
 				</div>
 			</div>
 		</div>

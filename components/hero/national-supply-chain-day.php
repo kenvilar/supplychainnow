@@ -21,7 +21,7 @@ $hide_icon   = get_field( 'Hide_Icon', $pageID ) ?: false;
 							loading="lazy" alt="national supply chain day" class="w-full h-full max-w-none fit-cover">
 					</div>
 					<div class="max-w-500 w-full md:max-w-full sm:text-center">
-						<h1 class="font-semibold text-3xl xs:text-2xl tracking-[2.4px]">
+						<h1 class="font-semibold text-3xl xs:text-2xl tracking-[2.4px] scn-page-title">
 							<?= $page_title; ?>
 						</h1>
 					</div>

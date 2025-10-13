@@ -20,7 +20,7 @@ $hide_icon   = get_field( 'Hide_Icon', $pageID ) ?: false;
 					loading="lazy" alt="play-icon">
 			</div>
 			<div class="mb-16">
-				<h1><?= $page_title; ?></h1>
+				<h1 class="scn-page-title"><?= $page_title; ?></h1>
 			</div>
 			<div>
 				<p class="font-family-alternate font-medium text-xl tracking-[2.4px]">
