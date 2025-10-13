@@ -5,16 +5,26 @@ add_post_type_support( 'page', 'excerpt' );
 add_filter( 'redirect_canonical', function ( $redirect_url, $requested_url ) {
 	if (
 		is_singular( 'brands' )
-		|| is_page( 'resource-hub' )
-		|| is_page( 'blog' )
-		|| is_page( 'white-paper' )
-		|| is_page( 'ebook' )
-		|| is_page( 'article' )
-		|| is_page( 'news' )
-		|| is_page( 'guide' )
-		|| is_page( 'on-demand-programming' )
-		|| is_page( 'podcasts-and-livestreams' )
-		|| is_page( 'webinars' )
+		|| is_page( 'resource-hub' ) // resource-hub
+		|| is_page( 26503 ) // resource-hub
+		|| is_page( 'blog' ) // blog
+		|| is_page( 26504 ) // blog
+		|| is_page( 'white-paper' ) // white-paper
+		|| is_page( 26505 ) // white-paper
+		|| is_page( 'ebook' ) // ebook
+		|| is_page( 26506 ) // ebook
+		|| is_page( 'article' ) // article
+		|| is_page( 26507 ) // article
+		|| is_page( 'news' ) // news
+		|| is_page( 26508 ) // news
+		|| is_page( 'guide' ) // guide
+		|| is_page( 26509 ) // guide
+		|| is_page( 'on-demand-programming' ) // on-demand-programming
+		|| is_page( 26500 ) // on-demand-programming
+		|| is_page( 'podcasts-and-livestreams' ) // podcasts-and-livestreams
+		|| is_page( 26501 ) // podcasts-and-livestreams
+		|| is_page( 'webinars' ) // webinars
+		|| is_page( 26502 ) // webinars
 	) {
 		return false;
 	}
