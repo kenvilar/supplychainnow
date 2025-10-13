@@ -1462,3 +1462,26 @@ add_action( 'admin_head', function () {
 		remove_menu_page( $slug );
 	}
 }, PHP_INT_MAX );
+
+// functions.php
+add_action( 'admin_head-post.php', 'kv_hide_acf_groups_on_posts_pages' );
+add_action( 'admin_head-post-new.php', 'kv_hide_acf_groups_on_posts_pages' );
+
+function kv_hide_acf_groups_on_posts_pages() {
+	$screen = get_current_screen();
+	if ( ! $screen || ! in_array( $screen->post_type, [ 'post', 'page' ], true ) ) {
+		return;
+	}
+
+	// list the ACF field group keys you want hidden on posts/pages
+	$groups = [
+		'group_6113b4ccbea22', // Episode Quote Section
+	];
+
+	echo '<style>';
+	foreach ( $groups as $key ) {
+		// ACF metabox has data-id="group_xxx"
+		echo '#acf-' . esc_attr( $key ) . '{display:none !important;}';
+	}
+	echo '</style>';
+}
