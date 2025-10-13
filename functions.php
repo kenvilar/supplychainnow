@@ -1387,7 +1387,7 @@ add_action( 'admin_menu', function () {
 
 	// List the plugin page slugs you want to move (the value after ?page=)
 	$targets = [
-		'windpress',        // WindPress
+		'windpress', // WindPress
 	];
 
 	// Ensure we know which plugin slugs actually exist in the admin menu
@@ -1438,7 +1438,7 @@ add_action( 'admin_head', function () {
 	// Only attempt to remove known slugs that exist
 	global $menu;
 	$existing_slugs = [];
-	foreach ( [ 'windpress' ] as $slug ) {
+	foreach ( [ 'windpress', ] as $slug ) {
 		foreach ( (array) $menu as $m ) {
 			if ( ! empty( $m[2] ) && $m[2] === $slug ) {
 				$existing_slugs[] = $slug;
@@ -1456,5 +1456,9 @@ add_action( 'admin_head', function () {
 	if ( ! current_user_can( 'manage_options' ) ) {
 		return;
 	}
-	remove_menu_page( 'windpress' );
+	// List all slugs to be hidden
+	$slugs = [ 'windpress', ];
+	foreach ( $slugs as $slug ) {
+		remove_menu_page( $slug );
+	}
 }, PHP_INT_MAX );
