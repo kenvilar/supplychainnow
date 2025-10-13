@@ -1476,6 +1476,10 @@ function kv_hide_acf_groups_on_posts_pages() {
 	// list the ACF field group keys you want hidden on posts/pages
 	$groups = [
 		'group_6113b4ccbea22', // Episode Quote Section
+		'group_601acba8a6740', // Featured Guests For Page
+		'group_601ada8fdbc9b', // Hosts Section For Page
+		'group_601c5aae4dc5f', // Episode Additional Resources
+		'group_602c2d5f50947', // Related Episodes
 	];
 
 	echo '<style>';
