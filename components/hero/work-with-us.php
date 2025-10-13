@@ -1,42 +1,36 @@
 <?php
 
-$pageID      = get_the_ID();
-$page_title  = esc_html( get_field( 'Page_Title', $pageID ) ?: 'Work With Us' );
-$description = get_field( 'Description',
-	$pageID ) ?: "<strong>Reach 1M+ Supply Chain Professionals</strong> actively engaging with Supply Chain Now and generate qualified new leads for your business.";
-$hero_image  = esc_url( get_field( 'Hero_Image',
-	$pageID ) ?: get_stylesheet_directory_uri() . '/assets/img/hero-img/hero--work-with-us.avif' );
-$hide_icon   = get_field( 'Hide_Icon', $pageID ) ?: false;
-$section     = get_field( 'Hero_Section', $pageID );
-$buttonText  = esc_html( ! empty( $section['Button_Text'] ) ? $section['Button_Text'] : 'Get Started' );
-$buttonLink  = esc_url( ! empty( $section['Button_Link'] ) ? $section['Button_Link'] : '/contact' );
+$pageID = get_the_ID();
+$page_title = get_field("Page_Title", $pageID) ?: "Work With Us";
+$description = get_field("Description", $pageID) ?: "<strong>Reach 1M+ Supply Chain Professionals</strong> actively engaging with Supply Chain Now and generate qualified new leads for your business.";
+$hero_image = esc_url(get_field("Hero_Image", $pageID) ?: get_stylesheet_directory_uri() . "/assets/img/hero-img/hero--work-with-us.avif");
+$hide_icon = get_field("Hide_Icon", $pageID) ?: false;
+$section = get_field("Hero_Section", $pageID);
+$buttonText = esc_html(!empty($section["Button_Text"]) ? $section["Button_Text"] : "Get Started");
+$buttonLink = esc_url(!empty($section["Button_Link"]) ? $section["Button_Link"] : "/contact");
 ?>
 <section class="section bg-cargogrey text-white rounded-b-100 sm:rounded-b-none">
 	<div class="site-padding sm:py-60 pt-200 pb-100 relative z-10">
 		<div class="w-layout-blockcontainer pt-20 w-container text-center max-w-960">
 			<div class="mb-28">
-				<h1 class="scn-page-title"><?= $page_title; ?></h1>
+				<h1 class="scn-page-title"><?= $page_title ?></h1>
 			</div>
 			<div class="mb-36">
 				<div slider-1="" class="splide">
 					<div class="splide__track">
 						<ul class="splide__list">
-							<?php
-							if ( ! empty( $section['Text_Rotator'] ) ):
-								foreach ( $section['Text_Rotator'] as $idx => $item ):
-									$icon = $item['Icon'];
-									$title = $item['Title'] ?: '';
-									?>
+							<?php if (!empty($section["Text_Rotator"])):
+           foreach ($section["Text_Rotator"] as $idx => $item):
+
+               $icon = $item["Icon"];
+               $title = $item["Title"] ?: "";
+               ?>
 									<li class="splide__slide">
 										<div class="flex items-center gap-20 justify-center xs:flex-col">
 											<div class="flex w-embed">
-												<?php
-												if ( ! empty( $icon ) ):
-													?>
-													<img class="w-27 h-28 object-contain" src="<?= $icon; ?>" alt="icon"/>
-												<?php
-												else:
-													?>
+												<?php if (!empty($icon)): ?>
+													<img class="w-27 h-28 object-contain" src="<?= $icon ?>" alt="icon"/>
+												<?php else: ?>
 													<svg xmlns="http://www.w3.org/2000/svg" width="27" height="28" viewBox="0 0 27 28"
 													     fill="none">
 														<path
@@ -53,17 +47,15 @@ $buttonLink  = esc_url( ! empty( $section['Button_Link'] ) ? $section['Button_Li
 															d="M8.95239 17.0476L10.5476 23.4047C10.6268 23.7299 10.6312 24.0687 10.5606 24.3958C10.49 24.7229 10.3462 25.0297 10.14 25.2932C9.93372 25.5568 9.67045 25.7701 9.36991 25.9173C9.06937 26.0644 8.7394 26.1415 8.40477 26.1428C7.91169 26.1416 7.43313 25.9758 7.04496 25.6717C6.65679 25.3676 6.38122 24.9427 6.26192 24.4643L4.40479 17.0476"
 															stroke="#FFAB56" stroke-width="2" stroke-miterlimit="10"></path>
 													</svg>
-												<?php
-												endif;
-												?>
+												<?php endif; ?>
 											</div>
-											<div class="font-family-alternate text-xl tracking-[2.4px] xs:text-md"><?= $title; ?></div>
+											<div class="font-family-alternate text-xl tracking-[2.4px] xs:text-md"><?= $title ?></div>
 										</div>
 									</li>
 								<?php
-								endforeach;
-							else:
-								?>
+           endforeach;
+       else:
+            ?>
 								<li class="splide__slide">
 									<div class="flex items-center gap-20 justify-center xs:flex-col">
 										<div class="flex w-embed">
@@ -182,8 +174,7 @@ $buttonLink  = esc_url( ! empty( $section['Button_Link'] ) ? $section['Button_Li
 									</div>
 								</li>
 							<?php
-							endif;
-							?>
+       endif; ?>
 						</ul>
 					</div>
 				</div>
@@ -245,29 +236,27 @@ $buttonLink  = esc_url( ! empty( $section['Button_Link'] ) ? $section['Button_Li
 			<div class="mb-28">
 				<div class="w-layout-blockcontainer max-w-672 w-container">
 					<p>
-						<?= $description; ?>
+						<?= $description ?>
 					</p>
 				</div>
 			</div>
 			<div class="flex justify-center">
-				<?php
-				echo get_template_part( 'components/ui/btn', null, [
-					'text'  => $buttonText,
-					'link'  => $buttonLink,
-					'style' => 'primary',
-					'class' => '',
-					/*'attributes' => [
+				<?php echo get_template_part("components/ui/btn", null, [
+        "text" => $buttonText,
+        "link" => $buttonLink,
+        "style" => "primary",
+        "class" => "",
+        /*'attributes' => [
 						'target' => '_blank',
 						'rel'    => 'noopener noreferrer',
 					],*/
-				] );
-				?>
+    ]); ?>
 			</div>
 		</div>
 	</div>
 	<div class="absolute absolute--full w-full h-full">
 		<img
-			src="<?= $hero_image; ?>"
+			src="<?= $hero_image ?>"
 			loading="lazy" alt="hero-work with us" class="image opacity-10">
 	</div>
 </section>
