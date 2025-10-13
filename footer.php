@@ -517,5 +517,14 @@ if ( $bridge_qode_display_footer_top || $bridge_qode_display_footer_text ) { ?>
 </div>
 <?php
 wp_footer(); ?>
+<script>
+    window.ExternalLinks.init({
+        sameSiteDomains: ['supplychainnow.com', 'supplychainwp.wpenginepowered.com', 'scnowstage.wpenginepowered.com', 'scnowstage.wpengine.com', 'scnnowdev.wpenginepowered.com', 'supplychainnow.local'],
+        forceList: [],
+        ignoreList: [],
+        writeOnclick: true, // keeps your requested onclick format
+        features: 'noopener,noreferrer' // matches your example. change to 'noopener,noreferrer' if you want
+    });
+</script>
 </body>
 </html>

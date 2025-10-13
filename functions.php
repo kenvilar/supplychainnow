@@ -308,6 +308,16 @@ if ( ! function_exists( 'bridge_qode_child_theme_enqueue_scripts' ) ) {
 		}
 
 		//custom script
+		$ver_external_links_in_new_window_js = file_exists( $theme_dir . '/assets/js/external_links_in_new_windows.js' ) ? filemtime( $theme_dir . '/assets/js/external_links_in_new_windows.js' ) : null;
+		wp_enqueue_script(
+			'supply-chain-now-external-links-in-new-window-script',
+			get_stylesheet_directory_uri() . '/assets/js/external_links_in_new_windows.js',
+			[],
+			$ver_external_links_in_new_window_js,
+			true // load in footer
+		);
+
+		//custom script
 		$ver_custom_js = file_exists( $theme_dir . '/assets/js/custom.js' ) ? filemtime( $theme_dir . '/assets/js/custom.js' ) : null;
 		wp_enqueue_script(
 			'supply-chain-now-custom-script',
