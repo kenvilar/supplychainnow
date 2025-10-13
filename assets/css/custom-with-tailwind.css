@@ -737,6 +737,7 @@ footer .footer_inner {
 .section_inner_margin.clearfix {
 	display: none;
 }
+/* end override the bridge theme */
 /*override the wordpress default theme (twentynineteen) */
 header.entry-header {
 	width: 100%;
@@ -773,6 +774,10 @@ article.type-post {
 }
 .entry-footer span.edit-link {
 	display: none;
+}
+/* end override the wordpress default theme (twentynineteen) */
+h1.scn-page-title * {
+  display: contents;
 }
 /* Media Screens */
 @media only screen and (max-width: 1200px) {
