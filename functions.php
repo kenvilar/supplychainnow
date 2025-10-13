@@ -1430,8 +1430,7 @@ add_action( 'admin_menu', function () {
 		remove_menu_page( $slug );
 	}
 }, PHP_INT_MAX );
-
-// Belt and suspenders: if a plugin re-adds its menu after ours
+// Belt and suspenders: if a plugin re-adds its menu after ours (The first function is more defensive and check-based, removing only if the slug exists in $menu)
 add_action( 'admin_head', function () {
 	if ( ! current_user_can( 'manage_options' ) ) {
 		return;
@@ -1452,8 +1451,7 @@ add_action( 'admin_head', function () {
 		remove_menu_page( $slug );
 	}
 }, PHP_INT_MAX );
-
-// Belt and suspenders: if a plugin re-adds its menu after ours
+// Belt and suspenders: if a plugin re-adds its menu after ours (The second is a straightforward call, assuming for example 'windpress' is there)
 add_action( 'admin_head', function () {
 	if ( ! current_user_can( 'manage_options' ) ) {
 		return;
