@@ -1458,7 +1458,5 @@ add_action( 'admin_head', function () {
 	if ( ! current_user_can( 'manage_options' ) ) {
 		return;
 	}
-	foreach ( [ 'windpress' ] as $slug ) {
-		remove_menu_page( $slug );
-	}
+	remove_menu_page( 'windpress' );
 }, PHP_INT_MAX );
