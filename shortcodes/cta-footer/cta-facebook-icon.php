@@ -7,7 +7,7 @@
 add_shortcode( 'cta_facebook_icon', function ( $atts ) {
 	$atts = shortcode_atts(
 		[
-			'href' => '',
+			'href' => 'https://www.facebook.com/SupplyChainNow',
 		],
 		$atts,
 		'cta_facebook_icon'
