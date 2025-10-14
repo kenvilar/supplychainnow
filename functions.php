@@ -3,7 +3,7 @@
 add_post_type_support( 'page', 'excerpt' );
 
 // Include custom [btn] shortcode file
-$main_shortocdes = get_stylesheet_directory() . '/components/shortcodes/index.php';
+$main_shortocdes = get_stylesheet_directory() . '/shortcodes/index.php';
 if ( file_exists( $main_shortocdes ) ) {
 	require_once $main_shortocdes;
 }
