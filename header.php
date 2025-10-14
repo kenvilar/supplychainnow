@@ -4,7 +4,18 @@ if ( function_exists( 'bridge_qode_return_global_options' ) ) {
   $bridge_qode_options = bridge_qode_return_global_options();
 }
 
-$header_args = get_query_var( 'header_args', [] );
+$nav_classnames_meta = '';
+$qo_id               = get_queried_object_id();
+if ( $qo_id ) {
+  $meta_val = get_post_meta( $qo_id, '_scn_navbar_fixed', true );
+  if ( $meta_val !== '0' ) {
+    $nav_classnames_meta = "nav-fixed";
+  }
+}
+
+$header_args = get_query_var( 'header_args', [
+  'nav_classnames' => $nav_classnames_meta, // derived from _scn_navbar_fixed meta
+] );
 ?>
 <!DOCTYPE html>
 <html data-ken="1" <?php
