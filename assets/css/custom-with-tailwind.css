@@ -708,8 +708,8 @@ footer .footer_inner {
 	margin-right: auto;
 }
 .vc_row {
-	margin-left: 0;
-	margin-right: 0;
+	margin-left: revert-layer;
+	margin-right: revert-layer;
 }
 .vc_col-sm-12 {
 	float: none;
