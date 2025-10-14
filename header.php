@@ -8,7 +8,7 @@ $nav_classnames_meta = '';
 $qo_id               = get_queried_object_id();
 if ( $qo_id ) {
   $meta_val = get_post_meta( $qo_id, '_scn_navbar_fixed', true );
-  if ( $meta_val !== '0' ) {
+  if ( $meta_val == '1' ) {
     $nav_classnames_meta = "nav-fixed";
   }
 }
