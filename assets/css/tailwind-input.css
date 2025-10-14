@@ -421,3 +421,6 @@ menu {
 .absolute-image p {
 	display: contents !important;
 }
+p.removeptags, .removeptags p {
+  display: contents !important;
+}
