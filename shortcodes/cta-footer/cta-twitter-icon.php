@@ -24,8 +24,9 @@ add_shortcode( 'cta_twitter_icon', function ( $atts ) {
 	return
 		'<a href="' . $href_esc . '" class="' . esc_attr( $link_classes ) . '">' .
 		'<div class="flex items-center justify-center w-embed">' .
-		'<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">' .
-		'<path fill-rule="evenodd" clip-rule="evenodd" d="M0 18C0 8.05888 8.05888 0 18 0C27.9411 0 36 8.05888 36 18C36 27.9411 27.9411 36 18 36C8.05888 36 0 27.9411 0 18ZM18 9C22.95 9 27 13.05 27 18C27 22.5 23.7375 26.325 19.2375 27V20.5875H21.375L21.825 18H19.35V16.3125C19.35 15.6375 19.6875 14.9625 20.8125 14.9625H21.9375V12.7125C21.9375 12.7125 20.925 12.4875 19.9125 12.4875C17.8875 12.4875 16.5375 13.725 16.5375 15.975V18H14.2875V20.5875H16.5375V26.8875C12.2625 26.2125 9 22.5 9 18C9 13.05 13.05 9 18 9Z" fill="currentColor"></path>' .
+		'<svg xmlns="http://www.w3.org/2000/svg" width="37" height="36" viewBox="0 0 37 36" fill="none">' .
+		'<path d="M23.0045 25.8835H25.4435L14.2165 10.1697H11.7775L23.0045 25.8835Z" fill="currentColor"></path>' .
+		'<path fill-rule="evenodd" clip-rule="evenodd" d="M18.6173 36C8.67619 36 0.61731 27.9411 0.61731 18C0.61731 8.05888 8.67619 0 18.6173 0C28.5584 0 36.6173 8.05888 36.6173 18C36.6173 27.9411 28.5584 36 18.6173 36ZM27.0307 9L20.3294 16.6218L27.6173 27H22.2574L17.3497 20.0113L11.2053 27H9.61731L16.6447 19.0074L9.61731 9H14.9772L19.6244 15.6179L25.4428 9H27.0307Z" fill="currentColor"></path>' .
 		'</svg>' .
 		'</div>' .
 		'</a>';
