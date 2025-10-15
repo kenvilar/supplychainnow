@@ -22,6 +22,7 @@ if ( ! function_exists( 'scn_searchbar_shortcode' ) ) {
 
     $section       = get_field( 'Searchbar_Section', $pageID );
     $dropdownTitle = esc_html( ! empty( $section['Title'] ) ? $section['Title'] : 'Industries' );
+    ob_start();
     ?>
     <section class="section overflow-visible!">
       <div class="site-padding sm:py-60 <?php
@@ -131,6 +132,7 @@ if ( ! function_exists( 'scn_searchbar_shortcode' ) ) {
       </div>
     </section>
     <?php
+    return ob_get_clean();
   }
 }
 
