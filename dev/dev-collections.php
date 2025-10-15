@@ -1,6 +1,6 @@
 <?php
 /*
- * Template Name: Dev Collections v2
+ * xxTemplate Name:xx Dev Collections v2
  */
 
 get_header();

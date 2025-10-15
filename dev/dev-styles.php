@@ -1,6 +1,6 @@
 <?php
 /*
-* Template Name: Dev Styles v2
+* xxTemplate Name:xx Dev Styles v2
 */
 
 set_query_var( 'header_args', [

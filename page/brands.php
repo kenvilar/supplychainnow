@@ -1,6 +1,6 @@
 <?php
-/*
- * Template Name: Brands v2
+/* Deprecated: Former "Brands v2" page template.
+ * The "Template Name" header has been removed to hide it from Page Attributes.
  */
 
 set_query_var( 'header_args', [

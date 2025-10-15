@@ -1,6 +1,6 @@
 <?php
-/*
- * Template Name: Upcoming Live Programming v2
+/* Deprecated: Former "Upcoming Live Programming v2" page template.
+ * The "Template Name" header has been removed to hide it from Page Attributes.
  */
 
 set_query_var( 'header_args', [
