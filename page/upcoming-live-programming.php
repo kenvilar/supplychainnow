@@ -28,7 +28,10 @@ $section = get_field( 'Popup_Modal_Section', $pageId );
 
 			scn_render_if_no_filters( 'components/section/upcoming-live-programming/upcoming-livestreams' );
 
-			get_template_part( 'components/ui/search_results' );
+      get_template_part( 'components/ui/search_results', null, [
+        'media_type' => 'all-events',
+      ] );
+
 			get_template_part( 'components/layout/footer/cta-footer-2' );
 			?>
 		</div>
