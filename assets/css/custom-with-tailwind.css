@@ -779,7 +779,6 @@ article.type-post {
 /* override the wpbakery */
 .vc_col-sm-12 {
   min-height: 0;
-  position: revert-layer;
 }
 /* end override the wpbakery */
 h1.scn-page-title * {
