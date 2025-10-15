@@ -695,6 +695,7 @@ footer .footer_inner {
 	max-width: 1400px;
 	@apply mx-auto w-full!;
 }
+/* override the wpbakery */
 .vc_column_container > .vc_column-inner {
 	padding-left: 0;
 	padding-right: 0;
@@ -713,6 +714,7 @@ footer .footer_inner {
 }
 .vc_col-sm-12 {
 	float: none;
+  min-height: 0;
 }
 .full_section_inner {
 	position: static;
@@ -734,6 +736,7 @@ footer .footer_inner {
 .vc_row:after, .vc_row:before {
 	display: none;
 }
+/* end override the wpbakery */
 .section_inner_margin.clearfix {
 	display: none;
 }
@@ -776,11 +779,6 @@ article.type-post {
 	display: none;
 }
 /* end override the wordpress default theme (twentynineteen) */
-/* override the wpbakery */
-.vc_col-sm-12 {
-  min-height: 0;
-}
-/* end override the wpbakery */
 h1.scn-page-title * {
   display: contents;
   overflow-wrap: break-word;
