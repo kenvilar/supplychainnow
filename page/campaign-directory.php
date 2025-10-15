@@ -1,6 +1,6 @@
 <?php
 /*
- * Template Name: Campaign Directory v2
+ * xxTemplate Namexx:xx xxCampaign Directory v2xx
  */
 
 set_query_var( 'header_args', [
