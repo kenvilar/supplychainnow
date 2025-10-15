@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // Create element for selected option input
       const selectedOption = document.createElement("div");
       selectedOption.classList.add("select-option");
-	    selectedOption.classList.add("capitalize");
+      selectedOption.classList.add("capitalize");
       selectedOption.innerHTML = `
 		<div>${optionsArray[initialSelectedIndex].textContent}</div>
 		<div class="pl-4" style="display:flex;"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="8" viewBox="0 0 14 8" fill="none">
@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", function () {
       optionsArray.forEach((option, idx) => {
         const optionItem = document.createElement("li");
         optionItem.classList.add("select-item");
-	      optionItem.classList.add("capitalize");
+        optionItem.classList.add("capitalize");
         optionItem.dataset.value = option.value;
         optionItem.textContent = option.textContent;
         selectMenu.appendChild(optionItem);
@@ -118,12 +118,7 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
     // Set the selected option function
-    const setSelectedOption = (
-      optionItem,
-      selectedOption,
-      selectWrapper,
-      select,
-    ) => {
+    const setSelectedOption = (optionItem, selectedOption, selectWrapper, select) => {
       // Get value and label from clicked custom option
       const optionValue = optionItem.dataset.value;
       const optionLabel = optionItem.textContent;
@@ -175,7 +170,33 @@ document.addEventListener("DOMContentLoaded", function () {
     };
   }
 
+  // Hide elements with class 'scn_render_if_no_filters' if URL has s/search/industries
+  function hideElementsIfFiltersApplied() {
+    try {
+      var params = new URLSearchParams(window.location.search || "");
+      var s = (params.get("s") || params.get("search") || "").trim();
+      var ind = (params.get("industries") || "").trim();
+
+      if (s !== "" || ind !== "") {
+        var nodes = document.querySelectorAll(".scn_render_if_no_filters");
+        nodes.forEach(function (el) {
+          el.classList.add("hidden");
+        });
+      }
+    } catch (e) {
+      // Fallback for very old browsers without URLSearchParams
+      var q = window.location.search || "";
+      if (q.indexOf("s=") !== -1 || q.indexOf("search=") !== -1 || q.indexOf("industries=") !== -1) {
+        var nodes2 = document.querySelectorAll(".scn_render_if_no_filters");
+        nodes2.forEach(function (el) {
+          el.classList.add("hidden");
+        });
+      }
+    }
+  }
+
   textLimiter();
   removeWPAdminBar();
   customSelectFunc();
+  hideElementsIfFiltersApplied();
 });
