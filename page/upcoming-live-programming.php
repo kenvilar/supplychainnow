@@ -20,10 +20,11 @@ $section = get_field( 'Popup_Modal_Section', $pageId );
 			<?php
 			get_template_part( 'components/hero/upcoming-live-programming' );
 			//get_template_part('components/section/upcoming-live-programming/featured-upcoming-programming');
-			get_template_part( 'components/ui/searchbar', null, [
+			/*get_template_part( 'components/ui/searchbar', null, [
 				'site_padding' => 'pt-60 pb-52',
 				'taxonomy'     => 'tags',
-			] );
+			] );*/
+      echo do_shortcode('[searchbar site_padding="pt-60 pb-52" taxonomy="tags"]');
 
 			scn_render_if_no_filters( 'components/section/upcoming-live-programming/upcoming-livestreams' );
 
