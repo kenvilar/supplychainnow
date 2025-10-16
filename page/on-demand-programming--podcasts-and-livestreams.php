@@ -17,10 +17,11 @@ $pageId = get_the_ID();
 				'tabNumber' => 2,
 			] );
 
-			get_template_part( 'components/ui/searchbar', null, [
+			/*get_template_part( 'components/ui/searchbar', null, [
 				'site_padding' => 'pt-52 pb-40',
 				'taxonomy'     => 'tags',
-			] );
+			] );*/
+			echo do_shortcode( '[searchbar site_padding="pt-52 pb-40" taxonomy="tags"]' );
 
 			//scn_render_if_no_filters('components/section/on-demand-programming--podcasts-and-livestreams/featured-podcast-episodes');
 			scn_render_if_no_filters( 'components/section/on-demand-programming/featured-episodes' );
