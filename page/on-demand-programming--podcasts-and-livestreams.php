@@ -29,9 +29,10 @@ $pageId = get_the_ID();
 			scn_render_if_no_filters( 'components/section/on-demand-programming--podcasts-and-livestreams/podcast-series' );
 			scn_render_if_no_filters( 'components/section/on-demand-programming--podcasts-and-livestreams/women-in-supply-chain' );
 
-			get_template_part( 'components/ui/search_results', null, [
+			/*get_template_part( 'components/ui/search_results', null, [
 				'media_type' => 'podcasts-and-livestreams',
-			] );
+			] );*/
+			echo do_shortcode( '[on_demand_podcasts_and_livestreams_search_results]' );
 
 			get_template_part( 'components/layout/footer/cta-footer-2' );
 			?>
