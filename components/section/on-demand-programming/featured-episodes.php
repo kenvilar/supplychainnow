@@ -17,40 +17,9 @@ $title                     = esc_html( ! empty( $section['Title'] ) ? $section['
 			</div>
 			<div class="w-layout-blockcontainer max-w-1252 w-container">
 				<div class="w-dyn-list">
-					<div role="list" class="flex justify-center gap-28 sm:flex-col w-dyn-items">
-						<?php
-						if ( $featured_content_podcasts ) {
-							foreach ( $featured_content_podcasts as $index => $item ) {
-								$post = $item['featured_content_podcasts'];
-								echo get_template_part( 'components/ui/card1', null, [
-									'q'             => [
-										'post__in'   => [ $post->ID ],
-										"meta_query" => [
-											[
-												"relation" => "AND",
-												[
-													'key'     => '_wp_page_template',
-													'value'   => [ 'episode-detail.php', 'livestream-detail.php' ],
-													'compare' => 'IN',
-													'type'    => 'CHAR',
-												],
-											],
-										],
-									],
-									'q_post'        => [
-										'post__in' => [ $post->ID ],
-									],
-									"post_per_page" => 1,
-									'attributes'    => [],
-									'classNames'    => '',
-								] );
-								if ( $index == 1 ) {
-									break;
-								}
-							}
-						}
-						?>
-					</div>
+					<?php
+					echo do_shortcode( '[on_demand_programming_featured_episodes]' );
+					?>
 				</div>
 			</div>
 		</div>
