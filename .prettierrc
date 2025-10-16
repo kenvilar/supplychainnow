@@ -3,5 +3,6 @@
   "printWidth": 230,
   "bracketSameLine": true,
   "singleAttributePerLine": false,
-  "htmlWhitespaceSensitivity": "ignore"
+  "htmlWhitespaceSensitivity": "ignore",
+  "tabWidth": 2
 }
