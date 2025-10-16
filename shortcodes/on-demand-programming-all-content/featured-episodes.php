@@ -1,7 +1,7 @@
 <?php
 
-if ( ! function_exists( 'on_demand_programming_featured_episodes_shortcode' ) ) {
-	function on_demand_programming_featured_episodes_shortcode( $atts = [] ) {
+if ( ! function_exists( 'on_demand_programming_all_content_featured_episodes_shortcode' ) ) {
+	function on_demand_programming_all_content_featured_episodes_shortcode( $atts = [] ) {
 		$pageID                    = get_the_ID();
 		$featured_content_podcasts = get_field( 'featured_content_podcasts', $pageID );
 		ob_start();
@@ -47,5 +47,6 @@ if ( ! function_exists( 'on_demand_programming_featured_episodes_shortcode' ) ) 
 }
 
 add_action( 'init', function () {
-	add_shortcode( 'on_demand_programming_featured_episodes', 'on_demand_programming_featured_episodes_shortcode' );
+	add_shortcode( 'on_demand_programming_all_content_featured_episodes',
+		'on_demand_programming_all_content_featured_episodes_shortcode' );
 } );

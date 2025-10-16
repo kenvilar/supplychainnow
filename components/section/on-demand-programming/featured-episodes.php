@@ -18,7 +18,7 @@ $title                     = esc_html( ! empty( $section['Title'] ) ? $section['
 			<div class="w-layout-blockcontainer max-w-1252 w-container">
 				<div class="w-dyn-list">
 					<?php
-					echo do_shortcode( '[on_demand_programming_featured_episodes]' );
+					echo do_shortcode( '[on_demand_programming_all_content_featured_episodes]' );
 					?>
 				</div>
 			</div>
