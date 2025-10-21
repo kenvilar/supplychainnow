@@ -765,6 +765,9 @@ h1.entry-title {
 	margin-right: auto !important;
 	height: 100%;
 }
+article:not(.full-width) {
+	padding-bottom: 40px;
+}
 article:not(.full-width) .entry-content {
 	max-width: 1250px;
 	margin-inline: auto;
