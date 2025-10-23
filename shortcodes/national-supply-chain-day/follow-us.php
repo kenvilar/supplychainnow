@@ -17,8 +17,7 @@ if ( ! function_exists( 'national_supply_chain_day_follow_us_shortcode' ) ) {
     <div class="flex items-center gap-16 xs:flex-col flex-child-static">
       <div class="text-sm font-semibold">FOLLOW US</div>
       <div class="flex items-center gap-12">
-        <a href="<?= $atts['facebook']; ?>" class="w-inline-block" target="_blank"
-           rel="noopener noreferrer">
+        <a href="<?= $atts['facebook']; ?>" class="w-inline-block" target="_blank" rel="noopener noreferrer">
           <div class="flex items-center text-secondary hover:text-primary w-embed">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
               <path fill-rule="evenodd" clip-rule="evenodd"
@@ -27,8 +26,7 @@ if ( ! function_exists( 'national_supply_chain_day_follow_us_shortcode' ) ) {
             </svg>
           </div>
         </a>
-        <a href="<?= $atts['instagram']; ?>" class="w-inline-block" target="_blank"
-           rel="noopener noreferrer">
+        <a href="<?= $atts['instagram']; ?>" class="w-inline-block" target="_blank" rel="noopener noreferrer">
           <div class="flex items-center text-secondary hover:text-primary w-embed">
             <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
               <path
@@ -43,8 +41,7 @@ if ( ! function_exists( 'national_supply_chain_day_follow_us_shortcode' ) ) {
             </svg>
           </div>
         </a>
-        <a href="<?= $atts['linkedin']; ?>" class="w-inline-block" target="_blank"
-           rel="noopener noreferrer">
+        <a href="<?= $atts['linkedin']; ?>" class="w-inline-block" target="_blank" rel="noopener noreferrer">
           <div class="flex items-center text-secondary hover:text-primary w-embed">
             <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
               <path fill-rule="evenodd" clip-rule="evenodd"
@@ -64,8 +61,7 @@ if ( ! function_exists( 'national_supply_chain_day_follow_us_shortcode' ) ) {
             </svg>
           </div>
         </a>
-        <a href="<?= $atts['youtube']; ?>" class="w-inline-block" target="_blank"
-           rel="noopener noreferrer">
+        <a href="<?= $atts['youtube']; ?>" class="w-inline-block" target="_blank" rel="noopener noreferrer">
           <div class="flex items-center text-secondary hover:text-primary w-embed">
             <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
               <path d="M14.7074 11.8644L11.593 10.0847V13.6441L14.7074 11.8644Z" fill="currentColor"></path>
