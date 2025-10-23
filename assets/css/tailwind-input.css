@@ -424,3 +424,6 @@ menu {
 p.removeptags, .removeptags p {
   display: contents !important;
 }
+br.removebrtags, .removebrtags br {
+  display: none !important;
+}
