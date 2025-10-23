@@ -48,76 +48,9 @@ $buttonLink = esc_url( ! empty( $section['Button_Link'] ) ? $section['Button_Lin
 						</div>
 					</div>
 					<div class="max-w-476 w-full md:max-w-full">
-						<div class="grid grid-cols-2 gap-16 sm:grid-cols-1">
-							<?php
-							if ( ! empty( $section['Images'] ) ) :
-								foreach ( $section['Images'] as $idx => $image ) :
-									$image = esc_url( $image );
-									?>
-									<div class="card">
-										<div class="flex items-center justify-center h-92">
-											<img
-												class="image w-auto! fit-contain"
-												src="<?= $image; ?>"
-												loading="lazy" alt="">
-										</div>
-									</div>
-								<?php
-								endforeach;
-							else:
-								?>
-								<div class="card">
-									<div class="flex items-center justify-center h-92">
-										<img
-											src="<?php
-											echo get_stylesheet_directory_uri() . '/assets/img/national-supply-chain-day/charlie-pesti.svg'; ?>"
-											loading="lazy" alt="">
-									</div>
-								</div>
-								<div class="card">
-									<div class="flex items-center justify-center h-92">
-										<img
-											src="<?php
-											echo get_stylesheet_directory_uri() . '/assets/img/national-supply-chain-day/illinois.svg'; ?>"
-											loading="lazy" alt="">
-									</div>
-								</div>
-								<div class="card">
-									<div class="flex items-center justify-center h-92">
-										<img
-											src="<?php
-											echo get_stylesheet_directory_uri() . '/assets/img/national-supply-chain-day/california-state-university-long-beach.svg'; ?>"
-											loading="lazy" alt="">
-									</div>
-								</div>
-								<div class="card">
-									<div class="flex items-center justify-center h-92">
-										<img
-											src="<?php
-											echo get_stylesheet_directory_uri() . '/assets/img/national-supply-chain-day/university-of-arkansas.svg'; ?>"
-											loading="lazy" alt="">
-									</div>
-								</div>
-								<div class="card">
-									<div class="flex items-center justify-center h-92">
-										<img
-											src="<?php
-											echo get_stylesheet_directory_uri() . '/assets/img/national-supply-chain-day/the-university-of-texas-at-dallas.svg'; ?>"
-											loading="lazy" alt="">
-									</div>
-								</div>
-								<div class="card">
-									<div class="flex items-center justify-center h-92">
-										<img
-											src="<?php
-											echo get_stylesheet_directory_uri() . '/assets/img/national-supply-chain-day/vector-global-logistics.svg'; ?>"
-											loading="lazy" alt="">
-									</div>
-								</div>
-							<?php
-							endif;
-							?>
-						</div>
+            <?php
+            echo do_shortcode( '[national_supply_chain_day_sponsorships_available]' );
+            ?>
 					</div>
 				</div>
 			</div>
