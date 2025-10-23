@@ -51,7 +51,7 @@ $buttonLink = esc_url( ! empty( $section['Button_Link'] ) ? $section['Button_Lin
             </a>
           </div>
           <?php
-          echo do_shortcode( '[national_supply_chain_day_follow_us]' );
+          echo do_shortcode( '[national_supply_chain_day_follow_us facebook="https://www.facebook.com/SupplyChainNow" instagram="https://www.instagram.com/supplychainnow/" linkedin="https://www.linkedin.com/company/supply-chain-now/" twitter="https://x.com/_supplychainnow" youtube="https://www.youtube.com/channel/UCuqKDp8uxinIM8ORIOLr0qw"]' );
           ?>
         </div>
       </div>
