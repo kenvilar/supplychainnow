@@ -1,6 +1,6 @@
 <?php
 /*
- * Template Name: National Supply Chain Day v2
+ * xxTemplate Namexx:xx xxNational Supply Chain Day v2xx
  */
 
 set_query_var( 'header_args', [
