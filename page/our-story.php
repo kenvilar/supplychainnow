@@ -1,6 +1,6 @@
 <?php
 /*
- * Template Name: Our Story v2
+ * xxTemplate Namexx: xxOur Story v2xx
  */
 
 set_query_var( 'header_args', [

@@ -1,6 +1,6 @@
 <?php
 /*
- * Template Name: On-Demand Programming v2
+ * xxTemplate Namexx: xxOn-Demand Programming v2xx
  */
 
 set_query_var( 'header_args', [
