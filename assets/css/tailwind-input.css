@@ -410,6 +410,24 @@
 	font-size: 45px;
 	line-height: 55px;
 }
+.tracking-\[1_2px\] {
+	letter-spacing: 1.2px;
+}
+.tracking-\[1_35px\] {
+	letter-spacing: 1.35px;
+}
+.tracking-\[1_4px\] {
+	letter-spacing: 1.4px;
+}
+.tracking-\[1_52px\] {
+	letter-spacing: 1.52px;
+}
+.tracking-\[1_6px\] {
+	letter-spacing: 1.6px;
+}
+.tracking-\[2_4px\] {
+	letter-spacing: 2.4px;
+}
 ol,
 ul,
 menu {
