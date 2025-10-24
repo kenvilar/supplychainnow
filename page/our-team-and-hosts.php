@@ -1,6 +1,6 @@
 <?php
 /*
- * Template Name: Our Team and Hosts v2
+ * xxTemplate Namexx: xxOur Team and Hosts v2xx
  */
 
 set_query_var( 'header_args', [
