@@ -5,7 +5,6 @@
  * - no jQuery
  */
 (function () {
-    console.log("location.hostname", location.hostname);
     var ExternalLinks = {
         config: {
             sameSiteDomains: [location.hostname], // treat these as same site
