@@ -1,6 +1,6 @@
 <?php
 /*
- * Template Name: Case Studies v2
+ * xxTemplate Namexx: xxCase Studies v2xx
  */
 
 set_query_var( 'header_args', [
