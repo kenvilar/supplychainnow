@@ -1,4 +1,3 @@
-[success_stories_accordion_1]
 <?php
 
 if ( ! function_exists( 'success_stories_accordion_2_shortcode' ) ) {
