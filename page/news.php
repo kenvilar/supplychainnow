@@ -16,10 +16,11 @@ $pageId = get_the_ID();
 			get_template_part( 'components/section/resource-hub/tab-links', null, [
 				'tabNumber' => 6
 			] );
-			get_template_part( 'components/ui/searchbar', null, [
-				'site_padding' => 'pt-52 pb-40',
-				'taxonomy'     => 'post_tag',
-			] );
+      get_template_part( 'components/ui/searchbar', null, [
+        'site_padding' => 'pt-52 pb-40',
+        'taxonomy'     => 'post_tag',
+        'placeholder'  => 'Search',
+      ] );
 			scn_render_if_no_filters( 'components/section/resource-hub/featured-content', [
 				'q'             => [
 					"tax_query" => [
