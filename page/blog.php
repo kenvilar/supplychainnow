@@ -22,37 +22,9 @@ $pageId = get_the_ID();
         'placeholder'  => 'Search',
       ] );*/
       echo do_shortcode( '[searchbar site_padding="pt-52 pb-40" taxonomy="post_tag" placeholder="Search"]' );
-			scn_render_if_no_filters( 'components/section/resource-hub/featured-content', [
-				'q'           => [
-					"tax_query" => [
-						[
-							"taxonomy" => "category",
-							"field"    => "slug",
-							"terms"    => [
-								// 'blog-post',
-								// 'guest-post',
-								'white-paper',
-								'ebook',
-								'article',
-								'weekly-summary',
-								'news',
-								'guide',
-								'podcast-episode',
-							],
-							"operator" => "NOT IN",
-						],
-					],
-				],
-				'sectionName' => 'Blogs',
-			] );
-			scn_render_if_no_filters( 'components/section/resource-hub/recent-blogs', [
-				'posts_per_page'        => - 1,
-				'sitePaddingClassnames' => 'pb-92',
-			] );
-			get_template_part( 'components/ui/search_results', null, [
-				'post_type'    => 'post',
-				'resource_hub' => true,
-			] );
+      echo do_shortcode( '[blog_featured_content]' );
+      echo do_shortcode( '[blog_recent_blogs]' );
+      echo do_shortcode( '[resource_hub_search_results]' );
 			get_template_part( 'components/layout/footer/cta-footer-2' );
 			?>
 		</div>

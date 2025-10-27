@@ -31,10 +31,7 @@ $pageId = get_the_ID();
 			scn_render_if_no_filters( 'components/section/resource-hub/recent-news' );
 			scn_render_if_no_filters( 'components/section/resource-hub/recent-guides' );
 
-			get_template_part( 'components/ui/search_results', null, [
-				'post_type'    => 'post',
-				'resource_hub' => true,
-			] );
+      echo do_shortcode( '[resource_hub_search_results]' );
 
 			get_template_part( 'components/layout/footer/cta-footer-2' );
 			?>
