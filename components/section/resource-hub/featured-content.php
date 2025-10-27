@@ -42,18 +42,9 @@ $defaults_args = [
 				?>
 			</div>
 			<div class="grid grid-cols-2 gap-28 sm:grid-cols-1 w-full">
-				<?php
-				if ( $featured_items ) {
-					$query_args = array_merge( $defaults_args, $override_args );
-					echo get_template_part( 'components/ui/card1-post', null, [
-						'q'             => $query_args,
-						'attributes'    => [],
-						'classNames'    => '',
-						'noItemsFound'  => '',
-						'taxQueryTerms' => $taxQueryTerms,
-					] );
-				}
-				?>
+        <?php
+        echo do_shortcode( '[resource_hub_featured_content]' );
+        ?>
 			</div>
 		</div>
 	</div>
