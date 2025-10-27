@@ -22,24 +22,8 @@ $pageId = get_the_ID();
         'placeholder'  => 'Search',
       ] );*/
       echo do_shortcode( '[searchbar site_padding="pt-52 pb-40" taxonomy="post_tag" placeholder="Search"]' );
-			scn_render_if_no_filters( 'components/section/resource-hub/featured-content', [
-				'q'             => [
-					"tax_query" => [
-						[
-							"taxonomy" => "category",
-							"field"    => "slug",
-							"terms"    => [ "podcast-episode" ],
-							"operator" => "NOT IN",
-						],
-					],
-				],
-				'sectionName'   => 'News',
-				'taxQueryTerms' => [ 'news' ],
-			] );
-			scn_render_if_no_filters( 'components/section/resource-hub/recent-news', [
-				'posts_per_page'        => - 1,
-				'sitePaddingClassnames' => 'pb-92',
-			] );
+      echo do_shortcode( '[news_featured_content]' );
+      echo do_shortcode( '[news_recent_news]' );
 			get_template_part( 'components/ui/search_results', null, [
 				'post_type'    => 'post',
 				'resource_hub' => true,
