@@ -24,10 +24,7 @@ $pageId = get_the_ID();
       echo do_shortcode( '[searchbar site_padding="pt-52 pb-40" taxonomy="post_tag" placeholder="Search"]' );
       echo do_shortcode( '[article_featured_content]' );
       echo do_shortcode( '[article_recent_articles]' );
-			get_template_part( 'components/ui/search_results', null, [
-				'post_type'    => 'post',
-				'resource_hub' => true,
-			] );
+      echo do_shortcode( '[resource_hub_search_results]' );
 			get_template_part( 'components/layout/footer/cta-footer-2' );
 			?>
 		</div>
