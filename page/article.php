@@ -1,6 +1,6 @@
 <?php
 /*
- * Template Name: Resource Hub - Article v2
+ * xxTemplate Namexx: xxResource Hub - Article v2xx
  */
 
 set_query_var( 'header_args', [
